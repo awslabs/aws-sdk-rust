@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let feedbacktype = unimplemented!();
 /// match feedbacktype {
@@ -30,58 +30,52 @@
 /// Specifically, when `feedbacktype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `FeedbackType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum FeedbackType {
     /// Profiler recommendation flagged as not useful.
     Negative,
     /// Profiler recommendation flagged as useful.
     Positive,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for FeedbackType {
     fn from(s: &str) -> Self {
         match s {
             "Negative" => FeedbackType::Negative,
             "Positive" => FeedbackType::Positive,
-            other => FeedbackType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => FeedbackType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for FeedbackType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(FeedbackType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(FeedbackType::from(s))
+                }
+            }
 impl FeedbackType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             FeedbackType::Negative => "Negative",
             FeedbackType::Positive => "Positive",
-            FeedbackType::Unknown(value) => value.as_str(),
+            FeedbackType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["Negative", "Positive"]
+        &[
+            "Negative", "Positive"
+        ]
     }
 }
 impl AsRef<str> for FeedbackType {
@@ -96,9 +90,9 @@ impl AsRef<str> for FeedbackType {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let actiongroup = unimplemented!();
 /// match actiongroup {
@@ -119,54 +113,48 @@ impl AsRef<str> for FeedbackType {
 /// Specifically, when `actiongroup` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ActionGroup::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ActionGroup {
     /// Permission group type for Agent APIs - ConfigureAgent, PostAgentProfile
     AgentPermissions,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ActionGroup {
     fn from(s: &str) -> Self {
         match s {
             "agentPermissions" => ActionGroup::AgentPermissions,
-            other => ActionGroup::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => ActionGroup::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ActionGroup {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ActionGroup::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ActionGroup::from(s))
+                }
+            }
 impl ActionGroup {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ActionGroup::AgentPermissions => "agentPermissions",
-            ActionGroup::Unknown(value) => value.as_str(),
+            ActionGroup::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["agentPermissions"]
+        &[
+            "agentPermissions"
+        ]
     }
 }
 impl AsRef<str> for ActionGroup {
@@ -178,20 +166,20 @@ impl AsRef<str> for ActionGroup {
 /// <p>The configuration for notifications stored for each profiling group. This includes up to to two channels and a list of event publishers associated with each channel.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct NotificationConfiguration {
+pub struct NotificationConfiguration  {
     /// <p>List of up to two channels to be used for sending notifications for events detected from the application profile.</p>
     #[doc(hidden)]
     pub channels: std::option::Option<std::vec::Vec<crate::model::Channel>>,
 }
 impl NotificationConfiguration {
     /// <p>List of up to two channels to be used for sending notifications for events detected from the application profile.</p>
-    pub fn channels(&self) -> std::option::Option<&[crate::model::Channel]> {
+    pub fn channels(&self) -> std::option::Option<& [crate::model::Channel]> {
         self.channels.as_deref()
     }
 }
 /// See [`NotificationConfiguration`](crate::model::NotificationConfiguration).
 pub mod notification_configuration {
-
+    
     /// A builder for [`NotificationConfiguration`](crate::model::NotificationConfiguration).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -205,25 +193,24 @@ pub mod notification_configuration {
         /// <p>List of up to two channels to be used for sending notifications for events detected from the application profile.</p>
         pub fn channels(mut self, input: crate::model::Channel) -> Self {
             let mut v = self.channels.unwrap_or_default();
-            v.push(input);
-            self.channels = Some(v);
-            self
+                            v.push(input);
+                            self.channels = Some(v);
+                            self
         }
         /// <p>List of up to two channels to be used for sending notifications for events detected from the application profile.</p>
-        pub fn set_channels(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Channel>>,
-        ) -> Self {
-            self.channels = input;
-            self
+        pub fn set_channels(mut self, input: std::option::Option<std::vec::Vec<crate::model::Channel>>) -> Self {
+            self.channels = input; self
         }
         /// Consumes the builder and constructs a [`NotificationConfiguration`](crate::model::NotificationConfiguration).
         pub fn build(self) -> crate::model::NotificationConfiguration {
             crate::model::NotificationConfiguration {
-                channels: self.channels,
+                channels: self.channels
+                ,
             }
         }
     }
+    
+    
 }
 impl NotificationConfiguration {
     /// Creates a new builder-style object to manufacture [`NotificationConfiguration`](crate::model::NotificationConfiguration).
@@ -235,7 +222,7 @@ impl NotificationConfiguration {
 /// <p>Notification medium for users to get alerted for events that occur in application profile. We support SNS topic as a notification channel.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Channel {
+pub struct Channel  {
     /// <p>Unique identifier for each <code>Channel</code> in the notification configuration of a Profiling Group. A random UUID for channelId is used when adding a channel to the notification configuration if not specified in the request.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -248,28 +235,27 @@ pub struct Channel {
 }
 impl Channel {
     /// <p>Unique identifier for each <code>Channel</code> in the notification configuration of a Profiling Group. A random UUID for channelId is used when adding a channel to the notification configuration if not specified in the request.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>Unique arn of the resource to be used for notifications. We support a valid SNS topic arn as a channel uri.</p>
-    pub fn uri(&self) -> std::option::Option<&str> {
+    pub fn uri(&self) -> std::option::Option<& str> {
         self.uri.as_deref()
     }
     /// <p>List of publishers for different type of events that may be detected in an application from the profile. Anomaly detection is the only event publisher in Profiler.</p>
-    pub fn event_publishers(&self) -> std::option::Option<&[crate::model::EventPublisher]> {
+    pub fn event_publishers(&self) -> std::option::Option<& [crate::model::EventPublisher]> {
         self.event_publishers.as_deref()
     }
 }
 /// See [`Channel`](crate::model::Channel).
 pub mod channel {
-
+    
     /// A builder for [`Channel`](crate::model::Channel).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) uri: std::option::Option<std::string::String>,
-        pub(crate) event_publishers:
-            std::option::Option<std::vec::Vec<crate::model::EventPublisher>>,
+        pub(crate) event_publishers: std::option::Option<std::vec::Vec<crate::model::EventPublisher>>,
     }
     impl Builder {
         /// <p>Unique identifier for each <code>Channel</code> in the notification configuration of a Profiling Group. A random UUID for channelId is used when adding a channel to the notification configuration if not specified in the request.</p>
@@ -279,8 +265,7 @@ pub mod channel {
         }
         /// <p>Unique identifier for each <code>Channel</code> in the notification configuration of a Profiling Group. A random UUID for channelId is used when adding a channel to the notification configuration if not specified in the request.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// <p>Unique arn of the resource to be used for notifications. We support a valid SNS topic arn as a channel uri.</p>
         pub fn uri(mut self, input: impl Into<std::string::String>) -> Self {
@@ -289,8 +274,7 @@ pub mod channel {
         }
         /// <p>Unique arn of the resource to be used for notifications. We support a valid SNS topic arn as a channel uri.</p>
         pub fn set_uri(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.uri = input;
-            self
+            self.uri = input; self
         }
         /// Appends an item to `event_publishers`.
         ///
@@ -299,27 +283,28 @@ pub mod channel {
         /// <p>List of publishers for different type of events that may be detected in an application from the profile. Anomaly detection is the only event publisher in Profiler.</p>
         pub fn event_publishers(mut self, input: crate::model::EventPublisher) -> Self {
             let mut v = self.event_publishers.unwrap_or_default();
-            v.push(input);
-            self.event_publishers = Some(v);
-            self
+                            v.push(input);
+                            self.event_publishers = Some(v);
+                            self
         }
         /// <p>List of publishers for different type of events that may be detected in an application from the profile. Anomaly detection is the only event publisher in Profiler.</p>
-        pub fn set_event_publishers(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::EventPublisher>>,
-        ) -> Self {
-            self.event_publishers = input;
-            self
+        pub fn set_event_publishers(mut self, input: std::option::Option<std::vec::Vec<crate::model::EventPublisher>>) -> Self {
+            self.event_publishers = input; self
         }
         /// Consumes the builder and constructs a [`Channel`](crate::model::Channel).
         pub fn build(self) -> crate::model::Channel {
             crate::model::Channel {
-                id: self.id,
-                uri: self.uri,
-                event_publishers: self.event_publishers,
+                id: self.id
+                ,
+                uri: self.uri
+                ,
+                event_publishers: self.event_publishers
+                ,
             }
         }
     }
+    
+    
 }
 impl Channel {
     /// Creates a new builder-style object to manufacture [`Channel`](crate::model::Channel).
@@ -334,9 +319,9 @@ impl Channel {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let eventpublisher = unimplemented!();
 /// match eventpublisher {
@@ -357,54 +342,48 @@ impl Channel {
 /// Specifically, when `eventpublisher` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `EventPublisher::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum EventPublisher {
     /// Notifications for Anomaly Detection
     AnomalyDetection,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for EventPublisher {
     fn from(s: &str) -> Self {
         match s {
             "AnomalyDetection" => EventPublisher::AnomalyDetection,
-            other => EventPublisher::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => EventPublisher::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for EventPublisher {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(EventPublisher::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(EventPublisher::from(s))
+                }
+            }
 impl EventPublisher {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             EventPublisher::AnomalyDetection => "AnomalyDetection",
-            EventPublisher::Unknown(value) => value.as_str(),
+            EventPublisher::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["AnomalyDetection"]
+        &[
+            "AnomalyDetection"
+        ]
     }
 }
 impl AsRef<str> for EventPublisher {
@@ -416,20 +395,20 @@ impl AsRef<str> for EventPublisher {
 /// <p> Contains the start time of a profile. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ProfileTime {
+pub struct ProfileTime  {
     /// <p>The start time of a profile. It is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC.</p>
     #[doc(hidden)]
     pub start: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl ProfileTime {
     /// <p>The start time of a profile. It is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC.</p>
-    pub fn start(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn start(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.start.as_ref()
     }
 }
 /// See [`ProfileTime`](crate::model::ProfileTime).
 pub mod profile_time {
-
+    
     /// A builder for [`ProfileTime`](crate::model::ProfileTime).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -443,14 +422,18 @@ pub mod profile_time {
         }
         /// <p>The start time of a profile. It is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC.</p>
         pub fn set_start(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-            self.start = input;
-            self
+            self.start = input; self
         }
         /// Consumes the builder and constructs a [`ProfileTime`](crate::model::ProfileTime).
         pub fn build(self) -> crate::model::ProfileTime {
-            crate::model::ProfileTime { start: self.start }
+            crate::model::ProfileTime {
+                start: self.start
+                ,
+            }
         }
     }
+    
+    
 }
 impl ProfileTime {
     /// Creates a new builder-style object to manufacture [`ProfileTime`](crate::model::ProfileTime).
@@ -465,9 +448,9 @@ impl ProfileTime {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let orderby = unimplemented!();
 /// match orderby {
@@ -489,58 +472,52 @@ impl ProfileTime {
 /// Specifically, when `orderby` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `OrderBy::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum OrderBy {
     /// Order by timestamp in ascending order.
     TimestampAscending,
     /// Order by timestamp in descending order.
     TimestampDescending,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for OrderBy {
     fn from(s: &str) -> Self {
         match s {
             "TimestampAscending" => OrderBy::TimestampAscending,
             "TimestampDescending" => OrderBy::TimestampDescending,
-            other => OrderBy::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => OrderBy::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for OrderBy {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(OrderBy::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(OrderBy::from(s))
+                }
+            }
 impl OrderBy {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             OrderBy::TimestampAscending => "TimestampAscending",
             OrderBy::TimestampDescending => "TimestampDescending",
-            OrderBy::Unknown(value) => value.as_str(),
+            OrderBy::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["TimestampAscending", "TimestampDescending"]
+        &[
+            "TimestampAscending", "TimestampDescending"
+        ]
     }
 }
 impl AsRef<str> for OrderBy {
@@ -555,9 +532,9 @@ impl AsRef<str> for OrderBy {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let aggregationperiod = unimplemented!();
 /// match aggregationperiod {
@@ -580,22 +557,14 @@ impl AsRef<str> for OrderBy {
 /// Specifically, when `aggregationperiod` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `AggregationPeriod::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum AggregationPeriod {
     /// Period of one day.
     P1D,
@@ -604,7 +573,7 @@ pub enum AggregationPeriod {
     /// Period of five minutes.
     Pt5M,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for AggregationPeriod {
     fn from(s: &str) -> Self {
@@ -612,19 +581,17 @@ impl std::convert::From<&str> for AggregationPeriod {
             "P1D" => AggregationPeriod::P1D,
             "PT1H" => AggregationPeriod::Pt1H,
             "PT5M" => AggregationPeriod::Pt5M,
-            other => {
-                AggregationPeriod::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => AggregationPeriod::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for AggregationPeriod {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(AggregationPeriod::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(AggregationPeriod::from(s))
+                }
+            }
 impl AggregationPeriod {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -632,12 +599,14 @@ impl AggregationPeriod {
             AggregationPeriod::P1D => "P1D",
             AggregationPeriod::Pt1H => "PT1H",
             AggregationPeriod::Pt5M => "PT5M",
-            AggregationPeriod::Unknown(value) => value.as_str(),
+            AggregationPeriod::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["P1D", "PT1H", "PT5M"]
+        &[
+            "P1D", "PT1H", "PT5M"
+        ]
     }
 }
 impl AsRef<str> for AggregationPeriod {
@@ -649,7 +618,7 @@ impl AsRef<str> for AggregationPeriod {
 /// <p> Information about potential recommendations that might be created from the analysis of profiling data. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct FindingsReportSummary {
+pub struct FindingsReportSummary  {
     /// <p>The universally unique identifier (UUID) of the recommendation report.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -668,19 +637,19 @@ pub struct FindingsReportSummary {
 }
 impl FindingsReportSummary {
     /// <p>The universally unique identifier (UUID) of the recommendation report.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The name of the profiling group that is associated with the analysis data.</p>
-    pub fn profiling_group_name(&self) -> std::option::Option<&str> {
+    pub fn profiling_group_name(&self) -> std::option::Option<& str> {
         self.profiling_group_name.as_deref()
     }
     /// <p>The start time of the profile the analysis data is about. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC.</p>
-    pub fn profile_start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn profile_start_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.profile_start_time.as_ref()
     }
     /// <p> The end time of the period during which the metric is flagged as anomalous. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC. </p>
-    pub fn profile_end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn profile_end_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.profile_end_time.as_ref()
     }
     /// <p>The total number of different recommendations that were found by the analysis.</p>
@@ -690,7 +659,7 @@ impl FindingsReportSummary {
 }
 /// See [`FindingsReportSummary`](crate::model::FindingsReportSummary).
 pub mod findings_report_summary {
-
+    
     /// A builder for [`FindingsReportSummary`](crate::model::FindingsReportSummary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -708,8 +677,7 @@ pub mod findings_report_summary {
         }
         /// <p>The universally unique identifier (UUID) of the recommendation report.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// <p>The name of the profiling group that is associated with the analysis data.</p>
         pub fn profiling_group_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -717,12 +685,8 @@ pub mod findings_report_summary {
             self
         }
         /// <p>The name of the profiling group that is associated with the analysis data.</p>
-        pub fn set_profiling_group_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.profiling_group_name = input;
-            self
+        pub fn set_profiling_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.profiling_group_name = input; self
         }
         /// <p>The start time of the profile the analysis data is about. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC.</p>
         pub fn profile_start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -730,12 +694,8 @@ pub mod findings_report_summary {
             self
         }
         /// <p>The start time of the profile the analysis data is about. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC.</p>
-        pub fn set_profile_start_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.profile_start_time = input;
-            self
+        pub fn set_profile_start_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.profile_start_time = input; self
         }
         /// <p> The end time of the period during which the metric is flagged as anomalous. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC. </p>
         pub fn profile_end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -743,12 +703,8 @@ pub mod findings_report_summary {
             self
         }
         /// <p> The end time of the period during which the metric is flagged as anomalous. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC. </p>
-        pub fn set_profile_end_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.profile_end_time = input;
-            self
+        pub fn set_profile_end_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.profile_end_time = input; self
         }
         /// <p>The total number of different recommendations that were found by the analysis.</p>
         pub fn total_number_of_findings(mut self, input: i32) -> Self {
@@ -757,20 +713,26 @@ pub mod findings_report_summary {
         }
         /// <p>The total number of different recommendations that were found by the analysis.</p>
         pub fn set_total_number_of_findings(mut self, input: std::option::Option<i32>) -> Self {
-            self.total_number_of_findings = input;
-            self
+            self.total_number_of_findings = input; self
         }
         /// Consumes the builder and constructs a [`FindingsReportSummary`](crate::model::FindingsReportSummary).
         pub fn build(self) -> crate::model::FindingsReportSummary {
             crate::model::FindingsReportSummary {
-                id: self.id,
-                profiling_group_name: self.profiling_group_name,
-                profile_start_time: self.profile_start_time,
-                profile_end_time: self.profile_end_time,
-                total_number_of_findings: self.total_number_of_findings,
+                id: self.id
+                ,
+                profiling_group_name: self.profiling_group_name
+                ,
+                profile_start_time: self.profile_start_time
+                ,
+                profile_end_time: self.profile_end_time
+                ,
+                total_number_of_findings: self.total_number_of_findings
+                ,
             }
         }
     }
+    
+    
 }
 impl FindingsReportSummary {
     /// Creates a new builder-style object to manufacture [`FindingsReportSummary`](crate::model::FindingsReportSummary).
@@ -782,7 +744,7 @@ impl FindingsReportSummary {
 /// <p> Details about an anomaly in a specific metric of application profile. The anomaly is detected using analysis of the metric data over a period of time. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Anomaly {
+pub struct Anomaly  {
     /// <p> Details about the metric that the analysis used when it detected the anomaly. The metric includes the name of the frame that was analyzed with the type and thread states used to derive the metric value for that frame. </p>
     #[doc(hidden)]
     pub metric: std::option::Option<crate::model::Metric>,
@@ -795,21 +757,21 @@ pub struct Anomaly {
 }
 impl Anomaly {
     /// <p> Details about the metric that the analysis used when it detected the anomaly. The metric includes the name of the frame that was analyzed with the type and thread states used to derive the metric value for that frame. </p>
-    pub fn metric(&self) -> std::option::Option<&crate::model::Metric> {
+    pub fn metric(&self) -> std::option::Option<& crate::model::Metric> {
         self.metric.as_ref()
     }
     /// <p>The reason for which metric was flagged as anomalous.</p>
-    pub fn reason(&self) -> std::option::Option<&str> {
+    pub fn reason(&self) -> std::option::Option<& str> {
         self.reason.as_deref()
     }
     /// <p> A list of the instances of the detected anomalies during the requested period. </p>
-    pub fn instances(&self) -> std::option::Option<&[crate::model::AnomalyInstance]> {
+    pub fn instances(&self) -> std::option::Option<& [crate::model::AnomalyInstance]> {
         self.instances.as_deref()
     }
 }
 /// See [`Anomaly`](crate::model::Anomaly).
 pub mod anomaly {
-
+    
     /// A builder for [`Anomaly`](crate::model::Anomaly).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -825,8 +787,7 @@ pub mod anomaly {
         }
         /// <p> Details about the metric that the analysis used when it detected the anomaly. The metric includes the name of the frame that was analyzed with the type and thread states used to derive the metric value for that frame. </p>
         pub fn set_metric(mut self, input: std::option::Option<crate::model::Metric>) -> Self {
-            self.metric = input;
-            self
+            self.metric = input; self
         }
         /// <p>The reason for which metric was flagged as anomalous.</p>
         pub fn reason(mut self, input: impl Into<std::string::String>) -> Self {
@@ -835,8 +796,7 @@ pub mod anomaly {
         }
         /// <p>The reason for which metric was flagged as anomalous.</p>
         pub fn set_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.reason = input;
-            self
+            self.reason = input; self
         }
         /// Appends an item to `instances`.
         ///
@@ -845,27 +805,28 @@ pub mod anomaly {
         /// <p> A list of the instances of the detected anomalies during the requested period. </p>
         pub fn instances(mut self, input: crate::model::AnomalyInstance) -> Self {
             let mut v = self.instances.unwrap_or_default();
-            v.push(input);
-            self.instances = Some(v);
-            self
+                            v.push(input);
+                            self.instances = Some(v);
+                            self
         }
         /// <p> A list of the instances of the detected anomalies during the requested period. </p>
-        pub fn set_instances(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::AnomalyInstance>>,
-        ) -> Self {
-            self.instances = input;
-            self
+        pub fn set_instances(mut self, input: std::option::Option<std::vec::Vec<crate::model::AnomalyInstance>>) -> Self {
+            self.instances = input; self
         }
         /// Consumes the builder and constructs a [`Anomaly`](crate::model::Anomaly).
         pub fn build(self) -> crate::model::Anomaly {
             crate::model::Anomaly {
-                metric: self.metric,
-                reason: self.reason,
-                instances: self.instances,
+                metric: self.metric
+                ,
+                reason: self.reason
+                ,
+                instances: self.instances
+                ,
             }
         }
     }
+    
+    
 }
 impl Anomaly {
     /// Creates a new builder-style object to manufacture [`Anomaly`](crate::model::Anomaly).
@@ -877,7 +838,7 @@ impl Anomaly {
 /// <p>The specific duration in which the metric is flagged as anomalous.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AnomalyInstance {
+pub struct AnomalyInstance  {
     /// <p> The universally unique identifier (UUID) of an instance of an anomaly in a metric. </p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -893,25 +854,25 @@ pub struct AnomalyInstance {
 }
 impl AnomalyInstance {
     /// <p> The universally unique identifier (UUID) of an instance of an anomaly in a metric. </p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p> The start time of the period during which the metric is flagged as anomalous. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC. </p>
-    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn start_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p> The end time of the period during which the metric is flagged as anomalous. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC. </p>
-    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn end_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
     /// <p>Feedback type on a specific instance of anomaly submitted by the user.</p>
-    pub fn user_feedback(&self) -> std::option::Option<&crate::model::UserFeedback> {
+    pub fn user_feedback(&self) -> std::option::Option<& crate::model::UserFeedback> {
         self.user_feedback.as_ref()
     }
 }
 /// See [`AnomalyInstance`](crate::model::AnomalyInstance).
 pub mod anomaly_instance {
-
+    
     /// A builder for [`AnomalyInstance`](crate::model::AnomalyInstance).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -928,8 +889,7 @@ pub mod anomaly_instance {
         }
         /// <p> The universally unique identifier (UUID) of an instance of an anomaly in a metric. </p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// <p> The start time of the period during which the metric is flagged as anomalous. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC. </p>
         pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -937,12 +897,8 @@ pub mod anomaly_instance {
             self
         }
         /// <p> The start time of the period during which the metric is flagged as anomalous. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC. </p>
-        pub fn set_start_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.start_time = input;
-            self
+        pub fn set_start_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.start_time = input; self
         }
         /// <p> The end time of the period during which the metric is flagged as anomalous. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC. </p>
         pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -950,12 +906,8 @@ pub mod anomaly_instance {
             self
         }
         /// <p> The end time of the period during which the metric is flagged as anomalous. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC. </p>
-        pub fn set_end_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.end_time = input;
-            self
+        pub fn set_end_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.end_time = input; self
         }
         /// <p>Feedback type on a specific instance of anomaly submitted by the user.</p>
         pub fn user_feedback(mut self, input: crate::model::UserFeedback) -> Self {
@@ -963,23 +915,25 @@ pub mod anomaly_instance {
             self
         }
         /// <p>Feedback type on a specific instance of anomaly submitted by the user.</p>
-        pub fn set_user_feedback(
-            mut self,
-            input: std::option::Option<crate::model::UserFeedback>,
-        ) -> Self {
-            self.user_feedback = input;
-            self
+        pub fn set_user_feedback(mut self, input: std::option::Option<crate::model::UserFeedback>) -> Self {
+            self.user_feedback = input; self
         }
         /// Consumes the builder and constructs a [`AnomalyInstance`](crate::model::AnomalyInstance).
         pub fn build(self) -> crate::model::AnomalyInstance {
             crate::model::AnomalyInstance {
-                id: self.id,
-                start_time: self.start_time,
-                end_time: self.end_time,
-                user_feedback: self.user_feedback,
+                id: self.id
+                ,
+                start_time: self.start_time
+                ,
+                end_time: self.end_time
+                ,
+                user_feedback: self.user_feedback
+                ,
             }
         }
     }
+    
+    
 }
 impl AnomalyInstance {
     /// Creates a new builder-style object to manufacture [`AnomalyInstance`](crate::model::AnomalyInstance).
@@ -991,20 +945,20 @@ impl AnomalyInstance {
 /// <p>Feedback that can be submitted for each instance of an anomaly by the user. Feedback is be used for improvements in generating recommendations for the application.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UserFeedback {
+pub struct UserFeedback  {
     /// <p>Optional <code>Positive</code> or <code>Negative</code> feedback submitted by the user about whether the recommendation is useful or not.</p>
     #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::FeedbackType>,
 }
 impl UserFeedback {
     /// <p>Optional <code>Positive</code> or <code>Negative</code> feedback submitted by the user about whether the recommendation is useful or not.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::model::FeedbackType> {
+    pub fn r#type(&self) -> std::option::Option<& crate::model::FeedbackType> {
         self.r#type.as_ref()
     }
 }
 /// See [`UserFeedback`](crate::model::UserFeedback).
 pub mod user_feedback {
-
+    
     /// A builder for [`UserFeedback`](crate::model::UserFeedback).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1018,16 +972,18 @@ pub mod user_feedback {
         }
         /// <p>Optional <code>Positive</code> or <code>Negative</code> feedback submitted by the user about whether the recommendation is useful or not.</p>
         pub fn set_type(mut self, input: std::option::Option<crate::model::FeedbackType>) -> Self {
-            self.r#type = input;
-            self
+            self.r#type = input; self
         }
         /// Consumes the builder and constructs a [`UserFeedback`](crate::model::UserFeedback).
         pub fn build(self) -> crate::model::UserFeedback {
             crate::model::UserFeedback {
-                r#type: self.r#type,
+                r#type: self.r#type
+                ,
             }
         }
     }
+    
+    
 }
 impl UserFeedback {
     /// Creates a new builder-style object to manufacture [`UserFeedback`](crate::model::UserFeedback).
@@ -1039,7 +995,7 @@ impl UserFeedback {
 /// <p> Details about the metric that the analysis used when it detected the anomaly. The metric what is analyzed to create recommendations. It includes the name of the frame that was analyzed and the type and thread states used to derive the metric value for that frame. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Metric {
+pub struct Metric  {
     /// <p> The name of the method that appears as a frame in any stack in a profile. </p>
     #[doc(hidden)]
     pub frame_name: std::option::Option<std::string::String>,
@@ -1052,21 +1008,21 @@ pub struct Metric {
 }
 impl Metric {
     /// <p> The name of the method that appears as a frame in any stack in a profile. </p>
-    pub fn frame_name(&self) -> std::option::Option<&str> {
+    pub fn frame_name(&self) -> std::option::Option<& str> {
         self.frame_name.as_deref()
     }
     /// <p> A type that specifies how a metric for a frame is analyzed. The supported value <code>AggregatedRelativeTotalTime</code> is an aggregation of the metric value for one frame that is calculated across the occurences of all frames in a profile.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::model::MetricType> {
+    pub fn r#type(&self) -> std::option::Option<& crate::model::MetricType> {
         self.r#type.as_ref()
     }
     /// <p> The list of application runtime thread states that is used to calculate the metric value for the frame. </p>
-    pub fn thread_states(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn thread_states(&self) -> std::option::Option<& [std::string::String]> {
         self.thread_states.as_deref()
     }
 }
 /// See [`Metric`](crate::model::Metric).
 pub mod metric {
-
+    
     /// A builder for [`Metric`](crate::model::Metric).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1082,8 +1038,7 @@ pub mod metric {
         }
         /// <p> The name of the method that appears as a frame in any stack in a profile. </p>
         pub fn set_frame_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.frame_name = input;
-            self
+            self.frame_name = input; self
         }
         /// <p> A type that specifies how a metric for a frame is analyzed. The supported value <code>AggregatedRelativeTotalTime</code> is an aggregation of the metric value for one frame that is calculated across the occurences of all frames in a profile.</p>
         pub fn r#type(mut self, input: crate::model::MetricType) -> Self {
@@ -1092,8 +1047,7 @@ pub mod metric {
         }
         /// <p> A type that specifies how a metric for a frame is analyzed. The supported value <code>AggregatedRelativeTotalTime</code> is an aggregation of the metric value for one frame that is calculated across the occurences of all frames in a profile.</p>
         pub fn set_type(mut self, input: std::option::Option<crate::model::MetricType>) -> Self {
-            self.r#type = input;
-            self
+            self.r#type = input; self
         }
         /// Appends an item to `thread_states`.
         ///
@@ -1102,27 +1056,28 @@ pub mod metric {
         /// <p> The list of application runtime thread states that is used to calculate the metric value for the frame. </p>
         pub fn thread_states(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.thread_states.unwrap_or_default();
-            v.push(input.into());
-            self.thread_states = Some(v);
-            self
+                            v.push(input.into());
+                            self.thread_states = Some(v);
+                            self
         }
         /// <p> The list of application runtime thread states that is used to calculate the metric value for the frame. </p>
-        pub fn set_thread_states(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.thread_states = input;
-            self
+        pub fn set_thread_states(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.thread_states = input; self
         }
         /// Consumes the builder and constructs a [`Metric`](crate::model::Metric).
         pub fn build(self) -> crate::model::Metric {
             crate::model::Metric {
-                frame_name: self.frame_name,
-                r#type: self.r#type,
-                thread_states: self.thread_states,
+                frame_name: self.frame_name
+                ,
+                r#type: self.r#type
+                ,
+                thread_states: self.thread_states
+                ,
             }
         }
     }
+    
+    
 }
 impl Metric {
     /// Creates a new builder-style object to manufacture [`Metric`](crate::model::Metric).
@@ -1137,9 +1092,9 @@ impl Metric {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let metrictype = unimplemented!();
 /// match metrictype {
@@ -1160,54 +1115,48 @@ impl Metric {
 /// Specifically, when `metrictype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `MetricType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum MetricType {
     /// Metric value aggregated for all instances of a frame name in a profile relative to the root frame.
     AggregatedRelativeTotalTime,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for MetricType {
     fn from(s: &str) -> Self {
         match s {
             "AggregatedRelativeTotalTime" => MetricType::AggregatedRelativeTotalTime,
-            other => MetricType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => MetricType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for MetricType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(MetricType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(MetricType::from(s))
+                }
+            }
 impl MetricType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             MetricType::AggregatedRelativeTotalTime => "AggregatedRelativeTotalTime",
-            MetricType::Unknown(value) => value.as_str(),
+            MetricType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["AggregatedRelativeTotalTime"]
+        &[
+            "AggregatedRelativeTotalTime"
+        ]
     }
 }
 impl AsRef<str> for MetricType {
@@ -1219,7 +1168,7 @@ impl AsRef<str> for MetricType {
 /// <p>A potential improvement that was found from analyzing the profiling data.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Recommendation {
+pub struct Recommendation  {
     /// <p>How many different places in the profile graph triggered a match.</p>
     #[doc(hidden)]
     pub all_matches_count: std::option::Option<i32>,
@@ -1249,25 +1198,25 @@ impl Recommendation {
         self.all_matches_sum
     }
     /// <p>The pattern that analysis recognized in the profile to make this recommendation.</p>
-    pub fn pattern(&self) -> std::option::Option<&crate::model::Pattern> {
+    pub fn pattern(&self) -> std::option::Option<& crate::model::Pattern> {
         self.pattern.as_ref()
     }
     /// <p>List of the matches with most impact. </p>
-    pub fn top_matches(&self) -> std::option::Option<&[crate::model::Match]> {
+    pub fn top_matches(&self) -> std::option::Option<& [crate::model::Match]> {
         self.top_matches.as_deref()
     }
     /// <p>The start time of the profile that was used by this analysis. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC.</p>
-    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn start_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p>End time of the profile that was used by this analysis. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC.</p>
-    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn end_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
 }
 /// See [`Recommendation`](crate::model::Recommendation).
 pub mod recommendation {
-
+    
     /// A builder for [`Recommendation`](crate::model::Recommendation).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1286,8 +1235,7 @@ pub mod recommendation {
         }
         /// <p>How many different places in the profile graph triggered a match.</p>
         pub fn set_all_matches_count(mut self, input: std::option::Option<i32>) -> Self {
-            self.all_matches_count = input;
-            self
+            self.all_matches_count = input; self
         }
         /// <p>How much of the total sample count is potentially affected.</p>
         pub fn all_matches_sum(mut self, input: f64) -> Self {
@@ -1296,8 +1244,7 @@ pub mod recommendation {
         }
         /// <p>How much of the total sample count is potentially affected.</p>
         pub fn set_all_matches_sum(mut self, input: std::option::Option<f64>) -> Self {
-            self.all_matches_sum = input;
-            self
+            self.all_matches_sum = input; self
         }
         /// <p>The pattern that analysis recognized in the profile to make this recommendation.</p>
         pub fn pattern(mut self, input: crate::model::Pattern) -> Self {
@@ -1306,8 +1253,7 @@ pub mod recommendation {
         }
         /// <p>The pattern that analysis recognized in the profile to make this recommendation.</p>
         pub fn set_pattern(mut self, input: std::option::Option<crate::model::Pattern>) -> Self {
-            self.pattern = input;
-            self
+            self.pattern = input; self
         }
         /// Appends an item to `top_matches`.
         ///
@@ -1316,17 +1262,13 @@ pub mod recommendation {
         /// <p>List of the matches with most impact. </p>
         pub fn top_matches(mut self, input: crate::model::Match) -> Self {
             let mut v = self.top_matches.unwrap_or_default();
-            v.push(input);
-            self.top_matches = Some(v);
-            self
+                            v.push(input);
+                            self.top_matches = Some(v);
+                            self
         }
         /// <p>List of the matches with most impact. </p>
-        pub fn set_top_matches(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Match>>,
-        ) -> Self {
-            self.top_matches = input;
-            self
+        pub fn set_top_matches(mut self, input: std::option::Option<std::vec::Vec<crate::model::Match>>) -> Self {
+            self.top_matches = input; self
         }
         /// <p>The start time of the profile that was used by this analysis. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC.</p>
         pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -1334,12 +1276,8 @@ pub mod recommendation {
             self
         }
         /// <p>The start time of the profile that was used by this analysis. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC.</p>
-        pub fn set_start_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.start_time = input;
-            self
+        pub fn set_start_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.start_time = input; self
         }
         /// <p>End time of the profile that was used by this analysis. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC.</p>
         pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -1347,25 +1285,29 @@ pub mod recommendation {
             self
         }
         /// <p>End time of the profile that was used by this analysis. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC.</p>
-        pub fn set_end_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.end_time = input;
-            self
+        pub fn set_end_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.end_time = input; self
         }
         /// Consumes the builder and constructs a [`Recommendation`](crate::model::Recommendation).
         pub fn build(self) -> crate::model::Recommendation {
             crate::model::Recommendation {
-                all_matches_count: self.all_matches_count,
-                all_matches_sum: self.all_matches_sum,
-                pattern: self.pattern,
-                top_matches: self.top_matches,
-                start_time: self.start_time,
-                end_time: self.end_time,
+                all_matches_count: self.all_matches_count
+                ,
+                all_matches_sum: self.all_matches_sum
+                ,
+                pattern: self.pattern
+                ,
+                top_matches: self.top_matches
+                ,
+                start_time: self.start_time
+                ,
+                end_time: self.end_time
+                ,
             }
         }
     }
+    
+    
 }
 impl Recommendation {
     /// Creates a new builder-style object to manufacture [`Recommendation`](crate::model::Recommendation).
@@ -1377,7 +1319,7 @@ impl Recommendation {
 /// <p>The part of a profile that contains a recommendation found during analysis.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Match {
+pub struct Match  {
     /// <p>The target frame that triggered a match.</p>
     #[doc(hidden)]
     pub target_frames_index: std::option::Option<i32>,
@@ -1394,7 +1336,7 @@ impl Match {
         self.target_frames_index
     }
     /// <p>The location in the profiling graph that contains a recommendation found during analysis.</p>
-    pub fn frame_address(&self) -> std::option::Option<&str> {
+    pub fn frame_address(&self) -> std::option::Option<& str> {
         self.frame_address.as_deref()
     }
     /// <p>The value in the profile data that exceeded the recommendation threshold.</p>
@@ -1404,7 +1346,7 @@ impl Match {
 }
 /// See [`Match`](crate::model::Match).
 pub mod r#match {
-
+    
     /// A builder for [`Match`](crate::model::Match).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1420,8 +1362,7 @@ pub mod r#match {
         }
         /// <p>The target frame that triggered a match.</p>
         pub fn set_target_frames_index(mut self, input: std::option::Option<i32>) -> Self {
-            self.target_frames_index = input;
-            self
+            self.target_frames_index = input; self
         }
         /// <p>The location in the profiling graph that contains a recommendation found during analysis.</p>
         pub fn frame_address(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1429,12 +1370,8 @@ pub mod r#match {
             self
         }
         /// <p>The location in the profiling graph that contains a recommendation found during analysis.</p>
-        pub fn set_frame_address(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.frame_address = input;
-            self
+        pub fn set_frame_address(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.frame_address = input; self
         }
         /// <p>The value in the profile data that exceeded the recommendation threshold.</p>
         pub fn threshold_breach_value(mut self, input: f64) -> Self {
@@ -1443,18 +1380,22 @@ pub mod r#match {
         }
         /// <p>The value in the profile data that exceeded the recommendation threshold.</p>
         pub fn set_threshold_breach_value(mut self, input: std::option::Option<f64>) -> Self {
-            self.threshold_breach_value = input;
-            self
+            self.threshold_breach_value = input; self
         }
         /// Consumes the builder and constructs a [`Match`](crate::model::Match).
         pub fn build(self) -> crate::model::Match {
             crate::model::Match {
-                target_frames_index: self.target_frames_index,
-                frame_address: self.frame_address,
-                threshold_breach_value: self.threshold_breach_value,
+                target_frames_index: self.target_frames_index
+                ,
+                frame_address: self.frame_address
+                ,
+                threshold_breach_value: self.threshold_breach_value
+                ,
             }
         }
     }
+    
+    
 }
 impl Match {
     /// Creates a new builder-style object to manufacture [`Match`](crate::model::Match).
@@ -1466,7 +1407,7 @@ impl Match {
 /// <p> A set of rules used to make a recommendation during an analysis. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Pattern {
+pub struct Pattern  {
     /// <p>The universally unique identifier (UUID) of this pattern.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -1491,23 +1432,23 @@ pub struct Pattern {
 }
 impl Pattern {
     /// <p>The universally unique identifier (UUID) of this pattern.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The name for this pattern.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The description of the recommendation. This explains a potential inefficiency in a profiled application.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p> A string that contains the steps recommended to address the potential inefficiency. </p>
-    pub fn resolution_steps(&self) -> std::option::Option<&str> {
+    pub fn resolution_steps(&self) -> std::option::Option<& str> {
         self.resolution_steps.as_deref()
     }
     /// <p>A list of frame names that were searched during the analysis that generated a recommendation.</p>
-    pub fn target_frames(&self) -> std::option::Option<&[std::vec::Vec<std::string::String>]> {
+    pub fn target_frames(&self) -> std::option::Option<& [std::vec::Vec<std::string::String>]> {
         self.target_frames.as_deref()
     }
     /// <p> The percentage of time an application spends in one method that triggers a recommendation. The percentage of time is the same as the percentage of the total gathered sample counts during analysis. </p>
@@ -1515,13 +1456,13 @@ impl Pattern {
         self.threshold_percent
     }
     /// <p> A list of the different counters used to determine if there is a match. </p>
-    pub fn counters_to_aggregate(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn counters_to_aggregate(&self) -> std::option::Option<& [std::string::String]> {
         self.counters_to_aggregate.as_deref()
     }
 }
 /// See [`Pattern`](crate::model::Pattern).
 pub mod pattern {
-
+    
     /// A builder for [`Pattern`](crate::model::Pattern).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1529,8 +1470,7 @@ pub mod pattern {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
         pub(crate) resolution_steps: std::option::Option<std::string::String>,
-        pub(crate) target_frames:
-            std::option::Option<std::vec::Vec<std::vec::Vec<std::string::String>>>,
+        pub(crate) target_frames: std::option::Option<std::vec::Vec<std::vec::Vec<std::string::String>>>,
         pub(crate) threshold_percent: std::option::Option<f64>,
         pub(crate) counters_to_aggregate: std::option::Option<std::vec::Vec<std::string::String>>,
     }
@@ -1542,8 +1482,7 @@ pub mod pattern {
         }
         /// <p>The universally unique identifier (UUID) of this pattern.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// <p>The name for this pattern.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1552,8 +1491,7 @@ pub mod pattern {
         }
         /// <p>The name for this pattern.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The description of the recommendation. This explains a potential inefficiency in a profiled application.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1562,8 +1500,7 @@ pub mod pattern {
         }
         /// <p>The description of the recommendation. This explains a potential inefficiency in a profiled application.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p> A string that contains the steps recommended to address the potential inefficiency. </p>
         pub fn resolution_steps(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1571,12 +1508,8 @@ pub mod pattern {
             self
         }
         /// <p> A string that contains the steps recommended to address the potential inefficiency. </p>
-        pub fn set_resolution_steps(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.resolution_steps = input;
-            self
+        pub fn set_resolution_steps(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.resolution_steps = input; self
         }
         /// Appends an item to `target_frames`.
         ///
@@ -1585,17 +1518,13 @@ pub mod pattern {
         /// <p>A list of frame names that were searched during the analysis that generated a recommendation.</p>
         pub fn target_frames(mut self, input: std::vec::Vec<std::string::String>) -> Self {
             let mut v = self.target_frames.unwrap_or_default();
-            v.push(input);
-            self.target_frames = Some(v);
-            self
+                            v.push(input);
+                            self.target_frames = Some(v);
+                            self
         }
         /// <p>A list of frame names that were searched during the analysis that generated a recommendation.</p>
-        pub fn set_target_frames(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::vec::Vec<std::string::String>>>,
-        ) -> Self {
-            self.target_frames = input;
-            self
+        pub fn set_target_frames(mut self, input: std::option::Option<std::vec::Vec<std::vec::Vec<std::string::String>>>) -> Self {
+            self.target_frames = input; self
         }
         /// <p> The percentage of time an application spends in one method that triggers a recommendation. The percentage of time is the same as the percentage of the total gathered sample counts during analysis. </p>
         pub fn threshold_percent(mut self, input: f64) -> Self {
@@ -1604,8 +1533,7 @@ pub mod pattern {
         }
         /// <p> The percentage of time an application spends in one method that triggers a recommendation. The percentage of time is the same as the percentage of the total gathered sample counts during analysis. </p>
         pub fn set_threshold_percent(mut self, input: std::option::Option<f64>) -> Self {
-            self.threshold_percent = input;
-            self
+            self.threshold_percent = input; self
         }
         /// Appends an item to `counters_to_aggregate`.
         ///
@@ -1614,31 +1542,37 @@ pub mod pattern {
         /// <p> A list of the different counters used to determine if there is a match. </p>
         pub fn counters_to_aggregate(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.counters_to_aggregate.unwrap_or_default();
-            v.push(input.into());
-            self.counters_to_aggregate = Some(v);
-            self
+                            v.push(input.into());
+                            self.counters_to_aggregate = Some(v);
+                            self
         }
         /// <p> A list of the different counters used to determine if there is a match. </p>
-        pub fn set_counters_to_aggregate(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.counters_to_aggregate = input;
-            self
+        pub fn set_counters_to_aggregate(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.counters_to_aggregate = input; self
         }
         /// Consumes the builder and constructs a [`Pattern`](crate::model::Pattern).
         pub fn build(self) -> crate::model::Pattern {
             crate::model::Pattern {
-                id: self.id,
-                name: self.name,
-                description: self.description,
-                resolution_steps: self.resolution_steps,
-                target_frames: self.target_frames,
-                threshold_percent: self.threshold_percent.unwrap_or_default(),
-                counters_to_aggregate: self.counters_to_aggregate,
+                id: self.id
+                ,
+                name: self.name
+                ,
+                description: self.description
+                ,
+                resolution_steps: self.resolution_steps
+                ,
+                target_frames: self.target_frames
+                ,
+                threshold_percent: self.threshold_percent
+                    .unwrap_or_default()
+                ,
+                counters_to_aggregate: self.counters_to_aggregate
+                ,
             }
         }
     }
+    
+    
 }
 impl Pattern {
     /// Creates a new builder-style object to manufacture [`Pattern`](crate::model::Pattern).
@@ -1650,25 +1584,23 @@ impl Pattern {
 /// <p> The response of <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ConfigureAgent.html"> <code>ConfigureAgent</code> </a> that specifies if an agent profiles or not and for how long to return profiling data. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AgentConfiguration {
+pub struct AgentConfiguration  {
     /// <p> A <code>Boolean</code> that specifies whether the profiling agent collects profiling data or not. Set to <code>true</code> to enable profiling. </p>
     #[doc(hidden)]
     pub should_profile: std::option::Option<bool>,
     /// <p> How long a profiling agent should send profiling data using <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ConfigureAgent.html"> <code>ConfigureAgent</code> </a>. For example, if this is set to 300, the profiling agent calls <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ConfigureAgent.html"> <code>ConfigureAgent</code> </a> every 5 minutes to submit the profiled data collected during that period. </p>
     #[doc(hidden)]
     pub period_in_seconds: std::option::Option<i32>,
-    /// <p> Parameters used by the profiler. The valid parameters are: </p>
-    /// <ul>
-    /// <li> <p> <code>MaxStackDepth</code> - The maximum depth of the stacks in the code that is represented in the profile. For example, if CodeGuru Profiler finds a method <code>A</code>, which calls method <code>B</code>, which calls method <code>C</code>, which calls method <code>D</code>, then the depth is 4. If the <code>maxDepth</code> is set to 2, then the profiler evaluates <code>A</code> and <code>B</code>. </p> </li>
-    /// <li> <p> <code>MemoryUsageLimitPercent</code> - The percentage of memory that is used by the profiler.</p> </li>
-    /// <li> <p> <code>MinimumTimeForReportingInMilliseconds</code> - The minimum time in milliseconds between sending reports. </p> </li>
-    /// <li> <p> <code>ReportingIntervalInMilliseconds</code> - The reporting interval in milliseconds used to report profiles. </p> </li>
-    /// <li> <p> <code>SamplingIntervalInMilliseconds</code> - The sampling interval in milliseconds that is used to profile samples. </p> </li>
+    /// <p> Parameters used by the profiler. The valid parameters are: </p> 
+    /// <ul> 
+    /// <li> <p> <code>MaxStackDepth</code> - The maximum depth of the stacks in the code that is represented in the profile. For example, if CodeGuru Profiler finds a method <code>A</code>, which calls method <code>B</code>, which calls method <code>C</code>, which calls method <code>D</code>, then the depth is 4. If the <code>maxDepth</code> is set to 2, then the profiler evaluates <code>A</code> and <code>B</code>. </p> </li> 
+    /// <li> <p> <code>MemoryUsageLimitPercent</code> - The percentage of memory that is used by the profiler.</p> </li> 
+    /// <li> <p> <code>MinimumTimeForReportingInMilliseconds</code> - The minimum time in milliseconds between sending reports. </p> </li> 
+    /// <li> <p> <code>ReportingIntervalInMilliseconds</code> - The reporting interval in milliseconds used to report profiles. </p> </li> 
+    /// <li> <p> <code>SamplingIntervalInMilliseconds</code> - The sampling interval in milliseconds that is used to profile samples. </p> </li> 
     /// </ul>
     #[doc(hidden)]
-    pub agent_parameters: std::option::Option<
-        std::collections::HashMap<crate::model::AgentParameterField, std::string::String>,
-    >,
+    pub agent_parameters: std::option::Option<std::collections::HashMap<crate::model::AgentParameterField, std::string::String>>,
 }
 impl AgentConfiguration {
     /// <p> A <code>Boolean</code> that specifies whether the profiling agent collects profiling data or not. Set to <code>true</code> to enable profiling. </p>
@@ -1679,33 +1611,27 @@ impl AgentConfiguration {
     pub fn period_in_seconds(&self) -> std::option::Option<i32> {
         self.period_in_seconds
     }
-    /// <p> Parameters used by the profiler. The valid parameters are: </p>
-    /// <ul>
-    /// <li> <p> <code>MaxStackDepth</code> - The maximum depth of the stacks in the code that is represented in the profile. For example, if CodeGuru Profiler finds a method <code>A</code>, which calls method <code>B</code>, which calls method <code>C</code>, which calls method <code>D</code>, then the depth is 4. If the <code>maxDepth</code> is set to 2, then the profiler evaluates <code>A</code> and <code>B</code>. </p> </li>
-    /// <li> <p> <code>MemoryUsageLimitPercent</code> - The percentage of memory that is used by the profiler.</p> </li>
-    /// <li> <p> <code>MinimumTimeForReportingInMilliseconds</code> - The minimum time in milliseconds between sending reports. </p> </li>
-    /// <li> <p> <code>ReportingIntervalInMilliseconds</code> - The reporting interval in milliseconds used to report profiles. </p> </li>
-    /// <li> <p> <code>SamplingIntervalInMilliseconds</code> - The sampling interval in milliseconds that is used to profile samples. </p> </li>
+    /// <p> Parameters used by the profiler. The valid parameters are: </p> 
+    /// <ul> 
+    /// <li> <p> <code>MaxStackDepth</code> - The maximum depth of the stacks in the code that is represented in the profile. For example, if CodeGuru Profiler finds a method <code>A</code>, which calls method <code>B</code>, which calls method <code>C</code>, which calls method <code>D</code>, then the depth is 4. If the <code>maxDepth</code> is set to 2, then the profiler evaluates <code>A</code> and <code>B</code>. </p> </li> 
+    /// <li> <p> <code>MemoryUsageLimitPercent</code> - The percentage of memory that is used by the profiler.</p> </li> 
+    /// <li> <p> <code>MinimumTimeForReportingInMilliseconds</code> - The minimum time in milliseconds between sending reports. </p> </li> 
+    /// <li> <p> <code>ReportingIntervalInMilliseconds</code> - The reporting interval in milliseconds used to report profiles. </p> </li> 
+    /// <li> <p> <code>SamplingIntervalInMilliseconds</code> - The sampling interval in milliseconds that is used to profile samples. </p> </li> 
     /// </ul>
-    pub fn agent_parameters(
-        &self,
-    ) -> std::option::Option<
-        &std::collections::HashMap<crate::model::AgentParameterField, std::string::String>,
-    > {
+    pub fn agent_parameters(&self) -> std::option::Option<& std::collections::HashMap<crate::model::AgentParameterField, std::string::String>> {
         self.agent_parameters.as_ref()
     }
 }
 /// See [`AgentConfiguration`](crate::model::AgentConfiguration).
 pub mod agent_configuration {
-
+    
     /// A builder for [`AgentConfiguration`](crate::model::AgentConfiguration).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) should_profile: std::option::Option<bool>,
         pub(crate) period_in_seconds: std::option::Option<i32>,
-        pub(crate) agent_parameters: std::option::Option<
-            std::collections::HashMap<crate::model::AgentParameterField, std::string::String>,
-        >,
+        pub(crate) agent_parameters: std::option::Option<std::collections::HashMap<crate::model::AgentParameterField, std::string::String>>,
     }
     impl Builder {
         /// <p> A <code>Boolean</code> that specifies whether the profiling agent collects profiling data or not. Set to <code>true</code> to enable profiling. </p>
@@ -1715,8 +1641,7 @@ pub mod agent_configuration {
         }
         /// <p> A <code>Boolean</code> that specifies whether the profiling agent collects profiling data or not. Set to <code>true</code> to enable profiling. </p>
         pub fn set_should_profile(mut self, input: std::option::Option<bool>) -> Self {
-            self.should_profile = input;
-            self
+            self.should_profile = input; self
         }
         /// <p> How long a profiling agent should send profiling data using <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ConfigureAgent.html"> <code>ConfigureAgent</code> </a>. For example, if this is set to 300, the profiling agent calls <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ConfigureAgent.html"> <code>ConfigureAgent</code> </a> every 5 minutes to submit the profiled data collected during that period. </p>
         pub fn period_in_seconds(mut self, input: i32) -> Self {
@@ -1725,57 +1650,51 @@ pub mod agent_configuration {
         }
         /// <p> How long a profiling agent should send profiling data using <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ConfigureAgent.html"> <code>ConfigureAgent</code> </a>. For example, if this is set to 300, the profiling agent calls <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ConfigureAgent.html"> <code>ConfigureAgent</code> </a> every 5 minutes to submit the profiled data collected during that period. </p>
         pub fn set_period_in_seconds(mut self, input: std::option::Option<i32>) -> Self {
-            self.period_in_seconds = input;
-            self
+            self.period_in_seconds = input; self
         }
         /// Adds a key-value pair to `agent_parameters`.
         ///
         /// To override the contents of this collection use [`set_agent_parameters`](Self::set_agent_parameters).
         ///
-        /// <p> Parameters used by the profiler. The valid parameters are: </p>
-        /// <ul>
-        /// <li> <p> <code>MaxStackDepth</code> - The maximum depth of the stacks in the code that is represented in the profile. For example, if CodeGuru Profiler finds a method <code>A</code>, which calls method <code>B</code>, which calls method <code>C</code>, which calls method <code>D</code>, then the depth is 4. If the <code>maxDepth</code> is set to 2, then the profiler evaluates <code>A</code> and <code>B</code>. </p> </li>
-        /// <li> <p> <code>MemoryUsageLimitPercent</code> - The percentage of memory that is used by the profiler.</p> </li>
-        /// <li> <p> <code>MinimumTimeForReportingInMilliseconds</code> - The minimum time in milliseconds between sending reports. </p> </li>
-        /// <li> <p> <code>ReportingIntervalInMilliseconds</code> - The reporting interval in milliseconds used to report profiles. </p> </li>
-        /// <li> <p> <code>SamplingIntervalInMilliseconds</code> - The sampling interval in milliseconds that is used to profile samples. </p> </li>
+        /// <p> Parameters used by the profiler. The valid parameters are: </p> 
+        /// <ul> 
+        /// <li> <p> <code>MaxStackDepth</code> - The maximum depth of the stacks in the code that is represented in the profile. For example, if CodeGuru Profiler finds a method <code>A</code>, which calls method <code>B</code>, which calls method <code>C</code>, which calls method <code>D</code>, then the depth is 4. If the <code>maxDepth</code> is set to 2, then the profiler evaluates <code>A</code> and <code>B</code>. </p> </li> 
+        /// <li> <p> <code>MemoryUsageLimitPercent</code> - The percentage of memory that is used by the profiler.</p> </li> 
+        /// <li> <p> <code>MinimumTimeForReportingInMilliseconds</code> - The minimum time in milliseconds between sending reports. </p> </li> 
+        /// <li> <p> <code>ReportingIntervalInMilliseconds</code> - The reporting interval in milliseconds used to report profiles. </p> </li> 
+        /// <li> <p> <code>SamplingIntervalInMilliseconds</code> - The sampling interval in milliseconds that is used to profile samples. </p> </li> 
         /// </ul>
-        pub fn agent_parameters(
-            mut self,
-            k: crate::model::AgentParameterField,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn agent_parameters(mut self, k: crate::model::AgentParameterField, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.agent_parameters.unwrap_or_default();
-            hash_map.insert(k, v.into());
-            self.agent_parameters = Some(hash_map);
-            self
+                            hash_map.insert(k, v.into());
+                            self.agent_parameters = Some(hash_map);
+                            self
         }
-        /// <p> Parameters used by the profiler. The valid parameters are: </p>
-        /// <ul>
-        /// <li> <p> <code>MaxStackDepth</code> - The maximum depth of the stacks in the code that is represented in the profile. For example, if CodeGuru Profiler finds a method <code>A</code>, which calls method <code>B</code>, which calls method <code>C</code>, which calls method <code>D</code>, then the depth is 4. If the <code>maxDepth</code> is set to 2, then the profiler evaluates <code>A</code> and <code>B</code>. </p> </li>
-        /// <li> <p> <code>MemoryUsageLimitPercent</code> - The percentage of memory that is used by the profiler.</p> </li>
-        /// <li> <p> <code>MinimumTimeForReportingInMilliseconds</code> - The minimum time in milliseconds between sending reports. </p> </li>
-        /// <li> <p> <code>ReportingIntervalInMilliseconds</code> - The reporting interval in milliseconds used to report profiles. </p> </li>
-        /// <li> <p> <code>SamplingIntervalInMilliseconds</code> - The sampling interval in milliseconds that is used to profile samples. </p> </li>
+        /// <p> Parameters used by the profiler. The valid parameters are: </p> 
+        /// <ul> 
+        /// <li> <p> <code>MaxStackDepth</code> - The maximum depth of the stacks in the code that is represented in the profile. For example, if CodeGuru Profiler finds a method <code>A</code>, which calls method <code>B</code>, which calls method <code>C</code>, which calls method <code>D</code>, then the depth is 4. If the <code>maxDepth</code> is set to 2, then the profiler evaluates <code>A</code> and <code>B</code>. </p> </li> 
+        /// <li> <p> <code>MemoryUsageLimitPercent</code> - The percentage of memory that is used by the profiler.</p> </li> 
+        /// <li> <p> <code>MinimumTimeForReportingInMilliseconds</code> - The minimum time in milliseconds between sending reports. </p> </li> 
+        /// <li> <p> <code>ReportingIntervalInMilliseconds</code> - The reporting interval in milliseconds used to report profiles. </p> </li> 
+        /// <li> <p> <code>SamplingIntervalInMilliseconds</code> - The sampling interval in milliseconds that is used to profile samples. </p> </li> 
         /// </ul>
-        pub fn set_agent_parameters(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<crate::model::AgentParameterField, std::string::String>,
-            >,
-        ) -> Self {
-            self.agent_parameters = input;
-            self
+        pub fn set_agent_parameters(mut self, input: std::option::Option<std::collections::HashMap<crate::model::AgentParameterField, std::string::String>>) -> Self {
+            self.agent_parameters = input; self
         }
         /// Consumes the builder and constructs a [`AgentConfiguration`](crate::model::AgentConfiguration).
         pub fn build(self) -> crate::model::AgentConfiguration {
             crate::model::AgentConfiguration {
-                should_profile: self.should_profile,
-                period_in_seconds: self.period_in_seconds,
-                agent_parameters: self.agent_parameters,
+                should_profile: self.should_profile
+                ,
+                period_in_seconds: self.period_in_seconds
+                ,
+                agent_parameters: self.agent_parameters
+                ,
             }
         }
     }
+    
+    
 }
 impl AgentConfiguration {
     /// Creates a new builder-style object to manufacture [`AgentConfiguration`](crate::model::AgentConfiguration).
@@ -1790,9 +1709,9 @@ impl AgentConfiguration {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let agentparameterfield = unimplemented!();
 /// match agentparameterfield {
@@ -1817,22 +1736,14 @@ impl AgentConfiguration {
 /// Specifically, when `agentparameterfield` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `AgentParameterField::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum AgentParameterField {
     /// Maximum stack depth to be captured by the CodeGuru Profiler.
     MaxStackDepth,
@@ -1845,57 +1756,43 @@ pub enum AgentParameterField {
     /// Sampling interval in milliseconds used to sample profiles.
     SamplingIntervalInMilliseconds,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for AgentParameterField {
     fn from(s: &str) -> Self {
         match s {
             "MaxStackDepth" => AgentParameterField::MaxStackDepth,
             "MemoryUsageLimitPercent" => AgentParameterField::MemoryUsageLimitPercent,
-            "MinimumTimeForReportingInMilliseconds" => {
-                AgentParameterField::MinimumTimeForReportingInMilliseconds
-            }
-            "ReportingIntervalInMilliseconds" => {
-                AgentParameterField::ReportingIntervalInMilliseconds
-            }
+            "MinimumTimeForReportingInMilliseconds" => AgentParameterField::MinimumTimeForReportingInMilliseconds,
+            "ReportingIntervalInMilliseconds" => AgentParameterField::ReportingIntervalInMilliseconds,
             "SamplingIntervalInMilliseconds" => AgentParameterField::SamplingIntervalInMilliseconds,
-            other => {
-                AgentParameterField::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => AgentParameterField::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for AgentParameterField {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(AgentParameterField::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(AgentParameterField::from(s))
+                }
+            }
 impl AgentParameterField {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             AgentParameterField::MaxStackDepth => "MaxStackDepth",
             AgentParameterField::MemoryUsageLimitPercent => "MemoryUsageLimitPercent",
-            AgentParameterField::MinimumTimeForReportingInMilliseconds => {
-                "MinimumTimeForReportingInMilliseconds"
-            }
-            AgentParameterField::ReportingIntervalInMilliseconds => {
-                "ReportingIntervalInMilliseconds"
-            }
+            AgentParameterField::MinimumTimeForReportingInMilliseconds => "MinimumTimeForReportingInMilliseconds",
+            AgentParameterField::ReportingIntervalInMilliseconds => "ReportingIntervalInMilliseconds",
             AgentParameterField::SamplingIntervalInMilliseconds => "SamplingIntervalInMilliseconds",
-            AgentParameterField::Unknown(value) => value.as_str(),
+            AgentParameterField::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "MaxStackDepth",
-            "MemoryUsageLimitPercent",
-            "MinimumTimeForReportingInMilliseconds",
-            "ReportingIntervalInMilliseconds",
-            "SamplingIntervalInMilliseconds",
+            "MaxStackDepth", "MemoryUsageLimitPercent", "MinimumTimeForReportingInMilliseconds", "ReportingIntervalInMilliseconds", "SamplingIntervalInMilliseconds"
         ]
     }
 }
@@ -1911,9 +1808,9 @@ impl AsRef<str> for AgentParameterField {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let metadatafield = unimplemented!();
 /// match metadatafield {
@@ -1942,22 +1839,14 @@ impl AsRef<str> for AgentParameterField {
 /// Specifically, when `metadatafield` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `MetadataField::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum MetadataField {
     /// Unique identifier for the agent instance.
     AgentId,
@@ -1978,7 +1867,7 @@ pub enum MetadataField {
     /// Time in milliseconds between two invocations of the Lambda function.
     LambdaTimeGapBetweenInvokesInMilliseconds,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for MetadataField {
     fn from(s: &str) -> Self {
@@ -1989,24 +1878,20 @@ impl std::convert::From<&str> for MetadataField {
             "ExecutionEnvironment" => MetadataField::ExecutionEnvironment,
             "LambdaFunctionArn" => MetadataField::LambdaFunctionArn,
             "LambdaMemoryLimitInMB" => MetadataField::LambdaMemoryLimitInMb,
-            "LambdaPreviousExecutionTimeInMilliseconds" => {
-                MetadataField::LambdaPreviousExecutionTimeInMilliseconds
-            }
+            "LambdaPreviousExecutionTimeInMilliseconds" => MetadataField::LambdaPreviousExecutionTimeInMilliseconds,
             "LambdaRemainingTimeInMilliseconds" => MetadataField::LambdaRemainingTimeInMilliseconds,
-            "LambdaTimeGapBetweenInvokesInMilliseconds" => {
-                MetadataField::LambdaTimeGapBetweenInvokesInMilliseconds
-            }
-            other => MetadataField::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            "LambdaTimeGapBetweenInvokesInMilliseconds" => MetadataField::LambdaTimeGapBetweenInvokesInMilliseconds,
+            other => MetadataField::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for MetadataField {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(MetadataField::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(MetadataField::from(s))
+                }
+            }
 impl MetadataField {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -2017,28 +1902,16 @@ impl MetadataField {
             MetadataField::ExecutionEnvironment => "ExecutionEnvironment",
             MetadataField::LambdaFunctionArn => "LambdaFunctionArn",
             MetadataField::LambdaMemoryLimitInMb => "LambdaMemoryLimitInMB",
-            MetadataField::LambdaPreviousExecutionTimeInMilliseconds => {
-                "LambdaPreviousExecutionTimeInMilliseconds"
-            }
+            MetadataField::LambdaPreviousExecutionTimeInMilliseconds => "LambdaPreviousExecutionTimeInMilliseconds",
             MetadataField::LambdaRemainingTimeInMilliseconds => "LambdaRemainingTimeInMilliseconds",
-            MetadataField::LambdaTimeGapBetweenInvokesInMilliseconds => {
-                "LambdaTimeGapBetweenInvokesInMilliseconds"
-            }
-            MetadataField::Unknown(value) => value.as_str(),
+            MetadataField::LambdaTimeGapBetweenInvokesInMilliseconds => "LambdaTimeGapBetweenInvokesInMilliseconds",
+            MetadataField::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "AgentId",
-            "AwsRequestId",
-            "ComputePlatform",
-            "ExecutionEnvironment",
-            "LambdaFunctionArn",
-            "LambdaMemoryLimitInMB",
-            "LambdaPreviousExecutionTimeInMilliseconds",
-            "LambdaRemainingTimeInMilliseconds",
-            "LambdaTimeGapBetweenInvokesInMilliseconds",
+            "AgentId", "AwsRequestId", "ComputePlatform", "ExecutionEnvironment", "LambdaFunctionArn", "LambdaMemoryLimitInMB", "LambdaPreviousExecutionTimeInMilliseconds", "LambdaRemainingTimeInMilliseconds", "LambdaTimeGapBetweenInvokesInMilliseconds"
         ]
     }
 }
@@ -2051,7 +1924,7 @@ impl AsRef<str> for MetadataField {
 /// <p> Information about a frame metric and its values. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct FrameMetricDatum {
+pub struct FrameMetricDatum  {
     /// <p> The frame name, metric type, and thread states. These are used to derive the value of the metric for the frame.</p>
     #[doc(hidden)]
     pub frame_metric: std::option::Option<crate::model::FrameMetric>,
@@ -2061,17 +1934,17 @@ pub struct FrameMetricDatum {
 }
 impl FrameMetricDatum {
     /// <p> The frame name, metric type, and thread states. These are used to derive the value of the metric for the frame.</p>
-    pub fn frame_metric(&self) -> std::option::Option<&crate::model::FrameMetric> {
+    pub fn frame_metric(&self) -> std::option::Option<& crate::model::FrameMetric> {
         self.frame_metric.as_ref()
     }
     /// <p> A list of values that are associated with a frame metric. </p>
-    pub fn values(&self) -> std::option::Option<&[f64]> {
+    pub fn values(&self) -> std::option::Option<& [f64]> {
         self.values.as_deref()
     }
 }
 /// See [`FrameMetricDatum`](crate::model::FrameMetricDatum).
 pub mod frame_metric_datum {
-
+    
     /// A builder for [`FrameMetricDatum`](crate::model::FrameMetricDatum).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2085,12 +1958,8 @@ pub mod frame_metric_datum {
             self
         }
         /// <p> The frame name, metric type, and thread states. These are used to derive the value of the metric for the frame.</p>
-        pub fn set_frame_metric(
-            mut self,
-            input: std::option::Option<crate::model::FrameMetric>,
-        ) -> Self {
-            self.frame_metric = input;
-            self
+        pub fn set_frame_metric(mut self, input: std::option::Option<crate::model::FrameMetric>) -> Self {
+            self.frame_metric = input; self
         }
         /// Appends an item to `values`.
         ///
@@ -2099,23 +1968,26 @@ pub mod frame_metric_datum {
         /// <p> A list of values that are associated with a frame metric. </p>
         pub fn values(mut self, input: f64) -> Self {
             let mut v = self.values.unwrap_or_default();
-            v.push(input);
-            self.values = Some(v);
-            self
+                            v.push(input);
+                            self.values = Some(v);
+                            self
         }
         /// <p> A list of values that are associated with a frame metric. </p>
         pub fn set_values(mut self, input: std::option::Option<std::vec::Vec<f64>>) -> Self {
-            self.values = input;
-            self
+            self.values = input; self
         }
         /// Consumes the builder and constructs a [`FrameMetricDatum`](crate::model::FrameMetricDatum).
         pub fn build(self) -> crate::model::FrameMetricDatum {
             crate::model::FrameMetricDatum {
-                frame_metric: self.frame_metric,
-                values: self.values,
+                frame_metric: self.frame_metric
+                ,
+                values: self.values
+                ,
             }
         }
     }
+    
+    
 }
 impl FrameMetricDatum {
     /// Creates a new builder-style object to manufacture [`FrameMetricDatum`](crate::model::FrameMetricDatum).
@@ -2127,7 +1999,7 @@ impl FrameMetricDatum {
 /// <p> The frame name, metric type, and thread states. These are used to derive the value of the metric for the frame.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct FrameMetric {
+pub struct FrameMetric  {
     /// <p> Name of the method common across the multiple occurrences of a frame in an application profile.</p>
     #[doc(hidden)]
     pub frame_name: std::option::Option<std::string::String>,
@@ -2140,21 +2012,21 @@ pub struct FrameMetric {
 }
 impl FrameMetric {
     /// <p> Name of the method common across the multiple occurrences of a frame in an application profile.</p>
-    pub fn frame_name(&self) -> std::option::Option<&str> {
+    pub fn frame_name(&self) -> std::option::Option<& str> {
         self.frame_name.as_deref()
     }
     /// <p> A type of aggregation that specifies how a metric for a frame is analyzed. The supported value <code>AggregatedRelativeTotalTime</code> is an aggregation of the metric value for one frame that is calculated across the occurrences of all frames in a profile. </p>
-    pub fn r#type(&self) -> std::option::Option<&crate::model::MetricType> {
+    pub fn r#type(&self) -> std::option::Option<& crate::model::MetricType> {
         self.r#type.as_ref()
     }
     /// <p>List of application runtime thread states used to get the counts for a frame a derive a metric value.</p>
-    pub fn thread_states(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn thread_states(&self) -> std::option::Option<& [std::string::String]> {
         self.thread_states.as_deref()
     }
 }
 /// See [`FrameMetric`](crate::model::FrameMetric).
 pub mod frame_metric {
-
+    
     /// A builder for [`FrameMetric`](crate::model::FrameMetric).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2170,8 +2042,7 @@ pub mod frame_metric {
         }
         /// <p> Name of the method common across the multiple occurrences of a frame in an application profile.</p>
         pub fn set_frame_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.frame_name = input;
-            self
+            self.frame_name = input; self
         }
         /// <p> A type of aggregation that specifies how a metric for a frame is analyzed. The supported value <code>AggregatedRelativeTotalTime</code> is an aggregation of the metric value for one frame that is calculated across the occurrences of all frames in a profile. </p>
         pub fn r#type(mut self, input: crate::model::MetricType) -> Self {
@@ -2180,8 +2051,7 @@ pub mod frame_metric {
         }
         /// <p> A type of aggregation that specifies how a metric for a frame is analyzed. The supported value <code>AggregatedRelativeTotalTime</code> is an aggregation of the metric value for one frame that is calculated across the occurrences of all frames in a profile. </p>
         pub fn set_type(mut self, input: std::option::Option<crate::model::MetricType>) -> Self {
-            self.r#type = input;
-            self
+            self.r#type = input; self
         }
         /// Appends an item to `thread_states`.
         ///
@@ -2190,27 +2060,28 @@ pub mod frame_metric {
         /// <p>List of application runtime thread states used to get the counts for a frame a derive a metric value.</p>
         pub fn thread_states(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.thread_states.unwrap_or_default();
-            v.push(input.into());
-            self.thread_states = Some(v);
-            self
+                            v.push(input.into());
+                            self.thread_states = Some(v);
+                            self
         }
         /// <p>List of application runtime thread states used to get the counts for a frame a derive a metric value.</p>
-        pub fn set_thread_states(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.thread_states = input;
-            self
+        pub fn set_thread_states(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.thread_states = input; self
         }
         /// Consumes the builder and constructs a [`FrameMetric`](crate::model::FrameMetric).
         pub fn build(self) -> crate::model::FrameMetric {
             crate::model::FrameMetric {
-                frame_name: self.frame_name,
-                r#type: self.r#type,
-                thread_states: self.thread_states,
+                frame_name: self.frame_name
+                ,
+                r#type: self.r#type
+                ,
+                thread_states: self.thread_states
+                ,
             }
         }
     }
+    
+    
 }
 impl FrameMetric {
     /// Creates a new builder-style object to manufacture [`FrameMetric`](crate::model::FrameMetric).
@@ -2222,20 +2093,20 @@ impl FrameMetric {
 /// <p> A data type that contains a <code>Timestamp</code> object. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TimestampStructure {
+pub struct TimestampStructure  {
     /// <p> A <code>Timestamp</code>. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC. </p>
     #[doc(hidden)]
     pub value: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl TimestampStructure {
     /// <p> A <code>Timestamp</code>. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC. </p>
-    pub fn value(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn value(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.value.as_ref()
     }
 }
 /// See [`TimestampStructure`](crate::model::TimestampStructure).
 pub mod timestamp_structure {
-
+    
     /// A builder for [`TimestampStructure`](crate::model::TimestampStructure).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2249,14 +2120,18 @@ pub mod timestamp_structure {
         }
         /// <p> A <code>Timestamp</code>. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC. </p>
         pub fn set_value(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-            self.value = input;
-            self
+            self.value = input; self
         }
         /// Consumes the builder and constructs a [`TimestampStructure`](crate::model::TimestampStructure).
         pub fn build(self) -> crate::model::TimestampStructure {
-            crate::model::TimestampStructure { value: self.value }
+            crate::model::TimestampStructure {
+                value: self.value
+                ,
+            }
         }
     }
+    
+    
 }
 impl TimestampStructure {
     /// Creates a new builder-style object to manufacture [`TimestampStructure`](crate::model::TimestampStructure).
@@ -2268,7 +2143,7 @@ impl TimestampStructure {
 /// <p> Contains information about a profiling group. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ProfilingGroupDescription {
+pub struct ProfilingGroupDescription  {
     /// <p>The name of the profiling group.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -2292,65 +2167,56 @@ pub struct ProfilingGroupDescription {
     pub compute_platform: std::option::Option<crate::model::ComputePlatform>,
     /// <p> A list of the tags that belong to this profiling group. </p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl ProfilingGroupDescription {
     /// <p>The name of the profiling group.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p> An <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_AgentOrchestrationConfig.html"> <code>AgentOrchestrationConfig</code> </a> object that indicates if the profiling group is enabled for profiled or not. </p>
-    pub fn agent_orchestration_config(
-        &self,
-    ) -> std::option::Option<&crate::model::AgentOrchestrationConfig> {
+    pub fn agent_orchestration_config(&self) -> std::option::Option<& crate::model::AgentOrchestrationConfig> {
         self.agent_orchestration_config.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) identifying the profiling group resource.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The time when the profiling group was created. Specify using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC. </p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p> The date and time when the profiling group was last updated. Specify using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC. </p>
-    pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn updated_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
     }
     /// <p> A <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ProfilingStatus.html"> <code>ProfilingStatus</code> </a> object that includes information about the last time a profile agent pinged back, the last time a profile was received, and the aggregation period and start time for the most recent aggregated profile. </p>
-    pub fn profiling_status(&self) -> std::option::Option<&crate::model::ProfilingStatus> {
+    pub fn profiling_status(&self) -> std::option::Option<& crate::model::ProfilingStatus> {
         self.profiling_status.as_ref()
     }
     /// <p> The compute platform of the profiling group. If it is set to <code>AWSLambda</code>, then the profiled application runs on AWS Lambda. If it is set to <code>Default</code>, then the profiled application runs on a compute platform that is not AWS Lambda, such an Amazon EC2 instance, an on-premises server, or a different platform. The default is <code>Default</code>. </p>
-    pub fn compute_platform(&self) -> std::option::Option<&crate::model::ComputePlatform> {
+    pub fn compute_platform(&self) -> std::option::Option<& crate::model::ComputePlatform> {
         self.compute_platform.as_ref()
     }
     /// <p> A list of the tags that belong to this profiling group. </p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
 }
 /// See [`ProfilingGroupDescription`](crate::model::ProfilingGroupDescription).
 pub mod profiling_group_description {
-
+    
     /// A builder for [`ProfilingGroupDescription`](crate::model::ProfilingGroupDescription).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
-        pub(crate) agent_orchestration_config:
-            std::option::Option<crate::model::AgentOrchestrationConfig>,
+        pub(crate) agent_orchestration_config: std::option::Option<crate::model::AgentOrchestrationConfig>,
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) updated_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) profiling_status: std::option::Option<crate::model::ProfilingStatus>,
         pub(crate) compute_platform: std::option::Option<crate::model::ComputePlatform>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     }
     impl Builder {
         /// <p>The name of the profiling group.</p>
@@ -2360,24 +2226,16 @@ pub mod profiling_group_description {
         }
         /// <p>The name of the profiling group.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p> An <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_AgentOrchestrationConfig.html"> <code>AgentOrchestrationConfig</code> </a> object that indicates if the profiling group is enabled for profiled or not. </p>
-        pub fn agent_orchestration_config(
-            mut self,
-            input: crate::model::AgentOrchestrationConfig,
-        ) -> Self {
+        pub fn agent_orchestration_config(mut self, input: crate::model::AgentOrchestrationConfig) -> Self {
             self.agent_orchestration_config = Some(input);
             self
         }
         /// <p> An <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_AgentOrchestrationConfig.html"> <code>AgentOrchestrationConfig</code> </a> object that indicates if the profiling group is enabled for profiled or not. </p>
-        pub fn set_agent_orchestration_config(
-            mut self,
-            input: std::option::Option<crate::model::AgentOrchestrationConfig>,
-        ) -> Self {
-            self.agent_orchestration_config = input;
-            self
+        pub fn set_agent_orchestration_config(mut self, input: std::option::Option<crate::model::AgentOrchestrationConfig>) -> Self {
+            self.agent_orchestration_config = input; self
         }
         /// <p>The Amazon Resource Name (ARN) identifying the profiling group resource.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2386,8 +2244,7 @@ pub mod profiling_group_description {
         }
         /// <p>The Amazon Resource Name (ARN) identifying the profiling group resource.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>The time when the profiling group was created. Specify using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC. </p>
         pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -2395,12 +2252,8 @@ pub mod profiling_group_description {
             self
         }
         /// <p>The time when the profiling group was created. Specify using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC. </p>
-        pub fn set_created_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.created_at = input;
-            self
+        pub fn set_created_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.created_at = input; self
         }
         /// <p> The date and time when the profiling group was last updated. Specify using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC. </p>
         pub fn updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -2408,12 +2261,8 @@ pub mod profiling_group_description {
             self
         }
         /// <p> The date and time when the profiling group was last updated. Specify using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC. </p>
-        pub fn set_updated_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.updated_at = input;
-            self
+        pub fn set_updated_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.updated_at = input; self
         }
         /// <p> A <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ProfilingStatus.html"> <code>ProfilingStatus</code> </a> object that includes information about the last time a profile agent pinged back, the last time a profile was received, and the aggregation period and start time for the most recent aggregated profile. </p>
         pub fn profiling_status(mut self, input: crate::model::ProfilingStatus) -> Self {
@@ -2421,12 +2270,8 @@ pub mod profiling_group_description {
             self
         }
         /// <p> A <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ProfilingStatus.html"> <code>ProfilingStatus</code> </a> object that includes information about the last time a profile agent pinged back, the last time a profile was received, and the aggregation period and start time for the most recent aggregated profile. </p>
-        pub fn set_profiling_status(
-            mut self,
-            input: std::option::Option<crate::model::ProfilingStatus>,
-        ) -> Self {
-            self.profiling_status = input;
-            self
+        pub fn set_profiling_status(mut self, input: std::option::Option<crate::model::ProfilingStatus>) -> Self {
+            self.profiling_status = input; self
         }
         /// <p> The compute platform of the profiling group. If it is set to <code>AWSLambda</code>, then the profiled application runs on AWS Lambda. If it is set to <code>Default</code>, then the profiled application runs on a compute platform that is not AWS Lambda, such an Amazon EC2 instance, an on-premises server, or a different platform. The default is <code>Default</code>. </p>
         pub fn compute_platform(mut self, input: crate::model::ComputePlatform) -> Self {
@@ -2434,52 +2279,48 @@ pub mod profiling_group_description {
             self
         }
         /// <p> The compute platform of the profiling group. If it is set to <code>AWSLambda</code>, then the profiled application runs on AWS Lambda. If it is set to <code>Default</code>, then the profiled application runs on a compute platform that is not AWS Lambda, such an Amazon EC2 instance, an on-premises server, or a different platform. The default is <code>Default</code>. </p>
-        pub fn set_compute_platform(
-            mut self,
-            input: std::option::Option<crate::model::ComputePlatform>,
-        ) -> Self {
-            self.compute_platform = input;
-            self
+        pub fn set_compute_platform(mut self, input: std::option::Option<crate::model::ComputePlatform>) -> Self {
+            self.compute_platform = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p> A list of the tags that belong to this profiling group. </p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// <p> A list of the tags that belong to this profiling group. </p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`ProfilingGroupDescription`](crate::model::ProfilingGroupDescription).
         pub fn build(self) -> crate::model::ProfilingGroupDescription {
             crate::model::ProfilingGroupDescription {
-                name: self.name,
-                agent_orchestration_config: self.agent_orchestration_config,
-                arn: self.arn,
-                created_at: self.created_at,
-                updated_at: self.updated_at,
-                profiling_status: self.profiling_status,
-                compute_platform: self.compute_platform,
-                tags: self.tags,
+                name: self.name
+                ,
+                agent_orchestration_config: self.agent_orchestration_config
+                ,
+                arn: self.arn
+                ,
+                created_at: self.created_at
+                ,
+                updated_at: self.updated_at
+                ,
+                profiling_status: self.profiling_status
+                ,
+                compute_platform: self.compute_platform
+                ,
+                tags: self.tags
+                ,
             }
         }
     }
+    
+    
 }
 impl ProfilingGroupDescription {
     /// Creates a new builder-style object to manufacture [`ProfilingGroupDescription`](crate::model::ProfilingGroupDescription).
@@ -2494,9 +2335,9 @@ impl ProfilingGroupDescription {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let computeplatform = unimplemented!();
 /// match computeplatform {
@@ -2518,58 +2359,52 @@ impl ProfilingGroupDescription {
 /// Specifically, when `computeplatform` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ComputePlatform::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ComputePlatform {
     /// Compute platform meant to used for AWS Lambda.
     Awslambda,
     /// Compute platform meant to used for all usecases (like EC2, Fargate, physical servers etc.) but AWS Lambda.
     Default,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ComputePlatform {
     fn from(s: &str) -> Self {
         match s {
             "AWSLambda" => ComputePlatform::Awslambda,
             "Default" => ComputePlatform::Default,
-            other => ComputePlatform::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => ComputePlatform::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ComputePlatform {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ComputePlatform::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ComputePlatform::from(s))
+                }
+            }
 impl ComputePlatform {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ComputePlatform::Awslambda => "AWSLambda",
             ComputePlatform::Default => "Default",
-            ComputePlatform::Unknown(value) => value.as_str(),
+            ComputePlatform::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["AWSLambda", "Default"]
+        &[
+            "AWSLambda", "Default"
+        ]
     }
 }
 impl AsRef<str> for ComputePlatform {
@@ -2581,7 +2416,7 @@ impl AsRef<str> for ComputePlatform {
 /// <p> Profiling status includes information about the last time a profile agent pinged back, the last time a profile was received, and the aggregation period and start time for the most recent aggregated profile. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ProfilingStatus {
+pub struct ProfilingStatus  {
     /// <p>The date and time when the most recent profile was received. Specify using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC.</p>
     #[doc(hidden)]
     pub latest_agent_profile_reported_at: std::option::Option<aws_smithy_types::DateTime>,
@@ -2594,66 +2429,46 @@ pub struct ProfilingStatus {
 }
 impl ProfilingStatus {
     /// <p>The date and time when the most recent profile was received. Specify using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC.</p>
-    pub fn latest_agent_profile_reported_at(
-        &self,
-    ) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn latest_agent_profile_reported_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.latest_agent_profile_reported_at.as_ref()
     }
     /// <p> An <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_AggregatedProfileTime.html"> <code>AggregatedProfileTime</code> </a> object that contains the aggregation period and start time for an aggregated profile. </p>
-    pub fn latest_aggregated_profile(
-        &self,
-    ) -> std::option::Option<&crate::model::AggregatedProfileTime> {
+    pub fn latest_aggregated_profile(&self) -> std::option::Option<& crate::model::AggregatedProfileTime> {
         self.latest_aggregated_profile.as_ref()
     }
     /// <p>The date and time when the profiling agent most recently pinged back. Specify using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC.</p>
-    pub fn latest_agent_orchestrated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn latest_agent_orchestrated_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.latest_agent_orchestrated_at.as_ref()
     }
 }
 /// See [`ProfilingStatus`](crate::model::ProfilingStatus).
 pub mod profiling_status {
-
+    
     /// A builder for [`ProfilingStatus`](crate::model::ProfilingStatus).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) latest_agent_profile_reported_at:
-            std::option::Option<aws_smithy_types::DateTime>,
-        pub(crate) latest_aggregated_profile:
-            std::option::Option<crate::model::AggregatedProfileTime>,
+        pub(crate) latest_agent_profile_reported_at: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) latest_aggregated_profile: std::option::Option<crate::model::AggregatedProfileTime>,
         pub(crate) latest_agent_orchestrated_at: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The date and time when the most recent profile was received. Specify using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC.</p>
-        pub fn latest_agent_profile_reported_at(
-            mut self,
-            input: aws_smithy_types::DateTime,
-        ) -> Self {
+        pub fn latest_agent_profile_reported_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.latest_agent_profile_reported_at = Some(input);
             self
         }
         /// <p>The date and time when the most recent profile was received. Specify using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC.</p>
-        pub fn set_latest_agent_profile_reported_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.latest_agent_profile_reported_at = input;
-            self
+        pub fn set_latest_agent_profile_reported_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.latest_agent_profile_reported_at = input; self
         }
         /// <p> An <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_AggregatedProfileTime.html"> <code>AggregatedProfileTime</code> </a> object that contains the aggregation period and start time for an aggregated profile. </p>
-        pub fn latest_aggregated_profile(
-            mut self,
-            input: crate::model::AggregatedProfileTime,
-        ) -> Self {
+        pub fn latest_aggregated_profile(mut self, input: crate::model::AggregatedProfileTime) -> Self {
             self.latest_aggregated_profile = Some(input);
             self
         }
         /// <p> An <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_AggregatedProfileTime.html"> <code>AggregatedProfileTime</code> </a> object that contains the aggregation period and start time for an aggregated profile. </p>
-        pub fn set_latest_aggregated_profile(
-            mut self,
-            input: std::option::Option<crate::model::AggregatedProfileTime>,
-        ) -> Self {
-            self.latest_aggregated_profile = input;
-            self
+        pub fn set_latest_aggregated_profile(mut self, input: std::option::Option<crate::model::AggregatedProfileTime>) -> Self {
+            self.latest_aggregated_profile = input; self
         }
         /// <p>The date and time when the profiling agent most recently pinged back. Specify using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC.</p>
         pub fn latest_agent_orchestrated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -2661,22 +2476,23 @@ pub mod profiling_status {
             self
         }
         /// <p>The date and time when the profiling agent most recently pinged back. Specify using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC.</p>
-        pub fn set_latest_agent_orchestrated_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.latest_agent_orchestrated_at = input;
-            self
+        pub fn set_latest_agent_orchestrated_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.latest_agent_orchestrated_at = input; self
         }
         /// Consumes the builder and constructs a [`ProfilingStatus`](crate::model::ProfilingStatus).
         pub fn build(self) -> crate::model::ProfilingStatus {
             crate::model::ProfilingStatus {
-                latest_agent_profile_reported_at: self.latest_agent_profile_reported_at,
-                latest_aggregated_profile: self.latest_aggregated_profile,
-                latest_agent_orchestrated_at: self.latest_agent_orchestrated_at,
+                latest_agent_profile_reported_at: self.latest_agent_profile_reported_at
+                ,
+                latest_aggregated_profile: self.latest_aggregated_profile
+                ,
+                latest_agent_orchestrated_at: self.latest_agent_orchestrated_at
+                ,
             }
         }
     }
+    
+    
 }
 impl ProfilingStatus {
     /// Creates a new builder-style object to manufacture [`ProfilingStatus`](crate::model::ProfilingStatus).
@@ -2688,39 +2504,39 @@ impl ProfilingStatus {
 /// <p> Specifies the aggregation period and aggregation start time for an aggregated profile. An aggregated profile is used to collect posted agent profiles during an aggregation period. There are three possible aggregation periods (1 day, 1 hour, or 5 minutes). </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AggregatedProfileTime {
-    /// <p> The time that aggregation of posted agent profiles for a profiling group starts. The aggregation profile contains profiles posted by the agent starting at this time for an aggregation period specified by the <code>period</code> property of the <code>AggregatedProfileTime</code> object. </p>
+pub struct AggregatedProfileTime  {
+    /// <p> The time that aggregation of posted agent profiles for a profiling group starts. The aggregation profile contains profiles posted by the agent starting at this time for an aggregation period specified by the <code>period</code> property of the <code>AggregatedProfileTime</code> object. </p> 
     /// <p> Specify <code>start</code> using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC. </p>
     #[doc(hidden)]
     pub start: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p> The aggregation period. This indicates the period during which an aggregation profile collects posted agent profiles for a profiling group. Use one of three valid durations that are specified using the ISO 8601 format. </p>
-    /// <ul>
-    /// <li> <p> <code>P1D</code> — 1 day </p> </li>
-    /// <li> <p> <code>PT1H</code> — 1 hour </p> </li>
-    /// <li> <p> <code>PT5M</code> — 5 minutes </p> </li>
+    /// <p> The aggregation period. This indicates the period during which an aggregation profile collects posted agent profiles for a profiling group. Use one of three valid durations that are specified using the ISO 8601 format. </p> 
+    /// <ul> 
+    /// <li> <p> <code>P1D</code> — 1 day </p> </li> 
+    /// <li> <p> <code>PT1H</code> — 1 hour </p> </li> 
+    /// <li> <p> <code>PT5M</code> — 5 minutes </p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub period: std::option::Option<crate::model::AggregationPeriod>,
 }
 impl AggregatedProfileTime {
-    /// <p> The time that aggregation of posted agent profiles for a profiling group starts. The aggregation profile contains profiles posted by the agent starting at this time for an aggregation period specified by the <code>period</code> property of the <code>AggregatedProfileTime</code> object. </p>
+    /// <p> The time that aggregation of posted agent profiles for a profiling group starts. The aggregation profile contains profiles posted by the agent starting at this time for an aggregation period specified by the <code>period</code> property of the <code>AggregatedProfileTime</code> object. </p> 
     /// <p> Specify <code>start</code> using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC. </p>
-    pub fn start(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn start(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.start.as_ref()
     }
-    /// <p> The aggregation period. This indicates the period during which an aggregation profile collects posted agent profiles for a profiling group. Use one of three valid durations that are specified using the ISO 8601 format. </p>
-    /// <ul>
-    /// <li> <p> <code>P1D</code> — 1 day </p> </li>
-    /// <li> <p> <code>PT1H</code> — 1 hour </p> </li>
-    /// <li> <p> <code>PT5M</code> — 5 minutes </p> </li>
+    /// <p> The aggregation period. This indicates the period during which an aggregation profile collects posted agent profiles for a profiling group. Use one of three valid durations that are specified using the ISO 8601 format. </p> 
+    /// <ul> 
+    /// <li> <p> <code>P1D</code> — 1 day </p> </li> 
+    /// <li> <p> <code>PT1H</code> — 1 hour </p> </li> 
+    /// <li> <p> <code>PT5M</code> — 5 minutes </p> </li> 
     /// </ul>
-    pub fn period(&self) -> std::option::Option<&crate::model::AggregationPeriod> {
+    pub fn period(&self) -> std::option::Option<& crate::model::AggregationPeriod> {
         self.period.as_ref()
     }
 }
 /// See [`AggregatedProfileTime`](crate::model::AggregatedProfileTime).
 pub mod aggregated_profile_time {
-
+    
     /// A builder for [`AggregatedProfileTime`](crate::model::AggregatedProfileTime).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2728,49 +2544,48 @@ pub mod aggregated_profile_time {
         pub(crate) period: std::option::Option<crate::model::AggregationPeriod>,
     }
     impl Builder {
-        /// <p> The time that aggregation of posted agent profiles for a profiling group starts. The aggregation profile contains profiles posted by the agent starting at this time for an aggregation period specified by the <code>period</code> property of the <code>AggregatedProfileTime</code> object. </p>
+        /// <p> The time that aggregation of posted agent profiles for a profiling group starts. The aggregation profile contains profiles posted by the agent starting at this time for an aggregation period specified by the <code>period</code> property of the <code>AggregatedProfileTime</code> object. </p> 
         /// <p> Specify <code>start</code> using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC. </p>
         pub fn start(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.start = Some(input);
             self
         }
-        /// <p> The time that aggregation of posted agent profiles for a profiling group starts. The aggregation profile contains profiles posted by the agent starting at this time for an aggregation period specified by the <code>period</code> property of the <code>AggregatedProfileTime</code> object. </p>
+        /// <p> The time that aggregation of posted agent profiles for a profiling group starts. The aggregation profile contains profiles posted by the agent starting at this time for an aggregation period specified by the <code>period</code> property of the <code>AggregatedProfileTime</code> object. </p> 
         /// <p> Specify <code>start</code> using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC. </p>
         pub fn set_start(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-            self.start = input;
-            self
+            self.start = input; self
         }
-        /// <p> The aggregation period. This indicates the period during which an aggregation profile collects posted agent profiles for a profiling group. Use one of three valid durations that are specified using the ISO 8601 format. </p>
-        /// <ul>
-        /// <li> <p> <code>P1D</code> — 1 day </p> </li>
-        /// <li> <p> <code>PT1H</code> — 1 hour </p> </li>
-        /// <li> <p> <code>PT5M</code> — 5 minutes </p> </li>
+        /// <p> The aggregation period. This indicates the period during which an aggregation profile collects posted agent profiles for a profiling group. Use one of three valid durations that are specified using the ISO 8601 format. </p> 
+        /// <ul> 
+        /// <li> <p> <code>P1D</code> — 1 day </p> </li> 
+        /// <li> <p> <code>PT1H</code> — 1 hour </p> </li> 
+        /// <li> <p> <code>PT5M</code> — 5 minutes </p> </li> 
         /// </ul>
         pub fn period(mut self, input: crate::model::AggregationPeriod) -> Self {
             self.period = Some(input);
             self
         }
-        /// <p> The aggregation period. This indicates the period during which an aggregation profile collects posted agent profiles for a profiling group. Use one of three valid durations that are specified using the ISO 8601 format. </p>
-        /// <ul>
-        /// <li> <p> <code>P1D</code> — 1 day </p> </li>
-        /// <li> <p> <code>PT1H</code> — 1 hour </p> </li>
-        /// <li> <p> <code>PT5M</code> — 5 minutes </p> </li>
+        /// <p> The aggregation period. This indicates the period during which an aggregation profile collects posted agent profiles for a profiling group. Use one of three valid durations that are specified using the ISO 8601 format. </p> 
+        /// <ul> 
+        /// <li> <p> <code>P1D</code> — 1 day </p> </li> 
+        /// <li> <p> <code>PT1H</code> — 1 hour </p> </li> 
+        /// <li> <p> <code>PT5M</code> — 5 minutes </p> </li> 
         /// </ul>
-        pub fn set_period(
-            mut self,
-            input: std::option::Option<crate::model::AggregationPeriod>,
-        ) -> Self {
-            self.period = input;
-            self
+        pub fn set_period(mut self, input: std::option::Option<crate::model::AggregationPeriod>) -> Self {
+            self.period = input; self
         }
         /// Consumes the builder and constructs a [`AggregatedProfileTime`](crate::model::AggregatedProfileTime).
         pub fn build(self) -> crate::model::AggregatedProfileTime {
             crate::model::AggregatedProfileTime {
-                start: self.start,
-                period: self.period,
+                start: self.start
+                ,
+                period: self.period
+                ,
             }
         }
     }
+    
+    
 }
 impl AggregatedProfileTime {
     /// Creates a new builder-style object to manufacture [`AggregatedProfileTime`](crate::model::AggregatedProfileTime).
@@ -2782,7 +2597,7 @@ impl AggregatedProfileTime {
 /// <p> Specifies whether profiling is enabled or disabled for a profiling group. It is used by <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ConfigureAgent.html"> <code>ConfigureAgent</code> </a> to enable or disable profiling for a profiling group. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AgentOrchestrationConfig {
+pub struct AgentOrchestrationConfig  {
     /// <p> A <code>Boolean</code> that specifies whether the profiling agent collects profiling data or not. Set to <code>true</code> to enable profiling. </p>
     #[doc(hidden)]
     pub profiling_enabled: std::option::Option<bool>,
@@ -2795,7 +2610,7 @@ impl AgentOrchestrationConfig {
 }
 /// See [`AgentOrchestrationConfig`](crate::model::AgentOrchestrationConfig).
 pub mod agent_orchestration_config {
-
+    
     /// A builder for [`AgentOrchestrationConfig`](crate::model::AgentOrchestrationConfig).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2809,16 +2624,18 @@ pub mod agent_orchestration_config {
         }
         /// <p> A <code>Boolean</code> that specifies whether the profiling agent collects profiling data or not. Set to <code>true</code> to enable profiling. </p>
         pub fn set_profiling_enabled(mut self, input: std::option::Option<bool>) -> Self {
-            self.profiling_enabled = input;
-            self
+            self.profiling_enabled = input; self
         }
         /// Consumes the builder and constructs a [`AgentOrchestrationConfig`](crate::model::AgentOrchestrationConfig).
         pub fn build(self) -> crate::model::AgentOrchestrationConfig {
             crate::model::AgentOrchestrationConfig {
-                profiling_enabled: self.profiling_enabled,
+                profiling_enabled: self.profiling_enabled
+                ,
             }
         }
     }
+    
+    
 }
 impl AgentOrchestrationConfig {
     /// Creates a new builder-style object to manufacture [`AgentOrchestrationConfig`](crate::model::AgentOrchestrationConfig).
@@ -2826,3 +2643,4 @@ impl AgentOrchestrationConfig {
         crate::model::agent_orchestration_config::Builder::default()
     }
 }
+

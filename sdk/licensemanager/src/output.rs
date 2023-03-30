@@ -2,19 +2,24 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateServiceSettingsOutput {}
+pub struct UpdateServiceSettingsOutput  {
+}
 /// See [`UpdateServiceSettingsOutput`](crate::output::UpdateServiceSettingsOutput).
 pub mod update_service_settings_output {
-
+    
     /// A builder for [`UpdateServiceSettingsOutput`](crate::output::UpdateServiceSettingsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`UpdateServiceSettingsOutput`](crate::output::UpdateServiceSettingsOutput).
         pub fn build(self) -> crate::output::UpdateServiceSettingsOutput {
-            crate::output::UpdateServiceSettingsOutput {}
+            crate::output::UpdateServiceSettingsOutput {
+            }
         }
     }
+    
+    
 }
 impl UpdateServiceSettingsOutput {
     /// Creates a new builder-style object to manufacture [`UpdateServiceSettingsOutput`](crate::output::UpdateServiceSettingsOutput).
@@ -26,19 +31,24 @@ impl UpdateServiceSettingsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateLicenseSpecificationsForResourceOutput {}
+pub struct UpdateLicenseSpecificationsForResourceOutput  {
+}
 /// See [`UpdateLicenseSpecificationsForResourceOutput`](crate::output::UpdateLicenseSpecificationsForResourceOutput).
 pub mod update_license_specifications_for_resource_output {
-
+    
     /// A builder for [`UpdateLicenseSpecificationsForResourceOutput`](crate::output::UpdateLicenseSpecificationsForResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`UpdateLicenseSpecificationsForResourceOutput`](crate::output::UpdateLicenseSpecificationsForResourceOutput).
         pub fn build(self) -> crate::output::UpdateLicenseSpecificationsForResourceOutput {
-            crate::output::UpdateLicenseSpecificationsForResourceOutput {}
+            crate::output::UpdateLicenseSpecificationsForResourceOutput {
+            }
         }
     }
+    
+    
 }
 impl UpdateLicenseSpecificationsForResourceOutput {
     /// Creates a new builder-style object to manufacture [`UpdateLicenseSpecificationsForResourceOutput`](crate::output::UpdateLicenseSpecificationsForResourceOutput).
@@ -50,19 +60,24 @@ impl UpdateLicenseSpecificationsForResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateLicenseManagerReportGeneratorOutput {}
+pub struct UpdateLicenseManagerReportGeneratorOutput  {
+}
 /// See [`UpdateLicenseManagerReportGeneratorOutput`](crate::output::UpdateLicenseManagerReportGeneratorOutput).
 pub mod update_license_manager_report_generator_output {
-
+    
     /// A builder for [`UpdateLicenseManagerReportGeneratorOutput`](crate::output::UpdateLicenseManagerReportGeneratorOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`UpdateLicenseManagerReportGeneratorOutput`](crate::output::UpdateLicenseManagerReportGeneratorOutput).
         pub fn build(self) -> crate::output::UpdateLicenseManagerReportGeneratorOutput {
-            crate::output::UpdateLicenseManagerReportGeneratorOutput {}
+            crate::output::UpdateLicenseManagerReportGeneratorOutput {
+            }
         }
     }
+    
+    
 }
 impl UpdateLicenseManagerReportGeneratorOutput {
     /// Creates a new builder-style object to manufacture [`UpdateLicenseManagerReportGeneratorOutput`](crate::output::UpdateLicenseManagerReportGeneratorOutput).
@@ -74,19 +89,24 @@ impl UpdateLicenseManagerReportGeneratorOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateLicenseConfigurationOutput {}
+pub struct UpdateLicenseConfigurationOutput  {
+}
 /// See [`UpdateLicenseConfigurationOutput`](crate::output::UpdateLicenseConfigurationOutput).
 pub mod update_license_configuration_output {
-
+    
     /// A builder for [`UpdateLicenseConfigurationOutput`](crate::output::UpdateLicenseConfigurationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`UpdateLicenseConfigurationOutput`](crate::output::UpdateLicenseConfigurationOutput).
         pub fn build(self) -> crate::output::UpdateLicenseConfigurationOutput {
-            crate::output::UpdateLicenseConfigurationOutput {}
+            crate::output::UpdateLicenseConfigurationOutput {
+            }
         }
     }
+    
+    
 }
 impl UpdateLicenseConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`UpdateLicenseConfigurationOutput`](crate::output::UpdateLicenseConfigurationOutput).
@@ -98,19 +118,24 @@ impl UpdateLicenseConfigurationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UntagResourceOutput {}
+pub struct UntagResourceOutput  {
+}
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput).
 pub mod untag_resource_output {
-
+    
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput).
         pub fn build(self) -> crate::output::UntagResourceOutput {
-            crate::output::UntagResourceOutput {}
+            crate::output::UntagResourceOutput {
+            }
         }
     }
+    
+    
 }
 impl UntagResourceOutput {
     /// Creates a new builder-style object to manufacture [`UntagResourceOutput`](crate::output::UntagResourceOutput).
@@ -122,19 +147,24 @@ impl UntagResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TagResourceOutput {}
+pub struct TagResourceOutput  {
+}
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput).
 pub mod tag_resource_output {
-
+    
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput).
         pub fn build(self) -> crate::output::TagResourceOutput {
-            crate::output::TagResourceOutput {}
+            crate::output::TagResourceOutput {
+            }
         }
     }
+    
+    
 }
 impl TagResourceOutput {
     /// Creates a new builder-style object to manufacture [`TagResourceOutput`](crate::output::TagResourceOutput).
@@ -146,7 +176,7 @@ impl TagResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RejectGrantOutput {
+pub struct RejectGrantOutput  {
     /// <p>Grant ARN.</p>
     #[doc(hidden)]
     pub grant_arn: std::option::Option<std::string::String>,
@@ -159,21 +189,21 @@ pub struct RejectGrantOutput {
 }
 impl RejectGrantOutput {
     /// <p>Grant ARN.</p>
-    pub fn grant_arn(&self) -> std::option::Option<&str> {
+    pub fn grant_arn(&self) -> std::option::Option<& str> {
         self.grant_arn.as_deref()
     }
     /// <p>Grant status.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::GrantStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::GrantStatus> {
         self.status.as_ref()
     }
     /// <p>Grant version.</p>
-    pub fn version(&self) -> std::option::Option<&str> {
+    pub fn version(&self) -> std::option::Option<& str> {
         self.version.as_deref()
     }
 }
 /// See [`RejectGrantOutput`](crate::output::RejectGrantOutput).
 pub mod reject_grant_output {
-
+    
     /// A builder for [`RejectGrantOutput`](crate::output::RejectGrantOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -189,8 +219,7 @@ pub mod reject_grant_output {
         }
         /// <p>Grant ARN.</p>
         pub fn set_grant_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.grant_arn = input;
-            self
+            self.grant_arn = input; self
         }
         /// <p>Grant status.</p>
         pub fn status(mut self, input: crate::model::GrantStatus) -> Self {
@@ -199,8 +228,7 @@ pub mod reject_grant_output {
         }
         /// <p>Grant status.</p>
         pub fn set_status(mut self, input: std::option::Option<crate::model::GrantStatus>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// <p>Grant version.</p>
         pub fn version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -209,18 +237,22 @@ pub mod reject_grant_output {
         }
         /// <p>Grant version.</p>
         pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.version = input;
-            self
+            self.version = input; self
         }
         /// Consumes the builder and constructs a [`RejectGrantOutput`](crate::output::RejectGrantOutput).
         pub fn build(self) -> crate::output::RejectGrantOutput {
             crate::output::RejectGrantOutput {
-                grant_arn: self.grant_arn,
-                status: self.status,
-                version: self.version,
+                grant_arn: self.grant_arn
+                ,
+                status: self.status
+                ,
+                version: self.version
+                ,
             }
         }
     }
+    
+    
 }
 impl RejectGrantOutput {
     /// Creates a new builder-style object to manufacture [`RejectGrantOutput`](crate::output::RejectGrantOutput).
@@ -232,35 +264,31 @@ impl RejectGrantOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListUsageForLicenseConfigurationOutput {
+pub struct ListUsageForLicenseConfigurationOutput  {
     /// <p>Information about the license configurations.</p>
     #[doc(hidden)]
-    pub license_configuration_usage_list:
-        std::option::Option<std::vec::Vec<crate::model::LicenseConfigurationUsage>>,
+    pub license_configuration_usage_list: std::option::Option<std::vec::Vec<crate::model::LicenseConfigurationUsage>>,
     /// <p>Token for the next set of results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListUsageForLicenseConfigurationOutput {
     /// <p>Information about the license configurations.</p>
-    pub fn license_configuration_usage_list(
-        &self,
-    ) -> std::option::Option<&[crate::model::LicenseConfigurationUsage]> {
+    pub fn license_configuration_usage_list(&self) -> std::option::Option<& [crate::model::LicenseConfigurationUsage]> {
         self.license_configuration_usage_list.as_deref()
     }
     /// <p>Token for the next set of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListUsageForLicenseConfigurationOutput`](crate::output::ListUsageForLicenseConfigurationOutput).
 pub mod list_usage_for_license_configuration_output {
-
+    
     /// A builder for [`ListUsageForLicenseConfigurationOutput`](crate::output::ListUsageForLicenseConfigurationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) license_configuration_usage_list:
-            std::option::Option<std::vec::Vec<crate::model::LicenseConfigurationUsage>>,
+        pub(crate) license_configuration_usage_list: std::option::Option<std::vec::Vec<crate::model::LicenseConfigurationUsage>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -269,22 +297,15 @@ pub mod list_usage_for_license_configuration_output {
         /// To override the contents of this collection use [`set_license_configuration_usage_list`](Self::set_license_configuration_usage_list).
         ///
         /// <p>Information about the license configurations.</p>
-        pub fn license_configuration_usage_list(
-            mut self,
-            input: crate::model::LicenseConfigurationUsage,
-        ) -> Self {
+        pub fn license_configuration_usage_list(mut self, input: crate::model::LicenseConfigurationUsage) -> Self {
             let mut v = self.license_configuration_usage_list.unwrap_or_default();
-            v.push(input);
-            self.license_configuration_usage_list = Some(v);
-            self
+                            v.push(input);
+                            self.license_configuration_usage_list = Some(v);
+                            self
         }
         /// <p>Information about the license configurations.</p>
-        pub fn set_license_configuration_usage_list(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::LicenseConfigurationUsage>>,
-        ) -> Self {
-            self.license_configuration_usage_list = input;
-            self
+        pub fn set_license_configuration_usage_list(mut self, input: std::option::Option<std::vec::Vec<crate::model::LicenseConfigurationUsage>>) -> Self {
+            self.license_configuration_usage_list = input; self
         }
         /// <p>Token for the next set of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -293,17 +314,20 @@ pub mod list_usage_for_license_configuration_output {
         }
         /// <p>Token for the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListUsageForLicenseConfigurationOutput`](crate::output::ListUsageForLicenseConfigurationOutput).
         pub fn build(self) -> crate::output::ListUsageForLicenseConfigurationOutput {
             crate::output::ListUsageForLicenseConfigurationOutput {
-                license_configuration_usage_list: self.license_configuration_usage_list,
-                next_token: self.next_token,
+                license_configuration_usage_list: self.license_configuration_usage_list
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListUsageForLicenseConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`ListUsageForLicenseConfigurationOutput`](crate::output::ListUsageForLicenseConfigurationOutput).
@@ -315,7 +339,7 @@ impl ListUsageForLicenseConfigurationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListTokensOutput {
+pub struct ListTokensOutput  {
     /// <p>Received token details.</p>
     #[doc(hidden)]
     pub tokens: std::option::Option<std::vec::Vec<crate::model::TokenData>>,
@@ -325,17 +349,17 @@ pub struct ListTokensOutput {
 }
 impl ListTokensOutput {
     /// <p>Received token details.</p>
-    pub fn tokens(&self) -> std::option::Option<&[crate::model::TokenData]> {
+    pub fn tokens(&self) -> std::option::Option<& [crate::model::TokenData]> {
         self.tokens.as_deref()
     }
     /// <p>Token for the next set of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListTokensOutput`](crate::output::ListTokensOutput).
 pub mod list_tokens_output {
-
+    
     /// A builder for [`ListTokensOutput`](crate::output::ListTokensOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -350,17 +374,13 @@ pub mod list_tokens_output {
         /// <p>Received token details.</p>
         pub fn tokens(mut self, input: crate::model::TokenData) -> Self {
             let mut v = self.tokens.unwrap_or_default();
-            v.push(input);
-            self.tokens = Some(v);
-            self
+                            v.push(input);
+                            self.tokens = Some(v);
+                            self
         }
         /// <p>Received token details.</p>
-        pub fn set_tokens(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::TokenData>>,
-        ) -> Self {
-            self.tokens = input;
-            self
+        pub fn set_tokens(mut self, input: std::option::Option<std::vec::Vec<crate::model::TokenData>>) -> Self {
+            self.tokens = input; self
         }
         /// <p>Token for the next set of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -369,17 +389,20 @@ pub mod list_tokens_output {
         }
         /// <p>Token for the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListTokensOutput`](crate::output::ListTokensOutput).
         pub fn build(self) -> crate::output::ListTokensOutput {
             crate::output::ListTokensOutput {
-                tokens: self.tokens,
-                next_token: self.next_token,
+                tokens: self.tokens
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListTokensOutput {
     /// Creates a new builder-style object to manufacture [`ListTokensOutput`](crate::output::ListTokensOutput).
@@ -391,20 +414,20 @@ impl ListTokensOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListTagsForResourceOutput {
+pub struct ListTagsForResourceOutput  {
     /// <p>Information about the tags.</p>
     #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl ListTagsForResourceOutput {
     /// <p>Information about the tags.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+    pub fn tags(&self) -> std::option::Option<& [crate::model::Tag]> {
         self.tags.as_deref()
     }
 }
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
 pub mod list_tags_for_resource_output {
-
+    
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -418,23 +441,24 @@ pub mod list_tags_for_resource_output {
         /// <p>Information about the tags.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input);
-            self.tags = Some(v);
-            self
+                            v.push(input);
+                            self.tags = Some(v);
+                            self
         }
         /// <p>Information about the tags.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::model::Tag>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
         pub fn build(self) -> crate::output::ListTagsForResourceOutput {
-            crate::output::ListTagsForResourceOutput { tags: self.tags }
+            crate::output::ListTagsForResourceOutput {
+                tags: self.tags
+                ,
+            }
         }
     }
+    
+    
 }
 impl ListTagsForResourceOutput {
     /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
@@ -446,35 +470,31 @@ impl ListTagsForResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListResourceInventoryOutput {
+pub struct ListResourceInventoryOutput  {
     /// <p>Information about the resources.</p>
     #[doc(hidden)]
-    pub resource_inventory_list:
-        std::option::Option<std::vec::Vec<crate::model::ResourceInventory>>,
+    pub resource_inventory_list: std::option::Option<std::vec::Vec<crate::model::ResourceInventory>>,
     /// <p>Token for the next set of results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListResourceInventoryOutput {
     /// <p>Information about the resources.</p>
-    pub fn resource_inventory_list(
-        &self,
-    ) -> std::option::Option<&[crate::model::ResourceInventory]> {
+    pub fn resource_inventory_list(&self) -> std::option::Option<& [crate::model::ResourceInventory]> {
         self.resource_inventory_list.as_deref()
     }
     /// <p>Token for the next set of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListResourceInventoryOutput`](crate::output::ListResourceInventoryOutput).
 pub mod list_resource_inventory_output {
-
+    
     /// A builder for [`ListResourceInventoryOutput`](crate::output::ListResourceInventoryOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) resource_inventory_list:
-            std::option::Option<std::vec::Vec<crate::model::ResourceInventory>>,
+        pub(crate) resource_inventory_list: std::option::Option<std::vec::Vec<crate::model::ResourceInventory>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -485,17 +505,13 @@ pub mod list_resource_inventory_output {
         /// <p>Information about the resources.</p>
         pub fn resource_inventory_list(mut self, input: crate::model::ResourceInventory) -> Self {
             let mut v = self.resource_inventory_list.unwrap_or_default();
-            v.push(input);
-            self.resource_inventory_list = Some(v);
-            self
+                            v.push(input);
+                            self.resource_inventory_list = Some(v);
+                            self
         }
         /// <p>Information about the resources.</p>
-        pub fn set_resource_inventory_list(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ResourceInventory>>,
-        ) -> Self {
-            self.resource_inventory_list = input;
-            self
+        pub fn set_resource_inventory_list(mut self, input: std::option::Option<std::vec::Vec<crate::model::ResourceInventory>>) -> Self {
+            self.resource_inventory_list = input; self
         }
         /// <p>Token for the next set of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -504,17 +520,20 @@ pub mod list_resource_inventory_output {
         }
         /// <p>Token for the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListResourceInventoryOutput`](crate::output::ListResourceInventoryOutput).
         pub fn build(self) -> crate::output::ListResourceInventoryOutput {
             crate::output::ListResourceInventoryOutput {
-                resource_inventory_list: self.resource_inventory_list,
-                next_token: self.next_token,
+                resource_inventory_list: self.resource_inventory_list
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListResourceInventoryOutput {
     /// Creates a new builder-style object to manufacture [`ListResourceInventoryOutput`](crate::output::ListResourceInventoryOutput).
@@ -526,7 +545,7 @@ impl ListResourceInventoryOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListReceivedLicensesForOrganizationOutput {
+pub struct ListReceivedLicensesForOrganizationOutput  {
     /// <p>Lists the licenses the organization has received.</p>
     #[doc(hidden)]
     pub licenses: std::option::Option<std::vec::Vec<crate::model::GrantedLicense>>,
@@ -536,17 +555,17 @@ pub struct ListReceivedLicensesForOrganizationOutput {
 }
 impl ListReceivedLicensesForOrganizationOutput {
     /// <p>Lists the licenses the organization has received.</p>
-    pub fn licenses(&self) -> std::option::Option<&[crate::model::GrantedLicense]> {
+    pub fn licenses(&self) -> std::option::Option<& [crate::model::GrantedLicense]> {
         self.licenses.as_deref()
     }
     /// <p>Token for the next set of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListReceivedLicensesForOrganizationOutput`](crate::output::ListReceivedLicensesForOrganizationOutput).
 pub mod list_received_licenses_for_organization_output {
-
+    
     /// A builder for [`ListReceivedLicensesForOrganizationOutput`](crate::output::ListReceivedLicensesForOrganizationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -561,17 +580,13 @@ pub mod list_received_licenses_for_organization_output {
         /// <p>Lists the licenses the organization has received.</p>
         pub fn licenses(mut self, input: crate::model::GrantedLicense) -> Self {
             let mut v = self.licenses.unwrap_or_default();
-            v.push(input);
-            self.licenses = Some(v);
-            self
+                            v.push(input);
+                            self.licenses = Some(v);
+                            self
         }
         /// <p>Lists the licenses the organization has received.</p>
-        pub fn set_licenses(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::GrantedLicense>>,
-        ) -> Self {
-            self.licenses = input;
-            self
+        pub fn set_licenses(mut self, input: std::option::Option<std::vec::Vec<crate::model::GrantedLicense>>) -> Self {
+            self.licenses = input; self
         }
         /// <p>Token for the next set of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -580,17 +595,20 @@ pub mod list_received_licenses_for_organization_output {
         }
         /// <p>Token for the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListReceivedLicensesForOrganizationOutput`](crate::output::ListReceivedLicensesForOrganizationOutput).
         pub fn build(self) -> crate::output::ListReceivedLicensesForOrganizationOutput {
             crate::output::ListReceivedLicensesForOrganizationOutput {
-                licenses: self.licenses,
-                next_token: self.next_token,
+                licenses: self.licenses
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListReceivedLicensesForOrganizationOutput {
     /// Creates a new builder-style object to manufacture [`ListReceivedLicensesForOrganizationOutput`](crate::output::ListReceivedLicensesForOrganizationOutput).
@@ -602,7 +620,7 @@ impl ListReceivedLicensesForOrganizationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListReceivedLicensesOutput {
+pub struct ListReceivedLicensesOutput  {
     /// <p>Received license details.</p>
     #[doc(hidden)]
     pub licenses: std::option::Option<std::vec::Vec<crate::model::GrantedLicense>>,
@@ -612,17 +630,17 @@ pub struct ListReceivedLicensesOutput {
 }
 impl ListReceivedLicensesOutput {
     /// <p>Received license details.</p>
-    pub fn licenses(&self) -> std::option::Option<&[crate::model::GrantedLicense]> {
+    pub fn licenses(&self) -> std::option::Option<& [crate::model::GrantedLicense]> {
         self.licenses.as_deref()
     }
     /// <p>Token for the next set of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListReceivedLicensesOutput`](crate::output::ListReceivedLicensesOutput).
 pub mod list_received_licenses_output {
-
+    
     /// A builder for [`ListReceivedLicensesOutput`](crate::output::ListReceivedLicensesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -637,17 +655,13 @@ pub mod list_received_licenses_output {
         /// <p>Received license details.</p>
         pub fn licenses(mut self, input: crate::model::GrantedLicense) -> Self {
             let mut v = self.licenses.unwrap_or_default();
-            v.push(input);
-            self.licenses = Some(v);
-            self
+                            v.push(input);
+                            self.licenses = Some(v);
+                            self
         }
         /// <p>Received license details.</p>
-        pub fn set_licenses(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::GrantedLicense>>,
-        ) -> Self {
-            self.licenses = input;
-            self
+        pub fn set_licenses(mut self, input: std::option::Option<std::vec::Vec<crate::model::GrantedLicense>>) -> Self {
+            self.licenses = input; self
         }
         /// <p>Token for the next set of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -656,17 +670,20 @@ pub mod list_received_licenses_output {
         }
         /// <p>Token for the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListReceivedLicensesOutput`](crate::output::ListReceivedLicensesOutput).
         pub fn build(self) -> crate::output::ListReceivedLicensesOutput {
             crate::output::ListReceivedLicensesOutput {
-                licenses: self.licenses,
-                next_token: self.next_token,
+                licenses: self.licenses
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListReceivedLicensesOutput {
     /// Creates a new builder-style object to manufacture [`ListReceivedLicensesOutput`](crate::output::ListReceivedLicensesOutput).
@@ -678,7 +695,7 @@ impl ListReceivedLicensesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListReceivedGrantsForOrganizationOutput {
+pub struct ListReceivedGrantsForOrganizationOutput  {
     /// <p>Lists the grants the organization has received.</p>
     #[doc(hidden)]
     pub grants: std::option::Option<std::vec::Vec<crate::model::Grant>>,
@@ -688,17 +705,17 @@ pub struct ListReceivedGrantsForOrganizationOutput {
 }
 impl ListReceivedGrantsForOrganizationOutput {
     /// <p>Lists the grants the organization has received.</p>
-    pub fn grants(&self) -> std::option::Option<&[crate::model::Grant]> {
+    pub fn grants(&self) -> std::option::Option<& [crate::model::Grant]> {
         self.grants.as_deref()
     }
     /// <p>Token for the next set of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListReceivedGrantsForOrganizationOutput`](crate::output::ListReceivedGrantsForOrganizationOutput).
 pub mod list_received_grants_for_organization_output {
-
+    
     /// A builder for [`ListReceivedGrantsForOrganizationOutput`](crate::output::ListReceivedGrantsForOrganizationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -713,17 +730,13 @@ pub mod list_received_grants_for_organization_output {
         /// <p>Lists the grants the organization has received.</p>
         pub fn grants(mut self, input: crate::model::Grant) -> Self {
             let mut v = self.grants.unwrap_or_default();
-            v.push(input);
-            self.grants = Some(v);
-            self
+                            v.push(input);
+                            self.grants = Some(v);
+                            self
         }
         /// <p>Lists the grants the organization has received.</p>
-        pub fn set_grants(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Grant>>,
-        ) -> Self {
-            self.grants = input;
-            self
+        pub fn set_grants(mut self, input: std::option::Option<std::vec::Vec<crate::model::Grant>>) -> Self {
+            self.grants = input; self
         }
         /// <p>Token for the next set of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -732,17 +745,20 @@ pub mod list_received_grants_for_organization_output {
         }
         /// <p>Token for the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListReceivedGrantsForOrganizationOutput`](crate::output::ListReceivedGrantsForOrganizationOutput).
         pub fn build(self) -> crate::output::ListReceivedGrantsForOrganizationOutput {
             crate::output::ListReceivedGrantsForOrganizationOutput {
-                grants: self.grants,
-                next_token: self.next_token,
+                grants: self.grants
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListReceivedGrantsForOrganizationOutput {
     /// Creates a new builder-style object to manufacture [`ListReceivedGrantsForOrganizationOutput`](crate::output::ListReceivedGrantsForOrganizationOutput).
@@ -754,7 +770,7 @@ impl ListReceivedGrantsForOrganizationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListReceivedGrantsOutput {
+pub struct ListReceivedGrantsOutput  {
     /// <p>Received grant details.</p>
     #[doc(hidden)]
     pub grants: std::option::Option<std::vec::Vec<crate::model::Grant>>,
@@ -764,17 +780,17 @@ pub struct ListReceivedGrantsOutput {
 }
 impl ListReceivedGrantsOutput {
     /// <p>Received grant details.</p>
-    pub fn grants(&self) -> std::option::Option<&[crate::model::Grant]> {
+    pub fn grants(&self) -> std::option::Option<& [crate::model::Grant]> {
         self.grants.as_deref()
     }
     /// <p>Token for the next set of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListReceivedGrantsOutput`](crate::output::ListReceivedGrantsOutput).
 pub mod list_received_grants_output {
-
+    
     /// A builder for [`ListReceivedGrantsOutput`](crate::output::ListReceivedGrantsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -789,17 +805,13 @@ pub mod list_received_grants_output {
         /// <p>Received grant details.</p>
         pub fn grants(mut self, input: crate::model::Grant) -> Self {
             let mut v = self.grants.unwrap_or_default();
-            v.push(input);
-            self.grants = Some(v);
-            self
+                            v.push(input);
+                            self.grants = Some(v);
+                            self
         }
         /// <p>Received grant details.</p>
-        pub fn set_grants(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Grant>>,
-        ) -> Self {
-            self.grants = input;
-            self
+        pub fn set_grants(mut self, input: std::option::Option<std::vec::Vec<crate::model::Grant>>) -> Self {
+            self.grants = input; self
         }
         /// <p>Token for the next set of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -808,17 +820,20 @@ pub mod list_received_grants_output {
         }
         /// <p>Token for the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListReceivedGrantsOutput`](crate::output::ListReceivedGrantsOutput).
         pub fn build(self) -> crate::output::ListReceivedGrantsOutput {
             crate::output::ListReceivedGrantsOutput {
-                grants: self.grants,
-                next_token: self.next_token,
+                grants: self.grants
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListReceivedGrantsOutput {
     /// Creates a new builder-style object to manufacture [`ListReceivedGrantsOutput`](crate::output::ListReceivedGrantsOutput).
@@ -830,7 +845,7 @@ impl ListReceivedGrantsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListLicenseVersionsOutput {
+pub struct ListLicenseVersionsOutput  {
     /// <p>License details.</p>
     #[doc(hidden)]
     pub licenses: std::option::Option<std::vec::Vec<crate::model::License>>,
@@ -840,17 +855,17 @@ pub struct ListLicenseVersionsOutput {
 }
 impl ListLicenseVersionsOutput {
     /// <p>License details.</p>
-    pub fn licenses(&self) -> std::option::Option<&[crate::model::License]> {
+    pub fn licenses(&self) -> std::option::Option<& [crate::model::License]> {
         self.licenses.as_deref()
     }
     /// <p>Token for the next set of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListLicenseVersionsOutput`](crate::output::ListLicenseVersionsOutput).
 pub mod list_license_versions_output {
-
+    
     /// A builder for [`ListLicenseVersionsOutput`](crate::output::ListLicenseVersionsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -865,17 +880,13 @@ pub mod list_license_versions_output {
         /// <p>License details.</p>
         pub fn licenses(mut self, input: crate::model::License) -> Self {
             let mut v = self.licenses.unwrap_or_default();
-            v.push(input);
-            self.licenses = Some(v);
-            self
+                            v.push(input);
+                            self.licenses = Some(v);
+                            self
         }
         /// <p>License details.</p>
-        pub fn set_licenses(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::License>>,
-        ) -> Self {
-            self.licenses = input;
-            self
+        pub fn set_licenses(mut self, input: std::option::Option<std::vec::Vec<crate::model::License>>) -> Self {
+            self.licenses = input; self
         }
         /// <p>Token for the next set of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -884,17 +895,20 @@ pub mod list_license_versions_output {
         }
         /// <p>Token for the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListLicenseVersionsOutput`](crate::output::ListLicenseVersionsOutput).
         pub fn build(self) -> crate::output::ListLicenseVersionsOutput {
             crate::output::ListLicenseVersionsOutput {
-                licenses: self.licenses,
-                next_token: self.next_token,
+                licenses: self.licenses
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListLicenseVersionsOutput {
     /// Creates a new builder-style object to manufacture [`ListLicenseVersionsOutput`](crate::output::ListLicenseVersionsOutput).
@@ -906,35 +920,31 @@ impl ListLicenseVersionsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListLicenseSpecificationsForResourceOutput {
+pub struct ListLicenseSpecificationsForResourceOutput  {
     /// <p>License configurations associated with a resource.</p>
     #[doc(hidden)]
-    pub license_specifications:
-        std::option::Option<std::vec::Vec<crate::model::LicenseSpecification>>,
+    pub license_specifications: std::option::Option<std::vec::Vec<crate::model::LicenseSpecification>>,
     /// <p>Token for the next set of results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListLicenseSpecificationsForResourceOutput {
     /// <p>License configurations associated with a resource.</p>
-    pub fn license_specifications(
-        &self,
-    ) -> std::option::Option<&[crate::model::LicenseSpecification]> {
+    pub fn license_specifications(&self) -> std::option::Option<& [crate::model::LicenseSpecification]> {
         self.license_specifications.as_deref()
     }
     /// <p>Token for the next set of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListLicenseSpecificationsForResourceOutput`](crate::output::ListLicenseSpecificationsForResourceOutput).
 pub mod list_license_specifications_for_resource_output {
-
+    
     /// A builder for [`ListLicenseSpecificationsForResourceOutput`](crate::output::ListLicenseSpecificationsForResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) license_specifications:
-            std::option::Option<std::vec::Vec<crate::model::LicenseSpecification>>,
+        pub(crate) license_specifications: std::option::Option<std::vec::Vec<crate::model::LicenseSpecification>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -945,17 +955,13 @@ pub mod list_license_specifications_for_resource_output {
         /// <p>License configurations associated with a resource.</p>
         pub fn license_specifications(mut self, input: crate::model::LicenseSpecification) -> Self {
             let mut v = self.license_specifications.unwrap_or_default();
-            v.push(input);
-            self.license_specifications = Some(v);
-            self
+                            v.push(input);
+                            self.license_specifications = Some(v);
+                            self
         }
         /// <p>License configurations associated with a resource.</p>
-        pub fn set_license_specifications(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::LicenseSpecification>>,
-        ) -> Self {
-            self.license_specifications = input;
-            self
+        pub fn set_license_specifications(mut self, input: std::option::Option<std::vec::Vec<crate::model::LicenseSpecification>>) -> Self {
+            self.license_specifications = input; self
         }
         /// <p>Token for the next set of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -964,17 +970,20 @@ pub mod list_license_specifications_for_resource_output {
         }
         /// <p>Token for the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListLicenseSpecificationsForResourceOutput`](crate::output::ListLicenseSpecificationsForResourceOutput).
         pub fn build(self) -> crate::output::ListLicenseSpecificationsForResourceOutput {
             crate::output::ListLicenseSpecificationsForResourceOutput {
-                license_specifications: self.license_specifications,
-                next_token: self.next_token,
+                license_specifications: self.license_specifications
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListLicenseSpecificationsForResourceOutput {
     /// Creates a new builder-style object to manufacture [`ListLicenseSpecificationsForResourceOutput`](crate::output::ListLicenseSpecificationsForResourceOutput).
@@ -986,7 +995,7 @@ impl ListLicenseSpecificationsForResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListLicensesOutput {
+pub struct ListLicensesOutput  {
     /// <p>License details.</p>
     #[doc(hidden)]
     pub licenses: std::option::Option<std::vec::Vec<crate::model::License>>,
@@ -996,17 +1005,17 @@ pub struct ListLicensesOutput {
 }
 impl ListLicensesOutput {
     /// <p>License details.</p>
-    pub fn licenses(&self) -> std::option::Option<&[crate::model::License]> {
+    pub fn licenses(&self) -> std::option::Option<& [crate::model::License]> {
         self.licenses.as_deref()
     }
     /// <p>Token for the next set of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListLicensesOutput`](crate::output::ListLicensesOutput).
 pub mod list_licenses_output {
-
+    
     /// A builder for [`ListLicensesOutput`](crate::output::ListLicensesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1021,17 +1030,13 @@ pub mod list_licenses_output {
         /// <p>License details.</p>
         pub fn licenses(mut self, input: crate::model::License) -> Self {
             let mut v = self.licenses.unwrap_or_default();
-            v.push(input);
-            self.licenses = Some(v);
-            self
+                            v.push(input);
+                            self.licenses = Some(v);
+                            self
         }
         /// <p>License details.</p>
-        pub fn set_licenses(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::License>>,
-        ) -> Self {
-            self.licenses = input;
-            self
+        pub fn set_licenses(mut self, input: std::option::Option<std::vec::Vec<crate::model::License>>) -> Self {
+            self.licenses = input; self
         }
         /// <p>Token for the next set of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1040,17 +1045,20 @@ pub mod list_licenses_output {
         }
         /// <p>Token for the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListLicensesOutput`](crate::output::ListLicensesOutput).
         pub fn build(self) -> crate::output::ListLicensesOutput {
             crate::output::ListLicensesOutput {
-                licenses: self.licenses,
-                next_token: self.next_token,
+                licenses: self.licenses
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListLicensesOutput {
     /// Creates a new builder-style object to manufacture [`ListLicensesOutput`](crate::output::ListLicensesOutput).
@@ -1062,7 +1070,7 @@ impl ListLicensesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListLicenseManagerReportGeneratorsOutput {
+pub struct ListLicenseManagerReportGeneratorsOutput  {
     /// <p>A report generator that creates periodic reports about your license configurations.</p>
     #[doc(hidden)]
     pub report_generators: std::option::Option<std::vec::Vec<crate::model::ReportGenerator>>,
@@ -1072,22 +1080,21 @@ pub struct ListLicenseManagerReportGeneratorsOutput {
 }
 impl ListLicenseManagerReportGeneratorsOutput {
     /// <p>A report generator that creates periodic reports about your license configurations.</p>
-    pub fn report_generators(&self) -> std::option::Option<&[crate::model::ReportGenerator]> {
+    pub fn report_generators(&self) -> std::option::Option<& [crate::model::ReportGenerator]> {
         self.report_generators.as_deref()
     }
     /// <p>Token for the next set of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListLicenseManagerReportGeneratorsOutput`](crate::output::ListLicenseManagerReportGeneratorsOutput).
 pub mod list_license_manager_report_generators_output {
-
+    
     /// A builder for [`ListLicenseManagerReportGeneratorsOutput`](crate::output::ListLicenseManagerReportGeneratorsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) report_generators:
-            std::option::Option<std::vec::Vec<crate::model::ReportGenerator>>,
+        pub(crate) report_generators: std::option::Option<std::vec::Vec<crate::model::ReportGenerator>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -1098,17 +1105,13 @@ pub mod list_license_manager_report_generators_output {
         /// <p>A report generator that creates periodic reports about your license configurations.</p>
         pub fn report_generators(mut self, input: crate::model::ReportGenerator) -> Self {
             let mut v = self.report_generators.unwrap_or_default();
-            v.push(input);
-            self.report_generators = Some(v);
-            self
+                            v.push(input);
+                            self.report_generators = Some(v);
+                            self
         }
         /// <p>A report generator that creates periodic reports about your license configurations.</p>
-        pub fn set_report_generators(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ReportGenerator>>,
-        ) -> Self {
-            self.report_generators = input;
-            self
+        pub fn set_report_generators(mut self, input: std::option::Option<std::vec::Vec<crate::model::ReportGenerator>>) -> Self {
+            self.report_generators = input; self
         }
         /// <p>Token for the next set of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1117,17 +1120,20 @@ pub mod list_license_manager_report_generators_output {
         }
         /// <p>Token for the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListLicenseManagerReportGeneratorsOutput`](crate::output::ListLicenseManagerReportGeneratorsOutput).
         pub fn build(self) -> crate::output::ListLicenseManagerReportGeneratorsOutput {
             crate::output::ListLicenseManagerReportGeneratorsOutput {
-                report_generators: self.report_generators,
-                next_token: self.next_token,
+                report_generators: self.report_generators
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListLicenseManagerReportGeneratorsOutput {
     /// Creates a new builder-style object to manufacture [`ListLicenseManagerReportGeneratorsOutput`](crate::output::ListLicenseManagerReportGeneratorsOutput).
@@ -1139,35 +1145,31 @@ impl ListLicenseManagerReportGeneratorsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListLicenseConversionTasksOutput {
+pub struct ListLicenseConversionTasksOutput  {
     /// <p>Information about the license configuration tasks for your account.</p>
     #[doc(hidden)]
-    pub license_conversion_tasks:
-        std::option::Option<std::vec::Vec<crate::model::LicenseConversionTask>>,
+    pub license_conversion_tasks: std::option::Option<std::vec::Vec<crate::model::LicenseConversionTask>>,
     /// <p>Token for the next set of results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListLicenseConversionTasksOutput {
     /// <p>Information about the license configuration tasks for your account.</p>
-    pub fn license_conversion_tasks(
-        &self,
-    ) -> std::option::Option<&[crate::model::LicenseConversionTask]> {
+    pub fn license_conversion_tasks(&self) -> std::option::Option<& [crate::model::LicenseConversionTask]> {
         self.license_conversion_tasks.as_deref()
     }
     /// <p>Token for the next set of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListLicenseConversionTasksOutput`](crate::output::ListLicenseConversionTasksOutput).
 pub mod list_license_conversion_tasks_output {
-
+    
     /// A builder for [`ListLicenseConversionTasksOutput`](crate::output::ListLicenseConversionTasksOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) license_conversion_tasks:
-            std::option::Option<std::vec::Vec<crate::model::LicenseConversionTask>>,
+        pub(crate) license_conversion_tasks: std::option::Option<std::vec::Vec<crate::model::LicenseConversionTask>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -1176,22 +1178,15 @@ pub mod list_license_conversion_tasks_output {
         /// To override the contents of this collection use [`set_license_conversion_tasks`](Self::set_license_conversion_tasks).
         ///
         /// <p>Information about the license configuration tasks for your account.</p>
-        pub fn license_conversion_tasks(
-            mut self,
-            input: crate::model::LicenseConversionTask,
-        ) -> Self {
+        pub fn license_conversion_tasks(mut self, input: crate::model::LicenseConversionTask) -> Self {
             let mut v = self.license_conversion_tasks.unwrap_or_default();
-            v.push(input);
-            self.license_conversion_tasks = Some(v);
-            self
+                            v.push(input);
+                            self.license_conversion_tasks = Some(v);
+                            self
         }
         /// <p>Information about the license configuration tasks for your account.</p>
-        pub fn set_license_conversion_tasks(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::LicenseConversionTask>>,
-        ) -> Self {
-            self.license_conversion_tasks = input;
-            self
+        pub fn set_license_conversion_tasks(mut self, input: std::option::Option<std::vec::Vec<crate::model::LicenseConversionTask>>) -> Self {
+            self.license_conversion_tasks = input; self
         }
         /// <p>Token for the next set of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1200,17 +1195,20 @@ pub mod list_license_conversion_tasks_output {
         }
         /// <p>Token for the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListLicenseConversionTasksOutput`](crate::output::ListLicenseConversionTasksOutput).
         pub fn build(self) -> crate::output::ListLicenseConversionTasksOutput {
             crate::output::ListLicenseConversionTasksOutput {
-                license_conversion_tasks: self.license_conversion_tasks,
-                next_token: self.next_token,
+                license_conversion_tasks: self.license_conversion_tasks
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListLicenseConversionTasksOutput {
     /// Creates a new builder-style object to manufacture [`ListLicenseConversionTasksOutput`](crate::output::ListLicenseConversionTasksOutput).
@@ -1222,35 +1220,31 @@ impl ListLicenseConversionTasksOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListLicenseConfigurationsOutput {
+pub struct ListLicenseConfigurationsOutput  {
     /// <p>Information about the license configurations.</p>
     #[doc(hidden)]
-    pub license_configurations:
-        std::option::Option<std::vec::Vec<crate::model::LicenseConfiguration>>,
+    pub license_configurations: std::option::Option<std::vec::Vec<crate::model::LicenseConfiguration>>,
     /// <p>Token for the next set of results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListLicenseConfigurationsOutput {
     /// <p>Information about the license configurations.</p>
-    pub fn license_configurations(
-        &self,
-    ) -> std::option::Option<&[crate::model::LicenseConfiguration]> {
+    pub fn license_configurations(&self) -> std::option::Option<& [crate::model::LicenseConfiguration]> {
         self.license_configurations.as_deref()
     }
     /// <p>Token for the next set of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListLicenseConfigurationsOutput`](crate::output::ListLicenseConfigurationsOutput).
 pub mod list_license_configurations_output {
-
+    
     /// A builder for [`ListLicenseConfigurationsOutput`](crate::output::ListLicenseConfigurationsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) license_configurations:
-            std::option::Option<std::vec::Vec<crate::model::LicenseConfiguration>>,
+        pub(crate) license_configurations: std::option::Option<std::vec::Vec<crate::model::LicenseConfiguration>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -1261,17 +1255,13 @@ pub mod list_license_configurations_output {
         /// <p>Information about the license configurations.</p>
         pub fn license_configurations(mut self, input: crate::model::LicenseConfiguration) -> Self {
             let mut v = self.license_configurations.unwrap_or_default();
-            v.push(input);
-            self.license_configurations = Some(v);
-            self
+                            v.push(input);
+                            self.license_configurations = Some(v);
+                            self
         }
         /// <p>Information about the license configurations.</p>
-        pub fn set_license_configurations(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::LicenseConfiguration>>,
-        ) -> Self {
-            self.license_configurations = input;
-            self
+        pub fn set_license_configurations(mut self, input: std::option::Option<std::vec::Vec<crate::model::LicenseConfiguration>>) -> Self {
+            self.license_configurations = input; self
         }
         /// <p>Token for the next set of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1280,17 +1270,20 @@ pub mod list_license_configurations_output {
         }
         /// <p>Token for the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListLicenseConfigurationsOutput`](crate::output::ListLicenseConfigurationsOutput).
         pub fn build(self) -> crate::output::ListLicenseConfigurationsOutput {
             crate::output::ListLicenseConfigurationsOutput {
-                license_configurations: self.license_configurations,
-                next_token: self.next_token,
+                license_configurations: self.license_configurations
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListLicenseConfigurationsOutput {
     /// Creates a new builder-style object to manufacture [`ListLicenseConfigurationsOutput`](crate::output::ListLicenseConfigurationsOutput).
@@ -1302,35 +1295,31 @@ impl ListLicenseConfigurationsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListFailuresForLicenseConfigurationOperationsOutput {
+pub struct ListFailuresForLicenseConfigurationOperationsOutput  {
     /// <p>License configuration operations that failed.</p>
     #[doc(hidden)]
-    pub license_operation_failure_list:
-        std::option::Option<std::vec::Vec<crate::model::LicenseOperationFailure>>,
+    pub license_operation_failure_list: std::option::Option<std::vec::Vec<crate::model::LicenseOperationFailure>>,
     /// <p>Token for the next set of results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListFailuresForLicenseConfigurationOperationsOutput {
     /// <p>License configuration operations that failed.</p>
-    pub fn license_operation_failure_list(
-        &self,
-    ) -> std::option::Option<&[crate::model::LicenseOperationFailure]> {
+    pub fn license_operation_failure_list(&self) -> std::option::Option<& [crate::model::LicenseOperationFailure]> {
         self.license_operation_failure_list.as_deref()
     }
     /// <p>Token for the next set of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListFailuresForLicenseConfigurationOperationsOutput`](crate::output::ListFailuresForLicenseConfigurationOperationsOutput).
 pub mod list_failures_for_license_configuration_operations_output {
-
+    
     /// A builder for [`ListFailuresForLicenseConfigurationOperationsOutput`](crate::output::ListFailuresForLicenseConfigurationOperationsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) license_operation_failure_list:
-            std::option::Option<std::vec::Vec<crate::model::LicenseOperationFailure>>,
+        pub(crate) license_operation_failure_list: std::option::Option<std::vec::Vec<crate::model::LicenseOperationFailure>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -1339,22 +1328,15 @@ pub mod list_failures_for_license_configuration_operations_output {
         /// To override the contents of this collection use [`set_license_operation_failure_list`](Self::set_license_operation_failure_list).
         ///
         /// <p>License configuration operations that failed.</p>
-        pub fn license_operation_failure_list(
-            mut self,
-            input: crate::model::LicenseOperationFailure,
-        ) -> Self {
+        pub fn license_operation_failure_list(mut self, input: crate::model::LicenseOperationFailure) -> Self {
             let mut v = self.license_operation_failure_list.unwrap_or_default();
-            v.push(input);
-            self.license_operation_failure_list = Some(v);
-            self
+                            v.push(input);
+                            self.license_operation_failure_list = Some(v);
+                            self
         }
         /// <p>License configuration operations that failed.</p>
-        pub fn set_license_operation_failure_list(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::LicenseOperationFailure>>,
-        ) -> Self {
-            self.license_operation_failure_list = input;
-            self
+        pub fn set_license_operation_failure_list(mut self, input: std::option::Option<std::vec::Vec<crate::model::LicenseOperationFailure>>) -> Self {
+            self.license_operation_failure_list = input; self
         }
         /// <p>Token for the next set of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1363,22 +1345,24 @@ pub mod list_failures_for_license_configuration_operations_output {
         }
         /// <p>Token for the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListFailuresForLicenseConfigurationOperationsOutput`](crate::output::ListFailuresForLicenseConfigurationOperationsOutput).
         pub fn build(self) -> crate::output::ListFailuresForLicenseConfigurationOperationsOutput {
             crate::output::ListFailuresForLicenseConfigurationOperationsOutput {
-                license_operation_failure_list: self.license_operation_failure_list,
-                next_token: self.next_token,
+                license_operation_failure_list: self.license_operation_failure_list
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListFailuresForLicenseConfigurationOperationsOutput {
     /// Creates a new builder-style object to manufacture [`ListFailuresForLicenseConfigurationOperationsOutput`](crate::output::ListFailuresForLicenseConfigurationOperationsOutput).
-    pub fn builder(
-    ) -> crate::output::list_failures_for_license_configuration_operations_output::Builder {
+    pub fn builder() -> crate::output::list_failures_for_license_configuration_operations_output::Builder {
         crate::output::list_failures_for_license_configuration_operations_output::Builder::default()
     }
 }
@@ -1386,7 +1370,7 @@ impl ListFailuresForLicenseConfigurationOperationsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListDistributedGrantsOutput {
+pub struct ListDistributedGrantsOutput  {
     /// <p>Distributed grant details.</p>
     #[doc(hidden)]
     pub grants: std::option::Option<std::vec::Vec<crate::model::Grant>>,
@@ -1396,17 +1380,17 @@ pub struct ListDistributedGrantsOutput {
 }
 impl ListDistributedGrantsOutput {
     /// <p>Distributed grant details.</p>
-    pub fn grants(&self) -> std::option::Option<&[crate::model::Grant]> {
+    pub fn grants(&self) -> std::option::Option<& [crate::model::Grant]> {
         self.grants.as_deref()
     }
     /// <p>Token for the next set of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListDistributedGrantsOutput`](crate::output::ListDistributedGrantsOutput).
 pub mod list_distributed_grants_output {
-
+    
     /// A builder for [`ListDistributedGrantsOutput`](crate::output::ListDistributedGrantsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1421,17 +1405,13 @@ pub mod list_distributed_grants_output {
         /// <p>Distributed grant details.</p>
         pub fn grants(mut self, input: crate::model::Grant) -> Self {
             let mut v = self.grants.unwrap_or_default();
-            v.push(input);
-            self.grants = Some(v);
-            self
+                            v.push(input);
+                            self.grants = Some(v);
+                            self
         }
         /// <p>Distributed grant details.</p>
-        pub fn set_grants(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Grant>>,
-        ) -> Self {
-            self.grants = input;
-            self
+        pub fn set_grants(mut self, input: std::option::Option<std::vec::Vec<crate::model::Grant>>) -> Self {
+            self.grants = input; self
         }
         /// <p>Token for the next set of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1440,17 +1420,20 @@ pub mod list_distributed_grants_output {
         }
         /// <p>Token for the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListDistributedGrantsOutput`](crate::output::ListDistributedGrantsOutput).
         pub fn build(self) -> crate::output::ListDistributedGrantsOutput {
             crate::output::ListDistributedGrantsOutput {
-                grants: self.grants,
-                next_token: self.next_token,
+                grants: self.grants
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListDistributedGrantsOutput {
     /// Creates a new builder-style object to manufacture [`ListDistributedGrantsOutput`](crate::output::ListDistributedGrantsOutput).
@@ -1462,35 +1445,31 @@ impl ListDistributedGrantsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListAssociationsForLicenseConfigurationOutput {
+pub struct ListAssociationsForLicenseConfigurationOutput  {
     /// <p>Information about the associations for the license configuration.</p>
     #[doc(hidden)]
-    pub license_configuration_associations:
-        std::option::Option<std::vec::Vec<crate::model::LicenseConfigurationAssociation>>,
+    pub license_configuration_associations: std::option::Option<std::vec::Vec<crate::model::LicenseConfigurationAssociation>>,
     /// <p>Token for the next set of results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListAssociationsForLicenseConfigurationOutput {
     /// <p>Information about the associations for the license configuration.</p>
-    pub fn license_configuration_associations(
-        &self,
-    ) -> std::option::Option<&[crate::model::LicenseConfigurationAssociation]> {
+    pub fn license_configuration_associations(&self) -> std::option::Option<& [crate::model::LicenseConfigurationAssociation]> {
         self.license_configuration_associations.as_deref()
     }
     /// <p>Token for the next set of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListAssociationsForLicenseConfigurationOutput`](crate::output::ListAssociationsForLicenseConfigurationOutput).
 pub mod list_associations_for_license_configuration_output {
-
+    
     /// A builder for [`ListAssociationsForLicenseConfigurationOutput`](crate::output::ListAssociationsForLicenseConfigurationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) license_configuration_associations:
-            std::option::Option<std::vec::Vec<crate::model::LicenseConfigurationAssociation>>,
+        pub(crate) license_configuration_associations: std::option::Option<std::vec::Vec<crate::model::LicenseConfigurationAssociation>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -1499,24 +1478,15 @@ pub mod list_associations_for_license_configuration_output {
         /// To override the contents of this collection use [`set_license_configuration_associations`](Self::set_license_configuration_associations).
         ///
         /// <p>Information about the associations for the license configuration.</p>
-        pub fn license_configuration_associations(
-            mut self,
-            input: crate::model::LicenseConfigurationAssociation,
-        ) -> Self {
+        pub fn license_configuration_associations(mut self, input: crate::model::LicenseConfigurationAssociation) -> Self {
             let mut v = self.license_configuration_associations.unwrap_or_default();
-            v.push(input);
-            self.license_configuration_associations = Some(v);
-            self
+                            v.push(input);
+                            self.license_configuration_associations = Some(v);
+                            self
         }
         /// <p>Information about the associations for the license configuration.</p>
-        pub fn set_license_configuration_associations(
-            mut self,
-            input: std::option::Option<
-                std::vec::Vec<crate::model::LicenseConfigurationAssociation>,
-            >,
-        ) -> Self {
-            self.license_configuration_associations = input;
-            self
+        pub fn set_license_configuration_associations(mut self, input: std::option::Option<std::vec::Vec<crate::model::LicenseConfigurationAssociation>>) -> Self {
+            self.license_configuration_associations = input; self
         }
         /// <p>Token for the next set of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1525,17 +1495,20 @@ pub mod list_associations_for_license_configuration_output {
         }
         /// <p>Token for the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListAssociationsForLicenseConfigurationOutput`](crate::output::ListAssociationsForLicenseConfigurationOutput).
         pub fn build(self) -> crate::output::ListAssociationsForLicenseConfigurationOutput {
             crate::output::ListAssociationsForLicenseConfigurationOutput {
-                license_configuration_associations: self.license_configuration_associations,
-                next_token: self.next_token,
+                license_configuration_associations: self.license_configuration_associations
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListAssociationsForLicenseConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`ListAssociationsForLicenseConfigurationOutput`](crate::output::ListAssociationsForLicenseConfigurationOutput).
@@ -1547,7 +1520,7 @@ impl ListAssociationsForLicenseConfigurationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetServiceSettingsOutput {
+pub struct GetServiceSettingsOutput  {
     /// <p>Regional S3 bucket path for storing reports, license trail event data, discovery data, and so on.</p>
     #[doc(hidden)]
     pub s3_bucket_arn: std::option::Option<std::string::String>,
@@ -1566,17 +1539,15 @@ pub struct GetServiceSettingsOutput {
 }
 impl GetServiceSettingsOutput {
     /// <p>Regional S3 bucket path for storing reports, license trail event data, discovery data, and so on.</p>
-    pub fn s3_bucket_arn(&self) -> std::option::Option<&str> {
+    pub fn s3_bucket_arn(&self) -> std::option::Option<& str> {
         self.s3_bucket_arn.as_deref()
     }
     /// <p>SNS topic configured to receive notifications from License Manager.</p>
-    pub fn sns_topic_arn(&self) -> std::option::Option<&str> {
+    pub fn sns_topic_arn(&self) -> std::option::Option<& str> {
         self.sns_topic_arn.as_deref()
     }
     /// <p>Indicates whether Organizations is integrated with License Manager for cross-account discovery.</p>
-    pub fn organization_configuration(
-        &self,
-    ) -> std::option::Option<&crate::model::OrganizationConfiguration> {
+    pub fn organization_configuration(&self) -> std::option::Option<& crate::model::OrganizationConfiguration> {
         self.organization_configuration.as_ref()
     }
     /// <p>Indicates whether cross-account discovery is enabled.</p>
@@ -1584,20 +1555,19 @@ impl GetServiceSettingsOutput {
         self.enable_cross_accounts_discovery
     }
     /// <p>Amazon Resource Name (ARN) of the resource share. The License Manager management account provides member accounts with access to this share.</p>
-    pub fn license_manager_resource_share_arn(&self) -> std::option::Option<&str> {
+    pub fn license_manager_resource_share_arn(&self) -> std::option::Option<& str> {
         self.license_manager_resource_share_arn.as_deref()
     }
 }
 /// See [`GetServiceSettingsOutput`](crate::output::GetServiceSettingsOutput).
 pub mod get_service_settings_output {
-
+    
     /// A builder for [`GetServiceSettingsOutput`](crate::output::GetServiceSettingsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) s3_bucket_arn: std::option::Option<std::string::String>,
         pub(crate) sns_topic_arn: std::option::Option<std::string::String>,
-        pub(crate) organization_configuration:
-            std::option::Option<crate::model::OrganizationConfiguration>,
+        pub(crate) organization_configuration: std::option::Option<crate::model::OrganizationConfiguration>,
         pub(crate) enable_cross_accounts_discovery: std::option::Option<bool>,
         pub(crate) license_manager_resource_share_arn: std::option::Option<std::string::String>,
     }
@@ -1608,12 +1578,8 @@ pub mod get_service_settings_output {
             self
         }
         /// <p>Regional S3 bucket path for storing reports, license trail event data, discovery data, and so on.</p>
-        pub fn set_s3_bucket_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.s3_bucket_arn = input;
-            self
+        pub fn set_s3_bucket_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.s3_bucket_arn = input; self
         }
         /// <p>SNS topic configured to receive notifications from License Manager.</p>
         pub fn sns_topic_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1621,28 +1587,17 @@ pub mod get_service_settings_output {
             self
         }
         /// <p>SNS topic configured to receive notifications from License Manager.</p>
-        pub fn set_sns_topic_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.sns_topic_arn = input;
-            self
+        pub fn set_sns_topic_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.sns_topic_arn = input; self
         }
         /// <p>Indicates whether Organizations is integrated with License Manager for cross-account discovery.</p>
-        pub fn organization_configuration(
-            mut self,
-            input: crate::model::OrganizationConfiguration,
-        ) -> Self {
+        pub fn organization_configuration(mut self, input: crate::model::OrganizationConfiguration) -> Self {
             self.organization_configuration = Some(input);
             self
         }
         /// <p>Indicates whether Organizations is integrated with License Manager for cross-account discovery.</p>
-        pub fn set_organization_configuration(
-            mut self,
-            input: std::option::Option<crate::model::OrganizationConfiguration>,
-        ) -> Self {
-            self.organization_configuration = input;
-            self
+        pub fn set_organization_configuration(mut self, input: std::option::Option<crate::model::OrganizationConfiguration>) -> Self {
+            self.organization_configuration = input; self
         }
         /// <p>Indicates whether cross-account discovery is enabled.</p>
         pub fn enable_cross_accounts_discovery(mut self, input: bool) -> Self {
@@ -1650,40 +1605,36 @@ pub mod get_service_settings_output {
             self
         }
         /// <p>Indicates whether cross-account discovery is enabled.</p>
-        pub fn set_enable_cross_accounts_discovery(
-            mut self,
-            input: std::option::Option<bool>,
-        ) -> Self {
-            self.enable_cross_accounts_discovery = input;
-            self
+        pub fn set_enable_cross_accounts_discovery(mut self, input: std::option::Option<bool>) -> Self {
+            self.enable_cross_accounts_discovery = input; self
         }
         /// <p>Amazon Resource Name (ARN) of the resource share. The License Manager management account provides member accounts with access to this share.</p>
-        pub fn license_manager_resource_share_arn(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn license_manager_resource_share_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.license_manager_resource_share_arn = Some(input.into());
             self
         }
         /// <p>Amazon Resource Name (ARN) of the resource share. The License Manager management account provides member accounts with access to this share.</p>
-        pub fn set_license_manager_resource_share_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.license_manager_resource_share_arn = input;
-            self
+        pub fn set_license_manager_resource_share_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.license_manager_resource_share_arn = input; self
         }
         /// Consumes the builder and constructs a [`GetServiceSettingsOutput`](crate::output::GetServiceSettingsOutput).
         pub fn build(self) -> crate::output::GetServiceSettingsOutput {
             crate::output::GetServiceSettingsOutput {
-                s3_bucket_arn: self.s3_bucket_arn,
-                sns_topic_arn: self.sns_topic_arn,
-                organization_configuration: self.organization_configuration,
-                enable_cross_accounts_discovery: self.enable_cross_accounts_discovery,
-                license_manager_resource_share_arn: self.license_manager_resource_share_arn,
+                s3_bucket_arn: self.s3_bucket_arn
+                ,
+                sns_topic_arn: self.sns_topic_arn
+                ,
+                organization_configuration: self.organization_configuration
+                ,
+                enable_cross_accounts_discovery: self.enable_cross_accounts_discovery
+                ,
+                license_manager_resource_share_arn: self.license_manager_resource_share_arn
+                ,
             }
         }
     }
+    
+    
 }
 impl GetServiceSettingsOutput {
     /// Creates a new builder-style object to manufacture [`GetServiceSettingsOutput`](crate::output::GetServiceSettingsOutput).
@@ -1695,20 +1646,20 @@ impl GetServiceSettingsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetLicenseUsageOutput {
+pub struct GetLicenseUsageOutput  {
     /// <p>License usage details.</p>
     #[doc(hidden)]
     pub license_usage: std::option::Option<crate::model::LicenseUsage>,
 }
 impl GetLicenseUsageOutput {
     /// <p>License usage details.</p>
-    pub fn license_usage(&self) -> std::option::Option<&crate::model::LicenseUsage> {
+    pub fn license_usage(&self) -> std::option::Option<& crate::model::LicenseUsage> {
         self.license_usage.as_ref()
     }
 }
 /// See [`GetLicenseUsageOutput`](crate::output::GetLicenseUsageOutput).
 pub mod get_license_usage_output {
-
+    
     /// A builder for [`GetLicenseUsageOutput`](crate::output::GetLicenseUsageOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1721,20 +1672,19 @@ pub mod get_license_usage_output {
             self
         }
         /// <p>License usage details.</p>
-        pub fn set_license_usage(
-            mut self,
-            input: std::option::Option<crate::model::LicenseUsage>,
-        ) -> Self {
-            self.license_usage = input;
-            self
+        pub fn set_license_usage(mut self, input: std::option::Option<crate::model::LicenseUsage>) -> Self {
+            self.license_usage = input; self
         }
         /// Consumes the builder and constructs a [`GetLicenseUsageOutput`](crate::output::GetLicenseUsageOutput).
         pub fn build(self) -> crate::output::GetLicenseUsageOutput {
             crate::output::GetLicenseUsageOutput {
-                license_usage: self.license_usage,
+                license_usage: self.license_usage
+                ,
             }
         }
     }
+    
+    
 }
 impl GetLicenseUsageOutput {
     /// Creates a new builder-style object to manufacture [`GetLicenseUsageOutput`](crate::output::GetLicenseUsageOutput).
@@ -1746,20 +1696,20 @@ impl GetLicenseUsageOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetLicenseManagerReportGeneratorOutput {
+pub struct GetLicenseManagerReportGeneratorOutput  {
     /// <p>A report generator that creates periodic reports about your license configurations.</p>
     #[doc(hidden)]
     pub report_generator: std::option::Option<crate::model::ReportGenerator>,
 }
 impl GetLicenseManagerReportGeneratorOutput {
     /// <p>A report generator that creates periodic reports about your license configurations.</p>
-    pub fn report_generator(&self) -> std::option::Option<&crate::model::ReportGenerator> {
+    pub fn report_generator(&self) -> std::option::Option<& crate::model::ReportGenerator> {
         self.report_generator.as_ref()
     }
 }
 /// See [`GetLicenseManagerReportGeneratorOutput`](crate::output::GetLicenseManagerReportGeneratorOutput).
 pub mod get_license_manager_report_generator_output {
-
+    
     /// A builder for [`GetLicenseManagerReportGeneratorOutput`](crate::output::GetLicenseManagerReportGeneratorOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1772,20 +1722,19 @@ pub mod get_license_manager_report_generator_output {
             self
         }
         /// <p>A report generator that creates periodic reports about your license configurations.</p>
-        pub fn set_report_generator(
-            mut self,
-            input: std::option::Option<crate::model::ReportGenerator>,
-        ) -> Self {
-            self.report_generator = input;
-            self
+        pub fn set_report_generator(mut self, input: std::option::Option<crate::model::ReportGenerator>) -> Self {
+            self.report_generator = input; self
         }
         /// Consumes the builder and constructs a [`GetLicenseManagerReportGeneratorOutput`](crate::output::GetLicenseManagerReportGeneratorOutput).
         pub fn build(self) -> crate::output::GetLicenseManagerReportGeneratorOutput {
             crate::output::GetLicenseManagerReportGeneratorOutput {
-                report_generator: self.report_generator,
+                report_generator: self.report_generator
+                ,
             }
         }
     }
+    
+    
 }
 impl GetLicenseManagerReportGeneratorOutput {
     /// Creates a new builder-style object to manufacture [`GetLicenseManagerReportGeneratorOutput`](crate::output::GetLicenseManagerReportGeneratorOutput).
@@ -1797,7 +1746,7 @@ impl GetLicenseManagerReportGeneratorOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetLicenseConversionTaskOutput {
+pub struct GetLicenseConversionTaskOutput  {
     /// <p>ID of the license type conversion task.</p>
     #[doc(hidden)]
     pub license_conversion_task_id: std::option::Option<std::string::String>,
@@ -1828,58 +1777,52 @@ pub struct GetLicenseConversionTaskOutput {
 }
 impl GetLicenseConversionTaskOutput {
     /// <p>ID of the license type conversion task.</p>
-    pub fn license_conversion_task_id(&self) -> std::option::Option<&str> {
+    pub fn license_conversion_task_id(&self) -> std::option::Option<& str> {
         self.license_conversion_task_id.as_deref()
     }
     /// <p>Amazon Resource Names (ARN) of the resources the license conversion task is associated with.</p>
-    pub fn resource_arn(&self) -> std::option::Option<&str> {
+    pub fn resource_arn(&self) -> std::option::Option<& str> {
         self.resource_arn.as_deref()
     }
     /// <p>Information about the license type converted from.</p>
-    pub fn source_license_context(
-        &self,
-    ) -> std::option::Option<&crate::model::LicenseConversionContext> {
+    pub fn source_license_context(&self) -> std::option::Option<& crate::model::LicenseConversionContext> {
         self.source_license_context.as_ref()
     }
     /// <p>Information about the license type converted to.</p>
-    pub fn destination_license_context(
-        &self,
-    ) -> std::option::Option<&crate::model::LicenseConversionContext> {
+    pub fn destination_license_context(&self) -> std::option::Option<& crate::model::LicenseConversionContext> {
         self.destination_license_context.as_ref()
     }
     /// <p>The status message for the conversion task.</p>
-    pub fn status_message(&self) -> std::option::Option<&str> {
+    pub fn status_message(&self) -> std::option::Option<& str> {
         self.status_message.as_deref()
     }
     /// <p>Status of the license type conversion task.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::LicenseConversionTaskStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::LicenseConversionTaskStatus> {
         self.status.as_ref()
     }
     /// <p>Time at which the license type conversion task was started .</p>
-    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn start_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p>Amount of time to complete the license type conversion.</p>
-    pub fn license_conversion_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn license_conversion_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.license_conversion_time.as_ref()
     }
     /// <p>Time at which the license type conversion task was completed.</p>
-    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn end_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
 }
 /// See [`GetLicenseConversionTaskOutput`](crate::output::GetLicenseConversionTaskOutput).
 pub mod get_license_conversion_task_output {
-
+    
     /// A builder for [`GetLicenseConversionTaskOutput`](crate::output::GetLicenseConversionTaskOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) license_conversion_task_id: std::option::Option<std::string::String>,
         pub(crate) resource_arn: std::option::Option<std::string::String>,
-        pub(crate) source_license_context:
-            std::option::Option<crate::model::LicenseConversionContext>,
-        pub(crate) destination_license_context:
-            std::option::Option<crate::model::LicenseConversionContext>,
+        pub(crate) source_license_context: std::option::Option<crate::model::LicenseConversionContext>,
+        pub(crate) destination_license_context: std::option::Option<crate::model::LicenseConversionContext>,
         pub(crate) status_message: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<crate::model::LicenseConversionTaskStatus>,
         pub(crate) start_time: std::option::Option<aws_smithy_types::DateTime>,
@@ -1893,12 +1836,8 @@ pub mod get_license_conversion_task_output {
             self
         }
         /// <p>ID of the license type conversion task.</p>
-        pub fn set_license_conversion_task_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.license_conversion_task_id = input;
-            self
+        pub fn set_license_conversion_task_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.license_conversion_task_id = input; self
         }
         /// <p>Amazon Resource Names (ARN) of the resources the license conversion task is associated with.</p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1907,40 +1846,25 @@ pub mod get_license_conversion_task_output {
         }
         /// <p>Amazon Resource Names (ARN) of the resources the license conversion task is associated with.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.resource_arn = input;
-            self
+            self.resource_arn = input; self
         }
         /// <p>Information about the license type converted from.</p>
-        pub fn source_license_context(
-            mut self,
-            input: crate::model::LicenseConversionContext,
-        ) -> Self {
+        pub fn source_license_context(mut self, input: crate::model::LicenseConversionContext) -> Self {
             self.source_license_context = Some(input);
             self
         }
         /// <p>Information about the license type converted from.</p>
-        pub fn set_source_license_context(
-            mut self,
-            input: std::option::Option<crate::model::LicenseConversionContext>,
-        ) -> Self {
-            self.source_license_context = input;
-            self
+        pub fn set_source_license_context(mut self, input: std::option::Option<crate::model::LicenseConversionContext>) -> Self {
+            self.source_license_context = input; self
         }
         /// <p>Information about the license type converted to.</p>
-        pub fn destination_license_context(
-            mut self,
-            input: crate::model::LicenseConversionContext,
-        ) -> Self {
+        pub fn destination_license_context(mut self, input: crate::model::LicenseConversionContext) -> Self {
             self.destination_license_context = Some(input);
             self
         }
         /// <p>Information about the license type converted to.</p>
-        pub fn set_destination_license_context(
-            mut self,
-            input: std::option::Option<crate::model::LicenseConversionContext>,
-        ) -> Self {
-            self.destination_license_context = input;
-            self
+        pub fn set_destination_license_context(mut self, input: std::option::Option<crate::model::LicenseConversionContext>) -> Self {
+            self.destination_license_context = input; self
         }
         /// <p>The status message for the conversion task.</p>
         pub fn status_message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1948,12 +1872,8 @@ pub mod get_license_conversion_task_output {
             self
         }
         /// <p>The status message for the conversion task.</p>
-        pub fn set_status_message(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.status_message = input;
-            self
+        pub fn set_status_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.status_message = input; self
         }
         /// <p>Status of the license type conversion task.</p>
         pub fn status(mut self, input: crate::model::LicenseConversionTaskStatus) -> Self {
@@ -1961,12 +1881,8 @@ pub mod get_license_conversion_task_output {
             self
         }
         /// <p>Status of the license type conversion task.</p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::LicenseConversionTaskStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::LicenseConversionTaskStatus>) -> Self {
+            self.status = input; self
         }
         /// <p>Time at which the license type conversion task was started .</p>
         pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -1974,12 +1890,8 @@ pub mod get_license_conversion_task_output {
             self
         }
         /// <p>Time at which the license type conversion task was started .</p>
-        pub fn set_start_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.start_time = input;
-            self
+        pub fn set_start_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.start_time = input; self
         }
         /// <p>Amount of time to complete the license type conversion.</p>
         pub fn license_conversion_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -1987,12 +1899,8 @@ pub mod get_license_conversion_task_output {
             self
         }
         /// <p>Amount of time to complete the license type conversion.</p>
-        pub fn set_license_conversion_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.license_conversion_time = input;
-            self
+        pub fn set_license_conversion_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.license_conversion_time = input; self
         }
         /// <p>Time at which the license type conversion task was completed.</p>
         pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -2000,28 +1908,35 @@ pub mod get_license_conversion_task_output {
             self
         }
         /// <p>Time at which the license type conversion task was completed.</p>
-        pub fn set_end_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.end_time = input;
-            self
+        pub fn set_end_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.end_time = input; self
         }
         /// Consumes the builder and constructs a [`GetLicenseConversionTaskOutput`](crate::output::GetLicenseConversionTaskOutput).
         pub fn build(self) -> crate::output::GetLicenseConversionTaskOutput {
             crate::output::GetLicenseConversionTaskOutput {
-                license_conversion_task_id: self.license_conversion_task_id,
-                resource_arn: self.resource_arn,
-                source_license_context: self.source_license_context,
-                destination_license_context: self.destination_license_context,
-                status_message: self.status_message,
-                status: self.status,
-                start_time: self.start_time,
-                license_conversion_time: self.license_conversion_time,
-                end_time: self.end_time,
+                license_conversion_task_id: self.license_conversion_task_id
+                ,
+                resource_arn: self.resource_arn
+                ,
+                source_license_context: self.source_license_context
+                ,
+                destination_license_context: self.destination_license_context
+                ,
+                status_message: self.status_message
+                ,
+                status: self.status
+                ,
+                start_time: self.start_time
+                ,
+                license_conversion_time: self.license_conversion_time
+                ,
+                end_time: self.end_time
+                ,
             }
         }
     }
+    
+    
 }
 impl GetLicenseConversionTaskOutput {
     /// Creates a new builder-style object to manufacture [`GetLicenseConversionTaskOutput`](crate::output::GetLicenseConversionTaskOutput).
@@ -2033,7 +1948,7 @@ impl GetLicenseConversionTaskOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetLicenseConfigurationOutput {
+pub struct GetLicenseConfigurationOutput  {
     /// <p>Unique ID for the license configuration.</p>
     #[doc(hidden)]
     pub license_configuration_id: std::option::Option<std::string::String>,
@@ -2069,50 +1984,46 @@ pub struct GetLicenseConfigurationOutput {
     pub owner_account_id: std::option::Option<std::string::String>,
     /// <p>Summaries of the licenses consumed by resources.</p>
     #[doc(hidden)]
-    pub consumed_license_summary_list:
-        std::option::Option<std::vec::Vec<crate::model::ConsumedLicenseSummary>>,
+    pub consumed_license_summary_list: std::option::Option<std::vec::Vec<crate::model::ConsumedLicenseSummary>>,
     /// <p>Summaries of the managed resources.</p>
     #[doc(hidden)]
-    pub managed_resource_summary_list:
-        std::option::Option<std::vec::Vec<crate::model::ManagedResourceSummary>>,
+    pub managed_resource_summary_list: std::option::Option<std::vec::Vec<crate::model::ManagedResourceSummary>>,
     /// <p>Tags for the license configuration.</p>
     #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>Product information.</p>
     #[doc(hidden)]
-    pub product_information_list:
-        std::option::Option<std::vec::Vec<crate::model::ProductInformation>>,
+    pub product_information_list: std::option::Option<std::vec::Vec<crate::model::ProductInformation>>,
     /// <p>Automated discovery information.</p>
     #[doc(hidden)]
-    pub automated_discovery_information:
-        std::option::Option<crate::model::AutomatedDiscoveryInformation>,
+    pub automated_discovery_information: std::option::Option<crate::model::AutomatedDiscoveryInformation>,
     /// <p>When true, disassociates a resource when software is uninstalled.</p>
     #[doc(hidden)]
     pub disassociate_when_not_found: std::option::Option<bool>,
 }
 impl GetLicenseConfigurationOutput {
     /// <p>Unique ID for the license configuration.</p>
-    pub fn license_configuration_id(&self) -> std::option::Option<&str> {
+    pub fn license_configuration_id(&self) -> std::option::Option<& str> {
         self.license_configuration_id.as_deref()
     }
     /// <p>Amazon Resource Name (ARN) of the license configuration.</p>
-    pub fn license_configuration_arn(&self) -> std::option::Option<&str> {
+    pub fn license_configuration_arn(&self) -> std::option::Option<& str> {
         self.license_configuration_arn.as_deref()
     }
     /// <p>Name of the license configuration.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>Description of the license configuration.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>Dimension for which the licenses are counted.</p>
-    pub fn license_counting_type(&self) -> std::option::Option<&crate::model::LicenseCountingType> {
+    pub fn license_counting_type(&self) -> std::option::Option<& crate::model::LicenseCountingType> {
         self.license_counting_type.as_ref()
     }
     /// <p>License rules.</p>
-    pub fn license_rules(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn license_rules(&self) -> std::option::Option<& [std::string::String]> {
         self.license_rules.as_deref()
     }
     /// <p>Number of available licenses.</p>
@@ -2128,39 +2039,31 @@ impl GetLicenseConfigurationOutput {
         self.consumed_licenses
     }
     /// <p>License configuration status.</p>
-    pub fn status(&self) -> std::option::Option<&str> {
+    pub fn status(&self) -> std::option::Option<& str> {
         self.status.as_deref()
     }
     /// <p>Account ID of the owner of the license configuration.</p>
-    pub fn owner_account_id(&self) -> std::option::Option<&str> {
+    pub fn owner_account_id(&self) -> std::option::Option<& str> {
         self.owner_account_id.as_deref()
     }
     /// <p>Summaries of the licenses consumed by resources.</p>
-    pub fn consumed_license_summary_list(
-        &self,
-    ) -> std::option::Option<&[crate::model::ConsumedLicenseSummary]> {
+    pub fn consumed_license_summary_list(&self) -> std::option::Option<& [crate::model::ConsumedLicenseSummary]> {
         self.consumed_license_summary_list.as_deref()
     }
     /// <p>Summaries of the managed resources.</p>
-    pub fn managed_resource_summary_list(
-        &self,
-    ) -> std::option::Option<&[crate::model::ManagedResourceSummary]> {
+    pub fn managed_resource_summary_list(&self) -> std::option::Option<& [crate::model::ManagedResourceSummary]> {
         self.managed_resource_summary_list.as_deref()
     }
     /// <p>Tags for the license configuration.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+    pub fn tags(&self) -> std::option::Option<& [crate::model::Tag]> {
         self.tags.as_deref()
     }
     /// <p>Product information.</p>
-    pub fn product_information_list(
-        &self,
-    ) -> std::option::Option<&[crate::model::ProductInformation]> {
+    pub fn product_information_list(&self) -> std::option::Option<& [crate::model::ProductInformation]> {
         self.product_information_list.as_deref()
     }
     /// <p>Automated discovery information.</p>
-    pub fn automated_discovery_information(
-        &self,
-    ) -> std::option::Option<&crate::model::AutomatedDiscoveryInformation> {
+    pub fn automated_discovery_information(&self) -> std::option::Option<& crate::model::AutomatedDiscoveryInformation> {
         self.automated_discovery_information.as_ref()
     }
     /// <p>When true, disassociates a resource when software is uninstalled.</p>
@@ -2170,7 +2073,7 @@ impl GetLicenseConfigurationOutput {
 }
 /// See [`GetLicenseConfigurationOutput`](crate::output::GetLicenseConfigurationOutput).
 pub mod get_license_configuration_output {
-
+    
     /// A builder for [`GetLicenseConfigurationOutput`](crate::output::GetLicenseConfigurationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2185,15 +2088,11 @@ pub mod get_license_configuration_output {
         pub(crate) consumed_licenses: std::option::Option<i64>,
         pub(crate) status: std::option::Option<std::string::String>,
         pub(crate) owner_account_id: std::option::Option<std::string::String>,
-        pub(crate) consumed_license_summary_list:
-            std::option::Option<std::vec::Vec<crate::model::ConsumedLicenseSummary>>,
-        pub(crate) managed_resource_summary_list:
-            std::option::Option<std::vec::Vec<crate::model::ManagedResourceSummary>>,
+        pub(crate) consumed_license_summary_list: std::option::Option<std::vec::Vec<crate::model::ConsumedLicenseSummary>>,
+        pub(crate) managed_resource_summary_list: std::option::Option<std::vec::Vec<crate::model::ManagedResourceSummary>>,
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-        pub(crate) product_information_list:
-            std::option::Option<std::vec::Vec<crate::model::ProductInformation>>,
-        pub(crate) automated_discovery_information:
-            std::option::Option<crate::model::AutomatedDiscoveryInformation>,
+        pub(crate) product_information_list: std::option::Option<std::vec::Vec<crate::model::ProductInformation>>,
+        pub(crate) automated_discovery_information: std::option::Option<crate::model::AutomatedDiscoveryInformation>,
         pub(crate) disassociate_when_not_found: std::option::Option<bool>,
     }
     impl Builder {
@@ -2203,12 +2102,8 @@ pub mod get_license_configuration_output {
             self
         }
         /// <p>Unique ID for the license configuration.</p>
-        pub fn set_license_configuration_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.license_configuration_id = input;
-            self
+        pub fn set_license_configuration_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.license_configuration_id = input; self
         }
         /// <p>Amazon Resource Name (ARN) of the license configuration.</p>
         pub fn license_configuration_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2216,12 +2111,8 @@ pub mod get_license_configuration_output {
             self
         }
         /// <p>Amazon Resource Name (ARN) of the license configuration.</p>
-        pub fn set_license_configuration_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.license_configuration_arn = input;
-            self
+        pub fn set_license_configuration_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.license_configuration_arn = input; self
         }
         /// <p>Name of the license configuration.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2230,8 +2121,7 @@ pub mod get_license_configuration_output {
         }
         /// <p>Name of the license configuration.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>Description of the license configuration.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2240,8 +2130,7 @@ pub mod get_license_configuration_output {
         }
         /// <p>Description of the license configuration.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>Dimension for which the licenses are counted.</p>
         pub fn license_counting_type(mut self, input: crate::model::LicenseCountingType) -> Self {
@@ -2249,12 +2138,8 @@ pub mod get_license_configuration_output {
             self
         }
         /// <p>Dimension for which the licenses are counted.</p>
-        pub fn set_license_counting_type(
-            mut self,
-            input: std::option::Option<crate::model::LicenseCountingType>,
-        ) -> Self {
-            self.license_counting_type = input;
-            self
+        pub fn set_license_counting_type(mut self, input: std::option::Option<crate::model::LicenseCountingType>) -> Self {
+            self.license_counting_type = input; self
         }
         /// Appends an item to `license_rules`.
         ///
@@ -2263,17 +2148,13 @@ pub mod get_license_configuration_output {
         /// <p>License rules.</p>
         pub fn license_rules(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.license_rules.unwrap_or_default();
-            v.push(input.into());
-            self.license_rules = Some(v);
-            self
+                            v.push(input.into());
+                            self.license_rules = Some(v);
+                            self
         }
         /// <p>License rules.</p>
-        pub fn set_license_rules(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.license_rules = input;
-            self
+        pub fn set_license_rules(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.license_rules = input; self
         }
         /// <p>Number of available licenses.</p>
         pub fn license_count(mut self, input: i64) -> Self {
@@ -2282,8 +2163,7 @@ pub mod get_license_configuration_output {
         }
         /// <p>Number of available licenses.</p>
         pub fn set_license_count(mut self, input: std::option::Option<i64>) -> Self {
-            self.license_count = input;
-            self
+            self.license_count = input; self
         }
         /// <p>Sets the number of available licenses as a hard limit.</p>
         pub fn license_count_hard_limit(mut self, input: bool) -> Self {
@@ -2292,8 +2172,7 @@ pub mod get_license_configuration_output {
         }
         /// <p>Sets the number of available licenses as a hard limit.</p>
         pub fn set_license_count_hard_limit(mut self, input: std::option::Option<bool>) -> Self {
-            self.license_count_hard_limit = input;
-            self
+            self.license_count_hard_limit = input; self
         }
         /// <p>Number of licenses assigned to resources.</p>
         pub fn consumed_licenses(mut self, input: i64) -> Self {
@@ -2302,8 +2181,7 @@ pub mod get_license_configuration_output {
         }
         /// <p>Number of licenses assigned to resources.</p>
         pub fn set_consumed_licenses(mut self, input: std::option::Option<i64>) -> Self {
-            self.consumed_licenses = input;
-            self
+            self.consumed_licenses = input; self
         }
         /// <p>License configuration status.</p>
         pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2312,8 +2190,7 @@ pub mod get_license_configuration_output {
         }
         /// <p>License configuration status.</p>
         pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// <p>Account ID of the owner of the license configuration.</p>
         pub fn owner_account_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2321,56 +2198,38 @@ pub mod get_license_configuration_output {
             self
         }
         /// <p>Account ID of the owner of the license configuration.</p>
-        pub fn set_owner_account_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.owner_account_id = input;
-            self
+        pub fn set_owner_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.owner_account_id = input; self
         }
         /// Appends an item to `consumed_license_summary_list`.
         ///
         /// To override the contents of this collection use [`set_consumed_license_summary_list`](Self::set_consumed_license_summary_list).
         ///
         /// <p>Summaries of the licenses consumed by resources.</p>
-        pub fn consumed_license_summary_list(
-            mut self,
-            input: crate::model::ConsumedLicenseSummary,
-        ) -> Self {
+        pub fn consumed_license_summary_list(mut self, input: crate::model::ConsumedLicenseSummary) -> Self {
             let mut v = self.consumed_license_summary_list.unwrap_or_default();
-            v.push(input);
-            self.consumed_license_summary_list = Some(v);
-            self
+                            v.push(input);
+                            self.consumed_license_summary_list = Some(v);
+                            self
         }
         /// <p>Summaries of the licenses consumed by resources.</p>
-        pub fn set_consumed_license_summary_list(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ConsumedLicenseSummary>>,
-        ) -> Self {
-            self.consumed_license_summary_list = input;
-            self
+        pub fn set_consumed_license_summary_list(mut self, input: std::option::Option<std::vec::Vec<crate::model::ConsumedLicenseSummary>>) -> Self {
+            self.consumed_license_summary_list = input; self
         }
         /// Appends an item to `managed_resource_summary_list`.
         ///
         /// To override the contents of this collection use [`set_managed_resource_summary_list`](Self::set_managed_resource_summary_list).
         ///
         /// <p>Summaries of the managed resources.</p>
-        pub fn managed_resource_summary_list(
-            mut self,
-            input: crate::model::ManagedResourceSummary,
-        ) -> Self {
+        pub fn managed_resource_summary_list(mut self, input: crate::model::ManagedResourceSummary) -> Self {
             let mut v = self.managed_resource_summary_list.unwrap_or_default();
-            v.push(input);
-            self.managed_resource_summary_list = Some(v);
-            self
+                            v.push(input);
+                            self.managed_resource_summary_list = Some(v);
+                            self
         }
         /// <p>Summaries of the managed resources.</p>
-        pub fn set_managed_resource_summary_list(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ManagedResourceSummary>>,
-        ) -> Self {
-            self.managed_resource_summary_list = input;
-            self
+        pub fn set_managed_resource_summary_list(mut self, input: std::option::Option<std::vec::Vec<crate::model::ManagedResourceSummary>>) -> Self {
+            self.managed_resource_summary_list = input; self
         }
         /// Appends an item to `tags`.
         ///
@@ -2379,17 +2238,13 @@ pub mod get_license_configuration_output {
         /// <p>Tags for the license configuration.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input);
-            self.tags = Some(v);
-            self
+                            v.push(input);
+                            self.tags = Some(v);
+                            self
         }
         /// <p>Tags for the license configuration.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::model::Tag>>) -> Self {
+            self.tags = input; self
         }
         /// Appends an item to `product_information_list`.
         ///
@@ -2398,33 +2253,22 @@ pub mod get_license_configuration_output {
         /// <p>Product information.</p>
         pub fn product_information_list(mut self, input: crate::model::ProductInformation) -> Self {
             let mut v = self.product_information_list.unwrap_or_default();
-            v.push(input);
-            self.product_information_list = Some(v);
-            self
+                            v.push(input);
+                            self.product_information_list = Some(v);
+                            self
         }
         /// <p>Product information.</p>
-        pub fn set_product_information_list(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ProductInformation>>,
-        ) -> Self {
-            self.product_information_list = input;
-            self
+        pub fn set_product_information_list(mut self, input: std::option::Option<std::vec::Vec<crate::model::ProductInformation>>) -> Self {
+            self.product_information_list = input; self
         }
         /// <p>Automated discovery information.</p>
-        pub fn automated_discovery_information(
-            mut self,
-            input: crate::model::AutomatedDiscoveryInformation,
-        ) -> Self {
+        pub fn automated_discovery_information(mut self, input: crate::model::AutomatedDiscoveryInformation) -> Self {
             self.automated_discovery_information = Some(input);
             self
         }
         /// <p>Automated discovery information.</p>
-        pub fn set_automated_discovery_information(
-            mut self,
-            input: std::option::Option<crate::model::AutomatedDiscoveryInformation>,
-        ) -> Self {
-            self.automated_discovery_information = input;
-            self
+        pub fn set_automated_discovery_information(mut self, input: std::option::Option<crate::model::AutomatedDiscoveryInformation>) -> Self {
+            self.automated_discovery_information = input; self
         }
         /// <p>When true, disassociates a resource when software is uninstalled.</p>
         pub fn disassociate_when_not_found(mut self, input: bool) -> Self {
@@ -2433,32 +2277,50 @@ pub mod get_license_configuration_output {
         }
         /// <p>When true, disassociates a resource when software is uninstalled.</p>
         pub fn set_disassociate_when_not_found(mut self, input: std::option::Option<bool>) -> Self {
-            self.disassociate_when_not_found = input;
-            self
+            self.disassociate_when_not_found = input; self
         }
         /// Consumes the builder and constructs a [`GetLicenseConfigurationOutput`](crate::output::GetLicenseConfigurationOutput).
         pub fn build(self) -> crate::output::GetLicenseConfigurationOutput {
             crate::output::GetLicenseConfigurationOutput {
-                license_configuration_id: self.license_configuration_id,
-                license_configuration_arn: self.license_configuration_arn,
-                name: self.name,
-                description: self.description,
-                license_counting_type: self.license_counting_type,
-                license_rules: self.license_rules,
-                license_count: self.license_count,
-                license_count_hard_limit: self.license_count_hard_limit,
-                consumed_licenses: self.consumed_licenses,
-                status: self.status,
-                owner_account_id: self.owner_account_id,
-                consumed_license_summary_list: self.consumed_license_summary_list,
-                managed_resource_summary_list: self.managed_resource_summary_list,
-                tags: self.tags,
-                product_information_list: self.product_information_list,
-                automated_discovery_information: self.automated_discovery_information,
-                disassociate_when_not_found: self.disassociate_when_not_found,
+                license_configuration_id: self.license_configuration_id
+                ,
+                license_configuration_arn: self.license_configuration_arn
+                ,
+                name: self.name
+                ,
+                description: self.description
+                ,
+                license_counting_type: self.license_counting_type
+                ,
+                license_rules: self.license_rules
+                ,
+                license_count: self.license_count
+                ,
+                license_count_hard_limit: self.license_count_hard_limit
+                ,
+                consumed_licenses: self.consumed_licenses
+                ,
+                status: self.status
+                ,
+                owner_account_id: self.owner_account_id
+                ,
+                consumed_license_summary_list: self.consumed_license_summary_list
+                ,
+                managed_resource_summary_list: self.managed_resource_summary_list
+                ,
+                tags: self.tags
+                ,
+                product_information_list: self.product_information_list
+                ,
+                automated_discovery_information: self.automated_discovery_information
+                ,
+                disassociate_when_not_found: self.disassociate_when_not_found
+                ,
             }
         }
     }
+    
+    
 }
 impl GetLicenseConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`GetLicenseConfigurationOutput`](crate::output::GetLicenseConfigurationOutput).
@@ -2470,20 +2332,20 @@ impl GetLicenseConfigurationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetLicenseOutput {
+pub struct GetLicenseOutput  {
     /// <p>License details.</p>
     #[doc(hidden)]
     pub license: std::option::Option<crate::model::License>,
 }
 impl GetLicenseOutput {
     /// <p>License details.</p>
-    pub fn license(&self) -> std::option::Option<&crate::model::License> {
+    pub fn license(&self) -> std::option::Option<& crate::model::License> {
         self.license.as_ref()
     }
 }
 /// See [`GetLicenseOutput`](crate::output::GetLicenseOutput).
 pub mod get_license_output {
-
+    
     /// A builder for [`GetLicenseOutput`](crate::output::GetLicenseOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2497,16 +2359,18 @@ pub mod get_license_output {
         }
         /// <p>License details.</p>
         pub fn set_license(mut self, input: std::option::Option<crate::model::License>) -> Self {
-            self.license = input;
-            self
+            self.license = input; self
         }
         /// Consumes the builder and constructs a [`GetLicenseOutput`](crate::output::GetLicenseOutput).
         pub fn build(self) -> crate::output::GetLicenseOutput {
             crate::output::GetLicenseOutput {
-                license: self.license,
+                license: self.license
+                ,
             }
         }
     }
+    
+    
 }
 impl GetLicenseOutput {
     /// Creates a new builder-style object to manufacture [`GetLicenseOutput`](crate::output::GetLicenseOutput).
@@ -2518,20 +2382,20 @@ impl GetLicenseOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetGrantOutput {
+pub struct GetGrantOutput  {
     /// <p>Grant details.</p>
     #[doc(hidden)]
     pub grant: std::option::Option<crate::model::Grant>,
 }
 impl GetGrantOutput {
     /// <p>Grant details.</p>
-    pub fn grant(&self) -> std::option::Option<&crate::model::Grant> {
+    pub fn grant(&self) -> std::option::Option<& crate::model::Grant> {
         self.grant.as_ref()
     }
 }
 /// See [`GetGrantOutput`](crate::output::GetGrantOutput).
 pub mod get_grant_output {
-
+    
     /// A builder for [`GetGrantOutput`](crate::output::GetGrantOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2545,14 +2409,18 @@ pub mod get_grant_output {
         }
         /// <p>Grant details.</p>
         pub fn set_grant(mut self, input: std::option::Option<crate::model::Grant>) -> Self {
-            self.grant = input;
-            self
+            self.grant = input; self
         }
         /// Consumes the builder and constructs a [`GetGrantOutput`](crate::output::GetGrantOutput).
         pub fn build(self) -> crate::output::GetGrantOutput {
-            crate::output::GetGrantOutput { grant: self.grant }
+            crate::output::GetGrantOutput {
+                grant: self.grant
+                ,
+            }
         }
     }
+    
+    
 }
 impl GetGrantOutput {
     /// Creates a new builder-style object to manufacture [`GetGrantOutput`](crate::output::GetGrantOutput).
@@ -2564,20 +2432,20 @@ impl GetGrantOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetAccessTokenOutput {
+pub struct GetAccessTokenOutput  {
     /// <p>Temporary access token.</p>
     #[doc(hidden)]
     pub access_token: std::option::Option<std::string::String>,
 }
 impl GetAccessTokenOutput {
     /// <p>Temporary access token.</p>
-    pub fn access_token(&self) -> std::option::Option<&str> {
+    pub fn access_token(&self) -> std::option::Option<& str> {
         self.access_token.as_deref()
     }
 }
 /// See [`GetAccessTokenOutput`](crate::output::GetAccessTokenOutput).
 pub mod get_access_token_output {
-
+    
     /// A builder for [`GetAccessTokenOutput`](crate::output::GetAccessTokenOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2591,16 +2459,18 @@ pub mod get_access_token_output {
         }
         /// <p>Temporary access token.</p>
         pub fn set_access_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.access_token = input;
-            self
+            self.access_token = input; self
         }
         /// Consumes the builder and constructs a [`GetAccessTokenOutput`](crate::output::GetAccessTokenOutput).
         pub fn build(self) -> crate::output::GetAccessTokenOutput {
             crate::output::GetAccessTokenOutput {
-                access_token: self.access_token,
+                access_token: self.access_token
+                ,
             }
         }
     }
+    
+    
 }
 impl GetAccessTokenOutput {
     /// Creates a new builder-style object to manufacture [`GetAccessTokenOutput`](crate::output::GetAccessTokenOutput).
@@ -2612,7 +2482,7 @@ impl GetAccessTokenOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ExtendLicenseConsumptionOutput {
+pub struct ExtendLicenseConsumptionOutput  {
     /// <p>License consumption token.</p>
     #[doc(hidden)]
     pub license_consumption_token: std::option::Option<std::string::String>,
@@ -2622,17 +2492,17 @@ pub struct ExtendLicenseConsumptionOutput {
 }
 impl ExtendLicenseConsumptionOutput {
     /// <p>License consumption token.</p>
-    pub fn license_consumption_token(&self) -> std::option::Option<&str> {
+    pub fn license_consumption_token(&self) -> std::option::Option<& str> {
         self.license_consumption_token.as_deref()
     }
     /// <p>Date and time at which the license consumption expires.</p>
-    pub fn expiration(&self) -> std::option::Option<&str> {
+    pub fn expiration(&self) -> std::option::Option<& str> {
         self.expiration.as_deref()
     }
 }
 /// See [`ExtendLicenseConsumptionOutput`](crate::output::ExtendLicenseConsumptionOutput).
 pub mod extend_license_consumption_output {
-
+    
     /// A builder for [`ExtendLicenseConsumptionOutput`](crate::output::ExtendLicenseConsumptionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2646,12 +2516,8 @@ pub mod extend_license_consumption_output {
             self
         }
         /// <p>License consumption token.</p>
-        pub fn set_license_consumption_token(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.license_consumption_token = input;
-            self
+        pub fn set_license_consumption_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.license_consumption_token = input; self
         }
         /// <p>Date and time at which the license consumption expires.</p>
         pub fn expiration(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2660,17 +2526,20 @@ pub mod extend_license_consumption_output {
         }
         /// <p>Date and time at which the license consumption expires.</p>
         pub fn set_expiration(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.expiration = input;
-            self
+            self.expiration = input; self
         }
         /// Consumes the builder and constructs a [`ExtendLicenseConsumptionOutput`](crate::output::ExtendLicenseConsumptionOutput).
         pub fn build(self) -> crate::output::ExtendLicenseConsumptionOutput {
             crate::output::ExtendLicenseConsumptionOutput {
-                license_consumption_token: self.license_consumption_token,
-                expiration: self.expiration,
+                license_consumption_token: self.license_consumption_token
+                ,
+                expiration: self.expiration
+                ,
             }
         }
     }
+    
+    
 }
 impl ExtendLicenseConsumptionOutput {
     /// Creates a new builder-style object to manufacture [`ExtendLicenseConsumptionOutput`](crate::output::ExtendLicenseConsumptionOutput).
@@ -2682,19 +2551,24 @@ impl ExtendLicenseConsumptionOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteTokenOutput {}
+pub struct DeleteTokenOutput  {
+}
 /// See [`DeleteTokenOutput`](crate::output::DeleteTokenOutput).
 pub mod delete_token_output {
-
+    
     /// A builder for [`DeleteTokenOutput`](crate::output::DeleteTokenOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteTokenOutput`](crate::output::DeleteTokenOutput).
         pub fn build(self) -> crate::output::DeleteTokenOutput {
-            crate::output::DeleteTokenOutput {}
+            crate::output::DeleteTokenOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteTokenOutput {
     /// Creates a new builder-style object to manufacture [`DeleteTokenOutput`](crate::output::DeleteTokenOutput).
@@ -2706,19 +2580,24 @@ impl DeleteTokenOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteLicenseManagerReportGeneratorOutput {}
+pub struct DeleteLicenseManagerReportGeneratorOutput  {
+}
 /// See [`DeleteLicenseManagerReportGeneratorOutput`](crate::output::DeleteLicenseManagerReportGeneratorOutput).
 pub mod delete_license_manager_report_generator_output {
-
+    
     /// A builder for [`DeleteLicenseManagerReportGeneratorOutput`](crate::output::DeleteLicenseManagerReportGeneratorOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteLicenseManagerReportGeneratorOutput`](crate::output::DeleteLicenseManagerReportGeneratorOutput).
         pub fn build(self) -> crate::output::DeleteLicenseManagerReportGeneratorOutput {
-            crate::output::DeleteLicenseManagerReportGeneratorOutput {}
+            crate::output::DeleteLicenseManagerReportGeneratorOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteLicenseManagerReportGeneratorOutput {
     /// Creates a new builder-style object to manufacture [`DeleteLicenseManagerReportGeneratorOutput`](crate::output::DeleteLicenseManagerReportGeneratorOutput).
@@ -2730,19 +2609,24 @@ impl DeleteLicenseManagerReportGeneratorOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteLicenseConfigurationOutput {}
+pub struct DeleteLicenseConfigurationOutput  {
+}
 /// See [`DeleteLicenseConfigurationOutput`](crate::output::DeleteLicenseConfigurationOutput).
 pub mod delete_license_configuration_output {
-
+    
     /// A builder for [`DeleteLicenseConfigurationOutput`](crate::output::DeleteLicenseConfigurationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteLicenseConfigurationOutput`](crate::output::DeleteLicenseConfigurationOutput).
         pub fn build(self) -> crate::output::DeleteLicenseConfigurationOutput {
-            crate::output::DeleteLicenseConfigurationOutput {}
+            crate::output::DeleteLicenseConfigurationOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteLicenseConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`DeleteLicenseConfigurationOutput`](crate::output::DeleteLicenseConfigurationOutput).
@@ -2754,7 +2638,7 @@ impl DeleteLicenseConfigurationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteLicenseOutput {
+pub struct DeleteLicenseOutput  {
     /// <p>License status.</p>
     #[doc(hidden)]
     pub status: std::option::Option<crate::model::LicenseDeletionStatus>,
@@ -2764,17 +2648,17 @@ pub struct DeleteLicenseOutput {
 }
 impl DeleteLicenseOutput {
     /// <p>License status.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::LicenseDeletionStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::LicenseDeletionStatus> {
         self.status.as_ref()
     }
     /// <p>Date when the license is deleted.</p>
-    pub fn deletion_date(&self) -> std::option::Option<&str> {
+    pub fn deletion_date(&self) -> std::option::Option<& str> {
         self.deletion_date.as_deref()
     }
 }
 /// See [`DeleteLicenseOutput`](crate::output::DeleteLicenseOutput).
 pub mod delete_license_output {
-
+    
     /// A builder for [`DeleteLicenseOutput`](crate::output::DeleteLicenseOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2788,12 +2672,8 @@ pub mod delete_license_output {
             self
         }
         /// <p>License status.</p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::LicenseDeletionStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::LicenseDeletionStatus>) -> Self {
+            self.status = input; self
         }
         /// <p>Date when the license is deleted.</p>
         pub fn deletion_date(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2801,21 +2681,21 @@ pub mod delete_license_output {
             self
         }
         /// <p>Date when the license is deleted.</p>
-        pub fn set_deletion_date(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.deletion_date = input;
-            self
+        pub fn set_deletion_date(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.deletion_date = input; self
         }
         /// Consumes the builder and constructs a [`DeleteLicenseOutput`](crate::output::DeleteLicenseOutput).
         pub fn build(self) -> crate::output::DeleteLicenseOutput {
             crate::output::DeleteLicenseOutput {
-                status: self.status,
-                deletion_date: self.deletion_date,
+                status: self.status
+                ,
+                deletion_date: self.deletion_date
+                ,
             }
         }
     }
+    
+    
 }
 impl DeleteLicenseOutput {
     /// Creates a new builder-style object to manufacture [`DeleteLicenseOutput`](crate::output::DeleteLicenseOutput).
@@ -2827,7 +2707,7 @@ impl DeleteLicenseOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteGrantOutput {
+pub struct DeleteGrantOutput  {
     /// <p>Grant ARN.</p>
     #[doc(hidden)]
     pub grant_arn: std::option::Option<std::string::String>,
@@ -2840,21 +2720,21 @@ pub struct DeleteGrantOutput {
 }
 impl DeleteGrantOutput {
     /// <p>Grant ARN.</p>
-    pub fn grant_arn(&self) -> std::option::Option<&str> {
+    pub fn grant_arn(&self) -> std::option::Option<& str> {
         self.grant_arn.as_deref()
     }
     /// <p>Grant status.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::GrantStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::GrantStatus> {
         self.status.as_ref()
     }
     /// <p>Grant version.</p>
-    pub fn version(&self) -> std::option::Option<&str> {
+    pub fn version(&self) -> std::option::Option<& str> {
         self.version.as_deref()
     }
 }
 /// See [`DeleteGrantOutput`](crate::output::DeleteGrantOutput).
 pub mod delete_grant_output {
-
+    
     /// A builder for [`DeleteGrantOutput`](crate::output::DeleteGrantOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2870,8 +2750,7 @@ pub mod delete_grant_output {
         }
         /// <p>Grant ARN.</p>
         pub fn set_grant_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.grant_arn = input;
-            self
+            self.grant_arn = input; self
         }
         /// <p>Grant status.</p>
         pub fn status(mut self, input: crate::model::GrantStatus) -> Self {
@@ -2880,8 +2759,7 @@ pub mod delete_grant_output {
         }
         /// <p>Grant status.</p>
         pub fn set_status(mut self, input: std::option::Option<crate::model::GrantStatus>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// <p>Grant version.</p>
         pub fn version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2890,18 +2768,22 @@ pub mod delete_grant_output {
         }
         /// <p>Grant version.</p>
         pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.version = input;
-            self
+            self.version = input; self
         }
         /// Consumes the builder and constructs a [`DeleteGrantOutput`](crate::output::DeleteGrantOutput).
         pub fn build(self) -> crate::output::DeleteGrantOutput {
             crate::output::DeleteGrantOutput {
-                grant_arn: self.grant_arn,
-                status: self.status,
-                version: self.version,
+                grant_arn: self.grant_arn
+                ,
+                status: self.status
+                ,
+                version: self.version
+                ,
             }
         }
     }
+    
+    
 }
 impl DeleteGrantOutput {
     /// Creates a new builder-style object to manufacture [`DeleteGrantOutput`](crate::output::DeleteGrantOutput).
@@ -2913,7 +2795,7 @@ impl DeleteGrantOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateTokenOutput {
+pub struct CreateTokenOutput  {
     /// <p>Token ID.</p>
     #[doc(hidden)]
     pub token_id: std::option::Option<std::string::String>,
@@ -2926,21 +2808,21 @@ pub struct CreateTokenOutput {
 }
 impl CreateTokenOutput {
     /// <p>Token ID.</p>
-    pub fn token_id(&self) -> std::option::Option<&str> {
+    pub fn token_id(&self) -> std::option::Option<& str> {
         self.token_id.as_deref()
     }
     /// <p>Token type.</p>
-    pub fn token_type(&self) -> std::option::Option<&crate::model::TokenType> {
+    pub fn token_type(&self) -> std::option::Option<& crate::model::TokenType> {
         self.token_type.as_ref()
     }
     /// <p>Refresh token, encoded as a JWT token.</p>
-    pub fn token(&self) -> std::option::Option<&str> {
+    pub fn token(&self) -> std::option::Option<& str> {
         self.token.as_deref()
     }
 }
 /// See [`CreateTokenOutput`](crate::output::CreateTokenOutput).
 pub mod create_token_output {
-
+    
     /// A builder for [`CreateTokenOutput`](crate::output::CreateTokenOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2956,8 +2838,7 @@ pub mod create_token_output {
         }
         /// <p>Token ID.</p>
         pub fn set_token_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.token_id = input;
-            self
+            self.token_id = input; self
         }
         /// <p>Token type.</p>
         pub fn token_type(mut self, input: crate::model::TokenType) -> Self {
@@ -2965,12 +2846,8 @@ pub mod create_token_output {
             self
         }
         /// <p>Token type.</p>
-        pub fn set_token_type(
-            mut self,
-            input: std::option::Option<crate::model::TokenType>,
-        ) -> Self {
-            self.token_type = input;
-            self
+        pub fn set_token_type(mut self, input: std::option::Option<crate::model::TokenType>) -> Self {
+            self.token_type = input; self
         }
         /// <p>Refresh token, encoded as a JWT token.</p>
         pub fn token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2979,18 +2856,22 @@ pub mod create_token_output {
         }
         /// <p>Refresh token, encoded as a JWT token.</p>
         pub fn set_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.token = input;
-            self
+            self.token = input; self
         }
         /// Consumes the builder and constructs a [`CreateTokenOutput`](crate::output::CreateTokenOutput).
         pub fn build(self) -> crate::output::CreateTokenOutput {
             crate::output::CreateTokenOutput {
-                token_id: self.token_id,
-                token_type: self.token_type,
-                token: self.token,
+                token_id: self.token_id
+                ,
+                token_type: self.token_type
+                ,
+                token: self.token
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateTokenOutput {
     /// Creates a new builder-style object to manufacture [`CreateTokenOutput`](crate::output::CreateTokenOutput).
@@ -3002,7 +2883,7 @@ impl CreateTokenOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateLicenseVersionOutput {
+pub struct CreateLicenseVersionOutput  {
     /// <p>License ARN.</p>
     #[doc(hidden)]
     pub license_arn: std::option::Option<std::string::String>,
@@ -3015,21 +2896,21 @@ pub struct CreateLicenseVersionOutput {
 }
 impl CreateLicenseVersionOutput {
     /// <p>License ARN.</p>
-    pub fn license_arn(&self) -> std::option::Option<&str> {
+    pub fn license_arn(&self) -> std::option::Option<& str> {
         self.license_arn.as_deref()
     }
     /// <p>New version of the license.</p>
-    pub fn version(&self) -> std::option::Option<&str> {
+    pub fn version(&self) -> std::option::Option<& str> {
         self.version.as_deref()
     }
     /// <p>License status.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::LicenseStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::LicenseStatus> {
         self.status.as_ref()
     }
 }
 /// See [`CreateLicenseVersionOutput`](crate::output::CreateLicenseVersionOutput).
 pub mod create_license_version_output {
-
+    
     /// A builder for [`CreateLicenseVersionOutput`](crate::output::CreateLicenseVersionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3045,8 +2926,7 @@ pub mod create_license_version_output {
         }
         /// <p>License ARN.</p>
         pub fn set_license_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.license_arn = input;
-            self
+            self.license_arn = input; self
         }
         /// <p>New version of the license.</p>
         pub fn version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3055,8 +2935,7 @@ pub mod create_license_version_output {
         }
         /// <p>New version of the license.</p>
         pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.version = input;
-            self
+            self.version = input; self
         }
         /// <p>License status.</p>
         pub fn status(mut self, input: crate::model::LicenseStatus) -> Self {
@@ -3064,22 +2943,23 @@ pub mod create_license_version_output {
             self
         }
         /// <p>License status.</p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::LicenseStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::LicenseStatus>) -> Self {
+            self.status = input; self
         }
         /// Consumes the builder and constructs a [`CreateLicenseVersionOutput`](crate::output::CreateLicenseVersionOutput).
         pub fn build(self) -> crate::output::CreateLicenseVersionOutput {
             crate::output::CreateLicenseVersionOutput {
-                license_arn: self.license_arn,
-                version: self.version,
-                status: self.status,
+                license_arn: self.license_arn
+                ,
+                version: self.version
+                ,
+                status: self.status
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateLicenseVersionOutput {
     /// Creates a new builder-style object to manufacture [`CreateLicenseVersionOutput`](crate::output::CreateLicenseVersionOutput).
@@ -3091,20 +2971,20 @@ impl CreateLicenseVersionOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateLicenseManagerReportGeneratorOutput {
+pub struct CreateLicenseManagerReportGeneratorOutput  {
     /// <p>The Amazon Resource Name (ARN) of the new report generator.</p>
     #[doc(hidden)]
     pub license_manager_report_generator_arn: std::option::Option<std::string::String>,
 }
 impl CreateLicenseManagerReportGeneratorOutput {
     /// <p>The Amazon Resource Name (ARN) of the new report generator.</p>
-    pub fn license_manager_report_generator_arn(&self) -> std::option::Option<&str> {
+    pub fn license_manager_report_generator_arn(&self) -> std::option::Option<& str> {
         self.license_manager_report_generator_arn.as_deref()
     }
 }
 /// See [`CreateLicenseManagerReportGeneratorOutput`](crate::output::CreateLicenseManagerReportGeneratorOutput).
 pub mod create_license_manager_report_generator_output {
-
+    
     /// A builder for [`CreateLicenseManagerReportGeneratorOutput`](crate::output::CreateLicenseManagerReportGeneratorOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3112,28 +2992,24 @@ pub mod create_license_manager_report_generator_output {
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the new report generator.</p>
-        pub fn license_manager_report_generator_arn(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn license_manager_report_generator_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.license_manager_report_generator_arn = Some(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the new report generator.</p>
-        pub fn set_license_manager_report_generator_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.license_manager_report_generator_arn = input;
-            self
+        pub fn set_license_manager_report_generator_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.license_manager_report_generator_arn = input; self
         }
         /// Consumes the builder and constructs a [`CreateLicenseManagerReportGeneratorOutput`](crate::output::CreateLicenseManagerReportGeneratorOutput).
         pub fn build(self) -> crate::output::CreateLicenseManagerReportGeneratorOutput {
             crate::output::CreateLicenseManagerReportGeneratorOutput {
-                license_manager_report_generator_arn: self.license_manager_report_generator_arn,
+                license_manager_report_generator_arn: self.license_manager_report_generator_arn
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateLicenseManagerReportGeneratorOutput {
     /// Creates a new builder-style object to manufacture [`CreateLicenseManagerReportGeneratorOutput`](crate::output::CreateLicenseManagerReportGeneratorOutput).
@@ -3145,20 +3021,20 @@ impl CreateLicenseManagerReportGeneratorOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateLicenseConversionTaskForResourceOutput {
+pub struct CreateLicenseConversionTaskForResourceOutput  {
     /// <p>The ID of the created license type conversion task.</p>
     #[doc(hidden)]
     pub license_conversion_task_id: std::option::Option<std::string::String>,
 }
 impl CreateLicenseConversionTaskForResourceOutput {
     /// <p>The ID of the created license type conversion task.</p>
-    pub fn license_conversion_task_id(&self) -> std::option::Option<&str> {
+    pub fn license_conversion_task_id(&self) -> std::option::Option<& str> {
         self.license_conversion_task_id.as_deref()
     }
 }
 /// See [`CreateLicenseConversionTaskForResourceOutput`](crate::output::CreateLicenseConversionTaskForResourceOutput).
 pub mod create_license_conversion_task_for_resource_output {
-
+    
     /// A builder for [`CreateLicenseConversionTaskForResourceOutput`](crate::output::CreateLicenseConversionTaskForResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3171,20 +3047,19 @@ pub mod create_license_conversion_task_for_resource_output {
             self
         }
         /// <p>The ID of the created license type conversion task.</p>
-        pub fn set_license_conversion_task_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.license_conversion_task_id = input;
-            self
+        pub fn set_license_conversion_task_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.license_conversion_task_id = input; self
         }
         /// Consumes the builder and constructs a [`CreateLicenseConversionTaskForResourceOutput`](crate::output::CreateLicenseConversionTaskForResourceOutput).
         pub fn build(self) -> crate::output::CreateLicenseConversionTaskForResourceOutput {
             crate::output::CreateLicenseConversionTaskForResourceOutput {
-                license_conversion_task_id: self.license_conversion_task_id,
+                license_conversion_task_id: self.license_conversion_task_id
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateLicenseConversionTaskForResourceOutput {
     /// Creates a new builder-style object to manufacture [`CreateLicenseConversionTaskForResourceOutput`](crate::output::CreateLicenseConversionTaskForResourceOutput).
@@ -3196,20 +3071,20 @@ impl CreateLicenseConversionTaskForResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateLicenseConfigurationOutput {
+pub struct CreateLicenseConfigurationOutput  {
     /// <p>Amazon Resource Name (ARN) of the license configuration.</p>
     #[doc(hidden)]
     pub license_configuration_arn: std::option::Option<std::string::String>,
 }
 impl CreateLicenseConfigurationOutput {
     /// <p>Amazon Resource Name (ARN) of the license configuration.</p>
-    pub fn license_configuration_arn(&self) -> std::option::Option<&str> {
+    pub fn license_configuration_arn(&self) -> std::option::Option<& str> {
         self.license_configuration_arn.as_deref()
     }
 }
 /// See [`CreateLicenseConfigurationOutput`](crate::output::CreateLicenseConfigurationOutput).
 pub mod create_license_configuration_output {
-
+    
     /// A builder for [`CreateLicenseConfigurationOutput`](crate::output::CreateLicenseConfigurationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3222,20 +3097,19 @@ pub mod create_license_configuration_output {
             self
         }
         /// <p>Amazon Resource Name (ARN) of the license configuration.</p>
-        pub fn set_license_configuration_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.license_configuration_arn = input;
-            self
+        pub fn set_license_configuration_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.license_configuration_arn = input; self
         }
         /// Consumes the builder and constructs a [`CreateLicenseConfigurationOutput`](crate::output::CreateLicenseConfigurationOutput).
         pub fn build(self) -> crate::output::CreateLicenseConfigurationOutput {
             crate::output::CreateLicenseConfigurationOutput {
-                license_configuration_arn: self.license_configuration_arn,
+                license_configuration_arn: self.license_configuration_arn
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateLicenseConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`CreateLicenseConfigurationOutput`](crate::output::CreateLicenseConfigurationOutput).
@@ -3247,7 +3121,7 @@ impl CreateLicenseConfigurationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateLicenseOutput {
+pub struct CreateLicenseOutput  {
     /// <p>Amazon Resource Name (ARN) of the license.</p>
     #[doc(hidden)]
     pub license_arn: std::option::Option<std::string::String>,
@@ -3260,21 +3134,21 @@ pub struct CreateLicenseOutput {
 }
 impl CreateLicenseOutput {
     /// <p>Amazon Resource Name (ARN) of the license.</p>
-    pub fn license_arn(&self) -> std::option::Option<&str> {
+    pub fn license_arn(&self) -> std::option::Option<& str> {
         self.license_arn.as_deref()
     }
     /// <p>License status.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::LicenseStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::LicenseStatus> {
         self.status.as_ref()
     }
     /// <p>License version.</p>
-    pub fn version(&self) -> std::option::Option<&str> {
+    pub fn version(&self) -> std::option::Option<& str> {
         self.version.as_deref()
     }
 }
 /// See [`CreateLicenseOutput`](crate::output::CreateLicenseOutput).
 pub mod create_license_output {
-
+    
     /// A builder for [`CreateLicenseOutput`](crate::output::CreateLicenseOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3290,8 +3164,7 @@ pub mod create_license_output {
         }
         /// <p>Amazon Resource Name (ARN) of the license.</p>
         pub fn set_license_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.license_arn = input;
-            self
+            self.license_arn = input; self
         }
         /// <p>License status.</p>
         pub fn status(mut self, input: crate::model::LicenseStatus) -> Self {
@@ -3299,12 +3172,8 @@ pub mod create_license_output {
             self
         }
         /// <p>License status.</p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::LicenseStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::LicenseStatus>) -> Self {
+            self.status = input; self
         }
         /// <p>License version.</p>
         pub fn version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3313,18 +3182,22 @@ pub mod create_license_output {
         }
         /// <p>License version.</p>
         pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.version = input;
-            self
+            self.version = input; self
         }
         /// Consumes the builder and constructs a [`CreateLicenseOutput`](crate::output::CreateLicenseOutput).
         pub fn build(self) -> crate::output::CreateLicenseOutput {
             crate::output::CreateLicenseOutput {
-                license_arn: self.license_arn,
-                status: self.status,
-                version: self.version,
+                license_arn: self.license_arn
+                ,
+                status: self.status
+                ,
+                version: self.version
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateLicenseOutput {
     /// Creates a new builder-style object to manufacture [`CreateLicenseOutput`](crate::output::CreateLicenseOutput).
@@ -3336,7 +3209,7 @@ impl CreateLicenseOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateGrantVersionOutput {
+pub struct CreateGrantVersionOutput  {
     /// <p>Grant ARN.</p>
     #[doc(hidden)]
     pub grant_arn: std::option::Option<std::string::String>,
@@ -3349,21 +3222,21 @@ pub struct CreateGrantVersionOutput {
 }
 impl CreateGrantVersionOutput {
     /// <p>Grant ARN.</p>
-    pub fn grant_arn(&self) -> std::option::Option<&str> {
+    pub fn grant_arn(&self) -> std::option::Option<& str> {
         self.grant_arn.as_deref()
     }
     /// <p>Grant status.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::GrantStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::GrantStatus> {
         self.status.as_ref()
     }
     /// <p>New version of the grant.</p>
-    pub fn version(&self) -> std::option::Option<&str> {
+    pub fn version(&self) -> std::option::Option<& str> {
         self.version.as_deref()
     }
 }
 /// See [`CreateGrantVersionOutput`](crate::output::CreateGrantVersionOutput).
 pub mod create_grant_version_output {
-
+    
     /// A builder for [`CreateGrantVersionOutput`](crate::output::CreateGrantVersionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3379,8 +3252,7 @@ pub mod create_grant_version_output {
         }
         /// <p>Grant ARN.</p>
         pub fn set_grant_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.grant_arn = input;
-            self
+            self.grant_arn = input; self
         }
         /// <p>Grant status.</p>
         pub fn status(mut self, input: crate::model::GrantStatus) -> Self {
@@ -3389,8 +3261,7 @@ pub mod create_grant_version_output {
         }
         /// <p>Grant status.</p>
         pub fn set_status(mut self, input: std::option::Option<crate::model::GrantStatus>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// <p>New version of the grant.</p>
         pub fn version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3399,18 +3270,22 @@ pub mod create_grant_version_output {
         }
         /// <p>New version of the grant.</p>
         pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.version = input;
-            self
+            self.version = input; self
         }
         /// Consumes the builder and constructs a [`CreateGrantVersionOutput`](crate::output::CreateGrantVersionOutput).
         pub fn build(self) -> crate::output::CreateGrantVersionOutput {
             crate::output::CreateGrantVersionOutput {
-                grant_arn: self.grant_arn,
-                status: self.status,
-                version: self.version,
+                grant_arn: self.grant_arn
+                ,
+                status: self.status
+                ,
+                version: self.version
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateGrantVersionOutput {
     /// Creates a new builder-style object to manufacture [`CreateGrantVersionOutput`](crate::output::CreateGrantVersionOutput).
@@ -3422,7 +3297,7 @@ impl CreateGrantVersionOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateGrantOutput {
+pub struct CreateGrantOutput  {
     /// <p>Grant ARN.</p>
     #[doc(hidden)]
     pub grant_arn: std::option::Option<std::string::String>,
@@ -3435,21 +3310,21 @@ pub struct CreateGrantOutput {
 }
 impl CreateGrantOutput {
     /// <p>Grant ARN.</p>
-    pub fn grant_arn(&self) -> std::option::Option<&str> {
+    pub fn grant_arn(&self) -> std::option::Option<& str> {
         self.grant_arn.as_deref()
     }
     /// <p>Grant status.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::GrantStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::GrantStatus> {
         self.status.as_ref()
     }
     /// <p>Grant version.</p>
-    pub fn version(&self) -> std::option::Option<&str> {
+    pub fn version(&self) -> std::option::Option<& str> {
         self.version.as_deref()
     }
 }
 /// See [`CreateGrantOutput`](crate::output::CreateGrantOutput).
 pub mod create_grant_output {
-
+    
     /// A builder for [`CreateGrantOutput`](crate::output::CreateGrantOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3465,8 +3340,7 @@ pub mod create_grant_output {
         }
         /// <p>Grant ARN.</p>
         pub fn set_grant_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.grant_arn = input;
-            self
+            self.grant_arn = input; self
         }
         /// <p>Grant status.</p>
         pub fn status(mut self, input: crate::model::GrantStatus) -> Self {
@@ -3475,8 +3349,7 @@ pub mod create_grant_output {
         }
         /// <p>Grant status.</p>
         pub fn set_status(mut self, input: std::option::Option<crate::model::GrantStatus>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// <p>Grant version.</p>
         pub fn version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3485,18 +3358,22 @@ pub mod create_grant_output {
         }
         /// <p>Grant version.</p>
         pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.version = input;
-            self
+            self.version = input; self
         }
         /// Consumes the builder and constructs a [`CreateGrantOutput`](crate::output::CreateGrantOutput).
         pub fn build(self) -> crate::output::CreateGrantOutput {
             crate::output::CreateGrantOutput {
-                grant_arn: self.grant_arn,
-                status: self.status,
-                version: self.version,
+                grant_arn: self.grant_arn
+                ,
+                status: self.status
+                ,
+                version: self.version
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateGrantOutput {
     /// Creates a new builder-style object to manufacture [`CreateGrantOutput`](crate::output::CreateGrantOutput).
@@ -3508,7 +3385,7 @@ impl CreateGrantOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CheckoutLicenseOutput {
+pub struct CheckoutLicenseOutput  {
     /// <p>Checkout type.</p>
     #[doc(hidden)]
     pub checkout_type: std::option::Option<crate::model::CheckoutType>,
@@ -3536,48 +3413,47 @@ pub struct CheckoutLicenseOutput {
 }
 impl CheckoutLicenseOutput {
     /// <p>Checkout type.</p>
-    pub fn checkout_type(&self) -> std::option::Option<&crate::model::CheckoutType> {
+    pub fn checkout_type(&self) -> std::option::Option<& crate::model::CheckoutType> {
         self.checkout_type.as_ref()
     }
     /// <p>License consumption token.</p>
-    pub fn license_consumption_token(&self) -> std::option::Option<&str> {
+    pub fn license_consumption_token(&self) -> std::option::Option<& str> {
         self.license_consumption_token.as_deref()
     }
     /// <p>Allowed license entitlements.</p>
-    pub fn entitlements_allowed(&self) -> std::option::Option<&[crate::model::EntitlementData]> {
+    pub fn entitlements_allowed(&self) -> std::option::Option<& [crate::model::EntitlementData]> {
         self.entitlements_allowed.as_deref()
     }
     /// <p>Signed token.</p>
-    pub fn signed_token(&self) -> std::option::Option<&str> {
+    pub fn signed_token(&self) -> std::option::Option<& str> {
         self.signed_token.as_deref()
     }
     /// <p>Node ID.</p>
-    pub fn node_id(&self) -> std::option::Option<&str> {
+    pub fn node_id(&self) -> std::option::Option<& str> {
         self.node_id.as_deref()
     }
     /// <p>Date and time at which the license checkout is issued.</p>
-    pub fn issued_at(&self) -> std::option::Option<&str> {
+    pub fn issued_at(&self) -> std::option::Option<& str> {
         self.issued_at.as_deref()
     }
     /// <p>Date and time at which the license checkout expires.</p>
-    pub fn expiration(&self) -> std::option::Option<&str> {
+    pub fn expiration(&self) -> std::option::Option<& str> {
         self.expiration.as_deref()
     }
     /// <p>Amazon Resource Name (ARN) of the checkout license.</p>
-    pub fn license_arn(&self) -> std::option::Option<&str> {
+    pub fn license_arn(&self) -> std::option::Option<& str> {
         self.license_arn.as_deref()
     }
 }
 /// See [`CheckoutLicenseOutput`](crate::output::CheckoutLicenseOutput).
 pub mod checkout_license_output {
-
+    
     /// A builder for [`CheckoutLicenseOutput`](crate::output::CheckoutLicenseOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) checkout_type: std::option::Option<crate::model::CheckoutType>,
         pub(crate) license_consumption_token: std::option::Option<std::string::String>,
-        pub(crate) entitlements_allowed:
-            std::option::Option<std::vec::Vec<crate::model::EntitlementData>>,
+        pub(crate) entitlements_allowed: std::option::Option<std::vec::Vec<crate::model::EntitlementData>>,
         pub(crate) signed_token: std::option::Option<std::string::String>,
         pub(crate) node_id: std::option::Option<std::string::String>,
         pub(crate) issued_at: std::option::Option<std::string::String>,
@@ -3591,12 +3467,8 @@ pub mod checkout_license_output {
             self
         }
         /// <p>Checkout type.</p>
-        pub fn set_checkout_type(
-            mut self,
-            input: std::option::Option<crate::model::CheckoutType>,
-        ) -> Self {
-            self.checkout_type = input;
-            self
+        pub fn set_checkout_type(mut self, input: std::option::Option<crate::model::CheckoutType>) -> Self {
+            self.checkout_type = input; self
         }
         /// <p>License consumption token.</p>
         pub fn license_consumption_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3604,12 +3476,8 @@ pub mod checkout_license_output {
             self
         }
         /// <p>License consumption token.</p>
-        pub fn set_license_consumption_token(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.license_consumption_token = input;
-            self
+        pub fn set_license_consumption_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.license_consumption_token = input; self
         }
         /// Appends an item to `entitlements_allowed`.
         ///
@@ -3618,17 +3486,13 @@ pub mod checkout_license_output {
         /// <p>Allowed license entitlements.</p>
         pub fn entitlements_allowed(mut self, input: crate::model::EntitlementData) -> Self {
             let mut v = self.entitlements_allowed.unwrap_or_default();
-            v.push(input);
-            self.entitlements_allowed = Some(v);
-            self
+                            v.push(input);
+                            self.entitlements_allowed = Some(v);
+                            self
         }
         /// <p>Allowed license entitlements.</p>
-        pub fn set_entitlements_allowed(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::EntitlementData>>,
-        ) -> Self {
-            self.entitlements_allowed = input;
-            self
+        pub fn set_entitlements_allowed(mut self, input: std::option::Option<std::vec::Vec<crate::model::EntitlementData>>) -> Self {
+            self.entitlements_allowed = input; self
         }
         /// <p>Signed token.</p>
         pub fn signed_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3637,8 +3501,7 @@ pub mod checkout_license_output {
         }
         /// <p>Signed token.</p>
         pub fn set_signed_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.signed_token = input;
-            self
+            self.signed_token = input; self
         }
         /// <p>Node ID.</p>
         pub fn node_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3647,8 +3510,7 @@ pub mod checkout_license_output {
         }
         /// <p>Node ID.</p>
         pub fn set_node_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.node_id = input;
-            self
+            self.node_id = input; self
         }
         /// <p>Date and time at which the license checkout is issued.</p>
         pub fn issued_at(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3657,8 +3519,7 @@ pub mod checkout_license_output {
         }
         /// <p>Date and time at which the license checkout is issued.</p>
         pub fn set_issued_at(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.issued_at = input;
-            self
+            self.issued_at = input; self
         }
         /// <p>Date and time at which the license checkout expires.</p>
         pub fn expiration(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3667,8 +3528,7 @@ pub mod checkout_license_output {
         }
         /// <p>Date and time at which the license checkout expires.</p>
         pub fn set_expiration(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.expiration = input;
-            self
+            self.expiration = input; self
         }
         /// <p>Amazon Resource Name (ARN) of the checkout license.</p>
         pub fn license_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3677,23 +3537,32 @@ pub mod checkout_license_output {
         }
         /// <p>Amazon Resource Name (ARN) of the checkout license.</p>
         pub fn set_license_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.license_arn = input;
-            self
+            self.license_arn = input; self
         }
         /// Consumes the builder and constructs a [`CheckoutLicenseOutput`](crate::output::CheckoutLicenseOutput).
         pub fn build(self) -> crate::output::CheckoutLicenseOutput {
             crate::output::CheckoutLicenseOutput {
-                checkout_type: self.checkout_type,
-                license_consumption_token: self.license_consumption_token,
-                entitlements_allowed: self.entitlements_allowed,
-                signed_token: self.signed_token,
-                node_id: self.node_id,
-                issued_at: self.issued_at,
-                expiration: self.expiration,
-                license_arn: self.license_arn,
+                checkout_type: self.checkout_type
+                ,
+                license_consumption_token: self.license_consumption_token
+                ,
+                entitlements_allowed: self.entitlements_allowed
+                ,
+                signed_token: self.signed_token
+                ,
+                node_id: self.node_id
+                ,
+                issued_at: self.issued_at
+                ,
+                expiration: self.expiration
+                ,
+                license_arn: self.license_arn
+                ,
             }
         }
     }
+    
+    
 }
 impl CheckoutLicenseOutput {
     /// Creates a new builder-style object to manufacture [`CheckoutLicenseOutput`](crate::output::CheckoutLicenseOutput).
@@ -3705,7 +3574,7 @@ impl CheckoutLicenseOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CheckoutBorrowLicenseOutput {
+pub struct CheckoutBorrowLicenseOutput  {
     /// <p>Amazon Resource Name (ARN) of the license.</p>
     #[doc(hidden)]
     pub license_arn: std::option::Option<std::string::String>,
@@ -3733,48 +3602,47 @@ pub struct CheckoutBorrowLicenseOutput {
 }
 impl CheckoutBorrowLicenseOutput {
     /// <p>Amazon Resource Name (ARN) of the license.</p>
-    pub fn license_arn(&self) -> std::option::Option<&str> {
+    pub fn license_arn(&self) -> std::option::Option<& str> {
         self.license_arn.as_deref()
     }
     /// <p>License consumption token.</p>
-    pub fn license_consumption_token(&self) -> std::option::Option<&str> {
+    pub fn license_consumption_token(&self) -> std::option::Option<& str> {
         self.license_consumption_token.as_deref()
     }
     /// <p>Allowed license entitlements.</p>
-    pub fn entitlements_allowed(&self) -> std::option::Option<&[crate::model::EntitlementData]> {
+    pub fn entitlements_allowed(&self) -> std::option::Option<& [crate::model::EntitlementData]> {
         self.entitlements_allowed.as_deref()
     }
     /// <p>Node ID.</p>
-    pub fn node_id(&self) -> std::option::Option<&str> {
+    pub fn node_id(&self) -> std::option::Option<& str> {
         self.node_id.as_deref()
     }
     /// <p>Signed token.</p>
-    pub fn signed_token(&self) -> std::option::Option<&str> {
+    pub fn signed_token(&self) -> std::option::Option<& str> {
         self.signed_token.as_deref()
     }
     /// <p>Date and time at which the license checkout is issued.</p>
-    pub fn issued_at(&self) -> std::option::Option<&str> {
+    pub fn issued_at(&self) -> std::option::Option<& str> {
         self.issued_at.as_deref()
     }
     /// <p>Date and time at which the license checkout expires.</p>
-    pub fn expiration(&self) -> std::option::Option<&str> {
+    pub fn expiration(&self) -> std::option::Option<& str> {
         self.expiration.as_deref()
     }
     /// <p>Information about constraints.</p>
-    pub fn checkout_metadata(&self) -> std::option::Option<&[crate::model::Metadata]> {
+    pub fn checkout_metadata(&self) -> std::option::Option<& [crate::model::Metadata]> {
         self.checkout_metadata.as_deref()
     }
 }
 /// See [`CheckoutBorrowLicenseOutput`](crate::output::CheckoutBorrowLicenseOutput).
 pub mod checkout_borrow_license_output {
-
+    
     /// A builder for [`CheckoutBorrowLicenseOutput`](crate::output::CheckoutBorrowLicenseOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) license_arn: std::option::Option<std::string::String>,
         pub(crate) license_consumption_token: std::option::Option<std::string::String>,
-        pub(crate) entitlements_allowed:
-            std::option::Option<std::vec::Vec<crate::model::EntitlementData>>,
+        pub(crate) entitlements_allowed: std::option::Option<std::vec::Vec<crate::model::EntitlementData>>,
         pub(crate) node_id: std::option::Option<std::string::String>,
         pub(crate) signed_token: std::option::Option<std::string::String>,
         pub(crate) issued_at: std::option::Option<std::string::String>,
@@ -3789,8 +3657,7 @@ pub mod checkout_borrow_license_output {
         }
         /// <p>Amazon Resource Name (ARN) of the license.</p>
         pub fn set_license_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.license_arn = input;
-            self
+            self.license_arn = input; self
         }
         /// <p>License consumption token.</p>
         pub fn license_consumption_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3798,12 +3665,8 @@ pub mod checkout_borrow_license_output {
             self
         }
         /// <p>License consumption token.</p>
-        pub fn set_license_consumption_token(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.license_consumption_token = input;
-            self
+        pub fn set_license_consumption_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.license_consumption_token = input; self
         }
         /// Appends an item to `entitlements_allowed`.
         ///
@@ -3812,17 +3675,13 @@ pub mod checkout_borrow_license_output {
         /// <p>Allowed license entitlements.</p>
         pub fn entitlements_allowed(mut self, input: crate::model::EntitlementData) -> Self {
             let mut v = self.entitlements_allowed.unwrap_or_default();
-            v.push(input);
-            self.entitlements_allowed = Some(v);
-            self
+                            v.push(input);
+                            self.entitlements_allowed = Some(v);
+                            self
         }
         /// <p>Allowed license entitlements.</p>
-        pub fn set_entitlements_allowed(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::EntitlementData>>,
-        ) -> Self {
-            self.entitlements_allowed = input;
-            self
+        pub fn set_entitlements_allowed(mut self, input: std::option::Option<std::vec::Vec<crate::model::EntitlementData>>) -> Self {
+            self.entitlements_allowed = input; self
         }
         /// <p>Node ID.</p>
         pub fn node_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3831,8 +3690,7 @@ pub mod checkout_borrow_license_output {
         }
         /// <p>Node ID.</p>
         pub fn set_node_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.node_id = input;
-            self
+            self.node_id = input; self
         }
         /// <p>Signed token.</p>
         pub fn signed_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3841,8 +3699,7 @@ pub mod checkout_borrow_license_output {
         }
         /// <p>Signed token.</p>
         pub fn set_signed_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.signed_token = input;
-            self
+            self.signed_token = input; self
         }
         /// <p>Date and time at which the license checkout is issued.</p>
         pub fn issued_at(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3851,8 +3708,7 @@ pub mod checkout_borrow_license_output {
         }
         /// <p>Date and time at which the license checkout is issued.</p>
         pub fn set_issued_at(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.issued_at = input;
-            self
+            self.issued_at = input; self
         }
         /// <p>Date and time at which the license checkout expires.</p>
         pub fn expiration(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3861,8 +3717,7 @@ pub mod checkout_borrow_license_output {
         }
         /// <p>Date and time at which the license checkout expires.</p>
         pub fn set_expiration(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.expiration = input;
-            self
+            self.expiration = input; self
         }
         /// Appends an item to `checkout_metadata`.
         ///
@@ -3871,32 +3726,38 @@ pub mod checkout_borrow_license_output {
         /// <p>Information about constraints.</p>
         pub fn checkout_metadata(mut self, input: crate::model::Metadata) -> Self {
             let mut v = self.checkout_metadata.unwrap_or_default();
-            v.push(input);
-            self.checkout_metadata = Some(v);
-            self
+                            v.push(input);
+                            self.checkout_metadata = Some(v);
+                            self
         }
         /// <p>Information about constraints.</p>
-        pub fn set_checkout_metadata(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Metadata>>,
-        ) -> Self {
-            self.checkout_metadata = input;
-            self
+        pub fn set_checkout_metadata(mut self, input: std::option::Option<std::vec::Vec<crate::model::Metadata>>) -> Self {
+            self.checkout_metadata = input; self
         }
         /// Consumes the builder and constructs a [`CheckoutBorrowLicenseOutput`](crate::output::CheckoutBorrowLicenseOutput).
         pub fn build(self) -> crate::output::CheckoutBorrowLicenseOutput {
             crate::output::CheckoutBorrowLicenseOutput {
-                license_arn: self.license_arn,
-                license_consumption_token: self.license_consumption_token,
-                entitlements_allowed: self.entitlements_allowed,
-                node_id: self.node_id,
-                signed_token: self.signed_token,
-                issued_at: self.issued_at,
-                expiration: self.expiration,
-                checkout_metadata: self.checkout_metadata,
+                license_arn: self.license_arn
+                ,
+                license_consumption_token: self.license_consumption_token
+                ,
+                entitlements_allowed: self.entitlements_allowed
+                ,
+                node_id: self.node_id
+                ,
+                signed_token: self.signed_token
+                ,
+                issued_at: self.issued_at
+                ,
+                expiration: self.expiration
+                ,
+                checkout_metadata: self.checkout_metadata
+                ,
             }
         }
     }
+    
+    
 }
 impl CheckoutBorrowLicenseOutput {
     /// Creates a new builder-style object to manufacture [`CheckoutBorrowLicenseOutput`](crate::output::CheckoutBorrowLicenseOutput).
@@ -3908,19 +3769,24 @@ impl CheckoutBorrowLicenseOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CheckInLicenseOutput {}
+pub struct CheckInLicenseOutput  {
+}
 /// See [`CheckInLicenseOutput`](crate::output::CheckInLicenseOutput).
 pub mod check_in_license_output {
-
+    
     /// A builder for [`CheckInLicenseOutput`](crate::output::CheckInLicenseOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`CheckInLicenseOutput`](crate::output::CheckInLicenseOutput).
         pub fn build(self) -> crate::output::CheckInLicenseOutput {
-            crate::output::CheckInLicenseOutput {}
+            crate::output::CheckInLicenseOutput {
+            }
         }
     }
+    
+    
 }
 impl CheckInLicenseOutput {
     /// Creates a new builder-style object to manufacture [`CheckInLicenseOutput`](crate::output::CheckInLicenseOutput).
@@ -3932,7 +3798,7 @@ impl CheckInLicenseOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AcceptGrantOutput {
+pub struct AcceptGrantOutput  {
     /// <p>Grant ARN.</p>
     #[doc(hidden)]
     pub grant_arn: std::option::Option<std::string::String>,
@@ -3945,21 +3811,21 @@ pub struct AcceptGrantOutput {
 }
 impl AcceptGrantOutput {
     /// <p>Grant ARN.</p>
-    pub fn grant_arn(&self) -> std::option::Option<&str> {
+    pub fn grant_arn(&self) -> std::option::Option<& str> {
         self.grant_arn.as_deref()
     }
     /// <p>Grant status.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::GrantStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::GrantStatus> {
         self.status.as_ref()
     }
     /// <p>Grant version.</p>
-    pub fn version(&self) -> std::option::Option<&str> {
+    pub fn version(&self) -> std::option::Option<& str> {
         self.version.as_deref()
     }
 }
 /// See [`AcceptGrantOutput`](crate::output::AcceptGrantOutput).
 pub mod accept_grant_output {
-
+    
     /// A builder for [`AcceptGrantOutput`](crate::output::AcceptGrantOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3975,8 +3841,7 @@ pub mod accept_grant_output {
         }
         /// <p>Grant ARN.</p>
         pub fn set_grant_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.grant_arn = input;
-            self
+            self.grant_arn = input; self
         }
         /// <p>Grant status.</p>
         pub fn status(mut self, input: crate::model::GrantStatus) -> Self {
@@ -3985,8 +3850,7 @@ pub mod accept_grant_output {
         }
         /// <p>Grant status.</p>
         pub fn set_status(mut self, input: std::option::Option<crate::model::GrantStatus>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// <p>Grant version.</p>
         pub fn version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3995,18 +3859,22 @@ pub mod accept_grant_output {
         }
         /// <p>Grant version.</p>
         pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.version = input;
-            self
+            self.version = input; self
         }
         /// Consumes the builder and constructs a [`AcceptGrantOutput`](crate::output::AcceptGrantOutput).
         pub fn build(self) -> crate::output::AcceptGrantOutput {
             crate::output::AcceptGrantOutput {
-                grant_arn: self.grant_arn,
-                status: self.status,
-                version: self.version,
+                grant_arn: self.grant_arn
+                ,
+                status: self.status
+                ,
+                version: self.version
+                ,
             }
         }
     }
+    
+    
 }
 impl AcceptGrantOutput {
     /// Creates a new builder-style object to manufacture [`AcceptGrantOutput`](crate::output::AcceptGrantOutput).
@@ -4014,3 +3882,4 @@ impl AcceptGrantOutput {
         crate::output::accept_grant_output::Builder::default()
     }
 }
+

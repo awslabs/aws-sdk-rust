@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StartDeviceAuthorizationOutput {
+pub struct StartDeviceAuthorizationOutput  {
     /// <p>The short-lived code that is used by the device when polling for a session token.</p>
     #[doc(hidden)]
     pub device_code: std::option::Option<std::string::String>,
@@ -24,19 +24,19 @@ pub struct StartDeviceAuthorizationOutput {
 }
 impl StartDeviceAuthorizationOutput {
     /// <p>The short-lived code that is used by the device when polling for a session token.</p>
-    pub fn device_code(&self) -> std::option::Option<&str> {
+    pub fn device_code(&self) -> std::option::Option<& str> {
         self.device_code.as_deref()
     }
     /// <p>A one-time user verification code. This is needed to authorize an in-use device.</p>
-    pub fn user_code(&self) -> std::option::Option<&str> {
+    pub fn user_code(&self) -> std::option::Option<& str> {
         self.user_code.as_deref()
     }
     /// <p>The URI of the verification page that takes the <code>userCode</code> to authorize the device.</p>
-    pub fn verification_uri(&self) -> std::option::Option<&str> {
+    pub fn verification_uri(&self) -> std::option::Option<& str> {
         self.verification_uri.as_deref()
     }
     /// <p>An alternate URL that the client can use to automatically launch a browser. This process skips the manual step in which the user visits the verification page and enters their code.</p>
-    pub fn verification_uri_complete(&self) -> std::option::Option<&str> {
+    pub fn verification_uri_complete(&self) -> std::option::Option<& str> {
         self.verification_uri_complete.as_deref()
     }
     /// <p>Indicates the number of seconds in which the verification code will become invalid.</p>
@@ -50,7 +50,7 @@ impl StartDeviceAuthorizationOutput {
 }
 /// See [`StartDeviceAuthorizationOutput`](crate::output::StartDeviceAuthorizationOutput).
 pub mod start_device_authorization_output {
-
+    
     /// A builder for [`StartDeviceAuthorizationOutput`](crate::output::StartDeviceAuthorizationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -69,8 +69,7 @@ pub mod start_device_authorization_output {
         }
         /// <p>The short-lived code that is used by the device when polling for a session token.</p>
         pub fn set_device_code(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.device_code = input;
-            self
+            self.device_code = input; self
         }
         /// <p>A one-time user verification code. This is needed to authorize an in-use device.</p>
         pub fn user_code(mut self, input: impl Into<std::string::String>) -> Self {
@@ -79,8 +78,7 @@ pub mod start_device_authorization_output {
         }
         /// <p>A one-time user verification code. This is needed to authorize an in-use device.</p>
         pub fn set_user_code(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.user_code = input;
-            self
+            self.user_code = input; self
         }
         /// <p>The URI of the verification page that takes the <code>userCode</code> to authorize the device.</p>
         pub fn verification_uri(mut self, input: impl Into<std::string::String>) -> Self {
@@ -88,12 +86,8 @@ pub mod start_device_authorization_output {
             self
         }
         /// <p>The URI of the verification page that takes the <code>userCode</code> to authorize the device.</p>
-        pub fn set_verification_uri(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.verification_uri = input;
-            self
+        pub fn set_verification_uri(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.verification_uri = input; self
         }
         /// <p>An alternate URL that the client can use to automatically launch a browser. This process skips the manual step in which the user visits the verification page and enters their code.</p>
         pub fn verification_uri_complete(mut self, input: impl Into<std::string::String>) -> Self {
@@ -101,12 +95,8 @@ pub mod start_device_authorization_output {
             self
         }
         /// <p>An alternate URL that the client can use to automatically launch a browser. This process skips the manual step in which the user visits the verification page and enters their code.</p>
-        pub fn set_verification_uri_complete(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.verification_uri_complete = input;
-            self
+        pub fn set_verification_uri_complete(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.verification_uri_complete = input; self
         }
         /// <p>Indicates the number of seconds in which the verification code will become invalid.</p>
         pub fn expires_in(mut self, input: i32) -> Self {
@@ -115,8 +105,7 @@ pub mod start_device_authorization_output {
         }
         /// <p>Indicates the number of seconds in which the verification code will become invalid.</p>
         pub fn set_expires_in(mut self, input: std::option::Option<i32>) -> Self {
-            self.expires_in = input;
-            self
+            self.expires_in = input; self
         }
         /// <p>Indicates the number of seconds the client must wait between attempts when polling for a session.</p>
         pub fn interval(mut self, input: i32) -> Self {
@@ -125,21 +114,30 @@ pub mod start_device_authorization_output {
         }
         /// <p>Indicates the number of seconds the client must wait between attempts when polling for a session.</p>
         pub fn set_interval(mut self, input: std::option::Option<i32>) -> Self {
-            self.interval = input;
-            self
+            self.interval = input; self
         }
         /// Consumes the builder and constructs a [`StartDeviceAuthorizationOutput`](crate::output::StartDeviceAuthorizationOutput).
         pub fn build(self) -> crate::output::StartDeviceAuthorizationOutput {
             crate::output::StartDeviceAuthorizationOutput {
-                device_code: self.device_code,
-                user_code: self.user_code,
-                verification_uri: self.verification_uri,
-                verification_uri_complete: self.verification_uri_complete,
-                expires_in: self.expires_in.unwrap_or_default(),
-                interval: self.interval.unwrap_or_default(),
+                device_code: self.device_code
+                ,
+                user_code: self.user_code
+                ,
+                verification_uri: self.verification_uri
+                ,
+                verification_uri_complete: self.verification_uri_complete
+                ,
+                expires_in: self.expires_in
+                    .unwrap_or_default()
+                ,
+                interval: self.interval
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl StartDeviceAuthorizationOutput {
     /// Creates a new builder-style object to manufacture [`StartDeviceAuthorizationOutput`](crate::output::StartDeviceAuthorizationOutput).
@@ -151,7 +149,7 @@ impl StartDeviceAuthorizationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RegisterClientOutput {
+pub struct RegisterClientOutput  {
     /// <p>The unique identifier string for each client. This client uses this identifier to get authenticated by the service in subsequent calls.</p>
     #[doc(hidden)]
     pub client_id: std::option::Option<std::string::String>,
@@ -173,11 +171,11 @@ pub struct RegisterClientOutput {
 }
 impl RegisterClientOutput {
     /// <p>The unique identifier string for each client. This client uses this identifier to get authenticated by the service in subsequent calls.</p>
-    pub fn client_id(&self) -> std::option::Option<&str> {
+    pub fn client_id(&self) -> std::option::Option<& str> {
         self.client_id.as_deref()
     }
     /// <p>A secret string generated for the client. The client will use this string to get authenticated by the service in subsequent calls.</p>
-    pub fn client_secret(&self) -> std::option::Option<&str> {
+    pub fn client_secret(&self) -> std::option::Option<& str> {
         self.client_secret.as_deref()
     }
     /// <p>Indicates the time at which the <code>clientId</code> and <code>clientSecret</code> were issued.</p>
@@ -189,17 +187,17 @@ impl RegisterClientOutput {
         self.client_secret_expires_at
     }
     /// <p>The endpoint where the client can request authorization.</p>
-    pub fn authorization_endpoint(&self) -> std::option::Option<&str> {
+    pub fn authorization_endpoint(&self) -> std::option::Option<& str> {
         self.authorization_endpoint.as_deref()
     }
     /// <p>The endpoint where the client can get an access token.</p>
-    pub fn token_endpoint(&self) -> std::option::Option<&str> {
+    pub fn token_endpoint(&self) -> std::option::Option<& str> {
         self.token_endpoint.as_deref()
     }
 }
 /// See [`RegisterClientOutput`](crate::output::RegisterClientOutput).
 pub mod register_client_output {
-
+    
     /// A builder for [`RegisterClientOutput`](crate::output::RegisterClientOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -218,8 +216,7 @@ pub mod register_client_output {
         }
         /// <p>The unique identifier string for each client. This client uses this identifier to get authenticated by the service in subsequent calls.</p>
         pub fn set_client_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.client_id = input;
-            self
+            self.client_id = input; self
         }
         /// <p>A secret string generated for the client. The client will use this string to get authenticated by the service in subsequent calls.</p>
         pub fn client_secret(mut self, input: impl Into<std::string::String>) -> Self {
@@ -227,12 +224,8 @@ pub mod register_client_output {
             self
         }
         /// <p>A secret string generated for the client. The client will use this string to get authenticated by the service in subsequent calls.</p>
-        pub fn set_client_secret(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.client_secret = input;
-            self
+        pub fn set_client_secret(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.client_secret = input; self
         }
         /// <p>Indicates the time at which the <code>clientId</code> and <code>clientSecret</code> were issued.</p>
         pub fn client_id_issued_at(mut self, input: i64) -> Self {
@@ -241,8 +234,7 @@ pub mod register_client_output {
         }
         /// <p>Indicates the time at which the <code>clientId</code> and <code>clientSecret</code> were issued.</p>
         pub fn set_client_id_issued_at(mut self, input: std::option::Option<i64>) -> Self {
-            self.client_id_issued_at = input;
-            self
+            self.client_id_issued_at = input; self
         }
         /// <p>Indicates the time at which the <code>clientId</code> and <code>clientSecret</code> will become invalid.</p>
         pub fn client_secret_expires_at(mut self, input: i64) -> Self {
@@ -251,8 +243,7 @@ pub mod register_client_output {
         }
         /// <p>Indicates the time at which the <code>clientId</code> and <code>clientSecret</code> will become invalid.</p>
         pub fn set_client_secret_expires_at(mut self, input: std::option::Option<i64>) -> Self {
-            self.client_secret_expires_at = input;
-            self
+            self.client_secret_expires_at = input; self
         }
         /// <p>The endpoint where the client can request authorization.</p>
         pub fn authorization_endpoint(mut self, input: impl Into<std::string::String>) -> Self {
@@ -260,12 +251,8 @@ pub mod register_client_output {
             self
         }
         /// <p>The endpoint where the client can request authorization.</p>
-        pub fn set_authorization_endpoint(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.authorization_endpoint = input;
-            self
+        pub fn set_authorization_endpoint(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.authorization_endpoint = input; self
         }
         /// <p>The endpoint where the client can get an access token.</p>
         pub fn token_endpoint(mut self, input: impl Into<std::string::String>) -> Self {
@@ -273,25 +260,31 @@ pub mod register_client_output {
             self
         }
         /// <p>The endpoint where the client can get an access token.</p>
-        pub fn set_token_endpoint(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.token_endpoint = input;
-            self
+        pub fn set_token_endpoint(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.token_endpoint = input; self
         }
         /// Consumes the builder and constructs a [`RegisterClientOutput`](crate::output::RegisterClientOutput).
         pub fn build(self) -> crate::output::RegisterClientOutput {
             crate::output::RegisterClientOutput {
-                client_id: self.client_id,
-                client_secret: self.client_secret,
-                client_id_issued_at: self.client_id_issued_at.unwrap_or_default(),
-                client_secret_expires_at: self.client_secret_expires_at.unwrap_or_default(),
-                authorization_endpoint: self.authorization_endpoint,
-                token_endpoint: self.token_endpoint,
+                client_id: self.client_id
+                ,
+                client_secret: self.client_secret
+                ,
+                client_id_issued_at: self.client_id_issued_at
+                    .unwrap_or_default()
+                ,
+                client_secret_expires_at: self.client_secret_expires_at
+                    .unwrap_or_default()
+                ,
+                authorization_endpoint: self.authorization_endpoint
+                ,
+                token_endpoint: self.token_endpoint
+                ,
             }
         }
     }
+    
+    
 }
 impl RegisterClientOutput {
     /// Creates a new builder-style object to manufacture [`RegisterClientOutput`](crate::output::RegisterClientOutput).
@@ -303,7 +296,7 @@ impl RegisterClientOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateTokenOutput {
+pub struct CreateTokenOutput  {
     /// <p>An opaque token to access IAM Identity Center resources assigned to a user.</p>
     #[doc(hidden)]
     pub access_token: std::option::Option<std::string::String>,
@@ -313,42 +306,42 @@ pub struct CreateTokenOutput {
     /// <p>Indicates the time in seconds when an access token will expire.</p>
     #[doc(hidden)]
     pub expires_in: i32,
-    /// <p>Currently, <code>refreshToken</code> is not yet implemented and is not supported. For more information about the features and limitations of the current IAM Identity Center OIDC implementation, see <i>Considerations for Using this Guide</i> in the <a href="https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/Welcome.html">IAM Identity Center OIDC API Reference</a>.</p>
+    /// <p>Currently, <code>refreshToken</code> is not yet implemented and is not supported. For more information about the features and limitations of the current IAM Identity Center OIDC implementation, see <i>Considerations for Using this Guide</i> in the <a href="https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/Welcome.html">IAM Identity Center OIDC API Reference</a>.</p> 
     /// <p>A token that, if present, can be used to refresh a previously issued access token that might have expired.</p>
     #[doc(hidden)]
     pub refresh_token: std::option::Option<std::string::String>,
-    /// <p>Currently, <code>idToken</code> is not yet implemented and is not supported. For more information about the features and limitations of the current IAM Identity Center OIDC implementation, see <i>Considerations for Using this Guide</i> in the <a href="https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/Welcome.html">IAM Identity Center OIDC API Reference</a>.</p>
+    /// <p>Currently, <code>idToken</code> is not yet implemented and is not supported. For more information about the features and limitations of the current IAM Identity Center OIDC implementation, see <i>Considerations for Using this Guide</i> in the <a href="https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/Welcome.html">IAM Identity Center OIDC API Reference</a>.</p> 
     /// <p>The identifier of the user that associated with the access token, if present.</p>
     #[doc(hidden)]
     pub id_token: std::option::Option<std::string::String>,
 }
 impl CreateTokenOutput {
     /// <p>An opaque token to access IAM Identity Center resources assigned to a user.</p>
-    pub fn access_token(&self) -> std::option::Option<&str> {
+    pub fn access_token(&self) -> std::option::Option<& str> {
         self.access_token.as_deref()
     }
     /// <p>Used to notify the client that the returned token is an access token. The supported type is <code>BearerToken</code>.</p>
-    pub fn token_type(&self) -> std::option::Option<&str> {
+    pub fn token_type(&self) -> std::option::Option<& str> {
         self.token_type.as_deref()
     }
     /// <p>Indicates the time in seconds when an access token will expire.</p>
     pub fn expires_in(&self) -> i32 {
         self.expires_in
     }
-    /// <p>Currently, <code>refreshToken</code> is not yet implemented and is not supported. For more information about the features and limitations of the current IAM Identity Center OIDC implementation, see <i>Considerations for Using this Guide</i> in the <a href="https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/Welcome.html">IAM Identity Center OIDC API Reference</a>.</p>
+    /// <p>Currently, <code>refreshToken</code> is not yet implemented and is not supported. For more information about the features and limitations of the current IAM Identity Center OIDC implementation, see <i>Considerations for Using this Guide</i> in the <a href="https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/Welcome.html">IAM Identity Center OIDC API Reference</a>.</p> 
     /// <p>A token that, if present, can be used to refresh a previously issued access token that might have expired.</p>
-    pub fn refresh_token(&self) -> std::option::Option<&str> {
+    pub fn refresh_token(&self) -> std::option::Option<& str> {
         self.refresh_token.as_deref()
     }
-    /// <p>Currently, <code>idToken</code> is not yet implemented and is not supported. For more information about the features and limitations of the current IAM Identity Center OIDC implementation, see <i>Considerations for Using this Guide</i> in the <a href="https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/Welcome.html">IAM Identity Center OIDC API Reference</a>.</p>
+    /// <p>Currently, <code>idToken</code> is not yet implemented and is not supported. For more information about the features and limitations of the current IAM Identity Center OIDC implementation, see <i>Considerations for Using this Guide</i> in the <a href="https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/Welcome.html">IAM Identity Center OIDC API Reference</a>.</p> 
     /// <p>The identifier of the user that associated with the access token, if present.</p>
-    pub fn id_token(&self) -> std::option::Option<&str> {
+    pub fn id_token(&self) -> std::option::Option<& str> {
         self.id_token.as_deref()
     }
 }
 /// See [`CreateTokenOutput`](crate::output::CreateTokenOutput).
 pub mod create_token_output {
-
+    
     /// A builder for [`CreateTokenOutput`](crate::output::CreateTokenOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -366,8 +359,7 @@ pub mod create_token_output {
         }
         /// <p>An opaque token to access IAM Identity Center resources assigned to a user.</p>
         pub fn set_access_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.access_token = input;
-            self
+            self.access_token = input; self
         }
         /// <p>Used to notify the client that the returned token is an access token. The supported type is <code>BearerToken</code>.</p>
         pub fn token_type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -376,8 +368,7 @@ pub mod create_token_output {
         }
         /// <p>Used to notify the client that the returned token is an access token. The supported type is <code>BearerToken</code>.</p>
         pub fn set_token_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.token_type = input;
-            self
+            self.token_type = input; self
         }
         /// <p>Indicates the time in seconds when an access token will expire.</p>
         pub fn expires_in(mut self, input: i32) -> Self {
@@ -386,47 +377,49 @@ pub mod create_token_output {
         }
         /// <p>Indicates the time in seconds when an access token will expire.</p>
         pub fn set_expires_in(mut self, input: std::option::Option<i32>) -> Self {
-            self.expires_in = input;
-            self
+            self.expires_in = input; self
         }
-        /// <p>Currently, <code>refreshToken</code> is not yet implemented and is not supported. For more information about the features and limitations of the current IAM Identity Center OIDC implementation, see <i>Considerations for Using this Guide</i> in the <a href="https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/Welcome.html">IAM Identity Center OIDC API Reference</a>.</p>
+        /// <p>Currently, <code>refreshToken</code> is not yet implemented and is not supported. For more information about the features and limitations of the current IAM Identity Center OIDC implementation, see <i>Considerations for Using this Guide</i> in the <a href="https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/Welcome.html">IAM Identity Center OIDC API Reference</a>.</p> 
         /// <p>A token that, if present, can be used to refresh a previously issued access token that might have expired.</p>
         pub fn refresh_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.refresh_token = Some(input.into());
             self
         }
-        /// <p>Currently, <code>refreshToken</code> is not yet implemented and is not supported. For more information about the features and limitations of the current IAM Identity Center OIDC implementation, see <i>Considerations for Using this Guide</i> in the <a href="https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/Welcome.html">IAM Identity Center OIDC API Reference</a>.</p>
+        /// <p>Currently, <code>refreshToken</code> is not yet implemented and is not supported. For more information about the features and limitations of the current IAM Identity Center OIDC implementation, see <i>Considerations for Using this Guide</i> in the <a href="https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/Welcome.html">IAM Identity Center OIDC API Reference</a>.</p> 
         /// <p>A token that, if present, can be used to refresh a previously issued access token that might have expired.</p>
-        pub fn set_refresh_token(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.refresh_token = input;
-            self
+        pub fn set_refresh_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.refresh_token = input; self
         }
-        /// <p>Currently, <code>idToken</code> is not yet implemented and is not supported. For more information about the features and limitations of the current IAM Identity Center OIDC implementation, see <i>Considerations for Using this Guide</i> in the <a href="https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/Welcome.html">IAM Identity Center OIDC API Reference</a>.</p>
+        /// <p>Currently, <code>idToken</code> is not yet implemented and is not supported. For more information about the features and limitations of the current IAM Identity Center OIDC implementation, see <i>Considerations for Using this Guide</i> in the <a href="https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/Welcome.html">IAM Identity Center OIDC API Reference</a>.</p> 
         /// <p>The identifier of the user that associated with the access token, if present.</p>
         pub fn id_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.id_token = Some(input.into());
             self
         }
-        /// <p>Currently, <code>idToken</code> is not yet implemented and is not supported. For more information about the features and limitations of the current IAM Identity Center OIDC implementation, see <i>Considerations for Using this Guide</i> in the <a href="https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/Welcome.html">IAM Identity Center OIDC API Reference</a>.</p>
+        /// <p>Currently, <code>idToken</code> is not yet implemented and is not supported. For more information about the features and limitations of the current IAM Identity Center OIDC implementation, see <i>Considerations for Using this Guide</i> in the <a href="https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/Welcome.html">IAM Identity Center OIDC API Reference</a>.</p> 
         /// <p>The identifier of the user that associated with the access token, if present.</p>
         pub fn set_id_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id_token = input;
-            self
+            self.id_token = input; self
         }
         /// Consumes the builder and constructs a [`CreateTokenOutput`](crate::output::CreateTokenOutput).
         pub fn build(self) -> crate::output::CreateTokenOutput {
             crate::output::CreateTokenOutput {
-                access_token: self.access_token,
-                token_type: self.token_type,
-                expires_in: self.expires_in.unwrap_or_default(),
-                refresh_token: self.refresh_token,
-                id_token: self.id_token,
+                access_token: self.access_token
+                ,
+                token_type: self.token_type
+                ,
+                expires_in: self.expires_in
+                    .unwrap_or_default()
+                ,
+                refresh_token: self.refresh_token
+                ,
+                id_token: self.id_token
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateTokenOutput {
     /// Creates a new builder-style object to manufacture [`CreateTokenOutput`](crate::output::CreateTokenOutput).
@@ -434,3 +427,4 @@ impl CreateTokenOutput {
         crate::output::create_token_output::Builder::default()
     }
 }
+

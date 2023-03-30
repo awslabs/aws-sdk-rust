@@ -2,52 +2,45 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateIdentityProviderSettingsOutput {
+pub struct UpdateIdentityProviderSettingsOutput  {
     /// <p>Describes an identity provider.</p>
     #[doc(hidden)]
     pub identity_provider_summary: std::option::Option<crate::model::IdentityProviderSummary>,
 }
 impl UpdateIdentityProviderSettingsOutput {
     /// <p>Describes an identity provider.</p>
-    pub fn identity_provider_summary(
-        &self,
-    ) -> std::option::Option<&crate::model::IdentityProviderSummary> {
+    pub fn identity_provider_summary(&self) -> std::option::Option<& crate::model::IdentityProviderSummary> {
         self.identity_provider_summary.as_ref()
     }
 }
 /// See [`UpdateIdentityProviderSettingsOutput`](crate::output::UpdateIdentityProviderSettingsOutput).
 pub mod update_identity_provider_settings_output {
-
+    
     /// A builder for [`UpdateIdentityProviderSettingsOutput`](crate::output::UpdateIdentityProviderSettingsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) identity_provider_summary:
-            std::option::Option<crate::model::IdentityProviderSummary>,
+        pub(crate) identity_provider_summary: std::option::Option<crate::model::IdentityProviderSummary>,
     }
     impl Builder {
         /// <p>Describes an identity provider.</p>
-        pub fn identity_provider_summary(
-            mut self,
-            input: crate::model::IdentityProviderSummary,
-        ) -> Self {
+        pub fn identity_provider_summary(mut self, input: crate::model::IdentityProviderSummary) -> Self {
             self.identity_provider_summary = Some(input);
             self
         }
         /// <p>Describes an identity provider.</p>
-        pub fn set_identity_provider_summary(
-            mut self,
-            input: std::option::Option<crate::model::IdentityProviderSummary>,
-        ) -> Self {
-            self.identity_provider_summary = input;
-            self
+        pub fn set_identity_provider_summary(mut self, input: std::option::Option<crate::model::IdentityProviderSummary>) -> Self {
+            self.identity_provider_summary = input; self
         }
         /// Consumes the builder and constructs a [`UpdateIdentityProviderSettingsOutput`](crate::output::UpdateIdentityProviderSettingsOutput).
         pub fn build(self) -> crate::output::UpdateIdentityProviderSettingsOutput {
             crate::output::UpdateIdentityProviderSettingsOutput {
-                identity_provider_summary: self.identity_provider_summary,
+                identity_provider_summary: self.identity_provider_summary
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateIdentityProviderSettingsOutput {
     /// Creates a new builder-style object to manufacture [`UpdateIdentityProviderSettingsOutput`](crate::output::UpdateIdentityProviderSettingsOutput).
@@ -59,20 +52,20 @@ impl UpdateIdentityProviderSettingsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StopProductSubscriptionOutput {
+pub struct StopProductSubscriptionOutput  {
     /// <p>Metadata that describes the start product subscription operation.</p>
     #[doc(hidden)]
     pub product_user_summary: std::option::Option<crate::model::ProductUserSummary>,
 }
 impl StopProductSubscriptionOutput {
     /// <p>Metadata that describes the start product subscription operation.</p>
-    pub fn product_user_summary(&self) -> std::option::Option<&crate::model::ProductUserSummary> {
+    pub fn product_user_summary(&self) -> std::option::Option<& crate::model::ProductUserSummary> {
         self.product_user_summary.as_ref()
     }
 }
 /// See [`StopProductSubscriptionOutput`](crate::output::StopProductSubscriptionOutput).
 pub mod stop_product_subscription_output {
-
+    
     /// A builder for [`StopProductSubscriptionOutput`](crate::output::StopProductSubscriptionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -85,20 +78,19 @@ pub mod stop_product_subscription_output {
             self
         }
         /// <p>Metadata that describes the start product subscription operation.</p>
-        pub fn set_product_user_summary(
-            mut self,
-            input: std::option::Option<crate::model::ProductUserSummary>,
-        ) -> Self {
-            self.product_user_summary = input;
-            self
+        pub fn set_product_user_summary(mut self, input: std::option::Option<crate::model::ProductUserSummary>) -> Self {
+            self.product_user_summary = input; self
         }
         /// Consumes the builder and constructs a [`StopProductSubscriptionOutput`](crate::output::StopProductSubscriptionOutput).
         pub fn build(self) -> crate::output::StopProductSubscriptionOutput {
             crate::output::StopProductSubscriptionOutput {
-                product_user_summary: self.product_user_summary,
+                product_user_summary: self.product_user_summary
+                ,
             }
         }
     }
+    
+    
 }
 impl StopProductSubscriptionOutput {
     /// Creates a new builder-style object to manufacture [`StopProductSubscriptionOutput`](crate::output::StopProductSubscriptionOutput).
@@ -110,20 +102,20 @@ impl StopProductSubscriptionOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StartProductSubscriptionOutput {
+pub struct StartProductSubscriptionOutput  {
     /// <p>Metadata that describes the start product subscription operation.</p>
     #[doc(hidden)]
     pub product_user_summary: std::option::Option<crate::model::ProductUserSummary>,
 }
 impl StartProductSubscriptionOutput {
     /// <p>Metadata that describes the start product subscription operation.</p>
-    pub fn product_user_summary(&self) -> std::option::Option<&crate::model::ProductUserSummary> {
+    pub fn product_user_summary(&self) -> std::option::Option<& crate::model::ProductUserSummary> {
         self.product_user_summary.as_ref()
     }
 }
 /// See [`StartProductSubscriptionOutput`](crate::output::StartProductSubscriptionOutput).
 pub mod start_product_subscription_output {
-
+    
     /// A builder for [`StartProductSubscriptionOutput`](crate::output::StartProductSubscriptionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -136,20 +128,19 @@ pub mod start_product_subscription_output {
             self
         }
         /// <p>Metadata that describes the start product subscription operation.</p>
-        pub fn set_product_user_summary(
-            mut self,
-            input: std::option::Option<crate::model::ProductUserSummary>,
-        ) -> Self {
-            self.product_user_summary = input;
-            self
+        pub fn set_product_user_summary(mut self, input: std::option::Option<crate::model::ProductUserSummary>) -> Self {
+            self.product_user_summary = input; self
         }
         /// Consumes the builder and constructs a [`StartProductSubscriptionOutput`](crate::output::StartProductSubscriptionOutput).
         pub fn build(self) -> crate::output::StartProductSubscriptionOutput {
             crate::output::StartProductSubscriptionOutput {
-                product_user_summary: self.product_user_summary,
+                product_user_summary: self.product_user_summary
+                ,
             }
         }
     }
+    
+    
 }
 impl StartProductSubscriptionOutput {
     /// Creates a new builder-style object to manufacture [`StartProductSubscriptionOutput`](crate::output::StartProductSubscriptionOutput).
@@ -161,52 +152,45 @@ impl StartProductSubscriptionOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RegisterIdentityProviderOutput {
+pub struct RegisterIdentityProviderOutput  {
     /// <p>Metadata that describes the results of an identity provider operation.</p>
     #[doc(hidden)]
     pub identity_provider_summary: std::option::Option<crate::model::IdentityProviderSummary>,
 }
 impl RegisterIdentityProviderOutput {
     /// <p>Metadata that describes the results of an identity provider operation.</p>
-    pub fn identity_provider_summary(
-        &self,
-    ) -> std::option::Option<&crate::model::IdentityProviderSummary> {
+    pub fn identity_provider_summary(&self) -> std::option::Option<& crate::model::IdentityProviderSummary> {
         self.identity_provider_summary.as_ref()
     }
 }
 /// See [`RegisterIdentityProviderOutput`](crate::output::RegisterIdentityProviderOutput).
 pub mod register_identity_provider_output {
-
+    
     /// A builder for [`RegisterIdentityProviderOutput`](crate::output::RegisterIdentityProviderOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) identity_provider_summary:
-            std::option::Option<crate::model::IdentityProviderSummary>,
+        pub(crate) identity_provider_summary: std::option::Option<crate::model::IdentityProviderSummary>,
     }
     impl Builder {
         /// <p>Metadata that describes the results of an identity provider operation.</p>
-        pub fn identity_provider_summary(
-            mut self,
-            input: crate::model::IdentityProviderSummary,
-        ) -> Self {
+        pub fn identity_provider_summary(mut self, input: crate::model::IdentityProviderSummary) -> Self {
             self.identity_provider_summary = Some(input);
             self
         }
         /// <p>Metadata that describes the results of an identity provider operation.</p>
-        pub fn set_identity_provider_summary(
-            mut self,
-            input: std::option::Option<crate::model::IdentityProviderSummary>,
-        ) -> Self {
-            self.identity_provider_summary = input;
-            self
+        pub fn set_identity_provider_summary(mut self, input: std::option::Option<crate::model::IdentityProviderSummary>) -> Self {
+            self.identity_provider_summary = input; self
         }
         /// Consumes the builder and constructs a [`RegisterIdentityProviderOutput`](crate::output::RegisterIdentityProviderOutput).
         pub fn build(self) -> crate::output::RegisterIdentityProviderOutput {
             crate::output::RegisterIdentityProviderOutput {
-                identity_provider_summary: self.identity_provider_summary,
+                identity_provider_summary: self.identity_provider_summary
+                ,
             }
         }
     }
+    
+    
 }
 impl RegisterIdentityProviderOutput {
     /// Creates a new builder-style object to manufacture [`RegisterIdentityProviderOutput`](crate::output::RegisterIdentityProviderOutput).
@@ -218,35 +202,31 @@ impl RegisterIdentityProviderOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListUserAssociationsOutput {
+pub struct ListUserAssociationsOutput  {
     /// <p>Metadata that describes the list user association operation.</p>
     #[doc(hidden)]
-    pub instance_user_summaries:
-        std::option::Option<std::vec::Vec<crate::model::InstanceUserSummary>>,
+    pub instance_user_summaries: std::option::Option<std::vec::Vec<crate::model::InstanceUserSummary>>,
     /// <p>Token for the next set of results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListUserAssociationsOutput {
     /// <p>Metadata that describes the list user association operation.</p>
-    pub fn instance_user_summaries(
-        &self,
-    ) -> std::option::Option<&[crate::model::InstanceUserSummary]> {
+    pub fn instance_user_summaries(&self) -> std::option::Option<& [crate::model::InstanceUserSummary]> {
         self.instance_user_summaries.as_deref()
     }
     /// <p>Token for the next set of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListUserAssociationsOutput`](crate::output::ListUserAssociationsOutput).
 pub mod list_user_associations_output {
-
+    
     /// A builder for [`ListUserAssociationsOutput`](crate::output::ListUserAssociationsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) instance_user_summaries:
-            std::option::Option<std::vec::Vec<crate::model::InstanceUserSummary>>,
+        pub(crate) instance_user_summaries: std::option::Option<std::vec::Vec<crate::model::InstanceUserSummary>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -257,17 +237,13 @@ pub mod list_user_associations_output {
         /// <p>Metadata that describes the list user association operation.</p>
         pub fn instance_user_summaries(mut self, input: crate::model::InstanceUserSummary) -> Self {
             let mut v = self.instance_user_summaries.unwrap_or_default();
-            v.push(input);
-            self.instance_user_summaries = Some(v);
-            self
+                            v.push(input);
+                            self.instance_user_summaries = Some(v);
+                            self
         }
         /// <p>Metadata that describes the list user association operation.</p>
-        pub fn set_instance_user_summaries(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::InstanceUserSummary>>,
-        ) -> Self {
-            self.instance_user_summaries = input;
-            self
+        pub fn set_instance_user_summaries(mut self, input: std::option::Option<std::vec::Vec<crate::model::InstanceUserSummary>>) -> Self {
+            self.instance_user_summaries = input; self
         }
         /// <p>Token for the next set of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -276,17 +252,20 @@ pub mod list_user_associations_output {
         }
         /// <p>Token for the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListUserAssociationsOutput`](crate::output::ListUserAssociationsOutput).
         pub fn build(self) -> crate::output::ListUserAssociationsOutput {
             crate::output::ListUserAssociationsOutput {
-                instance_user_summaries: self.instance_user_summaries,
-                next_token: self.next_token,
+                instance_user_summaries: self.instance_user_summaries
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListUserAssociationsOutput {
     /// Creates a new builder-style object to manufacture [`ListUserAssociationsOutput`](crate::output::ListUserAssociationsOutput).
@@ -298,35 +277,31 @@ impl ListUserAssociationsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListProductSubscriptionsOutput {
+pub struct ListProductSubscriptionsOutput  {
     /// <p>Metadata that describes the list product subscriptions operation.</p>
     #[doc(hidden)]
-    pub product_user_summaries:
-        std::option::Option<std::vec::Vec<crate::model::ProductUserSummary>>,
+    pub product_user_summaries: std::option::Option<std::vec::Vec<crate::model::ProductUserSummary>>,
     /// <p>Token for the next set of results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListProductSubscriptionsOutput {
     /// <p>Metadata that describes the list product subscriptions operation.</p>
-    pub fn product_user_summaries(
-        &self,
-    ) -> std::option::Option<&[crate::model::ProductUserSummary]> {
+    pub fn product_user_summaries(&self) -> std::option::Option<& [crate::model::ProductUserSummary]> {
         self.product_user_summaries.as_deref()
     }
     /// <p>Token for the next set of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListProductSubscriptionsOutput`](crate::output::ListProductSubscriptionsOutput).
 pub mod list_product_subscriptions_output {
-
+    
     /// A builder for [`ListProductSubscriptionsOutput`](crate::output::ListProductSubscriptionsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) product_user_summaries:
-            std::option::Option<std::vec::Vec<crate::model::ProductUserSummary>>,
+        pub(crate) product_user_summaries: std::option::Option<std::vec::Vec<crate::model::ProductUserSummary>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -337,17 +312,13 @@ pub mod list_product_subscriptions_output {
         /// <p>Metadata that describes the list product subscriptions operation.</p>
         pub fn product_user_summaries(mut self, input: crate::model::ProductUserSummary) -> Self {
             let mut v = self.product_user_summaries.unwrap_or_default();
-            v.push(input);
-            self.product_user_summaries = Some(v);
-            self
+                            v.push(input);
+                            self.product_user_summaries = Some(v);
+                            self
         }
         /// <p>Metadata that describes the list product subscriptions operation.</p>
-        pub fn set_product_user_summaries(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ProductUserSummary>>,
-        ) -> Self {
-            self.product_user_summaries = input;
-            self
+        pub fn set_product_user_summaries(mut self, input: std::option::Option<std::vec::Vec<crate::model::ProductUserSummary>>) -> Self {
+            self.product_user_summaries = input; self
         }
         /// <p>Token for the next set of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -356,17 +327,20 @@ pub mod list_product_subscriptions_output {
         }
         /// <p>Token for the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListProductSubscriptionsOutput`](crate::output::ListProductSubscriptionsOutput).
         pub fn build(self) -> crate::output::ListProductSubscriptionsOutput {
             crate::output::ListProductSubscriptionsOutput {
-                product_user_summaries: self.product_user_summaries,
-                next_token: self.next_token,
+                product_user_summaries: self.product_user_summaries
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListProductSubscriptionsOutput {
     /// Creates a new builder-style object to manufacture [`ListProductSubscriptionsOutput`](crate::output::ListProductSubscriptionsOutput).
@@ -378,7 +352,7 @@ impl ListProductSubscriptionsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListInstancesOutput {
+pub struct ListInstancesOutput  {
     /// <p>Metadata that describes the list instances operation.</p>
     #[doc(hidden)]
     pub instance_summaries: std::option::Option<std::vec::Vec<crate::model::InstanceSummary>>,
@@ -388,22 +362,21 @@ pub struct ListInstancesOutput {
 }
 impl ListInstancesOutput {
     /// <p>Metadata that describes the list instances operation.</p>
-    pub fn instance_summaries(&self) -> std::option::Option<&[crate::model::InstanceSummary]> {
+    pub fn instance_summaries(&self) -> std::option::Option<& [crate::model::InstanceSummary]> {
         self.instance_summaries.as_deref()
     }
     /// <p>Token for the next set of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListInstancesOutput`](crate::output::ListInstancesOutput).
 pub mod list_instances_output {
-
+    
     /// A builder for [`ListInstancesOutput`](crate::output::ListInstancesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) instance_summaries:
-            std::option::Option<std::vec::Vec<crate::model::InstanceSummary>>,
+        pub(crate) instance_summaries: std::option::Option<std::vec::Vec<crate::model::InstanceSummary>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -414,17 +387,13 @@ pub mod list_instances_output {
         /// <p>Metadata that describes the list instances operation.</p>
         pub fn instance_summaries(mut self, input: crate::model::InstanceSummary) -> Self {
             let mut v = self.instance_summaries.unwrap_or_default();
-            v.push(input);
-            self.instance_summaries = Some(v);
-            self
+                            v.push(input);
+                            self.instance_summaries = Some(v);
+                            self
         }
         /// <p>Metadata that describes the list instances operation.</p>
-        pub fn set_instance_summaries(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::InstanceSummary>>,
-        ) -> Self {
-            self.instance_summaries = input;
-            self
+        pub fn set_instance_summaries(mut self, input: std::option::Option<std::vec::Vec<crate::model::InstanceSummary>>) -> Self {
+            self.instance_summaries = input; self
         }
         /// <p>Token for the next set of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -433,17 +402,20 @@ pub mod list_instances_output {
         }
         /// <p>Token for the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListInstancesOutput`](crate::output::ListInstancesOutput).
         pub fn build(self) -> crate::output::ListInstancesOutput {
             crate::output::ListInstancesOutput {
-                instance_summaries: self.instance_summaries,
-                next_token: self.next_token,
+                instance_summaries: self.instance_summaries
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListInstancesOutput {
     /// Creates a new builder-style object to manufacture [`ListInstancesOutput`](crate::output::ListInstancesOutput).
@@ -455,35 +427,31 @@ impl ListInstancesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListIdentityProvidersOutput {
+pub struct ListIdentityProvidersOutput  {
     /// <p>Metadata that describes the list identity providers operation.</p>
     #[doc(hidden)]
-    pub identity_provider_summaries:
-        std::option::Option<std::vec::Vec<crate::model::IdentityProviderSummary>>,
+    pub identity_provider_summaries: std::option::Option<std::vec::Vec<crate::model::IdentityProviderSummary>>,
     /// <p>Token for the next set of results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListIdentityProvidersOutput {
     /// <p>Metadata that describes the list identity providers operation.</p>
-    pub fn identity_provider_summaries(
-        &self,
-    ) -> std::option::Option<&[crate::model::IdentityProviderSummary]> {
+    pub fn identity_provider_summaries(&self) -> std::option::Option<& [crate::model::IdentityProviderSummary]> {
         self.identity_provider_summaries.as_deref()
     }
     /// <p>Token for the next set of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListIdentityProvidersOutput`](crate::output::ListIdentityProvidersOutput).
 pub mod list_identity_providers_output {
-
+    
     /// A builder for [`ListIdentityProvidersOutput`](crate::output::ListIdentityProvidersOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) identity_provider_summaries:
-            std::option::Option<std::vec::Vec<crate::model::IdentityProviderSummary>>,
+        pub(crate) identity_provider_summaries: std::option::Option<std::vec::Vec<crate::model::IdentityProviderSummary>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -492,22 +460,15 @@ pub mod list_identity_providers_output {
         /// To override the contents of this collection use [`set_identity_provider_summaries`](Self::set_identity_provider_summaries).
         ///
         /// <p>Metadata that describes the list identity providers operation.</p>
-        pub fn identity_provider_summaries(
-            mut self,
-            input: crate::model::IdentityProviderSummary,
-        ) -> Self {
+        pub fn identity_provider_summaries(mut self, input: crate::model::IdentityProviderSummary) -> Self {
             let mut v = self.identity_provider_summaries.unwrap_or_default();
-            v.push(input);
-            self.identity_provider_summaries = Some(v);
-            self
+                            v.push(input);
+                            self.identity_provider_summaries = Some(v);
+                            self
         }
         /// <p>Metadata that describes the list identity providers operation.</p>
-        pub fn set_identity_provider_summaries(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::IdentityProviderSummary>>,
-        ) -> Self {
-            self.identity_provider_summaries = input;
-            self
+        pub fn set_identity_provider_summaries(mut self, input: std::option::Option<std::vec::Vec<crate::model::IdentityProviderSummary>>) -> Self {
+            self.identity_provider_summaries = input; self
         }
         /// <p>Token for the next set of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -516,17 +477,20 @@ pub mod list_identity_providers_output {
         }
         /// <p>Token for the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListIdentityProvidersOutput`](crate::output::ListIdentityProvidersOutput).
         pub fn build(self) -> crate::output::ListIdentityProvidersOutput {
             crate::output::ListIdentityProvidersOutput {
-                identity_provider_summaries: self.identity_provider_summaries,
-                next_token: self.next_token,
+                identity_provider_summaries: self.identity_provider_summaries
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListIdentityProvidersOutput {
     /// Creates a new builder-style object to manufacture [`ListIdentityProvidersOutput`](crate::output::ListIdentityProvidersOutput).
@@ -538,20 +502,20 @@ impl ListIdentityProvidersOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DisassociateUserOutput {
+pub struct DisassociateUserOutput  {
     /// <p>Metadata that describes the associate user operation.</p>
     #[doc(hidden)]
     pub instance_user_summary: std::option::Option<crate::model::InstanceUserSummary>,
 }
 impl DisassociateUserOutput {
     /// <p>Metadata that describes the associate user operation.</p>
-    pub fn instance_user_summary(&self) -> std::option::Option<&crate::model::InstanceUserSummary> {
+    pub fn instance_user_summary(&self) -> std::option::Option<& crate::model::InstanceUserSummary> {
         self.instance_user_summary.as_ref()
     }
 }
 /// See [`DisassociateUserOutput`](crate::output::DisassociateUserOutput).
 pub mod disassociate_user_output {
-
+    
     /// A builder for [`DisassociateUserOutput`](crate::output::DisassociateUserOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -564,20 +528,19 @@ pub mod disassociate_user_output {
             self
         }
         /// <p>Metadata that describes the associate user operation.</p>
-        pub fn set_instance_user_summary(
-            mut self,
-            input: std::option::Option<crate::model::InstanceUserSummary>,
-        ) -> Self {
-            self.instance_user_summary = input;
-            self
+        pub fn set_instance_user_summary(mut self, input: std::option::Option<crate::model::InstanceUserSummary>) -> Self {
+            self.instance_user_summary = input; self
         }
         /// Consumes the builder and constructs a [`DisassociateUserOutput`](crate::output::DisassociateUserOutput).
         pub fn build(self) -> crate::output::DisassociateUserOutput {
             crate::output::DisassociateUserOutput {
-                instance_user_summary: self.instance_user_summary,
+                instance_user_summary: self.instance_user_summary
+                ,
             }
         }
     }
+    
+    
 }
 impl DisassociateUserOutput {
     /// Creates a new builder-style object to manufacture [`DisassociateUserOutput`](crate::output::DisassociateUserOutput).
@@ -589,52 +552,45 @@ impl DisassociateUserOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeregisterIdentityProviderOutput {
+pub struct DeregisterIdentityProviderOutput  {
     /// <p>Metadata that describes the results of an identity provider operation.</p>
     #[doc(hidden)]
     pub identity_provider_summary: std::option::Option<crate::model::IdentityProviderSummary>,
 }
 impl DeregisterIdentityProviderOutput {
     /// <p>Metadata that describes the results of an identity provider operation.</p>
-    pub fn identity_provider_summary(
-        &self,
-    ) -> std::option::Option<&crate::model::IdentityProviderSummary> {
+    pub fn identity_provider_summary(&self) -> std::option::Option<& crate::model::IdentityProviderSummary> {
         self.identity_provider_summary.as_ref()
     }
 }
 /// See [`DeregisterIdentityProviderOutput`](crate::output::DeregisterIdentityProviderOutput).
 pub mod deregister_identity_provider_output {
-
+    
     /// A builder for [`DeregisterIdentityProviderOutput`](crate::output::DeregisterIdentityProviderOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) identity_provider_summary:
-            std::option::Option<crate::model::IdentityProviderSummary>,
+        pub(crate) identity_provider_summary: std::option::Option<crate::model::IdentityProviderSummary>,
     }
     impl Builder {
         /// <p>Metadata that describes the results of an identity provider operation.</p>
-        pub fn identity_provider_summary(
-            mut self,
-            input: crate::model::IdentityProviderSummary,
-        ) -> Self {
+        pub fn identity_provider_summary(mut self, input: crate::model::IdentityProviderSummary) -> Self {
             self.identity_provider_summary = Some(input);
             self
         }
         /// <p>Metadata that describes the results of an identity provider operation.</p>
-        pub fn set_identity_provider_summary(
-            mut self,
-            input: std::option::Option<crate::model::IdentityProviderSummary>,
-        ) -> Self {
-            self.identity_provider_summary = input;
-            self
+        pub fn set_identity_provider_summary(mut self, input: std::option::Option<crate::model::IdentityProviderSummary>) -> Self {
+            self.identity_provider_summary = input; self
         }
         /// Consumes the builder and constructs a [`DeregisterIdentityProviderOutput`](crate::output::DeregisterIdentityProviderOutput).
         pub fn build(self) -> crate::output::DeregisterIdentityProviderOutput {
             crate::output::DeregisterIdentityProviderOutput {
-                identity_provider_summary: self.identity_provider_summary,
+                identity_provider_summary: self.identity_provider_summary
+                ,
             }
         }
     }
+    
+    
 }
 impl DeregisterIdentityProviderOutput {
     /// Creates a new builder-style object to manufacture [`DeregisterIdentityProviderOutput`](crate::output::DeregisterIdentityProviderOutput).
@@ -646,20 +602,20 @@ impl DeregisterIdentityProviderOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AssociateUserOutput {
+pub struct AssociateUserOutput  {
     /// <p>Metadata that describes the associate user operation.</p>
     #[doc(hidden)]
     pub instance_user_summary: std::option::Option<crate::model::InstanceUserSummary>,
 }
 impl AssociateUserOutput {
     /// <p>Metadata that describes the associate user operation.</p>
-    pub fn instance_user_summary(&self) -> std::option::Option<&crate::model::InstanceUserSummary> {
+    pub fn instance_user_summary(&self) -> std::option::Option<& crate::model::InstanceUserSummary> {
         self.instance_user_summary.as_ref()
     }
 }
 /// See [`AssociateUserOutput`](crate::output::AssociateUserOutput).
 pub mod associate_user_output {
-
+    
     /// A builder for [`AssociateUserOutput`](crate::output::AssociateUserOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -672,20 +628,19 @@ pub mod associate_user_output {
             self
         }
         /// <p>Metadata that describes the associate user operation.</p>
-        pub fn set_instance_user_summary(
-            mut self,
-            input: std::option::Option<crate::model::InstanceUserSummary>,
-        ) -> Self {
-            self.instance_user_summary = input;
-            self
+        pub fn set_instance_user_summary(mut self, input: std::option::Option<crate::model::InstanceUserSummary>) -> Self {
+            self.instance_user_summary = input; self
         }
         /// Consumes the builder and constructs a [`AssociateUserOutput`](crate::output::AssociateUserOutput).
         pub fn build(self) -> crate::output::AssociateUserOutput {
             crate::output::AssociateUserOutput {
-                instance_user_summary: self.instance_user_summary,
+                instance_user_summary: self.instance_user_summary
+                ,
             }
         }
     }
+    
+    
 }
 impl AssociateUserOutput {
     /// Creates a new builder-style object to manufacture [`AssociateUserOutput`](crate::output::AssociateUserOutput).
@@ -693,3 +648,4 @@ impl AssociateUserOutput {
         crate::output::associate_user_output::Builder::default()
     }
 }
+

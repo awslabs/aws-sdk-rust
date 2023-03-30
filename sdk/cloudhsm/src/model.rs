@@ -3,7 +3,7 @@
 /// <p>A key-value pair that identifies or specifies metadata about an AWS CloudHSM resource.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Tag {
+pub struct Tag  {
     /// <p>The key of the tag.</p>
     #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
@@ -13,17 +13,17 @@ pub struct Tag {
 }
 impl Tag {
     /// <p>The key of the tag.</p>
-    pub fn key(&self) -> std::option::Option<&str> {
+    pub fn key(&self) -> std::option::Option<& str> {
         self.key.as_deref()
     }
     /// <p>The value of the tag.</p>
-    pub fn value(&self) -> std::option::Option<&str> {
+    pub fn value(&self) -> std::option::Option<& str> {
         self.value.as_deref()
     }
 }
 /// See [`Tag`](crate::model::Tag).
 pub mod tag {
-
+    
     /// A builder for [`Tag`](crate::model::Tag).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -38,8 +38,7 @@ pub mod tag {
         }
         /// <p>The key of the tag.</p>
         pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.key = input;
-            self
+            self.key = input; self
         }
         /// <p>The value of the tag.</p>
         pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
@@ -48,17 +47,20 @@ pub mod tag {
         }
         /// <p>The value of the tag.</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.value = input;
-            self
+            self.value = input; self
         }
         /// Consumes the builder and constructs a [`Tag`](crate::model::Tag).
         pub fn build(self) -> crate::model::Tag {
             crate::model::Tag {
-                key: self.key,
-                value: self.value,
+                key: self.key
+                ,
+                value: self.value
+                ,
             }
         }
     }
+    
+    
 }
 impl Tag {
     /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
@@ -73,9 +75,9 @@ impl Tag {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let clientversion = unimplemented!();
 /// match clientversion {
@@ -97,58 +99,52 @@ impl Tag {
 /// Specifically, when `clientversion` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ClientVersion::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ClientVersion {
     #[allow(missing_docs)] // documentation missing in model
     FiveOne,
     #[allow(missing_docs)] // documentation missing in model
     FiveThree,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ClientVersion {
     fn from(s: &str) -> Self {
         match s {
             "5.1" => ClientVersion::FiveOne,
             "5.3" => ClientVersion::FiveThree,
-            other => ClientVersion::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => ClientVersion::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ClientVersion {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ClientVersion::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ClientVersion::from(s))
+                }
+            }
 impl ClientVersion {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ClientVersion::FiveOne => "5.1",
             ClientVersion::FiveThree => "5.3",
-            ClientVersion::Unknown(value) => value.as_str(),
+            ClientVersion::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["5.1", "5.3"]
+        &[
+            "5.1", "5.3"
+        ]
     }
 }
 impl AsRef<str> for ClientVersion {
@@ -163,9 +159,9 @@ impl AsRef<str> for ClientVersion {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let subscriptiontype = unimplemented!();
 /// match subscriptiontype {
@@ -186,7 +182,7 @@ impl AsRef<str> for ClientVersion {
 /// Specifically, when `subscriptiontype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `SubscriptionType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
@@ -205,47 +201,41 @@ impl AsRef<str> for ClientVersion {
 /// </li>
 /// </ul>
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum SubscriptionType {
     #[allow(missing_docs)] // documentation missing in model
     Production,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for SubscriptionType {
     fn from(s: &str) -> Self {
         match s {
             "PRODUCTION" => SubscriptionType::Production,
-            other => SubscriptionType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => SubscriptionType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for SubscriptionType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(SubscriptionType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(SubscriptionType::from(s))
+                }
+            }
 impl SubscriptionType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             SubscriptionType::Production => "PRODUCTION",
-            SubscriptionType::Unknown(value) => value.as_str(),
+            SubscriptionType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["PRODUCTION"]
+        &[
+            "PRODUCTION"
+        ]
     }
 }
 impl AsRef<str> for SubscriptionType {
@@ -260,9 +250,9 @@ impl AsRef<str> for SubscriptionType {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let hsmstatus = unimplemented!();
 /// match hsmstatus {
@@ -289,22 +279,14 @@ impl AsRef<str> for SubscriptionType {
 /// Specifically, when `hsmstatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `HsmStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum HsmStatus {
     #[allow(missing_docs)] // documentation missing in model
     Degraded,
@@ -321,7 +303,7 @@ pub enum HsmStatus {
     #[allow(missing_docs)] // documentation missing in model
     Updating,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for HsmStatus {
     fn from(s: &str) -> Self {
@@ -333,17 +315,17 @@ impl std::convert::From<&str> for HsmStatus {
             "TERMINATED" => HsmStatus::Terminated,
             "TERMINATING" => HsmStatus::Terminating,
             "UPDATING" => HsmStatus::Updating,
-            other => HsmStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => HsmStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for HsmStatus {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(HsmStatus::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(HsmStatus::from(s))
+                }
+            }
 impl HsmStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -355,19 +337,13 @@ impl HsmStatus {
             HsmStatus::Terminated => "TERMINATED",
             HsmStatus::Terminating => "TERMINATING",
             HsmStatus::Updating => "UPDATING",
-            HsmStatus::Unknown(value) => value.as_str(),
+            HsmStatus::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "DEGRADED",
-            "PENDING",
-            "RUNNING",
-            "SUSPENDED",
-            "TERMINATED",
-            "TERMINATING",
-            "UPDATING",
+            "DEGRADED", "PENDING", "RUNNING", "SUSPENDED", "TERMINATED", "TERMINATING", "UPDATING"
         ]
     }
 }
@@ -383,9 +359,9 @@ impl AsRef<str> for HsmStatus {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let cloudhsmobjectstate = unimplemented!();
 /// match cloudhsmobjectstate {
@@ -408,22 +384,14 @@ impl AsRef<str> for HsmStatus {
 /// Specifically, when `cloudhsmobjectstate` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `CloudHsmObjectState::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum CloudHsmObjectState {
     #[allow(missing_docs)] // documentation missing in model
     Degraded,
@@ -432,7 +400,7 @@ pub enum CloudHsmObjectState {
     #[allow(missing_docs)] // documentation missing in model
     Updating,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for CloudHsmObjectState {
     fn from(s: &str) -> Self {
@@ -440,19 +408,17 @@ impl std::convert::From<&str> for CloudHsmObjectState {
             "DEGRADED" => CloudHsmObjectState::Degraded,
             "READY" => CloudHsmObjectState::Ready,
             "UPDATING" => CloudHsmObjectState::Updating,
-            other => {
-                CloudHsmObjectState::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => CloudHsmObjectState::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for CloudHsmObjectState {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(CloudHsmObjectState::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(CloudHsmObjectState::from(s))
+                }
+            }
 impl CloudHsmObjectState {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -460,12 +426,14 @@ impl CloudHsmObjectState {
             CloudHsmObjectState::Degraded => "DEGRADED",
             CloudHsmObjectState::Ready => "READY",
             CloudHsmObjectState::Updating => "UPDATING",
-            CloudHsmObjectState::Unknown(value) => value.as_str(),
+            CloudHsmObjectState::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["DEGRADED", "READY", "UPDATING"]
+        &[
+            "DEGRADED", "READY", "UPDATING"
+        ]
     }
 }
 impl AsRef<str> for CloudHsmObjectState {
@@ -473,3 +441,4 @@ impl AsRef<str> for CloudHsmObjectState {
         self.as_str()
     }
 }
+

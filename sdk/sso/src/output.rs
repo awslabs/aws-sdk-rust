@@ -2,19 +2,24 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct LogoutOutput {}
+pub struct LogoutOutput  {
+}
 /// See [`LogoutOutput`](crate::output::LogoutOutput).
 pub mod logout_output {
-
+    
     /// A builder for [`LogoutOutput`](crate::output::LogoutOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`LogoutOutput`](crate::output::LogoutOutput).
         pub fn build(self) -> crate::output::LogoutOutput {
-            crate::output::LogoutOutput {}
+            crate::output::LogoutOutput {
+            }
         }
     }
+    
+    
 }
 impl LogoutOutput {
     /// Creates a new builder-style object to manufacture [`LogoutOutput`](crate::output::LogoutOutput).
@@ -26,7 +31,7 @@ impl LogoutOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListAccountsOutput {
+pub struct ListAccountsOutput  {
     /// <p>The page token client that is used to retrieve the list of accounts.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -36,17 +41,17 @@ pub struct ListAccountsOutput {
 }
 impl ListAccountsOutput {
     /// <p>The page token client that is used to retrieve the list of accounts.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>A paginated response with the list of account information and the next token if more results are available.</p>
-    pub fn account_list(&self) -> std::option::Option<&[crate::model::AccountInfo]> {
+    pub fn account_list(&self) -> std::option::Option<& [crate::model::AccountInfo]> {
         self.account_list.as_deref()
     }
 }
 /// See [`ListAccountsOutput`](crate::output::ListAccountsOutput).
 pub mod list_accounts_output {
-
+    
     /// A builder for [`ListAccountsOutput`](crate::output::ListAccountsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -61,8 +66,7 @@ pub mod list_accounts_output {
         }
         /// <p>The page token client that is used to retrieve the list of accounts.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Appends an item to `account_list`.
         ///
@@ -71,26 +75,26 @@ pub mod list_accounts_output {
         /// <p>A paginated response with the list of account information and the next token if more results are available.</p>
         pub fn account_list(mut self, input: crate::model::AccountInfo) -> Self {
             let mut v = self.account_list.unwrap_or_default();
-            v.push(input);
-            self.account_list = Some(v);
-            self
+                            v.push(input);
+                            self.account_list = Some(v);
+                            self
         }
         /// <p>A paginated response with the list of account information and the next token if more results are available.</p>
-        pub fn set_account_list(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::AccountInfo>>,
-        ) -> Self {
-            self.account_list = input;
-            self
+        pub fn set_account_list(mut self, input: std::option::Option<std::vec::Vec<crate::model::AccountInfo>>) -> Self {
+            self.account_list = input; self
         }
         /// Consumes the builder and constructs a [`ListAccountsOutput`](crate::output::ListAccountsOutput).
         pub fn build(self) -> crate::output::ListAccountsOutput {
             crate::output::ListAccountsOutput {
-                next_token: self.next_token,
-                account_list: self.account_list,
+                next_token: self.next_token
+                ,
+                account_list: self.account_list
+                ,
             }
         }
     }
+    
+    
 }
 impl ListAccountsOutput {
     /// Creates a new builder-style object to manufacture [`ListAccountsOutput`](crate::output::ListAccountsOutput).
@@ -102,7 +106,7 @@ impl ListAccountsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListAccountRolesOutput {
+pub struct ListAccountRolesOutput  {
     /// <p>The page token client that is used to retrieve the list of accounts.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -112,17 +116,17 @@ pub struct ListAccountRolesOutput {
 }
 impl ListAccountRolesOutput {
     /// <p>The page token client that is used to retrieve the list of accounts.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>A paginated response with the list of roles and the next token if more results are available.</p>
-    pub fn role_list(&self) -> std::option::Option<&[crate::model::RoleInfo]> {
+    pub fn role_list(&self) -> std::option::Option<& [crate::model::RoleInfo]> {
         self.role_list.as_deref()
     }
 }
 /// See [`ListAccountRolesOutput`](crate::output::ListAccountRolesOutput).
 pub mod list_account_roles_output {
-
+    
     /// A builder for [`ListAccountRolesOutput`](crate::output::ListAccountRolesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -137,8 +141,7 @@ pub mod list_account_roles_output {
         }
         /// <p>The page token client that is used to retrieve the list of accounts.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Appends an item to `role_list`.
         ///
@@ -147,26 +150,26 @@ pub mod list_account_roles_output {
         /// <p>A paginated response with the list of roles and the next token if more results are available.</p>
         pub fn role_list(mut self, input: crate::model::RoleInfo) -> Self {
             let mut v = self.role_list.unwrap_or_default();
-            v.push(input);
-            self.role_list = Some(v);
-            self
+                            v.push(input);
+                            self.role_list = Some(v);
+                            self
         }
         /// <p>A paginated response with the list of roles and the next token if more results are available.</p>
-        pub fn set_role_list(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::RoleInfo>>,
-        ) -> Self {
-            self.role_list = input;
-            self
+        pub fn set_role_list(mut self, input: std::option::Option<std::vec::Vec<crate::model::RoleInfo>>) -> Self {
+            self.role_list = input; self
         }
         /// Consumes the builder and constructs a [`ListAccountRolesOutput`](crate::output::ListAccountRolesOutput).
         pub fn build(self) -> crate::output::ListAccountRolesOutput {
             crate::output::ListAccountRolesOutput {
-                next_token: self.next_token,
-                role_list: self.role_list,
+                next_token: self.next_token
+                ,
+                role_list: self.role_list
+                ,
             }
         }
     }
+    
+    
 }
 impl ListAccountRolesOutput {
     /// Creates a new builder-style object to manufacture [`ListAccountRolesOutput`](crate::output::ListAccountRolesOutput).
@@ -178,20 +181,20 @@ impl ListAccountRolesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetRoleCredentialsOutput {
+pub struct GetRoleCredentialsOutput  {
     /// <p>The credentials for the role that is assigned to the user.</p>
     #[doc(hidden)]
     pub role_credentials: std::option::Option<crate::model::RoleCredentials>,
 }
 impl GetRoleCredentialsOutput {
     /// <p>The credentials for the role that is assigned to the user.</p>
-    pub fn role_credentials(&self) -> std::option::Option<&crate::model::RoleCredentials> {
+    pub fn role_credentials(&self) -> std::option::Option<& crate::model::RoleCredentials> {
         self.role_credentials.as_ref()
     }
 }
 /// See [`GetRoleCredentialsOutput`](crate::output::GetRoleCredentialsOutput).
 pub mod get_role_credentials_output {
-
+    
     /// A builder for [`GetRoleCredentialsOutput`](crate::output::GetRoleCredentialsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -204,20 +207,19 @@ pub mod get_role_credentials_output {
             self
         }
         /// <p>The credentials for the role that is assigned to the user.</p>
-        pub fn set_role_credentials(
-            mut self,
-            input: std::option::Option<crate::model::RoleCredentials>,
-        ) -> Self {
-            self.role_credentials = input;
-            self
+        pub fn set_role_credentials(mut self, input: std::option::Option<crate::model::RoleCredentials>) -> Self {
+            self.role_credentials = input; self
         }
         /// Consumes the builder and constructs a [`GetRoleCredentialsOutput`](crate::output::GetRoleCredentialsOutput).
         pub fn build(self) -> crate::output::GetRoleCredentialsOutput {
             crate::output::GetRoleCredentialsOutput {
-                role_credentials: self.role_credentials,
+                role_credentials: self.role_credentials
+                ,
             }
         }
     }
+    
+    
 }
 impl GetRoleCredentialsOutput {
     /// Creates a new builder-style object to manufacture [`GetRoleCredentialsOutput`](crate::output::GetRoleCredentialsOutput).
@@ -225,3 +227,4 @@ impl GetRoleCredentialsOutput {
         crate::output::get_role_credentials_output::Builder::default()
     }
 }
+

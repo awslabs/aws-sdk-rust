@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let validationexceptionreason = unimplemented!();
 /// match validationexceptionreason {
@@ -40,22 +40,14 @@
 /// Specifically, when `validationexceptionreason` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ValidationExceptionReason::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ValidationExceptionReason {
     #[allow(missing_docs)] // documentation missing in model
     ConflictingBlockUpdate,
@@ -82,7 +74,7 @@ pub enum ValidationExceptionReason {
     #[allow(missing_docs)] // documentation missing in model
     UnrelatedSnapshots,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ValidationExceptionReason {
     fn from(s: &str) -> Self {
@@ -99,19 +91,17 @@ impl std::convert::From<&str> for ValidationExceptionReason {
             "INVALID_TAG" => ValidationExceptionReason::InvalidTag,
             "INVALID_VOLUME_SIZE" => ValidationExceptionReason::InvalidVolumeSize,
             "UNRELATED_SNAPSHOTS" => ValidationExceptionReason::UnrelatedSnapshots,
-            other => ValidationExceptionReason::Unknown(crate::types::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => ValidationExceptionReason::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ValidationExceptionReason {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ValidationExceptionReason::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ValidationExceptionReason::from(s))
+                }
+            }
 impl ValidationExceptionReason {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -128,24 +118,13 @@ impl ValidationExceptionReason {
             ValidationExceptionReason::InvalidTag => "INVALID_TAG",
             ValidationExceptionReason::InvalidVolumeSize => "INVALID_VOLUME_SIZE",
             ValidationExceptionReason::UnrelatedSnapshots => "UNRELATED_SNAPSHOTS",
-            ValidationExceptionReason::Unknown(value) => value.as_str(),
+            ValidationExceptionReason::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "CONFLICTING_BLOCK_UPDATE",
-            "INVALID_BLOCK",
-            "INVALID_BLOCK_TOKEN",
-            "INVALID_CONTENT_ENCODING",
-            "INVALID_CUSTOMER_KEY",
-            "INVALID_DEPENDENCY_REQUEST",
-            "INVALID_PAGE_TOKEN",
-            "INVALID_PARAMETER_VALUE",
-            "INVALID_SNAPSHOT_ID",
-            "INVALID_TAG",
-            "INVALID_VOLUME_SIZE",
-            "UNRELATED_SNAPSHOTS",
+            "CONFLICTING_BLOCK_UPDATE", "INVALID_BLOCK", "INVALID_BLOCK_TOKEN", "INVALID_CONTENT_ENCODING", "INVALID_CUSTOMER_KEY", "INVALID_DEPENDENCY_REQUEST", "INVALID_PAGE_TOKEN", "INVALID_PARAMETER_VALUE", "INVALID_SNAPSHOT_ID", "INVALID_TAG", "INVALID_VOLUME_SIZE", "UNRELATED_SNAPSHOTS"
         ]
     }
 }
@@ -161,9 +140,9 @@ impl AsRef<str> for ValidationExceptionReason {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let servicequotaexceededexceptionreason = unimplemented!();
 /// match servicequotaexceededexceptionreason {
@@ -184,60 +163,48 @@ impl AsRef<str> for ValidationExceptionReason {
 /// Specifically, when `servicequotaexceededexceptionreason` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ServiceQuotaExceededExceptionReason::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ServiceQuotaExceededExceptionReason {
     #[allow(missing_docs)] // documentation missing in model
     DependencyServiceQuotaExceeded,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ServiceQuotaExceededExceptionReason {
     fn from(s: &str) -> Self {
         match s {
-            "DEPENDENCY_SERVICE_QUOTA_EXCEEDED" => {
-                ServiceQuotaExceededExceptionReason::DependencyServiceQuotaExceeded
-            }
-            other => ServiceQuotaExceededExceptionReason::Unknown(
-                crate::types::UnknownVariantValue(other.to_owned()),
-            ),
+            "DEPENDENCY_SERVICE_QUOTA_EXCEEDED" => ServiceQuotaExceededExceptionReason::DependencyServiceQuotaExceeded,
+            other => ServiceQuotaExceededExceptionReason::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ServiceQuotaExceededExceptionReason {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ServiceQuotaExceededExceptionReason::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ServiceQuotaExceededExceptionReason::from(s))
+                }
+            }
 impl ServiceQuotaExceededExceptionReason {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
-            ServiceQuotaExceededExceptionReason::DependencyServiceQuotaExceeded => {
-                "DEPENDENCY_SERVICE_QUOTA_EXCEEDED"
-            }
-            ServiceQuotaExceededExceptionReason::Unknown(value) => value.as_str(),
+            ServiceQuotaExceededExceptionReason::DependencyServiceQuotaExceeded => "DEPENDENCY_SERVICE_QUOTA_EXCEEDED",
+            ServiceQuotaExceededExceptionReason::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["DEPENDENCY_SERVICE_QUOTA_EXCEEDED"]
+        &[
+            "DEPENDENCY_SERVICE_QUOTA_EXCEEDED"
+        ]
     }
 }
 impl AsRef<str> for ServiceQuotaExceededExceptionReason {
@@ -252,9 +219,9 @@ impl AsRef<str> for ServiceQuotaExceededExceptionReason {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let resourcenotfoundexceptionreason = unimplemented!();
 /// match resourcenotfoundexceptionreason {
@@ -276,64 +243,52 @@ impl AsRef<str> for ServiceQuotaExceededExceptionReason {
 /// Specifically, when `resourcenotfoundexceptionreason` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ResourceNotFoundExceptionReason::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ResourceNotFoundExceptionReason {
     #[allow(missing_docs)] // documentation missing in model
     DependencyResourceNotFound,
     #[allow(missing_docs)] // documentation missing in model
     SnapshotNotFound,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ResourceNotFoundExceptionReason {
     fn from(s: &str) -> Self {
         match s {
-            "DEPENDENCY_RESOURCE_NOT_FOUND" => {
-                ResourceNotFoundExceptionReason::DependencyResourceNotFound
-            }
+            "DEPENDENCY_RESOURCE_NOT_FOUND" => ResourceNotFoundExceptionReason::DependencyResourceNotFound,
             "SNAPSHOT_NOT_FOUND" => ResourceNotFoundExceptionReason::SnapshotNotFound,
-            other => ResourceNotFoundExceptionReason::Unknown(crate::types::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => ResourceNotFoundExceptionReason::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ResourceNotFoundExceptionReason {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ResourceNotFoundExceptionReason::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ResourceNotFoundExceptionReason::from(s))
+                }
+            }
 impl ResourceNotFoundExceptionReason {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
-            ResourceNotFoundExceptionReason::DependencyResourceNotFound => {
-                "DEPENDENCY_RESOURCE_NOT_FOUND"
-            }
+            ResourceNotFoundExceptionReason::DependencyResourceNotFound => "DEPENDENCY_RESOURCE_NOT_FOUND",
             ResourceNotFoundExceptionReason::SnapshotNotFound => "SNAPSHOT_NOT_FOUND",
-            ResourceNotFoundExceptionReason::Unknown(value) => value.as_str(),
+            ResourceNotFoundExceptionReason::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["DEPENDENCY_RESOURCE_NOT_FOUND", "SNAPSHOT_NOT_FOUND"]
+        &[
+            "DEPENDENCY_RESOURCE_NOT_FOUND", "SNAPSHOT_NOT_FOUND"
+        ]
     }
 }
 impl AsRef<str> for ResourceNotFoundExceptionReason {
@@ -348,9 +303,9 @@ impl AsRef<str> for ResourceNotFoundExceptionReason {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let requestthrottledexceptionreason = unimplemented!();
 /// match requestthrottledexceptionreason {
@@ -373,22 +328,14 @@ impl AsRef<str> for ResourceNotFoundExceptionReason {
 /// Specifically, when `requestthrottledexceptionreason` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `RequestThrottledExceptionReason::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum RequestThrottledExceptionReason {
     #[allow(missing_docs)] // documentation missing in model
     AccountThrottled,
@@ -397,47 +344,39 @@ pub enum RequestThrottledExceptionReason {
     #[allow(missing_docs)] // documentation missing in model
     ResourceLevelThrottle,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for RequestThrottledExceptionReason {
     fn from(s: &str) -> Self {
         match s {
             "ACCOUNT_THROTTLED" => RequestThrottledExceptionReason::AccountThrottled,
-            "DEPENDENCY_REQUEST_THROTTLED" => {
-                RequestThrottledExceptionReason::DependencyRequestThrottled
-            }
+            "DEPENDENCY_REQUEST_THROTTLED" => RequestThrottledExceptionReason::DependencyRequestThrottled,
             "RESOURCE_LEVEL_THROTTLE" => RequestThrottledExceptionReason::ResourceLevelThrottle,
-            other => RequestThrottledExceptionReason::Unknown(crate::types::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => RequestThrottledExceptionReason::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for RequestThrottledExceptionReason {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(RequestThrottledExceptionReason::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(RequestThrottledExceptionReason::from(s))
+                }
+            }
 impl RequestThrottledExceptionReason {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             RequestThrottledExceptionReason::AccountThrottled => "ACCOUNT_THROTTLED",
-            RequestThrottledExceptionReason::DependencyRequestThrottled => {
-                "DEPENDENCY_REQUEST_THROTTLED"
-            }
+            RequestThrottledExceptionReason::DependencyRequestThrottled => "DEPENDENCY_REQUEST_THROTTLED",
             RequestThrottledExceptionReason::ResourceLevelThrottle => "RESOURCE_LEVEL_THROTTLE",
-            RequestThrottledExceptionReason::Unknown(value) => value.as_str(),
+            RequestThrottledExceptionReason::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "ACCOUNT_THROTTLED",
-            "DEPENDENCY_REQUEST_THROTTLED",
-            "RESOURCE_LEVEL_THROTTLE",
+            "ACCOUNT_THROTTLED", "DEPENDENCY_REQUEST_THROTTLED", "RESOURCE_LEVEL_THROTTLE"
         ]
     }
 }
@@ -453,9 +392,9 @@ impl AsRef<str> for RequestThrottledExceptionReason {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let accessdeniedexceptionreason = unimplemented!();
 /// match accessdeniedexceptionreason {
@@ -477,60 +416,52 @@ impl AsRef<str> for RequestThrottledExceptionReason {
 /// Specifically, when `accessdeniedexceptionreason` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `AccessDeniedExceptionReason::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum AccessDeniedExceptionReason {
     #[allow(missing_docs)] // documentation missing in model
     DependencyAccessDenied,
     #[allow(missing_docs)] // documentation missing in model
     UnauthorizedAccount,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for AccessDeniedExceptionReason {
     fn from(s: &str) -> Self {
         match s {
             "DEPENDENCY_ACCESS_DENIED" => AccessDeniedExceptionReason::DependencyAccessDenied,
             "UNAUTHORIZED_ACCOUNT" => AccessDeniedExceptionReason::UnauthorizedAccount,
-            other => AccessDeniedExceptionReason::Unknown(crate::types::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => AccessDeniedExceptionReason::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for AccessDeniedExceptionReason {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(AccessDeniedExceptionReason::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(AccessDeniedExceptionReason::from(s))
+                }
+            }
 impl AccessDeniedExceptionReason {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             AccessDeniedExceptionReason::DependencyAccessDenied => "DEPENDENCY_ACCESS_DENIED",
             AccessDeniedExceptionReason::UnauthorizedAccount => "UNAUTHORIZED_ACCOUNT",
-            AccessDeniedExceptionReason::Unknown(value) => value.as_str(),
+            AccessDeniedExceptionReason::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["DEPENDENCY_ACCESS_DENIED", "UNAUTHORIZED_ACCOUNT"]
+        &[
+            "DEPENDENCY_ACCESS_DENIED", "UNAUTHORIZED_ACCOUNT"
+        ]
     }
 }
 impl AsRef<str> for AccessDeniedExceptionReason {
@@ -542,7 +473,7 @@ impl AsRef<str> for AccessDeniedExceptionReason {
 /// <p>Describes a tag.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Tag {
+pub struct Tag  {
     /// <p>The key of the tag.</p>
     #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
@@ -552,17 +483,17 @@ pub struct Tag {
 }
 impl Tag {
     /// <p>The key of the tag.</p>
-    pub fn key(&self) -> std::option::Option<&str> {
+    pub fn key(&self) -> std::option::Option<& str> {
         self.key.as_deref()
     }
     /// <p>The value of the tag.</p>
-    pub fn value(&self) -> std::option::Option<&str> {
+    pub fn value(&self) -> std::option::Option<& str> {
         self.value.as_deref()
     }
 }
 /// See [`Tag`](crate::model::Tag).
 pub mod tag {
-
+    
     /// A builder for [`Tag`](crate::model::Tag).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -577,8 +508,7 @@ pub mod tag {
         }
         /// <p>The key of the tag.</p>
         pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.key = input;
-            self
+            self.key = input; self
         }
         /// <p>The value of the tag.</p>
         pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
@@ -587,17 +517,20 @@ pub mod tag {
         }
         /// <p>The value of the tag.</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.value = input;
-            self
+            self.value = input; self
         }
         /// Consumes the builder and constructs a [`Tag`](crate::model::Tag).
         pub fn build(self) -> crate::model::Tag {
             crate::model::Tag {
-                key: self.key,
-                value: self.value,
+                key: self.key
+                ,
+                value: self.value
+                ,
             }
         }
     }
+    
+    
 }
 impl Tag {
     /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
@@ -612,9 +545,9 @@ impl Tag {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let status = unimplemented!();
 /// match status {
@@ -637,22 +570,14 @@ impl Tag {
 /// Specifically, when `status` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `Status::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum Status {
     #[allow(missing_docs)] // documentation missing in model
     Completed,
@@ -661,7 +586,7 @@ pub enum Status {
     #[allow(missing_docs)] // documentation missing in model
     Pending,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for Status {
     fn from(s: &str) -> Self {
@@ -669,17 +594,17 @@ impl std::convert::From<&str> for Status {
             "completed" => Status::Completed,
             "error" => Status::Error,
             "pending" => Status::Pending,
-            other => Status::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => Status::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for Status {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(Status::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(Status::from(s))
+                }
+            }
 impl Status {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -687,12 +612,14 @@ impl Status {
             Status::Completed => "completed",
             Status::Error => "error",
             Status::Pending => "pending",
-            Status::Unknown(value) => value.as_str(),
+            Status::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["completed", "error", "pending"]
+        &[
+            "completed", "error", "pending"
+        ]
     }
 }
 impl AsRef<str> for Status {
@@ -707,9 +634,9 @@ impl AsRef<str> for Status {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let checksumalgorithm = unimplemented!();
 /// match checksumalgorithm {
@@ -730,56 +657,48 @@ impl AsRef<str> for Status {
 /// Specifically, when `checksumalgorithm` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ChecksumAlgorithm::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ChecksumAlgorithm {
     #[allow(missing_docs)] // documentation missing in model
     ChecksumAlgorithmSha256,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ChecksumAlgorithm {
     fn from(s: &str) -> Self {
         match s {
             "SHA256" => ChecksumAlgorithm::ChecksumAlgorithmSha256,
-            other => {
-                ChecksumAlgorithm::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => ChecksumAlgorithm::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ChecksumAlgorithm {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ChecksumAlgorithm::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ChecksumAlgorithm::from(s))
+                }
+            }
 impl ChecksumAlgorithm {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ChecksumAlgorithm::ChecksumAlgorithmSha256 => "SHA256",
-            ChecksumAlgorithm::Unknown(value) => value.as_str(),
+            ChecksumAlgorithm::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["SHA256"]
+        &[
+            "SHA256"
+        ]
     }
 }
 impl AsRef<str> for ChecksumAlgorithm {
@@ -791,7 +710,7 @@ impl AsRef<str> for ChecksumAlgorithm {
 /// <p>A block of data in an Amazon Elastic Block Store snapshot.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Block {
+pub struct Block  {
     /// <p>The block index.</p>
     #[doc(hidden)]
     pub block_index: std::option::Option<i32>,
@@ -805,13 +724,13 @@ impl Block {
         self.block_index
     }
     /// <p>The block token for the block index.</p>
-    pub fn block_token(&self) -> std::option::Option<&str> {
+    pub fn block_token(&self) -> std::option::Option<& str> {
         self.block_token.as_deref()
     }
 }
 /// See [`Block`](crate::model::Block).
 pub mod block {
-
+    
     /// A builder for [`Block`](crate::model::Block).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -826,8 +745,7 @@ pub mod block {
         }
         /// <p>The block index.</p>
         pub fn set_block_index(mut self, input: std::option::Option<i32>) -> Self {
-            self.block_index = input;
-            self
+            self.block_index = input; self
         }
         /// <p>The block token for the block index.</p>
         pub fn block_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -836,17 +754,20 @@ pub mod block {
         }
         /// <p>The block token for the block index.</p>
         pub fn set_block_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.block_token = input;
-            self
+            self.block_token = input; self
         }
         /// Consumes the builder and constructs a [`Block`](crate::model::Block).
         pub fn build(self) -> crate::model::Block {
             crate::model::Block {
-                block_index: self.block_index,
-                block_token: self.block_token,
+                block_index: self.block_index
+                ,
+                block_token: self.block_token
+                ,
             }
         }
     }
+    
+    
 }
 impl Block {
     /// Creates a new builder-style object to manufacture [`Block`](crate::model::Block).
@@ -858,7 +779,7 @@ impl Block {
 /// <p>A block of data in an Amazon Elastic Block Store snapshot that is different from another snapshot of the same volume/snapshot lineage.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct ChangedBlock {
+pub struct ChangedBlock  {
     /// <p>The block index.</p>
     #[doc(hidden)]
     pub block_index: std::option::Option<i32>,
@@ -875,15 +796,15 @@ impl ChangedBlock {
         self.block_index
     }
     /// <p>The block token for the block index of the <code>FirstSnapshotId</code> specified in the <code>ListChangedBlocks</code> operation. This value is absent if the first snapshot does not have the changed block that is on the second snapshot.</p>
-    pub fn first_block_token(&self) -> std::option::Option<&str> {
+    pub fn first_block_token(&self) -> std::option::Option<& str> {
         self.first_block_token.as_deref()
     }
     /// <p>The block token for the block index of the <code>SecondSnapshotId</code> specified in the <code>ListChangedBlocks</code> operation.</p>
-    pub fn second_block_token(&self) -> std::option::Option<&str> {
+    pub fn second_block_token(&self) -> std::option::Option<& str> {
         self.second_block_token.as_deref()
     }
 }
-impl std::fmt::Debug for ChangedBlock {
+impl  std::fmt::Debug for ChangedBlock  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ChangedBlock");
         formatter.field("block_index", &"*** Sensitive Data Redacted ***");
@@ -894,7 +815,7 @@ impl std::fmt::Debug for ChangedBlock {
 }
 /// See [`ChangedBlock`](crate::model::ChangedBlock).
 pub mod changed_block {
-
+    
     /// A builder for [`ChangedBlock`](crate::model::ChangedBlock).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
@@ -910,8 +831,7 @@ pub mod changed_block {
         }
         /// <p>The block index.</p>
         pub fn set_block_index(mut self, input: std::option::Option<i32>) -> Self {
-            self.block_index = input;
-            self
+            self.block_index = input; self
         }
         /// <p>The block token for the block index of the <code>FirstSnapshotId</code> specified in the <code>ListChangedBlocks</code> operation. This value is absent if the first snapshot does not have the changed block that is on the second snapshot.</p>
         pub fn first_block_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -919,12 +839,8 @@ pub mod changed_block {
             self
         }
         /// <p>The block token for the block index of the <code>FirstSnapshotId</code> specified in the <code>ListChangedBlocks</code> operation. This value is absent if the first snapshot does not have the changed block that is on the second snapshot.</p>
-        pub fn set_first_block_token(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.first_block_token = input;
-            self
+        pub fn set_first_block_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.first_block_token = input; self
         }
         /// <p>The block token for the block index of the <code>SecondSnapshotId</code> specified in the <code>ListChangedBlocks</code> operation.</p>
         pub fn second_block_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -932,19 +848,18 @@ pub mod changed_block {
             self
         }
         /// <p>The block token for the block index of the <code>SecondSnapshotId</code> specified in the <code>ListChangedBlocks</code> operation.</p>
-        pub fn set_second_block_token(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.second_block_token = input;
-            self
+        pub fn set_second_block_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.second_block_token = input; self
         }
         /// Consumes the builder and constructs a [`ChangedBlock`](crate::model::ChangedBlock).
         pub fn build(self) -> crate::model::ChangedBlock {
             crate::model::ChangedBlock {
-                block_index: self.block_index,
-                first_block_token: self.first_block_token,
-                second_block_token: self.second_block_token,
+                block_index: self.block_index
+                ,
+                first_block_token: self.first_block_token
+                ,
+                second_block_token: self.second_block_token
+                ,
             }
         }
     }
@@ -957,6 +872,8 @@ pub mod changed_block {
             formatter.finish()
         }
     }
+    
+    
 }
 impl ChangedBlock {
     /// Creates a new builder-style object to manufacture [`ChangedBlock`](crate::model::ChangedBlock).
@@ -971,9 +888,9 @@ impl ChangedBlock {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let checksumaggregationmethod = unimplemented!();
 /// match checksumaggregationmethod {
@@ -994,56 +911,48 @@ impl ChangedBlock {
 /// Specifically, when `checksumaggregationmethod` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ChecksumAggregationMethod::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ChecksumAggregationMethod {
     #[allow(missing_docs)] // documentation missing in model
     ChecksumAggregationLinear,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ChecksumAggregationMethod {
     fn from(s: &str) -> Self {
         match s {
             "LINEAR" => ChecksumAggregationMethod::ChecksumAggregationLinear,
-            other => ChecksumAggregationMethod::Unknown(crate::types::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => ChecksumAggregationMethod::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ChecksumAggregationMethod {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ChecksumAggregationMethod::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ChecksumAggregationMethod::from(s))
+                }
+            }
 impl ChecksumAggregationMethod {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ChecksumAggregationMethod::ChecksumAggregationLinear => "LINEAR",
-            ChecksumAggregationMethod::Unknown(value) => value.as_str(),
+            ChecksumAggregationMethod::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["LINEAR"]
+        &[
+            "LINEAR"
+        ]
     }
 }
 impl AsRef<str> for ChecksumAggregationMethod {
@@ -1051,3 +960,4 @@ impl AsRef<str> for ChecksumAggregationMethod {
         self.as_str()
     }
 }
+

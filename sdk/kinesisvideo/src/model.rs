@@ -3,7 +3,7 @@
 /// <p>A structure that contains the configuration for the <code>SINGLE_MASTER</code> channel type.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SingleMasterConfiguration {
+pub struct SingleMasterConfiguration  {
     /// <p>The period of time a signaling channel retains undelivered messages before they are discarded.</p>
     #[doc(hidden)]
     pub message_ttl_seconds: std::option::Option<i32>,
@@ -16,7 +16,7 @@ impl SingleMasterConfiguration {
 }
 /// See [`SingleMasterConfiguration`](crate::model::SingleMasterConfiguration).
 pub mod single_master_configuration {
-
+    
     /// A builder for [`SingleMasterConfiguration`](crate::model::SingleMasterConfiguration).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -30,16 +30,18 @@ pub mod single_master_configuration {
         }
         /// <p>The period of time a signaling channel retains undelivered messages before they are discarded.</p>
         pub fn set_message_ttl_seconds(mut self, input: std::option::Option<i32>) -> Self {
-            self.message_ttl_seconds = input;
-            self
+            self.message_ttl_seconds = input; self
         }
         /// Consumes the builder and constructs a [`SingleMasterConfiguration`](crate::model::SingleMasterConfiguration).
         pub fn build(self) -> crate::model::SingleMasterConfiguration {
             crate::model::SingleMasterConfiguration {
-                message_ttl_seconds: self.message_ttl_seconds,
+                message_ttl_seconds: self.message_ttl_seconds
+                ,
             }
         }
     }
+    
+    
 }
 impl SingleMasterConfiguration {
     /// Creates a new builder-style object to manufacture [`SingleMasterConfiguration`](crate::model::SingleMasterConfiguration).
@@ -51,7 +53,7 @@ impl SingleMasterConfiguration {
 /// <p>The structure that contains the notification information for the KVS images delivery. If this parameter is null, the configuration will be deleted from the stream.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct NotificationConfiguration {
+pub struct NotificationConfiguration  {
     /// <p>Indicates if a notification configuration is enabled or disabled.</p>
     #[doc(hidden)]
     pub status: std::option::Option<crate::model::ConfigurationStatus>,
@@ -61,25 +63,22 @@ pub struct NotificationConfiguration {
 }
 impl NotificationConfiguration {
     /// <p>Indicates if a notification configuration is enabled or disabled.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::ConfigurationStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::ConfigurationStatus> {
         self.status.as_ref()
     }
     /// <p>The destination information required to deliver a notification to a customer.</p>
-    pub fn destination_config(
-        &self,
-    ) -> std::option::Option<&crate::model::NotificationDestinationConfig> {
+    pub fn destination_config(&self) -> std::option::Option<& crate::model::NotificationDestinationConfig> {
         self.destination_config.as_ref()
     }
 }
 /// See [`NotificationConfiguration`](crate::model::NotificationConfiguration).
 pub mod notification_configuration {
-
+    
     /// A builder for [`NotificationConfiguration`](crate::model::NotificationConfiguration).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) status: std::option::Option<crate::model::ConfigurationStatus>,
-        pub(crate) destination_config:
-            std::option::Option<crate::model::NotificationDestinationConfig>,
+        pub(crate) destination_config: std::option::Option<crate::model::NotificationDestinationConfig>,
     }
     impl Builder {
         /// <p>Indicates if a notification configuration is enabled or disabled.</p>
@@ -88,37 +87,30 @@ pub mod notification_configuration {
             self
         }
         /// <p>Indicates if a notification configuration is enabled or disabled.</p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::ConfigurationStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::ConfigurationStatus>) -> Self {
+            self.status = input; self
         }
         /// <p>The destination information required to deliver a notification to a customer.</p>
-        pub fn destination_config(
-            mut self,
-            input: crate::model::NotificationDestinationConfig,
-        ) -> Self {
+        pub fn destination_config(mut self, input: crate::model::NotificationDestinationConfig) -> Self {
             self.destination_config = Some(input);
             self
         }
         /// <p>The destination information required to deliver a notification to a customer.</p>
-        pub fn set_destination_config(
-            mut self,
-            input: std::option::Option<crate::model::NotificationDestinationConfig>,
-        ) -> Self {
-            self.destination_config = input;
-            self
+        pub fn set_destination_config(mut self, input: std::option::Option<crate::model::NotificationDestinationConfig>) -> Self {
+            self.destination_config = input; self
         }
         /// Consumes the builder and constructs a [`NotificationConfiguration`](crate::model::NotificationConfiguration).
         pub fn build(self) -> crate::model::NotificationConfiguration {
             crate::model::NotificationConfiguration {
-                status: self.status,
-                destination_config: self.destination_config,
+                status: self.status
+                ,
+                destination_config: self.destination_config
+                ,
             }
         }
     }
+    
+    
 }
 impl NotificationConfiguration {
     /// Creates a new builder-style object to manufacture [`NotificationConfiguration`](crate::model::NotificationConfiguration).
@@ -130,20 +122,20 @@ impl NotificationConfiguration {
 /// <p>The structure that contains the information required to deliver a notification to a customer.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct NotificationDestinationConfig {
+pub struct NotificationDestinationConfig  {
     /// <p>The Uniform Resource Identifier (URI) that identifies where the images will be delivered.</p>
     #[doc(hidden)]
     pub uri: std::option::Option<std::string::String>,
 }
 impl NotificationDestinationConfig {
     /// <p>The Uniform Resource Identifier (URI) that identifies where the images will be delivered.</p>
-    pub fn uri(&self) -> std::option::Option<&str> {
+    pub fn uri(&self) -> std::option::Option<& str> {
         self.uri.as_deref()
     }
 }
 /// See [`NotificationDestinationConfig`](crate::model::NotificationDestinationConfig).
 pub mod notification_destination_config {
-
+    
     /// A builder for [`NotificationDestinationConfig`](crate::model::NotificationDestinationConfig).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -157,14 +149,18 @@ pub mod notification_destination_config {
         }
         /// <p>The Uniform Resource Identifier (URI) that identifies where the images will be delivered.</p>
         pub fn set_uri(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.uri = input;
-            self
+            self.uri = input; self
         }
         /// Consumes the builder and constructs a [`NotificationDestinationConfig`](crate::model::NotificationDestinationConfig).
         pub fn build(self) -> crate::model::NotificationDestinationConfig {
-            crate::model::NotificationDestinationConfig { uri: self.uri }
+            crate::model::NotificationDestinationConfig {
+                uri: self.uri
+                ,
+            }
         }
     }
+    
+    
 }
 impl NotificationDestinationConfig {
     /// Creates a new builder-style object to manufacture [`NotificationDestinationConfig`](crate::model::NotificationDestinationConfig).
@@ -179,9 +175,9 @@ impl NotificationDestinationConfig {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let configurationstatus = unimplemented!();
 /// match configurationstatus {
@@ -203,60 +199,52 @@ impl NotificationDestinationConfig {
 /// Specifically, when `configurationstatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ConfigurationStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ConfigurationStatus {
     #[allow(missing_docs)] // documentation missing in model
     Disabled,
     #[allow(missing_docs)] // documentation missing in model
     Enabled,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ConfigurationStatus {
     fn from(s: &str) -> Self {
         match s {
             "DISABLED" => ConfigurationStatus::Disabled,
             "ENABLED" => ConfigurationStatus::Enabled,
-            other => {
-                ConfigurationStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => ConfigurationStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ConfigurationStatus {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ConfigurationStatus::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ConfigurationStatus::from(s))
+                }
+            }
 impl ConfigurationStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ConfigurationStatus::Disabled => "DISABLED",
             ConfigurationStatus::Enabled => "ENABLED",
-            ConfigurationStatus::Unknown(value) => value.as_str(),
+            ConfigurationStatus::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["DISABLED", "ENABLED"]
+        &[
+            "DISABLED", "ENABLED"
+        ]
     }
 }
 impl AsRef<str> for ConfigurationStatus {
@@ -268,7 +256,7 @@ impl AsRef<str> for ConfigurationStatus {
 /// <p>A structure that encapsulates, or contains, the media storage configuration properties.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct MediaStorageConfiguration {
+pub struct MediaStorageConfiguration  {
     /// <p>The Amazon Resource Name (ARN) of the stream </p>
     #[doc(hidden)]
     pub stream_arn: std::option::Option<std::string::String>,
@@ -278,17 +266,17 @@ pub struct MediaStorageConfiguration {
 }
 impl MediaStorageConfiguration {
     /// <p>The Amazon Resource Name (ARN) of the stream </p>
-    pub fn stream_arn(&self) -> std::option::Option<&str> {
+    pub fn stream_arn(&self) -> std::option::Option<& str> {
         self.stream_arn.as_deref()
     }
     /// <p>The status of the media storage configuration.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::MediaStorageConfigurationStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::MediaStorageConfigurationStatus> {
         self.status.as_ref()
     }
 }
 /// See [`MediaStorageConfiguration`](crate::model::MediaStorageConfiguration).
 pub mod media_storage_configuration {
-
+    
     /// A builder for [`MediaStorageConfiguration`](crate::model::MediaStorageConfiguration).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -303,8 +291,7 @@ pub mod media_storage_configuration {
         }
         /// <p>The Amazon Resource Name (ARN) of the stream </p>
         pub fn set_stream_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.stream_arn = input;
-            self
+            self.stream_arn = input; self
         }
         /// <p>The status of the media storage configuration.</p>
         pub fn status(mut self, input: crate::model::MediaStorageConfigurationStatus) -> Self {
@@ -312,21 +299,21 @@ pub mod media_storage_configuration {
             self
         }
         /// <p>The status of the media storage configuration.</p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::MediaStorageConfigurationStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::MediaStorageConfigurationStatus>) -> Self {
+            self.status = input; self
         }
         /// Consumes the builder and constructs a [`MediaStorageConfiguration`](crate::model::MediaStorageConfiguration).
         pub fn build(self) -> crate::model::MediaStorageConfiguration {
             crate::model::MediaStorageConfiguration {
-                stream_arn: self.stream_arn,
-                status: self.status,
+                stream_arn: self.stream_arn
+                ,
+                status: self.status
+                ,
             }
         }
     }
+    
+    
 }
 impl MediaStorageConfiguration {
     /// Creates a new builder-style object to manufacture [`MediaStorageConfiguration`](crate::model::MediaStorageConfiguration).
@@ -341,9 +328,9 @@ impl MediaStorageConfiguration {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let mediastorageconfigurationstatus = unimplemented!();
 /// match mediastorageconfigurationstatus {
@@ -365,60 +352,52 @@ impl MediaStorageConfiguration {
 /// Specifically, when `mediastorageconfigurationstatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `MediaStorageConfigurationStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum MediaStorageConfigurationStatus {
     #[allow(missing_docs)] // documentation missing in model
     Disabled,
     #[allow(missing_docs)] // documentation missing in model
     Enabled,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for MediaStorageConfigurationStatus {
     fn from(s: &str) -> Self {
         match s {
             "DISABLED" => MediaStorageConfigurationStatus::Disabled,
             "ENABLED" => MediaStorageConfigurationStatus::Enabled,
-            other => MediaStorageConfigurationStatus::Unknown(crate::types::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => MediaStorageConfigurationStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for MediaStorageConfigurationStatus {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(MediaStorageConfigurationStatus::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(MediaStorageConfigurationStatus::from(s))
+                }
+            }
 impl MediaStorageConfigurationStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             MediaStorageConfigurationStatus::Disabled => "DISABLED",
             MediaStorageConfigurationStatus::Enabled => "ENABLED",
-            MediaStorageConfigurationStatus::Unknown(value) => value.as_str(),
+            MediaStorageConfigurationStatus::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["DISABLED", "ENABLED"]
+        &[
+            "DISABLED", "ENABLED"
+        ]
     }
 }
 impl AsRef<str> for MediaStorageConfigurationStatus {
@@ -430,7 +409,7 @@ impl AsRef<str> for MediaStorageConfigurationStatus {
 /// <p>The structure that contains the information required for the KVS images delivery. If null, the configuration will be deleted from the stream.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ImageGenerationConfiguration {
+pub struct ImageGenerationConfiguration  {
     /// <p>Indicates whether the <code>ContinuousImageGenerationConfigurations</code> API is enabled or disabled.</p>
     #[doc(hidden)]
     pub status: std::option::Option<crate::model::ConfigurationStatus>,
@@ -448,9 +427,7 @@ pub struct ImageGenerationConfiguration {
     pub format: std::option::Option<crate::model::Format>,
     /// <p>The list of a key-value pair structure that contains extra parameters that can be applied when the image is generated. The <code>FormatConfig</code> key is the <code>JPEGQuality</code>, which indicates the JPEG quality key to be used to generate the image. The <code>FormatConfig</code> value accepts ints from 1 to 100. If the value is 1, the image will be generated with less quality and the best compression. If the value is 100, the image will be generated with the best quality and less compression. If no value is provided, the default value of the <code>JPEGQuality</code> key will be set to 80.</p>
     #[doc(hidden)]
-    pub format_config: std::option::Option<
-        std::collections::HashMap<crate::model::FormatConfigKey, std::string::String>,
-    >,
+    pub format_config: std::option::Option<std::collections::HashMap<crate::model::FormatConfigKey, std::string::String>>,
     /// <p>The width of the output image that is used in conjunction with the <code>HeightPixels</code> parameter. When both <code>WidthPixels</code> and <code>HeightPixels</code> parameters are provided, the image will be stretched to fit the specified aspect ratio. If only the <code>WidthPixels</code> parameter is provided, its original aspect ratio will be used to calculate the <code>HeightPixels</code> ratio. If neither parameter is provided, the original image size will be returned.</p>
     #[doc(hidden)]
     pub width_pixels: std::option::Option<i32>,
@@ -460,17 +437,15 @@ pub struct ImageGenerationConfiguration {
 }
 impl ImageGenerationConfiguration {
     /// <p>Indicates whether the <code>ContinuousImageGenerationConfigurations</code> API is enabled or disabled.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::ConfigurationStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::ConfigurationStatus> {
         self.status.as_ref()
     }
     /// <p>The origin of the Server or Producer timestamps to use to generate the images.</p>
-    pub fn image_selector_type(&self) -> std::option::Option<&crate::model::ImageSelectorType> {
+    pub fn image_selector_type(&self) -> std::option::Option<& crate::model::ImageSelectorType> {
         self.image_selector_type.as_ref()
     }
     /// <p>The structure that contains the information required to deliver images to a customer.</p>
-    pub fn destination_config(
-        &self,
-    ) -> std::option::Option<&crate::model::ImageGenerationDestinationConfig> {
+    pub fn destination_config(&self) -> std::option::Option<& crate::model::ImageGenerationDestinationConfig> {
         self.destination_config.as_ref()
     }
     /// <p>The time interval in milliseconds (ms) at which the images need to be generated from the stream. The minimum value that can be provided is 33 ms, because a camera that generates content at 30 FPS would create a frame every 33.3 ms. If the timestamp range is less than the sampling interval, the Image from the <code>StartTimestamp</code> will be returned if available. </p>
@@ -478,15 +453,11 @@ impl ImageGenerationConfiguration {
         self.sampling_interval
     }
     /// <p>The accepted image format.</p>
-    pub fn format(&self) -> std::option::Option<&crate::model::Format> {
+    pub fn format(&self) -> std::option::Option<& crate::model::Format> {
         self.format.as_ref()
     }
     /// <p>The list of a key-value pair structure that contains extra parameters that can be applied when the image is generated. The <code>FormatConfig</code> key is the <code>JPEGQuality</code>, which indicates the JPEG quality key to be used to generate the image. The <code>FormatConfig</code> value accepts ints from 1 to 100. If the value is 1, the image will be generated with less quality and the best compression. If the value is 100, the image will be generated with the best quality and less compression. If no value is provided, the default value of the <code>JPEGQuality</code> key will be set to 80.</p>
-    pub fn format_config(
-        &self,
-    ) -> std::option::Option<
-        &std::collections::HashMap<crate::model::FormatConfigKey, std::string::String>,
-    > {
+    pub fn format_config(&self) -> std::option::Option<& std::collections::HashMap<crate::model::FormatConfigKey, std::string::String>> {
         self.format_config.as_ref()
     }
     /// <p>The width of the output image that is used in conjunction with the <code>HeightPixels</code> parameter. When both <code>WidthPixels</code> and <code>HeightPixels</code> parameters are provided, the image will be stretched to fit the specified aspect ratio. If only the <code>WidthPixels</code> parameter is provided, its original aspect ratio will be used to calculate the <code>HeightPixels</code> ratio. If neither parameter is provided, the original image size will be returned.</p>
@@ -500,19 +471,16 @@ impl ImageGenerationConfiguration {
 }
 /// See [`ImageGenerationConfiguration`](crate::model::ImageGenerationConfiguration).
 pub mod image_generation_configuration {
-
+    
     /// A builder for [`ImageGenerationConfiguration`](crate::model::ImageGenerationConfiguration).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) status: std::option::Option<crate::model::ConfigurationStatus>,
         pub(crate) image_selector_type: std::option::Option<crate::model::ImageSelectorType>,
-        pub(crate) destination_config:
-            std::option::Option<crate::model::ImageGenerationDestinationConfig>,
+        pub(crate) destination_config: std::option::Option<crate::model::ImageGenerationDestinationConfig>,
         pub(crate) sampling_interval: std::option::Option<i32>,
         pub(crate) format: std::option::Option<crate::model::Format>,
-        pub(crate) format_config: std::option::Option<
-            std::collections::HashMap<crate::model::FormatConfigKey, std::string::String>,
-        >,
+        pub(crate) format_config: std::option::Option<std::collections::HashMap<crate::model::FormatConfigKey, std::string::String>>,
         pub(crate) width_pixels: std::option::Option<i32>,
         pub(crate) height_pixels: std::option::Option<i32>,
     }
@@ -523,12 +491,8 @@ pub mod image_generation_configuration {
             self
         }
         /// <p>Indicates whether the <code>ContinuousImageGenerationConfigurations</code> API is enabled or disabled.</p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::ConfigurationStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::ConfigurationStatus>) -> Self {
+            self.status = input; self
         }
         /// <p>The origin of the Server or Producer timestamps to use to generate the images.</p>
         pub fn image_selector_type(mut self, input: crate::model::ImageSelectorType) -> Self {
@@ -536,28 +500,17 @@ pub mod image_generation_configuration {
             self
         }
         /// <p>The origin of the Server or Producer timestamps to use to generate the images.</p>
-        pub fn set_image_selector_type(
-            mut self,
-            input: std::option::Option<crate::model::ImageSelectorType>,
-        ) -> Self {
-            self.image_selector_type = input;
-            self
+        pub fn set_image_selector_type(mut self, input: std::option::Option<crate::model::ImageSelectorType>) -> Self {
+            self.image_selector_type = input; self
         }
         /// <p>The structure that contains the information required to deliver images to a customer.</p>
-        pub fn destination_config(
-            mut self,
-            input: crate::model::ImageGenerationDestinationConfig,
-        ) -> Self {
+        pub fn destination_config(mut self, input: crate::model::ImageGenerationDestinationConfig) -> Self {
             self.destination_config = Some(input);
             self
         }
         /// <p>The structure that contains the information required to deliver images to a customer.</p>
-        pub fn set_destination_config(
-            mut self,
-            input: std::option::Option<crate::model::ImageGenerationDestinationConfig>,
-        ) -> Self {
-            self.destination_config = input;
-            self
+        pub fn set_destination_config(mut self, input: std::option::Option<crate::model::ImageGenerationDestinationConfig>) -> Self {
+            self.destination_config = input; self
         }
         /// <p>The time interval in milliseconds (ms) at which the images need to be generated from the stream. The minimum value that can be provided is 33 ms, because a camera that generates content at 30 FPS would create a frame every 33.3 ms. If the timestamp range is less than the sampling interval, the Image from the <code>StartTimestamp</code> will be returned if available. </p>
         pub fn sampling_interval(mut self, input: i32) -> Self {
@@ -566,8 +519,7 @@ pub mod image_generation_configuration {
         }
         /// <p>The time interval in milliseconds (ms) at which the images need to be generated from the stream. The minimum value that can be provided is 33 ms, because a camera that generates content at 30 FPS would create a frame every 33.3 ms. If the timestamp range is less than the sampling interval, the Image from the <code>StartTimestamp</code> will be returned if available. </p>
         pub fn set_sampling_interval(mut self, input: std::option::Option<i32>) -> Self {
-            self.sampling_interval = input;
-            self
+            self.sampling_interval = input; self
         }
         /// <p>The accepted image format.</p>
         pub fn format(mut self, input: crate::model::Format) -> Self {
@@ -576,33 +528,22 @@ pub mod image_generation_configuration {
         }
         /// <p>The accepted image format.</p>
         pub fn set_format(mut self, input: std::option::Option<crate::model::Format>) -> Self {
-            self.format = input;
-            self
+            self.format = input; self
         }
         /// Adds a key-value pair to `format_config`.
         ///
         /// To override the contents of this collection use [`set_format_config`](Self::set_format_config).
         ///
         /// <p>The list of a key-value pair structure that contains extra parameters that can be applied when the image is generated. The <code>FormatConfig</code> key is the <code>JPEGQuality</code>, which indicates the JPEG quality key to be used to generate the image. The <code>FormatConfig</code> value accepts ints from 1 to 100. If the value is 1, the image will be generated with less quality and the best compression. If the value is 100, the image will be generated with the best quality and less compression. If no value is provided, the default value of the <code>JPEGQuality</code> key will be set to 80.</p>
-        pub fn format_config(
-            mut self,
-            k: crate::model::FormatConfigKey,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn format_config(mut self, k: crate::model::FormatConfigKey, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.format_config.unwrap_or_default();
-            hash_map.insert(k, v.into());
-            self.format_config = Some(hash_map);
-            self
+                            hash_map.insert(k, v.into());
+                            self.format_config = Some(hash_map);
+                            self
         }
         /// <p>The list of a key-value pair structure that contains extra parameters that can be applied when the image is generated. The <code>FormatConfig</code> key is the <code>JPEGQuality</code>, which indicates the JPEG quality key to be used to generate the image. The <code>FormatConfig</code> value accepts ints from 1 to 100. If the value is 1, the image will be generated with less quality and the best compression. If the value is 100, the image will be generated with the best quality and less compression. If no value is provided, the default value of the <code>JPEGQuality</code> key will be set to 80.</p>
-        pub fn set_format_config(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<crate::model::FormatConfigKey, std::string::String>,
-            >,
-        ) -> Self {
-            self.format_config = input;
-            self
+        pub fn set_format_config(mut self, input: std::option::Option<std::collections::HashMap<crate::model::FormatConfigKey, std::string::String>>) -> Self {
+            self.format_config = input; self
         }
         /// <p>The width of the output image that is used in conjunction with the <code>HeightPixels</code> parameter. When both <code>WidthPixels</code> and <code>HeightPixels</code> parameters are provided, the image will be stretched to fit the specified aspect ratio. If only the <code>WidthPixels</code> parameter is provided, its original aspect ratio will be used to calculate the <code>HeightPixels</code> ratio. If neither parameter is provided, the original image size will be returned.</p>
         pub fn width_pixels(mut self, input: i32) -> Self {
@@ -611,8 +552,7 @@ pub mod image_generation_configuration {
         }
         /// <p>The width of the output image that is used in conjunction with the <code>HeightPixels</code> parameter. When both <code>WidthPixels</code> and <code>HeightPixels</code> parameters are provided, the image will be stretched to fit the specified aspect ratio. If only the <code>WidthPixels</code> parameter is provided, its original aspect ratio will be used to calculate the <code>HeightPixels</code> ratio. If neither parameter is provided, the original image size will be returned.</p>
         pub fn set_width_pixels(mut self, input: std::option::Option<i32>) -> Self {
-            self.width_pixels = input;
-            self
+            self.width_pixels = input; self
         }
         /// <p>The height of the output image that is used in conjunction with the <code>WidthPixels</code> parameter. When both <code>HeightPixels</code> and <code>WidthPixels</code> parameters are provided, the image will be stretched to fit the specified aspect ratio. If only the <code>HeightPixels</code> parameter is provided, its original aspect ratio will be used to calculate the <code>WidthPixels</code> ratio. If neither parameter is provided, the original image size will be returned.</p>
         pub fn height_pixels(mut self, input: i32) -> Self {
@@ -621,23 +561,32 @@ pub mod image_generation_configuration {
         }
         /// <p>The height of the output image that is used in conjunction with the <code>WidthPixels</code> parameter. When both <code>HeightPixels</code> and <code>WidthPixels</code> parameters are provided, the image will be stretched to fit the specified aspect ratio. If only the <code>HeightPixels</code> parameter is provided, its original aspect ratio will be used to calculate the <code>WidthPixels</code> ratio. If neither parameter is provided, the original image size will be returned.</p>
         pub fn set_height_pixels(mut self, input: std::option::Option<i32>) -> Self {
-            self.height_pixels = input;
-            self
+            self.height_pixels = input; self
         }
         /// Consumes the builder and constructs a [`ImageGenerationConfiguration`](crate::model::ImageGenerationConfiguration).
         pub fn build(self) -> crate::model::ImageGenerationConfiguration {
             crate::model::ImageGenerationConfiguration {
-                status: self.status,
-                image_selector_type: self.image_selector_type,
-                destination_config: self.destination_config,
-                sampling_interval: self.sampling_interval,
-                format: self.format,
-                format_config: self.format_config,
-                width_pixels: self.width_pixels,
-                height_pixels: self.height_pixels,
+                status: self.status
+                ,
+                image_selector_type: self.image_selector_type
+                ,
+                destination_config: self.destination_config
+                ,
+                sampling_interval: self.sampling_interval
+                ,
+                format: self.format
+                ,
+                format_config: self.format_config
+                ,
+                width_pixels: self.width_pixels
+                ,
+                height_pixels: self.height_pixels
+                ,
             }
         }
     }
+    
+    
 }
 impl ImageGenerationConfiguration {
     /// Creates a new builder-style object to manufacture [`ImageGenerationConfiguration`](crate::model::ImageGenerationConfiguration).
@@ -652,9 +601,9 @@ impl ImageGenerationConfiguration {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let formatconfigkey = unimplemented!();
 /// match formatconfigkey {
@@ -675,54 +624,48 @@ impl ImageGenerationConfiguration {
 /// Specifically, when `formatconfigkey` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `FormatConfigKey::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum FormatConfigKey {
     #[allow(missing_docs)] // documentation missing in model
     JpegQuality,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for FormatConfigKey {
     fn from(s: &str) -> Self {
         match s {
             "JPEGQuality" => FormatConfigKey::JpegQuality,
-            other => FormatConfigKey::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => FormatConfigKey::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for FormatConfigKey {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(FormatConfigKey::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(FormatConfigKey::from(s))
+                }
+            }
 impl FormatConfigKey {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             FormatConfigKey::JpegQuality => "JPEGQuality",
-            FormatConfigKey::Unknown(value) => value.as_str(),
+            FormatConfigKey::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["JPEGQuality"]
+        &[
+            "JPEGQuality"
+        ]
     }
 }
 impl AsRef<str> for FormatConfigKey {
@@ -737,9 +680,9 @@ impl AsRef<str> for FormatConfigKey {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let format = unimplemented!();
 /// match format {
@@ -761,58 +704,52 @@ impl AsRef<str> for FormatConfigKey {
 /// Specifically, when `format` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `Format::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum Format {
     #[allow(missing_docs)] // documentation missing in model
     Jpeg,
     #[allow(missing_docs)] // documentation missing in model
     Png,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for Format {
     fn from(s: &str) -> Self {
         match s {
             "JPEG" => Format::Jpeg,
             "PNG" => Format::Png,
-            other => Format::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => Format::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for Format {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(Format::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(Format::from(s))
+                }
+            }
 impl Format {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             Format::Jpeg => "JPEG",
             Format::Png => "PNG",
-            Format::Unknown(value) => value.as_str(),
+            Format::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["JPEG", "PNG"]
+        &[
+            "JPEG", "PNG"
+        ]
     }
 }
 impl AsRef<str> for Format {
@@ -824,7 +761,7 @@ impl AsRef<str> for Format {
 /// <p>The structure that contains the information required to deliver images to a customer.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ImageGenerationDestinationConfig {
+pub struct ImageGenerationDestinationConfig  {
     /// <p>The Uniform Resource Identifier (URI) that identifies where the images will be delivered.</p>
     #[doc(hidden)]
     pub uri: std::option::Option<std::string::String>,
@@ -834,17 +771,17 @@ pub struct ImageGenerationDestinationConfig {
 }
 impl ImageGenerationDestinationConfig {
     /// <p>The Uniform Resource Identifier (URI) that identifies where the images will be delivered.</p>
-    pub fn uri(&self) -> std::option::Option<&str> {
+    pub fn uri(&self) -> std::option::Option<& str> {
         self.uri.as_deref()
     }
     /// <p>The AWS Region of the S3 bucket where images will be delivered. This <code>DestinationRegion</code> must match the Region where the stream is located.</p>
-    pub fn destination_region(&self) -> std::option::Option<&str> {
+    pub fn destination_region(&self) -> std::option::Option<& str> {
         self.destination_region.as_deref()
     }
 }
 /// See [`ImageGenerationDestinationConfig`](crate::model::ImageGenerationDestinationConfig).
 pub mod image_generation_destination_config {
-
+    
     /// A builder for [`ImageGenerationDestinationConfig`](crate::model::ImageGenerationDestinationConfig).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -859,8 +796,7 @@ pub mod image_generation_destination_config {
         }
         /// <p>The Uniform Resource Identifier (URI) that identifies where the images will be delivered.</p>
         pub fn set_uri(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.uri = input;
-            self
+            self.uri = input; self
         }
         /// <p>The AWS Region of the S3 bucket where images will be delivered. This <code>DestinationRegion</code> must match the Region where the stream is located.</p>
         pub fn destination_region(mut self, input: impl Into<std::string::String>) -> Self {
@@ -868,21 +804,21 @@ pub mod image_generation_destination_config {
             self
         }
         /// <p>The AWS Region of the S3 bucket where images will be delivered. This <code>DestinationRegion</code> must match the Region where the stream is located.</p>
-        pub fn set_destination_region(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.destination_region = input;
-            self
+        pub fn set_destination_region(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.destination_region = input; self
         }
         /// Consumes the builder and constructs a [`ImageGenerationDestinationConfig`](crate::model::ImageGenerationDestinationConfig).
         pub fn build(self) -> crate::model::ImageGenerationDestinationConfig {
             crate::model::ImageGenerationDestinationConfig {
-                uri: self.uri,
-                destination_region: self.destination_region,
+                uri: self.uri
+                ,
+                destination_region: self.destination_region
+                ,
             }
         }
     }
+    
+    
 }
 impl ImageGenerationDestinationConfig {
     /// Creates a new builder-style object to manufacture [`ImageGenerationDestinationConfig`](crate::model::ImageGenerationDestinationConfig).
@@ -897,9 +833,9 @@ impl ImageGenerationDestinationConfig {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let imageselectortype = unimplemented!();
 /// match imageselectortype {
@@ -921,60 +857,52 @@ impl ImageGenerationDestinationConfig {
 /// Specifically, when `imageselectortype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ImageSelectorType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ImageSelectorType {
     #[allow(missing_docs)] // documentation missing in model
     ProducerTimestamp,
     #[allow(missing_docs)] // documentation missing in model
     ServerTimestamp,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ImageSelectorType {
     fn from(s: &str) -> Self {
         match s {
             "PRODUCER_TIMESTAMP" => ImageSelectorType::ProducerTimestamp,
             "SERVER_TIMESTAMP" => ImageSelectorType::ServerTimestamp,
-            other => {
-                ImageSelectorType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => ImageSelectorType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ImageSelectorType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ImageSelectorType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ImageSelectorType::from(s))
+                }
+            }
 impl ImageSelectorType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ImageSelectorType::ProducerTimestamp => "PRODUCER_TIMESTAMP",
             ImageSelectorType::ServerTimestamp => "SERVER_TIMESTAMP",
-            ImageSelectorType::Unknown(value) => value.as_str(),
+            ImageSelectorType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["PRODUCER_TIMESTAMP", "SERVER_TIMESTAMP"]
+        &[
+            "PRODUCER_TIMESTAMP", "SERVER_TIMESTAMP"
+        ]
     }
 }
 impl AsRef<str> for ImageSelectorType {
@@ -989,9 +917,9 @@ impl AsRef<str> for ImageSelectorType {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let updatedataretentionoperation = unimplemented!();
 /// match updatedataretentionoperation {
@@ -1013,60 +941,52 @@ impl AsRef<str> for ImageSelectorType {
 /// Specifically, when `updatedataretentionoperation` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `UpdateDataRetentionOperation::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum UpdateDataRetentionOperation {
     #[allow(missing_docs)] // documentation missing in model
     DecreaseDataRetention,
     #[allow(missing_docs)] // documentation missing in model
     IncreaseDataRetention,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for UpdateDataRetentionOperation {
     fn from(s: &str) -> Self {
         match s {
             "DECREASE_DATA_RETENTION" => UpdateDataRetentionOperation::DecreaseDataRetention,
             "INCREASE_DATA_RETENTION" => UpdateDataRetentionOperation::IncreaseDataRetention,
-            other => UpdateDataRetentionOperation::Unknown(crate::types::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => UpdateDataRetentionOperation::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for UpdateDataRetentionOperation {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(UpdateDataRetentionOperation::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(UpdateDataRetentionOperation::from(s))
+                }
+            }
 impl UpdateDataRetentionOperation {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             UpdateDataRetentionOperation::DecreaseDataRetention => "DECREASE_DATA_RETENTION",
             UpdateDataRetentionOperation::IncreaseDataRetention => "INCREASE_DATA_RETENTION",
-            UpdateDataRetentionOperation::Unknown(value) => value.as_str(),
+            UpdateDataRetentionOperation::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["DECREASE_DATA_RETENTION", "INCREASE_DATA_RETENTION"]
+        &[
+            "DECREASE_DATA_RETENTION", "INCREASE_DATA_RETENTION"
+        ]
     }
 }
 impl AsRef<str> for UpdateDataRetentionOperation {
@@ -1078,7 +998,7 @@ impl AsRef<str> for UpdateDataRetentionOperation {
 /// <p>A key and value pair that is associated with the specified signaling channel.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Tag {
+pub struct Tag  {
     /// <p>The key of the tag that is associated with the specified signaling channel.</p>
     #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
@@ -1088,17 +1008,17 @@ pub struct Tag {
 }
 impl Tag {
     /// <p>The key of the tag that is associated with the specified signaling channel.</p>
-    pub fn key(&self) -> std::option::Option<&str> {
+    pub fn key(&self) -> std::option::Option<& str> {
         self.key.as_deref()
     }
     /// <p>The value of the tag that is associated with the specified signaling channel.</p>
-    pub fn value(&self) -> std::option::Option<&str> {
+    pub fn value(&self) -> std::option::Option<& str> {
         self.value.as_deref()
     }
 }
 /// See [`Tag`](crate::model::Tag).
 pub mod tag {
-
+    
     /// A builder for [`Tag`](crate::model::Tag).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1113,8 +1033,7 @@ pub mod tag {
         }
         /// <p>The key of the tag that is associated with the specified signaling channel.</p>
         pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.key = input;
-            self
+            self.key = input; self
         }
         /// <p>The value of the tag that is associated with the specified signaling channel.</p>
         pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1123,17 +1042,20 @@ pub mod tag {
         }
         /// <p>The value of the tag that is associated with the specified signaling channel.</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.value = input;
-            self
+            self.value = input; self
         }
         /// Consumes the builder and constructs a [`Tag`](crate::model::Tag).
         pub fn build(self) -> crate::model::Tag {
             crate::model::Tag {
-                key: self.key,
-                value: self.value,
+                key: self.key
+                ,
+                value: self.value
+                ,
             }
         }
     }
+    
+    
 }
 impl Tag {
     /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
@@ -1145,7 +1067,7 @@ impl Tag {
 /// <p>A description of the stream's edge configuration that will be used to sync with the Edge Agent IoT Greengrass component. The Edge Agent component will run on an IoT Hub Device setup at your premise.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct EdgeConfig {
+pub struct EdgeConfig  {
     /// <p>The "<b>Internet of Things (IoT) Thing</b>" Arn of the stream.</p>
     #[doc(hidden)]
     pub hub_device_arn: std::option::Option<std::string::String>,
@@ -1161,25 +1083,25 @@ pub struct EdgeConfig {
 }
 impl EdgeConfig {
     /// <p>The "<b>Internet of Things (IoT) Thing</b>" Arn of the stream.</p>
-    pub fn hub_device_arn(&self) -> std::option::Option<&str> {
+    pub fn hub_device_arn(&self) -> std::option::Option<& str> {
         self.hub_device_arn.as_deref()
     }
     /// <p>The recorder configuration consists of the local <code>MediaSourceConfig</code> details, that are used as credentials to access the local media files streamed on the camera. </p>
-    pub fn recorder_config(&self) -> std::option::Option<&crate::model::RecorderConfig> {
+    pub fn recorder_config(&self) -> std::option::Option<& crate::model::RecorderConfig> {
         self.recorder_config.as_ref()
     }
     /// <p>The uploader configuration contains the <code>ScheduleExpression</code> details that are used to schedule upload jobs for the recorded media files from the Edge Agent to a Kinesis Video Stream.</p>
-    pub fn uploader_config(&self) -> std::option::Option<&crate::model::UploaderConfig> {
+    pub fn uploader_config(&self) -> std::option::Option<& crate::model::UploaderConfig> {
         self.uploader_config.as_ref()
     }
     /// <p>The deletion configuration is made up of the retention time (<code>EdgeRetentionInHours</code>) and local size configuration (<code>LocalSizeConfig</code>) details that are used to make the deletion.</p>
-    pub fn deletion_config(&self) -> std::option::Option<&crate::model::DeletionConfig> {
+    pub fn deletion_config(&self) -> std::option::Option<& crate::model::DeletionConfig> {
         self.deletion_config.as_ref()
     }
 }
 /// See [`EdgeConfig`](crate::model::EdgeConfig).
 pub mod edge_config {
-
+    
     /// A builder for [`EdgeConfig`](crate::model::EdgeConfig).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1195,12 +1117,8 @@ pub mod edge_config {
             self
         }
         /// <p>The "<b>Internet of Things (IoT) Thing</b>" Arn of the stream.</p>
-        pub fn set_hub_device_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.hub_device_arn = input;
-            self
+        pub fn set_hub_device_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.hub_device_arn = input; self
         }
         /// <p>The recorder configuration consists of the local <code>MediaSourceConfig</code> details, that are used as credentials to access the local media files streamed on the camera. </p>
         pub fn recorder_config(mut self, input: crate::model::RecorderConfig) -> Self {
@@ -1208,12 +1126,8 @@ pub mod edge_config {
             self
         }
         /// <p>The recorder configuration consists of the local <code>MediaSourceConfig</code> details, that are used as credentials to access the local media files streamed on the camera. </p>
-        pub fn set_recorder_config(
-            mut self,
-            input: std::option::Option<crate::model::RecorderConfig>,
-        ) -> Self {
-            self.recorder_config = input;
-            self
+        pub fn set_recorder_config(mut self, input: std::option::Option<crate::model::RecorderConfig>) -> Self {
+            self.recorder_config = input; self
         }
         /// <p>The uploader configuration contains the <code>ScheduleExpression</code> details that are used to schedule upload jobs for the recorded media files from the Edge Agent to a Kinesis Video Stream.</p>
         pub fn uploader_config(mut self, input: crate::model::UploaderConfig) -> Self {
@@ -1221,12 +1135,8 @@ pub mod edge_config {
             self
         }
         /// <p>The uploader configuration contains the <code>ScheduleExpression</code> details that are used to schedule upload jobs for the recorded media files from the Edge Agent to a Kinesis Video Stream.</p>
-        pub fn set_uploader_config(
-            mut self,
-            input: std::option::Option<crate::model::UploaderConfig>,
-        ) -> Self {
-            self.uploader_config = input;
-            self
+        pub fn set_uploader_config(mut self, input: std::option::Option<crate::model::UploaderConfig>) -> Self {
+            self.uploader_config = input; self
         }
         /// <p>The deletion configuration is made up of the retention time (<code>EdgeRetentionInHours</code>) and local size configuration (<code>LocalSizeConfig</code>) details that are used to make the deletion.</p>
         pub fn deletion_config(mut self, input: crate::model::DeletionConfig) -> Self {
@@ -1234,23 +1144,25 @@ pub mod edge_config {
             self
         }
         /// <p>The deletion configuration is made up of the retention time (<code>EdgeRetentionInHours</code>) and local size configuration (<code>LocalSizeConfig</code>) details that are used to make the deletion.</p>
-        pub fn set_deletion_config(
-            mut self,
-            input: std::option::Option<crate::model::DeletionConfig>,
-        ) -> Self {
-            self.deletion_config = input;
-            self
+        pub fn set_deletion_config(mut self, input: std::option::Option<crate::model::DeletionConfig>) -> Self {
+            self.deletion_config = input; self
         }
         /// Consumes the builder and constructs a [`EdgeConfig`](crate::model::EdgeConfig).
         pub fn build(self) -> crate::model::EdgeConfig {
             crate::model::EdgeConfig {
-                hub_device_arn: self.hub_device_arn,
-                recorder_config: self.recorder_config,
-                uploader_config: self.uploader_config,
-                deletion_config: self.deletion_config,
+                hub_device_arn: self.hub_device_arn
+                ,
+                recorder_config: self.recorder_config
+                ,
+                uploader_config: self.uploader_config
+                ,
+                deletion_config: self.deletion_config
+                ,
             }
         }
     }
+    
+    
 }
 impl EdgeConfig {
     /// Creates a new builder-style object to manufacture [`EdgeConfig`](crate::model::EdgeConfig).
@@ -1262,14 +1174,14 @@ impl EdgeConfig {
 /// <p>The configuration details required to delete the connection of the stream from the Edge Agent.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeletionConfig {
+pub struct DeletionConfig  {
     /// <p>The number of hours that you want to retain the data in the stream on the Edge Agent. The default value of the retention time is 720 hours, which translates to 30 days.</p>
     #[doc(hidden)]
     pub edge_retention_in_hours: std::option::Option<i32>,
     /// <p>The value of the local size required in order to delete the edge configuration.</p>
     #[doc(hidden)]
     pub local_size_config: std::option::Option<crate::model::LocalSizeConfig>,
-    /// <p>The <code>boolean</code> value used to indicate whether or not you want to mark the media for deletion, once it has been uploaded to the Kinesis Video Stream cloud. The media files can be deleted if any of the deletion configuration values are set to <code>true</code>, such as when the limit for the <code>EdgeRetentionInHours</code>, or the <code>MaxLocalMediaSizeInMB</code>, has been reached. </p>
+    /// <p>The <code>boolean</code> value used to indicate whether or not you want to mark the media for deletion, once it has been uploaded to the Kinesis Video Stream cloud. The media files can be deleted if any of the deletion configuration values are set to <code>true</code>, such as when the limit for the <code>EdgeRetentionInHours</code>, or the <code>MaxLocalMediaSizeInMB</code>, has been reached. </p> 
     /// <p>Since the default value is set to <code>true</code>, configure the uploader schedule such that the media files are not being deleted before they are initially uploaded to AWS cloud.</p>
     #[doc(hidden)]
     pub delete_after_upload: std::option::Option<bool>,
@@ -1280,10 +1192,10 @@ impl DeletionConfig {
         self.edge_retention_in_hours
     }
     /// <p>The value of the local size required in order to delete the edge configuration.</p>
-    pub fn local_size_config(&self) -> std::option::Option<&crate::model::LocalSizeConfig> {
+    pub fn local_size_config(&self) -> std::option::Option<& crate::model::LocalSizeConfig> {
         self.local_size_config.as_ref()
     }
-    /// <p>The <code>boolean</code> value used to indicate whether or not you want to mark the media for deletion, once it has been uploaded to the Kinesis Video Stream cloud. The media files can be deleted if any of the deletion configuration values are set to <code>true</code>, such as when the limit for the <code>EdgeRetentionInHours</code>, or the <code>MaxLocalMediaSizeInMB</code>, has been reached. </p>
+    /// <p>The <code>boolean</code> value used to indicate whether or not you want to mark the media for deletion, once it has been uploaded to the Kinesis Video Stream cloud. The media files can be deleted if any of the deletion configuration values are set to <code>true</code>, such as when the limit for the <code>EdgeRetentionInHours</code>, or the <code>MaxLocalMediaSizeInMB</code>, has been reached. </p> 
     /// <p>Since the default value is set to <code>true</code>, configure the uploader schedule such that the media files are not being deleted before they are initially uploaded to AWS cloud.</p>
     pub fn delete_after_upload(&self) -> std::option::Option<bool> {
         self.delete_after_upload
@@ -1291,7 +1203,7 @@ impl DeletionConfig {
 }
 /// See [`DeletionConfig`](crate::model::DeletionConfig).
 pub mod deletion_config {
-
+    
     /// A builder for [`DeletionConfig`](crate::model::DeletionConfig).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1307,8 +1219,7 @@ pub mod deletion_config {
         }
         /// <p>The number of hours that you want to retain the data in the stream on the Edge Agent. The default value of the retention time is 720 hours, which translates to 30 days.</p>
         pub fn set_edge_retention_in_hours(mut self, input: std::option::Option<i32>) -> Self {
-            self.edge_retention_in_hours = input;
-            self
+            self.edge_retention_in_hours = input; self
         }
         /// <p>The value of the local size required in order to delete the edge configuration.</p>
         pub fn local_size_config(mut self, input: crate::model::LocalSizeConfig) -> Self {
@@ -1316,34 +1227,34 @@ pub mod deletion_config {
             self
         }
         /// <p>The value of the local size required in order to delete the edge configuration.</p>
-        pub fn set_local_size_config(
-            mut self,
-            input: std::option::Option<crate::model::LocalSizeConfig>,
-        ) -> Self {
-            self.local_size_config = input;
-            self
+        pub fn set_local_size_config(mut self, input: std::option::Option<crate::model::LocalSizeConfig>) -> Self {
+            self.local_size_config = input; self
         }
-        /// <p>The <code>boolean</code> value used to indicate whether or not you want to mark the media for deletion, once it has been uploaded to the Kinesis Video Stream cloud. The media files can be deleted if any of the deletion configuration values are set to <code>true</code>, such as when the limit for the <code>EdgeRetentionInHours</code>, or the <code>MaxLocalMediaSizeInMB</code>, has been reached. </p>
+        /// <p>The <code>boolean</code> value used to indicate whether or not you want to mark the media for deletion, once it has been uploaded to the Kinesis Video Stream cloud. The media files can be deleted if any of the deletion configuration values are set to <code>true</code>, such as when the limit for the <code>EdgeRetentionInHours</code>, or the <code>MaxLocalMediaSizeInMB</code>, has been reached. </p> 
         /// <p>Since the default value is set to <code>true</code>, configure the uploader schedule such that the media files are not being deleted before they are initially uploaded to AWS cloud.</p>
         pub fn delete_after_upload(mut self, input: bool) -> Self {
             self.delete_after_upload = Some(input);
             self
         }
-        /// <p>The <code>boolean</code> value used to indicate whether or not you want to mark the media for deletion, once it has been uploaded to the Kinesis Video Stream cloud. The media files can be deleted if any of the deletion configuration values are set to <code>true</code>, such as when the limit for the <code>EdgeRetentionInHours</code>, or the <code>MaxLocalMediaSizeInMB</code>, has been reached. </p>
+        /// <p>The <code>boolean</code> value used to indicate whether or not you want to mark the media for deletion, once it has been uploaded to the Kinesis Video Stream cloud. The media files can be deleted if any of the deletion configuration values are set to <code>true</code>, such as when the limit for the <code>EdgeRetentionInHours</code>, or the <code>MaxLocalMediaSizeInMB</code>, has been reached. </p> 
         /// <p>Since the default value is set to <code>true</code>, configure the uploader schedule such that the media files are not being deleted before they are initially uploaded to AWS cloud.</p>
         pub fn set_delete_after_upload(mut self, input: std::option::Option<bool>) -> Self {
-            self.delete_after_upload = input;
-            self
+            self.delete_after_upload = input; self
         }
         /// Consumes the builder and constructs a [`DeletionConfig`](crate::model::DeletionConfig).
         pub fn build(self) -> crate::model::DeletionConfig {
             crate::model::DeletionConfig {
-                edge_retention_in_hours: self.edge_retention_in_hours,
-                local_size_config: self.local_size_config,
-                delete_after_upload: self.delete_after_upload,
+                edge_retention_in_hours: self.edge_retention_in_hours
+                ,
+                local_size_config: self.local_size_config
+                ,
+                delete_after_upload: self.delete_after_upload
+                ,
             }
         }
     }
+    
+    
 }
 impl DeletionConfig {
     /// Creates a new builder-style object to manufacture [`DeletionConfig`](crate::model::DeletionConfig).
@@ -1355,7 +1266,7 @@ impl DeletionConfig {
 /// <p>The configuration details that include the maximum size of the media (<code>MaxLocalMediaSizeInMB</code>) that you want to store for a stream on the Edge Agent, as well as the strategy that should be used (<code>StrategyOnFullSize</code>) when a stream's maximum size has been reached.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct LocalSizeConfig {
+pub struct LocalSizeConfig  {
     /// <p>The overall maximum size of the media that you want to store for a stream on the Edge Agent. </p>
     #[doc(hidden)]
     pub max_local_media_size_in_mb: std::option::Option<i32>,
@@ -1369,13 +1280,13 @@ impl LocalSizeConfig {
         self.max_local_media_size_in_mb
     }
     /// <p>The strategy to perform when a stream’s <code>MaxLocalMediaSizeInMB</code> limit is reached.</p>
-    pub fn strategy_on_full_size(&self) -> std::option::Option<&crate::model::StrategyOnFullSize> {
+    pub fn strategy_on_full_size(&self) -> std::option::Option<& crate::model::StrategyOnFullSize> {
         self.strategy_on_full_size.as_ref()
     }
 }
 /// See [`LocalSizeConfig`](crate::model::LocalSizeConfig).
 pub mod local_size_config {
-
+    
     /// A builder for [`LocalSizeConfig`](crate::model::LocalSizeConfig).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1390,8 +1301,7 @@ pub mod local_size_config {
         }
         /// <p>The overall maximum size of the media that you want to store for a stream on the Edge Agent. </p>
         pub fn set_max_local_media_size_in_mb(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_local_media_size_in_mb = input;
-            self
+            self.max_local_media_size_in_mb = input; self
         }
         /// <p>The strategy to perform when a stream’s <code>MaxLocalMediaSizeInMB</code> limit is reached.</p>
         pub fn strategy_on_full_size(mut self, input: crate::model::StrategyOnFullSize) -> Self {
@@ -1399,21 +1309,21 @@ pub mod local_size_config {
             self
         }
         /// <p>The strategy to perform when a stream’s <code>MaxLocalMediaSizeInMB</code> limit is reached.</p>
-        pub fn set_strategy_on_full_size(
-            mut self,
-            input: std::option::Option<crate::model::StrategyOnFullSize>,
-        ) -> Self {
-            self.strategy_on_full_size = input;
-            self
+        pub fn set_strategy_on_full_size(mut self, input: std::option::Option<crate::model::StrategyOnFullSize>) -> Self {
+            self.strategy_on_full_size = input; self
         }
         /// Consumes the builder and constructs a [`LocalSizeConfig`](crate::model::LocalSizeConfig).
         pub fn build(self) -> crate::model::LocalSizeConfig {
             crate::model::LocalSizeConfig {
-                max_local_media_size_in_mb: self.max_local_media_size_in_mb,
-                strategy_on_full_size: self.strategy_on_full_size,
+                max_local_media_size_in_mb: self.max_local_media_size_in_mb
+                ,
+                strategy_on_full_size: self.strategy_on_full_size
+                ,
             }
         }
     }
+    
+    
 }
 impl LocalSizeConfig {
     /// Creates a new builder-style object to manufacture [`LocalSizeConfig`](crate::model::LocalSizeConfig).
@@ -1428,9 +1338,9 @@ impl LocalSizeConfig {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let strategyonfullsize = unimplemented!();
 /// match strategyonfullsize {
@@ -1452,60 +1362,52 @@ impl LocalSizeConfig {
 /// Specifically, when `strategyonfullsize` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `StrategyOnFullSize::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum StrategyOnFullSize {
     #[allow(missing_docs)] // documentation missing in model
     DeleteOldestMedia,
     #[allow(missing_docs)] // documentation missing in model
     DenyNewMedia,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for StrategyOnFullSize {
     fn from(s: &str) -> Self {
         match s {
             "DELETE_OLDEST_MEDIA" => StrategyOnFullSize::DeleteOldestMedia,
             "DENY_NEW_MEDIA" => StrategyOnFullSize::DenyNewMedia,
-            other => {
-                StrategyOnFullSize::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => StrategyOnFullSize::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for StrategyOnFullSize {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(StrategyOnFullSize::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(StrategyOnFullSize::from(s))
+                }
+            }
 impl StrategyOnFullSize {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             StrategyOnFullSize::DeleteOldestMedia => "DELETE_OLDEST_MEDIA",
             StrategyOnFullSize::DenyNewMedia => "DENY_NEW_MEDIA",
-            StrategyOnFullSize::Unknown(value) => value.as_str(),
+            StrategyOnFullSize::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["DELETE_OLDEST_MEDIA", "DENY_NEW_MEDIA"]
+        &[
+            "DELETE_OLDEST_MEDIA", "DENY_NEW_MEDIA"
+        ]
     }
 }
 impl AsRef<str> for StrategyOnFullSize {
@@ -1517,20 +1419,20 @@ impl AsRef<str> for StrategyOnFullSize {
 /// <p>The configuration that consists of the <code>ScheduleExpression</code> and the <code>DurationInMinutesdetails</code>, that specify the scheduling to record from a camera, or local media file, onto the Edge Agent. If the <code>ScheduleExpression</code> is not provided, then the Edge Agent will always be in upload mode. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UploaderConfig {
+pub struct UploaderConfig  {
     /// <p>The configuration that consists of the <code>ScheduleExpression</code> and the <code>DurationInMinutes</code>details that specify the scheduling to record from a camera, or local media file, onto the Edge Agent. If the <code>ScheduleExpression</code> is not provided, then the Edge Agent will always be in recording mode.</p>
     #[doc(hidden)]
     pub schedule_config: std::option::Option<crate::model::ScheduleConfig>,
 }
 impl UploaderConfig {
     /// <p>The configuration that consists of the <code>ScheduleExpression</code> and the <code>DurationInMinutes</code>details that specify the scheduling to record from a camera, or local media file, onto the Edge Agent. If the <code>ScheduleExpression</code> is not provided, then the Edge Agent will always be in recording mode.</p>
-    pub fn schedule_config(&self) -> std::option::Option<&crate::model::ScheduleConfig> {
+    pub fn schedule_config(&self) -> std::option::Option<& crate::model::ScheduleConfig> {
         self.schedule_config.as_ref()
     }
 }
 /// See [`UploaderConfig`](crate::model::UploaderConfig).
 pub mod uploader_config {
-
+    
     /// A builder for [`UploaderConfig`](crate::model::UploaderConfig).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1543,20 +1445,19 @@ pub mod uploader_config {
             self
         }
         /// <p>The configuration that consists of the <code>ScheduleExpression</code> and the <code>DurationInMinutes</code>details that specify the scheduling to record from a camera, or local media file, onto the Edge Agent. If the <code>ScheduleExpression</code> is not provided, then the Edge Agent will always be in recording mode.</p>
-        pub fn set_schedule_config(
-            mut self,
-            input: std::option::Option<crate::model::ScheduleConfig>,
-        ) -> Self {
-            self.schedule_config = input;
-            self
+        pub fn set_schedule_config(mut self, input: std::option::Option<crate::model::ScheduleConfig>) -> Self {
+            self.schedule_config = input; self
         }
         /// Consumes the builder and constructs a [`UploaderConfig`](crate::model::UploaderConfig).
         pub fn build(self) -> crate::model::UploaderConfig {
             crate::model::UploaderConfig {
-                schedule_config: self.schedule_config,
+                schedule_config: self.schedule_config
+                ,
             }
         }
     }
+    
+    
 }
 impl UploaderConfig {
     /// Creates a new builder-style object to manufacture [`UploaderConfig`](crate::model::UploaderConfig).
@@ -1565,12 +1466,12 @@ impl UploaderConfig {
     }
 }
 
-/// <p>This API enables you to specify the duration that the camera, or local media file, should record onto the Edge Agent. The <code>ScheduleConfig</code> consists of the <code>ScheduleExpression</code> and the <code>DurationInMinutes</code> attributes. </p>
+/// <p>This API enables you to specify the duration that the camera, or local media file, should record onto the Edge Agent. The <code>ScheduleConfig</code> consists of the <code>ScheduleExpression</code> and the <code>DurationInMinutes</code> attributes. </p> 
 /// <p>If the <code>ScheduleExpression</code> is not provided, then the Edge Agent will always be set to recording mode.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ScheduleConfig {
-    /// <p>The Quartz cron expression that takes care of scheduling jobs to record from the camera, or local media file, onto the Edge Agent. If the <code>ScheduleExpression</code> is not provided for the <code>RecorderConfig</code>, then the Edge Agent will always be set to recording mode.</p>
+pub struct ScheduleConfig  {
+    /// <p>The Quartz cron expression that takes care of scheduling jobs to record from the camera, or local media file, onto the Edge Agent. If the <code>ScheduleExpression</code> is not provided for the <code>RecorderConfig</code>, then the Edge Agent will always be set to recording mode.</p> 
     /// <p>For more information about Quartz, refer to the <a href="http://www.quartz-scheduler.org/documentation/quartz-2.3.0/tutorials/crontrigger.html"> <i>Cron Trigger Tutorial</i> </a> page to understand the valid expressions and its use.</p>
     #[doc(hidden)]
     pub schedule_expression: std::option::Option<std::string::String>,
@@ -1579,9 +1480,9 @@ pub struct ScheduleConfig {
     pub duration_in_seconds: std::option::Option<i32>,
 }
 impl ScheduleConfig {
-    /// <p>The Quartz cron expression that takes care of scheduling jobs to record from the camera, or local media file, onto the Edge Agent. If the <code>ScheduleExpression</code> is not provided for the <code>RecorderConfig</code>, then the Edge Agent will always be set to recording mode.</p>
+    /// <p>The Quartz cron expression that takes care of scheduling jobs to record from the camera, or local media file, onto the Edge Agent. If the <code>ScheduleExpression</code> is not provided for the <code>RecorderConfig</code>, then the Edge Agent will always be set to recording mode.</p> 
     /// <p>For more information about Quartz, refer to the <a href="http://www.quartz-scheduler.org/documentation/quartz-2.3.0/tutorials/crontrigger.html"> <i>Cron Trigger Tutorial</i> </a> page to understand the valid expressions and its use.</p>
-    pub fn schedule_expression(&self) -> std::option::Option<&str> {
+    pub fn schedule_expression(&self) -> std::option::Option<& str> {
         self.schedule_expression.as_deref()
     }
     /// <p>The total duration to record the media. If the <code>ScheduleExpression</code> attribute is provided, then the <code>DurationInSeconds</code> attribute should also be specified.</p>
@@ -1591,7 +1492,7 @@ impl ScheduleConfig {
 }
 /// See [`ScheduleConfig`](crate::model::ScheduleConfig).
 pub mod schedule_config {
-
+    
     /// A builder for [`ScheduleConfig`](crate::model::ScheduleConfig).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1599,20 +1500,16 @@ pub mod schedule_config {
         pub(crate) duration_in_seconds: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>The Quartz cron expression that takes care of scheduling jobs to record from the camera, or local media file, onto the Edge Agent. If the <code>ScheduleExpression</code> is not provided for the <code>RecorderConfig</code>, then the Edge Agent will always be set to recording mode.</p>
+        /// <p>The Quartz cron expression that takes care of scheduling jobs to record from the camera, or local media file, onto the Edge Agent. If the <code>ScheduleExpression</code> is not provided for the <code>RecorderConfig</code>, then the Edge Agent will always be set to recording mode.</p> 
         /// <p>For more information about Quartz, refer to the <a href="http://www.quartz-scheduler.org/documentation/quartz-2.3.0/tutorials/crontrigger.html"> <i>Cron Trigger Tutorial</i> </a> page to understand the valid expressions and its use.</p>
         pub fn schedule_expression(mut self, input: impl Into<std::string::String>) -> Self {
             self.schedule_expression = Some(input.into());
             self
         }
-        /// <p>The Quartz cron expression that takes care of scheduling jobs to record from the camera, or local media file, onto the Edge Agent. If the <code>ScheduleExpression</code> is not provided for the <code>RecorderConfig</code>, then the Edge Agent will always be set to recording mode.</p>
+        /// <p>The Quartz cron expression that takes care of scheduling jobs to record from the camera, or local media file, onto the Edge Agent. If the <code>ScheduleExpression</code> is not provided for the <code>RecorderConfig</code>, then the Edge Agent will always be set to recording mode.</p> 
         /// <p>For more information about Quartz, refer to the <a href="http://www.quartz-scheduler.org/documentation/quartz-2.3.0/tutorials/crontrigger.html"> <i>Cron Trigger Tutorial</i> </a> page to understand the valid expressions and its use.</p>
-        pub fn set_schedule_expression(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.schedule_expression = input;
-            self
+        pub fn set_schedule_expression(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.schedule_expression = input; self
         }
         /// <p>The total duration to record the media. If the <code>ScheduleExpression</code> attribute is provided, then the <code>DurationInSeconds</code> attribute should also be specified.</p>
         pub fn duration_in_seconds(mut self, input: i32) -> Self {
@@ -1621,17 +1518,20 @@ pub mod schedule_config {
         }
         /// <p>The total duration to record the media. If the <code>ScheduleExpression</code> attribute is provided, then the <code>DurationInSeconds</code> attribute should also be specified.</p>
         pub fn set_duration_in_seconds(mut self, input: std::option::Option<i32>) -> Self {
-            self.duration_in_seconds = input;
-            self
+            self.duration_in_seconds = input; self
         }
         /// Consumes the builder and constructs a [`ScheduleConfig`](crate::model::ScheduleConfig).
         pub fn build(self) -> crate::model::ScheduleConfig {
             crate::model::ScheduleConfig {
-                schedule_expression: self.schedule_expression,
-                duration_in_seconds: self.duration_in_seconds,
+                schedule_expression: self.schedule_expression
+                ,
+                duration_in_seconds: self.duration_in_seconds
+                ,
             }
         }
     }
+    
+    
 }
 impl ScheduleConfig {
     /// Creates a new builder-style object to manufacture [`ScheduleConfig`](crate::model::ScheduleConfig).
@@ -1643,7 +1543,7 @@ impl ScheduleConfig {
 /// <p>The recorder configuration consists of the local <code>MediaSourceConfig</code> details that are used as credentials to accesss the local media files streamed on the camera. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RecorderConfig {
+pub struct RecorderConfig  {
     /// <p>The configuration details that consist of the credentials required (<code>MediaUriSecretArn</code> and <code>MediaUriType</code>) to access the media files streamed to the camera. </p>
     #[doc(hidden)]
     pub media_source_config: std::option::Option<crate::model::MediaSourceConfig>,
@@ -1653,17 +1553,17 @@ pub struct RecorderConfig {
 }
 impl RecorderConfig {
     /// <p>The configuration details that consist of the credentials required (<code>MediaUriSecretArn</code> and <code>MediaUriType</code>) to access the media files streamed to the camera. </p>
-    pub fn media_source_config(&self) -> std::option::Option<&crate::model::MediaSourceConfig> {
+    pub fn media_source_config(&self) -> std::option::Option<& crate::model::MediaSourceConfig> {
         self.media_source_config.as_ref()
     }
     /// <p>The configuration that consists of the <code>ScheduleExpression</code> and the <code>DurationInMinutes</code> details that specify the scheduling to record from a camera, or local media file, onto the Edge Agent. If the <code>ScheduleExpression</code> attribute is not provided, then the Edge Agent will always be set to recording mode.</p>
-    pub fn schedule_config(&self) -> std::option::Option<&crate::model::ScheduleConfig> {
+    pub fn schedule_config(&self) -> std::option::Option<& crate::model::ScheduleConfig> {
         self.schedule_config.as_ref()
     }
 }
 /// See [`RecorderConfig`](crate::model::RecorderConfig).
 pub mod recorder_config {
-
+    
     /// A builder for [`RecorderConfig`](crate::model::RecorderConfig).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1677,12 +1577,8 @@ pub mod recorder_config {
             self
         }
         /// <p>The configuration details that consist of the credentials required (<code>MediaUriSecretArn</code> and <code>MediaUriType</code>) to access the media files streamed to the camera. </p>
-        pub fn set_media_source_config(
-            mut self,
-            input: std::option::Option<crate::model::MediaSourceConfig>,
-        ) -> Self {
-            self.media_source_config = input;
-            self
+        pub fn set_media_source_config(mut self, input: std::option::Option<crate::model::MediaSourceConfig>) -> Self {
+            self.media_source_config = input; self
         }
         /// <p>The configuration that consists of the <code>ScheduleExpression</code> and the <code>DurationInMinutes</code> details that specify the scheduling to record from a camera, or local media file, onto the Edge Agent. If the <code>ScheduleExpression</code> attribute is not provided, then the Edge Agent will always be set to recording mode.</p>
         pub fn schedule_config(mut self, input: crate::model::ScheduleConfig) -> Self {
@@ -1690,21 +1586,21 @@ pub mod recorder_config {
             self
         }
         /// <p>The configuration that consists of the <code>ScheduleExpression</code> and the <code>DurationInMinutes</code> details that specify the scheduling to record from a camera, or local media file, onto the Edge Agent. If the <code>ScheduleExpression</code> attribute is not provided, then the Edge Agent will always be set to recording mode.</p>
-        pub fn set_schedule_config(
-            mut self,
-            input: std::option::Option<crate::model::ScheduleConfig>,
-        ) -> Self {
-            self.schedule_config = input;
-            self
+        pub fn set_schedule_config(mut self, input: std::option::Option<crate::model::ScheduleConfig>) -> Self {
+            self.schedule_config = input; self
         }
         /// Consumes the builder and constructs a [`RecorderConfig`](crate::model::RecorderConfig).
         pub fn build(self) -> crate::model::RecorderConfig {
             crate::model::RecorderConfig {
-                media_source_config: self.media_source_config,
-                schedule_config: self.schedule_config,
+                media_source_config: self.media_source_config
+                ,
+                schedule_config: self.schedule_config
+                ,
             }
         }
     }
+    
+    
 }
 impl RecorderConfig {
     /// Creates a new builder-style object to manufacture [`RecorderConfig`](crate::model::RecorderConfig).
@@ -1716,29 +1612,29 @@ impl RecorderConfig {
 /// <p>The configuration details that consist of the credentials required (<code>MediaUriSecretArn</code> and <code>MediaUriType</code>) to access the media files that are streamed to the camera.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct MediaSourceConfig {
+pub struct MediaSourceConfig  {
     /// <p>The AWS Secrets Manager ARN for the username and password of the camera, or a local media file location.</p>
     #[doc(hidden)]
     pub media_uri_secret_arn: std::option::Option<std::string::String>,
-    /// <p>The Uniform Resource Identifier (URI) type. The <code>FILE_URI</code> value can be used to stream local media files.</p> <note>
-    /// <p>Preview only supports the <code>RTSP_URI</code> media source URI format .</p>
+    /// <p>The Uniform Resource Identifier (URI) type. The <code>FILE_URI</code> value can be used to stream local media files.</p> <note> 
+    /// <p>Preview only supports the <code>RTSP_URI</code> media source URI format .</p> 
     /// </note>
     #[doc(hidden)]
     pub media_uri_type: std::option::Option<crate::model::MediaUriType>,
 }
 impl MediaSourceConfig {
     /// <p>The AWS Secrets Manager ARN for the username and password of the camera, or a local media file location.</p>
-    pub fn media_uri_secret_arn(&self) -> std::option::Option<&str> {
+    pub fn media_uri_secret_arn(&self) -> std::option::Option<& str> {
         self.media_uri_secret_arn.as_deref()
     }
-    /// <p>The Uniform Resource Identifier (URI) type. The <code>FILE_URI</code> value can be used to stream local media files.</p> <note>
-    /// <p>Preview only supports the <code>RTSP_URI</code> media source URI format .</p>
+    /// <p>The Uniform Resource Identifier (URI) type. The <code>FILE_URI</code> value can be used to stream local media files.</p> <note> 
+    /// <p>Preview only supports the <code>RTSP_URI</code> media source URI format .</p> 
     /// </note>
-    pub fn media_uri_type(&self) -> std::option::Option<&crate::model::MediaUriType> {
+    pub fn media_uri_type(&self) -> std::option::Option<& crate::model::MediaUriType> {
         self.media_uri_type.as_ref()
     }
 }
-impl std::fmt::Debug for MediaSourceConfig {
+impl  std::fmt::Debug for MediaSourceConfig  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("MediaSourceConfig");
         formatter.field("media_uri_secret_arn", &"*** Sensitive Data Redacted ***");
@@ -1748,7 +1644,7 @@ impl std::fmt::Debug for MediaSourceConfig {
 }
 /// See [`MediaSourceConfig`](crate::model::MediaSourceConfig).
 pub mod media_source_config {
-
+    
     /// A builder for [`MediaSourceConfig`](crate::model::MediaSourceConfig).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
@@ -1762,35 +1658,29 @@ pub mod media_source_config {
             self
         }
         /// <p>The AWS Secrets Manager ARN for the username and password of the camera, or a local media file location.</p>
-        pub fn set_media_uri_secret_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.media_uri_secret_arn = input;
-            self
+        pub fn set_media_uri_secret_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.media_uri_secret_arn = input; self
         }
-        /// <p>The Uniform Resource Identifier (URI) type. The <code>FILE_URI</code> value can be used to stream local media files.</p> <note>
-        /// <p>Preview only supports the <code>RTSP_URI</code> media source URI format .</p>
+        /// <p>The Uniform Resource Identifier (URI) type. The <code>FILE_URI</code> value can be used to stream local media files.</p> <note> 
+        /// <p>Preview only supports the <code>RTSP_URI</code> media source URI format .</p> 
         /// </note>
         pub fn media_uri_type(mut self, input: crate::model::MediaUriType) -> Self {
             self.media_uri_type = Some(input);
             self
         }
-        /// <p>The Uniform Resource Identifier (URI) type. The <code>FILE_URI</code> value can be used to stream local media files.</p> <note>
-        /// <p>Preview only supports the <code>RTSP_URI</code> media source URI format .</p>
+        /// <p>The Uniform Resource Identifier (URI) type. The <code>FILE_URI</code> value can be used to stream local media files.</p> <note> 
+        /// <p>Preview only supports the <code>RTSP_URI</code> media source URI format .</p> 
         /// </note>
-        pub fn set_media_uri_type(
-            mut self,
-            input: std::option::Option<crate::model::MediaUriType>,
-        ) -> Self {
-            self.media_uri_type = input;
-            self
+        pub fn set_media_uri_type(mut self, input: std::option::Option<crate::model::MediaUriType>) -> Self {
+            self.media_uri_type = input; self
         }
         /// Consumes the builder and constructs a [`MediaSourceConfig`](crate::model::MediaSourceConfig).
         pub fn build(self) -> crate::model::MediaSourceConfig {
             crate::model::MediaSourceConfig {
-                media_uri_secret_arn: self.media_uri_secret_arn,
-                media_uri_type: self.media_uri_type,
+                media_uri_secret_arn: self.media_uri_secret_arn
+                ,
+                media_uri_type: self.media_uri_type
+                ,
             }
         }
     }
@@ -1802,6 +1692,8 @@ pub mod media_source_config {
             formatter.finish()
         }
     }
+    
+    
 }
 impl MediaSourceConfig {
     /// Creates a new builder-style object to manufacture [`MediaSourceConfig`](crate::model::MediaSourceConfig).
@@ -1816,9 +1708,9 @@ impl MediaSourceConfig {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let mediauritype = unimplemented!();
 /// match mediauritype {
@@ -1840,58 +1732,52 @@ impl MediaSourceConfig {
 /// Specifically, when `mediauritype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `MediaUriType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum MediaUriType {
     #[allow(missing_docs)] // documentation missing in model
     FileUri,
     #[allow(missing_docs)] // documentation missing in model
     RtspUri,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for MediaUriType {
     fn from(s: &str) -> Self {
         match s {
             "FILE_URI" => MediaUriType::FileUri,
             "RTSP_URI" => MediaUriType::RtspUri,
-            other => MediaUriType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => MediaUriType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for MediaUriType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(MediaUriType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(MediaUriType::from(s))
+                }
+            }
 impl MediaUriType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             MediaUriType::FileUri => "FILE_URI",
             MediaUriType::RtspUri => "RTSP_URI",
-            MediaUriType::Unknown(value) => value.as_str(),
+            MediaUriType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["FILE_URI", "RTSP_URI"]
+        &[
+            "FILE_URI", "RTSP_URI"
+        ]
     }
 }
 impl AsRef<str> for MediaUriType {
@@ -1906,9 +1792,9 @@ impl AsRef<str> for MediaUriType {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let syncstatus = unimplemented!();
 /// match syncstatus {
@@ -1934,22 +1820,14 @@ impl AsRef<str> for MediaUriType {
 /// Specifically, when `syncstatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `SyncStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum SyncStatus {
     #[allow(missing_docs)] // documentation missing in model
     Acknowledged,
@@ -1964,7 +1842,7 @@ pub enum SyncStatus {
     #[allow(missing_docs)] // documentation missing in model
     SyncFailed,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for SyncStatus {
     fn from(s: &str) -> Self {
@@ -1975,17 +1853,17 @@ impl std::convert::From<&str> for SyncStatus {
             "IN_SYNC" => SyncStatus::InSync,
             "SYNCING" => SyncStatus::Syncing,
             "SYNC_FAILED" => SyncStatus::SyncFailed,
-            other => SyncStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => SyncStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for SyncStatus {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(SyncStatus::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(SyncStatus::from(s))
+                }
+            }
 impl SyncStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -1996,18 +1874,13 @@ impl SyncStatus {
             SyncStatus::InSync => "IN_SYNC",
             SyncStatus::Syncing => "SYNCING",
             SyncStatus::SyncFailed => "SYNC_FAILED",
-            SyncStatus::Unknown(value) => value.as_str(),
+            SyncStatus::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "ACKNOWLEDGED",
-            "DELETE_FAILED",
-            "DELETING",
-            "IN_SYNC",
-            "SYNCING",
-            "SYNC_FAILED",
+            "ACKNOWLEDGED", "DELETE_FAILED", "DELETING", "IN_SYNC", "SYNCING", "SYNC_FAILED"
         ]
     }
 }
@@ -2020,7 +1893,7 @@ impl AsRef<str> for SyncStatus {
 /// <p>An object describing a Kinesis video stream.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StreamInfo {
+pub struct StreamInfo  {
     /// <p>The name of the device that is associated with the stream.</p>
     #[doc(hidden)]
     pub device_name: std::option::Option<std::string::String>,
@@ -2051,35 +1924,35 @@ pub struct StreamInfo {
 }
 impl StreamInfo {
     /// <p>The name of the device that is associated with the stream.</p>
-    pub fn device_name(&self) -> std::option::Option<&str> {
+    pub fn device_name(&self) -> std::option::Option<& str> {
         self.device_name.as_deref()
     }
     /// <p>The name of the stream.</p>
-    pub fn stream_name(&self) -> std::option::Option<&str> {
+    pub fn stream_name(&self) -> std::option::Option<& str> {
         self.stream_name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the stream.</p>
-    pub fn stream_arn(&self) -> std::option::Option<&str> {
+    pub fn stream_arn(&self) -> std::option::Option<& str> {
         self.stream_arn.as_deref()
     }
     /// <p>The <code>MediaType</code> of the stream. </p>
-    pub fn media_type(&self) -> std::option::Option<&str> {
+    pub fn media_type(&self) -> std::option::Option<& str> {
         self.media_type.as_deref()
     }
     /// <p>The ID of the Key Management Service (KMS) key that Kinesis Video Streams uses to encrypt data on the stream.</p>
-    pub fn kms_key_id(&self) -> std::option::Option<&str> {
+    pub fn kms_key_id(&self) -> std::option::Option<& str> {
         self.kms_key_id.as_deref()
     }
     /// <p>The version of the stream.</p>
-    pub fn version(&self) -> std::option::Option<&str> {
+    pub fn version(&self) -> std::option::Option<& str> {
         self.version.as_deref()
     }
     /// <p>The status of the stream.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::Status> {
+    pub fn status(&self) -> std::option::Option<& crate::model::Status> {
         self.status.as_ref()
     }
     /// <p>A time stamp that indicates when the stream was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>How long the stream retains data, in hours.</p>
@@ -2089,7 +1962,7 @@ impl StreamInfo {
 }
 /// See [`StreamInfo`](crate::model::StreamInfo).
 pub mod stream_info {
-
+    
     /// A builder for [`StreamInfo`](crate::model::StreamInfo).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2111,8 +1984,7 @@ pub mod stream_info {
         }
         /// <p>The name of the device that is associated with the stream.</p>
         pub fn set_device_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.device_name = input;
-            self
+            self.device_name = input; self
         }
         /// <p>The name of the stream.</p>
         pub fn stream_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2121,8 +1993,7 @@ pub mod stream_info {
         }
         /// <p>The name of the stream.</p>
         pub fn set_stream_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.stream_name = input;
-            self
+            self.stream_name = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the stream.</p>
         pub fn stream_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2131,8 +2002,7 @@ pub mod stream_info {
         }
         /// <p>The Amazon Resource Name (ARN) of the stream.</p>
         pub fn set_stream_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.stream_arn = input;
-            self
+            self.stream_arn = input; self
         }
         /// <p>The <code>MediaType</code> of the stream. </p>
         pub fn media_type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2141,8 +2011,7 @@ pub mod stream_info {
         }
         /// <p>The <code>MediaType</code> of the stream. </p>
         pub fn set_media_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.media_type = input;
-            self
+            self.media_type = input; self
         }
         /// <p>The ID of the Key Management Service (KMS) key that Kinesis Video Streams uses to encrypt data on the stream.</p>
         pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2151,8 +2020,7 @@ pub mod stream_info {
         }
         /// <p>The ID of the Key Management Service (KMS) key that Kinesis Video Streams uses to encrypt data on the stream.</p>
         pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.kms_key_id = input;
-            self
+            self.kms_key_id = input; self
         }
         /// <p>The version of the stream.</p>
         pub fn version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2161,8 +2029,7 @@ pub mod stream_info {
         }
         /// <p>The version of the stream.</p>
         pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.version = input;
-            self
+            self.version = input; self
         }
         /// <p>The status of the stream.</p>
         pub fn status(mut self, input: crate::model::Status) -> Self {
@@ -2171,8 +2038,7 @@ pub mod stream_info {
         }
         /// <p>The status of the stream.</p>
         pub fn set_status(mut self, input: std::option::Option<crate::model::Status>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// <p>A time stamp that indicates when the stream was created.</p>
         pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -2180,12 +2046,8 @@ pub mod stream_info {
             self
         }
         /// <p>A time stamp that indicates when the stream was created.</p>
-        pub fn set_creation_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.creation_time = input;
-            self
+        pub fn set_creation_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.creation_time = input; self
         }
         /// <p>How long the stream retains data, in hours.</p>
         pub fn data_retention_in_hours(mut self, input: i32) -> Self {
@@ -2194,24 +2056,34 @@ pub mod stream_info {
         }
         /// <p>How long the stream retains data, in hours.</p>
         pub fn set_data_retention_in_hours(mut self, input: std::option::Option<i32>) -> Self {
-            self.data_retention_in_hours = input;
-            self
+            self.data_retention_in_hours = input; self
         }
         /// Consumes the builder and constructs a [`StreamInfo`](crate::model::StreamInfo).
         pub fn build(self) -> crate::model::StreamInfo {
             crate::model::StreamInfo {
-                device_name: self.device_name,
-                stream_name: self.stream_name,
-                stream_arn: self.stream_arn,
-                media_type: self.media_type,
-                kms_key_id: self.kms_key_id,
-                version: self.version,
-                status: self.status,
-                creation_time: self.creation_time,
-                data_retention_in_hours: self.data_retention_in_hours,
+                device_name: self.device_name
+                ,
+                stream_name: self.stream_name
+                ,
+                stream_arn: self.stream_arn
+                ,
+                media_type: self.media_type
+                ,
+                kms_key_id: self.kms_key_id
+                ,
+                version: self.version
+                ,
+                status: self.status
+                ,
+                creation_time: self.creation_time
+                ,
+                data_retention_in_hours: self.data_retention_in_hours
+                ,
             }
         }
     }
+    
+    
 }
 impl StreamInfo {
     /// Creates a new builder-style object to manufacture [`StreamInfo`](crate::model::StreamInfo).
@@ -2226,9 +2098,9 @@ impl StreamInfo {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let status = unimplemented!();
 /// match status {
@@ -2252,22 +2124,14 @@ impl StreamInfo {
 /// Specifically, when `status` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `Status::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum Status {
     #[allow(missing_docs)] // documentation missing in model
     Active,
@@ -2278,7 +2142,7 @@ pub enum Status {
     #[allow(missing_docs)] // documentation missing in model
     Updating,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for Status {
     fn from(s: &str) -> Self {
@@ -2287,17 +2151,17 @@ impl std::convert::From<&str> for Status {
             "CREATING" => Status::Creating,
             "DELETING" => Status::Deleting,
             "UPDATING" => Status::Updating,
-            other => Status::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => Status::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for Status {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(Status::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(Status::from(s))
+                }
+            }
 impl Status {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -2306,12 +2170,14 @@ impl Status {
             Status::Creating => "CREATING",
             Status::Deleting => "DELETING",
             Status::Updating => "UPDATING",
-            Status::Unknown(value) => value.as_str(),
+            Status::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ACTIVE", "CREATING", "DELETING", "UPDATING"]
+        &[
+            "ACTIVE", "CREATING", "DELETING", "UPDATING"
+        ]
     }
 }
 impl AsRef<str> for Status {
@@ -2323,7 +2189,7 @@ impl AsRef<str> for Status {
 /// <p>Specifies the condition that streams must satisfy to be returned when you list streams (see the <code>ListStreams</code> API). A condition has a comparison operation and a value. Currently, you can specify only the <code>BEGINS_WITH</code> operator, which finds streams whose names start with a given prefix. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StreamNameCondition {
+pub struct StreamNameCondition  {
     /// <p>A comparison operator. Currently, you can specify only the <code>BEGINS_WITH</code> operator, which finds streams whose names start with a given prefix.</p>
     #[doc(hidden)]
     pub comparison_operator: std::option::Option<crate::model::ComparisonOperator>,
@@ -2333,17 +2199,17 @@ pub struct StreamNameCondition {
 }
 impl StreamNameCondition {
     /// <p>A comparison operator. Currently, you can specify only the <code>BEGINS_WITH</code> operator, which finds streams whose names start with a given prefix.</p>
-    pub fn comparison_operator(&self) -> std::option::Option<&crate::model::ComparisonOperator> {
+    pub fn comparison_operator(&self) -> std::option::Option<& crate::model::ComparisonOperator> {
         self.comparison_operator.as_ref()
     }
     /// <p>A value to compare.</p>
-    pub fn comparison_value(&self) -> std::option::Option<&str> {
+    pub fn comparison_value(&self) -> std::option::Option<& str> {
         self.comparison_value.as_deref()
     }
 }
 /// See [`StreamNameCondition`](crate::model::StreamNameCondition).
 pub mod stream_name_condition {
-
+    
     /// A builder for [`StreamNameCondition`](crate::model::StreamNameCondition).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2357,12 +2223,8 @@ pub mod stream_name_condition {
             self
         }
         /// <p>A comparison operator. Currently, you can specify only the <code>BEGINS_WITH</code> operator, which finds streams whose names start with a given prefix.</p>
-        pub fn set_comparison_operator(
-            mut self,
-            input: std::option::Option<crate::model::ComparisonOperator>,
-        ) -> Self {
-            self.comparison_operator = input;
-            self
+        pub fn set_comparison_operator(mut self, input: std::option::Option<crate::model::ComparisonOperator>) -> Self {
+            self.comparison_operator = input; self
         }
         /// <p>A value to compare.</p>
         pub fn comparison_value(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2370,21 +2232,21 @@ pub mod stream_name_condition {
             self
         }
         /// <p>A value to compare.</p>
-        pub fn set_comparison_value(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.comparison_value = input;
-            self
+        pub fn set_comparison_value(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.comparison_value = input; self
         }
         /// Consumes the builder and constructs a [`StreamNameCondition`](crate::model::StreamNameCondition).
         pub fn build(self) -> crate::model::StreamNameCondition {
             crate::model::StreamNameCondition {
-                comparison_operator: self.comparison_operator,
-                comparison_value: self.comparison_value,
+                comparison_operator: self.comparison_operator
+                ,
+                comparison_value: self.comparison_value
+                ,
             }
         }
     }
+    
+    
 }
 impl StreamNameCondition {
     /// Creates a new builder-style object to manufacture [`StreamNameCondition`](crate::model::StreamNameCondition).
@@ -2399,9 +2261,9 @@ impl StreamNameCondition {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let comparisonoperator = unimplemented!();
 /// match comparisonoperator {
@@ -2422,56 +2284,48 @@ impl StreamNameCondition {
 /// Specifically, when `comparisonoperator` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ComparisonOperator::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ComparisonOperator {
     #[allow(missing_docs)] // documentation missing in model
     BeginsWith,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ComparisonOperator {
     fn from(s: &str) -> Self {
         match s {
             "BEGINS_WITH" => ComparisonOperator::BeginsWith,
-            other => {
-                ComparisonOperator::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => ComparisonOperator::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ComparisonOperator {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ComparisonOperator::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ComparisonOperator::from(s))
+                }
+            }
 impl ComparisonOperator {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ComparisonOperator::BeginsWith => "BEGINS_WITH",
-            ComparisonOperator::Unknown(value) => value.as_str(),
+            ComparisonOperator::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["BEGINS_WITH"]
+        &[
+            "BEGINS_WITH"
+        ]
     }
 }
 impl AsRef<str> for ComparisonOperator {
@@ -2483,7 +2337,7 @@ impl AsRef<str> for ComparisonOperator {
 /// <p>A structure that encapsulates a signaling channel's metadata and properties.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ChannelInfo {
+pub struct ChannelInfo  {
     /// <p>The name of the signaling channel.</p>
     #[doc(hidden)]
     pub channel_name: std::option::Option<std::string::String>,
@@ -2508,39 +2362,37 @@ pub struct ChannelInfo {
 }
 impl ChannelInfo {
     /// <p>The name of the signaling channel.</p>
-    pub fn channel_name(&self) -> std::option::Option<&str> {
+    pub fn channel_name(&self) -> std::option::Option<& str> {
         self.channel_name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the signaling channel.</p>
-    pub fn channel_arn(&self) -> std::option::Option<&str> {
+    pub fn channel_arn(&self) -> std::option::Option<& str> {
         self.channel_arn.as_deref()
     }
     /// <p>The type of the signaling channel.</p>
-    pub fn channel_type(&self) -> std::option::Option<&crate::model::ChannelType> {
+    pub fn channel_type(&self) -> std::option::Option<& crate::model::ChannelType> {
         self.channel_type.as_ref()
     }
     /// <p>Current status of the signaling channel.</p>
-    pub fn channel_status(&self) -> std::option::Option<&crate::model::Status> {
+    pub fn channel_status(&self) -> std::option::Option<& crate::model::Status> {
         self.channel_status.as_ref()
     }
     /// <p>The time at which the signaling channel was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>A structure that contains the configuration for the <code>SINGLE_MASTER</code> channel type.</p>
-    pub fn single_master_configuration(
-        &self,
-    ) -> std::option::Option<&crate::model::SingleMasterConfiguration> {
+    pub fn single_master_configuration(&self) -> std::option::Option<& crate::model::SingleMasterConfiguration> {
         self.single_master_configuration.as_ref()
     }
     /// <p>The current version of the signaling channel.</p>
-    pub fn version(&self) -> std::option::Option<&str> {
+    pub fn version(&self) -> std::option::Option<& str> {
         self.version.as_deref()
     }
 }
 /// See [`ChannelInfo`](crate::model::ChannelInfo).
 pub mod channel_info {
-
+    
     /// A builder for [`ChannelInfo`](crate::model::ChannelInfo).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2549,8 +2401,7 @@ pub mod channel_info {
         pub(crate) channel_type: std::option::Option<crate::model::ChannelType>,
         pub(crate) channel_status: std::option::Option<crate::model::Status>,
         pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
-        pub(crate) single_master_configuration:
-            std::option::Option<crate::model::SingleMasterConfiguration>,
+        pub(crate) single_master_configuration: std::option::Option<crate::model::SingleMasterConfiguration>,
         pub(crate) version: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -2561,8 +2412,7 @@ pub mod channel_info {
         }
         /// <p>The name of the signaling channel.</p>
         pub fn set_channel_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.channel_name = input;
-            self
+            self.channel_name = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the signaling channel.</p>
         pub fn channel_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2571,8 +2421,7 @@ pub mod channel_info {
         }
         /// <p>The Amazon Resource Name (ARN) of the signaling channel.</p>
         pub fn set_channel_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.channel_arn = input;
-            self
+            self.channel_arn = input; self
         }
         /// <p>The type of the signaling channel.</p>
         pub fn channel_type(mut self, input: crate::model::ChannelType) -> Self {
@@ -2580,12 +2429,8 @@ pub mod channel_info {
             self
         }
         /// <p>The type of the signaling channel.</p>
-        pub fn set_channel_type(
-            mut self,
-            input: std::option::Option<crate::model::ChannelType>,
-        ) -> Self {
-            self.channel_type = input;
-            self
+        pub fn set_channel_type(mut self, input: std::option::Option<crate::model::ChannelType>) -> Self {
+            self.channel_type = input; self
         }
         /// <p>Current status of the signaling channel.</p>
         pub fn channel_status(mut self, input: crate::model::Status) -> Self {
@@ -2593,12 +2438,8 @@ pub mod channel_info {
             self
         }
         /// <p>Current status of the signaling channel.</p>
-        pub fn set_channel_status(
-            mut self,
-            input: std::option::Option<crate::model::Status>,
-        ) -> Self {
-            self.channel_status = input;
-            self
+        pub fn set_channel_status(mut self, input: std::option::Option<crate::model::Status>) -> Self {
+            self.channel_status = input; self
         }
         /// <p>The time at which the signaling channel was created.</p>
         pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -2606,28 +2447,17 @@ pub mod channel_info {
             self
         }
         /// <p>The time at which the signaling channel was created.</p>
-        pub fn set_creation_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.creation_time = input;
-            self
+        pub fn set_creation_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.creation_time = input; self
         }
         /// <p>A structure that contains the configuration for the <code>SINGLE_MASTER</code> channel type.</p>
-        pub fn single_master_configuration(
-            mut self,
-            input: crate::model::SingleMasterConfiguration,
-        ) -> Self {
+        pub fn single_master_configuration(mut self, input: crate::model::SingleMasterConfiguration) -> Self {
             self.single_master_configuration = Some(input);
             self
         }
         /// <p>A structure that contains the configuration for the <code>SINGLE_MASTER</code> channel type.</p>
-        pub fn set_single_master_configuration(
-            mut self,
-            input: std::option::Option<crate::model::SingleMasterConfiguration>,
-        ) -> Self {
-            self.single_master_configuration = input;
-            self
+        pub fn set_single_master_configuration(mut self, input: std::option::Option<crate::model::SingleMasterConfiguration>) -> Self {
+            self.single_master_configuration = input; self
         }
         /// <p>The current version of the signaling channel.</p>
         pub fn version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2636,22 +2466,30 @@ pub mod channel_info {
         }
         /// <p>The current version of the signaling channel.</p>
         pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.version = input;
-            self
+            self.version = input; self
         }
         /// Consumes the builder and constructs a [`ChannelInfo`](crate::model::ChannelInfo).
         pub fn build(self) -> crate::model::ChannelInfo {
             crate::model::ChannelInfo {
-                channel_name: self.channel_name,
-                channel_arn: self.channel_arn,
-                channel_type: self.channel_type,
-                channel_status: self.channel_status,
-                creation_time: self.creation_time,
-                single_master_configuration: self.single_master_configuration,
-                version: self.version,
+                channel_name: self.channel_name
+                ,
+                channel_arn: self.channel_arn
+                ,
+                channel_type: self.channel_type
+                ,
+                channel_status: self.channel_status
+                ,
+                creation_time: self.creation_time
+                ,
+                single_master_configuration: self.single_master_configuration
+                ,
+                version: self.version
+                ,
             }
         }
     }
+    
+    
 }
 impl ChannelInfo {
     /// Creates a new builder-style object to manufacture [`ChannelInfo`](crate::model::ChannelInfo).
@@ -2666,9 +2504,9 @@ impl ChannelInfo {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let channeltype = unimplemented!();
 /// match channeltype {
@@ -2690,58 +2528,52 @@ impl ChannelInfo {
 /// Specifically, when `channeltype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ChannelType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ChannelType {
     #[allow(missing_docs)] // documentation missing in model
     FullMesh,
     #[allow(missing_docs)] // documentation missing in model
     SingleMaster,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ChannelType {
     fn from(s: &str) -> Self {
         match s {
             "FULL_MESH" => ChannelType::FullMesh,
             "SINGLE_MASTER" => ChannelType::SingleMaster,
-            other => ChannelType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => ChannelType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ChannelType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ChannelType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ChannelType::from(s))
+                }
+            }
 impl ChannelType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ChannelType::FullMesh => "FULL_MESH",
             ChannelType::SingleMaster => "SINGLE_MASTER",
-            ChannelType::Unknown(value) => value.as_str(),
+            ChannelType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["FULL_MESH", "SINGLE_MASTER"]
+        &[
+            "FULL_MESH", "SINGLE_MASTER"
+        ]
     }
 }
 impl AsRef<str> for ChannelType {
@@ -2753,7 +2585,7 @@ impl AsRef<str> for ChannelType {
 /// <p>An optional input parameter for the <code>ListSignalingChannels</code> API. When this parameter is specified while invoking <code>ListSignalingChannels</code>, the API returns only the channels that satisfy a condition specified in <code>ChannelNameCondition</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ChannelNameCondition {
+pub struct ChannelNameCondition  {
     /// <p>A comparison operator. Currently, you can only specify the <code>BEGINS_WITH</code> operator, which finds signaling channels whose names begin with a given prefix.</p>
     #[doc(hidden)]
     pub comparison_operator: std::option::Option<crate::model::ComparisonOperator>,
@@ -2763,17 +2595,17 @@ pub struct ChannelNameCondition {
 }
 impl ChannelNameCondition {
     /// <p>A comparison operator. Currently, you can only specify the <code>BEGINS_WITH</code> operator, which finds signaling channels whose names begin with a given prefix.</p>
-    pub fn comparison_operator(&self) -> std::option::Option<&crate::model::ComparisonOperator> {
+    pub fn comparison_operator(&self) -> std::option::Option<& crate::model::ComparisonOperator> {
         self.comparison_operator.as_ref()
     }
     /// <p>A value to compare.</p>
-    pub fn comparison_value(&self) -> std::option::Option<&str> {
+    pub fn comparison_value(&self) -> std::option::Option<& str> {
         self.comparison_value.as_deref()
     }
 }
 /// See [`ChannelNameCondition`](crate::model::ChannelNameCondition).
 pub mod channel_name_condition {
-
+    
     /// A builder for [`ChannelNameCondition`](crate::model::ChannelNameCondition).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2787,12 +2619,8 @@ pub mod channel_name_condition {
             self
         }
         /// <p>A comparison operator. Currently, you can only specify the <code>BEGINS_WITH</code> operator, which finds signaling channels whose names begin with a given prefix.</p>
-        pub fn set_comparison_operator(
-            mut self,
-            input: std::option::Option<crate::model::ComparisonOperator>,
-        ) -> Self {
-            self.comparison_operator = input;
-            self
+        pub fn set_comparison_operator(mut self, input: std::option::Option<crate::model::ComparisonOperator>) -> Self {
+            self.comparison_operator = input; self
         }
         /// <p>A value to compare.</p>
         pub fn comparison_value(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2800,21 +2628,21 @@ pub mod channel_name_condition {
             self
         }
         /// <p>A value to compare.</p>
-        pub fn set_comparison_value(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.comparison_value = input;
-            self
+        pub fn set_comparison_value(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.comparison_value = input; self
         }
         /// Consumes the builder and constructs a [`ChannelNameCondition`](crate::model::ChannelNameCondition).
         pub fn build(self) -> crate::model::ChannelNameCondition {
             crate::model::ChannelNameCondition {
-                comparison_operator: self.comparison_operator,
-                comparison_value: self.comparison_value,
+                comparison_operator: self.comparison_operator
+                ,
+                comparison_value: self.comparison_value
+                ,
             }
         }
     }
+    
+    
 }
 impl ChannelNameCondition {
     /// Creates a new builder-style object to manufacture [`ChannelNameCondition`](crate::model::ChannelNameCondition).
@@ -2826,7 +2654,7 @@ impl ChannelNameCondition {
 /// <p>An object that describes the endpoint of the signaling channel returned by the <code>GetSignalingChannelEndpoint</code> API.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ResourceEndpointListItem {
+pub struct ResourceEndpointListItem  {
     /// <p>The protocol of the signaling channel returned by the <code>GetSignalingChannelEndpoint</code> API.</p>
     #[doc(hidden)]
     pub protocol: std::option::Option<crate::model::ChannelProtocol>,
@@ -2836,17 +2664,17 @@ pub struct ResourceEndpointListItem {
 }
 impl ResourceEndpointListItem {
     /// <p>The protocol of the signaling channel returned by the <code>GetSignalingChannelEndpoint</code> API.</p>
-    pub fn protocol(&self) -> std::option::Option<&crate::model::ChannelProtocol> {
+    pub fn protocol(&self) -> std::option::Option<& crate::model::ChannelProtocol> {
         self.protocol.as_ref()
     }
     /// <p>The endpoint of the signaling channel returned by the <code>GetSignalingChannelEndpoint</code> API.</p>
-    pub fn resource_endpoint(&self) -> std::option::Option<&str> {
+    pub fn resource_endpoint(&self) -> std::option::Option<& str> {
         self.resource_endpoint.as_deref()
     }
 }
 /// See [`ResourceEndpointListItem`](crate::model::ResourceEndpointListItem).
 pub mod resource_endpoint_list_item {
-
+    
     /// A builder for [`ResourceEndpointListItem`](crate::model::ResourceEndpointListItem).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2860,12 +2688,8 @@ pub mod resource_endpoint_list_item {
             self
         }
         /// <p>The protocol of the signaling channel returned by the <code>GetSignalingChannelEndpoint</code> API.</p>
-        pub fn set_protocol(
-            mut self,
-            input: std::option::Option<crate::model::ChannelProtocol>,
-        ) -> Self {
-            self.protocol = input;
-            self
+        pub fn set_protocol(mut self, input: std::option::Option<crate::model::ChannelProtocol>) -> Self {
+            self.protocol = input; self
         }
         /// <p>The endpoint of the signaling channel returned by the <code>GetSignalingChannelEndpoint</code> API.</p>
         pub fn resource_endpoint(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2873,21 +2697,21 @@ pub mod resource_endpoint_list_item {
             self
         }
         /// <p>The endpoint of the signaling channel returned by the <code>GetSignalingChannelEndpoint</code> API.</p>
-        pub fn set_resource_endpoint(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.resource_endpoint = input;
-            self
+        pub fn set_resource_endpoint(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.resource_endpoint = input; self
         }
         /// Consumes the builder and constructs a [`ResourceEndpointListItem`](crate::model::ResourceEndpointListItem).
         pub fn build(self) -> crate::model::ResourceEndpointListItem {
             crate::model::ResourceEndpointListItem {
-                protocol: self.protocol,
-                resource_endpoint: self.resource_endpoint,
+                protocol: self.protocol
+                ,
+                resource_endpoint: self.resource_endpoint
+                ,
             }
         }
     }
+    
+    
 }
 impl ResourceEndpointListItem {
     /// Creates a new builder-style object to manufacture [`ResourceEndpointListItem`](crate::model::ResourceEndpointListItem).
@@ -2902,9 +2726,9 @@ impl ResourceEndpointListItem {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let channelprotocol = unimplemented!();
 /// match channelprotocol {
@@ -2927,22 +2751,14 @@ impl ResourceEndpointListItem {
 /// Specifically, when `channelprotocol` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ChannelProtocol::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ChannelProtocol {
     #[allow(missing_docs)] // documentation missing in model
     Https,
@@ -2951,7 +2767,7 @@ pub enum ChannelProtocol {
     #[allow(missing_docs)] // documentation missing in model
     Wss,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ChannelProtocol {
     fn from(s: &str) -> Self {
@@ -2959,17 +2775,17 @@ impl std::convert::From<&str> for ChannelProtocol {
             "HTTPS" => ChannelProtocol::Https,
             "WEBRTC" => ChannelProtocol::Webrtc,
             "WSS" => ChannelProtocol::Wss,
-            other => ChannelProtocol::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => ChannelProtocol::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ChannelProtocol {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ChannelProtocol::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ChannelProtocol::from(s))
+                }
+            }
 impl ChannelProtocol {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -2977,12 +2793,14 @@ impl ChannelProtocol {
             ChannelProtocol::Https => "HTTPS",
             ChannelProtocol::Webrtc => "WEBRTC",
             ChannelProtocol::Wss => "WSS",
-            ChannelProtocol::Unknown(value) => value.as_str(),
+            ChannelProtocol::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["HTTPS", "WEBRTC", "WSS"]
+        &[
+            "HTTPS", "WEBRTC", "WSS"
+        ]
     }
 }
 impl AsRef<str> for ChannelProtocol {
@@ -2994,7 +2812,7 @@ impl AsRef<str> for ChannelProtocol {
 /// <p>An object that contains the endpoint configuration for the <code>SINGLE_MASTER</code> channel type. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SingleMasterChannelEndpointConfiguration {
+pub struct SingleMasterChannelEndpointConfiguration  {
     /// <p>This property is used to determine the nature of communication over this <code>SINGLE_MASTER</code> signaling channel. If <code>WSS</code> is specified, this API returns a websocket endpoint. If <code>HTTPS</code> is specified, this API returns an <code>HTTPS</code> endpoint.</p>
     #[doc(hidden)]
     pub protocols: std::option::Option<std::vec::Vec<crate::model::ChannelProtocol>>,
@@ -3004,17 +2822,17 @@ pub struct SingleMasterChannelEndpointConfiguration {
 }
 impl SingleMasterChannelEndpointConfiguration {
     /// <p>This property is used to determine the nature of communication over this <code>SINGLE_MASTER</code> signaling channel. If <code>WSS</code> is specified, this API returns a websocket endpoint. If <code>HTTPS</code> is specified, this API returns an <code>HTTPS</code> endpoint.</p>
-    pub fn protocols(&self) -> std::option::Option<&[crate::model::ChannelProtocol]> {
+    pub fn protocols(&self) -> std::option::Option<& [crate::model::ChannelProtocol]> {
         self.protocols.as_deref()
     }
     /// <p>This property is used to determine messaging permissions in this <code>SINGLE_MASTER</code> signaling channel. If <code>MASTER</code> is specified, this API returns an endpoint that a client can use to receive offers from and send answers to any of the viewers on this signaling channel. If <code>VIEWER</code> is specified, this API returns an endpoint that a client can use only to send offers to another <code>MASTER</code> client on this signaling channel. </p>
-    pub fn role(&self) -> std::option::Option<&crate::model::ChannelRole> {
+    pub fn role(&self) -> std::option::Option<& crate::model::ChannelRole> {
         self.role.as_ref()
     }
 }
 /// See [`SingleMasterChannelEndpointConfiguration`](crate::model::SingleMasterChannelEndpointConfiguration).
 pub mod single_master_channel_endpoint_configuration {
-
+    
     /// A builder for [`SingleMasterChannelEndpointConfiguration`](crate::model::SingleMasterChannelEndpointConfiguration).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3029,17 +2847,13 @@ pub mod single_master_channel_endpoint_configuration {
         /// <p>This property is used to determine the nature of communication over this <code>SINGLE_MASTER</code> signaling channel. If <code>WSS</code> is specified, this API returns a websocket endpoint. If <code>HTTPS</code> is specified, this API returns an <code>HTTPS</code> endpoint.</p>
         pub fn protocols(mut self, input: crate::model::ChannelProtocol) -> Self {
             let mut v = self.protocols.unwrap_or_default();
-            v.push(input);
-            self.protocols = Some(v);
-            self
+                            v.push(input);
+                            self.protocols = Some(v);
+                            self
         }
         /// <p>This property is used to determine the nature of communication over this <code>SINGLE_MASTER</code> signaling channel. If <code>WSS</code> is specified, this API returns a websocket endpoint. If <code>HTTPS</code> is specified, this API returns an <code>HTTPS</code> endpoint.</p>
-        pub fn set_protocols(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ChannelProtocol>>,
-        ) -> Self {
-            self.protocols = input;
-            self
+        pub fn set_protocols(mut self, input: std::option::Option<std::vec::Vec<crate::model::ChannelProtocol>>) -> Self {
+            self.protocols = input; self
         }
         /// <p>This property is used to determine messaging permissions in this <code>SINGLE_MASTER</code> signaling channel. If <code>MASTER</code> is specified, this API returns an endpoint that a client can use to receive offers from and send answers to any of the viewers on this signaling channel. If <code>VIEWER</code> is specified, this API returns an endpoint that a client can use only to send offers to another <code>MASTER</code> client on this signaling channel. </p>
         pub fn role(mut self, input: crate::model::ChannelRole) -> Self {
@@ -3048,17 +2862,20 @@ pub mod single_master_channel_endpoint_configuration {
         }
         /// <p>This property is used to determine messaging permissions in this <code>SINGLE_MASTER</code> signaling channel. If <code>MASTER</code> is specified, this API returns an endpoint that a client can use to receive offers from and send answers to any of the viewers on this signaling channel. If <code>VIEWER</code> is specified, this API returns an endpoint that a client can use only to send offers to another <code>MASTER</code> client on this signaling channel. </p>
         pub fn set_role(mut self, input: std::option::Option<crate::model::ChannelRole>) -> Self {
-            self.role = input;
-            self
+            self.role = input; self
         }
         /// Consumes the builder and constructs a [`SingleMasterChannelEndpointConfiguration`](crate::model::SingleMasterChannelEndpointConfiguration).
         pub fn build(self) -> crate::model::SingleMasterChannelEndpointConfiguration {
             crate::model::SingleMasterChannelEndpointConfiguration {
-                protocols: self.protocols,
-                role: self.role,
+                protocols: self.protocols
+                ,
+                role: self.role
+                ,
             }
         }
     }
+    
+    
 }
 impl SingleMasterChannelEndpointConfiguration {
     /// Creates a new builder-style object to manufacture [`SingleMasterChannelEndpointConfiguration`](crate::model::SingleMasterChannelEndpointConfiguration).
@@ -3073,9 +2890,9 @@ impl SingleMasterChannelEndpointConfiguration {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let channelrole = unimplemented!();
 /// match channelrole {
@@ -3097,58 +2914,52 @@ impl SingleMasterChannelEndpointConfiguration {
 /// Specifically, when `channelrole` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ChannelRole::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ChannelRole {
     #[allow(missing_docs)] // documentation missing in model
     Master,
     #[allow(missing_docs)] // documentation missing in model
     Viewer,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ChannelRole {
     fn from(s: &str) -> Self {
         match s {
             "MASTER" => ChannelRole::Master,
             "VIEWER" => ChannelRole::Viewer,
-            other => ChannelRole::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => ChannelRole::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ChannelRole {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ChannelRole::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ChannelRole::from(s))
+                }
+            }
 impl ChannelRole {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ChannelRole::Master => "MASTER",
             ChannelRole::Viewer => "VIEWER",
-            ChannelRole::Unknown(value) => value.as_str(),
+            ChannelRole::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["MASTER", "VIEWER"]
+        &[
+            "MASTER", "VIEWER"
+        ]
     }
 }
 impl AsRef<str> for ChannelRole {
@@ -3163,9 +2974,9 @@ impl AsRef<str> for ChannelRole {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let apiname = unimplemented!();
 /// match apiname {
@@ -3193,22 +3004,14 @@ impl AsRef<str> for ChannelRole {
 /// Specifically, when `apiname` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ApiName::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ApiName {
     #[allow(missing_docs)] // documentation missing in model
     GetClip,
@@ -3227,7 +3030,7 @@ pub enum ApiName {
     #[allow(missing_docs)] // documentation missing in model
     PutMedia,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ApiName {
     fn from(s: &str) -> Self {
@@ -3240,17 +3043,17 @@ impl std::convert::From<&str> for ApiName {
             "GET_MEDIA_FOR_FRAGMENT_LIST" => ApiName::GetMediaForFragmentList,
             "LIST_FRAGMENTS" => ApiName::ListFragments,
             "PUT_MEDIA" => ApiName::PutMedia,
-            other => ApiName::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => ApiName::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ApiName {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ApiName::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ApiName::from(s))
+                }
+            }
 impl ApiName {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -3263,20 +3066,13 @@ impl ApiName {
             ApiName::GetMediaForFragmentList => "GET_MEDIA_FOR_FRAGMENT_LIST",
             ApiName::ListFragments => "LIST_FRAGMENTS",
             ApiName::PutMedia => "PUT_MEDIA",
-            ApiName::Unknown(value) => value.as_str(),
+            ApiName::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "GET_CLIP",
-            "GET_DASH_STREAMING_SESSION_URL",
-            "GET_HLS_STREAMING_SESSION_URL",
-            "GET_IMAGES",
-            "GET_MEDIA",
-            "GET_MEDIA_FOR_FRAGMENT_LIST",
-            "LIST_FRAGMENTS",
-            "PUT_MEDIA",
+            "GET_CLIP", "GET_DASH_STREAMING_SESSION_URL", "GET_HLS_STREAMING_SESSION_URL", "GET_IMAGES", "GET_MEDIA", "GET_MEDIA_FOR_FRAGMENT_LIST", "LIST_FRAGMENTS", "PUT_MEDIA"
         ]
     }
 }
@@ -3289,7 +3085,7 @@ impl AsRef<str> for ApiName {
 /// <p>A structure that encapsulates, or contains, the media storage configuration properties.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct MappedResourceConfigurationListItem {
+pub struct MappedResourceConfigurationListItem  {
     /// <p>The type of the associated resource for the kinesis video stream.</p>
     #[doc(hidden)]
     pub r#type: std::option::Option<std::string::String>,
@@ -3299,17 +3095,17 @@ pub struct MappedResourceConfigurationListItem {
 }
 impl MappedResourceConfigurationListItem {
     /// <p>The type of the associated resource for the kinesis video stream.</p>
-    pub fn r#type(&self) -> std::option::Option<&str> {
+    pub fn r#type(&self) -> std::option::Option<& str> {
         self.r#type.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the Kinesis Video Stream resource, associated with the stream.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
 }
 /// See [`MappedResourceConfigurationListItem`](crate::model::MappedResourceConfigurationListItem).
 pub mod mapped_resource_configuration_list_item {
-
+    
     /// A builder for [`MappedResourceConfigurationListItem`](crate::model::MappedResourceConfigurationListItem).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3324,8 +3120,7 @@ pub mod mapped_resource_configuration_list_item {
         }
         /// <p>The type of the associated resource for the kinesis video stream.</p>
         pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.r#type = input;
-            self
+            self.r#type = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the Kinesis Video Stream resource, associated with the stream.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3334,17 +3129,20 @@ pub mod mapped_resource_configuration_list_item {
         }
         /// <p>The Amazon Resource Name (ARN) of the Kinesis Video Stream resource, associated with the stream.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// Consumes the builder and constructs a [`MappedResourceConfigurationListItem`](crate::model::MappedResourceConfigurationListItem).
         pub fn build(self) -> crate::model::MappedResourceConfigurationListItem {
             crate::model::MappedResourceConfigurationListItem {
-                r#type: self.r#type,
-                arn: self.arn,
+                r#type: self.r#type
+                ,
+                arn: self.arn
+                ,
             }
         }
     }
+    
+    
 }
 impl MappedResourceConfigurationListItem {
     /// Creates a new builder-style object to manufacture [`MappedResourceConfigurationListItem`](crate::model::MappedResourceConfigurationListItem).
@@ -3352,3 +3150,4 @@ impl MappedResourceConfigurationListItem {
         crate::model::mapped_resource_configuration_list_item::Builder::default()
     }
 }
+

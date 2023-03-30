@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListMeshesOutput {
+pub struct ListMeshesOutput  {
     /// <p>The list of existing service meshes.</p>
     #[doc(hidden)]
     pub meshes: std::option::Option<std::vec::Vec<crate::model::MeshRef>>,
@@ -12,17 +12,17 @@ pub struct ListMeshesOutput {
 }
 impl ListMeshesOutput {
     /// <p>The list of existing service meshes.</p>
-    pub fn meshes(&self) -> std::option::Option<&[crate::model::MeshRef]> {
+    pub fn meshes(&self) -> std::option::Option<& [crate::model::MeshRef]> {
         self.meshes.as_deref()
     }
     /// <p>The <code>nextToken</code> value to include in a future <code>ListMeshes</code> request. When the results of a <code>ListMeshes</code> request exceed <code>limit</code>, you can use this value to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListMeshesOutput`](crate::output::ListMeshesOutput).
 pub mod list_meshes_output {
-
+    
     /// A builder for [`ListMeshesOutput`](crate::output::ListMeshesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -37,17 +37,13 @@ pub mod list_meshes_output {
         /// <p>The list of existing service meshes.</p>
         pub fn meshes(mut self, input: crate::model::MeshRef) -> Self {
             let mut v = self.meshes.unwrap_or_default();
-            v.push(input);
-            self.meshes = Some(v);
-            self
+                            v.push(input);
+                            self.meshes = Some(v);
+                            self
         }
         /// <p>The list of existing service meshes.</p>
-        pub fn set_meshes(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::MeshRef>>,
-        ) -> Self {
-            self.meshes = input;
-            self
+        pub fn set_meshes(mut self, input: std::option::Option<std::vec::Vec<crate::model::MeshRef>>) -> Self {
+            self.meshes = input; self
         }
         /// <p>The <code>nextToken</code> value to include in a future <code>ListMeshes</code> request. When the results of a <code>ListMeshes</code> request exceed <code>limit</code>, you can use this value to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -56,17 +52,20 @@ pub mod list_meshes_output {
         }
         /// <p>The <code>nextToken</code> value to include in a future <code>ListMeshes</code> request. When the results of a <code>ListMeshes</code> request exceed <code>limit</code>, you can use this value to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListMeshesOutput`](crate::output::ListMeshesOutput).
         pub fn build(self) -> crate::output::ListMeshesOutput {
             crate::output::ListMeshesOutput {
-                meshes: self.meshes,
-                next_token: self.next_token,
+                meshes: self.meshes
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListMeshesOutput {
     /// Creates a new builder-style object to manufacture [`ListMeshesOutput`](crate::output::ListMeshesOutput).
@@ -78,20 +77,20 @@ impl ListMeshesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateMeshOutput {
+pub struct CreateMeshOutput  {
     /// <p>The full description of your service mesh following the create call.</p>
     #[doc(hidden)]
     pub mesh: std::option::Option<crate::model::MeshData>,
 }
 impl CreateMeshOutput {
     /// <p>The full description of your service mesh following the create call.</p>
-    pub fn mesh(&self) -> std::option::Option<&crate::model::MeshData> {
+    pub fn mesh(&self) -> std::option::Option<& crate::model::MeshData> {
         self.mesh.as_ref()
     }
 }
 /// See [`CreateMeshOutput`](crate::output::CreateMeshOutput).
 pub mod create_mesh_output {
-
+    
     /// A builder for [`CreateMeshOutput`](crate::output::CreateMeshOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -105,14 +104,18 @@ pub mod create_mesh_output {
         }
         /// <p>The full description of your service mesh following the create call.</p>
         pub fn set_mesh(mut self, input: std::option::Option<crate::model::MeshData>) -> Self {
-            self.mesh = input;
-            self
+            self.mesh = input; self
         }
         /// Consumes the builder and constructs a [`CreateMeshOutput`](crate::output::CreateMeshOutput).
         pub fn build(self) -> crate::output::CreateMeshOutput {
-            crate::output::CreateMeshOutput { mesh: self.mesh }
+            crate::output::CreateMeshOutput {
+                mesh: self.mesh
+                ,
+            }
         }
     }
+    
+    
 }
 impl CreateMeshOutput {
     /// Creates a new builder-style object to manufacture [`CreateMeshOutput`](crate::output::CreateMeshOutput).
@@ -124,20 +127,20 @@ impl CreateMeshOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteMeshOutput {
+pub struct DeleteMeshOutput  {
     /// <p>The service mesh that was deleted.</p>
     #[doc(hidden)]
     pub mesh: std::option::Option<crate::model::MeshData>,
 }
 impl DeleteMeshOutput {
     /// <p>The service mesh that was deleted.</p>
-    pub fn mesh(&self) -> std::option::Option<&crate::model::MeshData> {
+    pub fn mesh(&self) -> std::option::Option<& crate::model::MeshData> {
         self.mesh.as_ref()
     }
 }
 /// See [`DeleteMeshOutput`](crate::output::DeleteMeshOutput).
 pub mod delete_mesh_output {
-
+    
     /// A builder for [`DeleteMeshOutput`](crate::output::DeleteMeshOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -151,14 +154,18 @@ pub mod delete_mesh_output {
         }
         /// <p>The service mesh that was deleted.</p>
         pub fn set_mesh(mut self, input: std::option::Option<crate::model::MeshData>) -> Self {
-            self.mesh = input;
-            self
+            self.mesh = input; self
         }
         /// Consumes the builder and constructs a [`DeleteMeshOutput`](crate::output::DeleteMeshOutput).
         pub fn build(self) -> crate::output::DeleteMeshOutput {
-            crate::output::DeleteMeshOutput { mesh: self.mesh }
+            crate::output::DeleteMeshOutput {
+                mesh: self.mesh
+                ,
+            }
         }
     }
+    
+    
 }
 impl DeleteMeshOutput {
     /// Creates a new builder-style object to manufacture [`DeleteMeshOutput`](crate::output::DeleteMeshOutput).
@@ -170,20 +177,20 @@ impl DeleteMeshOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateMeshOutput {
+pub struct UpdateMeshOutput  {
     /// <p>An object that represents a service mesh returned by a describe operation.</p>
     #[doc(hidden)]
     pub mesh: std::option::Option<crate::model::MeshData>,
 }
 impl UpdateMeshOutput {
     /// <p>An object that represents a service mesh returned by a describe operation.</p>
-    pub fn mesh(&self) -> std::option::Option<&crate::model::MeshData> {
+    pub fn mesh(&self) -> std::option::Option<& crate::model::MeshData> {
         self.mesh.as_ref()
     }
 }
 /// See [`UpdateMeshOutput`](crate::output::UpdateMeshOutput).
 pub mod update_mesh_output {
-
+    
     /// A builder for [`UpdateMeshOutput`](crate::output::UpdateMeshOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -197,14 +204,18 @@ pub mod update_mesh_output {
         }
         /// <p>An object that represents a service mesh returned by a describe operation.</p>
         pub fn set_mesh(mut self, input: std::option::Option<crate::model::MeshData>) -> Self {
-            self.mesh = input;
-            self
+            self.mesh = input; self
         }
         /// Consumes the builder and constructs a [`UpdateMeshOutput`](crate::output::UpdateMeshOutput).
         pub fn build(self) -> crate::output::UpdateMeshOutput {
-            crate::output::UpdateMeshOutput { mesh: self.mesh }
+            crate::output::UpdateMeshOutput {
+                mesh: self.mesh
+                ,
+            }
         }
     }
+    
+    
 }
 impl UpdateMeshOutput {
     /// Creates a new builder-style object to manufacture [`UpdateMeshOutput`](crate::output::UpdateMeshOutput).
@@ -216,20 +227,20 @@ impl UpdateMeshOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeMeshOutput {
+pub struct DescribeMeshOutput  {
     /// <p>The full description of your service mesh.</p>
     #[doc(hidden)]
     pub mesh: std::option::Option<crate::model::MeshData>,
 }
 impl DescribeMeshOutput {
     /// <p>The full description of your service mesh.</p>
-    pub fn mesh(&self) -> std::option::Option<&crate::model::MeshData> {
+    pub fn mesh(&self) -> std::option::Option<& crate::model::MeshData> {
         self.mesh.as_ref()
     }
 }
 /// See [`DescribeMeshOutput`](crate::output::DescribeMeshOutput).
 pub mod describe_mesh_output {
-
+    
     /// A builder for [`DescribeMeshOutput`](crate::output::DescribeMeshOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -243,14 +254,18 @@ pub mod describe_mesh_output {
         }
         /// <p>The full description of your service mesh.</p>
         pub fn set_mesh(mut self, input: std::option::Option<crate::model::MeshData>) -> Self {
-            self.mesh = input;
-            self
+            self.mesh = input; self
         }
         /// Consumes the builder and constructs a [`DescribeMeshOutput`](crate::output::DescribeMeshOutput).
         pub fn build(self) -> crate::output::DescribeMeshOutput {
-            crate::output::DescribeMeshOutput { mesh: self.mesh }
+            crate::output::DescribeMeshOutput {
+                mesh: self.mesh
+                ,
+            }
         }
     }
+    
+    
 }
 impl DescribeMeshOutput {
     /// Creates a new builder-style object to manufacture [`DescribeMeshOutput`](crate::output::DescribeMeshOutput).
@@ -262,7 +277,7 @@ impl DescribeMeshOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListVirtualServicesOutput {
+pub struct ListVirtualServicesOutput  {
     /// <p>The list of existing virtual services for the specified service mesh.</p>
     #[doc(hidden)]
     pub virtual_services: std::option::Option<std::vec::Vec<crate::model::VirtualServiceRef>>,
@@ -272,22 +287,21 @@ pub struct ListVirtualServicesOutput {
 }
 impl ListVirtualServicesOutput {
     /// <p>The list of existing virtual services for the specified service mesh.</p>
-    pub fn virtual_services(&self) -> std::option::Option<&[crate::model::VirtualServiceRef]> {
+    pub fn virtual_services(&self) -> std::option::Option<& [crate::model::VirtualServiceRef]> {
         self.virtual_services.as_deref()
     }
     /// <p>The <code>nextToken</code> value to include in a future <code>ListVirtualServices</code> request. When the results of a <code>ListVirtualServices</code> request exceed <code>limit</code>, you can use this value to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListVirtualServicesOutput`](crate::output::ListVirtualServicesOutput).
 pub mod list_virtual_services_output {
-
+    
     /// A builder for [`ListVirtualServicesOutput`](crate::output::ListVirtualServicesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) virtual_services:
-            std::option::Option<std::vec::Vec<crate::model::VirtualServiceRef>>,
+        pub(crate) virtual_services: std::option::Option<std::vec::Vec<crate::model::VirtualServiceRef>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -298,17 +312,13 @@ pub mod list_virtual_services_output {
         /// <p>The list of existing virtual services for the specified service mesh.</p>
         pub fn virtual_services(mut self, input: crate::model::VirtualServiceRef) -> Self {
             let mut v = self.virtual_services.unwrap_or_default();
-            v.push(input);
-            self.virtual_services = Some(v);
-            self
+                            v.push(input);
+                            self.virtual_services = Some(v);
+                            self
         }
         /// <p>The list of existing virtual services for the specified service mesh.</p>
-        pub fn set_virtual_services(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::VirtualServiceRef>>,
-        ) -> Self {
-            self.virtual_services = input;
-            self
+        pub fn set_virtual_services(mut self, input: std::option::Option<std::vec::Vec<crate::model::VirtualServiceRef>>) -> Self {
+            self.virtual_services = input; self
         }
         /// <p>The <code>nextToken</code> value to include in a future <code>ListVirtualServices</code> request. When the results of a <code>ListVirtualServices</code> request exceed <code>limit</code>, you can use this value to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -317,17 +327,20 @@ pub mod list_virtual_services_output {
         }
         /// <p>The <code>nextToken</code> value to include in a future <code>ListVirtualServices</code> request. When the results of a <code>ListVirtualServices</code> request exceed <code>limit</code>, you can use this value to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListVirtualServicesOutput`](crate::output::ListVirtualServicesOutput).
         pub fn build(self) -> crate::output::ListVirtualServicesOutput {
             crate::output::ListVirtualServicesOutput {
-                virtual_services: self.virtual_services,
-                next_token: self.next_token,
+                virtual_services: self.virtual_services
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListVirtualServicesOutput {
     /// Creates a new builder-style object to manufacture [`ListVirtualServicesOutput`](crate::output::ListVirtualServicesOutput).
@@ -339,20 +352,20 @@ impl ListVirtualServicesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateVirtualServiceOutput {
+pub struct CreateVirtualServiceOutput  {
     /// <p>The full description of your virtual service following the create call.</p>
     #[doc(hidden)]
     pub virtual_service: std::option::Option<crate::model::VirtualServiceData>,
 }
 impl CreateVirtualServiceOutput {
     /// <p>The full description of your virtual service following the create call.</p>
-    pub fn virtual_service(&self) -> std::option::Option<&crate::model::VirtualServiceData> {
+    pub fn virtual_service(&self) -> std::option::Option<& crate::model::VirtualServiceData> {
         self.virtual_service.as_ref()
     }
 }
 /// See [`CreateVirtualServiceOutput`](crate::output::CreateVirtualServiceOutput).
 pub mod create_virtual_service_output {
-
+    
     /// A builder for [`CreateVirtualServiceOutput`](crate::output::CreateVirtualServiceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -365,20 +378,19 @@ pub mod create_virtual_service_output {
             self
         }
         /// <p>The full description of your virtual service following the create call.</p>
-        pub fn set_virtual_service(
-            mut self,
-            input: std::option::Option<crate::model::VirtualServiceData>,
-        ) -> Self {
-            self.virtual_service = input;
-            self
+        pub fn set_virtual_service(mut self, input: std::option::Option<crate::model::VirtualServiceData>) -> Self {
+            self.virtual_service = input; self
         }
         /// Consumes the builder and constructs a [`CreateVirtualServiceOutput`](crate::output::CreateVirtualServiceOutput).
         pub fn build(self) -> crate::output::CreateVirtualServiceOutput {
             crate::output::CreateVirtualServiceOutput {
-                virtual_service: self.virtual_service,
+                virtual_service: self.virtual_service
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateVirtualServiceOutput {
     /// Creates a new builder-style object to manufacture [`CreateVirtualServiceOutput`](crate::output::CreateVirtualServiceOutput).
@@ -390,20 +402,20 @@ impl CreateVirtualServiceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteVirtualServiceOutput {
+pub struct DeleteVirtualServiceOutput  {
     /// <p>The virtual service that was deleted.</p>
     #[doc(hidden)]
     pub virtual_service: std::option::Option<crate::model::VirtualServiceData>,
 }
 impl DeleteVirtualServiceOutput {
     /// <p>The virtual service that was deleted.</p>
-    pub fn virtual_service(&self) -> std::option::Option<&crate::model::VirtualServiceData> {
+    pub fn virtual_service(&self) -> std::option::Option<& crate::model::VirtualServiceData> {
         self.virtual_service.as_ref()
     }
 }
 /// See [`DeleteVirtualServiceOutput`](crate::output::DeleteVirtualServiceOutput).
 pub mod delete_virtual_service_output {
-
+    
     /// A builder for [`DeleteVirtualServiceOutput`](crate::output::DeleteVirtualServiceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -416,20 +428,19 @@ pub mod delete_virtual_service_output {
             self
         }
         /// <p>The virtual service that was deleted.</p>
-        pub fn set_virtual_service(
-            mut self,
-            input: std::option::Option<crate::model::VirtualServiceData>,
-        ) -> Self {
-            self.virtual_service = input;
-            self
+        pub fn set_virtual_service(mut self, input: std::option::Option<crate::model::VirtualServiceData>) -> Self {
+            self.virtual_service = input; self
         }
         /// Consumes the builder and constructs a [`DeleteVirtualServiceOutput`](crate::output::DeleteVirtualServiceOutput).
         pub fn build(self) -> crate::output::DeleteVirtualServiceOutput {
             crate::output::DeleteVirtualServiceOutput {
-                virtual_service: self.virtual_service,
+                virtual_service: self.virtual_service
+                ,
             }
         }
     }
+    
+    
 }
 impl DeleteVirtualServiceOutput {
     /// Creates a new builder-style object to manufacture [`DeleteVirtualServiceOutput`](crate::output::DeleteVirtualServiceOutput).
@@ -441,20 +452,20 @@ impl DeleteVirtualServiceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateVirtualServiceOutput {
+pub struct UpdateVirtualServiceOutput  {
     /// <p>A full description of the virtual service that was updated.</p>
     #[doc(hidden)]
     pub virtual_service: std::option::Option<crate::model::VirtualServiceData>,
 }
 impl UpdateVirtualServiceOutput {
     /// <p>A full description of the virtual service that was updated.</p>
-    pub fn virtual_service(&self) -> std::option::Option<&crate::model::VirtualServiceData> {
+    pub fn virtual_service(&self) -> std::option::Option<& crate::model::VirtualServiceData> {
         self.virtual_service.as_ref()
     }
 }
 /// See [`UpdateVirtualServiceOutput`](crate::output::UpdateVirtualServiceOutput).
 pub mod update_virtual_service_output {
-
+    
     /// A builder for [`UpdateVirtualServiceOutput`](crate::output::UpdateVirtualServiceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -467,20 +478,19 @@ pub mod update_virtual_service_output {
             self
         }
         /// <p>A full description of the virtual service that was updated.</p>
-        pub fn set_virtual_service(
-            mut self,
-            input: std::option::Option<crate::model::VirtualServiceData>,
-        ) -> Self {
-            self.virtual_service = input;
-            self
+        pub fn set_virtual_service(mut self, input: std::option::Option<crate::model::VirtualServiceData>) -> Self {
+            self.virtual_service = input; self
         }
         /// Consumes the builder and constructs a [`UpdateVirtualServiceOutput`](crate::output::UpdateVirtualServiceOutput).
         pub fn build(self) -> crate::output::UpdateVirtualServiceOutput {
             crate::output::UpdateVirtualServiceOutput {
-                virtual_service: self.virtual_service,
+                virtual_service: self.virtual_service
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateVirtualServiceOutput {
     /// Creates a new builder-style object to manufacture [`UpdateVirtualServiceOutput`](crate::output::UpdateVirtualServiceOutput).
@@ -492,20 +502,20 @@ impl UpdateVirtualServiceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeVirtualServiceOutput {
+pub struct DescribeVirtualServiceOutput  {
     /// <p>The full description of your virtual service.</p>
     #[doc(hidden)]
     pub virtual_service: std::option::Option<crate::model::VirtualServiceData>,
 }
 impl DescribeVirtualServiceOutput {
     /// <p>The full description of your virtual service.</p>
-    pub fn virtual_service(&self) -> std::option::Option<&crate::model::VirtualServiceData> {
+    pub fn virtual_service(&self) -> std::option::Option<& crate::model::VirtualServiceData> {
         self.virtual_service.as_ref()
     }
 }
 /// See [`DescribeVirtualServiceOutput`](crate::output::DescribeVirtualServiceOutput).
 pub mod describe_virtual_service_output {
-
+    
     /// A builder for [`DescribeVirtualServiceOutput`](crate::output::DescribeVirtualServiceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -518,20 +528,19 @@ pub mod describe_virtual_service_output {
             self
         }
         /// <p>The full description of your virtual service.</p>
-        pub fn set_virtual_service(
-            mut self,
-            input: std::option::Option<crate::model::VirtualServiceData>,
-        ) -> Self {
-            self.virtual_service = input;
-            self
+        pub fn set_virtual_service(mut self, input: std::option::Option<crate::model::VirtualServiceData>) -> Self {
+            self.virtual_service = input; self
         }
         /// Consumes the builder and constructs a [`DescribeVirtualServiceOutput`](crate::output::DescribeVirtualServiceOutput).
         pub fn build(self) -> crate::output::DescribeVirtualServiceOutput {
             crate::output::DescribeVirtualServiceOutput {
-                virtual_service: self.virtual_service,
+                virtual_service: self.virtual_service
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeVirtualServiceOutput {
     /// Creates a new builder-style object to manufacture [`DescribeVirtualServiceOutput`](crate::output::DescribeVirtualServiceOutput).
@@ -543,7 +552,7 @@ impl DescribeVirtualServiceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListVirtualRoutersOutput {
+pub struct ListVirtualRoutersOutput  {
     /// <p>The list of existing virtual routers for the specified service mesh.</p>
     #[doc(hidden)]
     pub virtual_routers: std::option::Option<std::vec::Vec<crate::model::VirtualRouterRef>>,
@@ -553,22 +562,21 @@ pub struct ListVirtualRoutersOutput {
 }
 impl ListVirtualRoutersOutput {
     /// <p>The list of existing virtual routers for the specified service mesh.</p>
-    pub fn virtual_routers(&self) -> std::option::Option<&[crate::model::VirtualRouterRef]> {
+    pub fn virtual_routers(&self) -> std::option::Option<& [crate::model::VirtualRouterRef]> {
         self.virtual_routers.as_deref()
     }
     /// <p>The <code>nextToken</code> value to include in a future <code>ListVirtualRouters</code> request. When the results of a <code>ListVirtualRouters</code> request exceed <code>limit</code>, you can use this value to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListVirtualRoutersOutput`](crate::output::ListVirtualRoutersOutput).
 pub mod list_virtual_routers_output {
-
+    
     /// A builder for [`ListVirtualRoutersOutput`](crate::output::ListVirtualRoutersOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) virtual_routers:
-            std::option::Option<std::vec::Vec<crate::model::VirtualRouterRef>>,
+        pub(crate) virtual_routers: std::option::Option<std::vec::Vec<crate::model::VirtualRouterRef>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -579,17 +587,13 @@ pub mod list_virtual_routers_output {
         /// <p>The list of existing virtual routers for the specified service mesh.</p>
         pub fn virtual_routers(mut self, input: crate::model::VirtualRouterRef) -> Self {
             let mut v = self.virtual_routers.unwrap_or_default();
-            v.push(input);
-            self.virtual_routers = Some(v);
-            self
+                            v.push(input);
+                            self.virtual_routers = Some(v);
+                            self
         }
         /// <p>The list of existing virtual routers for the specified service mesh.</p>
-        pub fn set_virtual_routers(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::VirtualRouterRef>>,
-        ) -> Self {
-            self.virtual_routers = input;
-            self
+        pub fn set_virtual_routers(mut self, input: std::option::Option<std::vec::Vec<crate::model::VirtualRouterRef>>) -> Self {
+            self.virtual_routers = input; self
         }
         /// <p>The <code>nextToken</code> value to include in a future <code>ListVirtualRouters</code> request. When the results of a <code>ListVirtualRouters</code> request exceed <code>limit</code>, you can use this value to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -598,17 +602,20 @@ pub mod list_virtual_routers_output {
         }
         /// <p>The <code>nextToken</code> value to include in a future <code>ListVirtualRouters</code> request. When the results of a <code>ListVirtualRouters</code> request exceed <code>limit</code>, you can use this value to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListVirtualRoutersOutput`](crate::output::ListVirtualRoutersOutput).
         pub fn build(self) -> crate::output::ListVirtualRoutersOutput {
             crate::output::ListVirtualRoutersOutput {
-                virtual_routers: self.virtual_routers,
-                next_token: self.next_token,
+                virtual_routers: self.virtual_routers
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListVirtualRoutersOutput {
     /// Creates a new builder-style object to manufacture [`ListVirtualRoutersOutput`](crate::output::ListVirtualRoutersOutput).
@@ -620,20 +627,20 @@ impl ListVirtualRoutersOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateVirtualRouterOutput {
+pub struct CreateVirtualRouterOutput  {
     /// <p>The full description of your virtual router following the create call.</p>
     #[doc(hidden)]
     pub virtual_router: std::option::Option<crate::model::VirtualRouterData>,
 }
 impl CreateVirtualRouterOutput {
     /// <p>The full description of your virtual router following the create call.</p>
-    pub fn virtual_router(&self) -> std::option::Option<&crate::model::VirtualRouterData> {
+    pub fn virtual_router(&self) -> std::option::Option<& crate::model::VirtualRouterData> {
         self.virtual_router.as_ref()
     }
 }
 /// See [`CreateVirtualRouterOutput`](crate::output::CreateVirtualRouterOutput).
 pub mod create_virtual_router_output {
-
+    
     /// A builder for [`CreateVirtualRouterOutput`](crate::output::CreateVirtualRouterOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -646,20 +653,19 @@ pub mod create_virtual_router_output {
             self
         }
         /// <p>The full description of your virtual router following the create call.</p>
-        pub fn set_virtual_router(
-            mut self,
-            input: std::option::Option<crate::model::VirtualRouterData>,
-        ) -> Self {
-            self.virtual_router = input;
-            self
+        pub fn set_virtual_router(mut self, input: std::option::Option<crate::model::VirtualRouterData>) -> Self {
+            self.virtual_router = input; self
         }
         /// Consumes the builder and constructs a [`CreateVirtualRouterOutput`](crate::output::CreateVirtualRouterOutput).
         pub fn build(self) -> crate::output::CreateVirtualRouterOutput {
             crate::output::CreateVirtualRouterOutput {
-                virtual_router: self.virtual_router,
+                virtual_router: self.virtual_router
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateVirtualRouterOutput {
     /// Creates a new builder-style object to manufacture [`CreateVirtualRouterOutput`](crate::output::CreateVirtualRouterOutput).
@@ -671,20 +677,20 @@ impl CreateVirtualRouterOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteVirtualRouterOutput {
+pub struct DeleteVirtualRouterOutput  {
     /// <p>The virtual router that was deleted.</p>
     #[doc(hidden)]
     pub virtual_router: std::option::Option<crate::model::VirtualRouterData>,
 }
 impl DeleteVirtualRouterOutput {
     /// <p>The virtual router that was deleted.</p>
-    pub fn virtual_router(&self) -> std::option::Option<&crate::model::VirtualRouterData> {
+    pub fn virtual_router(&self) -> std::option::Option<& crate::model::VirtualRouterData> {
         self.virtual_router.as_ref()
     }
 }
 /// See [`DeleteVirtualRouterOutput`](crate::output::DeleteVirtualRouterOutput).
 pub mod delete_virtual_router_output {
-
+    
     /// A builder for [`DeleteVirtualRouterOutput`](crate::output::DeleteVirtualRouterOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -697,20 +703,19 @@ pub mod delete_virtual_router_output {
             self
         }
         /// <p>The virtual router that was deleted.</p>
-        pub fn set_virtual_router(
-            mut self,
-            input: std::option::Option<crate::model::VirtualRouterData>,
-        ) -> Self {
-            self.virtual_router = input;
-            self
+        pub fn set_virtual_router(mut self, input: std::option::Option<crate::model::VirtualRouterData>) -> Self {
+            self.virtual_router = input; self
         }
         /// Consumes the builder and constructs a [`DeleteVirtualRouterOutput`](crate::output::DeleteVirtualRouterOutput).
         pub fn build(self) -> crate::output::DeleteVirtualRouterOutput {
             crate::output::DeleteVirtualRouterOutput {
-                virtual_router: self.virtual_router,
+                virtual_router: self.virtual_router
+                ,
             }
         }
     }
+    
+    
 }
 impl DeleteVirtualRouterOutput {
     /// Creates a new builder-style object to manufacture [`DeleteVirtualRouterOutput`](crate::output::DeleteVirtualRouterOutput).
@@ -722,20 +727,20 @@ impl DeleteVirtualRouterOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateVirtualRouterOutput {
+pub struct UpdateVirtualRouterOutput  {
     /// <p>A full description of the virtual router that was updated.</p>
     #[doc(hidden)]
     pub virtual_router: std::option::Option<crate::model::VirtualRouterData>,
 }
 impl UpdateVirtualRouterOutput {
     /// <p>A full description of the virtual router that was updated.</p>
-    pub fn virtual_router(&self) -> std::option::Option<&crate::model::VirtualRouterData> {
+    pub fn virtual_router(&self) -> std::option::Option<& crate::model::VirtualRouterData> {
         self.virtual_router.as_ref()
     }
 }
 /// See [`UpdateVirtualRouterOutput`](crate::output::UpdateVirtualRouterOutput).
 pub mod update_virtual_router_output {
-
+    
     /// A builder for [`UpdateVirtualRouterOutput`](crate::output::UpdateVirtualRouterOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -748,20 +753,19 @@ pub mod update_virtual_router_output {
             self
         }
         /// <p>A full description of the virtual router that was updated.</p>
-        pub fn set_virtual_router(
-            mut self,
-            input: std::option::Option<crate::model::VirtualRouterData>,
-        ) -> Self {
-            self.virtual_router = input;
-            self
+        pub fn set_virtual_router(mut self, input: std::option::Option<crate::model::VirtualRouterData>) -> Self {
+            self.virtual_router = input; self
         }
         /// Consumes the builder and constructs a [`UpdateVirtualRouterOutput`](crate::output::UpdateVirtualRouterOutput).
         pub fn build(self) -> crate::output::UpdateVirtualRouterOutput {
             crate::output::UpdateVirtualRouterOutput {
-                virtual_router: self.virtual_router,
+                virtual_router: self.virtual_router
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateVirtualRouterOutput {
     /// Creates a new builder-style object to manufacture [`UpdateVirtualRouterOutput`](crate::output::UpdateVirtualRouterOutput).
@@ -773,20 +777,20 @@ impl UpdateVirtualRouterOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeVirtualRouterOutput {
+pub struct DescribeVirtualRouterOutput  {
     /// <p>The full description of your virtual router.</p>
     #[doc(hidden)]
     pub virtual_router: std::option::Option<crate::model::VirtualRouterData>,
 }
 impl DescribeVirtualRouterOutput {
     /// <p>The full description of your virtual router.</p>
-    pub fn virtual_router(&self) -> std::option::Option<&crate::model::VirtualRouterData> {
+    pub fn virtual_router(&self) -> std::option::Option<& crate::model::VirtualRouterData> {
         self.virtual_router.as_ref()
     }
 }
 /// See [`DescribeVirtualRouterOutput`](crate::output::DescribeVirtualRouterOutput).
 pub mod describe_virtual_router_output {
-
+    
     /// A builder for [`DescribeVirtualRouterOutput`](crate::output::DescribeVirtualRouterOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -799,20 +803,19 @@ pub mod describe_virtual_router_output {
             self
         }
         /// <p>The full description of your virtual router.</p>
-        pub fn set_virtual_router(
-            mut self,
-            input: std::option::Option<crate::model::VirtualRouterData>,
-        ) -> Self {
-            self.virtual_router = input;
-            self
+        pub fn set_virtual_router(mut self, input: std::option::Option<crate::model::VirtualRouterData>) -> Self {
+            self.virtual_router = input; self
         }
         /// Consumes the builder and constructs a [`DescribeVirtualRouterOutput`](crate::output::DescribeVirtualRouterOutput).
         pub fn build(self) -> crate::output::DescribeVirtualRouterOutput {
             crate::output::DescribeVirtualRouterOutput {
-                virtual_router: self.virtual_router,
+                virtual_router: self.virtual_router
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeVirtualRouterOutput {
     /// Creates a new builder-style object to manufacture [`DescribeVirtualRouterOutput`](crate::output::DescribeVirtualRouterOutput).
@@ -824,7 +827,7 @@ impl DescribeVirtualRouterOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListRoutesOutput {
+pub struct ListRoutesOutput  {
     /// <p>The list of existing routes for the specified service mesh and virtual router.</p>
     #[doc(hidden)]
     pub routes: std::option::Option<std::vec::Vec<crate::model::RouteRef>>,
@@ -834,17 +837,17 @@ pub struct ListRoutesOutput {
 }
 impl ListRoutesOutput {
     /// <p>The list of existing routes for the specified service mesh and virtual router.</p>
-    pub fn routes(&self) -> std::option::Option<&[crate::model::RouteRef]> {
+    pub fn routes(&self) -> std::option::Option<& [crate::model::RouteRef]> {
         self.routes.as_deref()
     }
     /// <p>The <code>nextToken</code> value to include in a future <code>ListRoutes</code> request. When the results of a <code>ListRoutes</code> request exceed <code>limit</code>, you can use this value to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListRoutesOutput`](crate::output::ListRoutesOutput).
 pub mod list_routes_output {
-
+    
     /// A builder for [`ListRoutesOutput`](crate::output::ListRoutesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -859,17 +862,13 @@ pub mod list_routes_output {
         /// <p>The list of existing routes for the specified service mesh and virtual router.</p>
         pub fn routes(mut self, input: crate::model::RouteRef) -> Self {
             let mut v = self.routes.unwrap_or_default();
-            v.push(input);
-            self.routes = Some(v);
-            self
+                            v.push(input);
+                            self.routes = Some(v);
+                            self
         }
         /// <p>The list of existing routes for the specified service mesh and virtual router.</p>
-        pub fn set_routes(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::RouteRef>>,
-        ) -> Self {
-            self.routes = input;
-            self
+        pub fn set_routes(mut self, input: std::option::Option<std::vec::Vec<crate::model::RouteRef>>) -> Self {
+            self.routes = input; self
         }
         /// <p>The <code>nextToken</code> value to include in a future <code>ListRoutes</code> request. When the results of a <code>ListRoutes</code> request exceed <code>limit</code>, you can use this value to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -878,17 +877,20 @@ pub mod list_routes_output {
         }
         /// <p>The <code>nextToken</code> value to include in a future <code>ListRoutes</code> request. When the results of a <code>ListRoutes</code> request exceed <code>limit</code>, you can use this value to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListRoutesOutput`](crate::output::ListRoutesOutput).
         pub fn build(self) -> crate::output::ListRoutesOutput {
             crate::output::ListRoutesOutput {
-                routes: self.routes,
-                next_token: self.next_token,
+                routes: self.routes
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListRoutesOutput {
     /// Creates a new builder-style object to manufacture [`ListRoutesOutput`](crate::output::ListRoutesOutput).
@@ -900,20 +902,20 @@ impl ListRoutesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateRouteOutput {
+pub struct CreateRouteOutput  {
     /// <p>The full description of your mesh following the create call.</p>
     #[doc(hidden)]
     pub route: std::option::Option<crate::model::RouteData>,
 }
 impl CreateRouteOutput {
     /// <p>The full description of your mesh following the create call.</p>
-    pub fn route(&self) -> std::option::Option<&crate::model::RouteData> {
+    pub fn route(&self) -> std::option::Option<& crate::model::RouteData> {
         self.route.as_ref()
     }
 }
 /// See [`CreateRouteOutput`](crate::output::CreateRouteOutput).
 pub mod create_route_output {
-
+    
     /// A builder for [`CreateRouteOutput`](crate::output::CreateRouteOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -927,14 +929,18 @@ pub mod create_route_output {
         }
         /// <p>The full description of your mesh following the create call.</p>
         pub fn set_route(mut self, input: std::option::Option<crate::model::RouteData>) -> Self {
-            self.route = input;
-            self
+            self.route = input; self
         }
         /// Consumes the builder and constructs a [`CreateRouteOutput`](crate::output::CreateRouteOutput).
         pub fn build(self) -> crate::output::CreateRouteOutput {
-            crate::output::CreateRouteOutput { route: self.route }
+            crate::output::CreateRouteOutput {
+                route: self.route
+                ,
+            }
         }
     }
+    
+    
 }
 impl CreateRouteOutput {
     /// Creates a new builder-style object to manufacture [`CreateRouteOutput`](crate::output::CreateRouteOutput).
@@ -946,20 +952,20 @@ impl CreateRouteOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteRouteOutput {
+pub struct DeleteRouteOutput  {
     /// <p>The route that was deleted.</p>
     #[doc(hidden)]
     pub route: std::option::Option<crate::model::RouteData>,
 }
 impl DeleteRouteOutput {
     /// <p>The route that was deleted.</p>
-    pub fn route(&self) -> std::option::Option<&crate::model::RouteData> {
+    pub fn route(&self) -> std::option::Option<& crate::model::RouteData> {
         self.route.as_ref()
     }
 }
 /// See [`DeleteRouteOutput`](crate::output::DeleteRouteOutput).
 pub mod delete_route_output {
-
+    
     /// A builder for [`DeleteRouteOutput`](crate::output::DeleteRouteOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -973,14 +979,18 @@ pub mod delete_route_output {
         }
         /// <p>The route that was deleted.</p>
         pub fn set_route(mut self, input: std::option::Option<crate::model::RouteData>) -> Self {
-            self.route = input;
-            self
+            self.route = input; self
         }
         /// Consumes the builder and constructs a [`DeleteRouteOutput`](crate::output::DeleteRouteOutput).
         pub fn build(self) -> crate::output::DeleteRouteOutput {
-            crate::output::DeleteRouteOutput { route: self.route }
+            crate::output::DeleteRouteOutput {
+                route: self.route
+                ,
+            }
         }
     }
+    
+    
 }
 impl DeleteRouteOutput {
     /// Creates a new builder-style object to manufacture [`DeleteRouteOutput`](crate::output::DeleteRouteOutput).
@@ -992,20 +1002,20 @@ impl DeleteRouteOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateRouteOutput {
+pub struct UpdateRouteOutput  {
     /// <p>A full description of the route that was updated.</p>
     #[doc(hidden)]
     pub route: std::option::Option<crate::model::RouteData>,
 }
 impl UpdateRouteOutput {
     /// <p>A full description of the route that was updated.</p>
-    pub fn route(&self) -> std::option::Option<&crate::model::RouteData> {
+    pub fn route(&self) -> std::option::Option<& crate::model::RouteData> {
         self.route.as_ref()
     }
 }
 /// See [`UpdateRouteOutput`](crate::output::UpdateRouteOutput).
 pub mod update_route_output {
-
+    
     /// A builder for [`UpdateRouteOutput`](crate::output::UpdateRouteOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1019,14 +1029,18 @@ pub mod update_route_output {
         }
         /// <p>A full description of the route that was updated.</p>
         pub fn set_route(mut self, input: std::option::Option<crate::model::RouteData>) -> Self {
-            self.route = input;
-            self
+            self.route = input; self
         }
         /// Consumes the builder and constructs a [`UpdateRouteOutput`](crate::output::UpdateRouteOutput).
         pub fn build(self) -> crate::output::UpdateRouteOutput {
-            crate::output::UpdateRouteOutput { route: self.route }
+            crate::output::UpdateRouteOutput {
+                route: self.route
+                ,
+            }
         }
     }
+    
+    
 }
 impl UpdateRouteOutput {
     /// Creates a new builder-style object to manufacture [`UpdateRouteOutput`](crate::output::UpdateRouteOutput).
@@ -1038,20 +1052,20 @@ impl UpdateRouteOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeRouteOutput {
+pub struct DescribeRouteOutput  {
     /// <p>The full description of your route.</p>
     #[doc(hidden)]
     pub route: std::option::Option<crate::model::RouteData>,
 }
 impl DescribeRouteOutput {
     /// <p>The full description of your route.</p>
-    pub fn route(&self) -> std::option::Option<&crate::model::RouteData> {
+    pub fn route(&self) -> std::option::Option<& crate::model::RouteData> {
         self.route.as_ref()
     }
 }
 /// See [`DescribeRouteOutput`](crate::output::DescribeRouteOutput).
 pub mod describe_route_output {
-
+    
     /// A builder for [`DescribeRouteOutput`](crate::output::DescribeRouteOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1065,14 +1079,18 @@ pub mod describe_route_output {
         }
         /// <p>The full description of your route.</p>
         pub fn set_route(mut self, input: std::option::Option<crate::model::RouteData>) -> Self {
-            self.route = input;
-            self
+            self.route = input; self
         }
         /// Consumes the builder and constructs a [`DescribeRouteOutput`](crate::output::DescribeRouteOutput).
         pub fn build(self) -> crate::output::DescribeRouteOutput {
-            crate::output::DescribeRouteOutput { route: self.route }
+            crate::output::DescribeRouteOutput {
+                route: self.route
+                ,
+            }
         }
     }
+    
+    
 }
 impl DescribeRouteOutput {
     /// Creates a new builder-style object to manufacture [`DescribeRouteOutput`](crate::output::DescribeRouteOutput).
@@ -1084,7 +1102,7 @@ impl DescribeRouteOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListVirtualNodesOutput {
+pub struct ListVirtualNodesOutput  {
     /// <p>The list of existing virtual nodes for the specified service mesh.</p>
     #[doc(hidden)]
     pub virtual_nodes: std::option::Option<std::vec::Vec<crate::model::VirtualNodeRef>>,
@@ -1094,17 +1112,17 @@ pub struct ListVirtualNodesOutput {
 }
 impl ListVirtualNodesOutput {
     /// <p>The list of existing virtual nodes for the specified service mesh.</p>
-    pub fn virtual_nodes(&self) -> std::option::Option<&[crate::model::VirtualNodeRef]> {
+    pub fn virtual_nodes(&self) -> std::option::Option<& [crate::model::VirtualNodeRef]> {
         self.virtual_nodes.as_deref()
     }
     /// <p>The <code>nextToken</code> value to include in a future <code>ListVirtualNodes</code> request. When the results of a <code>ListVirtualNodes</code> request exceed <code>limit</code>, you can use this value to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListVirtualNodesOutput`](crate::output::ListVirtualNodesOutput).
 pub mod list_virtual_nodes_output {
-
+    
     /// A builder for [`ListVirtualNodesOutput`](crate::output::ListVirtualNodesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1119,17 +1137,13 @@ pub mod list_virtual_nodes_output {
         /// <p>The list of existing virtual nodes for the specified service mesh.</p>
         pub fn virtual_nodes(mut self, input: crate::model::VirtualNodeRef) -> Self {
             let mut v = self.virtual_nodes.unwrap_or_default();
-            v.push(input);
-            self.virtual_nodes = Some(v);
-            self
+                            v.push(input);
+                            self.virtual_nodes = Some(v);
+                            self
         }
         /// <p>The list of existing virtual nodes for the specified service mesh.</p>
-        pub fn set_virtual_nodes(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::VirtualNodeRef>>,
-        ) -> Self {
-            self.virtual_nodes = input;
-            self
+        pub fn set_virtual_nodes(mut self, input: std::option::Option<std::vec::Vec<crate::model::VirtualNodeRef>>) -> Self {
+            self.virtual_nodes = input; self
         }
         /// <p>The <code>nextToken</code> value to include in a future <code>ListVirtualNodes</code> request. When the results of a <code>ListVirtualNodes</code> request exceed <code>limit</code>, you can use this value to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1138,17 +1152,20 @@ pub mod list_virtual_nodes_output {
         }
         /// <p>The <code>nextToken</code> value to include in a future <code>ListVirtualNodes</code> request. When the results of a <code>ListVirtualNodes</code> request exceed <code>limit</code>, you can use this value to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListVirtualNodesOutput`](crate::output::ListVirtualNodesOutput).
         pub fn build(self) -> crate::output::ListVirtualNodesOutput {
             crate::output::ListVirtualNodesOutput {
-                virtual_nodes: self.virtual_nodes,
-                next_token: self.next_token,
+                virtual_nodes: self.virtual_nodes
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListVirtualNodesOutput {
     /// Creates a new builder-style object to manufacture [`ListVirtualNodesOutput`](crate::output::ListVirtualNodesOutput).
@@ -1160,20 +1177,20 @@ impl ListVirtualNodesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateVirtualNodeOutput {
+pub struct CreateVirtualNodeOutput  {
     /// <p>The full description of your virtual node following the create call.</p>
     #[doc(hidden)]
     pub virtual_node: std::option::Option<crate::model::VirtualNodeData>,
 }
 impl CreateVirtualNodeOutput {
     /// <p>The full description of your virtual node following the create call.</p>
-    pub fn virtual_node(&self) -> std::option::Option<&crate::model::VirtualNodeData> {
+    pub fn virtual_node(&self) -> std::option::Option<& crate::model::VirtualNodeData> {
         self.virtual_node.as_ref()
     }
 }
 /// See [`CreateVirtualNodeOutput`](crate::output::CreateVirtualNodeOutput).
 pub mod create_virtual_node_output {
-
+    
     /// A builder for [`CreateVirtualNodeOutput`](crate::output::CreateVirtualNodeOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1186,20 +1203,19 @@ pub mod create_virtual_node_output {
             self
         }
         /// <p>The full description of your virtual node following the create call.</p>
-        pub fn set_virtual_node(
-            mut self,
-            input: std::option::Option<crate::model::VirtualNodeData>,
-        ) -> Self {
-            self.virtual_node = input;
-            self
+        pub fn set_virtual_node(mut self, input: std::option::Option<crate::model::VirtualNodeData>) -> Self {
+            self.virtual_node = input; self
         }
         /// Consumes the builder and constructs a [`CreateVirtualNodeOutput`](crate::output::CreateVirtualNodeOutput).
         pub fn build(self) -> crate::output::CreateVirtualNodeOutput {
             crate::output::CreateVirtualNodeOutput {
-                virtual_node: self.virtual_node,
+                virtual_node: self.virtual_node
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateVirtualNodeOutput {
     /// Creates a new builder-style object to manufacture [`CreateVirtualNodeOutput`](crate::output::CreateVirtualNodeOutput).
@@ -1211,20 +1227,20 @@ impl CreateVirtualNodeOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteVirtualNodeOutput {
+pub struct DeleteVirtualNodeOutput  {
     /// <p>The virtual node that was deleted.</p>
     #[doc(hidden)]
     pub virtual_node: std::option::Option<crate::model::VirtualNodeData>,
 }
 impl DeleteVirtualNodeOutput {
     /// <p>The virtual node that was deleted.</p>
-    pub fn virtual_node(&self) -> std::option::Option<&crate::model::VirtualNodeData> {
+    pub fn virtual_node(&self) -> std::option::Option<& crate::model::VirtualNodeData> {
         self.virtual_node.as_ref()
     }
 }
 /// See [`DeleteVirtualNodeOutput`](crate::output::DeleteVirtualNodeOutput).
 pub mod delete_virtual_node_output {
-
+    
     /// A builder for [`DeleteVirtualNodeOutput`](crate::output::DeleteVirtualNodeOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1237,20 +1253,19 @@ pub mod delete_virtual_node_output {
             self
         }
         /// <p>The virtual node that was deleted.</p>
-        pub fn set_virtual_node(
-            mut self,
-            input: std::option::Option<crate::model::VirtualNodeData>,
-        ) -> Self {
-            self.virtual_node = input;
-            self
+        pub fn set_virtual_node(mut self, input: std::option::Option<crate::model::VirtualNodeData>) -> Self {
+            self.virtual_node = input; self
         }
         /// Consumes the builder and constructs a [`DeleteVirtualNodeOutput`](crate::output::DeleteVirtualNodeOutput).
         pub fn build(self) -> crate::output::DeleteVirtualNodeOutput {
             crate::output::DeleteVirtualNodeOutput {
-                virtual_node: self.virtual_node,
+                virtual_node: self.virtual_node
+                ,
             }
         }
     }
+    
+    
 }
 impl DeleteVirtualNodeOutput {
     /// Creates a new builder-style object to manufacture [`DeleteVirtualNodeOutput`](crate::output::DeleteVirtualNodeOutput).
@@ -1262,20 +1277,20 @@ impl DeleteVirtualNodeOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateVirtualNodeOutput {
+pub struct UpdateVirtualNodeOutput  {
     /// <p>A full description of the virtual node that was updated.</p>
     #[doc(hidden)]
     pub virtual_node: std::option::Option<crate::model::VirtualNodeData>,
 }
 impl UpdateVirtualNodeOutput {
     /// <p>A full description of the virtual node that was updated.</p>
-    pub fn virtual_node(&self) -> std::option::Option<&crate::model::VirtualNodeData> {
+    pub fn virtual_node(&self) -> std::option::Option<& crate::model::VirtualNodeData> {
         self.virtual_node.as_ref()
     }
 }
 /// See [`UpdateVirtualNodeOutput`](crate::output::UpdateVirtualNodeOutput).
 pub mod update_virtual_node_output {
-
+    
     /// A builder for [`UpdateVirtualNodeOutput`](crate::output::UpdateVirtualNodeOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1288,20 +1303,19 @@ pub mod update_virtual_node_output {
             self
         }
         /// <p>A full description of the virtual node that was updated.</p>
-        pub fn set_virtual_node(
-            mut self,
-            input: std::option::Option<crate::model::VirtualNodeData>,
-        ) -> Self {
-            self.virtual_node = input;
-            self
+        pub fn set_virtual_node(mut self, input: std::option::Option<crate::model::VirtualNodeData>) -> Self {
+            self.virtual_node = input; self
         }
         /// Consumes the builder and constructs a [`UpdateVirtualNodeOutput`](crate::output::UpdateVirtualNodeOutput).
         pub fn build(self) -> crate::output::UpdateVirtualNodeOutput {
             crate::output::UpdateVirtualNodeOutput {
-                virtual_node: self.virtual_node,
+                virtual_node: self.virtual_node
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateVirtualNodeOutput {
     /// Creates a new builder-style object to manufacture [`UpdateVirtualNodeOutput`](crate::output::UpdateVirtualNodeOutput).
@@ -1313,20 +1327,20 @@ impl UpdateVirtualNodeOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeVirtualNodeOutput {
+pub struct DescribeVirtualNodeOutput  {
     /// <p>The full description of your virtual node.</p>
     #[doc(hidden)]
     pub virtual_node: std::option::Option<crate::model::VirtualNodeData>,
 }
 impl DescribeVirtualNodeOutput {
     /// <p>The full description of your virtual node.</p>
-    pub fn virtual_node(&self) -> std::option::Option<&crate::model::VirtualNodeData> {
+    pub fn virtual_node(&self) -> std::option::Option<& crate::model::VirtualNodeData> {
         self.virtual_node.as_ref()
     }
 }
 /// See [`DescribeVirtualNodeOutput`](crate::output::DescribeVirtualNodeOutput).
 pub mod describe_virtual_node_output {
-
+    
     /// A builder for [`DescribeVirtualNodeOutput`](crate::output::DescribeVirtualNodeOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1339,20 +1353,19 @@ pub mod describe_virtual_node_output {
             self
         }
         /// <p>The full description of your virtual node.</p>
-        pub fn set_virtual_node(
-            mut self,
-            input: std::option::Option<crate::model::VirtualNodeData>,
-        ) -> Self {
-            self.virtual_node = input;
-            self
+        pub fn set_virtual_node(mut self, input: std::option::Option<crate::model::VirtualNodeData>) -> Self {
+            self.virtual_node = input; self
         }
         /// Consumes the builder and constructs a [`DescribeVirtualNodeOutput`](crate::output::DescribeVirtualNodeOutput).
         pub fn build(self) -> crate::output::DescribeVirtualNodeOutput {
             crate::output::DescribeVirtualNodeOutput {
-                virtual_node: self.virtual_node,
+                virtual_node: self.virtual_node
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeVirtualNodeOutput {
     /// Creates a new builder-style object to manufacture [`DescribeVirtualNodeOutput`](crate::output::DescribeVirtualNodeOutput).
@@ -1364,7 +1377,7 @@ impl DescribeVirtualNodeOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListVirtualGatewaysOutput {
+pub struct ListVirtualGatewaysOutput  {
     /// <p>The list of existing virtual gateways for the specified service mesh.</p>
     #[doc(hidden)]
     pub virtual_gateways: std::option::Option<std::vec::Vec<crate::model::VirtualGatewayRef>>,
@@ -1374,22 +1387,21 @@ pub struct ListVirtualGatewaysOutput {
 }
 impl ListVirtualGatewaysOutput {
     /// <p>The list of existing virtual gateways for the specified service mesh.</p>
-    pub fn virtual_gateways(&self) -> std::option::Option<&[crate::model::VirtualGatewayRef]> {
+    pub fn virtual_gateways(&self) -> std::option::Option<& [crate::model::VirtualGatewayRef]> {
         self.virtual_gateways.as_deref()
     }
     /// <p>The <code>nextToken</code> value to include in a future <code>ListVirtualGateways</code> request. When the results of a <code>ListVirtualGateways</code> request exceed <code>limit</code>, you can use this value to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListVirtualGatewaysOutput`](crate::output::ListVirtualGatewaysOutput).
 pub mod list_virtual_gateways_output {
-
+    
     /// A builder for [`ListVirtualGatewaysOutput`](crate::output::ListVirtualGatewaysOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) virtual_gateways:
-            std::option::Option<std::vec::Vec<crate::model::VirtualGatewayRef>>,
+        pub(crate) virtual_gateways: std::option::Option<std::vec::Vec<crate::model::VirtualGatewayRef>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -1400,17 +1412,13 @@ pub mod list_virtual_gateways_output {
         /// <p>The list of existing virtual gateways for the specified service mesh.</p>
         pub fn virtual_gateways(mut self, input: crate::model::VirtualGatewayRef) -> Self {
             let mut v = self.virtual_gateways.unwrap_or_default();
-            v.push(input);
-            self.virtual_gateways = Some(v);
-            self
+                            v.push(input);
+                            self.virtual_gateways = Some(v);
+                            self
         }
         /// <p>The list of existing virtual gateways for the specified service mesh.</p>
-        pub fn set_virtual_gateways(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::VirtualGatewayRef>>,
-        ) -> Self {
-            self.virtual_gateways = input;
-            self
+        pub fn set_virtual_gateways(mut self, input: std::option::Option<std::vec::Vec<crate::model::VirtualGatewayRef>>) -> Self {
+            self.virtual_gateways = input; self
         }
         /// <p>The <code>nextToken</code> value to include in a future <code>ListVirtualGateways</code> request. When the results of a <code>ListVirtualGateways</code> request exceed <code>limit</code>, you can use this value to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1419,17 +1427,20 @@ pub mod list_virtual_gateways_output {
         }
         /// <p>The <code>nextToken</code> value to include in a future <code>ListVirtualGateways</code> request. When the results of a <code>ListVirtualGateways</code> request exceed <code>limit</code>, you can use this value to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListVirtualGatewaysOutput`](crate::output::ListVirtualGatewaysOutput).
         pub fn build(self) -> crate::output::ListVirtualGatewaysOutput {
             crate::output::ListVirtualGatewaysOutput {
-                virtual_gateways: self.virtual_gateways,
-                next_token: self.next_token,
+                virtual_gateways: self.virtual_gateways
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListVirtualGatewaysOutput {
     /// Creates a new builder-style object to manufacture [`ListVirtualGatewaysOutput`](crate::output::ListVirtualGatewaysOutput).
@@ -1441,20 +1452,20 @@ impl ListVirtualGatewaysOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateVirtualGatewayOutput {
+pub struct CreateVirtualGatewayOutput  {
     /// <p>The full description of your virtual gateway following the create call.</p>
     #[doc(hidden)]
     pub virtual_gateway: std::option::Option<crate::model::VirtualGatewayData>,
 }
 impl CreateVirtualGatewayOutput {
     /// <p>The full description of your virtual gateway following the create call.</p>
-    pub fn virtual_gateway(&self) -> std::option::Option<&crate::model::VirtualGatewayData> {
+    pub fn virtual_gateway(&self) -> std::option::Option<& crate::model::VirtualGatewayData> {
         self.virtual_gateway.as_ref()
     }
 }
 /// See [`CreateVirtualGatewayOutput`](crate::output::CreateVirtualGatewayOutput).
 pub mod create_virtual_gateway_output {
-
+    
     /// A builder for [`CreateVirtualGatewayOutput`](crate::output::CreateVirtualGatewayOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1467,20 +1478,19 @@ pub mod create_virtual_gateway_output {
             self
         }
         /// <p>The full description of your virtual gateway following the create call.</p>
-        pub fn set_virtual_gateway(
-            mut self,
-            input: std::option::Option<crate::model::VirtualGatewayData>,
-        ) -> Self {
-            self.virtual_gateway = input;
-            self
+        pub fn set_virtual_gateway(mut self, input: std::option::Option<crate::model::VirtualGatewayData>) -> Self {
+            self.virtual_gateway = input; self
         }
         /// Consumes the builder and constructs a [`CreateVirtualGatewayOutput`](crate::output::CreateVirtualGatewayOutput).
         pub fn build(self) -> crate::output::CreateVirtualGatewayOutput {
             crate::output::CreateVirtualGatewayOutput {
-                virtual_gateway: self.virtual_gateway,
+                virtual_gateway: self.virtual_gateway
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateVirtualGatewayOutput {
     /// Creates a new builder-style object to manufacture [`CreateVirtualGatewayOutput`](crate::output::CreateVirtualGatewayOutput).
@@ -1492,20 +1502,20 @@ impl CreateVirtualGatewayOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteVirtualGatewayOutput {
+pub struct DeleteVirtualGatewayOutput  {
     /// <p>The virtual gateway that was deleted.</p>
     #[doc(hidden)]
     pub virtual_gateway: std::option::Option<crate::model::VirtualGatewayData>,
 }
 impl DeleteVirtualGatewayOutput {
     /// <p>The virtual gateway that was deleted.</p>
-    pub fn virtual_gateway(&self) -> std::option::Option<&crate::model::VirtualGatewayData> {
+    pub fn virtual_gateway(&self) -> std::option::Option<& crate::model::VirtualGatewayData> {
         self.virtual_gateway.as_ref()
     }
 }
 /// See [`DeleteVirtualGatewayOutput`](crate::output::DeleteVirtualGatewayOutput).
 pub mod delete_virtual_gateway_output {
-
+    
     /// A builder for [`DeleteVirtualGatewayOutput`](crate::output::DeleteVirtualGatewayOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1518,20 +1528,19 @@ pub mod delete_virtual_gateway_output {
             self
         }
         /// <p>The virtual gateway that was deleted.</p>
-        pub fn set_virtual_gateway(
-            mut self,
-            input: std::option::Option<crate::model::VirtualGatewayData>,
-        ) -> Self {
-            self.virtual_gateway = input;
-            self
+        pub fn set_virtual_gateway(mut self, input: std::option::Option<crate::model::VirtualGatewayData>) -> Self {
+            self.virtual_gateway = input; self
         }
         /// Consumes the builder and constructs a [`DeleteVirtualGatewayOutput`](crate::output::DeleteVirtualGatewayOutput).
         pub fn build(self) -> crate::output::DeleteVirtualGatewayOutput {
             crate::output::DeleteVirtualGatewayOutput {
-                virtual_gateway: self.virtual_gateway,
+                virtual_gateway: self.virtual_gateway
+                ,
             }
         }
     }
+    
+    
 }
 impl DeleteVirtualGatewayOutput {
     /// Creates a new builder-style object to manufacture [`DeleteVirtualGatewayOutput`](crate::output::DeleteVirtualGatewayOutput).
@@ -1543,20 +1552,20 @@ impl DeleteVirtualGatewayOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateVirtualGatewayOutput {
+pub struct UpdateVirtualGatewayOutput  {
     /// <p>A full description of the virtual gateway that was updated.</p>
     #[doc(hidden)]
     pub virtual_gateway: std::option::Option<crate::model::VirtualGatewayData>,
 }
 impl UpdateVirtualGatewayOutput {
     /// <p>A full description of the virtual gateway that was updated.</p>
-    pub fn virtual_gateway(&self) -> std::option::Option<&crate::model::VirtualGatewayData> {
+    pub fn virtual_gateway(&self) -> std::option::Option<& crate::model::VirtualGatewayData> {
         self.virtual_gateway.as_ref()
     }
 }
 /// See [`UpdateVirtualGatewayOutput`](crate::output::UpdateVirtualGatewayOutput).
 pub mod update_virtual_gateway_output {
-
+    
     /// A builder for [`UpdateVirtualGatewayOutput`](crate::output::UpdateVirtualGatewayOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1569,20 +1578,19 @@ pub mod update_virtual_gateway_output {
             self
         }
         /// <p>A full description of the virtual gateway that was updated.</p>
-        pub fn set_virtual_gateway(
-            mut self,
-            input: std::option::Option<crate::model::VirtualGatewayData>,
-        ) -> Self {
-            self.virtual_gateway = input;
-            self
+        pub fn set_virtual_gateway(mut self, input: std::option::Option<crate::model::VirtualGatewayData>) -> Self {
+            self.virtual_gateway = input; self
         }
         /// Consumes the builder and constructs a [`UpdateVirtualGatewayOutput`](crate::output::UpdateVirtualGatewayOutput).
         pub fn build(self) -> crate::output::UpdateVirtualGatewayOutput {
             crate::output::UpdateVirtualGatewayOutput {
-                virtual_gateway: self.virtual_gateway,
+                virtual_gateway: self.virtual_gateway
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateVirtualGatewayOutput {
     /// Creates a new builder-style object to manufacture [`UpdateVirtualGatewayOutput`](crate::output::UpdateVirtualGatewayOutput).
@@ -1594,20 +1602,20 @@ impl UpdateVirtualGatewayOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeVirtualGatewayOutput {
+pub struct DescribeVirtualGatewayOutput  {
     /// <p>The full description of your virtual gateway.</p>
     #[doc(hidden)]
     pub virtual_gateway: std::option::Option<crate::model::VirtualGatewayData>,
 }
 impl DescribeVirtualGatewayOutput {
     /// <p>The full description of your virtual gateway.</p>
-    pub fn virtual_gateway(&self) -> std::option::Option<&crate::model::VirtualGatewayData> {
+    pub fn virtual_gateway(&self) -> std::option::Option<& crate::model::VirtualGatewayData> {
         self.virtual_gateway.as_ref()
     }
 }
 /// See [`DescribeVirtualGatewayOutput`](crate::output::DescribeVirtualGatewayOutput).
 pub mod describe_virtual_gateway_output {
-
+    
     /// A builder for [`DescribeVirtualGatewayOutput`](crate::output::DescribeVirtualGatewayOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1620,20 +1628,19 @@ pub mod describe_virtual_gateway_output {
             self
         }
         /// <p>The full description of your virtual gateway.</p>
-        pub fn set_virtual_gateway(
-            mut self,
-            input: std::option::Option<crate::model::VirtualGatewayData>,
-        ) -> Self {
-            self.virtual_gateway = input;
-            self
+        pub fn set_virtual_gateway(mut self, input: std::option::Option<crate::model::VirtualGatewayData>) -> Self {
+            self.virtual_gateway = input; self
         }
         /// Consumes the builder and constructs a [`DescribeVirtualGatewayOutput`](crate::output::DescribeVirtualGatewayOutput).
         pub fn build(self) -> crate::output::DescribeVirtualGatewayOutput {
             crate::output::DescribeVirtualGatewayOutput {
-                virtual_gateway: self.virtual_gateway,
+                virtual_gateway: self.virtual_gateway
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeVirtualGatewayOutput {
     /// Creates a new builder-style object to manufacture [`DescribeVirtualGatewayOutput`](crate::output::DescribeVirtualGatewayOutput).
@@ -1645,7 +1652,7 @@ impl DescribeVirtualGatewayOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListGatewayRoutesOutput {
+pub struct ListGatewayRoutesOutput  {
     /// <p>The list of existing gateway routes for the specified service mesh and virtual gateway.</p>
     #[doc(hidden)]
     pub gateway_routes: std::option::Option<std::vec::Vec<crate::model::GatewayRouteRef>>,
@@ -1655,22 +1662,21 @@ pub struct ListGatewayRoutesOutput {
 }
 impl ListGatewayRoutesOutput {
     /// <p>The list of existing gateway routes for the specified service mesh and virtual gateway.</p>
-    pub fn gateway_routes(&self) -> std::option::Option<&[crate::model::GatewayRouteRef]> {
+    pub fn gateway_routes(&self) -> std::option::Option<& [crate::model::GatewayRouteRef]> {
         self.gateway_routes.as_deref()
     }
     /// <p>The <code>nextToken</code> value to include in a future <code>ListGatewayRoutes</code> request. When the results of a <code>ListGatewayRoutes</code> request exceed <code>limit</code>, you can use this value to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListGatewayRoutesOutput`](crate::output::ListGatewayRoutesOutput).
 pub mod list_gateway_routes_output {
-
+    
     /// A builder for [`ListGatewayRoutesOutput`](crate::output::ListGatewayRoutesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) gateway_routes:
-            std::option::Option<std::vec::Vec<crate::model::GatewayRouteRef>>,
+        pub(crate) gateway_routes: std::option::Option<std::vec::Vec<crate::model::GatewayRouteRef>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -1681,17 +1687,13 @@ pub mod list_gateway_routes_output {
         /// <p>The list of existing gateway routes for the specified service mesh and virtual gateway.</p>
         pub fn gateway_routes(mut self, input: crate::model::GatewayRouteRef) -> Self {
             let mut v = self.gateway_routes.unwrap_or_default();
-            v.push(input);
-            self.gateway_routes = Some(v);
-            self
+                            v.push(input);
+                            self.gateway_routes = Some(v);
+                            self
         }
         /// <p>The list of existing gateway routes for the specified service mesh and virtual gateway.</p>
-        pub fn set_gateway_routes(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::GatewayRouteRef>>,
-        ) -> Self {
-            self.gateway_routes = input;
-            self
+        pub fn set_gateway_routes(mut self, input: std::option::Option<std::vec::Vec<crate::model::GatewayRouteRef>>) -> Self {
+            self.gateway_routes = input; self
         }
         /// <p>The <code>nextToken</code> value to include in a future <code>ListGatewayRoutes</code> request. When the results of a <code>ListGatewayRoutes</code> request exceed <code>limit</code>, you can use this value to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1700,17 +1702,20 @@ pub mod list_gateway_routes_output {
         }
         /// <p>The <code>nextToken</code> value to include in a future <code>ListGatewayRoutes</code> request. When the results of a <code>ListGatewayRoutes</code> request exceed <code>limit</code>, you can use this value to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListGatewayRoutesOutput`](crate::output::ListGatewayRoutesOutput).
         pub fn build(self) -> crate::output::ListGatewayRoutesOutput {
             crate::output::ListGatewayRoutesOutput {
-                gateway_routes: self.gateway_routes,
-                next_token: self.next_token,
+                gateway_routes: self.gateway_routes
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListGatewayRoutesOutput {
     /// Creates a new builder-style object to manufacture [`ListGatewayRoutesOutput`](crate::output::ListGatewayRoutesOutput).
@@ -1722,20 +1727,20 @@ impl ListGatewayRoutesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateGatewayRouteOutput {
+pub struct CreateGatewayRouteOutput  {
     /// <p>The full description of your gateway route following the create call.</p>
     #[doc(hidden)]
     pub gateway_route: std::option::Option<crate::model::GatewayRouteData>,
 }
 impl CreateGatewayRouteOutput {
     /// <p>The full description of your gateway route following the create call.</p>
-    pub fn gateway_route(&self) -> std::option::Option<&crate::model::GatewayRouteData> {
+    pub fn gateway_route(&self) -> std::option::Option<& crate::model::GatewayRouteData> {
         self.gateway_route.as_ref()
     }
 }
 /// See [`CreateGatewayRouteOutput`](crate::output::CreateGatewayRouteOutput).
 pub mod create_gateway_route_output {
-
+    
     /// A builder for [`CreateGatewayRouteOutput`](crate::output::CreateGatewayRouteOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1748,20 +1753,19 @@ pub mod create_gateway_route_output {
             self
         }
         /// <p>The full description of your gateway route following the create call.</p>
-        pub fn set_gateway_route(
-            mut self,
-            input: std::option::Option<crate::model::GatewayRouteData>,
-        ) -> Self {
-            self.gateway_route = input;
-            self
+        pub fn set_gateway_route(mut self, input: std::option::Option<crate::model::GatewayRouteData>) -> Self {
+            self.gateway_route = input; self
         }
         /// Consumes the builder and constructs a [`CreateGatewayRouteOutput`](crate::output::CreateGatewayRouteOutput).
         pub fn build(self) -> crate::output::CreateGatewayRouteOutput {
             crate::output::CreateGatewayRouteOutput {
-                gateway_route: self.gateway_route,
+                gateway_route: self.gateway_route
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateGatewayRouteOutput {
     /// Creates a new builder-style object to manufacture [`CreateGatewayRouteOutput`](crate::output::CreateGatewayRouteOutput).
@@ -1773,20 +1777,20 @@ impl CreateGatewayRouteOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteGatewayRouteOutput {
+pub struct DeleteGatewayRouteOutput  {
     /// <p>The gateway route that was deleted.</p>
     #[doc(hidden)]
     pub gateway_route: std::option::Option<crate::model::GatewayRouteData>,
 }
 impl DeleteGatewayRouteOutput {
     /// <p>The gateway route that was deleted.</p>
-    pub fn gateway_route(&self) -> std::option::Option<&crate::model::GatewayRouteData> {
+    pub fn gateway_route(&self) -> std::option::Option<& crate::model::GatewayRouteData> {
         self.gateway_route.as_ref()
     }
 }
 /// See [`DeleteGatewayRouteOutput`](crate::output::DeleteGatewayRouteOutput).
 pub mod delete_gateway_route_output {
-
+    
     /// A builder for [`DeleteGatewayRouteOutput`](crate::output::DeleteGatewayRouteOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1799,20 +1803,19 @@ pub mod delete_gateway_route_output {
             self
         }
         /// <p>The gateway route that was deleted.</p>
-        pub fn set_gateway_route(
-            mut self,
-            input: std::option::Option<crate::model::GatewayRouteData>,
-        ) -> Self {
-            self.gateway_route = input;
-            self
+        pub fn set_gateway_route(mut self, input: std::option::Option<crate::model::GatewayRouteData>) -> Self {
+            self.gateway_route = input; self
         }
         /// Consumes the builder and constructs a [`DeleteGatewayRouteOutput`](crate::output::DeleteGatewayRouteOutput).
         pub fn build(self) -> crate::output::DeleteGatewayRouteOutput {
             crate::output::DeleteGatewayRouteOutput {
-                gateway_route: self.gateway_route,
+                gateway_route: self.gateway_route
+                ,
             }
         }
     }
+    
+    
 }
 impl DeleteGatewayRouteOutput {
     /// Creates a new builder-style object to manufacture [`DeleteGatewayRouteOutput`](crate::output::DeleteGatewayRouteOutput).
@@ -1824,20 +1827,20 @@ impl DeleteGatewayRouteOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateGatewayRouteOutput {
+pub struct UpdateGatewayRouteOutput  {
     /// <p>A full description of the gateway route that was updated.</p>
     #[doc(hidden)]
     pub gateway_route: std::option::Option<crate::model::GatewayRouteData>,
 }
 impl UpdateGatewayRouteOutput {
     /// <p>A full description of the gateway route that was updated.</p>
-    pub fn gateway_route(&self) -> std::option::Option<&crate::model::GatewayRouteData> {
+    pub fn gateway_route(&self) -> std::option::Option<& crate::model::GatewayRouteData> {
         self.gateway_route.as_ref()
     }
 }
 /// See [`UpdateGatewayRouteOutput`](crate::output::UpdateGatewayRouteOutput).
 pub mod update_gateway_route_output {
-
+    
     /// A builder for [`UpdateGatewayRouteOutput`](crate::output::UpdateGatewayRouteOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1850,20 +1853,19 @@ pub mod update_gateway_route_output {
             self
         }
         /// <p>A full description of the gateway route that was updated.</p>
-        pub fn set_gateway_route(
-            mut self,
-            input: std::option::Option<crate::model::GatewayRouteData>,
-        ) -> Self {
-            self.gateway_route = input;
-            self
+        pub fn set_gateway_route(mut self, input: std::option::Option<crate::model::GatewayRouteData>) -> Self {
+            self.gateway_route = input; self
         }
         /// Consumes the builder and constructs a [`UpdateGatewayRouteOutput`](crate::output::UpdateGatewayRouteOutput).
         pub fn build(self) -> crate::output::UpdateGatewayRouteOutput {
             crate::output::UpdateGatewayRouteOutput {
-                gateway_route: self.gateway_route,
+                gateway_route: self.gateway_route
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateGatewayRouteOutput {
     /// Creates a new builder-style object to manufacture [`UpdateGatewayRouteOutput`](crate::output::UpdateGatewayRouteOutput).
@@ -1875,20 +1877,20 @@ impl UpdateGatewayRouteOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeGatewayRouteOutput {
+pub struct DescribeGatewayRouteOutput  {
     /// <p>The full description of your gateway route.</p>
     #[doc(hidden)]
     pub gateway_route: std::option::Option<crate::model::GatewayRouteData>,
 }
 impl DescribeGatewayRouteOutput {
     /// <p>The full description of your gateway route.</p>
-    pub fn gateway_route(&self) -> std::option::Option<&crate::model::GatewayRouteData> {
+    pub fn gateway_route(&self) -> std::option::Option<& crate::model::GatewayRouteData> {
         self.gateway_route.as_ref()
     }
 }
 /// See [`DescribeGatewayRouteOutput`](crate::output::DescribeGatewayRouteOutput).
 pub mod describe_gateway_route_output {
-
+    
     /// A builder for [`DescribeGatewayRouteOutput`](crate::output::DescribeGatewayRouteOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1901,20 +1903,19 @@ pub mod describe_gateway_route_output {
             self
         }
         /// <p>The full description of your gateway route.</p>
-        pub fn set_gateway_route(
-            mut self,
-            input: std::option::Option<crate::model::GatewayRouteData>,
-        ) -> Self {
-            self.gateway_route = input;
-            self
+        pub fn set_gateway_route(mut self, input: std::option::Option<crate::model::GatewayRouteData>) -> Self {
+            self.gateway_route = input; self
         }
         /// Consumes the builder and constructs a [`DescribeGatewayRouteOutput`](crate::output::DescribeGatewayRouteOutput).
         pub fn build(self) -> crate::output::DescribeGatewayRouteOutput {
             crate::output::DescribeGatewayRouteOutput {
-                gateway_route: self.gateway_route,
+                gateway_route: self.gateway_route
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeGatewayRouteOutput {
     /// Creates a new builder-style object to manufacture [`DescribeGatewayRouteOutput`](crate::output::DescribeGatewayRouteOutput).
@@ -1926,19 +1927,24 @@ impl DescribeGatewayRouteOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UntagResourceOutput {}
+pub struct UntagResourceOutput  {
+}
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput).
 pub mod untag_resource_output {
-
+    
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput).
         pub fn build(self) -> crate::output::UntagResourceOutput {
-            crate::output::UntagResourceOutput {}
+            crate::output::UntagResourceOutput {
+            }
         }
     }
+    
+    
 }
 impl UntagResourceOutput {
     /// Creates a new builder-style object to manufacture [`UntagResourceOutput`](crate::output::UntagResourceOutput).
@@ -1950,19 +1956,24 @@ impl UntagResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TagResourceOutput {}
+pub struct TagResourceOutput  {
+}
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput).
 pub mod tag_resource_output {
-
+    
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput).
         pub fn build(self) -> crate::output::TagResourceOutput {
-            crate::output::TagResourceOutput {}
+            crate::output::TagResourceOutput {
+            }
         }
     }
+    
+    
 }
 impl TagResourceOutput {
     /// Creates a new builder-style object to manufacture [`TagResourceOutput`](crate::output::TagResourceOutput).
@@ -1974,7 +1985,7 @@ impl TagResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListTagsForResourceOutput {
+pub struct ListTagsForResourceOutput  {
     /// <p>The tags for the resource.</p>
     #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::TagRef>>,
@@ -1984,17 +1995,17 @@ pub struct ListTagsForResourceOutput {
 }
 impl ListTagsForResourceOutput {
     /// <p>The tags for the resource.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::model::TagRef]> {
+    pub fn tags(&self) -> std::option::Option<& [crate::model::TagRef]> {
         self.tags.as_deref()
     }
     /// <p>The <code>nextToken</code> value to include in a future <code>ListTagsForResource</code> request. When the results of a <code>ListTagsForResource</code> request exceed <code>limit</code>, you can use this value to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
 pub mod list_tags_for_resource_output {
-
+    
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2009,17 +2020,13 @@ pub mod list_tags_for_resource_output {
         /// <p>The tags for the resource.</p>
         pub fn tags(mut self, input: crate::model::TagRef) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input);
-            self.tags = Some(v);
-            self
+                            v.push(input);
+                            self.tags = Some(v);
+                            self
         }
         /// <p>The tags for the resource.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::TagRef>>,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::model::TagRef>>) -> Self {
+            self.tags = input; self
         }
         /// <p>The <code>nextToken</code> value to include in a future <code>ListTagsForResource</code> request. When the results of a <code>ListTagsForResource</code> request exceed <code>limit</code>, you can use this value to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2028,17 +2035,20 @@ pub mod list_tags_for_resource_output {
         }
         /// <p>The <code>nextToken</code> value to include in a future <code>ListTagsForResource</code> request. When the results of a <code>ListTagsForResource</code> request exceed <code>limit</code>, you can use this value to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
         pub fn build(self) -> crate::output::ListTagsForResourceOutput {
             crate::output::ListTagsForResourceOutput {
-                tags: self.tags,
-                next_token: self.next_token,
+                tags: self.tags
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListTagsForResourceOutput {
     /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
@@ -2046,3 +2056,4 @@ impl ListTagsForResourceOutput {
         crate::output::list_tags_for_resource_output::Builder::default()
     }
 }
+

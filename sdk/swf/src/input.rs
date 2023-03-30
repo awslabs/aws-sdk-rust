@@ -3,7 +3,7 @@ use std::fmt::Write;
 
 /// See [`CountClosedWorkflowExecutionsInput`](crate::input::CountClosedWorkflowExecutionsInput).
 pub mod count_closed_workflow_executions_input {
-
+    
     /// A builder for [`CountClosedWorkflowExecutionsInput`](crate::input::CountClosedWorkflowExecutionsInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -23,195 +23,148 @@ pub mod count_closed_workflow_executions_input {
         }
         /// <p>The name of the domain containing the workflow executions to count.</p>
         pub fn set_domain(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.domain = input;
-            self
+            self.domain = input; self
         }
-        /// <p>If specified, only workflow executions that meet the start time criteria of the filter are counted.</p> <note>
-        /// <p> <code>startTimeFilter</code> and <code>closeTimeFilter</code> are mutually exclusive. You must specify one of these in a request but not both.</p>
+        /// <p>If specified, only workflow executions that meet the start time criteria of the filter are counted.</p> <note> 
+        /// <p> <code>startTimeFilter</code> and <code>closeTimeFilter</code> are mutually exclusive. You must specify one of these in a request but not both.</p> 
         /// </note>
         pub fn start_time_filter(mut self, input: crate::model::ExecutionTimeFilter) -> Self {
             self.start_time_filter = Some(input);
             self
         }
-        /// <p>If specified, only workflow executions that meet the start time criteria of the filter are counted.</p> <note>
-        /// <p> <code>startTimeFilter</code> and <code>closeTimeFilter</code> are mutually exclusive. You must specify one of these in a request but not both.</p>
+        /// <p>If specified, only workflow executions that meet the start time criteria of the filter are counted.</p> <note> 
+        /// <p> <code>startTimeFilter</code> and <code>closeTimeFilter</code> are mutually exclusive. You must specify one of these in a request but not both.</p> 
         /// </note>
-        pub fn set_start_time_filter(
-            mut self,
-            input: std::option::Option<crate::model::ExecutionTimeFilter>,
-        ) -> Self {
-            self.start_time_filter = input;
-            self
+        pub fn set_start_time_filter(mut self, input: std::option::Option<crate::model::ExecutionTimeFilter>) -> Self {
+            self.start_time_filter = input; self
         }
-        /// <p>If specified, only workflow executions that meet the close time criteria of the filter are counted.</p> <note>
-        /// <p> <code>startTimeFilter</code> and <code>closeTimeFilter</code> are mutually exclusive. You must specify one of these in a request but not both.</p>
+        /// <p>If specified, only workflow executions that meet the close time criteria of the filter are counted.</p> <note> 
+        /// <p> <code>startTimeFilter</code> and <code>closeTimeFilter</code> are mutually exclusive. You must specify one of these in a request but not both.</p> 
         /// </note>
         pub fn close_time_filter(mut self, input: crate::model::ExecutionTimeFilter) -> Self {
             self.close_time_filter = Some(input);
             self
         }
-        /// <p>If specified, only workflow executions that meet the close time criteria of the filter are counted.</p> <note>
-        /// <p> <code>startTimeFilter</code> and <code>closeTimeFilter</code> are mutually exclusive. You must specify one of these in a request but not both.</p>
+        /// <p>If specified, only workflow executions that meet the close time criteria of the filter are counted.</p> <note> 
+        /// <p> <code>startTimeFilter</code> and <code>closeTimeFilter</code> are mutually exclusive. You must specify one of these in a request but not both.</p> 
         /// </note>
-        pub fn set_close_time_filter(
-            mut self,
-            input: std::option::Option<crate::model::ExecutionTimeFilter>,
-        ) -> Self {
-            self.close_time_filter = input;
-            self
+        pub fn set_close_time_filter(mut self, input: std::option::Option<crate::model::ExecutionTimeFilter>) -> Self {
+            self.close_time_filter = input; self
         }
-        /// <p>If specified, only workflow executions matching the <code>WorkflowId</code> in the filter are counted.</p> <note>
-        /// <p> <code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p>
+        /// <p>If specified, only workflow executions matching the <code>WorkflowId</code> in the filter are counted.</p> <note> 
+        /// <p> <code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p> 
         /// </note>
         pub fn execution_filter(mut self, input: crate::model::WorkflowExecutionFilter) -> Self {
             self.execution_filter = Some(input);
             self
         }
-        /// <p>If specified, only workflow executions matching the <code>WorkflowId</code> in the filter are counted.</p> <note>
-        /// <p> <code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p>
+        /// <p>If specified, only workflow executions matching the <code>WorkflowId</code> in the filter are counted.</p> <note> 
+        /// <p> <code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p> 
         /// </note>
-        pub fn set_execution_filter(
-            mut self,
-            input: std::option::Option<crate::model::WorkflowExecutionFilter>,
-        ) -> Self {
-            self.execution_filter = input;
-            self
+        pub fn set_execution_filter(mut self, input: std::option::Option<crate::model::WorkflowExecutionFilter>) -> Self {
+            self.execution_filter = input; self
         }
-        /// <p>If specified, indicates the type of the workflow executions to be counted.</p> <note>
-        /// <p> <code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p>
+        /// <p>If specified, indicates the type of the workflow executions to be counted.</p> <note> 
+        /// <p> <code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p> 
         /// </note>
         pub fn type_filter(mut self, input: crate::model::WorkflowTypeFilter) -> Self {
             self.type_filter = Some(input);
             self
         }
-        /// <p>If specified, indicates the type of the workflow executions to be counted.</p> <note>
-        /// <p> <code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p>
+        /// <p>If specified, indicates the type of the workflow executions to be counted.</p> <note> 
+        /// <p> <code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p> 
         /// </note>
-        pub fn set_type_filter(
-            mut self,
-            input: std::option::Option<crate::model::WorkflowTypeFilter>,
-        ) -> Self {
-            self.type_filter = input;
-            self
+        pub fn set_type_filter(mut self, input: std::option::Option<crate::model::WorkflowTypeFilter>) -> Self {
+            self.type_filter = input; self
         }
-        /// <p>If specified, only executions that have a tag that matches the filter are counted.</p> <note>
-        /// <p> <code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p>
+        /// <p>If specified, only executions that have a tag that matches the filter are counted.</p> <note> 
+        /// <p> <code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p> 
         /// </note>
         pub fn tag_filter(mut self, input: crate::model::TagFilter) -> Self {
             self.tag_filter = Some(input);
             self
         }
-        /// <p>If specified, only executions that have a tag that matches the filter are counted.</p> <note>
-        /// <p> <code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p>
+        /// <p>If specified, only executions that have a tag that matches the filter are counted.</p> <note> 
+        /// <p> <code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p> 
         /// </note>
-        pub fn set_tag_filter(
-            mut self,
-            input: std::option::Option<crate::model::TagFilter>,
-        ) -> Self {
-            self.tag_filter = input;
-            self
+        pub fn set_tag_filter(mut self, input: std::option::Option<crate::model::TagFilter>) -> Self {
+            self.tag_filter = input; self
         }
-        /// <p>If specified, only workflow executions that match this close status are counted. This filter has an affect only if <code>executionStatus</code> is specified as <code>CLOSED</code>.</p> <note>
-        /// <p> <code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p>
+        /// <p>If specified, only workflow executions that match this close status are counted. This filter has an affect only if <code>executionStatus</code> is specified as <code>CLOSED</code>.</p> <note> 
+        /// <p> <code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p> 
         /// </note>
         pub fn close_status_filter(mut self, input: crate::model::CloseStatusFilter) -> Self {
             self.close_status_filter = Some(input);
             self
         }
-        /// <p>If specified, only workflow executions that match this close status are counted. This filter has an affect only if <code>executionStatus</code> is specified as <code>CLOSED</code>.</p> <note>
-        /// <p> <code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p>
+        /// <p>If specified, only workflow executions that match this close status are counted. This filter has an affect only if <code>executionStatus</code> is specified as <code>CLOSED</code>.</p> <note> 
+        /// <p> <code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p> 
         /// </note>
-        pub fn set_close_status_filter(
-            mut self,
-            input: std::option::Option<crate::model::CloseStatusFilter>,
-        ) -> Self {
-            self.close_status_filter = input;
-            self
+        pub fn set_close_status_filter(mut self, input: std::option::Option<crate::model::CloseStatusFilter>) -> Self {
+            self.close_status_filter = input; self
         }
         /// Consumes the builder and constructs a [`CountClosedWorkflowExecutionsInput`](crate::input::CountClosedWorkflowExecutionsInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::CountClosedWorkflowExecutionsInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::CountClosedWorkflowExecutionsInput {
-                domain: self.domain,
-                start_time_filter: self.start_time_filter,
-                close_time_filter: self.close_time_filter,
-                execution_filter: self.execution_filter,
-                type_filter: self.type_filter,
-                tag_filter: self.tag_filter,
-                close_status_filter: self.close_status_filter,
-            })
+        pub fn build(self) -> Result<crate::input::CountClosedWorkflowExecutionsInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::CountClosedWorkflowExecutionsInput {
+                    domain: self.domain
+                    ,
+                    start_time_filter: self.start_time_filter
+                    ,
+                    close_time_filter: self.close_time_filter
+                    ,
+                    execution_filter: self.execution_filter
+                    ,
+                    type_filter: self.type_filter
+                    ,
+                    tag_filter: self.tag_filter
+                    ,
+                    close_status_filter: self.close_status_filter
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl CountClosedWorkflowExecutionsInput {
     /// Consumes the builder and constructs an Operation<[`CountClosedWorkflowExecutions`](crate::operation::CountClosedWorkflowExecutions)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::CountClosedWorkflowExecutions,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::CountClosedWorkflowExecutions, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::CountClosedWorkflowExecutionsInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::CountClosedWorkflowExecutionsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::CountClosedWorkflowExecutionsInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::CountClosedWorkflowExecutionsInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.0");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.0",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "SimpleWorkflowService.CountClosedWorkflowExecutions",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "SimpleWorkflowService.CountClosedWorkflowExecutions"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -220,56 +173,33 @@ impl CountClosedWorkflowExecutionsInput {
             crate::operation_ser::serialize_operation_crate_operation_count_closed_workflow_executions(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::CountClosedWorkflowExecutions::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "CountClosedWorkflowExecutions",
-            "swf",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::CountClosedWorkflowExecutions::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("CountClosedWorkflowExecutions", "swf"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -281,7 +211,7 @@ impl CountClosedWorkflowExecutionsInput {
 
 /// See [`CountOpenWorkflowExecutionsInput`](crate::input::CountOpenWorkflowExecutionsInput).
 pub mod count_open_workflow_executions_input {
-
+    
     /// A builder for [`CountOpenWorkflowExecutionsInput`](crate::input::CountOpenWorkflowExecutionsInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -299,8 +229,7 @@ pub mod count_open_workflow_executions_input {
         }
         /// <p>The name of the domain containing the workflow executions to count.</p>
         pub fn set_domain(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.domain = input;
-            self
+            self.domain = input; self
         }
         /// <p>Specifies the start time criteria that workflow executions must meet in order to be counted.</p>
         pub fn start_time_filter(mut self, input: crate::model::ExecutionTimeFilter) -> Self {
@@ -308,146 +237,106 @@ pub mod count_open_workflow_executions_input {
             self
         }
         /// <p>Specifies the start time criteria that workflow executions must meet in order to be counted.</p>
-        pub fn set_start_time_filter(
-            mut self,
-            input: std::option::Option<crate::model::ExecutionTimeFilter>,
-        ) -> Self {
-            self.start_time_filter = input;
-            self
+        pub fn set_start_time_filter(mut self, input: std::option::Option<crate::model::ExecutionTimeFilter>) -> Self {
+            self.start_time_filter = input; self
         }
-        /// <p>Specifies the type of the workflow executions to be counted.</p> <note>
-        /// <p> <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p>
+        /// <p>Specifies the type of the workflow executions to be counted.</p> <note> 
+        /// <p> <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p> 
         /// </note>
         pub fn type_filter(mut self, input: crate::model::WorkflowTypeFilter) -> Self {
             self.type_filter = Some(input);
             self
         }
-        /// <p>Specifies the type of the workflow executions to be counted.</p> <note>
-        /// <p> <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p>
+        /// <p>Specifies the type of the workflow executions to be counted.</p> <note> 
+        /// <p> <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p> 
         /// </note>
-        pub fn set_type_filter(
-            mut self,
-            input: std::option::Option<crate::model::WorkflowTypeFilter>,
-        ) -> Self {
-            self.type_filter = input;
-            self
+        pub fn set_type_filter(mut self, input: std::option::Option<crate::model::WorkflowTypeFilter>) -> Self {
+            self.type_filter = input; self
         }
-        /// <p>If specified, only executions that have a tag that matches the filter are counted.</p> <note>
-        /// <p> <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p>
+        /// <p>If specified, only executions that have a tag that matches the filter are counted.</p> <note> 
+        /// <p> <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p> 
         /// </note>
         pub fn tag_filter(mut self, input: crate::model::TagFilter) -> Self {
             self.tag_filter = Some(input);
             self
         }
-        /// <p>If specified, only executions that have a tag that matches the filter are counted.</p> <note>
-        /// <p> <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p>
+        /// <p>If specified, only executions that have a tag that matches the filter are counted.</p> <note> 
+        /// <p> <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p> 
         /// </note>
-        pub fn set_tag_filter(
-            mut self,
-            input: std::option::Option<crate::model::TagFilter>,
-        ) -> Self {
-            self.tag_filter = input;
-            self
+        pub fn set_tag_filter(mut self, input: std::option::Option<crate::model::TagFilter>) -> Self {
+            self.tag_filter = input; self
         }
-        /// <p>If specified, only workflow executions matching the <code>WorkflowId</code> in the filter are counted.</p> <note>
-        /// <p> <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p>
+        /// <p>If specified, only workflow executions matching the <code>WorkflowId</code> in the filter are counted.</p> <note> 
+        /// <p> <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p> 
         /// </note>
         pub fn execution_filter(mut self, input: crate::model::WorkflowExecutionFilter) -> Self {
             self.execution_filter = Some(input);
             self
         }
-        /// <p>If specified, only workflow executions matching the <code>WorkflowId</code> in the filter are counted.</p> <note>
-        /// <p> <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p>
+        /// <p>If specified, only workflow executions matching the <code>WorkflowId</code> in the filter are counted.</p> <note> 
+        /// <p> <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p> 
         /// </note>
-        pub fn set_execution_filter(
-            mut self,
-            input: std::option::Option<crate::model::WorkflowExecutionFilter>,
-        ) -> Self {
-            self.execution_filter = input;
-            self
+        pub fn set_execution_filter(mut self, input: std::option::Option<crate::model::WorkflowExecutionFilter>) -> Self {
+            self.execution_filter = input; self
         }
         /// Consumes the builder and constructs a [`CountOpenWorkflowExecutionsInput`](crate::input::CountOpenWorkflowExecutionsInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::CountOpenWorkflowExecutionsInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::CountOpenWorkflowExecutionsInput {
-                domain: self.domain,
-                start_time_filter: self.start_time_filter,
-                type_filter: self.type_filter,
-                tag_filter: self.tag_filter,
-                execution_filter: self.execution_filter,
-            })
+        pub fn build(self) -> Result<crate::input::CountOpenWorkflowExecutionsInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::CountOpenWorkflowExecutionsInput {
+                    domain: self.domain
+                    ,
+                    start_time_filter: self.start_time_filter
+                    ,
+                    type_filter: self.type_filter
+                    ,
+                    tag_filter: self.tag_filter
+                    ,
+                    execution_filter: self.execution_filter
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl CountOpenWorkflowExecutionsInput {
     /// Consumes the builder and constructs an Operation<[`CountOpenWorkflowExecutions`](crate::operation::CountOpenWorkflowExecutions)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::CountOpenWorkflowExecutions,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::CountOpenWorkflowExecutions, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::CountOpenWorkflowExecutionsInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::CountOpenWorkflowExecutionsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::CountOpenWorkflowExecutionsInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::CountOpenWorkflowExecutionsInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.0");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.0",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "SimpleWorkflowService.CountOpenWorkflowExecutions",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "SimpleWorkflowService.CountOpenWorkflowExecutions"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -456,56 +345,33 @@ impl CountOpenWorkflowExecutionsInput {
             crate::operation_ser::serialize_operation_crate_operation_count_open_workflow_executions(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::CountOpenWorkflowExecutions::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "CountOpenWorkflowExecutions",
-            "swf",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::CountOpenWorkflowExecutions::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("CountOpenWorkflowExecutions", "swf"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -517,7 +383,7 @@ impl CountOpenWorkflowExecutionsInput {
 
 /// See [`CountPendingActivityTasksInput`](crate::input::CountPendingActivityTasksInput).
 pub mod count_pending_activity_tasks_input {
-
+    
     /// A builder for [`CountPendingActivityTasksInput`](crate::input::CountPendingActivityTasksInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -532,8 +398,7 @@ pub mod count_pending_activity_tasks_input {
         }
         /// <p>The name of the domain that contains the task list.</p>
         pub fn set_domain(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.domain = input;
-            self
+            self.domain = input; self
         }
         /// <p>The name of the task list.</p>
         pub fn task_list(mut self, input: crate::model::TaskList) -> Self {
@@ -542,148 +407,95 @@ pub mod count_pending_activity_tasks_input {
         }
         /// <p>The name of the task list.</p>
         pub fn set_task_list(mut self, input: std::option::Option<crate::model::TaskList>) -> Self {
-            self.task_list = input;
-            self
+            self.task_list = input; self
         }
         /// Consumes the builder and constructs a [`CountPendingActivityTasksInput`](crate::input::CountPendingActivityTasksInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::CountPendingActivityTasksInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::CountPendingActivityTasksInput {
-                domain: self.domain,
-                task_list: self.task_list,
-            })
+        pub fn build(self) -> Result<crate::input::CountPendingActivityTasksInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::CountPendingActivityTasksInput {
+                    domain: self.domain
+                    ,
+                    task_list: self.task_list
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl CountPendingActivityTasksInput {
     /// Consumes the builder and constructs an Operation<[`CountPendingActivityTasks`](crate::operation::CountPendingActivityTasks)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::CountPendingActivityTasks,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::CountPendingActivityTasks, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::CountPendingActivityTasksInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::CountPendingActivityTasksInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::CountPendingActivityTasksInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::CountPendingActivityTasksInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.0");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.0",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "SimpleWorkflowService.CountPendingActivityTasks",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "SimpleWorkflowService.CountPendingActivityTasks"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_count_pending_activity_tasks(
-                &self,
-            )?,
+            crate::operation_ser::serialize_operation_crate_operation_count_pending_activity_tasks(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::CountPendingActivityTasks::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "CountPendingActivityTasks",
-            "swf",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::CountPendingActivityTasks::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("CountPendingActivityTasks", "swf"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -695,7 +507,7 @@ impl CountPendingActivityTasksInput {
 
 /// See [`CountPendingDecisionTasksInput`](crate::input::CountPendingDecisionTasksInput).
 pub mod count_pending_decision_tasks_input {
-
+    
     /// A builder for [`CountPendingDecisionTasksInput`](crate::input::CountPendingDecisionTasksInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -710,8 +522,7 @@ pub mod count_pending_decision_tasks_input {
         }
         /// <p>The name of the domain that contains the task list.</p>
         pub fn set_domain(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.domain = input;
-            self
+            self.domain = input; self
         }
         /// <p>The name of the task list.</p>
         pub fn task_list(mut self, input: crate::model::TaskList) -> Self {
@@ -720,148 +531,95 @@ pub mod count_pending_decision_tasks_input {
         }
         /// <p>The name of the task list.</p>
         pub fn set_task_list(mut self, input: std::option::Option<crate::model::TaskList>) -> Self {
-            self.task_list = input;
-            self
+            self.task_list = input; self
         }
         /// Consumes the builder and constructs a [`CountPendingDecisionTasksInput`](crate::input::CountPendingDecisionTasksInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::CountPendingDecisionTasksInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::CountPendingDecisionTasksInput {
-                domain: self.domain,
-                task_list: self.task_list,
-            })
+        pub fn build(self) -> Result<crate::input::CountPendingDecisionTasksInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::CountPendingDecisionTasksInput {
+                    domain: self.domain
+                    ,
+                    task_list: self.task_list
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl CountPendingDecisionTasksInput {
     /// Consumes the builder and constructs an Operation<[`CountPendingDecisionTasks`](crate::operation::CountPendingDecisionTasks)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::CountPendingDecisionTasks,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::CountPendingDecisionTasks, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::CountPendingDecisionTasksInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::CountPendingDecisionTasksInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::CountPendingDecisionTasksInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::CountPendingDecisionTasksInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.0");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.0",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "SimpleWorkflowService.CountPendingDecisionTasks",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "SimpleWorkflowService.CountPendingDecisionTasks"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_count_pending_decision_tasks(
-                &self,
-            )?,
+            crate::operation_ser::serialize_operation_crate_operation_count_pending_decision_tasks(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::CountPendingDecisionTasks::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "CountPendingDecisionTasks",
-            "swf",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::CountPendingDecisionTasks::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("CountPendingDecisionTasks", "swf"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -873,7 +631,7 @@ impl CountPendingDecisionTasksInput {
 
 /// See [`DeprecateActivityTypeInput`](crate::input::DeprecateActivityTypeInput).
 pub mod deprecate_activity_type_input {
-
+    
     /// A builder for [`DeprecateActivityTypeInput`](crate::input::DeprecateActivityTypeInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -888,8 +646,7 @@ pub mod deprecate_activity_type_input {
         }
         /// <p>The name of the domain in which the activity type is registered.</p>
         pub fn set_domain(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.domain = input;
-            self
+            self.domain = input; self
         }
         /// <p>The activity type to deprecate.</p>
         pub fn activity_type(mut self, input: crate::model::ActivityType) -> Self {
@@ -897,152 +654,96 @@ pub mod deprecate_activity_type_input {
             self
         }
         /// <p>The activity type to deprecate.</p>
-        pub fn set_activity_type(
-            mut self,
-            input: std::option::Option<crate::model::ActivityType>,
-        ) -> Self {
-            self.activity_type = input;
-            self
+        pub fn set_activity_type(mut self, input: std::option::Option<crate::model::ActivityType>) -> Self {
+            self.activity_type = input; self
         }
         /// Consumes the builder and constructs a [`DeprecateActivityTypeInput`](crate::input::DeprecateActivityTypeInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::DeprecateActivityTypeInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::DeprecateActivityTypeInput {
-                domain: self.domain,
-                activity_type: self.activity_type,
-            })
+        pub fn build(self) -> Result<crate::input::DeprecateActivityTypeInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::DeprecateActivityTypeInput {
+                    domain: self.domain
+                    ,
+                    activity_type: self.activity_type
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl DeprecateActivityTypeInput {
     /// Consumes the builder and constructs an Operation<[`DeprecateActivityType`](crate::operation::DeprecateActivityType)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::DeprecateActivityType,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DeprecateActivityType, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::DeprecateActivityTypeInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::DeprecateActivityTypeInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::DeprecateActivityTypeInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::DeprecateActivityTypeInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.0");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.0",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "SimpleWorkflowService.DeprecateActivityType",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "SimpleWorkflowService.DeprecateActivityType"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_deprecate_activity_type(
-                &self,
-            )?,
+            crate::operation_ser::serialize_operation_crate_operation_deprecate_activity_type(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::DeprecateActivityType::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "DeprecateActivityType",
-            "swf",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DeprecateActivityType::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("DeprecateActivityType", "swf"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -1054,7 +755,7 @@ impl DeprecateActivityTypeInput {
 
 /// See [`DeprecateDomainInput`](crate::input::DeprecateDomainInput).
 pub mod deprecate_domain_input {
-
+    
     /// A builder for [`DeprecateDomainInput`](crate::input::DeprecateDomainInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1068,141 +769,93 @@ pub mod deprecate_domain_input {
         }
         /// <p>The name of the domain to deprecate.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// Consumes the builder and constructs a [`DeprecateDomainInput`](crate::input::DeprecateDomainInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::DeprecateDomainInput, aws_smithy_http::operation::error::BuildError>
-        {
-            Ok(crate::input::DeprecateDomainInput { name: self.name })
+        pub fn build(self) -> Result<crate::input::DeprecateDomainInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::DeprecateDomainInput {
+                    name: self.name
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl DeprecateDomainInput {
     /// Consumes the builder and constructs an Operation<[`DeprecateDomain`](crate::operation::DeprecateDomain)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::DeprecateDomain,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DeprecateDomain, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::DeprecateDomainInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::DeprecateDomainInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::DeprecateDomainInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::DeprecateDomainInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.0");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.0",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "SimpleWorkflowService.DeprecateDomain",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "SimpleWorkflowService.DeprecateDomain"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_deprecate_domain(&self)?,
+            crate::operation_ser::serialize_operation_crate_operation_deprecate_domain(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::DeprecateDomain::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "DeprecateDomain",
-            "swf",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DeprecateDomain::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("DeprecateDomain", "swf"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -1214,7 +867,7 @@ impl DeprecateDomainInput {
 
 /// See [`DeprecateWorkflowTypeInput`](crate::input::DeprecateWorkflowTypeInput).
 pub mod deprecate_workflow_type_input {
-
+    
     /// A builder for [`DeprecateWorkflowTypeInput`](crate::input::DeprecateWorkflowTypeInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1229,8 +882,7 @@ pub mod deprecate_workflow_type_input {
         }
         /// <p>The name of the domain in which the workflow type is registered.</p>
         pub fn set_domain(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.domain = input;
-            self
+            self.domain = input; self
         }
         /// <p>The workflow type to deprecate.</p>
         pub fn workflow_type(mut self, input: crate::model::WorkflowType) -> Self {
@@ -1238,152 +890,96 @@ pub mod deprecate_workflow_type_input {
             self
         }
         /// <p>The workflow type to deprecate.</p>
-        pub fn set_workflow_type(
-            mut self,
-            input: std::option::Option<crate::model::WorkflowType>,
-        ) -> Self {
-            self.workflow_type = input;
-            self
+        pub fn set_workflow_type(mut self, input: std::option::Option<crate::model::WorkflowType>) -> Self {
+            self.workflow_type = input; self
         }
         /// Consumes the builder and constructs a [`DeprecateWorkflowTypeInput`](crate::input::DeprecateWorkflowTypeInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::DeprecateWorkflowTypeInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::DeprecateWorkflowTypeInput {
-                domain: self.domain,
-                workflow_type: self.workflow_type,
-            })
+        pub fn build(self) -> Result<crate::input::DeprecateWorkflowTypeInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::DeprecateWorkflowTypeInput {
+                    domain: self.domain
+                    ,
+                    workflow_type: self.workflow_type
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl DeprecateWorkflowTypeInput {
     /// Consumes the builder and constructs an Operation<[`DeprecateWorkflowType`](crate::operation::DeprecateWorkflowType)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::DeprecateWorkflowType,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DeprecateWorkflowType, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::DeprecateWorkflowTypeInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::DeprecateWorkflowTypeInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::DeprecateWorkflowTypeInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::DeprecateWorkflowTypeInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.0");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.0",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "SimpleWorkflowService.DeprecateWorkflowType",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "SimpleWorkflowService.DeprecateWorkflowType"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_deprecate_workflow_type(
-                &self,
-            )?,
+            crate::operation_ser::serialize_operation_crate_operation_deprecate_workflow_type(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::DeprecateWorkflowType::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "DeprecateWorkflowType",
-            "swf",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DeprecateWorkflowType::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("DeprecateWorkflowType", "swf"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -1395,7 +991,7 @@ impl DeprecateWorkflowTypeInput {
 
 /// See [`DescribeActivityTypeInput`](crate::input::DescribeActivityTypeInput).
 pub mod describe_activity_type_input {
-
+    
     /// A builder for [`DescribeActivityTypeInput`](crate::input::DescribeActivityTypeInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1410,8 +1006,7 @@ pub mod describe_activity_type_input {
         }
         /// <p>The name of the domain in which the activity type is registered.</p>
         pub fn set_domain(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.domain = input;
-            self
+            self.domain = input; self
         }
         /// <p>The activity type to get information about. Activity types are identified by the <code>name</code> and <code>version</code> that were supplied when the activity was registered.</p>
         pub fn activity_type(mut self, input: crate::model::ActivityType) -> Self {
@@ -1419,152 +1014,96 @@ pub mod describe_activity_type_input {
             self
         }
         /// <p>The activity type to get information about. Activity types are identified by the <code>name</code> and <code>version</code> that were supplied when the activity was registered.</p>
-        pub fn set_activity_type(
-            mut self,
-            input: std::option::Option<crate::model::ActivityType>,
-        ) -> Self {
-            self.activity_type = input;
-            self
+        pub fn set_activity_type(mut self, input: std::option::Option<crate::model::ActivityType>) -> Self {
+            self.activity_type = input; self
         }
         /// Consumes the builder and constructs a [`DescribeActivityTypeInput`](crate::input::DescribeActivityTypeInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::DescribeActivityTypeInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::DescribeActivityTypeInput {
-                domain: self.domain,
-                activity_type: self.activity_type,
-            })
+        pub fn build(self) -> Result<crate::input::DescribeActivityTypeInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::DescribeActivityTypeInput {
+                    domain: self.domain
+                    ,
+                    activity_type: self.activity_type
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl DescribeActivityTypeInput {
     /// Consumes the builder and constructs an Operation<[`DescribeActivityType`](crate::operation::DescribeActivityType)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::DescribeActivityType,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DescribeActivityType, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::DescribeActivityTypeInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::DescribeActivityTypeInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::DescribeActivityTypeInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::DescribeActivityTypeInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.0");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.0",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "SimpleWorkflowService.DescribeActivityType",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "SimpleWorkflowService.DescribeActivityType"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_describe_activity_type(
-                &self,
-            )?,
+            crate::operation_ser::serialize_operation_crate_operation_describe_activity_type(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::DescribeActivityType::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "DescribeActivityType",
-            "swf",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DescribeActivityType::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("DescribeActivityType", "swf"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -1576,7 +1115,7 @@ impl DescribeActivityTypeInput {
 
 /// See [`DescribeDomainInput`](crate::input::DescribeDomainInput).
 pub mod describe_domain_input {
-
+    
     /// A builder for [`DescribeDomainInput`](crate::input::DescribeDomainInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1590,141 +1129,93 @@ pub mod describe_domain_input {
         }
         /// <p>The name of the domain to describe.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// Consumes the builder and constructs a [`DescribeDomainInput`](crate::input::DescribeDomainInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::DescribeDomainInput, aws_smithy_http::operation::error::BuildError>
-        {
-            Ok(crate::input::DescribeDomainInput { name: self.name })
+        pub fn build(self) -> Result<crate::input::DescribeDomainInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::DescribeDomainInput {
+                    name: self.name
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl DescribeDomainInput {
     /// Consumes the builder and constructs an Operation<[`DescribeDomain`](crate::operation::DescribeDomain)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::DescribeDomain,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DescribeDomain, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::DescribeDomainInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::DescribeDomainInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::DescribeDomainInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::DescribeDomainInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.0");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.0",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "SimpleWorkflowService.DescribeDomain",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "SimpleWorkflowService.DescribeDomain"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_describe_domain(&self)?,
+            crate::operation_ser::serialize_operation_crate_operation_describe_domain(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::DescribeDomain::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "DescribeDomain",
-            "swf",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DescribeDomain::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("DescribeDomain", "swf"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -1736,7 +1227,7 @@ impl DescribeDomainInput {
 
 /// See [`DescribeWorkflowExecutionInput`](crate::input::DescribeWorkflowExecutionInput).
 pub mod describe_workflow_execution_input {
-
+    
     /// A builder for [`DescribeWorkflowExecutionInput`](crate::input::DescribeWorkflowExecutionInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1751,8 +1242,7 @@ pub mod describe_workflow_execution_input {
         }
         /// <p>The name of the domain containing the workflow execution.</p>
         pub fn set_domain(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.domain = input;
-            self
+            self.domain = input; self
         }
         /// <p>The workflow execution to describe.</p>
         pub fn execution(mut self, input: crate::model::WorkflowExecution) -> Self {
@@ -1760,152 +1250,96 @@ pub mod describe_workflow_execution_input {
             self
         }
         /// <p>The workflow execution to describe.</p>
-        pub fn set_execution(
-            mut self,
-            input: std::option::Option<crate::model::WorkflowExecution>,
-        ) -> Self {
-            self.execution = input;
-            self
+        pub fn set_execution(mut self, input: std::option::Option<crate::model::WorkflowExecution>) -> Self {
+            self.execution = input; self
         }
         /// Consumes the builder and constructs a [`DescribeWorkflowExecutionInput`](crate::input::DescribeWorkflowExecutionInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::DescribeWorkflowExecutionInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::DescribeWorkflowExecutionInput {
-                domain: self.domain,
-                execution: self.execution,
-            })
+        pub fn build(self) -> Result<crate::input::DescribeWorkflowExecutionInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::DescribeWorkflowExecutionInput {
+                    domain: self.domain
+                    ,
+                    execution: self.execution
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl DescribeWorkflowExecutionInput {
     /// Consumes the builder and constructs an Operation<[`DescribeWorkflowExecution`](crate::operation::DescribeWorkflowExecution)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::DescribeWorkflowExecution,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DescribeWorkflowExecution, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::DescribeWorkflowExecutionInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::DescribeWorkflowExecutionInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::DescribeWorkflowExecutionInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::DescribeWorkflowExecutionInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.0");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.0",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "SimpleWorkflowService.DescribeWorkflowExecution",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "SimpleWorkflowService.DescribeWorkflowExecution"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_describe_workflow_execution(
-                &self,
-            )?,
+            crate::operation_ser::serialize_operation_crate_operation_describe_workflow_execution(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::DescribeWorkflowExecution::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "DescribeWorkflowExecution",
-            "swf",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DescribeWorkflowExecution::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("DescribeWorkflowExecution", "swf"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -1917,7 +1351,7 @@ impl DescribeWorkflowExecutionInput {
 
 /// See [`DescribeWorkflowTypeInput`](crate::input::DescribeWorkflowTypeInput).
 pub mod describe_workflow_type_input {
-
+    
     /// A builder for [`DescribeWorkflowTypeInput`](crate::input::DescribeWorkflowTypeInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1932,8 +1366,7 @@ pub mod describe_workflow_type_input {
         }
         /// <p>The name of the domain in which this workflow type is registered.</p>
         pub fn set_domain(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.domain = input;
-            self
+            self.domain = input; self
         }
         /// <p>The workflow type to describe.</p>
         pub fn workflow_type(mut self, input: crate::model::WorkflowType) -> Self {
@@ -1941,152 +1374,96 @@ pub mod describe_workflow_type_input {
             self
         }
         /// <p>The workflow type to describe.</p>
-        pub fn set_workflow_type(
-            mut self,
-            input: std::option::Option<crate::model::WorkflowType>,
-        ) -> Self {
-            self.workflow_type = input;
-            self
+        pub fn set_workflow_type(mut self, input: std::option::Option<crate::model::WorkflowType>) -> Self {
+            self.workflow_type = input; self
         }
         /// Consumes the builder and constructs a [`DescribeWorkflowTypeInput`](crate::input::DescribeWorkflowTypeInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::DescribeWorkflowTypeInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::DescribeWorkflowTypeInput {
-                domain: self.domain,
-                workflow_type: self.workflow_type,
-            })
+        pub fn build(self) -> Result<crate::input::DescribeWorkflowTypeInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::DescribeWorkflowTypeInput {
+                    domain: self.domain
+                    ,
+                    workflow_type: self.workflow_type
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl DescribeWorkflowTypeInput {
     /// Consumes the builder and constructs an Operation<[`DescribeWorkflowType`](crate::operation::DescribeWorkflowType)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::DescribeWorkflowType,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DescribeWorkflowType, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::DescribeWorkflowTypeInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::DescribeWorkflowTypeInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::DescribeWorkflowTypeInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::DescribeWorkflowTypeInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.0");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.0",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "SimpleWorkflowService.DescribeWorkflowType",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "SimpleWorkflowService.DescribeWorkflowType"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_describe_workflow_type(
-                &self,
-            )?,
+            crate::operation_ser::serialize_operation_crate_operation_describe_workflow_type(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::DescribeWorkflowType::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "DescribeWorkflowType",
-            "swf",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DescribeWorkflowType::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("DescribeWorkflowType", "swf"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -2098,7 +1475,7 @@ impl DescribeWorkflowTypeInput {
 
 /// See [`GetWorkflowExecutionHistoryInput`](crate::input::GetWorkflowExecutionHistoryInput).
 pub mod get_workflow_execution_history_input {
-
+    
     /// A builder for [`GetWorkflowExecutionHistoryInput`](crate::input::GetWorkflowExecutionHistoryInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2116,8 +1493,7 @@ pub mod get_workflow_execution_history_input {
         }
         /// <p>The name of the domain containing the workflow execution.</p>
         pub fn set_domain(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.domain = input;
-            self
+            self.domain = input; self
         }
         /// <p>Specifies the workflow execution for which to return the history.</p>
         pub fn execution(mut self, input: crate::model::WorkflowExecution) -> Self {
@@ -2125,27 +1501,19 @@ pub mod get_workflow_execution_history_input {
             self
         }
         /// <p>Specifies the workflow execution for which to return the history.</p>
-        pub fn set_execution(
-            mut self,
-            input: std::option::Option<crate::model::WorkflowExecution>,
-        ) -> Self {
-            self.execution = input;
-            self
+        pub fn set_execution(mut self, input: std::option::Option<crate::model::WorkflowExecution>) -> Self {
+            self.execution = input; self
         }
-        /// <p>If <code>NextPageToken</code> is returned there are more results available. The value of <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 60 seconds. Using an expired pagination token will return a <code>400</code> error: "<code>Specified token has exceeded its maximum lifetime</code>". </p>
+        /// <p>If <code>NextPageToken</code> is returned there are more results available. The value of <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 60 seconds. Using an expired pagination token will return a <code>400</code> error: "<code>Specified token has exceeded its maximum lifetime</code>". </p> 
         /// <p>The configured <code>maximumPageSize</code> determines how many results can be returned in a single call. </p>
         pub fn next_page_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_page_token = Some(input.into());
             self
         }
-        /// <p>If <code>NextPageToken</code> is returned there are more results available. The value of <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 60 seconds. Using an expired pagination token will return a <code>400</code> error: "<code>Specified token has exceeded its maximum lifetime</code>". </p>
+        /// <p>If <code>NextPageToken</code> is returned there are more results available. The value of <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 60 seconds. Using an expired pagination token will return a <code>400</code> error: "<code>Specified token has exceeded its maximum lifetime</code>". </p> 
         /// <p>The configured <code>maximumPageSize</code> determines how many results can be returned in a single call. </p>
-        pub fn set_next_page_token(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.next_page_token = input;
-            self
+        pub fn set_next_page_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_page_token = input; self
         }
         /// <p>The maximum number of results that are returned per call. Use <code>nextPageToken</code> to obtain further pages of results. </p>
         pub fn maximum_page_size(mut self, input: i32) -> Self {
@@ -2154,8 +1522,7 @@ pub mod get_workflow_execution_history_input {
         }
         /// <p>The maximum number of results that are returned per call. Use <code>nextPageToken</code> to obtain further pages of results. </p>
         pub fn set_maximum_page_size(mut self, input: std::option::Option<i32>) -> Self {
-            self.maximum_page_size = input;
-            self
+            self.maximum_page_size = input; self
         }
         /// <p>When set to <code>true</code>, returns the events in reverse order. By default the results are returned in ascending order of the <code>eventTimeStamp</code> of the events.</p>
         pub fn reverse_order(mut self, input: bool) -> Self {
@@ -2164,91 +1531,68 @@ pub mod get_workflow_execution_history_input {
         }
         /// <p>When set to <code>true</code>, returns the events in reverse order. By default the results are returned in ascending order of the <code>eventTimeStamp</code> of the events.</p>
         pub fn set_reverse_order(mut self, input: std::option::Option<bool>) -> Self {
-            self.reverse_order = input;
-            self
+            self.reverse_order = input; self
         }
         /// Consumes the builder and constructs a [`GetWorkflowExecutionHistoryInput`](crate::input::GetWorkflowExecutionHistoryInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::GetWorkflowExecutionHistoryInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::GetWorkflowExecutionHistoryInput {
-                domain: self.domain,
-                execution: self.execution,
-                next_page_token: self.next_page_token,
-                maximum_page_size: self.maximum_page_size.unwrap_or_default(),
-                reverse_order: self.reverse_order.unwrap_or_default(),
-            })
+        pub fn build(self) -> Result<crate::input::GetWorkflowExecutionHistoryInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::GetWorkflowExecutionHistoryInput {
+                    domain: self.domain
+                    ,
+                    execution: self.execution
+                    ,
+                    next_page_token: self.next_page_token
+                    ,
+                    maximum_page_size: self.maximum_page_size
+                        .unwrap_or_default()
+                    ,
+                    reverse_order: self.reverse_order
+                        .unwrap_or_default()
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl GetWorkflowExecutionHistoryInput {
     /// Consumes the builder and constructs an Operation<[`GetWorkflowExecutionHistory`](crate::operation::GetWorkflowExecutionHistory)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::GetWorkflowExecutionHistory,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::GetWorkflowExecutionHistory, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::GetWorkflowExecutionHistoryInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::GetWorkflowExecutionHistoryInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::GetWorkflowExecutionHistoryInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::GetWorkflowExecutionHistoryInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.0");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.0",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "SimpleWorkflowService.GetWorkflowExecutionHistory",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "SimpleWorkflowService.GetWorkflowExecutionHistory"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -2257,56 +1601,33 @@ impl GetWorkflowExecutionHistoryInput {
             crate::operation_ser::serialize_operation_crate_operation_get_workflow_execution_history(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::GetWorkflowExecutionHistory::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "GetWorkflowExecutionHistory",
-            "swf",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::GetWorkflowExecutionHistory::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("GetWorkflowExecutionHistory", "swf"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -2318,7 +1639,7 @@ impl GetWorkflowExecutionHistoryInput {
 
 /// See [`ListActivityTypesInput`](crate::input::ListActivityTypesInput).
 pub mod list_activity_types_input {
-
+    
     /// A builder for [`ListActivityTypesInput`](crate::input::ListActivityTypesInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2337,8 +1658,7 @@ pub mod list_activity_types_input {
         }
         /// <p>The name of the domain in which the activity types have been registered.</p>
         pub fn set_domain(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.domain = input;
-            self
+            self.domain = input; self
         }
         /// <p>If specified, only lists the activity types that have this name.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2347,8 +1667,7 @@ pub mod list_activity_types_input {
         }
         /// <p>If specified, only lists the activity types that have this name.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>Specifies the registration status of the activity types to list.</p>
         pub fn registration_status(mut self, input: crate::model::RegistrationStatus) -> Self {
@@ -2356,27 +1675,19 @@ pub mod list_activity_types_input {
             self
         }
         /// <p>Specifies the registration status of the activity types to list.</p>
-        pub fn set_registration_status(
-            mut self,
-            input: std::option::Option<crate::model::RegistrationStatus>,
-        ) -> Self {
-            self.registration_status = input;
-            self
+        pub fn set_registration_status(mut self, input: std::option::Option<crate::model::RegistrationStatus>) -> Self {
+            self.registration_status = input; self
         }
-        /// <p>If <code>NextPageToken</code> is returned there are more results available. The value of <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 60 seconds. Using an expired pagination token will return a <code>400</code> error: "<code>Specified token has exceeded its maximum lifetime</code>". </p>
+        /// <p>If <code>NextPageToken</code> is returned there are more results available. The value of <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 60 seconds. Using an expired pagination token will return a <code>400</code> error: "<code>Specified token has exceeded its maximum lifetime</code>". </p> 
         /// <p>The configured <code>maximumPageSize</code> determines how many results can be returned in a single call. </p>
         pub fn next_page_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_page_token = Some(input.into());
             self
         }
-        /// <p>If <code>NextPageToken</code> is returned there are more results available. The value of <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 60 seconds. Using an expired pagination token will return a <code>400</code> error: "<code>Specified token has exceeded its maximum lifetime</code>". </p>
+        /// <p>If <code>NextPageToken</code> is returned there are more results available. The value of <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 60 seconds. Using an expired pagination token will return a <code>400</code> error: "<code>Specified token has exceeded its maximum lifetime</code>". </p> 
         /// <p>The configured <code>maximumPageSize</code> determines how many results can be returned in a single call. </p>
-        pub fn set_next_page_token(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.next_page_token = input;
-            self
+        pub fn set_next_page_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_page_token = input; self
         }
         /// <p>The maximum number of results that are returned per call. Use <code>nextPageToken</code> to obtain further pages of results. </p>
         pub fn maximum_page_size(mut self, input: i32) -> Self {
@@ -2385,8 +1696,7 @@ pub mod list_activity_types_input {
         }
         /// <p>The maximum number of results that are returned per call. Use <code>nextPageToken</code> to obtain further pages of results. </p>
         pub fn set_maximum_page_size(mut self, input: std::option::Option<i32>) -> Self {
-            self.maximum_page_size = input;
-            self
+            self.maximum_page_size = input; self
         }
         /// <p>When set to <code>true</code>, returns the results in reverse order. By default, the results are returned in ascending alphabetical order by <code>name</code> of the activity types.</p>
         pub fn reverse_order(mut self, input: bool) -> Self {
@@ -2395,150 +1705,105 @@ pub mod list_activity_types_input {
         }
         /// <p>When set to <code>true</code>, returns the results in reverse order. By default, the results are returned in ascending alphabetical order by <code>name</code> of the activity types.</p>
         pub fn set_reverse_order(mut self, input: std::option::Option<bool>) -> Self {
-            self.reverse_order = input;
-            self
+            self.reverse_order = input; self
         }
         /// Consumes the builder and constructs a [`ListActivityTypesInput`](crate::input::ListActivityTypesInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::ListActivityTypesInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::ListActivityTypesInput {
-                domain: self.domain,
-                name: self.name,
-                registration_status: self.registration_status,
-                next_page_token: self.next_page_token,
-                maximum_page_size: self.maximum_page_size.unwrap_or_default(),
-                reverse_order: self.reverse_order.unwrap_or_default(),
-            })
+        pub fn build(self) -> Result<crate::input::ListActivityTypesInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::ListActivityTypesInput {
+                    domain: self.domain
+                    ,
+                    name: self.name
+                    ,
+                    registration_status: self.registration_status
+                    ,
+                    next_page_token: self.next_page_token
+                    ,
+                    maximum_page_size: self.maximum_page_size
+                        .unwrap_or_default()
+                    ,
+                    reverse_order: self.reverse_order
+                        .unwrap_or_default()
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl ListActivityTypesInput {
     /// Consumes the builder and constructs an Operation<[`ListActivityTypes`](crate::operation::ListActivityTypes)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::ListActivityTypes,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::ListActivityTypes, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::ListActivityTypesInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::ListActivityTypesInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::ListActivityTypesInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::ListActivityTypesInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.0");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.0",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "SimpleWorkflowService.ListActivityTypes",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "SimpleWorkflowService.ListActivityTypes"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_list_activity_types(&self)?,
+            crate::operation_ser::serialize_operation_crate_operation_list_activity_types(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::ListActivityTypes::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "ListActivityTypes",
-            "swf",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::ListActivityTypes::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("ListActivityTypes", "swf"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -2550,7 +1815,7 @@ impl ListActivityTypesInput {
 
 /// See [`ListClosedWorkflowExecutionsInput`](crate::input::ListClosedWorkflowExecutionsInput).
 pub mod list_closed_workflow_executions_input {
-
+    
     /// A builder for [`ListClosedWorkflowExecutionsInput`](crate::input::ListClosedWorkflowExecutionsInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2573,125 +1838,96 @@ pub mod list_closed_workflow_executions_input {
         }
         /// <p>The name of the domain that contains the workflow executions to list.</p>
         pub fn set_domain(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.domain = input;
-            self
+            self.domain = input; self
         }
-        /// <p>If specified, the workflow executions are included in the returned results based on whether their start times are within the range specified by this filter. Also, if this parameter is specified, the returned results are ordered by their start times.</p> <note>
-        /// <p> <code>startTimeFilter</code> and <code>closeTimeFilter</code> are mutually exclusive. You must specify one of these in a request but not both.</p>
+        /// <p>If specified, the workflow executions are included in the returned results based on whether their start times are within the range specified by this filter. Also, if this parameter is specified, the returned results are ordered by their start times.</p> <note> 
+        /// <p> <code>startTimeFilter</code> and <code>closeTimeFilter</code> are mutually exclusive. You must specify one of these in a request but not both.</p> 
         /// </note>
         pub fn start_time_filter(mut self, input: crate::model::ExecutionTimeFilter) -> Self {
             self.start_time_filter = Some(input);
             self
         }
-        /// <p>If specified, the workflow executions are included in the returned results based on whether their start times are within the range specified by this filter. Also, if this parameter is specified, the returned results are ordered by their start times.</p> <note>
-        /// <p> <code>startTimeFilter</code> and <code>closeTimeFilter</code> are mutually exclusive. You must specify one of these in a request but not both.</p>
+        /// <p>If specified, the workflow executions are included in the returned results based on whether their start times are within the range specified by this filter. Also, if this parameter is specified, the returned results are ordered by their start times.</p> <note> 
+        /// <p> <code>startTimeFilter</code> and <code>closeTimeFilter</code> are mutually exclusive. You must specify one of these in a request but not both.</p> 
         /// </note>
-        pub fn set_start_time_filter(
-            mut self,
-            input: std::option::Option<crate::model::ExecutionTimeFilter>,
-        ) -> Self {
-            self.start_time_filter = input;
-            self
+        pub fn set_start_time_filter(mut self, input: std::option::Option<crate::model::ExecutionTimeFilter>) -> Self {
+            self.start_time_filter = input; self
         }
-        /// <p>If specified, the workflow executions are included in the returned results based on whether their close times are within the range specified by this filter. Also, if this parameter is specified, the returned results are ordered by their close times.</p> <note>
-        /// <p> <code>startTimeFilter</code> and <code>closeTimeFilter</code> are mutually exclusive. You must specify one of these in a request but not both.</p>
+        /// <p>If specified, the workflow executions are included in the returned results based on whether their close times are within the range specified by this filter. Also, if this parameter is specified, the returned results are ordered by their close times.</p> <note> 
+        /// <p> <code>startTimeFilter</code> and <code>closeTimeFilter</code> are mutually exclusive. You must specify one of these in a request but not both.</p> 
         /// </note>
         pub fn close_time_filter(mut self, input: crate::model::ExecutionTimeFilter) -> Self {
             self.close_time_filter = Some(input);
             self
         }
-        /// <p>If specified, the workflow executions are included in the returned results based on whether their close times are within the range specified by this filter. Also, if this parameter is specified, the returned results are ordered by their close times.</p> <note>
-        /// <p> <code>startTimeFilter</code> and <code>closeTimeFilter</code> are mutually exclusive. You must specify one of these in a request but not both.</p>
+        /// <p>If specified, the workflow executions are included in the returned results based on whether their close times are within the range specified by this filter. Also, if this parameter is specified, the returned results are ordered by their close times.</p> <note> 
+        /// <p> <code>startTimeFilter</code> and <code>closeTimeFilter</code> are mutually exclusive. You must specify one of these in a request but not both.</p> 
         /// </note>
-        pub fn set_close_time_filter(
-            mut self,
-            input: std::option::Option<crate::model::ExecutionTimeFilter>,
-        ) -> Self {
-            self.close_time_filter = input;
-            self
+        pub fn set_close_time_filter(mut self, input: std::option::Option<crate::model::ExecutionTimeFilter>) -> Self {
+            self.close_time_filter = input; self
         }
-        /// <p>If specified, only workflow executions matching the workflow ID specified in the filter are returned.</p> <note>
-        /// <p> <code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p>
+        /// <p>If specified, only workflow executions matching the workflow ID specified in the filter are returned.</p> <note> 
+        /// <p> <code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p> 
         /// </note>
         pub fn execution_filter(mut self, input: crate::model::WorkflowExecutionFilter) -> Self {
             self.execution_filter = Some(input);
             self
         }
-        /// <p>If specified, only workflow executions matching the workflow ID specified in the filter are returned.</p> <note>
-        /// <p> <code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p>
+        /// <p>If specified, only workflow executions matching the workflow ID specified in the filter are returned.</p> <note> 
+        /// <p> <code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p> 
         /// </note>
-        pub fn set_execution_filter(
-            mut self,
-            input: std::option::Option<crate::model::WorkflowExecutionFilter>,
-        ) -> Self {
-            self.execution_filter = input;
-            self
+        pub fn set_execution_filter(mut self, input: std::option::Option<crate::model::WorkflowExecutionFilter>) -> Self {
+            self.execution_filter = input; self
         }
-        /// <p>If specified, only workflow executions that match this <i>close status</i> are listed. For example, if TERMINATED is specified, then only TERMINATED workflow executions are listed.</p> <note>
-        /// <p> <code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p>
+        /// <p>If specified, only workflow executions that match this <i>close status</i> are listed. For example, if TERMINATED is specified, then only TERMINATED workflow executions are listed.</p> <note> 
+        /// <p> <code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p> 
         /// </note>
         pub fn close_status_filter(mut self, input: crate::model::CloseStatusFilter) -> Self {
             self.close_status_filter = Some(input);
             self
         }
-        /// <p>If specified, only workflow executions that match this <i>close status</i> are listed. For example, if TERMINATED is specified, then only TERMINATED workflow executions are listed.</p> <note>
-        /// <p> <code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p>
+        /// <p>If specified, only workflow executions that match this <i>close status</i> are listed. For example, if TERMINATED is specified, then only TERMINATED workflow executions are listed.</p> <note> 
+        /// <p> <code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p> 
         /// </note>
-        pub fn set_close_status_filter(
-            mut self,
-            input: std::option::Option<crate::model::CloseStatusFilter>,
-        ) -> Self {
-            self.close_status_filter = input;
-            self
+        pub fn set_close_status_filter(mut self, input: std::option::Option<crate::model::CloseStatusFilter>) -> Self {
+            self.close_status_filter = input; self
         }
-        /// <p>If specified, only executions of the type specified in the filter are returned.</p> <note>
-        /// <p> <code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p>
+        /// <p>If specified, only executions of the type specified in the filter are returned.</p> <note> 
+        /// <p> <code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p> 
         /// </note>
         pub fn type_filter(mut self, input: crate::model::WorkflowTypeFilter) -> Self {
             self.type_filter = Some(input);
             self
         }
-        /// <p>If specified, only executions of the type specified in the filter are returned.</p> <note>
-        /// <p> <code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p>
+        /// <p>If specified, only executions of the type specified in the filter are returned.</p> <note> 
+        /// <p> <code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p> 
         /// </note>
-        pub fn set_type_filter(
-            mut self,
-            input: std::option::Option<crate::model::WorkflowTypeFilter>,
-        ) -> Self {
-            self.type_filter = input;
-            self
+        pub fn set_type_filter(mut self, input: std::option::Option<crate::model::WorkflowTypeFilter>) -> Self {
+            self.type_filter = input; self
         }
-        /// <p>If specified, only executions that have the matching tag are listed.</p> <note>
-        /// <p> <code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p>
+        /// <p>If specified, only executions that have the matching tag are listed.</p> <note> 
+        /// <p> <code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p> 
         /// </note>
         pub fn tag_filter(mut self, input: crate::model::TagFilter) -> Self {
             self.tag_filter = Some(input);
             self
         }
-        /// <p>If specified, only executions that have the matching tag are listed.</p> <note>
-        /// <p> <code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p>
+        /// <p>If specified, only executions that have the matching tag are listed.</p> <note> 
+        /// <p> <code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p> 
         /// </note>
-        pub fn set_tag_filter(
-            mut self,
-            input: std::option::Option<crate::model::TagFilter>,
-        ) -> Self {
-            self.tag_filter = input;
-            self
+        pub fn set_tag_filter(mut self, input: std::option::Option<crate::model::TagFilter>) -> Self {
+            self.tag_filter = input; self
         }
-        /// <p>If <code>NextPageToken</code> is returned there are more results available. The value of <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 60 seconds. Using an expired pagination token will return a <code>400</code> error: "<code>Specified token has exceeded its maximum lifetime</code>". </p>
+        /// <p>If <code>NextPageToken</code> is returned there are more results available. The value of <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 60 seconds. Using an expired pagination token will return a <code>400</code> error: "<code>Specified token has exceeded its maximum lifetime</code>". </p> 
         /// <p>The configured <code>maximumPageSize</code> determines how many results can be returned in a single call. </p>
         pub fn next_page_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_page_token = Some(input.into());
             self
         }
-        /// <p>If <code>NextPageToken</code> is returned there are more results available. The value of <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 60 seconds. Using an expired pagination token will return a <code>400</code> error: "<code>Specified token has exceeded its maximum lifetime</code>". </p>
+        /// <p>If <code>NextPageToken</code> is returned there are more results available. The value of <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 60 seconds. Using an expired pagination token will return a <code>400</code> error: "<code>Specified token has exceeded its maximum lifetime</code>". </p> 
         /// <p>The configured <code>maximumPageSize</code> determines how many results can be returned in a single call. </p>
-        pub fn set_next_page_token(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.next_page_token = input;
-            self
+        pub fn set_next_page_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_page_token = input; self
         }
         /// <p>The maximum number of results that are returned per call. Use <code>nextPageToken</code> to obtain further pages of results. </p>
         pub fn maximum_page_size(mut self, input: i32) -> Self {
@@ -2700,8 +1936,7 @@ pub mod list_closed_workflow_executions_input {
         }
         /// <p>The maximum number of results that are returned per call. Use <code>nextPageToken</code> to obtain further pages of results. </p>
         pub fn set_maximum_page_size(mut self, input: std::option::Option<i32>) -> Self {
-            self.maximum_page_size = input;
-            self
+            self.maximum_page_size = input; self
         }
         /// <p>When set to <code>true</code>, returns the results in reverse order. By default the results are returned in descending order of the start or the close time of the executions.</p>
         pub fn reverse_order(mut self, input: bool) -> Self {
@@ -2710,96 +1945,78 @@ pub mod list_closed_workflow_executions_input {
         }
         /// <p>When set to <code>true</code>, returns the results in reverse order. By default the results are returned in descending order of the start or the close time of the executions.</p>
         pub fn set_reverse_order(mut self, input: std::option::Option<bool>) -> Self {
-            self.reverse_order = input;
-            self
+            self.reverse_order = input; self
         }
         /// Consumes the builder and constructs a [`ListClosedWorkflowExecutionsInput`](crate::input::ListClosedWorkflowExecutionsInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::ListClosedWorkflowExecutionsInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::ListClosedWorkflowExecutionsInput {
-                domain: self.domain,
-                start_time_filter: self.start_time_filter,
-                close_time_filter: self.close_time_filter,
-                execution_filter: self.execution_filter,
-                close_status_filter: self.close_status_filter,
-                type_filter: self.type_filter,
-                tag_filter: self.tag_filter,
-                next_page_token: self.next_page_token,
-                maximum_page_size: self.maximum_page_size.unwrap_or_default(),
-                reverse_order: self.reverse_order.unwrap_or_default(),
-            })
+        pub fn build(self) -> Result<crate::input::ListClosedWorkflowExecutionsInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::ListClosedWorkflowExecutionsInput {
+                    domain: self.domain
+                    ,
+                    start_time_filter: self.start_time_filter
+                    ,
+                    close_time_filter: self.close_time_filter
+                    ,
+                    execution_filter: self.execution_filter
+                    ,
+                    close_status_filter: self.close_status_filter
+                    ,
+                    type_filter: self.type_filter
+                    ,
+                    tag_filter: self.tag_filter
+                    ,
+                    next_page_token: self.next_page_token
+                    ,
+                    maximum_page_size: self.maximum_page_size
+                        .unwrap_or_default()
+                    ,
+                    reverse_order: self.reverse_order
+                        .unwrap_or_default()
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl ListClosedWorkflowExecutionsInput {
     /// Consumes the builder and constructs an Operation<[`ListClosedWorkflowExecutions`](crate::operation::ListClosedWorkflowExecutions)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::ListClosedWorkflowExecutions,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::ListClosedWorkflowExecutions, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::ListClosedWorkflowExecutionsInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::ListClosedWorkflowExecutionsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::ListClosedWorkflowExecutionsInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::ListClosedWorkflowExecutionsInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.0");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.0",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "SimpleWorkflowService.ListClosedWorkflowExecutions",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "SimpleWorkflowService.ListClosedWorkflowExecutions"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -2808,56 +2025,33 @@ impl ListClosedWorkflowExecutionsInput {
             crate::operation_ser::serialize_operation_crate_operation_list_closed_workflow_executions(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::ListClosedWorkflowExecutions::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "ListClosedWorkflowExecutions",
-            "swf",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::ListClosedWorkflowExecutions::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("ListClosedWorkflowExecutions", "swf"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -2869,7 +2063,7 @@ impl ListClosedWorkflowExecutionsInput {
 
 /// See [`ListDomainsInput`](crate::input::ListDomainsInput).
 pub mod list_domains_input {
-
+    
     /// A builder for [`ListDomainsInput`](crate::input::ListDomainsInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2879,20 +2073,16 @@ pub mod list_domains_input {
         pub(crate) reverse_order: std::option::Option<bool>,
     }
     impl Builder {
-        /// <p>If <code>NextPageToken</code> is returned there are more results available. The value of <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 60 seconds. Using an expired pagination token will return a <code>400</code> error: "<code>Specified token has exceeded its maximum lifetime</code>". </p>
+        /// <p>If <code>NextPageToken</code> is returned there are more results available. The value of <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 60 seconds. Using an expired pagination token will return a <code>400</code> error: "<code>Specified token has exceeded its maximum lifetime</code>". </p> 
         /// <p>The configured <code>maximumPageSize</code> determines how many results can be returned in a single call. </p>
         pub fn next_page_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_page_token = Some(input.into());
             self
         }
-        /// <p>If <code>NextPageToken</code> is returned there are more results available. The value of <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 60 seconds. Using an expired pagination token will return a <code>400</code> error: "<code>Specified token has exceeded its maximum lifetime</code>". </p>
+        /// <p>If <code>NextPageToken</code> is returned there are more results available. The value of <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 60 seconds. Using an expired pagination token will return a <code>400</code> error: "<code>Specified token has exceeded its maximum lifetime</code>". </p> 
         /// <p>The configured <code>maximumPageSize</code> determines how many results can be returned in a single call. </p>
-        pub fn set_next_page_token(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.next_page_token = input;
-            self
+        pub fn set_next_page_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_page_token = input; self
         }
         /// <p>Specifies the registration status of the domains to list.</p>
         pub fn registration_status(mut self, input: crate::model::RegistrationStatus) -> Self {
@@ -2900,12 +2090,8 @@ pub mod list_domains_input {
             self
         }
         /// <p>Specifies the registration status of the domains to list.</p>
-        pub fn set_registration_status(
-            mut self,
-            input: std::option::Option<crate::model::RegistrationStatus>,
-        ) -> Self {
-            self.registration_status = input;
-            self
+        pub fn set_registration_status(mut self, input: std::option::Option<crate::model::RegistrationStatus>) -> Self {
+            self.registration_status = input; self
         }
         /// <p>The maximum number of results that are returned per call. Use <code>nextPageToken</code> to obtain further pages of results. </p>
         pub fn maximum_page_size(mut self, input: i32) -> Self {
@@ -2914,8 +2100,7 @@ pub mod list_domains_input {
         }
         /// <p>The maximum number of results that are returned per call. Use <code>nextPageToken</code> to obtain further pages of results. </p>
         pub fn set_maximum_page_size(mut self, input: std::option::Option<i32>) -> Self {
-            self.maximum_page_size = input;
-            self
+            self.maximum_page_size = input; self
         }
         /// <p>When set to <code>true</code>, returns the results in reverse order. By default, the results are returned in ascending alphabetical order by <code>name</code> of the domains.</p>
         pub fn reverse_order(mut self, input: bool) -> Self {
@@ -2924,146 +2109,101 @@ pub mod list_domains_input {
         }
         /// <p>When set to <code>true</code>, returns the results in reverse order. By default, the results are returned in ascending alphabetical order by <code>name</code> of the domains.</p>
         pub fn set_reverse_order(mut self, input: std::option::Option<bool>) -> Self {
-            self.reverse_order = input;
-            self
+            self.reverse_order = input; self
         }
         /// Consumes the builder and constructs a [`ListDomainsInput`](crate::input::ListDomainsInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::ListDomainsInput, aws_smithy_http::operation::error::BuildError>
-        {
-            Ok(crate::input::ListDomainsInput {
-                next_page_token: self.next_page_token,
-                registration_status: self.registration_status,
-                maximum_page_size: self.maximum_page_size.unwrap_or_default(),
-                reverse_order: self.reverse_order.unwrap_or_default(),
-            })
+        pub fn build(self) -> Result<crate::input::ListDomainsInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::ListDomainsInput {
+                    next_page_token: self.next_page_token
+                    ,
+                    registration_status: self.registration_status
+                    ,
+                    maximum_page_size: self.maximum_page_size
+                        .unwrap_or_default()
+                    ,
+                    reverse_order: self.reverse_order
+                        .unwrap_or_default()
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl ListDomainsInput {
     /// Consumes the builder and constructs an Operation<[`ListDomains`](crate::operation::ListDomains)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::ListDomains,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::ListDomains, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::ListDomainsInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::ListDomainsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::ListDomainsInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::ListDomainsInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.0");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.0",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "SimpleWorkflowService.ListDomains",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "SimpleWorkflowService.ListDomains"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_list_domains(&self)?,
+            crate::operation_ser::serialize_operation_crate_operation_list_domains(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::ListDomains::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "ListDomains",
-            "swf",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::ListDomains::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("ListDomains", "swf"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -3075,7 +2215,7 @@ impl ListDomainsInput {
 
 /// See [`ListOpenWorkflowExecutionsInput`](crate::input::ListOpenWorkflowExecutionsInput).
 pub mod list_open_workflow_executions_input {
-
+    
     /// A builder for [`ListOpenWorkflowExecutionsInput`](crate::input::ListOpenWorkflowExecutionsInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3096,8 +2236,7 @@ pub mod list_open_workflow_executions_input {
         }
         /// <p>The name of the domain that contains the workflow executions to list.</p>
         pub fn set_domain(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.domain = input;
-            self
+            self.domain = input; self
         }
         /// <p>Workflow executions are included in the returned results based on whether their start times are within the range specified by this filter.</p>
         pub fn start_time_filter(mut self, input: crate::model::ExecutionTimeFilter) -> Self {
@@ -3105,61 +2244,45 @@ pub mod list_open_workflow_executions_input {
             self
         }
         /// <p>Workflow executions are included in the returned results based on whether their start times are within the range specified by this filter.</p>
-        pub fn set_start_time_filter(
-            mut self,
-            input: std::option::Option<crate::model::ExecutionTimeFilter>,
-        ) -> Self {
-            self.start_time_filter = input;
-            self
+        pub fn set_start_time_filter(mut self, input: std::option::Option<crate::model::ExecutionTimeFilter>) -> Self {
+            self.start_time_filter = input; self
         }
-        /// <p>If specified, only executions of the type specified in the filter are returned.</p> <note>
-        /// <p> <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p>
+        /// <p>If specified, only executions of the type specified in the filter are returned.</p> <note> 
+        /// <p> <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p> 
         /// </note>
         pub fn type_filter(mut self, input: crate::model::WorkflowTypeFilter) -> Self {
             self.type_filter = Some(input);
             self
         }
-        /// <p>If specified, only executions of the type specified in the filter are returned.</p> <note>
-        /// <p> <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p>
+        /// <p>If specified, only executions of the type specified in the filter are returned.</p> <note> 
+        /// <p> <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p> 
         /// </note>
-        pub fn set_type_filter(
-            mut self,
-            input: std::option::Option<crate::model::WorkflowTypeFilter>,
-        ) -> Self {
-            self.type_filter = input;
-            self
+        pub fn set_type_filter(mut self, input: std::option::Option<crate::model::WorkflowTypeFilter>) -> Self {
+            self.type_filter = input; self
         }
-        /// <p>If specified, only executions that have the matching tag are listed.</p> <note>
-        /// <p> <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p>
+        /// <p>If specified, only executions that have the matching tag are listed.</p> <note> 
+        /// <p> <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p> 
         /// </note>
         pub fn tag_filter(mut self, input: crate::model::TagFilter) -> Self {
             self.tag_filter = Some(input);
             self
         }
-        /// <p>If specified, only executions that have the matching tag are listed.</p> <note>
-        /// <p> <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p>
+        /// <p>If specified, only executions that have the matching tag are listed.</p> <note> 
+        /// <p> <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p> 
         /// </note>
-        pub fn set_tag_filter(
-            mut self,
-            input: std::option::Option<crate::model::TagFilter>,
-        ) -> Self {
-            self.tag_filter = input;
-            self
+        pub fn set_tag_filter(mut self, input: std::option::Option<crate::model::TagFilter>) -> Self {
+            self.tag_filter = input; self
         }
-        /// <p>If <code>NextPageToken</code> is returned there are more results available. The value of <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 60 seconds. Using an expired pagination token will return a <code>400</code> error: "<code>Specified token has exceeded its maximum lifetime</code>". </p>
+        /// <p>If <code>NextPageToken</code> is returned there are more results available. The value of <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 60 seconds. Using an expired pagination token will return a <code>400</code> error: "<code>Specified token has exceeded its maximum lifetime</code>". </p> 
         /// <p>The configured <code>maximumPageSize</code> determines how many results can be returned in a single call. </p>
         pub fn next_page_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_page_token = Some(input.into());
             self
         }
-        /// <p>If <code>NextPageToken</code> is returned there are more results available. The value of <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 60 seconds. Using an expired pagination token will return a <code>400</code> error: "<code>Specified token has exceeded its maximum lifetime</code>". </p>
+        /// <p>If <code>NextPageToken</code> is returned there are more results available. The value of <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 60 seconds. Using an expired pagination token will return a <code>400</code> error: "<code>Specified token has exceeded its maximum lifetime</code>". </p> 
         /// <p>The configured <code>maximumPageSize</code> determines how many results can be returned in a single call. </p>
-        pub fn set_next_page_token(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.next_page_token = input;
-            self
+        pub fn set_next_page_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_page_token = input; self
         }
         /// <p>The maximum number of results that are returned per call. Use <code>nextPageToken</code> to obtain further pages of results. </p>
         pub fn maximum_page_size(mut self, input: i32) -> Self {
@@ -3168,8 +2291,7 @@ pub mod list_open_workflow_executions_input {
         }
         /// <p>The maximum number of results that are returned per call. Use <code>nextPageToken</code> to obtain further pages of results. </p>
         pub fn set_maximum_page_size(mut self, input: std::option::Option<i32>) -> Self {
-            self.maximum_page_size = input;
-            self
+            self.maximum_page_size = input; self
         }
         /// <p>When set to <code>true</code>, returns the results in reverse order. By default the results are returned in descending order of the start time of the executions.</p>
         pub fn reverse_order(mut self, input: bool) -> Self {
@@ -3178,111 +2300,87 @@ pub mod list_open_workflow_executions_input {
         }
         /// <p>When set to <code>true</code>, returns the results in reverse order. By default the results are returned in descending order of the start time of the executions.</p>
         pub fn set_reverse_order(mut self, input: std::option::Option<bool>) -> Self {
-            self.reverse_order = input;
-            self
+            self.reverse_order = input; self
         }
-        /// <p>If specified, only workflow executions matching the workflow ID specified in the filter are returned.</p> <note>
-        /// <p> <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p>
+        /// <p>If specified, only workflow executions matching the workflow ID specified in the filter are returned.</p> <note> 
+        /// <p> <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p> 
         /// </note>
         pub fn execution_filter(mut self, input: crate::model::WorkflowExecutionFilter) -> Self {
             self.execution_filter = Some(input);
             self
         }
-        /// <p>If specified, only workflow executions matching the workflow ID specified in the filter are returned.</p> <note>
-        /// <p> <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p>
+        /// <p>If specified, only workflow executions matching the workflow ID specified in the filter are returned.</p> <note> 
+        /// <p> <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p> 
         /// </note>
-        pub fn set_execution_filter(
-            mut self,
-            input: std::option::Option<crate::model::WorkflowExecutionFilter>,
-        ) -> Self {
-            self.execution_filter = input;
-            self
+        pub fn set_execution_filter(mut self, input: std::option::Option<crate::model::WorkflowExecutionFilter>) -> Self {
+            self.execution_filter = input; self
         }
         /// Consumes the builder and constructs a [`ListOpenWorkflowExecutionsInput`](crate::input::ListOpenWorkflowExecutionsInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::ListOpenWorkflowExecutionsInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::ListOpenWorkflowExecutionsInput {
-                domain: self.domain,
-                start_time_filter: self.start_time_filter,
-                type_filter: self.type_filter,
-                tag_filter: self.tag_filter,
-                next_page_token: self.next_page_token,
-                maximum_page_size: self.maximum_page_size.unwrap_or_default(),
-                reverse_order: self.reverse_order.unwrap_or_default(),
-                execution_filter: self.execution_filter,
-            })
+        pub fn build(self) -> Result<crate::input::ListOpenWorkflowExecutionsInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::ListOpenWorkflowExecutionsInput {
+                    domain: self.domain
+                    ,
+                    start_time_filter: self.start_time_filter
+                    ,
+                    type_filter: self.type_filter
+                    ,
+                    tag_filter: self.tag_filter
+                    ,
+                    next_page_token: self.next_page_token
+                    ,
+                    maximum_page_size: self.maximum_page_size
+                        .unwrap_or_default()
+                    ,
+                    reverse_order: self.reverse_order
+                        .unwrap_or_default()
+                    ,
+                    execution_filter: self.execution_filter
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl ListOpenWorkflowExecutionsInput {
     /// Consumes the builder and constructs an Operation<[`ListOpenWorkflowExecutions`](crate::operation::ListOpenWorkflowExecutions)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::ListOpenWorkflowExecutions,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::ListOpenWorkflowExecutions, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::ListOpenWorkflowExecutionsInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::ListOpenWorkflowExecutionsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::ListOpenWorkflowExecutionsInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::ListOpenWorkflowExecutionsInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.0");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.0",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "SimpleWorkflowService.ListOpenWorkflowExecutions",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "SimpleWorkflowService.ListOpenWorkflowExecutions"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -3291,56 +2389,33 @@ impl ListOpenWorkflowExecutionsInput {
             crate::operation_ser::serialize_operation_crate_operation_list_open_workflow_executions(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::ListOpenWorkflowExecutions::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "ListOpenWorkflowExecutions",
-            "swf",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::ListOpenWorkflowExecutions::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("ListOpenWorkflowExecutions", "swf"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -3352,7 +2427,7 @@ impl ListOpenWorkflowExecutionsInput {
 
 /// See [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
 pub mod list_tags_for_resource_input {
-
+    
     /// A builder for [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3366,147 +2441,93 @@ pub mod list_tags_for_resource_input {
         }
         /// <p>The Amazon Resource Name (ARN) for the Amazon SWF domain.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.resource_arn = input;
-            self
+            self.resource_arn = input; self
         }
         /// Consumes the builder and constructs a [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::ListTagsForResourceInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::ListTagsForResourceInput {
-                resource_arn: self.resource_arn,
-            })
+        pub fn build(self) -> Result<crate::input::ListTagsForResourceInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::ListTagsForResourceInput {
+                    resource_arn: self.resource_arn
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl ListTagsForResourceInput {
     /// Consumes the builder and constructs an Operation<[`ListTagsForResource`](crate::operation::ListTagsForResource)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::ListTagsForResource,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::ListTagsForResource, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::ListTagsForResourceInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::ListTagsForResourceInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::ListTagsForResourceInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::ListTagsForResourceInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.0");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.0",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "SimpleWorkflowService.ListTagsForResource",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "SimpleWorkflowService.ListTagsForResource"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_list_tags_for_resource(
-                &self,
-            )?,
+            crate::operation_ser::serialize_operation_crate_operation_list_tags_for_resource(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::ListTagsForResource::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "ListTagsForResource",
-            "swf",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::ListTagsForResource::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("ListTagsForResource", "swf"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -3518,7 +2539,7 @@ impl ListTagsForResourceInput {
 
 /// See [`ListWorkflowTypesInput`](crate::input::ListWorkflowTypesInput).
 pub mod list_workflow_types_input {
-
+    
     /// A builder for [`ListWorkflowTypesInput`](crate::input::ListWorkflowTypesInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3537,8 +2558,7 @@ pub mod list_workflow_types_input {
         }
         /// <p>The name of the domain in which the workflow types have been registered.</p>
         pub fn set_domain(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.domain = input;
-            self
+            self.domain = input; self
         }
         /// <p>If specified, lists the workflow type with this name.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3547,8 +2567,7 @@ pub mod list_workflow_types_input {
         }
         /// <p>If specified, lists the workflow type with this name.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>Specifies the registration status of the workflow types to list.</p>
         pub fn registration_status(mut self, input: crate::model::RegistrationStatus) -> Self {
@@ -3556,27 +2575,19 @@ pub mod list_workflow_types_input {
             self
         }
         /// <p>Specifies the registration status of the workflow types to list.</p>
-        pub fn set_registration_status(
-            mut self,
-            input: std::option::Option<crate::model::RegistrationStatus>,
-        ) -> Self {
-            self.registration_status = input;
-            self
+        pub fn set_registration_status(mut self, input: std::option::Option<crate::model::RegistrationStatus>) -> Self {
+            self.registration_status = input; self
         }
-        /// <p>If <code>NextPageToken</code> is returned there are more results available. The value of <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 60 seconds. Using an expired pagination token will return a <code>400</code> error: "<code>Specified token has exceeded its maximum lifetime</code>". </p>
+        /// <p>If <code>NextPageToken</code> is returned there are more results available. The value of <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 60 seconds. Using an expired pagination token will return a <code>400</code> error: "<code>Specified token has exceeded its maximum lifetime</code>". </p> 
         /// <p>The configured <code>maximumPageSize</code> determines how many results can be returned in a single call. </p>
         pub fn next_page_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_page_token = Some(input.into());
             self
         }
-        /// <p>If <code>NextPageToken</code> is returned there are more results available. The value of <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 60 seconds. Using an expired pagination token will return a <code>400</code> error: "<code>Specified token has exceeded its maximum lifetime</code>". </p>
+        /// <p>If <code>NextPageToken</code> is returned there are more results available. The value of <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 60 seconds. Using an expired pagination token will return a <code>400</code> error: "<code>Specified token has exceeded its maximum lifetime</code>". </p> 
         /// <p>The configured <code>maximumPageSize</code> determines how many results can be returned in a single call. </p>
-        pub fn set_next_page_token(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.next_page_token = input;
-            self
+        pub fn set_next_page_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_page_token = input; self
         }
         /// <p>The maximum number of results that are returned per call. Use <code>nextPageToken</code> to obtain further pages of results. </p>
         pub fn maximum_page_size(mut self, input: i32) -> Self {
@@ -3585,8 +2596,7 @@ pub mod list_workflow_types_input {
         }
         /// <p>The maximum number of results that are returned per call. Use <code>nextPageToken</code> to obtain further pages of results. </p>
         pub fn set_maximum_page_size(mut self, input: std::option::Option<i32>) -> Self {
-            self.maximum_page_size = input;
-            self
+            self.maximum_page_size = input; self
         }
         /// <p>When set to <code>true</code>, returns the results in reverse order. By default the results are returned in ascending alphabetical order of the <code>name</code> of the workflow types.</p>
         pub fn reverse_order(mut self, input: bool) -> Self {
@@ -3595,150 +2605,105 @@ pub mod list_workflow_types_input {
         }
         /// <p>When set to <code>true</code>, returns the results in reverse order. By default the results are returned in ascending alphabetical order of the <code>name</code> of the workflow types.</p>
         pub fn set_reverse_order(mut self, input: std::option::Option<bool>) -> Self {
-            self.reverse_order = input;
-            self
+            self.reverse_order = input; self
         }
         /// Consumes the builder and constructs a [`ListWorkflowTypesInput`](crate::input::ListWorkflowTypesInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::ListWorkflowTypesInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::ListWorkflowTypesInput {
-                domain: self.domain,
-                name: self.name,
-                registration_status: self.registration_status,
-                next_page_token: self.next_page_token,
-                maximum_page_size: self.maximum_page_size.unwrap_or_default(),
-                reverse_order: self.reverse_order.unwrap_or_default(),
-            })
+        pub fn build(self) -> Result<crate::input::ListWorkflowTypesInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::ListWorkflowTypesInput {
+                    domain: self.domain
+                    ,
+                    name: self.name
+                    ,
+                    registration_status: self.registration_status
+                    ,
+                    next_page_token: self.next_page_token
+                    ,
+                    maximum_page_size: self.maximum_page_size
+                        .unwrap_or_default()
+                    ,
+                    reverse_order: self.reverse_order
+                        .unwrap_or_default()
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl ListWorkflowTypesInput {
     /// Consumes the builder and constructs an Operation<[`ListWorkflowTypes`](crate::operation::ListWorkflowTypes)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::ListWorkflowTypes,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::ListWorkflowTypes, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::ListWorkflowTypesInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::ListWorkflowTypesInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::ListWorkflowTypesInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::ListWorkflowTypesInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.0");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.0",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "SimpleWorkflowService.ListWorkflowTypes",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "SimpleWorkflowService.ListWorkflowTypes"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_list_workflow_types(&self)?,
+            crate::operation_ser::serialize_operation_crate_operation_list_workflow_types(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::ListWorkflowTypes::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "ListWorkflowTypes",
-            "swf",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::ListWorkflowTypes::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("ListWorkflowTypes", "swf"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -3750,7 +2715,7 @@ impl ListWorkflowTypesInput {
 
 /// See [`PollForActivityTaskInput`](crate::input::PollForActivityTaskInput).
 pub mod poll_for_activity_task_input {
-
+    
     /// A builder for [`PollForActivityTaskInput`](crate::input::PollForActivityTaskInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3766,20 +2731,18 @@ pub mod poll_for_activity_task_input {
         }
         /// <p>The name of the domain that contains the task lists being polled.</p>
         pub fn set_domain(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.domain = input;
-            self
+            self.domain = input; self
         }
-        /// <p>Specifies the task list to poll for activity tasks.</p>
+        /// <p>Specifies the task list to poll for activity tasks.</p> 
         /// <p>The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not <i>be</i> the literal string <code>arn</code>.</p>
         pub fn task_list(mut self, input: crate::model::TaskList) -> Self {
             self.task_list = Some(input);
             self
         }
-        /// <p>Specifies the task list to poll for activity tasks.</p>
+        /// <p>Specifies the task list to poll for activity tasks.</p> 
         /// <p>The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not <i>be</i> the literal string <code>arn</code>.</p>
         pub fn set_task_list(mut self, input: std::option::Option<crate::model::TaskList>) -> Self {
-            self.task_list = input;
-            self
+            self.task_list = input; self
         }
         /// <p>Identity of the worker making the request, recorded in the <code>ActivityTaskStarted</code> event in the workflow history. This enables diagnostic tracing when problems arise. The form of this identity is user defined.</p>
         pub fn identity(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3788,149 +2751,97 @@ pub mod poll_for_activity_task_input {
         }
         /// <p>Identity of the worker making the request, recorded in the <code>ActivityTaskStarted</code> event in the workflow history. This enables diagnostic tracing when problems arise. The form of this identity is user defined.</p>
         pub fn set_identity(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.identity = input;
-            self
+            self.identity = input; self
         }
         /// Consumes the builder and constructs a [`PollForActivityTaskInput`](crate::input::PollForActivityTaskInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::PollForActivityTaskInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::PollForActivityTaskInput {
-                domain: self.domain,
-                task_list: self.task_list,
-                identity: self.identity,
-            })
+        pub fn build(self) -> Result<crate::input::PollForActivityTaskInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::PollForActivityTaskInput {
+                    domain: self.domain
+                    ,
+                    task_list: self.task_list
+                    ,
+                    identity: self.identity
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl PollForActivityTaskInput {
     /// Consumes the builder and constructs an Operation<[`PollForActivityTask`](crate::operation::PollForActivityTask)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::PollForActivityTask,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::PollForActivityTask, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::PollForActivityTaskInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::PollForActivityTaskInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::PollForActivityTaskInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::PollForActivityTaskInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.0");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.0",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "SimpleWorkflowService.PollForActivityTask",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "SimpleWorkflowService.PollForActivityTask"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_poll_for_activity_task(
-                &self,
-            )?,
+            crate::operation_ser::serialize_operation_crate_operation_poll_for_activity_task(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::PollForActivityTask::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "PollForActivityTask",
-            "swf",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::PollForActivityTask::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("PollForActivityTask", "swf"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -3942,7 +2853,7 @@ impl PollForActivityTaskInput {
 
 /// See [`PollForDecisionTaskInput`](crate::input::PollForDecisionTaskInput).
 pub mod poll_for_decision_task_input {
-
+    
     /// A builder for [`PollForDecisionTaskInput`](crate::input::PollForDecisionTaskInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3961,20 +2872,18 @@ pub mod poll_for_decision_task_input {
         }
         /// <p>The name of the domain containing the task lists to poll.</p>
         pub fn set_domain(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.domain = input;
-            self
+            self.domain = input; self
         }
-        /// <p>Specifies the task list to poll for decision tasks.</p>
+        /// <p>Specifies the task list to poll for decision tasks.</p> 
         /// <p>The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not <i>be</i> the literal string <code>arn</code>.</p>
         pub fn task_list(mut self, input: crate::model::TaskList) -> Self {
             self.task_list = Some(input);
             self
         }
-        /// <p>Specifies the task list to poll for decision tasks.</p>
+        /// <p>Specifies the task list to poll for decision tasks.</p> 
         /// <p>The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not <i>be</i> the literal string <code>arn</code>.</p>
         pub fn set_task_list(mut self, input: std::option::Option<crate::model::TaskList>) -> Self {
-            self.task_list = input;
-            self
+            self.task_list = input; self
         }
         /// <p>Identity of the decider making the request, which is recorded in the DecisionTaskStarted event in the workflow history. This enables diagnostic tracing when problems arise. The form of this identity is user defined.</p>
         pub fn identity(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3983,39 +2892,33 @@ pub mod poll_for_decision_task_input {
         }
         /// <p>Identity of the decider making the request, which is recorded in the DecisionTaskStarted event in the workflow history. This enables diagnostic tracing when problems arise. The form of this identity is user defined.</p>
         pub fn set_identity(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.identity = input;
-            self
+            self.identity = input; self
         }
-        /// <p>If <code>NextPageToken</code> is returned there are more results available. The value of <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 60 seconds. Using an expired pagination token will return a <code>400</code> error: "<code>Specified token has exceeded its maximum lifetime</code>". </p>
-        /// <p>The configured <code>maximumPageSize</code> determines how many results can be returned in a single call. </p> <note>
-        /// <p>The <code>nextPageToken</code> returned by this action cannot be used with <code>GetWorkflowExecutionHistory</code> to get the next page. You must call <code>PollForDecisionTask</code> again (with the <code>nextPageToken</code>) to retrieve the next page of history records. Calling <code>PollForDecisionTask</code> with a <code>nextPageToken</code> doesn't return a new decision task.</p>
+        /// <p>If <code>NextPageToken</code> is returned there are more results available. The value of <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 60 seconds. Using an expired pagination token will return a <code>400</code> error: "<code>Specified token has exceeded its maximum lifetime</code>". </p> 
+        /// <p>The configured <code>maximumPageSize</code> determines how many results can be returned in a single call. </p> <note> 
+        /// <p>The <code>nextPageToken</code> returned by this action cannot be used with <code>GetWorkflowExecutionHistory</code> to get the next page. You must call <code>PollForDecisionTask</code> again (with the <code>nextPageToken</code>) to retrieve the next page of history records. Calling <code>PollForDecisionTask</code> with a <code>nextPageToken</code> doesn't return a new decision task.</p> 
         /// </note>
         pub fn next_page_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_page_token = Some(input.into());
             self
         }
-        /// <p>If <code>NextPageToken</code> is returned there are more results available. The value of <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 60 seconds. Using an expired pagination token will return a <code>400</code> error: "<code>Specified token has exceeded its maximum lifetime</code>". </p>
-        /// <p>The configured <code>maximumPageSize</code> determines how many results can be returned in a single call. </p> <note>
-        /// <p>The <code>nextPageToken</code> returned by this action cannot be used with <code>GetWorkflowExecutionHistory</code> to get the next page. You must call <code>PollForDecisionTask</code> again (with the <code>nextPageToken</code>) to retrieve the next page of history records. Calling <code>PollForDecisionTask</code> with a <code>nextPageToken</code> doesn't return a new decision task.</p>
+        /// <p>If <code>NextPageToken</code> is returned there are more results available. The value of <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 60 seconds. Using an expired pagination token will return a <code>400</code> error: "<code>Specified token has exceeded its maximum lifetime</code>". </p> 
+        /// <p>The configured <code>maximumPageSize</code> determines how many results can be returned in a single call. </p> <note> 
+        /// <p>The <code>nextPageToken</code> returned by this action cannot be used with <code>GetWorkflowExecutionHistory</code> to get the next page. You must call <code>PollForDecisionTask</code> again (with the <code>nextPageToken</code>) to retrieve the next page of history records. Calling <code>PollForDecisionTask</code> with a <code>nextPageToken</code> doesn't return a new decision task.</p> 
         /// </note>
-        pub fn set_next_page_token(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.next_page_token = input;
-            self
+        pub fn set_next_page_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_page_token = input; self
         }
-        /// <p>The maximum number of results that are returned per call. Use <code>nextPageToken</code> to obtain further pages of results. </p>
+        /// <p>The maximum number of results that are returned per call. Use <code>nextPageToken</code> to obtain further pages of results. </p> 
         /// <p>This is an upper limit only; the actual number of results returned per call may be fewer than the specified maximum.</p>
         pub fn maximum_page_size(mut self, input: i32) -> Self {
             self.maximum_page_size = Some(input);
             self
         }
-        /// <p>The maximum number of results that are returned per call. Use <code>nextPageToken</code> to obtain further pages of results. </p>
+        /// <p>The maximum number of results that are returned per call. Use <code>nextPageToken</code> to obtain further pages of results. </p> 
         /// <p>This is an upper limit only; the actual number of results returned per call may be fewer than the specified maximum.</p>
         pub fn set_maximum_page_size(mut self, input: std::option::Option<i32>) -> Self {
-            self.maximum_page_size = input;
-            self
+            self.maximum_page_size = input; self
         }
         /// <p>When set to <code>true</code>, returns the events in reverse order. By default the results are returned in ascending order of the <code>eventTimestamp</code> of the events.</p>
         pub fn reverse_order(mut self, input: bool) -> Self {
@@ -4024,152 +2927,105 @@ pub mod poll_for_decision_task_input {
         }
         /// <p>When set to <code>true</code>, returns the events in reverse order. By default the results are returned in ascending order of the <code>eventTimestamp</code> of the events.</p>
         pub fn set_reverse_order(mut self, input: std::option::Option<bool>) -> Self {
-            self.reverse_order = input;
-            self
+            self.reverse_order = input; self
         }
         /// Consumes the builder and constructs a [`PollForDecisionTaskInput`](crate::input::PollForDecisionTaskInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::PollForDecisionTaskInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::PollForDecisionTaskInput {
-                domain: self.domain,
-                task_list: self.task_list,
-                identity: self.identity,
-                next_page_token: self.next_page_token,
-                maximum_page_size: self.maximum_page_size.unwrap_or_default(),
-                reverse_order: self.reverse_order.unwrap_or_default(),
-            })
+        pub fn build(self) -> Result<crate::input::PollForDecisionTaskInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::PollForDecisionTaskInput {
+                    domain: self.domain
+                    ,
+                    task_list: self.task_list
+                    ,
+                    identity: self.identity
+                    ,
+                    next_page_token: self.next_page_token
+                    ,
+                    maximum_page_size: self.maximum_page_size
+                        .unwrap_or_default()
+                    ,
+                    reverse_order: self.reverse_order
+                        .unwrap_or_default()
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl PollForDecisionTaskInput {
     /// Consumes the builder and constructs an Operation<[`PollForDecisionTask`](crate::operation::PollForDecisionTask)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::PollForDecisionTask,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::PollForDecisionTask, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::PollForDecisionTaskInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::PollForDecisionTaskInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::PollForDecisionTaskInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::PollForDecisionTaskInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.0");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.0",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "SimpleWorkflowService.PollForDecisionTask",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "SimpleWorkflowService.PollForDecisionTask"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_poll_for_decision_task(
-                &self,
-            )?,
+            crate::operation_ser::serialize_operation_crate_operation_poll_for_decision_task(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::PollForDecisionTask::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "PollForDecisionTask",
-            "swf",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::PollForDecisionTask::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("PollForDecisionTask", "swf"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -4181,7 +3037,7 @@ impl PollForDecisionTaskInput {
 
 /// See [`RecordActivityTaskHeartbeatInput`](crate::input::RecordActivityTaskHeartbeatInput).
 pub mod record_activity_task_heartbeat_input {
-
+    
     /// A builder for [`RecordActivityTaskHeartbeatInput`](crate::input::RecordActivityTaskHeartbeatInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4189,19 +3045,18 @@ pub mod record_activity_task_heartbeat_input {
         pub(crate) details: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The <code>taskToken</code> of the <code>ActivityTask</code>.</p> <important>
-        /// <p> <code>taskToken</code> is generated by the service and should be treated as an opaque value. If the task is passed to another process, its <code>taskToken</code> must also be passed. This enables it to provide its progress and respond with results. </p>
+        /// <p>The <code>taskToken</code> of the <code>ActivityTask</code>.</p> <important> 
+        /// <p> <code>taskToken</code> is generated by the service and should be treated as an opaque value. If the task is passed to another process, its <code>taskToken</code> must also be passed. This enables it to provide its progress and respond with results. </p> 
         /// </important>
         pub fn task_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.task_token = Some(input.into());
             self
         }
-        /// <p>The <code>taskToken</code> of the <code>ActivityTask</code>.</p> <important>
-        /// <p> <code>taskToken</code> is generated by the service and should be treated as an opaque value. If the task is passed to another process, its <code>taskToken</code> must also be passed. This enables it to provide its progress and respond with results. </p>
+        /// <p>The <code>taskToken</code> of the <code>ActivityTask</code>.</p> <important> 
+        /// <p> <code>taskToken</code> is generated by the service and should be treated as an opaque value. If the task is passed to another process, its <code>taskToken</code> must also be passed. This enables it to provide its progress and respond with results. </p> 
         /// </important>
         pub fn set_task_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.task_token = input;
-            self
+            self.task_token = input; self
         }
         /// <p>If specified, contains details about the progress of the task.</p>
         pub fn details(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4210,88 +3065,60 @@ pub mod record_activity_task_heartbeat_input {
         }
         /// <p>If specified, contains details about the progress of the task.</p>
         pub fn set_details(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.details = input;
-            self
+            self.details = input; self
         }
         /// Consumes the builder and constructs a [`RecordActivityTaskHeartbeatInput`](crate::input::RecordActivityTaskHeartbeatInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::RecordActivityTaskHeartbeatInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::RecordActivityTaskHeartbeatInput {
-                task_token: self.task_token,
-                details: self.details,
-            })
+        pub fn build(self) -> Result<crate::input::RecordActivityTaskHeartbeatInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::RecordActivityTaskHeartbeatInput {
+                    task_token: self.task_token
+                    ,
+                    details: self.details
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl RecordActivityTaskHeartbeatInput {
     /// Consumes the builder and constructs an Operation<[`RecordActivityTaskHeartbeat`](crate::operation::RecordActivityTaskHeartbeat)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::RecordActivityTaskHeartbeat,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::RecordActivityTaskHeartbeat, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::RecordActivityTaskHeartbeatInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::RecordActivityTaskHeartbeatInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::RecordActivityTaskHeartbeatInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::RecordActivityTaskHeartbeatInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.0");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.0",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "SimpleWorkflowService.RecordActivityTaskHeartbeat",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "SimpleWorkflowService.RecordActivityTaskHeartbeat"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -4300,56 +3127,33 @@ impl RecordActivityTaskHeartbeatInput {
             crate::operation_ser::serialize_operation_crate_operation_record_activity_task_heartbeat(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::RecordActivityTaskHeartbeat::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "RecordActivityTaskHeartbeat",
-            "swf",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::RecordActivityTaskHeartbeat::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("RecordActivityTaskHeartbeat", "swf"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -4361,7 +3165,7 @@ impl RecordActivityTaskHeartbeatInput {
 
 /// See [`RegisterActivityTypeInput`](crate::input::RegisterActivityTypeInput).
 pub mod register_activity_type_input {
-
+    
     /// A builder for [`RegisterActivityTypeInput`](crate::input::RegisterActivityTypeInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4384,36 +3188,33 @@ pub mod register_activity_type_input {
         }
         /// <p>The name of the domain in which this activity is to be registered.</p>
         pub fn set_domain(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.domain = input;
-            self
+            self.domain = input; self
         }
-        /// <p>The name of the activity type within the domain.</p>
+        /// <p>The name of the activity type within the domain.</p> 
         /// <p>The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not <i>be</i> the literal string <code>arn</code>.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
         }
-        /// <p>The name of the activity type within the domain.</p>
+        /// <p>The name of the activity type within the domain.</p> 
         /// <p>The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not <i>be</i> the literal string <code>arn</code>.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
-        /// <p>The version of the activity type.</p> <note>
-        /// <p>The activity type consists of the name and version, the combination of which must be unique within the domain.</p>
-        /// </note>
+        /// <p>The version of the activity type.</p> <note> 
+        /// <p>The activity type consists of the name and version, the combination of which must be unique within the domain.</p> 
+        /// </note> 
         /// <p>The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not <i>be</i> the literal string <code>arn</code>.</p>
         pub fn version(mut self, input: impl Into<std::string::String>) -> Self {
             self.version = Some(input.into());
             self
         }
-        /// <p>The version of the activity type.</p> <note>
-        /// <p>The activity type consists of the name and version, the combination of which must be unique within the domain.</p>
-        /// </note>
+        /// <p>The version of the activity type.</p> <note> 
+        /// <p>The activity type consists of the name and version, the combination of which must be unique within the domain.</p> 
+        /// </note> 
         /// <p>The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not <i>be</i> the literal string <code>arn</code>.</p>
         pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.version = input;
-            self
+            self.version = input; self
         }
         /// <p>A textual description of the activity type.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4422,44 +3223,29 @@ pub mod register_activity_type_input {
         }
         /// <p>A textual description of the activity type.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
-        /// <p>If set, specifies the default maximum duration that a worker can take to process tasks of this activity type. This default can be overridden when scheduling an activity task using the <code>ScheduleActivityTask</code> <code>Decision</code>.</p>
+        /// <p>If set, specifies the default maximum duration that a worker can take to process tasks of this activity type. This default can be overridden when scheduling an activity task using the <code>ScheduleActivityTask</code> <code>Decision</code>.</p> 
         /// <p>The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p>
-        pub fn default_task_start_to_close_timeout(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn default_task_start_to_close_timeout(mut self, input: impl Into<std::string::String>) -> Self {
             self.default_task_start_to_close_timeout = Some(input.into());
             self
         }
-        /// <p>If set, specifies the default maximum duration that a worker can take to process tasks of this activity type. This default can be overridden when scheduling an activity task using the <code>ScheduleActivityTask</code> <code>Decision</code>.</p>
+        /// <p>If set, specifies the default maximum duration that a worker can take to process tasks of this activity type. This default can be overridden when scheduling an activity task using the <code>ScheduleActivityTask</code> <code>Decision</code>.</p> 
         /// <p>The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p>
-        pub fn set_default_task_start_to_close_timeout(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.default_task_start_to_close_timeout = input;
-            self
+        pub fn set_default_task_start_to_close_timeout(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.default_task_start_to_close_timeout = input; self
         }
-        /// <p>If set, specifies the default maximum time before which a worker processing a task of this type must report progress by calling <code>RecordActivityTaskHeartbeat</code>. If the timeout is exceeded, the activity task is automatically timed out. This default can be overridden when scheduling an activity task using the <code>ScheduleActivityTask</code> <code>Decision</code>. If the activity worker subsequently attempts to record a heartbeat or returns a result, the activity worker receives an <code>UnknownResource</code> fault. In this case, Amazon SWF no longer considers the activity task to be valid; the activity worker should clean up the activity task.</p>
+        /// <p>If set, specifies the default maximum time before which a worker processing a task of this type must report progress by calling <code>RecordActivityTaskHeartbeat</code>. If the timeout is exceeded, the activity task is automatically timed out. This default can be overridden when scheduling an activity task using the <code>ScheduleActivityTask</code> <code>Decision</code>. If the activity worker subsequently attempts to record a heartbeat or returns a result, the activity worker receives an <code>UnknownResource</code> fault. In this case, Amazon SWF no longer considers the activity task to be valid; the activity worker should clean up the activity task.</p> 
         /// <p>The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p>
-        pub fn default_task_heartbeat_timeout(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn default_task_heartbeat_timeout(mut self, input: impl Into<std::string::String>) -> Self {
             self.default_task_heartbeat_timeout = Some(input.into());
             self
         }
-        /// <p>If set, specifies the default maximum time before which a worker processing a task of this type must report progress by calling <code>RecordActivityTaskHeartbeat</code>. If the timeout is exceeded, the activity task is automatically timed out. This default can be overridden when scheduling an activity task using the <code>ScheduleActivityTask</code> <code>Decision</code>. If the activity worker subsequently attempts to record a heartbeat or returns a result, the activity worker receives an <code>UnknownResource</code> fault. In this case, Amazon SWF no longer considers the activity task to be valid; the activity worker should clean up the activity task.</p>
+        /// <p>If set, specifies the default maximum time before which a worker processing a task of this type must report progress by calling <code>RecordActivityTaskHeartbeat</code>. If the timeout is exceeded, the activity task is automatically timed out. This default can be overridden when scheduling an activity task using the <code>ScheduleActivityTask</code> <code>Decision</code>. If the activity worker subsequently attempts to record a heartbeat or returns a result, the activity worker receives an <code>UnknownResource</code> fault. In this case, Amazon SWF no longer considers the activity task to be valid; the activity worker should clean up the activity task.</p> 
         /// <p>The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p>
-        pub fn set_default_task_heartbeat_timeout(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.default_task_heartbeat_timeout = input;
-            self
+        pub fn set_default_task_heartbeat_timeout(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.default_task_heartbeat_timeout = input; self
         }
         /// <p>If set, specifies the default task list to use for scheduling tasks of this activity type. This default task list is used if a task list isn't provided when a task is scheduled through the <code>ScheduleActivityTask</code> <code>Decision</code>.</p>
         pub fn default_task_list(mut self, input: crate::model::TaskList) -> Self {
@@ -4467,211 +3253,145 @@ pub mod register_activity_type_input {
             self
         }
         /// <p>If set, specifies the default task list to use for scheduling tasks of this activity type. This default task list is used if a task list isn't provided when a task is scheduled through the <code>ScheduleActivityTask</code> <code>Decision</code>.</p>
-        pub fn set_default_task_list(
-            mut self,
-            input: std::option::Option<crate::model::TaskList>,
-        ) -> Self {
-            self.default_task_list = input;
-            self
+        pub fn set_default_task_list(mut self, input: std::option::Option<crate::model::TaskList>) -> Self {
+            self.default_task_list = input; self
         }
-        /// <p>The default task priority to assign to the activity type. If not assigned, then <code>0</code> is used. Valid values are integers that range from Java's <code>Integer.MIN_VALUE</code> (-2147483648) to <code>Integer.MAX_VALUE</code> (2147483647). Higher numbers indicate higher priority.</p>
+        /// <p>The default task priority to assign to the activity type. If not assigned, then <code>0</code> is used. Valid values are integers that range from Java's <code>Integer.MIN_VALUE</code> (-2147483648) to <code>Integer.MAX_VALUE</code> (2147483647). Higher numbers indicate higher priority.</p> 
         /// <p>For more information about setting task priority, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting Task Priority</a> in the <i>in the <i>Amazon SWF Developer Guide</i>.</i>.</p>
         pub fn default_task_priority(mut self, input: impl Into<std::string::String>) -> Self {
             self.default_task_priority = Some(input.into());
             self
         }
-        /// <p>The default task priority to assign to the activity type. If not assigned, then <code>0</code> is used. Valid values are integers that range from Java's <code>Integer.MIN_VALUE</code> (-2147483648) to <code>Integer.MAX_VALUE</code> (2147483647). Higher numbers indicate higher priority.</p>
+        /// <p>The default task priority to assign to the activity type. If not assigned, then <code>0</code> is used. Valid values are integers that range from Java's <code>Integer.MIN_VALUE</code> (-2147483648) to <code>Integer.MAX_VALUE</code> (2147483647). Higher numbers indicate higher priority.</p> 
         /// <p>For more information about setting task priority, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting Task Priority</a> in the <i>in the <i>Amazon SWF Developer Guide</i>.</i>.</p>
-        pub fn set_default_task_priority(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.default_task_priority = input;
-            self
+        pub fn set_default_task_priority(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.default_task_priority = input; self
         }
-        /// <p>If set, specifies the default maximum duration that a task of this activity type can wait before being assigned to a worker. This default can be overridden when scheduling an activity task using the <code>ScheduleActivityTask</code> <code>Decision</code>.</p>
+        /// <p>If set, specifies the default maximum duration that a task of this activity type can wait before being assigned to a worker. This default can be overridden when scheduling an activity task using the <code>ScheduleActivityTask</code> <code>Decision</code>.</p> 
         /// <p>The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p>
-        pub fn default_task_schedule_to_start_timeout(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn default_task_schedule_to_start_timeout(mut self, input: impl Into<std::string::String>) -> Self {
             self.default_task_schedule_to_start_timeout = Some(input.into());
             self
         }
-        /// <p>If set, specifies the default maximum duration that a task of this activity type can wait before being assigned to a worker. This default can be overridden when scheduling an activity task using the <code>ScheduleActivityTask</code> <code>Decision</code>.</p>
+        /// <p>If set, specifies the default maximum duration that a task of this activity type can wait before being assigned to a worker. This default can be overridden when scheduling an activity task using the <code>ScheduleActivityTask</code> <code>Decision</code>.</p> 
         /// <p>The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p>
-        pub fn set_default_task_schedule_to_start_timeout(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.default_task_schedule_to_start_timeout = input;
-            self
+        pub fn set_default_task_schedule_to_start_timeout(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.default_task_schedule_to_start_timeout = input; self
         }
-        /// <p>If set, specifies the default maximum duration for a task of this activity type. This default can be overridden when scheduling an activity task using the <code>ScheduleActivityTask</code> <code>Decision</code>.</p>
+        /// <p>If set, specifies the default maximum duration for a task of this activity type. This default can be overridden when scheduling an activity task using the <code>ScheduleActivityTask</code> <code>Decision</code>.</p> 
         /// <p>The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p>
-        pub fn default_task_schedule_to_close_timeout(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn default_task_schedule_to_close_timeout(mut self, input: impl Into<std::string::String>) -> Self {
             self.default_task_schedule_to_close_timeout = Some(input.into());
             self
         }
-        /// <p>If set, specifies the default maximum duration for a task of this activity type. This default can be overridden when scheduling an activity task using the <code>ScheduleActivityTask</code> <code>Decision</code>.</p>
+        /// <p>If set, specifies the default maximum duration for a task of this activity type. This default can be overridden when scheduling an activity task using the <code>ScheduleActivityTask</code> <code>Decision</code>.</p> 
         /// <p>The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p>
-        pub fn set_default_task_schedule_to_close_timeout(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.default_task_schedule_to_close_timeout = input;
-            self
+        pub fn set_default_task_schedule_to_close_timeout(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.default_task_schedule_to_close_timeout = input; self
         }
         /// Consumes the builder and constructs a [`RegisterActivityTypeInput`](crate::input::RegisterActivityTypeInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::RegisterActivityTypeInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::RegisterActivityTypeInput {
-                domain: self.domain,
-                name: self.name,
-                version: self.version,
-                description: self.description,
-                default_task_start_to_close_timeout: self.default_task_start_to_close_timeout,
-                default_task_heartbeat_timeout: self.default_task_heartbeat_timeout,
-                default_task_list: self.default_task_list,
-                default_task_priority: self.default_task_priority,
-                default_task_schedule_to_start_timeout: self.default_task_schedule_to_start_timeout,
-                default_task_schedule_to_close_timeout: self.default_task_schedule_to_close_timeout,
-            })
+        pub fn build(self) -> Result<crate::input::RegisterActivityTypeInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::RegisterActivityTypeInput {
+                    domain: self.domain
+                    ,
+                    name: self.name
+                    ,
+                    version: self.version
+                    ,
+                    description: self.description
+                    ,
+                    default_task_start_to_close_timeout: self.default_task_start_to_close_timeout
+                    ,
+                    default_task_heartbeat_timeout: self.default_task_heartbeat_timeout
+                    ,
+                    default_task_list: self.default_task_list
+                    ,
+                    default_task_priority: self.default_task_priority
+                    ,
+                    default_task_schedule_to_start_timeout: self.default_task_schedule_to_start_timeout
+                    ,
+                    default_task_schedule_to_close_timeout: self.default_task_schedule_to_close_timeout
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl RegisterActivityTypeInput {
     /// Consumes the builder and constructs an Operation<[`RegisterActivityType`](crate::operation::RegisterActivityType)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::RegisterActivityType,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::RegisterActivityType, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::RegisterActivityTypeInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::RegisterActivityTypeInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::RegisterActivityTypeInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::RegisterActivityTypeInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.0");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.0",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "SimpleWorkflowService.RegisterActivityType",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "SimpleWorkflowService.RegisterActivityType"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_register_activity_type(
-                &self,
-            )?,
+            crate::operation_ser::serialize_operation_crate_operation_register_activity_type(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::RegisterActivityType::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "RegisterActivityType",
-            "swf",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::RegisterActivityType::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("RegisterActivityType", "swf"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -4683,28 +3403,26 @@ impl RegisterActivityTypeInput {
 
 /// See [`RegisterDomainInput`](crate::input::RegisterDomainInput).
 pub mod register_domain_input {
-
+    
     /// A builder for [`RegisterDomainInput`](crate::input::RegisterDomainInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
-        pub(crate) workflow_execution_retention_period_in_days:
-            std::option::Option<std::string::String>,
+        pub(crate) workflow_execution_retention_period_in_days: std::option::Option<std::string::String>,
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::ResourceTag>>,
     }
     impl Builder {
-        /// <p>Name of the domain to register. The name must be unique in the region that the domain is registered in.</p>
+        /// <p>Name of the domain to register. The name must be unique in the region that the domain is registered in.</p> 
         /// <p>The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not <i>be</i> the literal string <code>arn</code>.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
         }
-        /// <p>Name of the domain to register. The name must be unique in the region that the domain is registered in.</p>
+        /// <p>Name of the domain to register. The name must be unique in the region that the domain is registered in.</p> 
         /// <p>The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not <i>be</i> the literal string <code>arn</code>.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>A text description of the domain.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4713,188 +3431,129 @@ pub mod register_domain_input {
         }
         /// <p>A text description of the domain.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
-        /// <p>The duration (in days) that records and histories of workflow executions on the domain should be kept by the service. After the retention period, the workflow execution isn't available in the results of visibility calls.</p>
-        /// <p>If you pass the value <code>NONE</code> or <code>0</code> (zero), then the workflow execution history isn't retained. As soon as the workflow execution completes, the execution record and its history are deleted.</p>
+        /// <p>The duration (in days) that records and histories of workflow executions on the domain should be kept by the service. After the retention period, the workflow execution isn't available in the results of visibility calls.</p> 
+        /// <p>If you pass the value <code>NONE</code> or <code>0</code> (zero), then the workflow execution history isn't retained. As soon as the workflow execution completes, the execution record and its history are deleted.</p> 
         /// <p>The maximum workflow execution retention period is 90 days. For more information about Amazon SWF service limits, see: <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dg-limits.html">Amazon SWF Service Limits</a> in the <i>Amazon SWF Developer Guide</i>.</p>
-        pub fn workflow_execution_retention_period_in_days(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn workflow_execution_retention_period_in_days(mut self, input: impl Into<std::string::String>) -> Self {
             self.workflow_execution_retention_period_in_days = Some(input.into());
             self
         }
-        /// <p>The duration (in days) that records and histories of workflow executions on the domain should be kept by the service. After the retention period, the workflow execution isn't available in the results of visibility calls.</p>
-        /// <p>If you pass the value <code>NONE</code> or <code>0</code> (zero), then the workflow execution history isn't retained. As soon as the workflow execution completes, the execution record and its history are deleted.</p>
+        /// <p>The duration (in days) that records and histories of workflow executions on the domain should be kept by the service. After the retention period, the workflow execution isn't available in the results of visibility calls.</p> 
+        /// <p>If you pass the value <code>NONE</code> or <code>0</code> (zero), then the workflow execution history isn't retained. As soon as the workflow execution completes, the execution record and its history are deleted.</p> 
         /// <p>The maximum workflow execution retention period is 90 days. For more information about Amazon SWF service limits, see: <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dg-limits.html">Amazon SWF Service Limits</a> in the <i>Amazon SWF Developer Guide</i>.</p>
-        pub fn set_workflow_execution_retention_period_in_days(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.workflow_execution_retention_period_in_days = input;
-            self
+        pub fn set_workflow_execution_retention_period_in_days(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.workflow_execution_retention_period_in_days = input; self
         }
         /// Appends an item to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>Tags to be added when registering a domain.</p>
+        /// <p>Tags to be added when registering a domain.</p> 
         /// <p>Tags may only contain unicode letters, digits, whitespace, or these symbols: <code>_ . : / = + - @</code>.</p>
         pub fn tags(mut self, input: crate::model::ResourceTag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input);
-            self.tags = Some(v);
-            self
+                            v.push(input);
+                            self.tags = Some(v);
+                            self
         }
-        /// <p>Tags to be added when registering a domain.</p>
+        /// <p>Tags to be added when registering a domain.</p> 
         /// <p>Tags may only contain unicode letters, digits, whitespace, or these symbols: <code>_ . : / = + - @</code>.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ResourceTag>>,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::model::ResourceTag>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`RegisterDomainInput`](crate::input::RegisterDomainInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::RegisterDomainInput, aws_smithy_http::operation::error::BuildError>
-        {
-            Ok(crate::input::RegisterDomainInput {
-                name: self.name,
-                description: self.description,
-                workflow_execution_retention_period_in_days: self
-                    .workflow_execution_retention_period_in_days,
-                tags: self.tags,
-            })
+        pub fn build(self) -> Result<crate::input::RegisterDomainInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::RegisterDomainInput {
+                    name: self.name
+                    ,
+                    description: self.description
+                    ,
+                    workflow_execution_retention_period_in_days: self.workflow_execution_retention_period_in_days
+                    ,
+                    tags: self.tags
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl RegisterDomainInput {
     /// Consumes the builder and constructs an Operation<[`RegisterDomain`](crate::operation::RegisterDomain)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::RegisterDomain,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::RegisterDomain, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::RegisterDomainInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::RegisterDomainInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::RegisterDomainInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::RegisterDomainInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.0");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.0",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "SimpleWorkflowService.RegisterDomain",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "SimpleWorkflowService.RegisterDomain"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_register_domain(&self)?,
+            crate::operation_ser::serialize_operation_crate_operation_register_domain(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::RegisterDomain::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "RegisterDomain",
-            "swf",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::RegisterDomain::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("RegisterDomain", "swf"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -4906,7 +3565,7 @@ impl RegisterDomainInput {
 
 /// See [`RegisterWorkflowTypeInput`](crate::input::RegisterWorkflowTypeInput).
 pub mod register_workflow_type_input {
-
+    
     /// A builder for [`RegisterWorkflowTypeInput`](crate::input::RegisterWorkflowTypeInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4915,8 +3574,7 @@ pub mod register_workflow_type_input {
         pub(crate) version: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
         pub(crate) default_task_start_to_close_timeout: std::option::Option<std::string::String>,
-        pub(crate) default_execution_start_to_close_timeout:
-            std::option::Option<std::string::String>,
+        pub(crate) default_execution_start_to_close_timeout: std::option::Option<std::string::String>,
         pub(crate) default_task_list: std::option::Option<crate::model::TaskList>,
         pub(crate) default_task_priority: std::option::Option<std::string::String>,
         pub(crate) default_child_policy: std::option::Option<crate::model::ChildPolicy>,
@@ -4930,36 +3588,33 @@ pub mod register_workflow_type_input {
         }
         /// <p>The name of the domain in which to register the workflow type.</p>
         pub fn set_domain(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.domain = input;
-            self
+            self.domain = input; self
         }
-        /// <p>The name of the workflow type.</p>
+        /// <p>The name of the workflow type.</p> 
         /// <p>The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not <i>be</i> the literal string <code>arn</code>.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
         }
-        /// <p>The name of the workflow type.</p>
+        /// <p>The name of the workflow type.</p> 
         /// <p>The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not <i>be</i> the literal string <code>arn</code>.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
-        /// <p>The version of the workflow type.</p> <note>
-        /// <p>The workflow type consists of the name and version, the combination of which must be unique within the domain. To get a list of all currently registered workflow types, use the <code>ListWorkflowTypes</code> action.</p>
-        /// </note>
+        /// <p>The version of the workflow type.</p> <note> 
+        /// <p>The workflow type consists of the name and version, the combination of which must be unique within the domain. To get a list of all currently registered workflow types, use the <code>ListWorkflowTypes</code> action.</p> 
+        /// </note> 
         /// <p>The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not <i>be</i> the literal string <code>arn</code>.</p>
         pub fn version(mut self, input: impl Into<std::string::String>) -> Self {
             self.version = Some(input.into());
             self
         }
-        /// <p>The version of the workflow type.</p> <note>
-        /// <p>The workflow type consists of the name and version, the combination of which must be unique within the domain. To get a list of all currently registered workflow types, use the <code>ListWorkflowTypes</code> action.</p>
-        /// </note>
+        /// <p>The version of the workflow type.</p> <note> 
+        /// <p>The workflow type consists of the name and version, the combination of which must be unique within the domain. To get a list of all currently registered workflow types, use the <code>ListWorkflowTypes</code> action.</p> 
+        /// </note> 
         /// <p>The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not <i>be</i> the literal string <code>arn</code>.</p>
         pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.version = input;
-            self
+            self.version = input; self
         }
         /// <p>Textual description of the workflow type.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4968,44 +3623,29 @@ pub mod register_workflow_type_input {
         }
         /// <p>Textual description of the workflow type.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
-        /// <p>If set, specifies the default maximum duration of decision tasks for this workflow type. This default can be overridden when starting a workflow execution using the <code>StartWorkflowExecution</code> action or the <code>StartChildWorkflowExecution</code> <code>Decision</code>.</p>
+        /// <p>If set, specifies the default maximum duration of decision tasks for this workflow type. This default can be overridden when starting a workflow execution using the <code>StartWorkflowExecution</code> action or the <code>StartChildWorkflowExecution</code> <code>Decision</code>.</p> 
         /// <p>The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p>
-        pub fn default_task_start_to_close_timeout(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn default_task_start_to_close_timeout(mut self, input: impl Into<std::string::String>) -> Self {
             self.default_task_start_to_close_timeout = Some(input.into());
             self
         }
-        /// <p>If set, specifies the default maximum duration of decision tasks for this workflow type. This default can be overridden when starting a workflow execution using the <code>StartWorkflowExecution</code> action or the <code>StartChildWorkflowExecution</code> <code>Decision</code>.</p>
+        /// <p>If set, specifies the default maximum duration of decision tasks for this workflow type. This default can be overridden when starting a workflow execution using the <code>StartWorkflowExecution</code> action or the <code>StartChildWorkflowExecution</code> <code>Decision</code>.</p> 
         /// <p>The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p>
-        pub fn set_default_task_start_to_close_timeout(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.default_task_start_to_close_timeout = input;
-            self
+        pub fn set_default_task_start_to_close_timeout(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.default_task_start_to_close_timeout = input; self
         }
-        /// <p>If set, specifies the default maximum duration for executions of this workflow type. You can override this default when starting an execution through the <code>StartWorkflowExecution</code> Action or <code>StartChildWorkflowExecution</code> <code>Decision</code>.</p>
+        /// <p>If set, specifies the default maximum duration for executions of this workflow type. You can override this default when starting an execution through the <code>StartWorkflowExecution</code> Action or <code>StartChildWorkflowExecution</code> <code>Decision</code>.</p> 
         /// <p>The duration is specified in seconds; an integer greater than or equal to 0. Unlike some of the other timeout parameters in Amazon SWF, you cannot specify a value of "NONE" for <code>defaultExecutionStartToCloseTimeout</code>; there is a one-year max limit on the time that a workflow execution can run. Exceeding this limit always causes the workflow execution to time out.</p>
-        pub fn default_execution_start_to_close_timeout(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn default_execution_start_to_close_timeout(mut self, input: impl Into<std::string::String>) -> Self {
             self.default_execution_start_to_close_timeout = Some(input.into());
             self
         }
-        /// <p>If set, specifies the default maximum duration for executions of this workflow type. You can override this default when starting an execution through the <code>StartWorkflowExecution</code> Action or <code>StartChildWorkflowExecution</code> <code>Decision</code>.</p>
+        /// <p>If set, specifies the default maximum duration for executions of this workflow type. You can override this default when starting an execution through the <code>StartWorkflowExecution</code> Action or <code>StartChildWorkflowExecution</code> <code>Decision</code>.</p> 
         /// <p>The duration is specified in seconds; an integer greater than or equal to 0. Unlike some of the other timeout parameters in Amazon SWF, you cannot specify a value of "NONE" for <code>defaultExecutionStartToCloseTimeout</code>; there is a one-year max limit on the time that a workflow execution can run. Exceeding this limit always causes the workflow execution to time out.</p>
-        pub fn set_default_execution_start_to_close_timeout(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.default_execution_start_to_close_timeout = input;
-            self
+        pub fn set_default_execution_start_to_close_timeout(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.default_execution_start_to_close_timeout = input; self
         }
         /// <p>If set, specifies the default task list to use for scheduling decision tasks for executions of this workflow type. This default is used only if a task list isn't provided when starting the execution through the <code>StartWorkflowExecution</code> Action or <code>StartChildWorkflowExecution</code> <code>Decision</code>.</p>
         pub fn default_task_list(mut self, input: crate::model::TaskList) -> Self {
@@ -5013,218 +3653,157 @@ pub mod register_workflow_type_input {
             self
         }
         /// <p>If set, specifies the default task list to use for scheduling decision tasks for executions of this workflow type. This default is used only if a task list isn't provided when starting the execution through the <code>StartWorkflowExecution</code> Action or <code>StartChildWorkflowExecution</code> <code>Decision</code>.</p>
-        pub fn set_default_task_list(
-            mut self,
-            input: std::option::Option<crate::model::TaskList>,
-        ) -> Self {
-            self.default_task_list = input;
-            self
+        pub fn set_default_task_list(mut self, input: std::option::Option<crate::model::TaskList>) -> Self {
+            self.default_task_list = input; self
         }
-        /// <p>The default task priority to assign to the workflow type. If not assigned, then <code>0</code> is used. Valid values are integers that range from Java's <code>Integer.MIN_VALUE</code> (-2147483648) to <code>Integer.MAX_VALUE</code> (2147483647). Higher numbers indicate higher priority.</p>
+        /// <p>The default task priority to assign to the workflow type. If not assigned, then <code>0</code> is used. Valid values are integers that range from Java's <code>Integer.MIN_VALUE</code> (-2147483648) to <code>Integer.MAX_VALUE</code> (2147483647). Higher numbers indicate higher priority.</p> 
         /// <p>For more information about setting task priority, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting Task Priority</a> in the <i>Amazon SWF Developer Guide</i>.</p>
         pub fn default_task_priority(mut self, input: impl Into<std::string::String>) -> Self {
             self.default_task_priority = Some(input.into());
             self
         }
-        /// <p>The default task priority to assign to the workflow type. If not assigned, then <code>0</code> is used. Valid values are integers that range from Java's <code>Integer.MIN_VALUE</code> (-2147483648) to <code>Integer.MAX_VALUE</code> (2147483647). Higher numbers indicate higher priority.</p>
+        /// <p>The default task priority to assign to the workflow type. If not assigned, then <code>0</code> is used. Valid values are integers that range from Java's <code>Integer.MIN_VALUE</code> (-2147483648) to <code>Integer.MAX_VALUE</code> (2147483647). Higher numbers indicate higher priority.</p> 
         /// <p>For more information about setting task priority, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting Task Priority</a> in the <i>Amazon SWF Developer Guide</i>.</p>
-        pub fn set_default_task_priority(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.default_task_priority = input;
-            self
+        pub fn set_default_task_priority(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.default_task_priority = input; self
         }
-        /// <p>If set, specifies the default policy to use for the child workflow executions when a workflow execution of this type is terminated, by calling the <code>TerminateWorkflowExecution</code> action explicitly or due to an expired timeout. This default can be overridden when starting a workflow execution using the <code>StartWorkflowExecution</code> action or the <code>StartChildWorkflowExecution</code> <code>Decision</code>.</p>
-        /// <p>The supported child policies are:</p>
-        /// <ul>
-        /// <li> <p> <code>TERMINATE</code> – The child executions are terminated.</p> </li>
-        /// <li> <p> <code>REQUEST_CANCEL</code> – A request to cancel is attempted for each child execution by recording a <code>WorkflowExecutionCancelRequested</code> event in its history. It is up to the decider to take appropriate actions when it receives an execution history with this event.</p> </li>
-        /// <li> <p> <code>ABANDON</code> – No action is taken. The child executions continue to run.</p> </li>
+        /// <p>If set, specifies the default policy to use for the child workflow executions when a workflow execution of this type is terminated, by calling the <code>TerminateWorkflowExecution</code> action explicitly or due to an expired timeout. This default can be overridden when starting a workflow execution using the <code>StartWorkflowExecution</code> action or the <code>StartChildWorkflowExecution</code> <code>Decision</code>.</p> 
+        /// <p>The supported child policies are:</p> 
+        /// <ul> 
+        /// <li> <p> <code>TERMINATE</code> – The child executions are terminated.</p> </li> 
+        /// <li> <p> <code>REQUEST_CANCEL</code> – A request to cancel is attempted for each child execution by recording a <code>WorkflowExecutionCancelRequested</code> event in its history. It is up to the decider to take appropriate actions when it receives an execution history with this event.</p> </li> 
+        /// <li> <p> <code>ABANDON</code> – No action is taken. The child executions continue to run.</p> </li> 
         /// </ul>
         pub fn default_child_policy(mut self, input: crate::model::ChildPolicy) -> Self {
             self.default_child_policy = Some(input);
             self
         }
-        /// <p>If set, specifies the default policy to use for the child workflow executions when a workflow execution of this type is terminated, by calling the <code>TerminateWorkflowExecution</code> action explicitly or due to an expired timeout. This default can be overridden when starting a workflow execution using the <code>StartWorkflowExecution</code> action or the <code>StartChildWorkflowExecution</code> <code>Decision</code>.</p>
-        /// <p>The supported child policies are:</p>
-        /// <ul>
-        /// <li> <p> <code>TERMINATE</code> – The child executions are terminated.</p> </li>
-        /// <li> <p> <code>REQUEST_CANCEL</code> – A request to cancel is attempted for each child execution by recording a <code>WorkflowExecutionCancelRequested</code> event in its history. It is up to the decider to take appropriate actions when it receives an execution history with this event.</p> </li>
-        /// <li> <p> <code>ABANDON</code> – No action is taken. The child executions continue to run.</p> </li>
+        /// <p>If set, specifies the default policy to use for the child workflow executions when a workflow execution of this type is terminated, by calling the <code>TerminateWorkflowExecution</code> action explicitly or due to an expired timeout. This default can be overridden when starting a workflow execution using the <code>StartWorkflowExecution</code> action or the <code>StartChildWorkflowExecution</code> <code>Decision</code>.</p> 
+        /// <p>The supported child policies are:</p> 
+        /// <ul> 
+        /// <li> <p> <code>TERMINATE</code> – The child executions are terminated.</p> </li> 
+        /// <li> <p> <code>REQUEST_CANCEL</code> – A request to cancel is attempted for each child execution by recording a <code>WorkflowExecutionCancelRequested</code> event in its history. It is up to the decider to take appropriate actions when it receives an execution history with this event.</p> </li> 
+        /// <li> <p> <code>ABANDON</code> – No action is taken. The child executions continue to run.</p> </li> 
         /// </ul>
-        pub fn set_default_child_policy(
-            mut self,
-            input: std::option::Option<crate::model::ChildPolicy>,
-        ) -> Self {
-            self.default_child_policy = input;
-            self
+        pub fn set_default_child_policy(mut self, input: std::option::Option<crate::model::ChildPolicy>) -> Self {
+            self.default_child_policy = input; self
         }
-        /// <p>The default IAM role attached to this workflow type.</p> <note>
-        /// <p>Executions of this workflow type need IAM roles to invoke Lambda functions. If you don't specify an IAM role when you start this workflow type, the default Lambda role is attached to the execution. For more information, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/lambda-task.html">https://docs.aws.amazon.com/amazonswf/latest/developerguide/lambda-task.html</a> in the <i>Amazon SWF Developer Guide</i>.</p>
+        /// <p>The default IAM role attached to this workflow type.</p> <note> 
+        /// <p>Executions of this workflow type need IAM roles to invoke Lambda functions. If you don't specify an IAM role when you start this workflow type, the default Lambda role is attached to the execution. For more information, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/lambda-task.html">https://docs.aws.amazon.com/amazonswf/latest/developerguide/lambda-task.html</a> in the <i>Amazon SWF Developer Guide</i>.</p> 
         /// </note>
         pub fn default_lambda_role(mut self, input: impl Into<std::string::String>) -> Self {
             self.default_lambda_role = Some(input.into());
             self
         }
-        /// <p>The default IAM role attached to this workflow type.</p> <note>
-        /// <p>Executions of this workflow type need IAM roles to invoke Lambda functions. If you don't specify an IAM role when you start this workflow type, the default Lambda role is attached to the execution. For more information, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/lambda-task.html">https://docs.aws.amazon.com/amazonswf/latest/developerguide/lambda-task.html</a> in the <i>Amazon SWF Developer Guide</i>.</p>
+        /// <p>The default IAM role attached to this workflow type.</p> <note> 
+        /// <p>Executions of this workflow type need IAM roles to invoke Lambda functions. If you don't specify an IAM role when you start this workflow type, the default Lambda role is attached to the execution. For more information, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/lambda-task.html">https://docs.aws.amazon.com/amazonswf/latest/developerguide/lambda-task.html</a> in the <i>Amazon SWF Developer Guide</i>.</p> 
         /// </note>
-        pub fn set_default_lambda_role(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.default_lambda_role = input;
-            self
+        pub fn set_default_lambda_role(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.default_lambda_role = input; self
         }
         /// Consumes the builder and constructs a [`RegisterWorkflowTypeInput`](crate::input::RegisterWorkflowTypeInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::RegisterWorkflowTypeInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::RegisterWorkflowTypeInput {
-                domain: self.domain,
-                name: self.name,
-                version: self.version,
-                description: self.description,
-                default_task_start_to_close_timeout: self.default_task_start_to_close_timeout,
-                default_execution_start_to_close_timeout: self
-                    .default_execution_start_to_close_timeout,
-                default_task_list: self.default_task_list,
-                default_task_priority: self.default_task_priority,
-                default_child_policy: self.default_child_policy,
-                default_lambda_role: self.default_lambda_role,
-            })
+        pub fn build(self) -> Result<crate::input::RegisterWorkflowTypeInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::RegisterWorkflowTypeInput {
+                    domain: self.domain
+                    ,
+                    name: self.name
+                    ,
+                    version: self.version
+                    ,
+                    description: self.description
+                    ,
+                    default_task_start_to_close_timeout: self.default_task_start_to_close_timeout
+                    ,
+                    default_execution_start_to_close_timeout: self.default_execution_start_to_close_timeout
+                    ,
+                    default_task_list: self.default_task_list
+                    ,
+                    default_task_priority: self.default_task_priority
+                    ,
+                    default_child_policy: self.default_child_policy
+                    ,
+                    default_lambda_role: self.default_lambda_role
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl RegisterWorkflowTypeInput {
     /// Consumes the builder and constructs an Operation<[`RegisterWorkflowType`](crate::operation::RegisterWorkflowType)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::RegisterWorkflowType,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::RegisterWorkflowType, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::RegisterWorkflowTypeInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::RegisterWorkflowTypeInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::RegisterWorkflowTypeInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::RegisterWorkflowTypeInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.0");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.0",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "SimpleWorkflowService.RegisterWorkflowType",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "SimpleWorkflowService.RegisterWorkflowType"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_register_workflow_type(
-                &self,
-            )?,
+            crate::operation_ser::serialize_operation_crate_operation_register_workflow_type(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::RegisterWorkflowType::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "RegisterWorkflowType",
-            "swf",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::RegisterWorkflowType::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("RegisterWorkflowType", "swf"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -5236,7 +3815,7 @@ impl RegisterWorkflowTypeInput {
 
 /// See [`RequestCancelWorkflowExecutionInput`](crate::input::RequestCancelWorkflowExecutionInput).
 pub mod request_cancel_workflow_execution_input {
-
+    
     /// A builder for [`RequestCancelWorkflowExecutionInput`](crate::input::RequestCancelWorkflowExecutionInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5252,8 +3831,7 @@ pub mod request_cancel_workflow_execution_input {
         }
         /// <p>The name of the domain containing the workflow execution to cancel.</p>
         pub fn set_domain(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.domain = input;
-            self
+            self.domain = input; self
         }
         /// <p>The workflowId of the workflow execution to cancel.</p>
         pub fn workflow_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5262,8 +3840,7 @@ pub mod request_cancel_workflow_execution_input {
         }
         /// <p>The workflowId of the workflow execution to cancel.</p>
         pub fn set_workflow_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.workflow_id = input;
-            self
+            self.workflow_id = input; self
         }
         /// <p>The runId of the workflow execution to cancel.</p>
         pub fn run_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5272,89 +3849,62 @@ pub mod request_cancel_workflow_execution_input {
         }
         /// <p>The runId of the workflow execution to cancel.</p>
         pub fn set_run_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.run_id = input;
-            self
+            self.run_id = input; self
         }
         /// Consumes the builder and constructs a [`RequestCancelWorkflowExecutionInput`](crate::input::RequestCancelWorkflowExecutionInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::RequestCancelWorkflowExecutionInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::RequestCancelWorkflowExecutionInput {
-                domain: self.domain,
-                workflow_id: self.workflow_id,
-                run_id: self.run_id,
-            })
+        pub fn build(self) -> Result<crate::input::RequestCancelWorkflowExecutionInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::RequestCancelWorkflowExecutionInput {
+                    domain: self.domain
+                    ,
+                    workflow_id: self.workflow_id
+                    ,
+                    run_id: self.run_id
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl RequestCancelWorkflowExecutionInput {
     /// Consumes the builder and constructs an Operation<[`RequestCancelWorkflowExecution`](crate::operation::RequestCancelWorkflowExecution)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::RequestCancelWorkflowExecution,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::RequestCancelWorkflowExecution, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::RequestCancelWorkflowExecutionInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::RequestCancelWorkflowExecutionInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::RequestCancelWorkflowExecutionInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::RequestCancelWorkflowExecutionInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.0");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.0",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "SimpleWorkflowService.RequestCancelWorkflowExecution",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "SimpleWorkflowService.RequestCancelWorkflowExecution"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -5363,56 +3913,33 @@ impl RequestCancelWorkflowExecutionInput {
             crate::operation_ser::serialize_operation_crate_operation_request_cancel_workflow_execution(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::RequestCancelWorkflowExecution::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "RequestCancelWorkflowExecution",
-            "swf",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::RequestCancelWorkflowExecution::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("RequestCancelWorkflowExecution", "swf"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -5424,7 +3951,7 @@ impl RequestCancelWorkflowExecutionInput {
 
 /// See [`RespondActivityTaskCanceledInput`](crate::input::RespondActivityTaskCanceledInput).
 pub mod respond_activity_task_canceled_input {
-
+    
     /// A builder for [`RespondActivityTaskCanceledInput`](crate::input::RespondActivityTaskCanceledInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5432,19 +3959,18 @@ pub mod respond_activity_task_canceled_input {
         pub(crate) details: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The <code>taskToken</code> of the <code>ActivityTask</code>.</p> <important>
-        /// <p> <code>taskToken</code> is generated by the service and should be treated as an opaque value. If the task is passed to another process, its <code>taskToken</code> must also be passed. This enables it to provide its progress and respond with results.</p>
+        /// <p>The <code>taskToken</code> of the <code>ActivityTask</code>.</p> <important> 
+        /// <p> <code>taskToken</code> is generated by the service and should be treated as an opaque value. If the task is passed to another process, its <code>taskToken</code> must also be passed. This enables it to provide its progress and respond with results.</p> 
         /// </important>
         pub fn task_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.task_token = Some(input.into());
             self
         }
-        /// <p>The <code>taskToken</code> of the <code>ActivityTask</code>.</p> <important>
-        /// <p> <code>taskToken</code> is generated by the service and should be treated as an opaque value. If the task is passed to another process, its <code>taskToken</code> must also be passed. This enables it to provide its progress and respond with results.</p>
+        /// <p>The <code>taskToken</code> of the <code>ActivityTask</code>.</p> <important> 
+        /// <p> <code>taskToken</code> is generated by the service and should be treated as an opaque value. If the task is passed to another process, its <code>taskToken</code> must also be passed. This enables it to provide its progress and respond with results.</p> 
         /// </important>
         pub fn set_task_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.task_token = input;
-            self
+            self.task_token = input; self
         }
         /// <p> Information about the cancellation.</p>
         pub fn details(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5453,88 +3979,60 @@ pub mod respond_activity_task_canceled_input {
         }
         /// <p> Information about the cancellation.</p>
         pub fn set_details(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.details = input;
-            self
+            self.details = input; self
         }
         /// Consumes the builder and constructs a [`RespondActivityTaskCanceledInput`](crate::input::RespondActivityTaskCanceledInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::RespondActivityTaskCanceledInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::RespondActivityTaskCanceledInput {
-                task_token: self.task_token,
-                details: self.details,
-            })
+        pub fn build(self) -> Result<crate::input::RespondActivityTaskCanceledInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::RespondActivityTaskCanceledInput {
+                    task_token: self.task_token
+                    ,
+                    details: self.details
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl RespondActivityTaskCanceledInput {
     /// Consumes the builder and constructs an Operation<[`RespondActivityTaskCanceled`](crate::operation::RespondActivityTaskCanceled)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::RespondActivityTaskCanceled,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::RespondActivityTaskCanceled, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::RespondActivityTaskCanceledInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::RespondActivityTaskCanceledInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::RespondActivityTaskCanceledInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::RespondActivityTaskCanceledInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.0");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.0",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "SimpleWorkflowService.RespondActivityTaskCanceled",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "SimpleWorkflowService.RespondActivityTaskCanceled"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -5543,56 +4041,33 @@ impl RespondActivityTaskCanceledInput {
             crate::operation_ser::serialize_operation_crate_operation_respond_activity_task_canceled(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::RespondActivityTaskCanceled::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "RespondActivityTaskCanceled",
-            "swf",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::RespondActivityTaskCanceled::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("RespondActivityTaskCanceled", "swf"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -5604,7 +4079,7 @@ impl RespondActivityTaskCanceledInput {
 
 /// See [`RespondActivityTaskCompletedInput`](crate::input::RespondActivityTaskCompletedInput).
 pub mod respond_activity_task_completed_input {
-
+    
     /// A builder for [`RespondActivityTaskCompletedInput`](crate::input::RespondActivityTaskCompletedInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5612,19 +4087,18 @@ pub mod respond_activity_task_completed_input {
         pub(crate) result: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The <code>taskToken</code> of the <code>ActivityTask</code>.</p> <important>
-        /// <p> <code>taskToken</code> is generated by the service and should be treated as an opaque value. If the task is passed to another process, its <code>taskToken</code> must also be passed. This enables it to provide its progress and respond with results.</p>
+        /// <p>The <code>taskToken</code> of the <code>ActivityTask</code>.</p> <important> 
+        /// <p> <code>taskToken</code> is generated by the service and should be treated as an opaque value. If the task is passed to another process, its <code>taskToken</code> must also be passed. This enables it to provide its progress and respond with results.</p> 
         /// </important>
         pub fn task_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.task_token = Some(input.into());
             self
         }
-        /// <p>The <code>taskToken</code> of the <code>ActivityTask</code>.</p> <important>
-        /// <p> <code>taskToken</code> is generated by the service and should be treated as an opaque value. If the task is passed to another process, its <code>taskToken</code> must also be passed. This enables it to provide its progress and respond with results.</p>
+        /// <p>The <code>taskToken</code> of the <code>ActivityTask</code>.</p> <important> 
+        /// <p> <code>taskToken</code> is generated by the service and should be treated as an opaque value. If the task is passed to another process, its <code>taskToken</code> must also be passed. This enables it to provide its progress and respond with results.</p> 
         /// </important>
         pub fn set_task_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.task_token = input;
-            self
+            self.task_token = input; self
         }
         /// <p>The result of the activity task. It is a free form string that is implementation specific.</p>
         pub fn result(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5633,88 +4107,60 @@ pub mod respond_activity_task_completed_input {
         }
         /// <p>The result of the activity task. It is a free form string that is implementation specific.</p>
         pub fn set_result(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.result = input;
-            self
+            self.result = input; self
         }
         /// Consumes the builder and constructs a [`RespondActivityTaskCompletedInput`](crate::input::RespondActivityTaskCompletedInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::RespondActivityTaskCompletedInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::RespondActivityTaskCompletedInput {
-                task_token: self.task_token,
-                result: self.result,
-            })
+        pub fn build(self) -> Result<crate::input::RespondActivityTaskCompletedInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::RespondActivityTaskCompletedInput {
+                    task_token: self.task_token
+                    ,
+                    result: self.result
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl RespondActivityTaskCompletedInput {
     /// Consumes the builder and constructs an Operation<[`RespondActivityTaskCompleted`](crate::operation::RespondActivityTaskCompleted)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::RespondActivityTaskCompleted,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::RespondActivityTaskCompleted, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::RespondActivityTaskCompletedInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::RespondActivityTaskCompletedInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::RespondActivityTaskCompletedInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::RespondActivityTaskCompletedInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.0");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.0",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "SimpleWorkflowService.RespondActivityTaskCompleted",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "SimpleWorkflowService.RespondActivityTaskCompleted"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -5723,56 +4169,33 @@ impl RespondActivityTaskCompletedInput {
             crate::operation_ser::serialize_operation_crate_operation_respond_activity_task_completed(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::RespondActivityTaskCompleted::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "RespondActivityTaskCompleted",
-            "swf",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::RespondActivityTaskCompleted::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("RespondActivityTaskCompleted", "swf"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -5784,7 +4207,7 @@ impl RespondActivityTaskCompletedInput {
 
 /// See [`RespondActivityTaskFailedInput`](crate::input::RespondActivityTaskFailedInput).
 pub mod respond_activity_task_failed_input {
-
+    
     /// A builder for [`RespondActivityTaskFailedInput`](crate::input::RespondActivityTaskFailedInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5793,19 +4216,18 @@ pub mod respond_activity_task_failed_input {
         pub(crate) details: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The <code>taskToken</code> of the <code>ActivityTask</code>.</p> <important>
-        /// <p> <code>taskToken</code> is generated by the service and should be treated as an opaque value. If the task is passed to another process, its <code>taskToken</code> must also be passed. This enables it to provide its progress and respond with results.</p>
+        /// <p>The <code>taskToken</code> of the <code>ActivityTask</code>.</p> <important> 
+        /// <p> <code>taskToken</code> is generated by the service and should be treated as an opaque value. If the task is passed to another process, its <code>taskToken</code> must also be passed. This enables it to provide its progress and respond with results.</p> 
         /// </important>
         pub fn task_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.task_token = Some(input.into());
             self
         }
-        /// <p>The <code>taskToken</code> of the <code>ActivityTask</code>.</p> <important>
-        /// <p> <code>taskToken</code> is generated by the service and should be treated as an opaque value. If the task is passed to another process, its <code>taskToken</code> must also be passed. This enables it to provide its progress and respond with results.</p>
+        /// <p>The <code>taskToken</code> of the <code>ActivityTask</code>.</p> <important> 
+        /// <p> <code>taskToken</code> is generated by the service and should be treated as an opaque value. If the task is passed to another process, its <code>taskToken</code> must also be passed. This enables it to provide its progress and respond with results.</p> 
         /// </important>
         pub fn set_task_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.task_token = input;
-            self
+            self.task_token = input; self
         }
         /// <p>Description of the error that may assist in diagnostics.</p>
         pub fn reason(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5814,8 +4236,7 @@ pub mod respond_activity_task_failed_input {
         }
         /// <p>Description of the error that may assist in diagnostics.</p>
         pub fn set_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.reason = input;
-            self
+            self.reason = input; self
         }
         /// <p> Detailed information about the failure.</p>
         pub fn details(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5824,149 +4245,97 @@ pub mod respond_activity_task_failed_input {
         }
         /// <p> Detailed information about the failure.</p>
         pub fn set_details(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.details = input;
-            self
+            self.details = input; self
         }
         /// Consumes the builder and constructs a [`RespondActivityTaskFailedInput`](crate::input::RespondActivityTaskFailedInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::RespondActivityTaskFailedInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::RespondActivityTaskFailedInput {
-                task_token: self.task_token,
-                reason: self.reason,
-                details: self.details,
-            })
+        pub fn build(self) -> Result<crate::input::RespondActivityTaskFailedInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::RespondActivityTaskFailedInput {
+                    task_token: self.task_token
+                    ,
+                    reason: self.reason
+                    ,
+                    details: self.details
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl RespondActivityTaskFailedInput {
     /// Consumes the builder and constructs an Operation<[`RespondActivityTaskFailed`](crate::operation::RespondActivityTaskFailed)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::RespondActivityTaskFailed,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::RespondActivityTaskFailed, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::RespondActivityTaskFailedInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::RespondActivityTaskFailedInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::RespondActivityTaskFailedInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::RespondActivityTaskFailedInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.0");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.0",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "SimpleWorkflowService.RespondActivityTaskFailed",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "SimpleWorkflowService.RespondActivityTaskFailed"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_respond_activity_task_failed(
-                &self,
-            )?,
+            crate::operation_ser::serialize_operation_crate_operation_respond_activity_task_failed(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::RespondActivityTaskFailed::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "RespondActivityTaskFailed",
-            "swf",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::RespondActivityTaskFailed::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("RespondActivityTaskFailed", "swf"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -5978,7 +4347,7 @@ impl RespondActivityTaskFailedInput {
 
 /// See [`RespondDecisionTaskCompletedInput`](crate::input::RespondDecisionTaskCompletedInput).
 pub mod respond_decision_task_completed_input {
-
+    
     /// A builder for [`RespondDecisionTaskCompletedInput`](crate::input::RespondDecisionTaskCompletedInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5987,19 +4356,18 @@ pub mod respond_decision_task_completed_input {
         pub(crate) execution_context: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The <code>taskToken</code> from the <code>DecisionTask</code>.</p> <important>
-        /// <p> <code>taskToken</code> is generated by the service and should be treated as an opaque value. If the task is passed to another process, its <code>taskToken</code> must also be passed. This enables it to provide its progress and respond with results.</p>
+        /// <p>The <code>taskToken</code> from the <code>DecisionTask</code>.</p> <important> 
+        /// <p> <code>taskToken</code> is generated by the service and should be treated as an opaque value. If the task is passed to another process, its <code>taskToken</code> must also be passed. This enables it to provide its progress and respond with results.</p> 
         /// </important>
         pub fn task_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.task_token = Some(input.into());
             self
         }
-        /// <p>The <code>taskToken</code> from the <code>DecisionTask</code>.</p> <important>
-        /// <p> <code>taskToken</code> is generated by the service and should be treated as an opaque value. If the task is passed to another process, its <code>taskToken</code> must also be passed. This enables it to provide its progress and respond with results.</p>
+        /// <p>The <code>taskToken</code> from the <code>DecisionTask</code>.</p> <important> 
+        /// <p> <code>taskToken</code> is generated by the service and should be treated as an opaque value. If the task is passed to another process, its <code>taskToken</code> must also be passed. This enables it to provide its progress and respond with results.</p> 
         /// </important>
         pub fn set_task_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.task_token = input;
-            self
+            self.task_token = input; self
         }
         /// Appends an item to `decisions`.
         ///
@@ -6008,17 +4376,13 @@ pub mod respond_decision_task_completed_input {
         /// <p>The list of decisions (possibly empty) made by the decider while processing this decision task. See the docs for the <code>Decision</code> structure for details.</p>
         pub fn decisions(mut self, input: crate::model::Decision) -> Self {
             let mut v = self.decisions.unwrap_or_default();
-            v.push(input);
-            self.decisions = Some(v);
-            self
+                            v.push(input);
+                            self.decisions = Some(v);
+                            self
         }
         /// <p>The list of decisions (possibly empty) made by the decider while processing this decision task. See the docs for the <code>Decision</code> structure for details.</p>
-        pub fn set_decisions(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Decision>>,
-        ) -> Self {
-            self.decisions = input;
-            self
+        pub fn set_decisions(mut self, input: std::option::Option<std::vec::Vec<crate::model::Decision>>) -> Self {
+            self.decisions = input; self
         }
         /// <p>User defined context to add to workflow execution.</p>
         pub fn execution_context(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6026,93 +4390,63 @@ pub mod respond_decision_task_completed_input {
             self
         }
         /// <p>User defined context to add to workflow execution.</p>
-        pub fn set_execution_context(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.execution_context = input;
-            self
+        pub fn set_execution_context(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.execution_context = input; self
         }
         /// Consumes the builder and constructs a [`RespondDecisionTaskCompletedInput`](crate::input::RespondDecisionTaskCompletedInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::RespondDecisionTaskCompletedInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::RespondDecisionTaskCompletedInput {
-                task_token: self.task_token,
-                decisions: self.decisions,
-                execution_context: self.execution_context,
-            })
+        pub fn build(self) -> Result<crate::input::RespondDecisionTaskCompletedInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::RespondDecisionTaskCompletedInput {
+                    task_token: self.task_token
+                    ,
+                    decisions: self.decisions
+                    ,
+                    execution_context: self.execution_context
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl RespondDecisionTaskCompletedInput {
     /// Consumes the builder and constructs an Operation<[`RespondDecisionTaskCompleted`](crate::operation::RespondDecisionTaskCompleted)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::RespondDecisionTaskCompleted,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::RespondDecisionTaskCompleted, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::RespondDecisionTaskCompletedInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::RespondDecisionTaskCompletedInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::RespondDecisionTaskCompletedInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::RespondDecisionTaskCompletedInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.0");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.0",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "SimpleWorkflowService.RespondDecisionTaskCompleted",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "SimpleWorkflowService.RespondDecisionTaskCompleted"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -6121,56 +4455,33 @@ impl RespondDecisionTaskCompletedInput {
             crate::operation_ser::serialize_operation_crate_operation_respond_decision_task_completed(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::RespondDecisionTaskCompleted::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "RespondDecisionTaskCompleted",
-            "swf",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::RespondDecisionTaskCompleted::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("RespondDecisionTaskCompleted", "swf"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -6182,7 +4493,7 @@ impl RespondDecisionTaskCompletedInput {
 
 /// See [`SignalWorkflowExecutionInput`](crate::input::SignalWorkflowExecutionInput).
 pub mod signal_workflow_execution_input {
-
+    
     /// A builder for [`SignalWorkflowExecutionInput`](crate::input::SignalWorkflowExecutionInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -6200,8 +4511,7 @@ pub mod signal_workflow_execution_input {
         }
         /// <p>The name of the domain containing the workflow execution to signal.</p>
         pub fn set_domain(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.domain = input;
-            self
+            self.domain = input; self
         }
         /// <p>The workflowId of the workflow execution to signal.</p>
         pub fn workflow_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6210,8 +4520,7 @@ pub mod signal_workflow_execution_input {
         }
         /// <p>The workflowId of the workflow execution to signal.</p>
         pub fn set_workflow_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.workflow_id = input;
-            self
+            self.workflow_id = input; self
         }
         /// <p>The runId of the workflow execution to signal.</p>
         pub fn run_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6220,8 +4529,7 @@ pub mod signal_workflow_execution_input {
         }
         /// <p>The runId of the workflow execution to signal.</p>
         pub fn set_run_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.run_id = input;
-            self
+            self.run_id = input; self
         }
         /// <p>The name of the signal. This name must be meaningful to the target workflow.</p>
         pub fn signal_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6230,8 +4538,7 @@ pub mod signal_workflow_execution_input {
         }
         /// <p>The name of the signal. This name must be meaningful to the target workflow.</p>
         pub fn set_signal_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.signal_name = input;
-            self
+            self.signal_name = input; self
         }
         /// <p>Data to attach to the <code>WorkflowExecutionSignaled</code> event in the target workflow execution's history.</p>
         pub fn input(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6240,151 +4547,101 @@ pub mod signal_workflow_execution_input {
         }
         /// <p>Data to attach to the <code>WorkflowExecutionSignaled</code> event in the target workflow execution's history.</p>
         pub fn set_input(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.input = input;
-            self
+            self.input = input; self
         }
         /// Consumes the builder and constructs a [`SignalWorkflowExecutionInput`](crate::input::SignalWorkflowExecutionInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::SignalWorkflowExecutionInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::SignalWorkflowExecutionInput {
-                domain: self.domain,
-                workflow_id: self.workflow_id,
-                run_id: self.run_id,
-                signal_name: self.signal_name,
-                input: self.input,
-            })
+        pub fn build(self) -> Result<crate::input::SignalWorkflowExecutionInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::SignalWorkflowExecutionInput {
+                    domain: self.domain
+                    ,
+                    workflow_id: self.workflow_id
+                    ,
+                    run_id: self.run_id
+                    ,
+                    signal_name: self.signal_name
+                    ,
+                    input: self.input
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl SignalWorkflowExecutionInput {
     /// Consumes the builder and constructs an Operation<[`SignalWorkflowExecution`](crate::operation::SignalWorkflowExecution)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::SignalWorkflowExecution,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::SignalWorkflowExecution, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::SignalWorkflowExecutionInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::SignalWorkflowExecutionInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::SignalWorkflowExecutionInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::SignalWorkflowExecutionInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.0");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.0",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "SimpleWorkflowService.SignalWorkflowExecution",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "SimpleWorkflowService.SignalWorkflowExecution"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_signal_workflow_execution(
-                &self,
-            )?,
+            crate::operation_ser::serialize_operation_crate_operation_signal_workflow_execution(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::SignalWorkflowExecution::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "SignalWorkflowExecution",
-            "swf",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::SignalWorkflowExecution::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("SignalWorkflowExecution", "swf"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -6396,7 +4653,7 @@ impl SignalWorkflowExecutionInput {
 
 /// See [`StartWorkflowExecutionInput`](crate::input::StartWorkflowExecutionInput).
 pub mod start_workflow_execution_input {
-
+    
     /// A builder for [`StartWorkflowExecutionInput`](crate::input::StartWorkflowExecutionInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -6420,20 +4677,18 @@ pub mod start_workflow_execution_input {
         }
         /// <p>The name of the domain in which the workflow execution is created.</p>
         pub fn set_domain(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.domain = input;
-            self
+            self.domain = input; self
         }
-        /// <p>The user defined identifier associated with the workflow execution. You can use this to associate a custom identifier with the workflow execution. You may specify the same identifier if a workflow execution is logically a <i>restart</i> of a previous execution. You cannot have two open workflow executions with the same <code>workflowId</code> at the same time within the same domain.</p>
+        /// <p>The user defined identifier associated with the workflow execution. You can use this to associate a custom identifier with the workflow execution. You may specify the same identifier if a workflow execution is logically a <i>restart</i> of a previous execution. You cannot have two open workflow executions with the same <code>workflowId</code> at the same time within the same domain.</p> 
         /// <p>The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not <i>be</i> the literal string <code>arn</code>.</p>
         pub fn workflow_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.workflow_id = Some(input.into());
             self
         }
-        /// <p>The user defined identifier associated with the workflow execution. You can use this to associate a custom identifier with the workflow execution. You may specify the same identifier if a workflow execution is logically a <i>restart</i> of a previous execution. You cannot have two open workflow executions with the same <code>workflowId</code> at the same time within the same domain.</p>
+        /// <p>The user defined identifier associated with the workflow execution. You can use this to associate a custom identifier with the workflow execution. You may specify the same identifier if a workflow execution is logically a <i>restart</i> of a previous execution. You cannot have two open workflow executions with the same <code>workflowId</code> at the same time within the same domain.</p> 
         /// <p>The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not <i>be</i> the literal string <code>arn</code>.</p>
         pub fn set_workflow_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.workflow_id = input;
-            self
+            self.workflow_id = input; self
         }
         /// <p>The type of the workflow to start.</p>
         pub fn workflow_type(mut self, input: crate::model::WorkflowType) -> Self {
@@ -6441,43 +4696,34 @@ pub mod start_workflow_execution_input {
             self
         }
         /// <p>The type of the workflow to start.</p>
-        pub fn set_workflow_type(
-            mut self,
-            input: std::option::Option<crate::model::WorkflowType>,
-        ) -> Self {
-            self.workflow_type = input;
-            self
+        pub fn set_workflow_type(mut self, input: std::option::Option<crate::model::WorkflowType>) -> Self {
+            self.workflow_type = input; self
         }
-        /// <p>The task list to use for the decision tasks generated for this workflow execution. This overrides the <code>defaultTaskList</code> specified when registering the workflow type.</p> <note>
-        /// <p>A task list for this workflow execution must be specified either as a default for the workflow type or through this parameter. If neither this parameter is set nor a default task list was specified at registration time then a fault is returned.</p>
-        /// </note>
+        /// <p>The task list to use for the decision tasks generated for this workflow execution. This overrides the <code>defaultTaskList</code> specified when registering the workflow type.</p> <note> 
+        /// <p>A task list for this workflow execution must be specified either as a default for the workflow type or through this parameter. If neither this parameter is set nor a default task list was specified at registration time then a fault is returned.</p> 
+        /// </note> 
         /// <p>The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not <i>be</i> the literal string <code>arn</code>.</p>
         pub fn task_list(mut self, input: crate::model::TaskList) -> Self {
             self.task_list = Some(input);
             self
         }
-        /// <p>The task list to use for the decision tasks generated for this workflow execution. This overrides the <code>defaultTaskList</code> specified when registering the workflow type.</p> <note>
-        /// <p>A task list for this workflow execution must be specified either as a default for the workflow type or through this parameter. If neither this parameter is set nor a default task list was specified at registration time then a fault is returned.</p>
-        /// </note>
+        /// <p>The task list to use for the decision tasks generated for this workflow execution. This overrides the <code>defaultTaskList</code> specified when registering the workflow type.</p> <note> 
+        /// <p>A task list for this workflow execution must be specified either as a default for the workflow type or through this parameter. If neither this parameter is set nor a default task list was specified at registration time then a fault is returned.</p> 
+        /// </note> 
         /// <p>The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not <i>be</i> the literal string <code>arn</code>.</p>
         pub fn set_task_list(mut self, input: std::option::Option<crate::model::TaskList>) -> Self {
-            self.task_list = input;
-            self
+            self.task_list = input; self
         }
-        /// <p>The task priority to use for this workflow execution. This overrides any default priority that was assigned when the workflow type was registered. If not set, then the default task priority for the workflow type is used. Valid values are integers that range from Java's <code>Integer.MIN_VALUE</code> (-2147483648) to <code>Integer.MAX_VALUE</code> (2147483647). Higher numbers indicate higher priority.</p>
+        /// <p>The task priority to use for this workflow execution. This overrides any default priority that was assigned when the workflow type was registered. If not set, then the default task priority for the workflow type is used. Valid values are integers that range from Java's <code>Integer.MIN_VALUE</code> (-2147483648) to <code>Integer.MAX_VALUE</code> (2147483647). Higher numbers indicate higher priority.</p> 
         /// <p>For more information about setting task priority, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting Task Priority</a> in the <i>Amazon SWF Developer Guide</i>.</p>
         pub fn task_priority(mut self, input: impl Into<std::string::String>) -> Self {
             self.task_priority = Some(input.into());
             self
         }
-        /// <p>The task priority to use for this workflow execution. This overrides any default priority that was assigned when the workflow type was registered. If not set, then the default task priority for the workflow type is used. Valid values are integers that range from Java's <code>Integer.MIN_VALUE</code> (-2147483648) to <code>Integer.MAX_VALUE</code> (2147483647). Higher numbers indicate higher priority.</p>
+        /// <p>The task priority to use for this workflow execution. This overrides any default priority that was assigned when the workflow type was registered. If not set, then the default task priority for the workflow type is used. Valid values are integers that range from Java's <code>Integer.MIN_VALUE</code> (-2147483648) to <code>Integer.MAX_VALUE</code> (2147483647). Higher numbers indicate higher priority.</p> 
         /// <p>For more information about setting task priority, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting Task Priority</a> in the <i>Amazon SWF Developer Guide</i>.</p>
-        pub fn set_task_priority(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.task_priority = input;
-            self
+        pub fn set_task_priority(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.task_priority = input; self
         }
         /// <p>The input for the workflow execution. This is a free form string which should be meaningful to the workflow you are starting. This <code>input</code> is made available to the new workflow execution in the <code>WorkflowExecutionStarted</code> history event.</p>
         pub fn input(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6486,30 +4732,22 @@ pub mod start_workflow_execution_input {
         }
         /// <p>The input for the workflow execution. This is a free form string which should be meaningful to the workflow you are starting. This <code>input</code> is made available to the new workflow execution in the <code>WorkflowExecutionStarted</code> history event.</p>
         pub fn set_input(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.input = input;
-            self
+            self.input = input; self
         }
-        /// <p>The total duration for this workflow execution. This overrides the defaultExecutionStartToCloseTimeout specified when registering the workflow type.</p>
-        /// <p>The duration is specified in seconds; an integer greater than or equal to <code>0</code>. Exceeding this limit causes the workflow execution to time out. Unlike some of the other timeout parameters in Amazon SWF, you cannot specify a value of "NONE" for this timeout; there is a one-year max limit on the time that a workflow execution can run.</p> <note>
-        /// <p>An execution start-to-close timeout must be specified either through this parameter or as a default when the workflow type is registered. If neither this parameter nor a default execution start-to-close timeout is specified, a fault is returned.</p>
+        /// <p>The total duration for this workflow execution. This overrides the defaultExecutionStartToCloseTimeout specified when registering the workflow type.</p> 
+        /// <p>The duration is specified in seconds; an integer greater than or equal to <code>0</code>. Exceeding this limit causes the workflow execution to time out. Unlike some of the other timeout parameters in Amazon SWF, you cannot specify a value of "NONE" for this timeout; there is a one-year max limit on the time that a workflow execution can run.</p> <note> 
+        /// <p>An execution start-to-close timeout must be specified either through this parameter or as a default when the workflow type is registered. If neither this parameter nor a default execution start-to-close timeout is specified, a fault is returned.</p> 
         /// </note>
-        pub fn execution_start_to_close_timeout(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn execution_start_to_close_timeout(mut self, input: impl Into<std::string::String>) -> Self {
             self.execution_start_to_close_timeout = Some(input.into());
             self
         }
-        /// <p>The total duration for this workflow execution. This overrides the defaultExecutionStartToCloseTimeout specified when registering the workflow type.</p>
-        /// <p>The duration is specified in seconds; an integer greater than or equal to <code>0</code>. Exceeding this limit causes the workflow execution to time out. Unlike some of the other timeout parameters in Amazon SWF, you cannot specify a value of "NONE" for this timeout; there is a one-year max limit on the time that a workflow execution can run.</p> <note>
-        /// <p>An execution start-to-close timeout must be specified either through this parameter or as a default when the workflow type is registered. If neither this parameter nor a default execution start-to-close timeout is specified, a fault is returned.</p>
+        /// <p>The total duration for this workflow execution. This overrides the defaultExecutionStartToCloseTimeout specified when registering the workflow type.</p> 
+        /// <p>The duration is specified in seconds; an integer greater than or equal to <code>0</code>. Exceeding this limit causes the workflow execution to time out. Unlike some of the other timeout parameters in Amazon SWF, you cannot specify a value of "NONE" for this timeout; there is a one-year max limit on the time that a workflow execution can run.</p> <note> 
+        /// <p>An execution start-to-close timeout must be specified either through this parameter or as a default when the workflow type is registered. If neither this parameter nor a default execution start-to-close timeout is specified, a fault is returned.</p> 
         /// </note>
-        pub fn set_execution_start_to_close_timeout(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.execution_start_to_close_timeout = input;
-            self
+        pub fn set_execution_start_to_close_timeout(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.execution_start_to_close_timeout = input; self
         }
         /// Appends an item to `tag_list`.
         ///
@@ -6518,231 +4756,172 @@ pub mod start_workflow_execution_input {
         /// <p>The list of tags to associate with the workflow execution. You can specify a maximum of 5 tags. You can list workflow executions with a specific tag by calling <code>ListOpenWorkflowExecutions</code> or <code>ListClosedWorkflowExecutions</code> and specifying a <code>TagFilter</code>.</p>
         pub fn tag_list(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.tag_list.unwrap_or_default();
-            v.push(input.into());
-            self.tag_list = Some(v);
-            self
+                            v.push(input.into());
+                            self.tag_list = Some(v);
+                            self
         }
         /// <p>The list of tags to associate with the workflow execution. You can specify a maximum of 5 tags. You can list workflow executions with a specific tag by calling <code>ListOpenWorkflowExecutions</code> or <code>ListClosedWorkflowExecutions</code> and specifying a <code>TagFilter</code>.</p>
-        pub fn set_tag_list(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.tag_list = input;
-            self
+        pub fn set_tag_list(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.tag_list = input; self
         }
-        /// <p>Specifies the maximum duration of decision tasks for this workflow execution. This parameter overrides the <code>defaultTaskStartToCloseTimout</code> specified when registering the workflow type using <code>RegisterWorkflowType</code>.</p>
-        /// <p>The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p> <note>
-        /// <p>A task start-to-close timeout for this workflow execution must be specified either as a default for the workflow type or through this parameter. If neither this parameter is set nor a default task start-to-close timeout was specified at registration time then a fault is returned.</p>
+        /// <p>Specifies the maximum duration of decision tasks for this workflow execution. This parameter overrides the <code>defaultTaskStartToCloseTimout</code> specified when registering the workflow type using <code>RegisterWorkflowType</code>.</p> 
+        /// <p>The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p> <note> 
+        /// <p>A task start-to-close timeout for this workflow execution must be specified either as a default for the workflow type or through this parameter. If neither this parameter is set nor a default task start-to-close timeout was specified at registration time then a fault is returned.</p> 
         /// </note>
-        pub fn task_start_to_close_timeout(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn task_start_to_close_timeout(mut self, input: impl Into<std::string::String>) -> Self {
             self.task_start_to_close_timeout = Some(input.into());
             self
         }
-        /// <p>Specifies the maximum duration of decision tasks for this workflow execution. This parameter overrides the <code>defaultTaskStartToCloseTimout</code> specified when registering the workflow type using <code>RegisterWorkflowType</code>.</p>
-        /// <p>The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p> <note>
-        /// <p>A task start-to-close timeout for this workflow execution must be specified either as a default for the workflow type or through this parameter. If neither this parameter is set nor a default task start-to-close timeout was specified at registration time then a fault is returned.</p>
+        /// <p>Specifies the maximum duration of decision tasks for this workflow execution. This parameter overrides the <code>defaultTaskStartToCloseTimout</code> specified when registering the workflow type using <code>RegisterWorkflowType</code>.</p> 
+        /// <p>The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p> <note> 
+        /// <p>A task start-to-close timeout for this workflow execution must be specified either as a default for the workflow type or through this parameter. If neither this parameter is set nor a default task start-to-close timeout was specified at registration time then a fault is returned.</p> 
         /// </note>
-        pub fn set_task_start_to_close_timeout(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.task_start_to_close_timeout = input;
-            self
+        pub fn set_task_start_to_close_timeout(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.task_start_to_close_timeout = input; self
         }
-        /// <p>If set, specifies the policy to use for the child workflow executions of this workflow execution if it is terminated, by calling the <code>TerminateWorkflowExecution</code> action explicitly or due to an expired timeout. This policy overrides the default child policy specified when registering the workflow type using <code>RegisterWorkflowType</code>.</p>
-        /// <p>The supported child policies are:</p>
-        /// <ul>
-        /// <li> <p> <code>TERMINATE</code> – The child executions are terminated.</p> </li>
-        /// <li> <p> <code>REQUEST_CANCEL</code> – A request to cancel is attempted for each child execution by recording a <code>WorkflowExecutionCancelRequested</code> event in its history. It is up to the decider to take appropriate actions when it receives an execution history with this event.</p> </li>
-        /// <li> <p> <code>ABANDON</code> – No action is taken. The child executions continue to run.</p> </li>
-        /// </ul> <note>
-        /// <p>A child policy for this workflow execution must be specified either as a default for the workflow type or through this parameter. If neither this parameter is set nor a default child policy was specified at registration time then a fault is returned.</p>
+        /// <p>If set, specifies the policy to use for the child workflow executions of this workflow execution if it is terminated, by calling the <code>TerminateWorkflowExecution</code> action explicitly or due to an expired timeout. This policy overrides the default child policy specified when registering the workflow type using <code>RegisterWorkflowType</code>.</p> 
+        /// <p>The supported child policies are:</p> 
+        /// <ul> 
+        /// <li> <p> <code>TERMINATE</code> – The child executions are terminated.</p> </li> 
+        /// <li> <p> <code>REQUEST_CANCEL</code> – A request to cancel is attempted for each child execution by recording a <code>WorkflowExecutionCancelRequested</code> event in its history. It is up to the decider to take appropriate actions when it receives an execution history with this event.</p> </li> 
+        /// <li> <p> <code>ABANDON</code> – No action is taken. The child executions continue to run.</p> </li> 
+        /// </ul> <note> 
+        /// <p>A child policy for this workflow execution must be specified either as a default for the workflow type or through this parameter. If neither this parameter is set nor a default child policy was specified at registration time then a fault is returned.</p> 
         /// </note>
         pub fn child_policy(mut self, input: crate::model::ChildPolicy) -> Self {
             self.child_policy = Some(input);
             self
         }
-        /// <p>If set, specifies the policy to use for the child workflow executions of this workflow execution if it is terminated, by calling the <code>TerminateWorkflowExecution</code> action explicitly or due to an expired timeout. This policy overrides the default child policy specified when registering the workflow type using <code>RegisterWorkflowType</code>.</p>
-        /// <p>The supported child policies are:</p>
-        /// <ul>
-        /// <li> <p> <code>TERMINATE</code> – The child executions are terminated.</p> </li>
-        /// <li> <p> <code>REQUEST_CANCEL</code> – A request to cancel is attempted for each child execution by recording a <code>WorkflowExecutionCancelRequested</code> event in its history. It is up to the decider to take appropriate actions when it receives an execution history with this event.</p> </li>
-        /// <li> <p> <code>ABANDON</code> – No action is taken. The child executions continue to run.</p> </li>
-        /// </ul> <note>
-        /// <p>A child policy for this workflow execution must be specified either as a default for the workflow type or through this parameter. If neither this parameter is set nor a default child policy was specified at registration time then a fault is returned.</p>
+        /// <p>If set, specifies the policy to use for the child workflow executions of this workflow execution if it is terminated, by calling the <code>TerminateWorkflowExecution</code> action explicitly or due to an expired timeout. This policy overrides the default child policy specified when registering the workflow type using <code>RegisterWorkflowType</code>.</p> 
+        /// <p>The supported child policies are:</p> 
+        /// <ul> 
+        /// <li> <p> <code>TERMINATE</code> – The child executions are terminated.</p> </li> 
+        /// <li> <p> <code>REQUEST_CANCEL</code> – A request to cancel is attempted for each child execution by recording a <code>WorkflowExecutionCancelRequested</code> event in its history. It is up to the decider to take appropriate actions when it receives an execution history with this event.</p> </li> 
+        /// <li> <p> <code>ABANDON</code> – No action is taken. The child executions continue to run.</p> </li> 
+        /// </ul> <note> 
+        /// <p>A child policy for this workflow execution must be specified either as a default for the workflow type or through this parameter. If neither this parameter is set nor a default child policy was specified at registration time then a fault is returned.</p> 
         /// </note>
-        pub fn set_child_policy(
-            mut self,
-            input: std::option::Option<crate::model::ChildPolicy>,
-        ) -> Self {
-            self.child_policy = input;
-            self
+        pub fn set_child_policy(mut self, input: std::option::Option<crate::model::ChildPolicy>) -> Self {
+            self.child_policy = input; self
         }
-        /// <p>The IAM role to attach to this workflow execution.</p> <note>
-        /// <p>Executions of this workflow type need IAM roles to invoke Lambda functions. If you don't attach an IAM role, any attempt to schedule a Lambda task fails. This results in a <code>ScheduleLambdaFunctionFailed</code> history event. For more information, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/lambda-task.html">https://docs.aws.amazon.com/amazonswf/latest/developerguide/lambda-task.html</a> in the <i>Amazon SWF Developer Guide</i>.</p>
+        /// <p>The IAM role to attach to this workflow execution.</p> <note> 
+        /// <p>Executions of this workflow type need IAM roles to invoke Lambda functions. If you don't attach an IAM role, any attempt to schedule a Lambda task fails. This results in a <code>ScheduleLambdaFunctionFailed</code> history event. For more information, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/lambda-task.html">https://docs.aws.amazon.com/amazonswf/latest/developerguide/lambda-task.html</a> in the <i>Amazon SWF Developer Guide</i>.</p> 
         /// </note>
         pub fn lambda_role(mut self, input: impl Into<std::string::String>) -> Self {
             self.lambda_role = Some(input.into());
             self
         }
-        /// <p>The IAM role to attach to this workflow execution.</p> <note>
-        /// <p>Executions of this workflow type need IAM roles to invoke Lambda functions. If you don't attach an IAM role, any attempt to schedule a Lambda task fails. This results in a <code>ScheduleLambdaFunctionFailed</code> history event. For more information, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/lambda-task.html">https://docs.aws.amazon.com/amazonswf/latest/developerguide/lambda-task.html</a> in the <i>Amazon SWF Developer Guide</i>.</p>
+        /// <p>The IAM role to attach to this workflow execution.</p> <note> 
+        /// <p>Executions of this workflow type need IAM roles to invoke Lambda functions. If you don't attach an IAM role, any attempt to schedule a Lambda task fails. This results in a <code>ScheduleLambdaFunctionFailed</code> history event. For more information, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/lambda-task.html">https://docs.aws.amazon.com/amazonswf/latest/developerguide/lambda-task.html</a> in the <i>Amazon SWF Developer Guide</i>.</p> 
         /// </note>
         pub fn set_lambda_role(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.lambda_role = input;
-            self
+            self.lambda_role = input; self
         }
         /// Consumes the builder and constructs a [`StartWorkflowExecutionInput`](crate::input::StartWorkflowExecutionInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::StartWorkflowExecutionInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::StartWorkflowExecutionInput {
-                domain: self.domain,
-                workflow_id: self.workflow_id,
-                workflow_type: self.workflow_type,
-                task_list: self.task_list,
-                task_priority: self.task_priority,
-                input: self.input,
-                execution_start_to_close_timeout: self.execution_start_to_close_timeout,
-                tag_list: self.tag_list,
-                task_start_to_close_timeout: self.task_start_to_close_timeout,
-                child_policy: self.child_policy,
-                lambda_role: self.lambda_role,
-            })
+        pub fn build(self) -> Result<crate::input::StartWorkflowExecutionInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::StartWorkflowExecutionInput {
+                    domain: self.domain
+                    ,
+                    workflow_id: self.workflow_id
+                    ,
+                    workflow_type: self.workflow_type
+                    ,
+                    task_list: self.task_list
+                    ,
+                    task_priority: self.task_priority
+                    ,
+                    input: self.input
+                    ,
+                    execution_start_to_close_timeout: self.execution_start_to_close_timeout
+                    ,
+                    tag_list: self.tag_list
+                    ,
+                    task_start_to_close_timeout: self.task_start_to_close_timeout
+                    ,
+                    child_policy: self.child_policy
+                    ,
+                    lambda_role: self.lambda_role
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl StartWorkflowExecutionInput {
     /// Consumes the builder and constructs an Operation<[`StartWorkflowExecution`](crate::operation::StartWorkflowExecution)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::StartWorkflowExecution,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::StartWorkflowExecution, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::StartWorkflowExecutionInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::StartWorkflowExecutionInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::StartWorkflowExecutionInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::StartWorkflowExecutionInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.0");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.0",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "SimpleWorkflowService.StartWorkflowExecution",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "SimpleWorkflowService.StartWorkflowExecution"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_start_workflow_execution(
-                &self,
-            )?,
+            crate::operation_ser::serialize_operation_crate_operation_start_workflow_execution(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::StartWorkflowExecution::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "StartWorkflowExecution",
-            "swf",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::StartWorkflowExecution::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("StartWorkflowExecution", "swf"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -6754,7 +4933,7 @@ impl StartWorkflowExecutionInput {
 
 /// See [`TagResourceInput`](crate::input::TagResourceInput).
 pub mod tag_resource_input {
-
+    
     /// A builder for [`TagResourceInput`](crate::input::TagResourceInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -6769,165 +4948,112 @@ pub mod tag_resource_input {
         }
         /// <p>The Amazon Resource Name (ARN) for the Amazon SWF domain.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.resource_arn = input;
-            self
+            self.resource_arn = input; self
         }
         /// Appends an item to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>The list of tags to add to a domain. </p>
+        /// <p>The list of tags to add to a domain. </p> 
         /// <p>Tags may only contain unicode letters, digits, whitespace, or these symbols: <code>_ . : / = + - @</code>.</p>
         pub fn tags(mut self, input: crate::model::ResourceTag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input);
-            self.tags = Some(v);
-            self
+                            v.push(input);
+                            self.tags = Some(v);
+                            self
         }
-        /// <p>The list of tags to add to a domain. </p>
+        /// <p>The list of tags to add to a domain. </p> 
         /// <p>Tags may only contain unicode letters, digits, whitespace, or these symbols: <code>_ . : / = + - @</code>.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ResourceTag>>,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::model::ResourceTag>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`TagResourceInput`](crate::input::TagResourceInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::TagResourceInput, aws_smithy_http::operation::error::BuildError>
-        {
-            Ok(crate::input::TagResourceInput {
-                resource_arn: self.resource_arn,
-                tags: self.tags,
-            })
+        pub fn build(self) -> Result<crate::input::TagResourceInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::TagResourceInput {
+                    resource_arn: self.resource_arn
+                    ,
+                    tags: self.tags
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl TagResourceInput {
     /// Consumes the builder and constructs an Operation<[`TagResource`](crate::operation::TagResource)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::TagResource,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::TagResource, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::TagResourceInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::TagResourceInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::TagResourceInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::TagResourceInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.0");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.0",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "SimpleWorkflowService.TagResource",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "SimpleWorkflowService.TagResource"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)?,
+            crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::TagResource::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "TagResource",
-            "swf",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::TagResource::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("TagResource", "swf"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -6939,7 +5065,7 @@ impl TagResourceInput {
 
 /// See [`TerminateWorkflowExecutionInput`](crate::input::TerminateWorkflowExecutionInput).
 pub mod terminate_workflow_execution_input {
-
+    
     /// A builder for [`TerminateWorkflowExecutionInput`](crate::input::TerminateWorkflowExecutionInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -6958,8 +5084,7 @@ pub mod terminate_workflow_execution_input {
         }
         /// <p>The domain of the workflow execution to terminate.</p>
         pub fn set_domain(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.domain = input;
-            self
+            self.domain = input; self
         }
         /// <p>The workflowId of the workflow execution to terminate.</p>
         pub fn workflow_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6968,8 +5093,7 @@ pub mod terminate_workflow_execution_input {
         }
         /// <p>The workflowId of the workflow execution to terminate.</p>
         pub fn set_workflow_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.workflow_id = input;
-            self
+            self.workflow_id = input; self
         }
         /// <p>The runId of the workflow execution to terminate.</p>
         pub fn run_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6978,8 +5102,7 @@ pub mod terminate_workflow_execution_input {
         }
         /// <p>The runId of the workflow execution to terminate.</p>
         pub fn set_run_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.run_id = input;
-            self
+            self.run_id = input; self
         }
         /// <p> A descriptive reason for terminating the workflow execution.</p>
         pub fn reason(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6988,8 +5111,7 @@ pub mod terminate_workflow_execution_input {
         }
         /// <p> A descriptive reason for terminating the workflow execution.</p>
         pub fn set_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.reason = input;
-            self
+            self.reason = input; self
         }
         /// <p> Details for terminating the workflow execution.</p>
         pub fn details(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6998,181 +5120,128 @@ pub mod terminate_workflow_execution_input {
         }
         /// <p> Details for terminating the workflow execution.</p>
         pub fn set_details(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.details = input;
-            self
+            self.details = input; self
         }
-        /// <p>If set, specifies the policy to use for the child workflow executions of the workflow execution being terminated. This policy overrides the child policy specified for the workflow execution at registration time or when starting the execution.</p>
-        /// <p>The supported child policies are:</p>
-        /// <ul>
-        /// <li> <p> <code>TERMINATE</code> – The child executions are terminated.</p> </li>
-        /// <li> <p> <code>REQUEST_CANCEL</code> – A request to cancel is attempted for each child execution by recording a <code>WorkflowExecutionCancelRequested</code> event in its history. It is up to the decider to take appropriate actions when it receives an execution history with this event.</p> </li>
-        /// <li> <p> <code>ABANDON</code> – No action is taken. The child executions continue to run.</p> </li>
-        /// </ul> <note>
-        /// <p>A child policy for this workflow execution must be specified either as a default for the workflow type or through this parameter. If neither this parameter is set nor a default child policy was specified at registration time then a fault is returned.</p>
+        /// <p>If set, specifies the policy to use for the child workflow executions of the workflow execution being terminated. This policy overrides the child policy specified for the workflow execution at registration time or when starting the execution.</p> 
+        /// <p>The supported child policies are:</p> 
+        /// <ul> 
+        /// <li> <p> <code>TERMINATE</code> – The child executions are terminated.</p> </li> 
+        /// <li> <p> <code>REQUEST_CANCEL</code> – A request to cancel is attempted for each child execution by recording a <code>WorkflowExecutionCancelRequested</code> event in its history. It is up to the decider to take appropriate actions when it receives an execution history with this event.</p> </li> 
+        /// <li> <p> <code>ABANDON</code> – No action is taken. The child executions continue to run.</p> </li> 
+        /// </ul> <note> 
+        /// <p>A child policy for this workflow execution must be specified either as a default for the workflow type or through this parameter. If neither this parameter is set nor a default child policy was specified at registration time then a fault is returned.</p> 
         /// </note>
         pub fn child_policy(mut self, input: crate::model::ChildPolicy) -> Self {
             self.child_policy = Some(input);
             self
         }
-        /// <p>If set, specifies the policy to use for the child workflow executions of the workflow execution being terminated. This policy overrides the child policy specified for the workflow execution at registration time or when starting the execution.</p>
-        /// <p>The supported child policies are:</p>
-        /// <ul>
-        /// <li> <p> <code>TERMINATE</code> – The child executions are terminated.</p> </li>
-        /// <li> <p> <code>REQUEST_CANCEL</code> – A request to cancel is attempted for each child execution by recording a <code>WorkflowExecutionCancelRequested</code> event in its history. It is up to the decider to take appropriate actions when it receives an execution history with this event.</p> </li>
-        /// <li> <p> <code>ABANDON</code> – No action is taken. The child executions continue to run.</p> </li>
-        /// </ul> <note>
-        /// <p>A child policy for this workflow execution must be specified either as a default for the workflow type or through this parameter. If neither this parameter is set nor a default child policy was specified at registration time then a fault is returned.</p>
+        /// <p>If set, specifies the policy to use for the child workflow executions of the workflow execution being terminated. This policy overrides the child policy specified for the workflow execution at registration time or when starting the execution.</p> 
+        /// <p>The supported child policies are:</p> 
+        /// <ul> 
+        /// <li> <p> <code>TERMINATE</code> – The child executions are terminated.</p> </li> 
+        /// <li> <p> <code>REQUEST_CANCEL</code> – A request to cancel is attempted for each child execution by recording a <code>WorkflowExecutionCancelRequested</code> event in its history. It is up to the decider to take appropriate actions when it receives an execution history with this event.</p> </li> 
+        /// <li> <p> <code>ABANDON</code> – No action is taken. The child executions continue to run.</p> </li> 
+        /// </ul> <note> 
+        /// <p>A child policy for this workflow execution must be specified either as a default for the workflow type or through this parameter. If neither this parameter is set nor a default child policy was specified at registration time then a fault is returned.</p> 
         /// </note>
-        pub fn set_child_policy(
-            mut self,
-            input: std::option::Option<crate::model::ChildPolicy>,
-        ) -> Self {
-            self.child_policy = input;
-            self
+        pub fn set_child_policy(mut self, input: std::option::Option<crate::model::ChildPolicy>) -> Self {
+            self.child_policy = input; self
         }
         /// Consumes the builder and constructs a [`TerminateWorkflowExecutionInput`](crate::input::TerminateWorkflowExecutionInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::TerminateWorkflowExecutionInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::TerminateWorkflowExecutionInput {
-                domain: self.domain,
-                workflow_id: self.workflow_id,
-                run_id: self.run_id,
-                reason: self.reason,
-                details: self.details,
-                child_policy: self.child_policy,
-            })
+        pub fn build(self) -> Result<crate::input::TerminateWorkflowExecutionInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::TerminateWorkflowExecutionInput {
+                    domain: self.domain
+                    ,
+                    workflow_id: self.workflow_id
+                    ,
+                    run_id: self.run_id
+                    ,
+                    reason: self.reason
+                    ,
+                    details: self.details
+                    ,
+                    child_policy: self.child_policy
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl TerminateWorkflowExecutionInput {
     /// Consumes the builder and constructs an Operation<[`TerminateWorkflowExecution`](crate::operation::TerminateWorkflowExecution)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::TerminateWorkflowExecution,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::TerminateWorkflowExecution, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::TerminateWorkflowExecutionInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::TerminateWorkflowExecutionInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::TerminateWorkflowExecutionInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::TerminateWorkflowExecutionInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.0");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.0",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "SimpleWorkflowService.TerminateWorkflowExecution",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "SimpleWorkflowService.TerminateWorkflowExecution"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_terminate_workflow_execution(
-                &self,
-            )?,
+            crate::operation_ser::serialize_operation_crate_operation_terminate_workflow_execution(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::TerminateWorkflowExecution::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "TerminateWorkflowExecution",
-            "swf",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::TerminateWorkflowExecution::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("TerminateWorkflowExecution", "swf"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -7184,7 +5253,7 @@ impl TerminateWorkflowExecutionInput {
 
 /// See [`UndeprecateActivityTypeInput`](crate::input::UndeprecateActivityTypeInput).
 pub mod undeprecate_activity_type_input {
-
+    
     /// A builder for [`UndeprecateActivityTypeInput`](crate::input::UndeprecateActivityTypeInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -7199,8 +5268,7 @@ pub mod undeprecate_activity_type_input {
         }
         /// <p>The name of the domain of the deprecated activity type.</p>
         pub fn set_domain(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.domain = input;
-            self
+            self.domain = input; self
         }
         /// <p>The activity type to undeprecate.</p>
         pub fn activity_type(mut self, input: crate::model::ActivityType) -> Self {
@@ -7208,152 +5276,96 @@ pub mod undeprecate_activity_type_input {
             self
         }
         /// <p>The activity type to undeprecate.</p>
-        pub fn set_activity_type(
-            mut self,
-            input: std::option::Option<crate::model::ActivityType>,
-        ) -> Self {
-            self.activity_type = input;
-            self
+        pub fn set_activity_type(mut self, input: std::option::Option<crate::model::ActivityType>) -> Self {
+            self.activity_type = input; self
         }
         /// Consumes the builder and constructs a [`UndeprecateActivityTypeInput`](crate::input::UndeprecateActivityTypeInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::UndeprecateActivityTypeInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::UndeprecateActivityTypeInput {
-                domain: self.domain,
-                activity_type: self.activity_type,
-            })
+        pub fn build(self) -> Result<crate::input::UndeprecateActivityTypeInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::UndeprecateActivityTypeInput {
+                    domain: self.domain
+                    ,
+                    activity_type: self.activity_type
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl UndeprecateActivityTypeInput {
     /// Consumes the builder and constructs an Operation<[`UndeprecateActivityType`](crate::operation::UndeprecateActivityType)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::UndeprecateActivityType,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::UndeprecateActivityType, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::UndeprecateActivityTypeInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::UndeprecateActivityTypeInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::UndeprecateActivityTypeInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::UndeprecateActivityTypeInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.0");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.0",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "SimpleWorkflowService.UndeprecateActivityType",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "SimpleWorkflowService.UndeprecateActivityType"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_undeprecate_activity_type(
-                &self,
-            )?,
+            crate::operation_ser::serialize_operation_crate_operation_undeprecate_activity_type(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::UndeprecateActivityType::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "UndeprecateActivityType",
-            "swf",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::UndeprecateActivityType::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("UndeprecateActivityType", "swf"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -7365,7 +5377,7 @@ impl UndeprecateActivityTypeInput {
 
 /// See [`UndeprecateDomainInput`](crate::input::UndeprecateDomainInput).
 pub mod undeprecate_domain_input {
-
+    
     /// A builder for [`UndeprecateDomainInput`](crate::input::UndeprecateDomainInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -7379,143 +5391,93 @@ pub mod undeprecate_domain_input {
         }
         /// <p>The name of the domain of the deprecated workflow type.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// Consumes the builder and constructs a [`UndeprecateDomainInput`](crate::input::UndeprecateDomainInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::UndeprecateDomainInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::UndeprecateDomainInput { name: self.name })
+        pub fn build(self) -> Result<crate::input::UndeprecateDomainInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::UndeprecateDomainInput {
+                    name: self.name
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl UndeprecateDomainInput {
     /// Consumes the builder and constructs an Operation<[`UndeprecateDomain`](crate::operation::UndeprecateDomain)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::UndeprecateDomain,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::UndeprecateDomain, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::UndeprecateDomainInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::UndeprecateDomainInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::UndeprecateDomainInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::UndeprecateDomainInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.0");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.0",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "SimpleWorkflowService.UndeprecateDomain",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "SimpleWorkflowService.UndeprecateDomain"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_undeprecate_domain(&self)?,
+            crate::operation_ser::serialize_operation_crate_operation_undeprecate_domain(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::UndeprecateDomain::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "UndeprecateDomain",
-            "swf",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::UndeprecateDomain::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("UndeprecateDomain", "swf"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -7527,7 +5489,7 @@ impl UndeprecateDomainInput {
 
 /// See [`UndeprecateWorkflowTypeInput`](crate::input::UndeprecateWorkflowTypeInput).
 pub mod undeprecate_workflow_type_input {
-
+    
     /// A builder for [`UndeprecateWorkflowTypeInput`](crate::input::UndeprecateWorkflowTypeInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -7542,8 +5504,7 @@ pub mod undeprecate_workflow_type_input {
         }
         /// <p>The name of the domain of the deprecated workflow type.</p>
         pub fn set_domain(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.domain = input;
-            self
+            self.domain = input; self
         }
         /// <p>The name of the domain of the deprecated workflow type.</p>
         pub fn workflow_type(mut self, input: crate::model::WorkflowType) -> Self {
@@ -7551,152 +5512,96 @@ pub mod undeprecate_workflow_type_input {
             self
         }
         /// <p>The name of the domain of the deprecated workflow type.</p>
-        pub fn set_workflow_type(
-            mut self,
-            input: std::option::Option<crate::model::WorkflowType>,
-        ) -> Self {
-            self.workflow_type = input;
-            self
+        pub fn set_workflow_type(mut self, input: std::option::Option<crate::model::WorkflowType>) -> Self {
+            self.workflow_type = input; self
         }
         /// Consumes the builder and constructs a [`UndeprecateWorkflowTypeInput`](crate::input::UndeprecateWorkflowTypeInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::UndeprecateWorkflowTypeInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::UndeprecateWorkflowTypeInput {
-                domain: self.domain,
-                workflow_type: self.workflow_type,
-            })
+        pub fn build(self) -> Result<crate::input::UndeprecateWorkflowTypeInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::UndeprecateWorkflowTypeInput {
+                    domain: self.domain
+                    ,
+                    workflow_type: self.workflow_type
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl UndeprecateWorkflowTypeInput {
     /// Consumes the builder and constructs an Operation<[`UndeprecateWorkflowType`](crate::operation::UndeprecateWorkflowType)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::UndeprecateWorkflowType,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::UndeprecateWorkflowType, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::UndeprecateWorkflowTypeInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::UndeprecateWorkflowTypeInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::UndeprecateWorkflowTypeInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::UndeprecateWorkflowTypeInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.0");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.0",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "SimpleWorkflowService.UndeprecateWorkflowType",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "SimpleWorkflowService.UndeprecateWorkflowType"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_undeprecate_workflow_type(
-                &self,
-            )?,
+            crate::operation_ser::serialize_operation_crate_operation_undeprecate_workflow_type(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::UndeprecateWorkflowType::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "UndeprecateWorkflowType",
-            "swf",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::UndeprecateWorkflowType::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("UndeprecateWorkflowType", "swf"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -7708,7 +5613,7 @@ impl UndeprecateWorkflowTypeInput {
 
 /// See [`UntagResourceInput`](crate::input::UntagResourceInput).
 pub mod untag_resource_input {
-
+    
     /// A builder for [`UntagResourceInput`](crate::input::UntagResourceInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -7723,8 +5628,7 @@ pub mod untag_resource_input {
         }
         /// <p>The Amazon Resource Name (ARN) for the Amazon SWF domain.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.resource_arn = input;
-            self
+            self.resource_arn = input; self
         }
         /// Appends an item to `tag_keys`.
         ///
@@ -7733,153 +5637,101 @@ pub mod untag_resource_input {
         /// <p>The list of tags to remove from the Amazon SWF domain.</p>
         pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.tag_keys.unwrap_or_default();
-            v.push(input.into());
-            self.tag_keys = Some(v);
-            self
+                            v.push(input.into());
+                            self.tag_keys = Some(v);
+                            self
         }
         /// <p>The list of tags to remove from the Amazon SWF domain.</p>
-        pub fn set_tag_keys(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.tag_keys = input;
-            self
+        pub fn set_tag_keys(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.tag_keys = input; self
         }
         /// Consumes the builder and constructs a [`UntagResourceInput`](crate::input::UntagResourceInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::UntagResourceInput, aws_smithy_http::operation::error::BuildError>
-        {
-            Ok(crate::input::UntagResourceInput {
-                resource_arn: self.resource_arn,
-                tag_keys: self.tag_keys,
-            })
+        pub fn build(self) -> Result<crate::input::UntagResourceInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::UntagResourceInput {
+                    resource_arn: self.resource_arn
+                    ,
+                    tag_keys: self.tag_keys
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl UntagResourceInput {
     /// Consumes the builder and constructs an Operation<[`UntagResource`](crate::operation::UntagResource)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::UntagResource,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::UntagResource, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::UntagResourceInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::UntagResourceInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::UntagResourceInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::UntagResourceInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.0");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.0",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "SimpleWorkflowService.UntagResource",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "SimpleWorkflowService.UntagResource"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_untag_resource(&self)?,
+            crate::operation_ser::serialize_operation_crate_operation_untag_resource(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::UntagResource::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "UntagResource",
-            "swf",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::UntagResource::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("UntagResource", "swf"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -7892,7 +5744,7 @@ impl UntagResourceInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UntagResourceInput {
+pub struct UntagResourceInput  {
     /// <p>The Amazon Resource Name (ARN) for the Amazon SWF domain.</p>
     #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
@@ -7902,11 +5754,11 @@ pub struct UntagResourceInput {
 }
 impl UntagResourceInput {
     /// <p>The Amazon Resource Name (ARN) for the Amazon SWF domain.</p>
-    pub fn resource_arn(&self) -> std::option::Option<&str> {
+    pub fn resource_arn(&self) -> std::option::Option<& str> {
         self.resource_arn.as_deref()
     }
     /// <p>The list of tags to remove from the Amazon SWF domain.</p>
-    pub fn tag_keys(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn tag_keys(&self) -> std::option::Option<& [std::string::String]> {
         self.tag_keys.as_deref()
     }
 }
@@ -7914,7 +5766,7 @@ impl UntagResourceInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UndeprecateWorkflowTypeInput {
+pub struct UndeprecateWorkflowTypeInput  {
     /// <p>The name of the domain of the deprecated workflow type.</p>
     #[doc(hidden)]
     pub domain: std::option::Option<std::string::String>,
@@ -7924,11 +5776,11 @@ pub struct UndeprecateWorkflowTypeInput {
 }
 impl UndeprecateWorkflowTypeInput {
     /// <p>The name of the domain of the deprecated workflow type.</p>
-    pub fn domain(&self) -> std::option::Option<&str> {
+    pub fn domain(&self) -> std::option::Option<& str> {
         self.domain.as_deref()
     }
     /// <p>The name of the domain of the deprecated workflow type.</p>
-    pub fn workflow_type(&self) -> std::option::Option<&crate::model::WorkflowType> {
+    pub fn workflow_type(&self) -> std::option::Option<& crate::model::WorkflowType> {
         self.workflow_type.as_ref()
     }
 }
@@ -7936,14 +5788,14 @@ impl UndeprecateWorkflowTypeInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UndeprecateDomainInput {
+pub struct UndeprecateDomainInput  {
     /// <p>The name of the domain of the deprecated workflow type.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl UndeprecateDomainInput {
     /// <p>The name of the domain of the deprecated workflow type.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
 }
@@ -7951,7 +5803,7 @@ impl UndeprecateDomainInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UndeprecateActivityTypeInput {
+pub struct UndeprecateActivityTypeInput  {
     /// <p>The name of the domain of the deprecated activity type.</p>
     #[doc(hidden)]
     pub domain: std::option::Option<std::string::String>,
@@ -7961,11 +5813,11 @@ pub struct UndeprecateActivityTypeInput {
 }
 impl UndeprecateActivityTypeInput {
     /// <p>The name of the domain of the deprecated activity type.</p>
-    pub fn domain(&self) -> std::option::Option<&str> {
+    pub fn domain(&self) -> std::option::Option<& str> {
         self.domain.as_deref()
     }
     /// <p>The activity type to undeprecate.</p>
-    pub fn activity_type(&self) -> std::option::Option<&crate::model::ActivityType> {
+    pub fn activity_type(&self) -> std::option::Option<& crate::model::ActivityType> {
         self.activity_type.as_ref()
     }
 }
@@ -7973,7 +5825,7 @@ impl UndeprecateActivityTypeInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TerminateWorkflowExecutionInput {
+pub struct TerminateWorkflowExecutionInput  {
     /// <p>The domain of the workflow execution to terminate.</p>
     #[doc(hidden)]
     pub domain: std::option::Option<std::string::String>,
@@ -7989,49 +5841,49 @@ pub struct TerminateWorkflowExecutionInput {
     /// <p> Details for terminating the workflow execution.</p>
     #[doc(hidden)]
     pub details: std::option::Option<std::string::String>,
-    /// <p>If set, specifies the policy to use for the child workflow executions of the workflow execution being terminated. This policy overrides the child policy specified for the workflow execution at registration time or when starting the execution.</p>
-    /// <p>The supported child policies are:</p>
-    /// <ul>
-    /// <li> <p> <code>TERMINATE</code> – The child executions are terminated.</p> </li>
-    /// <li> <p> <code>REQUEST_CANCEL</code> – A request to cancel is attempted for each child execution by recording a <code>WorkflowExecutionCancelRequested</code> event in its history. It is up to the decider to take appropriate actions when it receives an execution history with this event.</p> </li>
-    /// <li> <p> <code>ABANDON</code> – No action is taken. The child executions continue to run.</p> </li>
-    /// </ul> <note>
-    /// <p>A child policy for this workflow execution must be specified either as a default for the workflow type or through this parameter. If neither this parameter is set nor a default child policy was specified at registration time then a fault is returned.</p>
+    /// <p>If set, specifies the policy to use for the child workflow executions of the workflow execution being terminated. This policy overrides the child policy specified for the workflow execution at registration time or when starting the execution.</p> 
+    /// <p>The supported child policies are:</p> 
+    /// <ul> 
+    /// <li> <p> <code>TERMINATE</code> – The child executions are terminated.</p> </li> 
+    /// <li> <p> <code>REQUEST_CANCEL</code> – A request to cancel is attempted for each child execution by recording a <code>WorkflowExecutionCancelRequested</code> event in its history. It is up to the decider to take appropriate actions when it receives an execution history with this event.</p> </li> 
+    /// <li> <p> <code>ABANDON</code> – No action is taken. The child executions continue to run.</p> </li> 
+    /// </ul> <note> 
+    /// <p>A child policy for this workflow execution must be specified either as a default for the workflow type or through this parameter. If neither this parameter is set nor a default child policy was specified at registration time then a fault is returned.</p> 
     /// </note>
     #[doc(hidden)]
     pub child_policy: std::option::Option<crate::model::ChildPolicy>,
 }
 impl TerminateWorkflowExecutionInput {
     /// <p>The domain of the workflow execution to terminate.</p>
-    pub fn domain(&self) -> std::option::Option<&str> {
+    pub fn domain(&self) -> std::option::Option<& str> {
         self.domain.as_deref()
     }
     /// <p>The workflowId of the workflow execution to terminate.</p>
-    pub fn workflow_id(&self) -> std::option::Option<&str> {
+    pub fn workflow_id(&self) -> std::option::Option<& str> {
         self.workflow_id.as_deref()
     }
     /// <p>The runId of the workflow execution to terminate.</p>
-    pub fn run_id(&self) -> std::option::Option<&str> {
+    pub fn run_id(&self) -> std::option::Option<& str> {
         self.run_id.as_deref()
     }
     /// <p> A descriptive reason for terminating the workflow execution.</p>
-    pub fn reason(&self) -> std::option::Option<&str> {
+    pub fn reason(&self) -> std::option::Option<& str> {
         self.reason.as_deref()
     }
     /// <p> Details for terminating the workflow execution.</p>
-    pub fn details(&self) -> std::option::Option<&str> {
+    pub fn details(&self) -> std::option::Option<& str> {
         self.details.as_deref()
     }
-    /// <p>If set, specifies the policy to use for the child workflow executions of the workflow execution being terminated. This policy overrides the child policy specified for the workflow execution at registration time or when starting the execution.</p>
-    /// <p>The supported child policies are:</p>
-    /// <ul>
-    /// <li> <p> <code>TERMINATE</code> – The child executions are terminated.</p> </li>
-    /// <li> <p> <code>REQUEST_CANCEL</code> – A request to cancel is attempted for each child execution by recording a <code>WorkflowExecutionCancelRequested</code> event in its history. It is up to the decider to take appropriate actions when it receives an execution history with this event.</p> </li>
-    /// <li> <p> <code>ABANDON</code> – No action is taken. The child executions continue to run.</p> </li>
-    /// </ul> <note>
-    /// <p>A child policy for this workflow execution must be specified either as a default for the workflow type or through this parameter. If neither this parameter is set nor a default child policy was specified at registration time then a fault is returned.</p>
+    /// <p>If set, specifies the policy to use for the child workflow executions of the workflow execution being terminated. This policy overrides the child policy specified for the workflow execution at registration time or when starting the execution.</p> 
+    /// <p>The supported child policies are:</p> 
+    /// <ul> 
+    /// <li> <p> <code>TERMINATE</code> – The child executions are terminated.</p> </li> 
+    /// <li> <p> <code>REQUEST_CANCEL</code> – A request to cancel is attempted for each child execution by recording a <code>WorkflowExecutionCancelRequested</code> event in its history. It is up to the decider to take appropriate actions when it receives an execution history with this event.</p> </li> 
+    /// <li> <p> <code>ABANDON</code> – No action is taken. The child executions continue to run.</p> </li> 
+    /// </ul> <note> 
+    /// <p>A child policy for this workflow execution must be specified either as a default for the workflow type or through this parameter. If neither this parameter is set nor a default child policy was specified at registration time then a fault is returned.</p> 
     /// </note>
-    pub fn child_policy(&self) -> std::option::Option<&crate::model::ChildPolicy> {
+    pub fn child_policy(&self) -> std::option::Option<& crate::model::ChildPolicy> {
         self.child_policy.as_ref()
     }
 }
@@ -8039,23 +5891,23 @@ impl TerminateWorkflowExecutionInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TagResourceInput {
+pub struct TagResourceInput  {
     /// <p>The Amazon Resource Name (ARN) for the Amazon SWF domain.</p>
     #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
-    /// <p>The list of tags to add to a domain. </p>
+    /// <p>The list of tags to add to a domain. </p> 
     /// <p>Tags may only contain unicode letters, digits, whitespace, or these symbols: <code>_ . : / = + - @</code>.</p>
     #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::ResourceTag>>,
 }
 impl TagResourceInput {
     /// <p>The Amazon Resource Name (ARN) for the Amazon SWF domain.</p>
-    pub fn resource_arn(&self) -> std::option::Option<&str> {
+    pub fn resource_arn(&self) -> std::option::Option<& str> {
         self.resource_arn.as_deref()
     }
-    /// <p>The list of tags to add to a domain. </p>
+    /// <p>The list of tags to add to a domain. </p> 
     /// <p>Tags may only contain unicode letters, digits, whitespace, or these symbols: <code>_ . : / = + - @</code>.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::model::ResourceTag]> {
+    pub fn tags(&self) -> std::option::Option<& [crate::model::ResourceTag]> {
         self.tags.as_deref()
     }
 }
@@ -8063,126 +5915,126 @@ impl TagResourceInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StartWorkflowExecutionInput {
+pub struct StartWorkflowExecutionInput  {
     /// <p>The name of the domain in which the workflow execution is created.</p>
     #[doc(hidden)]
     pub domain: std::option::Option<std::string::String>,
-    /// <p>The user defined identifier associated with the workflow execution. You can use this to associate a custom identifier with the workflow execution. You may specify the same identifier if a workflow execution is logically a <i>restart</i> of a previous execution. You cannot have two open workflow executions with the same <code>workflowId</code> at the same time within the same domain.</p>
+    /// <p>The user defined identifier associated with the workflow execution. You can use this to associate a custom identifier with the workflow execution. You may specify the same identifier if a workflow execution is logically a <i>restart</i> of a previous execution. You cannot have two open workflow executions with the same <code>workflowId</code> at the same time within the same domain.</p> 
     /// <p>The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not <i>be</i> the literal string <code>arn</code>.</p>
     #[doc(hidden)]
     pub workflow_id: std::option::Option<std::string::String>,
     /// <p>The type of the workflow to start.</p>
     #[doc(hidden)]
     pub workflow_type: std::option::Option<crate::model::WorkflowType>,
-    /// <p>The task list to use for the decision tasks generated for this workflow execution. This overrides the <code>defaultTaskList</code> specified when registering the workflow type.</p> <note>
-    /// <p>A task list for this workflow execution must be specified either as a default for the workflow type or through this parameter. If neither this parameter is set nor a default task list was specified at registration time then a fault is returned.</p>
-    /// </note>
+    /// <p>The task list to use for the decision tasks generated for this workflow execution. This overrides the <code>defaultTaskList</code> specified when registering the workflow type.</p> <note> 
+    /// <p>A task list for this workflow execution must be specified either as a default for the workflow type or through this parameter. If neither this parameter is set nor a default task list was specified at registration time then a fault is returned.</p> 
+    /// </note> 
     /// <p>The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not <i>be</i> the literal string <code>arn</code>.</p>
     #[doc(hidden)]
     pub task_list: std::option::Option<crate::model::TaskList>,
-    /// <p>The task priority to use for this workflow execution. This overrides any default priority that was assigned when the workflow type was registered. If not set, then the default task priority for the workflow type is used. Valid values are integers that range from Java's <code>Integer.MIN_VALUE</code> (-2147483648) to <code>Integer.MAX_VALUE</code> (2147483647). Higher numbers indicate higher priority.</p>
+    /// <p>The task priority to use for this workflow execution. This overrides any default priority that was assigned when the workflow type was registered. If not set, then the default task priority for the workflow type is used. Valid values are integers that range from Java's <code>Integer.MIN_VALUE</code> (-2147483648) to <code>Integer.MAX_VALUE</code> (2147483647). Higher numbers indicate higher priority.</p> 
     /// <p>For more information about setting task priority, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting Task Priority</a> in the <i>Amazon SWF Developer Guide</i>.</p>
     #[doc(hidden)]
     pub task_priority: std::option::Option<std::string::String>,
     /// <p>The input for the workflow execution. This is a free form string which should be meaningful to the workflow you are starting. This <code>input</code> is made available to the new workflow execution in the <code>WorkflowExecutionStarted</code> history event.</p>
     #[doc(hidden)]
     pub input: std::option::Option<std::string::String>,
-    /// <p>The total duration for this workflow execution. This overrides the defaultExecutionStartToCloseTimeout specified when registering the workflow type.</p>
-    /// <p>The duration is specified in seconds; an integer greater than or equal to <code>0</code>. Exceeding this limit causes the workflow execution to time out. Unlike some of the other timeout parameters in Amazon SWF, you cannot specify a value of "NONE" for this timeout; there is a one-year max limit on the time that a workflow execution can run.</p> <note>
-    /// <p>An execution start-to-close timeout must be specified either through this parameter or as a default when the workflow type is registered. If neither this parameter nor a default execution start-to-close timeout is specified, a fault is returned.</p>
+    /// <p>The total duration for this workflow execution. This overrides the defaultExecutionStartToCloseTimeout specified when registering the workflow type.</p> 
+    /// <p>The duration is specified in seconds; an integer greater than or equal to <code>0</code>. Exceeding this limit causes the workflow execution to time out. Unlike some of the other timeout parameters in Amazon SWF, you cannot specify a value of "NONE" for this timeout; there is a one-year max limit on the time that a workflow execution can run.</p> <note> 
+    /// <p>An execution start-to-close timeout must be specified either through this parameter or as a default when the workflow type is registered. If neither this parameter nor a default execution start-to-close timeout is specified, a fault is returned.</p> 
     /// </note>
     #[doc(hidden)]
     pub execution_start_to_close_timeout: std::option::Option<std::string::String>,
     /// <p>The list of tags to associate with the workflow execution. You can specify a maximum of 5 tags. You can list workflow executions with a specific tag by calling <code>ListOpenWorkflowExecutions</code> or <code>ListClosedWorkflowExecutions</code> and specifying a <code>TagFilter</code>.</p>
     #[doc(hidden)]
     pub tag_list: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>Specifies the maximum duration of decision tasks for this workflow execution. This parameter overrides the <code>defaultTaskStartToCloseTimout</code> specified when registering the workflow type using <code>RegisterWorkflowType</code>.</p>
-    /// <p>The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p> <note>
-    /// <p>A task start-to-close timeout for this workflow execution must be specified either as a default for the workflow type or through this parameter. If neither this parameter is set nor a default task start-to-close timeout was specified at registration time then a fault is returned.</p>
+    /// <p>Specifies the maximum duration of decision tasks for this workflow execution. This parameter overrides the <code>defaultTaskStartToCloseTimout</code> specified when registering the workflow type using <code>RegisterWorkflowType</code>.</p> 
+    /// <p>The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p> <note> 
+    /// <p>A task start-to-close timeout for this workflow execution must be specified either as a default for the workflow type or through this parameter. If neither this parameter is set nor a default task start-to-close timeout was specified at registration time then a fault is returned.</p> 
     /// </note>
     #[doc(hidden)]
     pub task_start_to_close_timeout: std::option::Option<std::string::String>,
-    /// <p>If set, specifies the policy to use for the child workflow executions of this workflow execution if it is terminated, by calling the <code>TerminateWorkflowExecution</code> action explicitly or due to an expired timeout. This policy overrides the default child policy specified when registering the workflow type using <code>RegisterWorkflowType</code>.</p>
-    /// <p>The supported child policies are:</p>
-    /// <ul>
-    /// <li> <p> <code>TERMINATE</code> – The child executions are terminated.</p> </li>
-    /// <li> <p> <code>REQUEST_CANCEL</code> – A request to cancel is attempted for each child execution by recording a <code>WorkflowExecutionCancelRequested</code> event in its history. It is up to the decider to take appropriate actions when it receives an execution history with this event.</p> </li>
-    /// <li> <p> <code>ABANDON</code> – No action is taken. The child executions continue to run.</p> </li>
-    /// </ul> <note>
-    /// <p>A child policy for this workflow execution must be specified either as a default for the workflow type or through this parameter. If neither this parameter is set nor a default child policy was specified at registration time then a fault is returned.</p>
+    /// <p>If set, specifies the policy to use for the child workflow executions of this workflow execution if it is terminated, by calling the <code>TerminateWorkflowExecution</code> action explicitly or due to an expired timeout. This policy overrides the default child policy specified when registering the workflow type using <code>RegisterWorkflowType</code>.</p> 
+    /// <p>The supported child policies are:</p> 
+    /// <ul> 
+    /// <li> <p> <code>TERMINATE</code> – The child executions are terminated.</p> </li> 
+    /// <li> <p> <code>REQUEST_CANCEL</code> – A request to cancel is attempted for each child execution by recording a <code>WorkflowExecutionCancelRequested</code> event in its history. It is up to the decider to take appropriate actions when it receives an execution history with this event.</p> </li> 
+    /// <li> <p> <code>ABANDON</code> – No action is taken. The child executions continue to run.</p> </li> 
+    /// </ul> <note> 
+    /// <p>A child policy for this workflow execution must be specified either as a default for the workflow type or through this parameter. If neither this parameter is set nor a default child policy was specified at registration time then a fault is returned.</p> 
     /// </note>
     #[doc(hidden)]
     pub child_policy: std::option::Option<crate::model::ChildPolicy>,
-    /// <p>The IAM role to attach to this workflow execution.</p> <note>
-    /// <p>Executions of this workflow type need IAM roles to invoke Lambda functions. If you don't attach an IAM role, any attempt to schedule a Lambda task fails. This results in a <code>ScheduleLambdaFunctionFailed</code> history event. For more information, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/lambda-task.html">https://docs.aws.amazon.com/amazonswf/latest/developerguide/lambda-task.html</a> in the <i>Amazon SWF Developer Guide</i>.</p>
+    /// <p>The IAM role to attach to this workflow execution.</p> <note> 
+    /// <p>Executions of this workflow type need IAM roles to invoke Lambda functions. If you don't attach an IAM role, any attempt to schedule a Lambda task fails. This results in a <code>ScheduleLambdaFunctionFailed</code> history event. For more information, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/lambda-task.html">https://docs.aws.amazon.com/amazonswf/latest/developerguide/lambda-task.html</a> in the <i>Amazon SWF Developer Guide</i>.</p> 
     /// </note>
     #[doc(hidden)]
     pub lambda_role: std::option::Option<std::string::String>,
 }
 impl StartWorkflowExecutionInput {
     /// <p>The name of the domain in which the workflow execution is created.</p>
-    pub fn domain(&self) -> std::option::Option<&str> {
+    pub fn domain(&self) -> std::option::Option<& str> {
         self.domain.as_deref()
     }
-    /// <p>The user defined identifier associated with the workflow execution. You can use this to associate a custom identifier with the workflow execution. You may specify the same identifier if a workflow execution is logically a <i>restart</i> of a previous execution. You cannot have two open workflow executions with the same <code>workflowId</code> at the same time within the same domain.</p>
+    /// <p>The user defined identifier associated with the workflow execution. You can use this to associate a custom identifier with the workflow execution. You may specify the same identifier if a workflow execution is logically a <i>restart</i> of a previous execution. You cannot have two open workflow executions with the same <code>workflowId</code> at the same time within the same domain.</p> 
     /// <p>The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not <i>be</i> the literal string <code>arn</code>.</p>
-    pub fn workflow_id(&self) -> std::option::Option<&str> {
+    pub fn workflow_id(&self) -> std::option::Option<& str> {
         self.workflow_id.as_deref()
     }
     /// <p>The type of the workflow to start.</p>
-    pub fn workflow_type(&self) -> std::option::Option<&crate::model::WorkflowType> {
+    pub fn workflow_type(&self) -> std::option::Option<& crate::model::WorkflowType> {
         self.workflow_type.as_ref()
     }
-    /// <p>The task list to use for the decision tasks generated for this workflow execution. This overrides the <code>defaultTaskList</code> specified when registering the workflow type.</p> <note>
-    /// <p>A task list for this workflow execution must be specified either as a default for the workflow type or through this parameter. If neither this parameter is set nor a default task list was specified at registration time then a fault is returned.</p>
-    /// </note>
+    /// <p>The task list to use for the decision tasks generated for this workflow execution. This overrides the <code>defaultTaskList</code> specified when registering the workflow type.</p> <note> 
+    /// <p>A task list for this workflow execution must be specified either as a default for the workflow type or through this parameter. If neither this parameter is set nor a default task list was specified at registration time then a fault is returned.</p> 
+    /// </note> 
     /// <p>The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not <i>be</i> the literal string <code>arn</code>.</p>
-    pub fn task_list(&self) -> std::option::Option<&crate::model::TaskList> {
+    pub fn task_list(&self) -> std::option::Option<& crate::model::TaskList> {
         self.task_list.as_ref()
     }
-    /// <p>The task priority to use for this workflow execution. This overrides any default priority that was assigned when the workflow type was registered. If not set, then the default task priority for the workflow type is used. Valid values are integers that range from Java's <code>Integer.MIN_VALUE</code> (-2147483648) to <code>Integer.MAX_VALUE</code> (2147483647). Higher numbers indicate higher priority.</p>
+    /// <p>The task priority to use for this workflow execution. This overrides any default priority that was assigned when the workflow type was registered. If not set, then the default task priority for the workflow type is used. Valid values are integers that range from Java's <code>Integer.MIN_VALUE</code> (-2147483648) to <code>Integer.MAX_VALUE</code> (2147483647). Higher numbers indicate higher priority.</p> 
     /// <p>For more information about setting task priority, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting Task Priority</a> in the <i>Amazon SWF Developer Guide</i>.</p>
-    pub fn task_priority(&self) -> std::option::Option<&str> {
+    pub fn task_priority(&self) -> std::option::Option<& str> {
         self.task_priority.as_deref()
     }
     /// <p>The input for the workflow execution. This is a free form string which should be meaningful to the workflow you are starting. This <code>input</code> is made available to the new workflow execution in the <code>WorkflowExecutionStarted</code> history event.</p>
-    pub fn input(&self) -> std::option::Option<&str> {
+    pub fn input(&self) -> std::option::Option<& str> {
         self.input.as_deref()
     }
-    /// <p>The total duration for this workflow execution. This overrides the defaultExecutionStartToCloseTimeout specified when registering the workflow type.</p>
-    /// <p>The duration is specified in seconds; an integer greater than or equal to <code>0</code>. Exceeding this limit causes the workflow execution to time out. Unlike some of the other timeout parameters in Amazon SWF, you cannot specify a value of "NONE" for this timeout; there is a one-year max limit on the time that a workflow execution can run.</p> <note>
-    /// <p>An execution start-to-close timeout must be specified either through this parameter or as a default when the workflow type is registered. If neither this parameter nor a default execution start-to-close timeout is specified, a fault is returned.</p>
+    /// <p>The total duration for this workflow execution. This overrides the defaultExecutionStartToCloseTimeout specified when registering the workflow type.</p> 
+    /// <p>The duration is specified in seconds; an integer greater than or equal to <code>0</code>. Exceeding this limit causes the workflow execution to time out. Unlike some of the other timeout parameters in Amazon SWF, you cannot specify a value of "NONE" for this timeout; there is a one-year max limit on the time that a workflow execution can run.</p> <note> 
+    /// <p>An execution start-to-close timeout must be specified either through this parameter or as a default when the workflow type is registered. If neither this parameter nor a default execution start-to-close timeout is specified, a fault is returned.</p> 
     /// </note>
-    pub fn execution_start_to_close_timeout(&self) -> std::option::Option<&str> {
+    pub fn execution_start_to_close_timeout(&self) -> std::option::Option<& str> {
         self.execution_start_to_close_timeout.as_deref()
     }
     /// <p>The list of tags to associate with the workflow execution. You can specify a maximum of 5 tags. You can list workflow executions with a specific tag by calling <code>ListOpenWorkflowExecutions</code> or <code>ListClosedWorkflowExecutions</code> and specifying a <code>TagFilter</code>.</p>
-    pub fn tag_list(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn tag_list(&self) -> std::option::Option<& [std::string::String]> {
         self.tag_list.as_deref()
     }
-    /// <p>Specifies the maximum duration of decision tasks for this workflow execution. This parameter overrides the <code>defaultTaskStartToCloseTimout</code> specified when registering the workflow type using <code>RegisterWorkflowType</code>.</p>
-    /// <p>The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p> <note>
-    /// <p>A task start-to-close timeout for this workflow execution must be specified either as a default for the workflow type or through this parameter. If neither this parameter is set nor a default task start-to-close timeout was specified at registration time then a fault is returned.</p>
+    /// <p>Specifies the maximum duration of decision tasks for this workflow execution. This parameter overrides the <code>defaultTaskStartToCloseTimout</code> specified when registering the workflow type using <code>RegisterWorkflowType</code>.</p> 
+    /// <p>The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p> <note> 
+    /// <p>A task start-to-close timeout for this workflow execution must be specified either as a default for the workflow type or through this parameter. If neither this parameter is set nor a default task start-to-close timeout was specified at registration time then a fault is returned.</p> 
     /// </note>
-    pub fn task_start_to_close_timeout(&self) -> std::option::Option<&str> {
+    pub fn task_start_to_close_timeout(&self) -> std::option::Option<& str> {
         self.task_start_to_close_timeout.as_deref()
     }
-    /// <p>If set, specifies the policy to use for the child workflow executions of this workflow execution if it is terminated, by calling the <code>TerminateWorkflowExecution</code> action explicitly or due to an expired timeout. This policy overrides the default child policy specified when registering the workflow type using <code>RegisterWorkflowType</code>.</p>
-    /// <p>The supported child policies are:</p>
-    /// <ul>
-    /// <li> <p> <code>TERMINATE</code> – The child executions are terminated.</p> </li>
-    /// <li> <p> <code>REQUEST_CANCEL</code> – A request to cancel is attempted for each child execution by recording a <code>WorkflowExecutionCancelRequested</code> event in its history. It is up to the decider to take appropriate actions when it receives an execution history with this event.</p> </li>
-    /// <li> <p> <code>ABANDON</code> – No action is taken. The child executions continue to run.</p> </li>
-    /// </ul> <note>
-    /// <p>A child policy for this workflow execution must be specified either as a default for the workflow type or through this parameter. If neither this parameter is set nor a default child policy was specified at registration time then a fault is returned.</p>
+    /// <p>If set, specifies the policy to use for the child workflow executions of this workflow execution if it is terminated, by calling the <code>TerminateWorkflowExecution</code> action explicitly or due to an expired timeout. This policy overrides the default child policy specified when registering the workflow type using <code>RegisterWorkflowType</code>.</p> 
+    /// <p>The supported child policies are:</p> 
+    /// <ul> 
+    /// <li> <p> <code>TERMINATE</code> – The child executions are terminated.</p> </li> 
+    /// <li> <p> <code>REQUEST_CANCEL</code> – A request to cancel is attempted for each child execution by recording a <code>WorkflowExecutionCancelRequested</code> event in its history. It is up to the decider to take appropriate actions when it receives an execution history with this event.</p> </li> 
+    /// <li> <p> <code>ABANDON</code> – No action is taken. The child executions continue to run.</p> </li> 
+    /// </ul> <note> 
+    /// <p>A child policy for this workflow execution must be specified either as a default for the workflow type or through this parameter. If neither this parameter is set nor a default child policy was specified at registration time then a fault is returned.</p> 
     /// </note>
-    pub fn child_policy(&self) -> std::option::Option<&crate::model::ChildPolicy> {
+    pub fn child_policy(&self) -> std::option::Option<& crate::model::ChildPolicy> {
         self.child_policy.as_ref()
     }
-    /// <p>The IAM role to attach to this workflow execution.</p> <note>
-    /// <p>Executions of this workflow type need IAM roles to invoke Lambda functions. If you don't attach an IAM role, any attempt to schedule a Lambda task fails. This results in a <code>ScheduleLambdaFunctionFailed</code> history event. For more information, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/lambda-task.html">https://docs.aws.amazon.com/amazonswf/latest/developerguide/lambda-task.html</a> in the <i>Amazon SWF Developer Guide</i>.</p>
+    /// <p>The IAM role to attach to this workflow execution.</p> <note> 
+    /// <p>Executions of this workflow type need IAM roles to invoke Lambda functions. If you don't attach an IAM role, any attempt to schedule a Lambda task fails. This results in a <code>ScheduleLambdaFunctionFailed</code> history event. For more information, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/lambda-task.html">https://docs.aws.amazon.com/amazonswf/latest/developerguide/lambda-task.html</a> in the <i>Amazon SWF Developer Guide</i>.</p> 
     /// </note>
-    pub fn lambda_role(&self) -> std::option::Option<&str> {
+    pub fn lambda_role(&self) -> std::option::Option<& str> {
         self.lambda_role.as_deref()
     }
 }
@@ -8190,7 +6042,7 @@ impl StartWorkflowExecutionInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SignalWorkflowExecutionInput {
+pub struct SignalWorkflowExecutionInput  {
     /// <p>The name of the domain containing the workflow execution to signal.</p>
     #[doc(hidden)]
     pub domain: std::option::Option<std::string::String>,
@@ -8209,23 +6061,23 @@ pub struct SignalWorkflowExecutionInput {
 }
 impl SignalWorkflowExecutionInput {
     /// <p>The name of the domain containing the workflow execution to signal.</p>
-    pub fn domain(&self) -> std::option::Option<&str> {
+    pub fn domain(&self) -> std::option::Option<& str> {
         self.domain.as_deref()
     }
     /// <p>The workflowId of the workflow execution to signal.</p>
-    pub fn workflow_id(&self) -> std::option::Option<&str> {
+    pub fn workflow_id(&self) -> std::option::Option<& str> {
         self.workflow_id.as_deref()
     }
     /// <p>The runId of the workflow execution to signal.</p>
-    pub fn run_id(&self) -> std::option::Option<&str> {
+    pub fn run_id(&self) -> std::option::Option<& str> {
         self.run_id.as_deref()
     }
     /// <p>The name of the signal. This name must be meaningful to the target workflow.</p>
-    pub fn signal_name(&self) -> std::option::Option<&str> {
+    pub fn signal_name(&self) -> std::option::Option<& str> {
         self.signal_name.as_deref()
     }
     /// <p>Data to attach to the <code>WorkflowExecutionSignaled</code> event in the target workflow execution's history.</p>
-    pub fn input(&self) -> std::option::Option<&str> {
+    pub fn input(&self) -> std::option::Option<& str> {
         self.input.as_deref()
     }
 }
@@ -8233,9 +6085,9 @@ impl SignalWorkflowExecutionInput {
 /// <p>Input data for a TaskCompleted response to a decision task.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RespondDecisionTaskCompletedInput {
-    /// <p>The <code>taskToken</code> from the <code>DecisionTask</code>.</p> <important>
-    /// <p> <code>taskToken</code> is generated by the service and should be treated as an opaque value. If the task is passed to another process, its <code>taskToken</code> must also be passed. This enables it to provide its progress and respond with results.</p>
+pub struct RespondDecisionTaskCompletedInput  {
+    /// <p>The <code>taskToken</code> from the <code>DecisionTask</code>.</p> <important> 
+    /// <p> <code>taskToken</code> is generated by the service and should be treated as an opaque value. If the task is passed to another process, its <code>taskToken</code> must also be passed. This enables it to provide its progress and respond with results.</p> 
     /// </important>
     #[doc(hidden)]
     pub task_token: std::option::Option<std::string::String>,
@@ -8247,18 +6099,18 @@ pub struct RespondDecisionTaskCompletedInput {
     pub execution_context: std::option::Option<std::string::String>,
 }
 impl RespondDecisionTaskCompletedInput {
-    /// <p>The <code>taskToken</code> from the <code>DecisionTask</code>.</p> <important>
-    /// <p> <code>taskToken</code> is generated by the service and should be treated as an opaque value. If the task is passed to another process, its <code>taskToken</code> must also be passed. This enables it to provide its progress and respond with results.</p>
+    /// <p>The <code>taskToken</code> from the <code>DecisionTask</code>.</p> <important> 
+    /// <p> <code>taskToken</code> is generated by the service and should be treated as an opaque value. If the task is passed to another process, its <code>taskToken</code> must also be passed. This enables it to provide its progress and respond with results.</p> 
     /// </important>
-    pub fn task_token(&self) -> std::option::Option<&str> {
+    pub fn task_token(&self) -> std::option::Option<& str> {
         self.task_token.as_deref()
     }
     /// <p>The list of decisions (possibly empty) made by the decider while processing this decision task. See the docs for the <code>Decision</code> structure for details.</p>
-    pub fn decisions(&self) -> std::option::Option<&[crate::model::Decision]> {
+    pub fn decisions(&self) -> std::option::Option<& [crate::model::Decision]> {
         self.decisions.as_deref()
     }
     /// <p>User defined context to add to workflow execution.</p>
-    pub fn execution_context(&self) -> std::option::Option<&str> {
+    pub fn execution_context(&self) -> std::option::Option<& str> {
         self.execution_context.as_deref()
     }
 }
@@ -8266,9 +6118,9 @@ impl RespondDecisionTaskCompletedInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RespondActivityTaskFailedInput {
-    /// <p>The <code>taskToken</code> of the <code>ActivityTask</code>.</p> <important>
-    /// <p> <code>taskToken</code> is generated by the service and should be treated as an opaque value. If the task is passed to another process, its <code>taskToken</code> must also be passed. This enables it to provide its progress and respond with results.</p>
+pub struct RespondActivityTaskFailedInput  {
+    /// <p>The <code>taskToken</code> of the <code>ActivityTask</code>.</p> <important> 
+    /// <p> <code>taskToken</code> is generated by the service and should be treated as an opaque value. If the task is passed to another process, its <code>taskToken</code> must also be passed. This enables it to provide its progress and respond with results.</p> 
     /// </important>
     #[doc(hidden)]
     pub task_token: std::option::Option<std::string::String>,
@@ -8280,18 +6132,18 @@ pub struct RespondActivityTaskFailedInput {
     pub details: std::option::Option<std::string::String>,
 }
 impl RespondActivityTaskFailedInput {
-    /// <p>The <code>taskToken</code> of the <code>ActivityTask</code>.</p> <important>
-    /// <p> <code>taskToken</code> is generated by the service and should be treated as an opaque value. If the task is passed to another process, its <code>taskToken</code> must also be passed. This enables it to provide its progress and respond with results.</p>
+    /// <p>The <code>taskToken</code> of the <code>ActivityTask</code>.</p> <important> 
+    /// <p> <code>taskToken</code> is generated by the service and should be treated as an opaque value. If the task is passed to another process, its <code>taskToken</code> must also be passed. This enables it to provide its progress and respond with results.</p> 
     /// </important>
-    pub fn task_token(&self) -> std::option::Option<&str> {
+    pub fn task_token(&self) -> std::option::Option<& str> {
         self.task_token.as_deref()
     }
     /// <p>Description of the error that may assist in diagnostics.</p>
-    pub fn reason(&self) -> std::option::Option<&str> {
+    pub fn reason(&self) -> std::option::Option<& str> {
         self.reason.as_deref()
     }
     /// <p> Detailed information about the failure.</p>
-    pub fn details(&self) -> std::option::Option<&str> {
+    pub fn details(&self) -> std::option::Option<& str> {
         self.details.as_deref()
     }
 }
@@ -8299,9 +6151,9 @@ impl RespondActivityTaskFailedInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RespondActivityTaskCompletedInput {
-    /// <p>The <code>taskToken</code> of the <code>ActivityTask</code>.</p> <important>
-    /// <p> <code>taskToken</code> is generated by the service and should be treated as an opaque value. If the task is passed to another process, its <code>taskToken</code> must also be passed. This enables it to provide its progress and respond with results.</p>
+pub struct RespondActivityTaskCompletedInput  {
+    /// <p>The <code>taskToken</code> of the <code>ActivityTask</code>.</p> <important> 
+    /// <p> <code>taskToken</code> is generated by the service and should be treated as an opaque value. If the task is passed to another process, its <code>taskToken</code> must also be passed. This enables it to provide its progress and respond with results.</p> 
     /// </important>
     #[doc(hidden)]
     pub task_token: std::option::Option<std::string::String>,
@@ -8310,14 +6162,14 @@ pub struct RespondActivityTaskCompletedInput {
     pub result: std::option::Option<std::string::String>,
 }
 impl RespondActivityTaskCompletedInput {
-    /// <p>The <code>taskToken</code> of the <code>ActivityTask</code>.</p> <important>
-    /// <p> <code>taskToken</code> is generated by the service and should be treated as an opaque value. If the task is passed to another process, its <code>taskToken</code> must also be passed. This enables it to provide its progress and respond with results.</p>
+    /// <p>The <code>taskToken</code> of the <code>ActivityTask</code>.</p> <important> 
+    /// <p> <code>taskToken</code> is generated by the service and should be treated as an opaque value. If the task is passed to another process, its <code>taskToken</code> must also be passed. This enables it to provide its progress and respond with results.</p> 
     /// </important>
-    pub fn task_token(&self) -> std::option::Option<&str> {
+    pub fn task_token(&self) -> std::option::Option<& str> {
         self.task_token.as_deref()
     }
     /// <p>The result of the activity task. It is a free form string that is implementation specific.</p>
-    pub fn result(&self) -> std::option::Option<&str> {
+    pub fn result(&self) -> std::option::Option<& str> {
         self.result.as_deref()
     }
 }
@@ -8325,9 +6177,9 @@ impl RespondActivityTaskCompletedInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RespondActivityTaskCanceledInput {
-    /// <p>The <code>taskToken</code> of the <code>ActivityTask</code>.</p> <important>
-    /// <p> <code>taskToken</code> is generated by the service and should be treated as an opaque value. If the task is passed to another process, its <code>taskToken</code> must also be passed. This enables it to provide its progress and respond with results.</p>
+pub struct RespondActivityTaskCanceledInput  {
+    /// <p>The <code>taskToken</code> of the <code>ActivityTask</code>.</p> <important> 
+    /// <p> <code>taskToken</code> is generated by the service and should be treated as an opaque value. If the task is passed to another process, its <code>taskToken</code> must also be passed. This enables it to provide its progress and respond with results.</p> 
     /// </important>
     #[doc(hidden)]
     pub task_token: std::option::Option<std::string::String>,
@@ -8336,14 +6188,14 @@ pub struct RespondActivityTaskCanceledInput {
     pub details: std::option::Option<std::string::String>,
 }
 impl RespondActivityTaskCanceledInput {
-    /// <p>The <code>taskToken</code> of the <code>ActivityTask</code>.</p> <important>
-    /// <p> <code>taskToken</code> is generated by the service and should be treated as an opaque value. If the task is passed to another process, its <code>taskToken</code> must also be passed. This enables it to provide its progress and respond with results.</p>
+    /// <p>The <code>taskToken</code> of the <code>ActivityTask</code>.</p> <important> 
+    /// <p> <code>taskToken</code> is generated by the service and should be treated as an opaque value. If the task is passed to another process, its <code>taskToken</code> must also be passed. This enables it to provide its progress and respond with results.</p> 
     /// </important>
-    pub fn task_token(&self) -> std::option::Option<&str> {
+    pub fn task_token(&self) -> std::option::Option<& str> {
         self.task_token.as_deref()
     }
     /// <p> Information about the cancellation.</p>
-    pub fn details(&self) -> std::option::Option<&str> {
+    pub fn details(&self) -> std::option::Option<& str> {
         self.details.as_deref()
     }
 }
@@ -8351,7 +6203,7 @@ impl RespondActivityTaskCanceledInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RequestCancelWorkflowExecutionInput {
+pub struct RequestCancelWorkflowExecutionInput  {
     /// <p>The name of the domain containing the workflow execution to cancel.</p>
     #[doc(hidden)]
     pub domain: std::option::Option<std::string::String>,
@@ -8364,15 +6216,15 @@ pub struct RequestCancelWorkflowExecutionInput {
 }
 impl RequestCancelWorkflowExecutionInput {
     /// <p>The name of the domain containing the workflow execution to cancel.</p>
-    pub fn domain(&self) -> std::option::Option<&str> {
+    pub fn domain(&self) -> std::option::Option<& str> {
         self.domain.as_deref()
     }
     /// <p>The workflowId of the workflow execution to cancel.</p>
-    pub fn workflow_id(&self) -> std::option::Option<&str> {
+    pub fn workflow_id(&self) -> std::option::Option<& str> {
         self.workflow_id.as_deref()
     }
     /// <p>The runId of the workflow execution to cancel.</p>
-    pub fn run_id(&self) -> std::option::Option<&str> {
+    pub fn run_id(&self) -> std::option::Option<& str> {
         self.run_id.as_deref()
     }
 }
@@ -8380,107 +6232,107 @@ impl RequestCancelWorkflowExecutionInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RegisterWorkflowTypeInput {
+pub struct RegisterWorkflowTypeInput  {
     /// <p>The name of the domain in which to register the workflow type.</p>
     #[doc(hidden)]
     pub domain: std::option::Option<std::string::String>,
-    /// <p>The name of the workflow type.</p>
+    /// <p>The name of the workflow type.</p> 
     /// <p>The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not <i>be</i> the literal string <code>arn</code>.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
-    /// <p>The version of the workflow type.</p> <note>
-    /// <p>The workflow type consists of the name and version, the combination of which must be unique within the domain. To get a list of all currently registered workflow types, use the <code>ListWorkflowTypes</code> action.</p>
-    /// </note>
+    /// <p>The version of the workflow type.</p> <note> 
+    /// <p>The workflow type consists of the name and version, the combination of which must be unique within the domain. To get a list of all currently registered workflow types, use the <code>ListWorkflowTypes</code> action.</p> 
+    /// </note> 
     /// <p>The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not <i>be</i> the literal string <code>arn</code>.</p>
     #[doc(hidden)]
     pub version: std::option::Option<std::string::String>,
     /// <p>Textual description of the workflow type.</p>
     #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
-    /// <p>If set, specifies the default maximum duration of decision tasks for this workflow type. This default can be overridden when starting a workflow execution using the <code>StartWorkflowExecution</code> action or the <code>StartChildWorkflowExecution</code> <code>Decision</code>.</p>
+    /// <p>If set, specifies the default maximum duration of decision tasks for this workflow type. This default can be overridden when starting a workflow execution using the <code>StartWorkflowExecution</code> action or the <code>StartChildWorkflowExecution</code> <code>Decision</code>.</p> 
     /// <p>The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p>
     #[doc(hidden)]
     pub default_task_start_to_close_timeout: std::option::Option<std::string::String>,
-    /// <p>If set, specifies the default maximum duration for executions of this workflow type. You can override this default when starting an execution through the <code>StartWorkflowExecution</code> Action or <code>StartChildWorkflowExecution</code> <code>Decision</code>.</p>
+    /// <p>If set, specifies the default maximum duration for executions of this workflow type. You can override this default when starting an execution through the <code>StartWorkflowExecution</code> Action or <code>StartChildWorkflowExecution</code> <code>Decision</code>.</p> 
     /// <p>The duration is specified in seconds; an integer greater than or equal to 0. Unlike some of the other timeout parameters in Amazon SWF, you cannot specify a value of "NONE" for <code>defaultExecutionStartToCloseTimeout</code>; there is a one-year max limit on the time that a workflow execution can run. Exceeding this limit always causes the workflow execution to time out.</p>
     #[doc(hidden)]
     pub default_execution_start_to_close_timeout: std::option::Option<std::string::String>,
     /// <p>If set, specifies the default task list to use for scheduling decision tasks for executions of this workflow type. This default is used only if a task list isn't provided when starting the execution through the <code>StartWorkflowExecution</code> Action or <code>StartChildWorkflowExecution</code> <code>Decision</code>.</p>
     #[doc(hidden)]
     pub default_task_list: std::option::Option<crate::model::TaskList>,
-    /// <p>The default task priority to assign to the workflow type. If not assigned, then <code>0</code> is used. Valid values are integers that range from Java's <code>Integer.MIN_VALUE</code> (-2147483648) to <code>Integer.MAX_VALUE</code> (2147483647). Higher numbers indicate higher priority.</p>
+    /// <p>The default task priority to assign to the workflow type. If not assigned, then <code>0</code> is used. Valid values are integers that range from Java's <code>Integer.MIN_VALUE</code> (-2147483648) to <code>Integer.MAX_VALUE</code> (2147483647). Higher numbers indicate higher priority.</p> 
     /// <p>For more information about setting task priority, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting Task Priority</a> in the <i>Amazon SWF Developer Guide</i>.</p>
     #[doc(hidden)]
     pub default_task_priority: std::option::Option<std::string::String>,
-    /// <p>If set, specifies the default policy to use for the child workflow executions when a workflow execution of this type is terminated, by calling the <code>TerminateWorkflowExecution</code> action explicitly or due to an expired timeout. This default can be overridden when starting a workflow execution using the <code>StartWorkflowExecution</code> action or the <code>StartChildWorkflowExecution</code> <code>Decision</code>.</p>
-    /// <p>The supported child policies are:</p>
-    /// <ul>
-    /// <li> <p> <code>TERMINATE</code> – The child executions are terminated.</p> </li>
-    /// <li> <p> <code>REQUEST_CANCEL</code> – A request to cancel is attempted for each child execution by recording a <code>WorkflowExecutionCancelRequested</code> event in its history. It is up to the decider to take appropriate actions when it receives an execution history with this event.</p> </li>
-    /// <li> <p> <code>ABANDON</code> – No action is taken. The child executions continue to run.</p> </li>
+    /// <p>If set, specifies the default policy to use for the child workflow executions when a workflow execution of this type is terminated, by calling the <code>TerminateWorkflowExecution</code> action explicitly or due to an expired timeout. This default can be overridden when starting a workflow execution using the <code>StartWorkflowExecution</code> action or the <code>StartChildWorkflowExecution</code> <code>Decision</code>.</p> 
+    /// <p>The supported child policies are:</p> 
+    /// <ul> 
+    /// <li> <p> <code>TERMINATE</code> – The child executions are terminated.</p> </li> 
+    /// <li> <p> <code>REQUEST_CANCEL</code> – A request to cancel is attempted for each child execution by recording a <code>WorkflowExecutionCancelRequested</code> event in its history. It is up to the decider to take appropriate actions when it receives an execution history with this event.</p> </li> 
+    /// <li> <p> <code>ABANDON</code> – No action is taken. The child executions continue to run.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub default_child_policy: std::option::Option<crate::model::ChildPolicy>,
-    /// <p>The default IAM role attached to this workflow type.</p> <note>
-    /// <p>Executions of this workflow type need IAM roles to invoke Lambda functions. If you don't specify an IAM role when you start this workflow type, the default Lambda role is attached to the execution. For more information, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/lambda-task.html">https://docs.aws.amazon.com/amazonswf/latest/developerguide/lambda-task.html</a> in the <i>Amazon SWF Developer Guide</i>.</p>
+    /// <p>The default IAM role attached to this workflow type.</p> <note> 
+    /// <p>Executions of this workflow type need IAM roles to invoke Lambda functions. If you don't specify an IAM role when you start this workflow type, the default Lambda role is attached to the execution. For more information, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/lambda-task.html">https://docs.aws.amazon.com/amazonswf/latest/developerguide/lambda-task.html</a> in the <i>Amazon SWF Developer Guide</i>.</p> 
     /// </note>
     #[doc(hidden)]
     pub default_lambda_role: std::option::Option<std::string::String>,
 }
 impl RegisterWorkflowTypeInput {
     /// <p>The name of the domain in which to register the workflow type.</p>
-    pub fn domain(&self) -> std::option::Option<&str> {
+    pub fn domain(&self) -> std::option::Option<& str> {
         self.domain.as_deref()
     }
-    /// <p>The name of the workflow type.</p>
+    /// <p>The name of the workflow type.</p> 
     /// <p>The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not <i>be</i> the literal string <code>arn</code>.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
-    /// <p>The version of the workflow type.</p> <note>
-    /// <p>The workflow type consists of the name and version, the combination of which must be unique within the domain. To get a list of all currently registered workflow types, use the <code>ListWorkflowTypes</code> action.</p>
-    /// </note>
+    /// <p>The version of the workflow type.</p> <note> 
+    /// <p>The workflow type consists of the name and version, the combination of which must be unique within the domain. To get a list of all currently registered workflow types, use the <code>ListWorkflowTypes</code> action.</p> 
+    /// </note> 
     /// <p>The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not <i>be</i> the literal string <code>arn</code>.</p>
-    pub fn version(&self) -> std::option::Option<&str> {
+    pub fn version(&self) -> std::option::Option<& str> {
         self.version.as_deref()
     }
     /// <p>Textual description of the workflow type.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
-    /// <p>If set, specifies the default maximum duration of decision tasks for this workflow type. This default can be overridden when starting a workflow execution using the <code>StartWorkflowExecution</code> action or the <code>StartChildWorkflowExecution</code> <code>Decision</code>.</p>
+    /// <p>If set, specifies the default maximum duration of decision tasks for this workflow type. This default can be overridden when starting a workflow execution using the <code>StartWorkflowExecution</code> action or the <code>StartChildWorkflowExecution</code> <code>Decision</code>.</p> 
     /// <p>The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p>
-    pub fn default_task_start_to_close_timeout(&self) -> std::option::Option<&str> {
+    pub fn default_task_start_to_close_timeout(&self) -> std::option::Option<& str> {
         self.default_task_start_to_close_timeout.as_deref()
     }
-    /// <p>If set, specifies the default maximum duration for executions of this workflow type. You can override this default when starting an execution through the <code>StartWorkflowExecution</code> Action or <code>StartChildWorkflowExecution</code> <code>Decision</code>.</p>
+    /// <p>If set, specifies the default maximum duration for executions of this workflow type. You can override this default when starting an execution through the <code>StartWorkflowExecution</code> Action or <code>StartChildWorkflowExecution</code> <code>Decision</code>.</p> 
     /// <p>The duration is specified in seconds; an integer greater than or equal to 0. Unlike some of the other timeout parameters in Amazon SWF, you cannot specify a value of "NONE" for <code>defaultExecutionStartToCloseTimeout</code>; there is a one-year max limit on the time that a workflow execution can run. Exceeding this limit always causes the workflow execution to time out.</p>
-    pub fn default_execution_start_to_close_timeout(&self) -> std::option::Option<&str> {
+    pub fn default_execution_start_to_close_timeout(&self) -> std::option::Option<& str> {
         self.default_execution_start_to_close_timeout.as_deref()
     }
     /// <p>If set, specifies the default task list to use for scheduling decision tasks for executions of this workflow type. This default is used only if a task list isn't provided when starting the execution through the <code>StartWorkflowExecution</code> Action or <code>StartChildWorkflowExecution</code> <code>Decision</code>.</p>
-    pub fn default_task_list(&self) -> std::option::Option<&crate::model::TaskList> {
+    pub fn default_task_list(&self) -> std::option::Option<& crate::model::TaskList> {
         self.default_task_list.as_ref()
     }
-    /// <p>The default task priority to assign to the workflow type. If not assigned, then <code>0</code> is used. Valid values are integers that range from Java's <code>Integer.MIN_VALUE</code> (-2147483648) to <code>Integer.MAX_VALUE</code> (2147483647). Higher numbers indicate higher priority.</p>
+    /// <p>The default task priority to assign to the workflow type. If not assigned, then <code>0</code> is used. Valid values are integers that range from Java's <code>Integer.MIN_VALUE</code> (-2147483648) to <code>Integer.MAX_VALUE</code> (2147483647). Higher numbers indicate higher priority.</p> 
     /// <p>For more information about setting task priority, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting Task Priority</a> in the <i>Amazon SWF Developer Guide</i>.</p>
-    pub fn default_task_priority(&self) -> std::option::Option<&str> {
+    pub fn default_task_priority(&self) -> std::option::Option<& str> {
         self.default_task_priority.as_deref()
     }
-    /// <p>If set, specifies the default policy to use for the child workflow executions when a workflow execution of this type is terminated, by calling the <code>TerminateWorkflowExecution</code> action explicitly or due to an expired timeout. This default can be overridden when starting a workflow execution using the <code>StartWorkflowExecution</code> action or the <code>StartChildWorkflowExecution</code> <code>Decision</code>.</p>
-    /// <p>The supported child policies are:</p>
-    /// <ul>
-    /// <li> <p> <code>TERMINATE</code> – The child executions are terminated.</p> </li>
-    /// <li> <p> <code>REQUEST_CANCEL</code> – A request to cancel is attempted for each child execution by recording a <code>WorkflowExecutionCancelRequested</code> event in its history. It is up to the decider to take appropriate actions when it receives an execution history with this event.</p> </li>
-    /// <li> <p> <code>ABANDON</code> – No action is taken. The child executions continue to run.</p> </li>
+    /// <p>If set, specifies the default policy to use for the child workflow executions when a workflow execution of this type is terminated, by calling the <code>TerminateWorkflowExecution</code> action explicitly or due to an expired timeout. This default can be overridden when starting a workflow execution using the <code>StartWorkflowExecution</code> action or the <code>StartChildWorkflowExecution</code> <code>Decision</code>.</p> 
+    /// <p>The supported child policies are:</p> 
+    /// <ul> 
+    /// <li> <p> <code>TERMINATE</code> – The child executions are terminated.</p> </li> 
+    /// <li> <p> <code>REQUEST_CANCEL</code> – A request to cancel is attempted for each child execution by recording a <code>WorkflowExecutionCancelRequested</code> event in its history. It is up to the decider to take appropriate actions when it receives an execution history with this event.</p> </li> 
+    /// <li> <p> <code>ABANDON</code> – No action is taken. The child executions continue to run.</p> </li> 
     /// </ul>
-    pub fn default_child_policy(&self) -> std::option::Option<&crate::model::ChildPolicy> {
+    pub fn default_child_policy(&self) -> std::option::Option<& crate::model::ChildPolicy> {
         self.default_child_policy.as_ref()
     }
-    /// <p>The default IAM role attached to this workflow type.</p> <note>
-    /// <p>Executions of this workflow type need IAM roles to invoke Lambda functions. If you don't specify an IAM role when you start this workflow type, the default Lambda role is attached to the execution. For more information, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/lambda-task.html">https://docs.aws.amazon.com/amazonswf/latest/developerguide/lambda-task.html</a> in the <i>Amazon SWF Developer Guide</i>.</p>
+    /// <p>The default IAM role attached to this workflow type.</p> <note> 
+    /// <p>Executions of this workflow type need IAM roles to invoke Lambda functions. If you don't specify an IAM role when you start this workflow type, the default Lambda role is attached to the execution. For more information, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/lambda-task.html">https://docs.aws.amazon.com/amazonswf/latest/developerguide/lambda-task.html</a> in the <i>Amazon SWF Developer Guide</i>.</p> 
     /// </note>
-    pub fn default_lambda_role(&self) -> std::option::Option<&str> {
+    pub fn default_lambda_role(&self) -> std::option::Option<& str> {
         self.default_lambda_role.as_deref()
     }
 }
@@ -8488,43 +6340,43 @@ impl RegisterWorkflowTypeInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RegisterDomainInput {
-    /// <p>Name of the domain to register. The name must be unique in the region that the domain is registered in.</p>
+pub struct RegisterDomainInput  {
+    /// <p>Name of the domain to register. The name must be unique in the region that the domain is registered in.</p> 
     /// <p>The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not <i>be</i> the literal string <code>arn</code>.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>A text description of the domain.</p>
     #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
-    /// <p>The duration (in days) that records and histories of workflow executions on the domain should be kept by the service. After the retention period, the workflow execution isn't available in the results of visibility calls.</p>
-    /// <p>If you pass the value <code>NONE</code> or <code>0</code> (zero), then the workflow execution history isn't retained. As soon as the workflow execution completes, the execution record and its history are deleted.</p>
+    /// <p>The duration (in days) that records and histories of workflow executions on the domain should be kept by the service. After the retention period, the workflow execution isn't available in the results of visibility calls.</p> 
+    /// <p>If you pass the value <code>NONE</code> or <code>0</code> (zero), then the workflow execution history isn't retained. As soon as the workflow execution completes, the execution record and its history are deleted.</p> 
     /// <p>The maximum workflow execution retention period is 90 days. For more information about Amazon SWF service limits, see: <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dg-limits.html">Amazon SWF Service Limits</a> in the <i>Amazon SWF Developer Guide</i>.</p>
     #[doc(hidden)]
     pub workflow_execution_retention_period_in_days: std::option::Option<std::string::String>,
-    /// <p>Tags to be added when registering a domain.</p>
+    /// <p>Tags to be added when registering a domain.</p> 
     /// <p>Tags may only contain unicode letters, digits, whitespace, or these symbols: <code>_ . : / = + - @</code>.</p>
     #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::ResourceTag>>,
 }
 impl RegisterDomainInput {
-    /// <p>Name of the domain to register. The name must be unique in the region that the domain is registered in.</p>
+    /// <p>Name of the domain to register. The name must be unique in the region that the domain is registered in.</p> 
     /// <p>The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not <i>be</i> the literal string <code>arn</code>.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>A text description of the domain.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
-    /// <p>The duration (in days) that records and histories of workflow executions on the domain should be kept by the service. After the retention period, the workflow execution isn't available in the results of visibility calls.</p>
-    /// <p>If you pass the value <code>NONE</code> or <code>0</code> (zero), then the workflow execution history isn't retained. As soon as the workflow execution completes, the execution record and its history are deleted.</p>
+    /// <p>The duration (in days) that records and histories of workflow executions on the domain should be kept by the service. After the retention period, the workflow execution isn't available in the results of visibility calls.</p> 
+    /// <p>If you pass the value <code>NONE</code> or <code>0</code> (zero), then the workflow execution history isn't retained. As soon as the workflow execution completes, the execution record and its history are deleted.</p> 
     /// <p>The maximum workflow execution retention period is 90 days. For more information about Amazon SWF service limits, see: <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dg-limits.html">Amazon SWF Service Limits</a> in the <i>Amazon SWF Developer Guide</i>.</p>
-    pub fn workflow_execution_retention_period_in_days(&self) -> std::option::Option<&str> {
+    pub fn workflow_execution_retention_period_in_days(&self) -> std::option::Option<& str> {
         self.workflow_execution_retention_period_in_days.as_deref()
     }
-    /// <p>Tags to be added when registering a domain.</p>
+    /// <p>Tags to be added when registering a domain.</p> 
     /// <p>Tags may only contain unicode letters, digits, whitespace, or these symbols: <code>_ . : / = + - @</code>.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::model::ResourceTag]> {
+    pub fn tags(&self) -> std::option::Option<& [crate::model::ResourceTag]> {
         self.tags.as_deref()
     }
 }
@@ -8532,95 +6384,95 @@ impl RegisterDomainInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RegisterActivityTypeInput {
+pub struct RegisterActivityTypeInput  {
     /// <p>The name of the domain in which this activity is to be registered.</p>
     #[doc(hidden)]
     pub domain: std::option::Option<std::string::String>,
-    /// <p>The name of the activity type within the domain.</p>
+    /// <p>The name of the activity type within the domain.</p> 
     /// <p>The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not <i>be</i> the literal string <code>arn</code>.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
-    /// <p>The version of the activity type.</p> <note>
-    /// <p>The activity type consists of the name and version, the combination of which must be unique within the domain.</p>
-    /// </note>
+    /// <p>The version of the activity type.</p> <note> 
+    /// <p>The activity type consists of the name and version, the combination of which must be unique within the domain.</p> 
+    /// </note> 
     /// <p>The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not <i>be</i> the literal string <code>arn</code>.</p>
     #[doc(hidden)]
     pub version: std::option::Option<std::string::String>,
     /// <p>A textual description of the activity type.</p>
     #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
-    /// <p>If set, specifies the default maximum duration that a worker can take to process tasks of this activity type. This default can be overridden when scheduling an activity task using the <code>ScheduleActivityTask</code> <code>Decision</code>.</p>
+    /// <p>If set, specifies the default maximum duration that a worker can take to process tasks of this activity type. This default can be overridden when scheduling an activity task using the <code>ScheduleActivityTask</code> <code>Decision</code>.</p> 
     /// <p>The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p>
     #[doc(hidden)]
     pub default_task_start_to_close_timeout: std::option::Option<std::string::String>,
-    /// <p>If set, specifies the default maximum time before which a worker processing a task of this type must report progress by calling <code>RecordActivityTaskHeartbeat</code>. If the timeout is exceeded, the activity task is automatically timed out. This default can be overridden when scheduling an activity task using the <code>ScheduleActivityTask</code> <code>Decision</code>. If the activity worker subsequently attempts to record a heartbeat or returns a result, the activity worker receives an <code>UnknownResource</code> fault. In this case, Amazon SWF no longer considers the activity task to be valid; the activity worker should clean up the activity task.</p>
+    /// <p>If set, specifies the default maximum time before which a worker processing a task of this type must report progress by calling <code>RecordActivityTaskHeartbeat</code>. If the timeout is exceeded, the activity task is automatically timed out. This default can be overridden when scheduling an activity task using the <code>ScheduleActivityTask</code> <code>Decision</code>. If the activity worker subsequently attempts to record a heartbeat or returns a result, the activity worker receives an <code>UnknownResource</code> fault. In this case, Amazon SWF no longer considers the activity task to be valid; the activity worker should clean up the activity task.</p> 
     /// <p>The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p>
     #[doc(hidden)]
     pub default_task_heartbeat_timeout: std::option::Option<std::string::String>,
     /// <p>If set, specifies the default task list to use for scheduling tasks of this activity type. This default task list is used if a task list isn't provided when a task is scheduled through the <code>ScheduleActivityTask</code> <code>Decision</code>.</p>
     #[doc(hidden)]
     pub default_task_list: std::option::Option<crate::model::TaskList>,
-    /// <p>The default task priority to assign to the activity type. If not assigned, then <code>0</code> is used. Valid values are integers that range from Java's <code>Integer.MIN_VALUE</code> (-2147483648) to <code>Integer.MAX_VALUE</code> (2147483647). Higher numbers indicate higher priority.</p>
+    /// <p>The default task priority to assign to the activity type. If not assigned, then <code>0</code> is used. Valid values are integers that range from Java's <code>Integer.MIN_VALUE</code> (-2147483648) to <code>Integer.MAX_VALUE</code> (2147483647). Higher numbers indicate higher priority.</p> 
     /// <p>For more information about setting task priority, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting Task Priority</a> in the <i>in the <i>Amazon SWF Developer Guide</i>.</i>.</p>
     #[doc(hidden)]
     pub default_task_priority: std::option::Option<std::string::String>,
-    /// <p>If set, specifies the default maximum duration that a task of this activity type can wait before being assigned to a worker. This default can be overridden when scheduling an activity task using the <code>ScheduleActivityTask</code> <code>Decision</code>.</p>
+    /// <p>If set, specifies the default maximum duration that a task of this activity type can wait before being assigned to a worker. This default can be overridden when scheduling an activity task using the <code>ScheduleActivityTask</code> <code>Decision</code>.</p> 
     /// <p>The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p>
     #[doc(hidden)]
     pub default_task_schedule_to_start_timeout: std::option::Option<std::string::String>,
-    /// <p>If set, specifies the default maximum duration for a task of this activity type. This default can be overridden when scheduling an activity task using the <code>ScheduleActivityTask</code> <code>Decision</code>.</p>
+    /// <p>If set, specifies the default maximum duration for a task of this activity type. This default can be overridden when scheduling an activity task using the <code>ScheduleActivityTask</code> <code>Decision</code>.</p> 
     /// <p>The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p>
     #[doc(hidden)]
     pub default_task_schedule_to_close_timeout: std::option::Option<std::string::String>,
 }
 impl RegisterActivityTypeInput {
     /// <p>The name of the domain in which this activity is to be registered.</p>
-    pub fn domain(&self) -> std::option::Option<&str> {
+    pub fn domain(&self) -> std::option::Option<& str> {
         self.domain.as_deref()
     }
-    /// <p>The name of the activity type within the domain.</p>
+    /// <p>The name of the activity type within the domain.</p> 
     /// <p>The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not <i>be</i> the literal string <code>arn</code>.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
-    /// <p>The version of the activity type.</p> <note>
-    /// <p>The activity type consists of the name and version, the combination of which must be unique within the domain.</p>
-    /// </note>
+    /// <p>The version of the activity type.</p> <note> 
+    /// <p>The activity type consists of the name and version, the combination of which must be unique within the domain.</p> 
+    /// </note> 
     /// <p>The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not <i>be</i> the literal string <code>arn</code>.</p>
-    pub fn version(&self) -> std::option::Option<&str> {
+    pub fn version(&self) -> std::option::Option<& str> {
         self.version.as_deref()
     }
     /// <p>A textual description of the activity type.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
-    /// <p>If set, specifies the default maximum duration that a worker can take to process tasks of this activity type. This default can be overridden when scheduling an activity task using the <code>ScheduleActivityTask</code> <code>Decision</code>.</p>
+    /// <p>If set, specifies the default maximum duration that a worker can take to process tasks of this activity type. This default can be overridden when scheduling an activity task using the <code>ScheduleActivityTask</code> <code>Decision</code>.</p> 
     /// <p>The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p>
-    pub fn default_task_start_to_close_timeout(&self) -> std::option::Option<&str> {
+    pub fn default_task_start_to_close_timeout(&self) -> std::option::Option<& str> {
         self.default_task_start_to_close_timeout.as_deref()
     }
-    /// <p>If set, specifies the default maximum time before which a worker processing a task of this type must report progress by calling <code>RecordActivityTaskHeartbeat</code>. If the timeout is exceeded, the activity task is automatically timed out. This default can be overridden when scheduling an activity task using the <code>ScheduleActivityTask</code> <code>Decision</code>. If the activity worker subsequently attempts to record a heartbeat or returns a result, the activity worker receives an <code>UnknownResource</code> fault. In this case, Amazon SWF no longer considers the activity task to be valid; the activity worker should clean up the activity task.</p>
+    /// <p>If set, specifies the default maximum time before which a worker processing a task of this type must report progress by calling <code>RecordActivityTaskHeartbeat</code>. If the timeout is exceeded, the activity task is automatically timed out. This default can be overridden when scheduling an activity task using the <code>ScheduleActivityTask</code> <code>Decision</code>. If the activity worker subsequently attempts to record a heartbeat or returns a result, the activity worker receives an <code>UnknownResource</code> fault. In this case, Amazon SWF no longer considers the activity task to be valid; the activity worker should clean up the activity task.</p> 
     /// <p>The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p>
-    pub fn default_task_heartbeat_timeout(&self) -> std::option::Option<&str> {
+    pub fn default_task_heartbeat_timeout(&self) -> std::option::Option<& str> {
         self.default_task_heartbeat_timeout.as_deref()
     }
     /// <p>If set, specifies the default task list to use for scheduling tasks of this activity type. This default task list is used if a task list isn't provided when a task is scheduled through the <code>ScheduleActivityTask</code> <code>Decision</code>.</p>
-    pub fn default_task_list(&self) -> std::option::Option<&crate::model::TaskList> {
+    pub fn default_task_list(&self) -> std::option::Option<& crate::model::TaskList> {
         self.default_task_list.as_ref()
     }
-    /// <p>The default task priority to assign to the activity type. If not assigned, then <code>0</code> is used. Valid values are integers that range from Java's <code>Integer.MIN_VALUE</code> (-2147483648) to <code>Integer.MAX_VALUE</code> (2147483647). Higher numbers indicate higher priority.</p>
+    /// <p>The default task priority to assign to the activity type. If not assigned, then <code>0</code> is used. Valid values are integers that range from Java's <code>Integer.MIN_VALUE</code> (-2147483648) to <code>Integer.MAX_VALUE</code> (2147483647). Higher numbers indicate higher priority.</p> 
     /// <p>For more information about setting task priority, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting Task Priority</a> in the <i>in the <i>Amazon SWF Developer Guide</i>.</i>.</p>
-    pub fn default_task_priority(&self) -> std::option::Option<&str> {
+    pub fn default_task_priority(&self) -> std::option::Option<& str> {
         self.default_task_priority.as_deref()
     }
-    /// <p>If set, specifies the default maximum duration that a task of this activity type can wait before being assigned to a worker. This default can be overridden when scheduling an activity task using the <code>ScheduleActivityTask</code> <code>Decision</code>.</p>
+    /// <p>If set, specifies the default maximum duration that a task of this activity type can wait before being assigned to a worker. This default can be overridden when scheduling an activity task using the <code>ScheduleActivityTask</code> <code>Decision</code>.</p> 
     /// <p>The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p>
-    pub fn default_task_schedule_to_start_timeout(&self) -> std::option::Option<&str> {
+    pub fn default_task_schedule_to_start_timeout(&self) -> std::option::Option<& str> {
         self.default_task_schedule_to_start_timeout.as_deref()
     }
-    /// <p>If set, specifies the default maximum duration for a task of this activity type. This default can be overridden when scheduling an activity task using the <code>ScheduleActivityTask</code> <code>Decision</code>.</p>
+    /// <p>If set, specifies the default maximum duration for a task of this activity type. This default can be overridden when scheduling an activity task using the <code>ScheduleActivityTask</code> <code>Decision</code>.</p> 
     /// <p>The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p>
-    pub fn default_task_schedule_to_close_timeout(&self) -> std::option::Option<&str> {
+    pub fn default_task_schedule_to_close_timeout(&self) -> std::option::Option<& str> {
         self.default_task_schedule_to_close_timeout.as_deref()
     }
 }
@@ -8628,9 +6480,9 @@ impl RegisterActivityTypeInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RecordActivityTaskHeartbeatInput {
-    /// <p>The <code>taskToken</code> of the <code>ActivityTask</code>.</p> <important>
-    /// <p> <code>taskToken</code> is generated by the service and should be treated as an opaque value. If the task is passed to another process, its <code>taskToken</code> must also be passed. This enables it to provide its progress and respond with results. </p>
+pub struct RecordActivityTaskHeartbeatInput  {
+    /// <p>The <code>taskToken</code> of the <code>ActivityTask</code>.</p> <important> 
+    /// <p> <code>taskToken</code> is generated by the service and should be treated as an opaque value. If the task is passed to another process, its <code>taskToken</code> must also be passed. This enables it to provide its progress and respond with results. </p> 
     /// </important>
     #[doc(hidden)]
     pub task_token: std::option::Option<std::string::String>,
@@ -8639,14 +6491,14 @@ pub struct RecordActivityTaskHeartbeatInput {
     pub details: std::option::Option<std::string::String>,
 }
 impl RecordActivityTaskHeartbeatInput {
-    /// <p>The <code>taskToken</code> of the <code>ActivityTask</code>.</p> <important>
-    /// <p> <code>taskToken</code> is generated by the service and should be treated as an opaque value. If the task is passed to another process, its <code>taskToken</code> must also be passed. This enables it to provide its progress and respond with results. </p>
+    /// <p>The <code>taskToken</code> of the <code>ActivityTask</code>.</p> <important> 
+    /// <p> <code>taskToken</code> is generated by the service and should be treated as an opaque value. If the task is passed to another process, its <code>taskToken</code> must also be passed. This enables it to provide its progress and respond with results. </p> 
     /// </important>
-    pub fn task_token(&self) -> std::option::Option<&str> {
+    pub fn task_token(&self) -> std::option::Option<& str> {
         self.task_token.as_deref()
     }
     /// <p>If specified, contains details about the progress of the task.</p>
-    pub fn details(&self) -> std::option::Option<&str> {
+    pub fn details(&self) -> std::option::Option<& str> {
         self.details.as_deref()
     }
 }
@@ -8654,24 +6506,24 @@ impl RecordActivityTaskHeartbeatInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PollForDecisionTaskInput {
+pub struct PollForDecisionTaskInput  {
     /// <p>The name of the domain containing the task lists to poll.</p>
     #[doc(hidden)]
     pub domain: std::option::Option<std::string::String>,
-    /// <p>Specifies the task list to poll for decision tasks.</p>
+    /// <p>Specifies the task list to poll for decision tasks.</p> 
     /// <p>The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not <i>be</i> the literal string <code>arn</code>.</p>
     #[doc(hidden)]
     pub task_list: std::option::Option<crate::model::TaskList>,
     /// <p>Identity of the decider making the request, which is recorded in the DecisionTaskStarted event in the workflow history. This enables diagnostic tracing when problems arise. The form of this identity is user defined.</p>
     #[doc(hidden)]
     pub identity: std::option::Option<std::string::String>,
-    /// <p>If <code>NextPageToken</code> is returned there are more results available. The value of <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 60 seconds. Using an expired pagination token will return a <code>400</code> error: "<code>Specified token has exceeded its maximum lifetime</code>". </p>
-    /// <p>The configured <code>maximumPageSize</code> determines how many results can be returned in a single call. </p> <note>
-    /// <p>The <code>nextPageToken</code> returned by this action cannot be used with <code>GetWorkflowExecutionHistory</code> to get the next page. You must call <code>PollForDecisionTask</code> again (with the <code>nextPageToken</code>) to retrieve the next page of history records. Calling <code>PollForDecisionTask</code> with a <code>nextPageToken</code> doesn't return a new decision task.</p>
+    /// <p>If <code>NextPageToken</code> is returned there are more results available. The value of <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 60 seconds. Using an expired pagination token will return a <code>400</code> error: "<code>Specified token has exceeded its maximum lifetime</code>". </p> 
+    /// <p>The configured <code>maximumPageSize</code> determines how many results can be returned in a single call. </p> <note> 
+    /// <p>The <code>nextPageToken</code> returned by this action cannot be used with <code>GetWorkflowExecutionHistory</code> to get the next page. You must call <code>PollForDecisionTask</code> again (with the <code>nextPageToken</code>) to retrieve the next page of history records. Calling <code>PollForDecisionTask</code> with a <code>nextPageToken</code> doesn't return a new decision task.</p> 
     /// </note>
     #[doc(hidden)]
     pub next_page_token: std::option::Option<std::string::String>,
-    /// <p>The maximum number of results that are returned per call. Use <code>nextPageToken</code> to obtain further pages of results. </p>
+    /// <p>The maximum number of results that are returned per call. Use <code>nextPageToken</code> to obtain further pages of results. </p> 
     /// <p>This is an upper limit only; the actual number of results returned per call may be fewer than the specified maximum.</p>
     #[doc(hidden)]
     pub maximum_page_size: i32,
@@ -8681,26 +6533,26 @@ pub struct PollForDecisionTaskInput {
 }
 impl PollForDecisionTaskInput {
     /// <p>The name of the domain containing the task lists to poll.</p>
-    pub fn domain(&self) -> std::option::Option<&str> {
+    pub fn domain(&self) -> std::option::Option<& str> {
         self.domain.as_deref()
     }
-    /// <p>Specifies the task list to poll for decision tasks.</p>
+    /// <p>Specifies the task list to poll for decision tasks.</p> 
     /// <p>The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not <i>be</i> the literal string <code>arn</code>.</p>
-    pub fn task_list(&self) -> std::option::Option<&crate::model::TaskList> {
+    pub fn task_list(&self) -> std::option::Option<& crate::model::TaskList> {
         self.task_list.as_ref()
     }
     /// <p>Identity of the decider making the request, which is recorded in the DecisionTaskStarted event in the workflow history. This enables diagnostic tracing when problems arise. The form of this identity is user defined.</p>
-    pub fn identity(&self) -> std::option::Option<&str> {
+    pub fn identity(&self) -> std::option::Option<& str> {
         self.identity.as_deref()
     }
-    /// <p>If <code>NextPageToken</code> is returned there are more results available. The value of <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 60 seconds. Using an expired pagination token will return a <code>400</code> error: "<code>Specified token has exceeded its maximum lifetime</code>". </p>
-    /// <p>The configured <code>maximumPageSize</code> determines how many results can be returned in a single call. </p> <note>
-    /// <p>The <code>nextPageToken</code> returned by this action cannot be used with <code>GetWorkflowExecutionHistory</code> to get the next page. You must call <code>PollForDecisionTask</code> again (with the <code>nextPageToken</code>) to retrieve the next page of history records. Calling <code>PollForDecisionTask</code> with a <code>nextPageToken</code> doesn't return a new decision task.</p>
+    /// <p>If <code>NextPageToken</code> is returned there are more results available. The value of <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 60 seconds. Using an expired pagination token will return a <code>400</code> error: "<code>Specified token has exceeded its maximum lifetime</code>". </p> 
+    /// <p>The configured <code>maximumPageSize</code> determines how many results can be returned in a single call. </p> <note> 
+    /// <p>The <code>nextPageToken</code> returned by this action cannot be used with <code>GetWorkflowExecutionHistory</code> to get the next page. You must call <code>PollForDecisionTask</code> again (with the <code>nextPageToken</code>) to retrieve the next page of history records. Calling <code>PollForDecisionTask</code> with a <code>nextPageToken</code> doesn't return a new decision task.</p> 
     /// </note>
-    pub fn next_page_token(&self) -> std::option::Option<&str> {
+    pub fn next_page_token(&self) -> std::option::Option<& str> {
         self.next_page_token.as_deref()
     }
-    /// <p>The maximum number of results that are returned per call. Use <code>nextPageToken</code> to obtain further pages of results. </p>
+    /// <p>The maximum number of results that are returned per call. Use <code>nextPageToken</code> to obtain further pages of results. </p> 
     /// <p>This is an upper limit only; the actual number of results returned per call may be fewer than the specified maximum.</p>
     pub fn maximum_page_size(&self) -> i32 {
         self.maximum_page_size
@@ -8714,11 +6566,11 @@ impl PollForDecisionTaskInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PollForActivityTaskInput {
+pub struct PollForActivityTaskInput  {
     /// <p>The name of the domain that contains the task lists being polled.</p>
     #[doc(hidden)]
     pub domain: std::option::Option<std::string::String>,
-    /// <p>Specifies the task list to poll for activity tasks.</p>
+    /// <p>Specifies the task list to poll for activity tasks.</p> 
     /// <p>The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not <i>be</i> the literal string <code>arn</code>.</p>
     #[doc(hidden)]
     pub task_list: std::option::Option<crate::model::TaskList>,
@@ -8728,16 +6580,16 @@ pub struct PollForActivityTaskInput {
 }
 impl PollForActivityTaskInput {
     /// <p>The name of the domain that contains the task lists being polled.</p>
-    pub fn domain(&self) -> std::option::Option<&str> {
+    pub fn domain(&self) -> std::option::Option<& str> {
         self.domain.as_deref()
     }
-    /// <p>Specifies the task list to poll for activity tasks.</p>
+    /// <p>Specifies the task list to poll for activity tasks.</p> 
     /// <p>The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not <i>be</i> the literal string <code>arn</code>.</p>
-    pub fn task_list(&self) -> std::option::Option<&crate::model::TaskList> {
+    pub fn task_list(&self) -> std::option::Option<& crate::model::TaskList> {
         self.task_list.as_ref()
     }
     /// <p>Identity of the worker making the request, recorded in the <code>ActivityTaskStarted</code> event in the workflow history. This enables diagnostic tracing when problems arise. The form of this identity is user defined.</p>
-    pub fn identity(&self) -> std::option::Option<&str> {
+    pub fn identity(&self) -> std::option::Option<& str> {
         self.identity.as_deref()
     }
 }
@@ -8745,7 +6597,7 @@ impl PollForActivityTaskInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListWorkflowTypesInput {
+pub struct ListWorkflowTypesInput  {
     /// <p>The name of the domain in which the workflow types have been registered.</p>
     #[doc(hidden)]
     pub domain: std::option::Option<std::string::String>,
@@ -8755,7 +6607,7 @@ pub struct ListWorkflowTypesInput {
     /// <p>Specifies the registration status of the workflow types to list.</p>
     #[doc(hidden)]
     pub registration_status: std::option::Option<crate::model::RegistrationStatus>,
-    /// <p>If <code>NextPageToken</code> is returned there are more results available. The value of <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 60 seconds. Using an expired pagination token will return a <code>400</code> error: "<code>Specified token has exceeded its maximum lifetime</code>". </p>
+    /// <p>If <code>NextPageToken</code> is returned there are more results available. The value of <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 60 seconds. Using an expired pagination token will return a <code>400</code> error: "<code>Specified token has exceeded its maximum lifetime</code>". </p> 
     /// <p>The configured <code>maximumPageSize</code> determines how many results can be returned in a single call. </p>
     #[doc(hidden)]
     pub next_page_token: std::option::Option<std::string::String>,
@@ -8768,20 +6620,20 @@ pub struct ListWorkflowTypesInput {
 }
 impl ListWorkflowTypesInput {
     /// <p>The name of the domain in which the workflow types have been registered.</p>
-    pub fn domain(&self) -> std::option::Option<&str> {
+    pub fn domain(&self) -> std::option::Option<& str> {
         self.domain.as_deref()
     }
     /// <p>If specified, lists the workflow type with this name.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>Specifies the registration status of the workflow types to list.</p>
-    pub fn registration_status(&self) -> std::option::Option<&crate::model::RegistrationStatus> {
+    pub fn registration_status(&self) -> std::option::Option<& crate::model::RegistrationStatus> {
         self.registration_status.as_ref()
     }
-    /// <p>If <code>NextPageToken</code> is returned there are more results available. The value of <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 60 seconds. Using an expired pagination token will return a <code>400</code> error: "<code>Specified token has exceeded its maximum lifetime</code>". </p>
+    /// <p>If <code>NextPageToken</code> is returned there are more results available. The value of <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 60 seconds. Using an expired pagination token will return a <code>400</code> error: "<code>Specified token has exceeded its maximum lifetime</code>". </p> 
     /// <p>The configured <code>maximumPageSize</code> determines how many results can be returned in a single call. </p>
-    pub fn next_page_token(&self) -> std::option::Option<&str> {
+    pub fn next_page_token(&self) -> std::option::Option<& str> {
         self.next_page_token.as_deref()
     }
     /// <p>The maximum number of results that are returned per call. Use <code>nextPageToken</code> to obtain further pages of results. </p>
@@ -8797,14 +6649,14 @@ impl ListWorkflowTypesInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListTagsForResourceInput {
+pub struct ListTagsForResourceInput  {
     /// <p>The Amazon Resource Name (ARN) for the Amazon SWF domain.</p>
     #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
 }
 impl ListTagsForResourceInput {
     /// <p>The Amazon Resource Name (ARN) for the Amazon SWF domain.</p>
-    pub fn resource_arn(&self) -> std::option::Option<&str> {
+    pub fn resource_arn(&self) -> std::option::Option<& str> {
         self.resource_arn.as_deref()
     }
 }
@@ -8812,24 +6664,24 @@ impl ListTagsForResourceInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListOpenWorkflowExecutionsInput {
+pub struct ListOpenWorkflowExecutionsInput  {
     /// <p>The name of the domain that contains the workflow executions to list.</p>
     #[doc(hidden)]
     pub domain: std::option::Option<std::string::String>,
     /// <p>Workflow executions are included in the returned results based on whether their start times are within the range specified by this filter.</p>
     #[doc(hidden)]
     pub start_time_filter: std::option::Option<crate::model::ExecutionTimeFilter>,
-    /// <p>If specified, only executions of the type specified in the filter are returned.</p> <note>
-    /// <p> <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p>
+    /// <p>If specified, only executions of the type specified in the filter are returned.</p> <note> 
+    /// <p> <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p> 
     /// </note>
     #[doc(hidden)]
     pub type_filter: std::option::Option<crate::model::WorkflowTypeFilter>,
-    /// <p>If specified, only executions that have the matching tag are listed.</p> <note>
-    /// <p> <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p>
+    /// <p>If specified, only executions that have the matching tag are listed.</p> <note> 
+    /// <p> <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p> 
     /// </note>
     #[doc(hidden)]
     pub tag_filter: std::option::Option<crate::model::TagFilter>,
-    /// <p>If <code>NextPageToken</code> is returned there are more results available. The value of <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 60 seconds. Using an expired pagination token will return a <code>400</code> error: "<code>Specified token has exceeded its maximum lifetime</code>". </p>
+    /// <p>If <code>NextPageToken</code> is returned there are more results available. The value of <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 60 seconds. Using an expired pagination token will return a <code>400</code> error: "<code>Specified token has exceeded its maximum lifetime</code>". </p> 
     /// <p>The configured <code>maximumPageSize</code> determines how many results can be returned in a single call. </p>
     #[doc(hidden)]
     pub next_page_token: std::option::Option<std::string::String>,
@@ -8839,36 +6691,36 @@ pub struct ListOpenWorkflowExecutionsInput {
     /// <p>When set to <code>true</code>, returns the results in reverse order. By default the results are returned in descending order of the start time of the executions.</p>
     #[doc(hidden)]
     pub reverse_order: bool,
-    /// <p>If specified, only workflow executions matching the workflow ID specified in the filter are returned.</p> <note>
-    /// <p> <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p>
+    /// <p>If specified, only workflow executions matching the workflow ID specified in the filter are returned.</p> <note> 
+    /// <p> <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p> 
     /// </note>
     #[doc(hidden)]
     pub execution_filter: std::option::Option<crate::model::WorkflowExecutionFilter>,
 }
 impl ListOpenWorkflowExecutionsInput {
     /// <p>The name of the domain that contains the workflow executions to list.</p>
-    pub fn domain(&self) -> std::option::Option<&str> {
+    pub fn domain(&self) -> std::option::Option<& str> {
         self.domain.as_deref()
     }
     /// <p>Workflow executions are included in the returned results based on whether their start times are within the range specified by this filter.</p>
-    pub fn start_time_filter(&self) -> std::option::Option<&crate::model::ExecutionTimeFilter> {
+    pub fn start_time_filter(&self) -> std::option::Option<& crate::model::ExecutionTimeFilter> {
         self.start_time_filter.as_ref()
     }
-    /// <p>If specified, only executions of the type specified in the filter are returned.</p> <note>
-    /// <p> <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p>
+    /// <p>If specified, only executions of the type specified in the filter are returned.</p> <note> 
+    /// <p> <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p> 
     /// </note>
-    pub fn type_filter(&self) -> std::option::Option<&crate::model::WorkflowTypeFilter> {
+    pub fn type_filter(&self) -> std::option::Option<& crate::model::WorkflowTypeFilter> {
         self.type_filter.as_ref()
     }
-    /// <p>If specified, only executions that have the matching tag are listed.</p> <note>
-    /// <p> <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p>
+    /// <p>If specified, only executions that have the matching tag are listed.</p> <note> 
+    /// <p> <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p> 
     /// </note>
-    pub fn tag_filter(&self) -> std::option::Option<&crate::model::TagFilter> {
+    pub fn tag_filter(&self) -> std::option::Option<& crate::model::TagFilter> {
         self.tag_filter.as_ref()
     }
-    /// <p>If <code>NextPageToken</code> is returned there are more results available. The value of <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 60 seconds. Using an expired pagination token will return a <code>400</code> error: "<code>Specified token has exceeded its maximum lifetime</code>". </p>
+    /// <p>If <code>NextPageToken</code> is returned there are more results available. The value of <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 60 seconds. Using an expired pagination token will return a <code>400</code> error: "<code>Specified token has exceeded its maximum lifetime</code>". </p> 
     /// <p>The configured <code>maximumPageSize</code> determines how many results can be returned in a single call. </p>
-    pub fn next_page_token(&self) -> std::option::Option<&str> {
+    pub fn next_page_token(&self) -> std::option::Option<& str> {
         self.next_page_token.as_deref()
     }
     /// <p>The maximum number of results that are returned per call. Use <code>nextPageToken</code> to obtain further pages of results. </p>
@@ -8879,10 +6731,10 @@ impl ListOpenWorkflowExecutionsInput {
     pub fn reverse_order(&self) -> bool {
         self.reverse_order
     }
-    /// <p>If specified, only workflow executions matching the workflow ID specified in the filter are returned.</p> <note>
-    /// <p> <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p>
+    /// <p>If specified, only workflow executions matching the workflow ID specified in the filter are returned.</p> <note> 
+    /// <p> <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p> 
     /// </note>
-    pub fn execution_filter(&self) -> std::option::Option<&crate::model::WorkflowExecutionFilter> {
+    pub fn execution_filter(&self) -> std::option::Option<& crate::model::WorkflowExecutionFilter> {
         self.execution_filter.as_ref()
     }
 }
@@ -8890,8 +6742,8 @@ impl ListOpenWorkflowExecutionsInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListDomainsInput {
-    /// <p>If <code>NextPageToken</code> is returned there are more results available. The value of <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 60 seconds. Using an expired pagination token will return a <code>400</code> error: "<code>Specified token has exceeded its maximum lifetime</code>". </p>
+pub struct ListDomainsInput  {
+    /// <p>If <code>NextPageToken</code> is returned there are more results available. The value of <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 60 seconds. Using an expired pagination token will return a <code>400</code> error: "<code>Specified token has exceeded its maximum lifetime</code>". </p> 
     /// <p>The configured <code>maximumPageSize</code> determines how many results can be returned in a single call. </p>
     #[doc(hidden)]
     pub next_page_token: std::option::Option<std::string::String>,
@@ -8906,13 +6758,13 @@ pub struct ListDomainsInput {
     pub reverse_order: bool,
 }
 impl ListDomainsInput {
-    /// <p>If <code>NextPageToken</code> is returned there are more results available. The value of <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 60 seconds. Using an expired pagination token will return a <code>400</code> error: "<code>Specified token has exceeded its maximum lifetime</code>". </p>
+    /// <p>If <code>NextPageToken</code> is returned there are more results available. The value of <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 60 seconds. Using an expired pagination token will return a <code>400</code> error: "<code>Specified token has exceeded its maximum lifetime</code>". </p> 
     /// <p>The configured <code>maximumPageSize</code> determines how many results can be returned in a single call. </p>
-    pub fn next_page_token(&self) -> std::option::Option<&str> {
+    pub fn next_page_token(&self) -> std::option::Option<& str> {
         self.next_page_token.as_deref()
     }
     /// <p>Specifies the registration status of the domains to list.</p>
-    pub fn registration_status(&self) -> std::option::Option<&crate::model::RegistrationStatus> {
+    pub fn registration_status(&self) -> std::option::Option<& crate::model::RegistrationStatus> {
         self.registration_status.as_ref()
     }
     /// <p>The maximum number of results that are returned per call. Use <code>nextPageToken</code> to obtain further pages of results. </p>
@@ -8928,41 +6780,41 @@ impl ListDomainsInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListClosedWorkflowExecutionsInput {
+pub struct ListClosedWorkflowExecutionsInput  {
     /// <p>The name of the domain that contains the workflow executions to list.</p>
     #[doc(hidden)]
     pub domain: std::option::Option<std::string::String>,
-    /// <p>If specified, the workflow executions are included in the returned results based on whether their start times are within the range specified by this filter. Also, if this parameter is specified, the returned results are ordered by their start times.</p> <note>
-    /// <p> <code>startTimeFilter</code> and <code>closeTimeFilter</code> are mutually exclusive. You must specify one of these in a request but not both.</p>
+    /// <p>If specified, the workflow executions are included in the returned results based on whether their start times are within the range specified by this filter. Also, if this parameter is specified, the returned results are ordered by their start times.</p> <note> 
+    /// <p> <code>startTimeFilter</code> and <code>closeTimeFilter</code> are mutually exclusive. You must specify one of these in a request but not both.</p> 
     /// </note>
     #[doc(hidden)]
     pub start_time_filter: std::option::Option<crate::model::ExecutionTimeFilter>,
-    /// <p>If specified, the workflow executions are included in the returned results based on whether their close times are within the range specified by this filter. Also, if this parameter is specified, the returned results are ordered by their close times.</p> <note>
-    /// <p> <code>startTimeFilter</code> and <code>closeTimeFilter</code> are mutually exclusive. You must specify one of these in a request but not both.</p>
+    /// <p>If specified, the workflow executions are included in the returned results based on whether their close times are within the range specified by this filter. Also, if this parameter is specified, the returned results are ordered by their close times.</p> <note> 
+    /// <p> <code>startTimeFilter</code> and <code>closeTimeFilter</code> are mutually exclusive. You must specify one of these in a request but not both.</p> 
     /// </note>
     #[doc(hidden)]
     pub close_time_filter: std::option::Option<crate::model::ExecutionTimeFilter>,
-    /// <p>If specified, only workflow executions matching the workflow ID specified in the filter are returned.</p> <note>
-    /// <p> <code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p>
+    /// <p>If specified, only workflow executions matching the workflow ID specified in the filter are returned.</p> <note> 
+    /// <p> <code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p> 
     /// </note>
     #[doc(hidden)]
     pub execution_filter: std::option::Option<crate::model::WorkflowExecutionFilter>,
-    /// <p>If specified, only workflow executions that match this <i>close status</i> are listed. For example, if TERMINATED is specified, then only TERMINATED workflow executions are listed.</p> <note>
-    /// <p> <code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p>
+    /// <p>If specified, only workflow executions that match this <i>close status</i> are listed. For example, if TERMINATED is specified, then only TERMINATED workflow executions are listed.</p> <note> 
+    /// <p> <code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p> 
     /// </note>
     #[doc(hidden)]
     pub close_status_filter: std::option::Option<crate::model::CloseStatusFilter>,
-    /// <p>If specified, only executions of the type specified in the filter are returned.</p> <note>
-    /// <p> <code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p>
+    /// <p>If specified, only executions of the type specified in the filter are returned.</p> <note> 
+    /// <p> <code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p> 
     /// </note>
     #[doc(hidden)]
     pub type_filter: std::option::Option<crate::model::WorkflowTypeFilter>,
-    /// <p>If specified, only executions that have the matching tag are listed.</p> <note>
-    /// <p> <code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p>
+    /// <p>If specified, only executions that have the matching tag are listed.</p> <note> 
+    /// <p> <code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p> 
     /// </note>
     #[doc(hidden)]
     pub tag_filter: std::option::Option<crate::model::TagFilter>,
-    /// <p>If <code>NextPageToken</code> is returned there are more results available. The value of <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 60 seconds. Using an expired pagination token will return a <code>400</code> error: "<code>Specified token has exceeded its maximum lifetime</code>". </p>
+    /// <p>If <code>NextPageToken</code> is returned there are more results available. The value of <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 60 seconds. Using an expired pagination token will return a <code>400</code> error: "<code>Specified token has exceeded its maximum lifetime</code>". </p> 
     /// <p>The configured <code>maximumPageSize</code> determines how many results can be returned in a single call. </p>
     #[doc(hidden)]
     pub next_page_token: std::option::Option<std::string::String>,
@@ -8975,48 +6827,48 @@ pub struct ListClosedWorkflowExecutionsInput {
 }
 impl ListClosedWorkflowExecutionsInput {
     /// <p>The name of the domain that contains the workflow executions to list.</p>
-    pub fn domain(&self) -> std::option::Option<&str> {
+    pub fn domain(&self) -> std::option::Option<& str> {
         self.domain.as_deref()
     }
-    /// <p>If specified, the workflow executions are included in the returned results based on whether their start times are within the range specified by this filter. Also, if this parameter is specified, the returned results are ordered by their start times.</p> <note>
-    /// <p> <code>startTimeFilter</code> and <code>closeTimeFilter</code> are mutually exclusive. You must specify one of these in a request but not both.</p>
+    /// <p>If specified, the workflow executions are included in the returned results based on whether their start times are within the range specified by this filter. Also, if this parameter is specified, the returned results are ordered by their start times.</p> <note> 
+    /// <p> <code>startTimeFilter</code> and <code>closeTimeFilter</code> are mutually exclusive. You must specify one of these in a request but not both.</p> 
     /// </note>
-    pub fn start_time_filter(&self) -> std::option::Option<&crate::model::ExecutionTimeFilter> {
+    pub fn start_time_filter(&self) -> std::option::Option<& crate::model::ExecutionTimeFilter> {
         self.start_time_filter.as_ref()
     }
-    /// <p>If specified, the workflow executions are included in the returned results based on whether their close times are within the range specified by this filter. Also, if this parameter is specified, the returned results are ordered by their close times.</p> <note>
-    /// <p> <code>startTimeFilter</code> and <code>closeTimeFilter</code> are mutually exclusive. You must specify one of these in a request but not both.</p>
+    /// <p>If specified, the workflow executions are included in the returned results based on whether their close times are within the range specified by this filter. Also, if this parameter is specified, the returned results are ordered by their close times.</p> <note> 
+    /// <p> <code>startTimeFilter</code> and <code>closeTimeFilter</code> are mutually exclusive. You must specify one of these in a request but not both.</p> 
     /// </note>
-    pub fn close_time_filter(&self) -> std::option::Option<&crate::model::ExecutionTimeFilter> {
+    pub fn close_time_filter(&self) -> std::option::Option<& crate::model::ExecutionTimeFilter> {
         self.close_time_filter.as_ref()
     }
-    /// <p>If specified, only workflow executions matching the workflow ID specified in the filter are returned.</p> <note>
-    /// <p> <code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p>
+    /// <p>If specified, only workflow executions matching the workflow ID specified in the filter are returned.</p> <note> 
+    /// <p> <code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p> 
     /// </note>
-    pub fn execution_filter(&self) -> std::option::Option<&crate::model::WorkflowExecutionFilter> {
+    pub fn execution_filter(&self) -> std::option::Option<& crate::model::WorkflowExecutionFilter> {
         self.execution_filter.as_ref()
     }
-    /// <p>If specified, only workflow executions that match this <i>close status</i> are listed. For example, if TERMINATED is specified, then only TERMINATED workflow executions are listed.</p> <note>
-    /// <p> <code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p>
+    /// <p>If specified, only workflow executions that match this <i>close status</i> are listed. For example, if TERMINATED is specified, then only TERMINATED workflow executions are listed.</p> <note> 
+    /// <p> <code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p> 
     /// </note>
-    pub fn close_status_filter(&self) -> std::option::Option<&crate::model::CloseStatusFilter> {
+    pub fn close_status_filter(&self) -> std::option::Option<& crate::model::CloseStatusFilter> {
         self.close_status_filter.as_ref()
     }
-    /// <p>If specified, only executions of the type specified in the filter are returned.</p> <note>
-    /// <p> <code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p>
+    /// <p>If specified, only executions of the type specified in the filter are returned.</p> <note> 
+    /// <p> <code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p> 
     /// </note>
-    pub fn type_filter(&self) -> std::option::Option<&crate::model::WorkflowTypeFilter> {
+    pub fn type_filter(&self) -> std::option::Option<& crate::model::WorkflowTypeFilter> {
         self.type_filter.as_ref()
     }
-    /// <p>If specified, only executions that have the matching tag are listed.</p> <note>
-    /// <p> <code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p>
+    /// <p>If specified, only executions that have the matching tag are listed.</p> <note> 
+    /// <p> <code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p> 
     /// </note>
-    pub fn tag_filter(&self) -> std::option::Option<&crate::model::TagFilter> {
+    pub fn tag_filter(&self) -> std::option::Option<& crate::model::TagFilter> {
         self.tag_filter.as_ref()
     }
-    /// <p>If <code>NextPageToken</code> is returned there are more results available. The value of <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 60 seconds. Using an expired pagination token will return a <code>400</code> error: "<code>Specified token has exceeded its maximum lifetime</code>". </p>
+    /// <p>If <code>NextPageToken</code> is returned there are more results available. The value of <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 60 seconds. Using an expired pagination token will return a <code>400</code> error: "<code>Specified token has exceeded its maximum lifetime</code>". </p> 
     /// <p>The configured <code>maximumPageSize</code> determines how many results can be returned in a single call. </p>
-    pub fn next_page_token(&self) -> std::option::Option<&str> {
+    pub fn next_page_token(&self) -> std::option::Option<& str> {
         self.next_page_token.as_deref()
     }
     /// <p>The maximum number of results that are returned per call. Use <code>nextPageToken</code> to obtain further pages of results. </p>
@@ -9032,7 +6884,7 @@ impl ListClosedWorkflowExecutionsInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListActivityTypesInput {
+pub struct ListActivityTypesInput  {
     /// <p>The name of the domain in which the activity types have been registered.</p>
     #[doc(hidden)]
     pub domain: std::option::Option<std::string::String>,
@@ -9042,7 +6894,7 @@ pub struct ListActivityTypesInput {
     /// <p>Specifies the registration status of the activity types to list.</p>
     #[doc(hidden)]
     pub registration_status: std::option::Option<crate::model::RegistrationStatus>,
-    /// <p>If <code>NextPageToken</code> is returned there are more results available. The value of <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 60 seconds. Using an expired pagination token will return a <code>400</code> error: "<code>Specified token has exceeded its maximum lifetime</code>". </p>
+    /// <p>If <code>NextPageToken</code> is returned there are more results available. The value of <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 60 seconds. Using an expired pagination token will return a <code>400</code> error: "<code>Specified token has exceeded its maximum lifetime</code>". </p> 
     /// <p>The configured <code>maximumPageSize</code> determines how many results can be returned in a single call. </p>
     #[doc(hidden)]
     pub next_page_token: std::option::Option<std::string::String>,
@@ -9055,20 +6907,20 @@ pub struct ListActivityTypesInput {
 }
 impl ListActivityTypesInput {
     /// <p>The name of the domain in which the activity types have been registered.</p>
-    pub fn domain(&self) -> std::option::Option<&str> {
+    pub fn domain(&self) -> std::option::Option<& str> {
         self.domain.as_deref()
     }
     /// <p>If specified, only lists the activity types that have this name.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>Specifies the registration status of the activity types to list.</p>
-    pub fn registration_status(&self) -> std::option::Option<&crate::model::RegistrationStatus> {
+    pub fn registration_status(&self) -> std::option::Option<& crate::model::RegistrationStatus> {
         self.registration_status.as_ref()
     }
-    /// <p>If <code>NextPageToken</code> is returned there are more results available. The value of <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 60 seconds. Using an expired pagination token will return a <code>400</code> error: "<code>Specified token has exceeded its maximum lifetime</code>". </p>
+    /// <p>If <code>NextPageToken</code> is returned there are more results available. The value of <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 60 seconds. Using an expired pagination token will return a <code>400</code> error: "<code>Specified token has exceeded its maximum lifetime</code>". </p> 
     /// <p>The configured <code>maximumPageSize</code> determines how many results can be returned in a single call. </p>
-    pub fn next_page_token(&self) -> std::option::Option<&str> {
+    pub fn next_page_token(&self) -> std::option::Option<& str> {
         self.next_page_token.as_deref()
     }
     /// <p>The maximum number of results that are returned per call. Use <code>nextPageToken</code> to obtain further pages of results. </p>
@@ -9084,14 +6936,14 @@ impl ListActivityTypesInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetWorkflowExecutionHistoryInput {
+pub struct GetWorkflowExecutionHistoryInput  {
     /// <p>The name of the domain containing the workflow execution.</p>
     #[doc(hidden)]
     pub domain: std::option::Option<std::string::String>,
     /// <p>Specifies the workflow execution for which to return the history.</p>
     #[doc(hidden)]
     pub execution: std::option::Option<crate::model::WorkflowExecution>,
-    /// <p>If <code>NextPageToken</code> is returned there are more results available. The value of <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 60 seconds. Using an expired pagination token will return a <code>400</code> error: "<code>Specified token has exceeded its maximum lifetime</code>". </p>
+    /// <p>If <code>NextPageToken</code> is returned there are more results available. The value of <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 60 seconds. Using an expired pagination token will return a <code>400</code> error: "<code>Specified token has exceeded its maximum lifetime</code>". </p> 
     /// <p>The configured <code>maximumPageSize</code> determines how many results can be returned in a single call. </p>
     #[doc(hidden)]
     pub next_page_token: std::option::Option<std::string::String>,
@@ -9104,16 +6956,16 @@ pub struct GetWorkflowExecutionHistoryInput {
 }
 impl GetWorkflowExecutionHistoryInput {
     /// <p>The name of the domain containing the workflow execution.</p>
-    pub fn domain(&self) -> std::option::Option<&str> {
+    pub fn domain(&self) -> std::option::Option<& str> {
         self.domain.as_deref()
     }
     /// <p>Specifies the workflow execution for which to return the history.</p>
-    pub fn execution(&self) -> std::option::Option<&crate::model::WorkflowExecution> {
+    pub fn execution(&self) -> std::option::Option<& crate::model::WorkflowExecution> {
         self.execution.as_ref()
     }
-    /// <p>If <code>NextPageToken</code> is returned there are more results available. The value of <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 60 seconds. Using an expired pagination token will return a <code>400</code> error: "<code>Specified token has exceeded its maximum lifetime</code>". </p>
+    /// <p>If <code>NextPageToken</code> is returned there are more results available. The value of <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 60 seconds. Using an expired pagination token will return a <code>400</code> error: "<code>Specified token has exceeded its maximum lifetime</code>". </p> 
     /// <p>The configured <code>maximumPageSize</code> determines how many results can be returned in a single call. </p>
-    pub fn next_page_token(&self) -> std::option::Option<&str> {
+    pub fn next_page_token(&self) -> std::option::Option<& str> {
         self.next_page_token.as_deref()
     }
     /// <p>The maximum number of results that are returned per call. Use <code>nextPageToken</code> to obtain further pages of results. </p>
@@ -9129,7 +6981,7 @@ impl GetWorkflowExecutionHistoryInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeWorkflowTypeInput {
+pub struct DescribeWorkflowTypeInput  {
     /// <p>The name of the domain in which this workflow type is registered.</p>
     #[doc(hidden)]
     pub domain: std::option::Option<std::string::String>,
@@ -9139,11 +6991,11 @@ pub struct DescribeWorkflowTypeInput {
 }
 impl DescribeWorkflowTypeInput {
     /// <p>The name of the domain in which this workflow type is registered.</p>
-    pub fn domain(&self) -> std::option::Option<&str> {
+    pub fn domain(&self) -> std::option::Option<& str> {
         self.domain.as_deref()
     }
     /// <p>The workflow type to describe.</p>
-    pub fn workflow_type(&self) -> std::option::Option<&crate::model::WorkflowType> {
+    pub fn workflow_type(&self) -> std::option::Option<& crate::model::WorkflowType> {
         self.workflow_type.as_ref()
     }
 }
@@ -9151,7 +7003,7 @@ impl DescribeWorkflowTypeInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeWorkflowExecutionInput {
+pub struct DescribeWorkflowExecutionInput  {
     /// <p>The name of the domain containing the workflow execution.</p>
     #[doc(hidden)]
     pub domain: std::option::Option<std::string::String>,
@@ -9161,11 +7013,11 @@ pub struct DescribeWorkflowExecutionInput {
 }
 impl DescribeWorkflowExecutionInput {
     /// <p>The name of the domain containing the workflow execution.</p>
-    pub fn domain(&self) -> std::option::Option<&str> {
+    pub fn domain(&self) -> std::option::Option<& str> {
         self.domain.as_deref()
     }
     /// <p>The workflow execution to describe.</p>
-    pub fn execution(&self) -> std::option::Option<&crate::model::WorkflowExecution> {
+    pub fn execution(&self) -> std::option::Option<& crate::model::WorkflowExecution> {
         self.execution.as_ref()
     }
 }
@@ -9173,14 +7025,14 @@ impl DescribeWorkflowExecutionInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeDomainInput {
+pub struct DescribeDomainInput  {
     /// <p>The name of the domain to describe.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl DescribeDomainInput {
     /// <p>The name of the domain to describe.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
 }
@@ -9188,7 +7040,7 @@ impl DescribeDomainInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeActivityTypeInput {
+pub struct DescribeActivityTypeInput  {
     /// <p>The name of the domain in which the activity type is registered.</p>
     #[doc(hidden)]
     pub domain: std::option::Option<std::string::String>,
@@ -9198,11 +7050,11 @@ pub struct DescribeActivityTypeInput {
 }
 impl DescribeActivityTypeInput {
     /// <p>The name of the domain in which the activity type is registered.</p>
-    pub fn domain(&self) -> std::option::Option<&str> {
+    pub fn domain(&self) -> std::option::Option<& str> {
         self.domain.as_deref()
     }
     /// <p>The activity type to get information about. Activity types are identified by the <code>name</code> and <code>version</code> that were supplied when the activity was registered.</p>
-    pub fn activity_type(&self) -> std::option::Option<&crate::model::ActivityType> {
+    pub fn activity_type(&self) -> std::option::Option<& crate::model::ActivityType> {
         self.activity_type.as_ref()
     }
 }
@@ -9210,7 +7062,7 @@ impl DescribeActivityTypeInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeprecateWorkflowTypeInput {
+pub struct DeprecateWorkflowTypeInput  {
     /// <p>The name of the domain in which the workflow type is registered.</p>
     #[doc(hidden)]
     pub domain: std::option::Option<std::string::String>,
@@ -9220,11 +7072,11 @@ pub struct DeprecateWorkflowTypeInput {
 }
 impl DeprecateWorkflowTypeInput {
     /// <p>The name of the domain in which the workflow type is registered.</p>
-    pub fn domain(&self) -> std::option::Option<&str> {
+    pub fn domain(&self) -> std::option::Option<& str> {
         self.domain.as_deref()
     }
     /// <p>The workflow type to deprecate.</p>
-    pub fn workflow_type(&self) -> std::option::Option<&crate::model::WorkflowType> {
+    pub fn workflow_type(&self) -> std::option::Option<& crate::model::WorkflowType> {
         self.workflow_type.as_ref()
     }
 }
@@ -9232,14 +7084,14 @@ impl DeprecateWorkflowTypeInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeprecateDomainInput {
+pub struct DeprecateDomainInput  {
     /// <p>The name of the domain to deprecate.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl DeprecateDomainInput {
     /// <p>The name of the domain to deprecate.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
 }
@@ -9247,7 +7099,7 @@ impl DeprecateDomainInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeprecateActivityTypeInput {
+pub struct DeprecateActivityTypeInput  {
     /// <p>The name of the domain in which the activity type is registered.</p>
     #[doc(hidden)]
     pub domain: std::option::Option<std::string::String>,
@@ -9257,11 +7109,11 @@ pub struct DeprecateActivityTypeInput {
 }
 impl DeprecateActivityTypeInput {
     /// <p>The name of the domain in which the activity type is registered.</p>
-    pub fn domain(&self) -> std::option::Option<&str> {
+    pub fn domain(&self) -> std::option::Option<& str> {
         self.domain.as_deref()
     }
     /// <p>The activity type to deprecate.</p>
-    pub fn activity_type(&self) -> std::option::Option<&crate::model::ActivityType> {
+    pub fn activity_type(&self) -> std::option::Option<& crate::model::ActivityType> {
         self.activity_type.as_ref()
     }
 }
@@ -9269,7 +7121,7 @@ impl DeprecateActivityTypeInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CountPendingDecisionTasksInput {
+pub struct CountPendingDecisionTasksInput  {
     /// <p>The name of the domain that contains the task list.</p>
     #[doc(hidden)]
     pub domain: std::option::Option<std::string::String>,
@@ -9279,11 +7131,11 @@ pub struct CountPendingDecisionTasksInput {
 }
 impl CountPendingDecisionTasksInput {
     /// <p>The name of the domain that contains the task list.</p>
-    pub fn domain(&self) -> std::option::Option<&str> {
+    pub fn domain(&self) -> std::option::Option<& str> {
         self.domain.as_deref()
     }
     /// <p>The name of the task list.</p>
-    pub fn task_list(&self) -> std::option::Option<&crate::model::TaskList> {
+    pub fn task_list(&self) -> std::option::Option<& crate::model::TaskList> {
         self.task_list.as_ref()
     }
 }
@@ -9291,7 +7143,7 @@ impl CountPendingDecisionTasksInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CountPendingActivityTasksInput {
+pub struct CountPendingActivityTasksInput  {
     /// <p>The name of the domain that contains the task list.</p>
     #[doc(hidden)]
     pub domain: std::option::Option<std::string::String>,
@@ -9301,11 +7153,11 @@ pub struct CountPendingActivityTasksInput {
 }
 impl CountPendingActivityTasksInput {
     /// <p>The name of the domain that contains the task list.</p>
-    pub fn domain(&self) -> std::option::Option<&str> {
+    pub fn domain(&self) -> std::option::Option<& str> {
         self.domain.as_deref()
     }
     /// <p>The name of the task list.</p>
-    pub fn task_list(&self) -> std::option::Option<&crate::model::TaskList> {
+    pub fn task_list(&self) -> std::option::Option<& crate::model::TaskList> {
         self.task_list.as_ref()
     }
 }
@@ -9313,54 +7165,54 @@ impl CountPendingActivityTasksInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CountOpenWorkflowExecutionsInput {
+pub struct CountOpenWorkflowExecutionsInput  {
     /// <p>The name of the domain containing the workflow executions to count.</p>
     #[doc(hidden)]
     pub domain: std::option::Option<std::string::String>,
     /// <p>Specifies the start time criteria that workflow executions must meet in order to be counted.</p>
     #[doc(hidden)]
     pub start_time_filter: std::option::Option<crate::model::ExecutionTimeFilter>,
-    /// <p>Specifies the type of the workflow executions to be counted.</p> <note>
-    /// <p> <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p>
+    /// <p>Specifies the type of the workflow executions to be counted.</p> <note> 
+    /// <p> <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p> 
     /// </note>
     #[doc(hidden)]
     pub type_filter: std::option::Option<crate::model::WorkflowTypeFilter>,
-    /// <p>If specified, only executions that have a tag that matches the filter are counted.</p> <note>
-    /// <p> <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p>
+    /// <p>If specified, only executions that have a tag that matches the filter are counted.</p> <note> 
+    /// <p> <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p> 
     /// </note>
     #[doc(hidden)]
     pub tag_filter: std::option::Option<crate::model::TagFilter>,
-    /// <p>If specified, only workflow executions matching the <code>WorkflowId</code> in the filter are counted.</p> <note>
-    /// <p> <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p>
+    /// <p>If specified, only workflow executions matching the <code>WorkflowId</code> in the filter are counted.</p> <note> 
+    /// <p> <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p> 
     /// </note>
     #[doc(hidden)]
     pub execution_filter: std::option::Option<crate::model::WorkflowExecutionFilter>,
 }
 impl CountOpenWorkflowExecutionsInput {
     /// <p>The name of the domain containing the workflow executions to count.</p>
-    pub fn domain(&self) -> std::option::Option<&str> {
+    pub fn domain(&self) -> std::option::Option<& str> {
         self.domain.as_deref()
     }
     /// <p>Specifies the start time criteria that workflow executions must meet in order to be counted.</p>
-    pub fn start_time_filter(&self) -> std::option::Option<&crate::model::ExecutionTimeFilter> {
+    pub fn start_time_filter(&self) -> std::option::Option<& crate::model::ExecutionTimeFilter> {
         self.start_time_filter.as_ref()
     }
-    /// <p>Specifies the type of the workflow executions to be counted.</p> <note>
-    /// <p> <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p>
+    /// <p>Specifies the type of the workflow executions to be counted.</p> <note> 
+    /// <p> <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p> 
     /// </note>
-    pub fn type_filter(&self) -> std::option::Option<&crate::model::WorkflowTypeFilter> {
+    pub fn type_filter(&self) -> std::option::Option<& crate::model::WorkflowTypeFilter> {
         self.type_filter.as_ref()
     }
-    /// <p>If specified, only executions that have a tag that matches the filter are counted.</p> <note>
-    /// <p> <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p>
+    /// <p>If specified, only executions that have a tag that matches the filter are counted.</p> <note> 
+    /// <p> <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p> 
     /// </note>
-    pub fn tag_filter(&self) -> std::option::Option<&crate::model::TagFilter> {
+    pub fn tag_filter(&self) -> std::option::Option<& crate::model::TagFilter> {
         self.tag_filter.as_ref()
     }
-    /// <p>If specified, only workflow executions matching the <code>WorkflowId</code> in the filter are counted.</p> <note>
-    /// <p> <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p>
+    /// <p>If specified, only workflow executions matching the <code>WorkflowId</code> in the filter are counted.</p> <note> 
+    /// <p> <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p> 
     /// </note>
-    pub fn execution_filter(&self) -> std::option::Option<&crate::model::WorkflowExecutionFilter> {
+    pub fn execution_filter(&self) -> std::option::Option<& crate::model::WorkflowExecutionFilter> {
         self.execution_filter.as_ref()
     }
 }
@@ -9368,80 +7220,81 @@ impl CountOpenWorkflowExecutionsInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CountClosedWorkflowExecutionsInput {
+pub struct CountClosedWorkflowExecutionsInput  {
     /// <p>The name of the domain containing the workflow executions to count.</p>
     #[doc(hidden)]
     pub domain: std::option::Option<std::string::String>,
-    /// <p>If specified, only workflow executions that meet the start time criteria of the filter are counted.</p> <note>
-    /// <p> <code>startTimeFilter</code> and <code>closeTimeFilter</code> are mutually exclusive. You must specify one of these in a request but not both.</p>
+    /// <p>If specified, only workflow executions that meet the start time criteria of the filter are counted.</p> <note> 
+    /// <p> <code>startTimeFilter</code> and <code>closeTimeFilter</code> are mutually exclusive. You must specify one of these in a request but not both.</p> 
     /// </note>
     #[doc(hidden)]
     pub start_time_filter: std::option::Option<crate::model::ExecutionTimeFilter>,
-    /// <p>If specified, only workflow executions that meet the close time criteria of the filter are counted.</p> <note>
-    /// <p> <code>startTimeFilter</code> and <code>closeTimeFilter</code> are mutually exclusive. You must specify one of these in a request but not both.</p>
+    /// <p>If specified, only workflow executions that meet the close time criteria of the filter are counted.</p> <note> 
+    /// <p> <code>startTimeFilter</code> and <code>closeTimeFilter</code> are mutually exclusive. You must specify one of these in a request but not both.</p> 
     /// </note>
     #[doc(hidden)]
     pub close_time_filter: std::option::Option<crate::model::ExecutionTimeFilter>,
-    /// <p>If specified, only workflow executions matching the <code>WorkflowId</code> in the filter are counted.</p> <note>
-    /// <p> <code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p>
+    /// <p>If specified, only workflow executions matching the <code>WorkflowId</code> in the filter are counted.</p> <note> 
+    /// <p> <code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p> 
     /// </note>
     #[doc(hidden)]
     pub execution_filter: std::option::Option<crate::model::WorkflowExecutionFilter>,
-    /// <p>If specified, indicates the type of the workflow executions to be counted.</p> <note>
-    /// <p> <code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p>
+    /// <p>If specified, indicates the type of the workflow executions to be counted.</p> <note> 
+    /// <p> <code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p> 
     /// </note>
     #[doc(hidden)]
     pub type_filter: std::option::Option<crate::model::WorkflowTypeFilter>,
-    /// <p>If specified, only executions that have a tag that matches the filter are counted.</p> <note>
-    /// <p> <code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p>
+    /// <p>If specified, only executions that have a tag that matches the filter are counted.</p> <note> 
+    /// <p> <code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p> 
     /// </note>
     #[doc(hidden)]
     pub tag_filter: std::option::Option<crate::model::TagFilter>,
-    /// <p>If specified, only workflow executions that match this close status are counted. This filter has an affect only if <code>executionStatus</code> is specified as <code>CLOSED</code>.</p> <note>
-    /// <p> <code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p>
+    /// <p>If specified, only workflow executions that match this close status are counted. This filter has an affect only if <code>executionStatus</code> is specified as <code>CLOSED</code>.</p> <note> 
+    /// <p> <code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p> 
     /// </note>
     #[doc(hidden)]
     pub close_status_filter: std::option::Option<crate::model::CloseStatusFilter>,
 }
 impl CountClosedWorkflowExecutionsInput {
     /// <p>The name of the domain containing the workflow executions to count.</p>
-    pub fn domain(&self) -> std::option::Option<&str> {
+    pub fn domain(&self) -> std::option::Option<& str> {
         self.domain.as_deref()
     }
-    /// <p>If specified, only workflow executions that meet the start time criteria of the filter are counted.</p> <note>
-    /// <p> <code>startTimeFilter</code> and <code>closeTimeFilter</code> are mutually exclusive. You must specify one of these in a request but not both.</p>
+    /// <p>If specified, only workflow executions that meet the start time criteria of the filter are counted.</p> <note> 
+    /// <p> <code>startTimeFilter</code> and <code>closeTimeFilter</code> are mutually exclusive. You must specify one of these in a request but not both.</p> 
     /// </note>
-    pub fn start_time_filter(&self) -> std::option::Option<&crate::model::ExecutionTimeFilter> {
+    pub fn start_time_filter(&self) -> std::option::Option<& crate::model::ExecutionTimeFilter> {
         self.start_time_filter.as_ref()
     }
-    /// <p>If specified, only workflow executions that meet the close time criteria of the filter are counted.</p> <note>
-    /// <p> <code>startTimeFilter</code> and <code>closeTimeFilter</code> are mutually exclusive. You must specify one of these in a request but not both.</p>
+    /// <p>If specified, only workflow executions that meet the close time criteria of the filter are counted.</p> <note> 
+    /// <p> <code>startTimeFilter</code> and <code>closeTimeFilter</code> are mutually exclusive. You must specify one of these in a request but not both.</p> 
     /// </note>
-    pub fn close_time_filter(&self) -> std::option::Option<&crate::model::ExecutionTimeFilter> {
+    pub fn close_time_filter(&self) -> std::option::Option<& crate::model::ExecutionTimeFilter> {
         self.close_time_filter.as_ref()
     }
-    /// <p>If specified, only workflow executions matching the <code>WorkflowId</code> in the filter are counted.</p> <note>
-    /// <p> <code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p>
+    /// <p>If specified, only workflow executions matching the <code>WorkflowId</code> in the filter are counted.</p> <note> 
+    /// <p> <code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p> 
     /// </note>
-    pub fn execution_filter(&self) -> std::option::Option<&crate::model::WorkflowExecutionFilter> {
+    pub fn execution_filter(&self) -> std::option::Option<& crate::model::WorkflowExecutionFilter> {
         self.execution_filter.as_ref()
     }
-    /// <p>If specified, indicates the type of the workflow executions to be counted.</p> <note>
-    /// <p> <code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p>
+    /// <p>If specified, indicates the type of the workflow executions to be counted.</p> <note> 
+    /// <p> <code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p> 
     /// </note>
-    pub fn type_filter(&self) -> std::option::Option<&crate::model::WorkflowTypeFilter> {
+    pub fn type_filter(&self) -> std::option::Option<& crate::model::WorkflowTypeFilter> {
         self.type_filter.as_ref()
     }
-    /// <p>If specified, only executions that have a tag that matches the filter are counted.</p> <note>
-    /// <p> <code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p>
+    /// <p>If specified, only executions that have a tag that matches the filter are counted.</p> <note> 
+    /// <p> <code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p> 
     /// </note>
-    pub fn tag_filter(&self) -> std::option::Option<&crate::model::TagFilter> {
+    pub fn tag_filter(&self) -> std::option::Option<& crate::model::TagFilter> {
         self.tag_filter.as_ref()
     }
-    /// <p>If specified, only workflow executions that match this close status are counted. This filter has an affect only if <code>executionStatus</code> is specified as <code>CLOSED</code>.</p> <note>
-    /// <p> <code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p>
+    /// <p>If specified, only workflow executions that match this close status are counted. This filter has an affect only if <code>executionStatus</code> is specified as <code>CLOSED</code>.</p> <note> 
+    /// <p> <code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p> 
     /// </note>
-    pub fn close_status_filter(&self) -> std::option::Option<&crate::model::CloseStatusFilter> {
+    pub fn close_status_filter(&self) -> std::option::Option<& crate::model::CloseStatusFilter> {
         self.close_status_filter.as_ref()
     }
 }
+

@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum Error {
-    /// <p>The requested operation would cause a conflict with the current state of a service resource associated with the request. Resolve the conflict before retrying this request.</p>
+    /// <p>The requested operation would cause a conflict with the current state of a service resource associated with the request. Resolve the conflict before retrying this request.</p> 
     /// <p></p>
     ConflictException(crate::error::ConflictException),
     /// <p>The specified fleet has no available instances to fulfill a <code>CreateGameSession</code> request. Clients can retry such requests immediately or after a waiting period.</p>
@@ -34,15 +34,15 @@ pub enum Error {
     UnauthorizedException(crate::error::UnauthorizedException),
     /// <p>The requested operation is not supported in the Region specified.</p>
     UnsupportedRegionException(crate::error::UnsupportedRegionException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
-    Unhandled(crate::error::Unhandled),
+    /// 
+    Unhandled(crate::error::Unhandled)
 }
 impl std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -62,19 +62,14 @@ impl std::fmt::Display for Error {
             Error::TerminalRoutingStrategyException(inner) => inner.fmt(f),
             Error::UnauthorizedException(inner) => inner.fmt(f),
             Error::UnsupportedRegionException(inner) => inner.fmt(f),
-            Error::Unhandled(inner) => inner.fmt(f),
+            Error::Unhandled(inner) => inner.fmt(f)
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::AcceptMatchError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::AcceptMatchError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::AcceptMatchError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -82,33 +77,18 @@ where
 impl From<crate::error::AcceptMatchError> for Error {
     fn from(err: crate::error::AcceptMatchError) -> Self {
         match err.kind {
-            crate::error::AcceptMatchErrorKind::InternalServiceException(inner) => {
-                Error::InternalServiceException(inner)
-            }
-            crate::error::AcceptMatchErrorKind::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::error::AcceptMatchErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::AcceptMatchErrorKind::UnsupportedRegionException(inner) => {
-                Error::UnsupportedRegionException(inner)
-            }
-            crate::error::AcceptMatchErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::AcceptMatchErrorKind::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::error::AcceptMatchErrorKind::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::error::AcceptMatchErrorKind::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::error::AcceptMatchErrorKind::UnsupportedRegionException(inner) => Error::UnsupportedRegionException(inner),
+            crate::error::AcceptMatchErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ClaimGameServerError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::ClaimGameServerError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::ClaimGameServerError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -116,39 +96,20 @@ where
 impl From<crate::error::ClaimGameServerError> for Error {
     fn from(err: crate::error::ClaimGameServerError) -> Self {
         match err.kind {
-            crate::error::ClaimGameServerErrorKind::ConflictException(inner) => {
-                Error::ConflictException(inner)
-            }
-            crate::error::ClaimGameServerErrorKind::InternalServiceException(inner) => {
-                Error::InternalServiceException(inner)
-            }
-            crate::error::ClaimGameServerErrorKind::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::error::ClaimGameServerErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::ClaimGameServerErrorKind::OutOfCapacityException(inner) => {
-                Error::OutOfCapacityException(inner)
-            }
-            crate::error::ClaimGameServerErrorKind::UnauthorizedException(inner) => {
-                Error::UnauthorizedException(inner)
-            }
-            crate::error::ClaimGameServerErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::ClaimGameServerErrorKind::ConflictException(inner) => Error::ConflictException(inner),
+            crate::error::ClaimGameServerErrorKind::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::error::ClaimGameServerErrorKind::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::error::ClaimGameServerErrorKind::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::error::ClaimGameServerErrorKind::OutOfCapacityException(inner) => Error::OutOfCapacityException(inner),
+            crate::error::ClaimGameServerErrorKind::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::error::ClaimGameServerErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateAliasError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateAliasError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::CreateAliasError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -156,39 +117,20 @@ where
 impl From<crate::error::CreateAliasError> for Error {
     fn from(err: crate::error::CreateAliasError) -> Self {
         match err.kind {
-            crate::error::CreateAliasErrorKind::ConflictException(inner) => {
-                Error::ConflictException(inner)
-            }
-            crate::error::CreateAliasErrorKind::InternalServiceException(inner) => {
-                Error::InternalServiceException(inner)
-            }
-            crate::error::CreateAliasErrorKind::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::error::CreateAliasErrorKind::LimitExceededException(inner) => {
-                Error::LimitExceededException(inner)
-            }
-            crate::error::CreateAliasErrorKind::TaggingFailedException(inner) => {
-                Error::TaggingFailedException(inner)
-            }
-            crate::error::CreateAliasErrorKind::UnauthorizedException(inner) => {
-                Error::UnauthorizedException(inner)
-            }
-            crate::error::CreateAliasErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::CreateAliasErrorKind::ConflictException(inner) => Error::ConflictException(inner),
+            crate::error::CreateAliasErrorKind::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::error::CreateAliasErrorKind::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::error::CreateAliasErrorKind::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::error::CreateAliasErrorKind::TaggingFailedException(inner) => Error::TaggingFailedException(inner),
+            crate::error::CreateAliasErrorKind::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::error::CreateAliasErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateBuildError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateBuildError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::CreateBuildError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -196,36 +138,19 @@ where
 impl From<crate::error::CreateBuildError> for Error {
     fn from(err: crate::error::CreateBuildError) -> Self {
         match err.kind {
-            crate::error::CreateBuildErrorKind::ConflictException(inner) => {
-                Error::ConflictException(inner)
-            }
-            crate::error::CreateBuildErrorKind::InternalServiceException(inner) => {
-                Error::InternalServiceException(inner)
-            }
-            crate::error::CreateBuildErrorKind::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::error::CreateBuildErrorKind::TaggingFailedException(inner) => {
-                Error::TaggingFailedException(inner)
-            }
-            crate::error::CreateBuildErrorKind::UnauthorizedException(inner) => {
-                Error::UnauthorizedException(inner)
-            }
-            crate::error::CreateBuildErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::CreateBuildErrorKind::ConflictException(inner) => Error::ConflictException(inner),
+            crate::error::CreateBuildErrorKind::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::error::CreateBuildErrorKind::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::error::CreateBuildErrorKind::TaggingFailedException(inner) => Error::TaggingFailedException(inner),
+            crate::error::CreateBuildErrorKind::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::error::CreateBuildErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateFleetError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateFleetError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::CreateFleetError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -233,48 +158,22 @@ where
 impl From<crate::error::CreateFleetError> for Error {
     fn from(err: crate::error::CreateFleetError) -> Self {
         match err.kind {
-            crate::error::CreateFleetErrorKind::ConflictException(inner) => {
-                Error::ConflictException(inner)
-            }
-            crate::error::CreateFleetErrorKind::InternalServiceException(inner) => {
-                Error::InternalServiceException(inner)
-            }
-            crate::error::CreateFleetErrorKind::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::error::CreateFleetErrorKind::LimitExceededException(inner) => {
-                Error::LimitExceededException(inner)
-            }
-            crate::error::CreateFleetErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::CreateFleetErrorKind::TaggingFailedException(inner) => {
-                Error::TaggingFailedException(inner)
-            }
-            crate::error::CreateFleetErrorKind::UnauthorizedException(inner) => {
-                Error::UnauthorizedException(inner)
-            }
-            crate::error::CreateFleetErrorKind::UnsupportedRegionException(inner) => {
-                Error::UnsupportedRegionException(inner)
-            }
-            crate::error::CreateFleetErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::CreateFleetErrorKind::ConflictException(inner) => Error::ConflictException(inner),
+            crate::error::CreateFleetErrorKind::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::error::CreateFleetErrorKind::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::error::CreateFleetErrorKind::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::error::CreateFleetErrorKind::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::error::CreateFleetErrorKind::TaggingFailedException(inner) => Error::TaggingFailedException(inner),
+            crate::error::CreateFleetErrorKind::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::error::CreateFleetErrorKind::UnsupportedRegionException(inner) => Error::UnsupportedRegionException(inner),
+            crate::error::CreateFleetErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateFleetLocationsError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::CreateFleetLocationsError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateFleetLocationsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::CreateFleetLocationsError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -282,45 +181,21 @@ where
 impl From<crate::error::CreateFleetLocationsError> for Error {
     fn from(err: crate::error::CreateFleetLocationsError) -> Self {
         match err.kind {
-            crate::error::CreateFleetLocationsErrorKind::ConflictException(inner) => {
-                Error::ConflictException(inner)
-            }
-            crate::error::CreateFleetLocationsErrorKind::InternalServiceException(inner) => {
-                Error::InternalServiceException(inner)
-            }
-            crate::error::CreateFleetLocationsErrorKind::InvalidFleetStatusException(inner) => {
-                Error::InvalidFleetStatusException(inner)
-            }
-            crate::error::CreateFleetLocationsErrorKind::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::error::CreateFleetLocationsErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::CreateFleetLocationsErrorKind::UnauthorizedException(inner) => {
-                Error::UnauthorizedException(inner)
-            }
-            crate::error::CreateFleetLocationsErrorKind::UnsupportedRegionException(inner) => {
-                Error::UnsupportedRegionException(inner)
-            }
-            crate::error::CreateFleetLocationsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::CreateFleetLocationsErrorKind::ConflictException(inner) => Error::ConflictException(inner),
+            crate::error::CreateFleetLocationsErrorKind::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::error::CreateFleetLocationsErrorKind::InvalidFleetStatusException(inner) => Error::InvalidFleetStatusException(inner),
+            crate::error::CreateFleetLocationsErrorKind::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::error::CreateFleetLocationsErrorKind::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::error::CreateFleetLocationsErrorKind::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::error::CreateFleetLocationsErrorKind::UnsupportedRegionException(inner) => Error::UnsupportedRegionException(inner),
+            crate::error::CreateFleetLocationsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateGameServerGroupError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::CreateGameServerGroupError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateGameServerGroupError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::CreateGameServerGroupError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -328,38 +203,19 @@ where
 impl From<crate::error::CreateGameServerGroupError> for Error {
     fn from(err: crate::error::CreateGameServerGroupError) -> Self {
         match err.kind {
-            crate::error::CreateGameServerGroupErrorKind::ConflictException(inner) => {
-                Error::ConflictException(inner)
-            }
-            crate::error::CreateGameServerGroupErrorKind::InternalServiceException(inner) => {
-                Error::InternalServiceException(inner)
-            }
-            crate::error::CreateGameServerGroupErrorKind::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::error::CreateGameServerGroupErrorKind::LimitExceededException(inner) => {
-                Error::LimitExceededException(inner)
-            }
-            crate::error::CreateGameServerGroupErrorKind::UnauthorizedException(inner) => {
-                Error::UnauthorizedException(inner)
-            }
-            crate::error::CreateGameServerGroupErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::CreateGameServerGroupErrorKind::ConflictException(inner) => Error::ConflictException(inner),
+            crate::error::CreateGameServerGroupErrorKind::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::error::CreateGameServerGroupErrorKind::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::error::CreateGameServerGroupErrorKind::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::error::CreateGameServerGroupErrorKind::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::error::CreateGameServerGroupErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateGameSessionError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::CreateGameSessionError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateGameSessionError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::CreateGameSessionError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -367,57 +223,25 @@ where
 impl From<crate::error::CreateGameSessionError> for Error {
     fn from(err: crate::error::CreateGameSessionError) -> Self {
         match err.kind {
-            crate::error::CreateGameSessionErrorKind::ConflictException(inner) => {
-                Error::ConflictException(inner)
-            }
-            crate::error::CreateGameSessionErrorKind::FleetCapacityExceededException(inner) => {
-                Error::FleetCapacityExceededException(inner)
-            }
-            crate::error::CreateGameSessionErrorKind::IdempotentParameterMismatchException(
-                inner,
-            ) => Error::IdempotentParameterMismatchException(inner),
-            crate::error::CreateGameSessionErrorKind::InternalServiceException(inner) => {
-                Error::InternalServiceException(inner)
-            }
-            crate::error::CreateGameSessionErrorKind::InvalidFleetStatusException(inner) => {
-                Error::InvalidFleetStatusException(inner)
-            }
-            crate::error::CreateGameSessionErrorKind::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::error::CreateGameSessionErrorKind::LimitExceededException(inner) => {
-                Error::LimitExceededException(inner)
-            }
-            crate::error::CreateGameSessionErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::CreateGameSessionErrorKind::TerminalRoutingStrategyException(inner) => {
-                Error::TerminalRoutingStrategyException(inner)
-            }
-            crate::error::CreateGameSessionErrorKind::UnauthorizedException(inner) => {
-                Error::UnauthorizedException(inner)
-            }
-            crate::error::CreateGameSessionErrorKind::UnsupportedRegionException(inner) => {
-                Error::UnsupportedRegionException(inner)
-            }
-            crate::error::CreateGameSessionErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::CreateGameSessionErrorKind::ConflictException(inner) => Error::ConflictException(inner),
+            crate::error::CreateGameSessionErrorKind::FleetCapacityExceededException(inner) => Error::FleetCapacityExceededException(inner),
+            crate::error::CreateGameSessionErrorKind::IdempotentParameterMismatchException(inner) => Error::IdempotentParameterMismatchException(inner),
+            crate::error::CreateGameSessionErrorKind::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::error::CreateGameSessionErrorKind::InvalidFleetStatusException(inner) => Error::InvalidFleetStatusException(inner),
+            crate::error::CreateGameSessionErrorKind::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::error::CreateGameSessionErrorKind::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::error::CreateGameSessionErrorKind::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::error::CreateGameSessionErrorKind::TerminalRoutingStrategyException(inner) => Error::TerminalRoutingStrategyException(inner),
+            crate::error::CreateGameSessionErrorKind::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::error::CreateGameSessionErrorKind::UnsupportedRegionException(inner) => Error::UnsupportedRegionException(inner),
+            crate::error::CreateGameSessionErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateGameSessionQueueError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::CreateGameSessionQueueError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateGameSessionQueueError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::CreateGameSessionQueueError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -425,39 +249,20 @@ where
 impl From<crate::error::CreateGameSessionQueueError> for Error {
     fn from(err: crate::error::CreateGameSessionQueueError) -> Self {
         match err.kind {
-            crate::error::CreateGameSessionQueueErrorKind::InternalServiceException(inner) => {
-                Error::InternalServiceException(inner)
-            }
-            crate::error::CreateGameSessionQueueErrorKind::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::error::CreateGameSessionQueueErrorKind::LimitExceededException(inner) => {
-                Error::LimitExceededException(inner)
-            }
-            crate::error::CreateGameSessionQueueErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::CreateGameSessionQueueErrorKind::TaggingFailedException(inner) => {
-                Error::TaggingFailedException(inner)
-            }
-            crate::error::CreateGameSessionQueueErrorKind::UnauthorizedException(inner) => {
-                Error::UnauthorizedException(inner)
-            }
-            crate::error::CreateGameSessionQueueErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::CreateGameSessionQueueErrorKind::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::error::CreateGameSessionQueueErrorKind::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::error::CreateGameSessionQueueErrorKind::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::error::CreateGameSessionQueueErrorKind::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::error::CreateGameSessionQueueErrorKind::TaggingFailedException(inner) => Error::TaggingFailedException(inner),
+            crate::error::CreateGameSessionQueueErrorKind::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::error::CreateGameSessionQueueErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateLocationError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateLocationError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::CreateLocationError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -465,46 +270,20 @@ where
 impl From<crate::error::CreateLocationError> for Error {
     fn from(err: crate::error::CreateLocationError) -> Self {
         match err.kind {
-            crate::error::CreateLocationErrorKind::ConflictException(inner) => {
-                Error::ConflictException(inner)
-            }
-            crate::error::CreateLocationErrorKind::InternalServiceException(inner) => {
-                Error::InternalServiceException(inner)
-            }
-            crate::error::CreateLocationErrorKind::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::error::CreateLocationErrorKind::LimitExceededException(inner) => {
-                Error::LimitExceededException(inner)
-            }
-            crate::error::CreateLocationErrorKind::TaggingFailedException(inner) => {
-                Error::TaggingFailedException(inner)
-            }
-            crate::error::CreateLocationErrorKind::UnauthorizedException(inner) => {
-                Error::UnauthorizedException(inner)
-            }
-            crate::error::CreateLocationErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::CreateLocationErrorKind::ConflictException(inner) => Error::ConflictException(inner),
+            crate::error::CreateLocationErrorKind::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::error::CreateLocationErrorKind::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::error::CreateLocationErrorKind::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::error::CreateLocationErrorKind::TaggingFailedException(inner) => Error::TaggingFailedException(inner),
+            crate::error::CreateLocationErrorKind::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::error::CreateLocationErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R>
-    From<aws_smithy_http::result::SdkError<crate::error::CreateMatchmakingConfigurationError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<
-            crate::error::CreateMatchmakingConfigurationError,
-            R,
-        >,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateMatchmakingConfigurationError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::CreateMatchmakingConfigurationError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -512,42 +291,20 @@ where
 impl From<crate::error::CreateMatchmakingConfigurationError> for Error {
     fn from(err: crate::error::CreateMatchmakingConfigurationError) -> Self {
         match err.kind {
-            crate::error::CreateMatchmakingConfigurationErrorKind::InternalServiceException(
-                inner,
-            ) => Error::InternalServiceException(inner),
-            crate::error::CreateMatchmakingConfigurationErrorKind::InvalidRequestException(
-                inner,
-            ) => Error::InvalidRequestException(inner),
-            crate::error::CreateMatchmakingConfigurationErrorKind::LimitExceededException(
-                inner,
-            ) => Error::LimitExceededException(inner),
-            crate::error::CreateMatchmakingConfigurationErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::CreateMatchmakingConfigurationErrorKind::TaggingFailedException(
-                inner,
-            ) => Error::TaggingFailedException(inner),
-            crate::error::CreateMatchmakingConfigurationErrorKind::UnsupportedRegionException(
-                inner,
-            ) => Error::UnsupportedRegionException(inner),
-            crate::error::CreateMatchmakingConfigurationErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::CreateMatchmakingConfigurationErrorKind::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::error::CreateMatchmakingConfigurationErrorKind::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::error::CreateMatchmakingConfigurationErrorKind::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::error::CreateMatchmakingConfigurationErrorKind::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::error::CreateMatchmakingConfigurationErrorKind::TaggingFailedException(inner) => Error::TaggingFailedException(inner),
+            crate::error::CreateMatchmakingConfigurationErrorKind::UnsupportedRegionException(inner) => Error::UnsupportedRegionException(inner),
+            crate::error::CreateMatchmakingConfigurationErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateMatchmakingRuleSetError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::CreateMatchmakingRuleSetError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateMatchmakingRuleSetError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::CreateMatchmakingRuleSetError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -555,38 +312,19 @@ where
 impl From<crate::error::CreateMatchmakingRuleSetError> for Error {
     fn from(err: crate::error::CreateMatchmakingRuleSetError) -> Self {
         match err.kind {
-            crate::error::CreateMatchmakingRuleSetErrorKind::InternalServiceException(inner) => {
-                Error::InternalServiceException(inner)
-            }
-            crate::error::CreateMatchmakingRuleSetErrorKind::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::error::CreateMatchmakingRuleSetErrorKind::LimitExceededException(inner) => {
-                Error::LimitExceededException(inner)
-            }
-            crate::error::CreateMatchmakingRuleSetErrorKind::TaggingFailedException(inner) => {
-                Error::TaggingFailedException(inner)
-            }
-            crate::error::CreateMatchmakingRuleSetErrorKind::UnsupportedRegionException(inner) => {
-                Error::UnsupportedRegionException(inner)
-            }
-            crate::error::CreateMatchmakingRuleSetErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::CreateMatchmakingRuleSetErrorKind::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::error::CreateMatchmakingRuleSetErrorKind::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::error::CreateMatchmakingRuleSetErrorKind::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::error::CreateMatchmakingRuleSetErrorKind::TaggingFailedException(inner) => Error::TaggingFailedException(inner),
+            crate::error::CreateMatchmakingRuleSetErrorKind::UnsupportedRegionException(inner) => Error::UnsupportedRegionException(inner),
+            crate::error::CreateMatchmakingRuleSetErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreatePlayerSessionError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::CreatePlayerSessionError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreatePlayerSessionError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::CreatePlayerSessionError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -594,45 +332,21 @@ where
 impl From<crate::error::CreatePlayerSessionError> for Error {
     fn from(err: crate::error::CreatePlayerSessionError) -> Self {
         match err.kind {
-            crate::error::CreatePlayerSessionErrorKind::GameSessionFullException(inner) => {
-                Error::GameSessionFullException(inner)
-            }
-            crate::error::CreatePlayerSessionErrorKind::InternalServiceException(inner) => {
-                Error::InternalServiceException(inner)
-            }
-            crate::error::CreatePlayerSessionErrorKind::InvalidGameSessionStatusException(
-                inner,
-            ) => Error::InvalidGameSessionStatusException(inner),
-            crate::error::CreatePlayerSessionErrorKind::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::error::CreatePlayerSessionErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::CreatePlayerSessionErrorKind::TerminalRoutingStrategyException(inner) => {
-                Error::TerminalRoutingStrategyException(inner)
-            }
-            crate::error::CreatePlayerSessionErrorKind::UnauthorizedException(inner) => {
-                Error::UnauthorizedException(inner)
-            }
-            crate::error::CreatePlayerSessionErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::CreatePlayerSessionErrorKind::GameSessionFullException(inner) => Error::GameSessionFullException(inner),
+            crate::error::CreatePlayerSessionErrorKind::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::error::CreatePlayerSessionErrorKind::InvalidGameSessionStatusException(inner) => Error::InvalidGameSessionStatusException(inner),
+            crate::error::CreatePlayerSessionErrorKind::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::error::CreatePlayerSessionErrorKind::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::error::CreatePlayerSessionErrorKind::TerminalRoutingStrategyException(inner) => Error::TerminalRoutingStrategyException(inner),
+            crate::error::CreatePlayerSessionErrorKind::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::error::CreatePlayerSessionErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreatePlayerSessionsError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::CreatePlayerSessionsError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreatePlayerSessionsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::CreatePlayerSessionsError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -640,42 +354,21 @@ where
 impl From<crate::error::CreatePlayerSessionsError> for Error {
     fn from(err: crate::error::CreatePlayerSessionsError) -> Self {
         match err.kind {
-            crate::error::CreatePlayerSessionsErrorKind::GameSessionFullException(inner) => {
-                Error::GameSessionFullException(inner)
-            }
-            crate::error::CreatePlayerSessionsErrorKind::InternalServiceException(inner) => {
-                Error::InternalServiceException(inner)
-            }
-            crate::error::CreatePlayerSessionsErrorKind::InvalidGameSessionStatusException(
-                inner,
-            ) => Error::InvalidGameSessionStatusException(inner),
-            crate::error::CreatePlayerSessionsErrorKind::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::error::CreatePlayerSessionsErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::CreatePlayerSessionsErrorKind::TerminalRoutingStrategyException(
-                inner,
-            ) => Error::TerminalRoutingStrategyException(inner),
-            crate::error::CreatePlayerSessionsErrorKind::UnauthorizedException(inner) => {
-                Error::UnauthorizedException(inner)
-            }
-            crate::error::CreatePlayerSessionsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::CreatePlayerSessionsErrorKind::GameSessionFullException(inner) => Error::GameSessionFullException(inner),
+            crate::error::CreatePlayerSessionsErrorKind::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::error::CreatePlayerSessionsErrorKind::InvalidGameSessionStatusException(inner) => Error::InvalidGameSessionStatusException(inner),
+            crate::error::CreatePlayerSessionsErrorKind::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::error::CreatePlayerSessionsErrorKind::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::error::CreatePlayerSessionsErrorKind::TerminalRoutingStrategyException(inner) => Error::TerminalRoutingStrategyException(inner),
+            crate::error::CreatePlayerSessionsErrorKind::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::error::CreatePlayerSessionsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateScriptError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateScriptError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::CreateScriptError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -683,39 +376,19 @@ where
 impl From<crate::error::CreateScriptError> for Error {
     fn from(err: crate::error::CreateScriptError) -> Self {
         match err.kind {
-            crate::error::CreateScriptErrorKind::ConflictException(inner) => {
-                Error::ConflictException(inner)
-            }
-            crate::error::CreateScriptErrorKind::InternalServiceException(inner) => {
-                Error::InternalServiceException(inner)
-            }
-            crate::error::CreateScriptErrorKind::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::error::CreateScriptErrorKind::TaggingFailedException(inner) => {
-                Error::TaggingFailedException(inner)
-            }
-            crate::error::CreateScriptErrorKind::UnauthorizedException(inner) => {
-                Error::UnauthorizedException(inner)
-            }
-            crate::error::CreateScriptErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::CreateScriptErrorKind::ConflictException(inner) => Error::ConflictException(inner),
+            crate::error::CreateScriptErrorKind::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::error::CreateScriptErrorKind::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::error::CreateScriptErrorKind::TaggingFailedException(inner) => Error::TaggingFailedException(inner),
+            crate::error::CreateScriptErrorKind::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::error::CreateScriptErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateVpcPeeringAuthorizationError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::CreateVpcPeeringAuthorizationError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateVpcPeeringAuthorizationError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::CreateVpcPeeringAuthorizationError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -723,36 +396,18 @@ where
 impl From<crate::error::CreateVpcPeeringAuthorizationError> for Error {
     fn from(err: crate::error::CreateVpcPeeringAuthorizationError) -> Self {
         match err.kind {
-            crate::error::CreateVpcPeeringAuthorizationErrorKind::InternalServiceException(
-                inner,
-            ) => Error::InternalServiceException(inner),
-            crate::error::CreateVpcPeeringAuthorizationErrorKind::InvalidRequestException(
-                inner,
-            ) => Error::InvalidRequestException(inner),
-            crate::error::CreateVpcPeeringAuthorizationErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::CreateVpcPeeringAuthorizationErrorKind::UnauthorizedException(inner) => {
-                Error::UnauthorizedException(inner)
-            }
-            crate::error::CreateVpcPeeringAuthorizationErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::CreateVpcPeeringAuthorizationErrorKind::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::error::CreateVpcPeeringAuthorizationErrorKind::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::error::CreateVpcPeeringAuthorizationErrorKind::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::error::CreateVpcPeeringAuthorizationErrorKind::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::error::CreateVpcPeeringAuthorizationErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateVpcPeeringConnectionError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::CreateVpcPeeringConnectionError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateVpcPeeringConnectionError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::CreateVpcPeeringConnectionError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -760,33 +415,18 @@ where
 impl From<crate::error::CreateVpcPeeringConnectionError> for Error {
     fn from(err: crate::error::CreateVpcPeeringConnectionError) -> Self {
         match err.kind {
-            crate::error::CreateVpcPeeringConnectionErrorKind::InternalServiceException(inner) => {
-                Error::InternalServiceException(inner)
-            }
-            crate::error::CreateVpcPeeringConnectionErrorKind::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::error::CreateVpcPeeringConnectionErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::CreateVpcPeeringConnectionErrorKind::UnauthorizedException(inner) => {
-                Error::UnauthorizedException(inner)
-            }
-            crate::error::CreateVpcPeeringConnectionErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::CreateVpcPeeringConnectionErrorKind::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::error::CreateVpcPeeringConnectionErrorKind::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::error::CreateVpcPeeringConnectionErrorKind::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::error::CreateVpcPeeringConnectionErrorKind::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::error::CreateVpcPeeringConnectionErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteAliasError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteAliasError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::DeleteAliasError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -794,36 +434,19 @@ where
 impl From<crate::error::DeleteAliasError> for Error {
     fn from(err: crate::error::DeleteAliasError) -> Self {
         match err.kind {
-            crate::error::DeleteAliasErrorKind::InternalServiceException(inner) => {
-                Error::InternalServiceException(inner)
-            }
-            crate::error::DeleteAliasErrorKind::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::error::DeleteAliasErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::DeleteAliasErrorKind::TaggingFailedException(inner) => {
-                Error::TaggingFailedException(inner)
-            }
-            crate::error::DeleteAliasErrorKind::UnauthorizedException(inner) => {
-                Error::UnauthorizedException(inner)
-            }
-            crate::error::DeleteAliasErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::DeleteAliasErrorKind::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::error::DeleteAliasErrorKind::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::error::DeleteAliasErrorKind::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::error::DeleteAliasErrorKind::TaggingFailedException(inner) => Error::TaggingFailedException(inner),
+            crate::error::DeleteAliasErrorKind::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::error::DeleteAliasErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteBuildError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteBuildError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::DeleteBuildError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -831,36 +454,19 @@ where
 impl From<crate::error::DeleteBuildError> for Error {
     fn from(err: crate::error::DeleteBuildError) -> Self {
         match err.kind {
-            crate::error::DeleteBuildErrorKind::InternalServiceException(inner) => {
-                Error::InternalServiceException(inner)
-            }
-            crate::error::DeleteBuildErrorKind::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::error::DeleteBuildErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::DeleteBuildErrorKind::TaggingFailedException(inner) => {
-                Error::TaggingFailedException(inner)
-            }
-            crate::error::DeleteBuildErrorKind::UnauthorizedException(inner) => {
-                Error::UnauthorizedException(inner)
-            }
-            crate::error::DeleteBuildErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::DeleteBuildErrorKind::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::error::DeleteBuildErrorKind::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::error::DeleteBuildErrorKind::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::error::DeleteBuildErrorKind::TaggingFailedException(inner) => Error::TaggingFailedException(inner),
+            crate::error::DeleteBuildErrorKind::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::error::DeleteBuildErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteFleetError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteFleetError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::DeleteFleetError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -868,42 +474,20 @@ where
 impl From<crate::error::DeleteFleetError> for Error {
     fn from(err: crate::error::DeleteFleetError) -> Self {
         match err.kind {
-            crate::error::DeleteFleetErrorKind::InternalServiceException(inner) => {
-                Error::InternalServiceException(inner)
-            }
-            crate::error::DeleteFleetErrorKind::InvalidFleetStatusException(inner) => {
-                Error::InvalidFleetStatusException(inner)
-            }
-            crate::error::DeleteFleetErrorKind::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::error::DeleteFleetErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::DeleteFleetErrorKind::TaggingFailedException(inner) => {
-                Error::TaggingFailedException(inner)
-            }
-            crate::error::DeleteFleetErrorKind::UnauthorizedException(inner) => {
-                Error::UnauthorizedException(inner)
-            }
-            crate::error::DeleteFleetErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::DeleteFleetErrorKind::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::error::DeleteFleetErrorKind::InvalidFleetStatusException(inner) => Error::InvalidFleetStatusException(inner),
+            crate::error::DeleteFleetErrorKind::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::error::DeleteFleetErrorKind::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::error::DeleteFleetErrorKind::TaggingFailedException(inner) => Error::TaggingFailedException(inner),
+            crate::error::DeleteFleetErrorKind::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::error::DeleteFleetErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteFleetLocationsError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DeleteFleetLocationsError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteFleetLocationsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::DeleteFleetLocationsError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -911,39 +495,19 @@ where
 impl From<crate::error::DeleteFleetLocationsError> for Error {
     fn from(err: crate::error::DeleteFleetLocationsError) -> Self {
         match err.kind {
-            crate::error::DeleteFleetLocationsErrorKind::InternalServiceException(inner) => {
-                Error::InternalServiceException(inner)
-            }
-            crate::error::DeleteFleetLocationsErrorKind::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::error::DeleteFleetLocationsErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::DeleteFleetLocationsErrorKind::UnauthorizedException(inner) => {
-                Error::UnauthorizedException(inner)
-            }
-            crate::error::DeleteFleetLocationsErrorKind::UnsupportedRegionException(inner) => {
-                Error::UnsupportedRegionException(inner)
-            }
-            crate::error::DeleteFleetLocationsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::DeleteFleetLocationsErrorKind::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::error::DeleteFleetLocationsErrorKind::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::error::DeleteFleetLocationsErrorKind::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::error::DeleteFleetLocationsErrorKind::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::error::DeleteFleetLocationsErrorKind::UnsupportedRegionException(inner) => Error::UnsupportedRegionException(inner),
+            crate::error::DeleteFleetLocationsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteGameServerGroupError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DeleteGameServerGroupError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteGameServerGroupError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::DeleteGameServerGroupError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -951,36 +515,18 @@ where
 impl From<crate::error::DeleteGameServerGroupError> for Error {
     fn from(err: crate::error::DeleteGameServerGroupError) -> Self {
         match err.kind {
-            crate::error::DeleteGameServerGroupErrorKind::InternalServiceException(inner) => {
-                Error::InternalServiceException(inner)
-            }
-            crate::error::DeleteGameServerGroupErrorKind::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::error::DeleteGameServerGroupErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::DeleteGameServerGroupErrorKind::UnauthorizedException(inner) => {
-                Error::UnauthorizedException(inner)
-            }
-            crate::error::DeleteGameServerGroupErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::DeleteGameServerGroupErrorKind::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::error::DeleteGameServerGroupErrorKind::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::error::DeleteGameServerGroupErrorKind::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::error::DeleteGameServerGroupErrorKind::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::error::DeleteGameServerGroupErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteGameSessionQueueError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DeleteGameSessionQueueError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteGameSessionQueueError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::DeleteGameSessionQueueError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -988,36 +534,19 @@ where
 impl From<crate::error::DeleteGameSessionQueueError> for Error {
     fn from(err: crate::error::DeleteGameSessionQueueError) -> Self {
         match err.kind {
-            crate::error::DeleteGameSessionQueueErrorKind::InternalServiceException(inner) => {
-                Error::InternalServiceException(inner)
-            }
-            crate::error::DeleteGameSessionQueueErrorKind::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::error::DeleteGameSessionQueueErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::DeleteGameSessionQueueErrorKind::TaggingFailedException(inner) => {
-                Error::TaggingFailedException(inner)
-            }
-            crate::error::DeleteGameSessionQueueErrorKind::UnauthorizedException(inner) => {
-                Error::UnauthorizedException(inner)
-            }
-            crate::error::DeleteGameSessionQueueErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::DeleteGameSessionQueueErrorKind::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::error::DeleteGameSessionQueueErrorKind::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::error::DeleteGameSessionQueueErrorKind::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::error::DeleteGameSessionQueueErrorKind::TaggingFailedException(inner) => Error::TaggingFailedException(inner),
+            crate::error::DeleteGameSessionQueueErrorKind::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::error::DeleteGameSessionQueueErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteLocationError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteLocationError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::DeleteLocationError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -1025,40 +554,18 @@ where
 impl From<crate::error::DeleteLocationError> for Error {
     fn from(err: crate::error::DeleteLocationError) -> Self {
         match err.kind {
-            crate::error::DeleteLocationErrorKind::InternalServiceException(inner) => {
-                Error::InternalServiceException(inner)
-            }
-            crate::error::DeleteLocationErrorKind::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::error::DeleteLocationErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::DeleteLocationErrorKind::UnauthorizedException(inner) => {
-                Error::UnauthorizedException(inner)
-            }
-            crate::error::DeleteLocationErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::DeleteLocationErrorKind::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::error::DeleteLocationErrorKind::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::error::DeleteLocationErrorKind::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::error::DeleteLocationErrorKind::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::error::DeleteLocationErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R>
-    From<aws_smithy_http::result::SdkError<crate::error::DeleteMatchmakingConfigurationError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<
-            crate::error::DeleteMatchmakingConfigurationError,
-            R,
-        >,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteMatchmakingConfigurationError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::DeleteMatchmakingConfigurationError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -1066,39 +573,19 @@ where
 impl From<crate::error::DeleteMatchmakingConfigurationError> for Error {
     fn from(err: crate::error::DeleteMatchmakingConfigurationError) -> Self {
         match err.kind {
-            crate::error::DeleteMatchmakingConfigurationErrorKind::InternalServiceException(
-                inner,
-            ) => Error::InternalServiceException(inner),
-            crate::error::DeleteMatchmakingConfigurationErrorKind::InvalidRequestException(
-                inner,
-            ) => Error::InvalidRequestException(inner),
-            crate::error::DeleteMatchmakingConfigurationErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::DeleteMatchmakingConfigurationErrorKind::TaggingFailedException(
-                inner,
-            ) => Error::TaggingFailedException(inner),
-            crate::error::DeleteMatchmakingConfigurationErrorKind::UnsupportedRegionException(
-                inner,
-            ) => Error::UnsupportedRegionException(inner),
-            crate::error::DeleteMatchmakingConfigurationErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::DeleteMatchmakingConfigurationErrorKind::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::error::DeleteMatchmakingConfigurationErrorKind::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::error::DeleteMatchmakingConfigurationErrorKind::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::error::DeleteMatchmakingConfigurationErrorKind::TaggingFailedException(inner) => Error::TaggingFailedException(inner),
+            crate::error::DeleteMatchmakingConfigurationErrorKind::UnsupportedRegionException(inner) => Error::UnsupportedRegionException(inner),
+            crate::error::DeleteMatchmakingConfigurationErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteMatchmakingRuleSetError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DeleteMatchmakingRuleSetError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteMatchmakingRuleSetError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::DeleteMatchmakingRuleSetError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -1106,38 +593,19 @@ where
 impl From<crate::error::DeleteMatchmakingRuleSetError> for Error {
     fn from(err: crate::error::DeleteMatchmakingRuleSetError) -> Self {
         match err.kind {
-            crate::error::DeleteMatchmakingRuleSetErrorKind::InternalServiceException(inner) => {
-                Error::InternalServiceException(inner)
-            }
-            crate::error::DeleteMatchmakingRuleSetErrorKind::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::error::DeleteMatchmakingRuleSetErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::DeleteMatchmakingRuleSetErrorKind::TaggingFailedException(inner) => {
-                Error::TaggingFailedException(inner)
-            }
-            crate::error::DeleteMatchmakingRuleSetErrorKind::UnsupportedRegionException(inner) => {
-                Error::UnsupportedRegionException(inner)
-            }
-            crate::error::DeleteMatchmakingRuleSetErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::DeleteMatchmakingRuleSetErrorKind::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::error::DeleteMatchmakingRuleSetErrorKind::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::error::DeleteMatchmakingRuleSetErrorKind::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::error::DeleteMatchmakingRuleSetErrorKind::TaggingFailedException(inner) => Error::TaggingFailedException(inner),
+            crate::error::DeleteMatchmakingRuleSetErrorKind::UnsupportedRegionException(inner) => Error::UnsupportedRegionException(inner),
+            crate::error::DeleteMatchmakingRuleSetErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteScalingPolicyError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DeleteScalingPolicyError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteScalingPolicyError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::DeleteScalingPolicyError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -1145,33 +613,18 @@ where
 impl From<crate::error::DeleteScalingPolicyError> for Error {
     fn from(err: crate::error::DeleteScalingPolicyError) -> Self {
         match err.kind {
-            crate::error::DeleteScalingPolicyErrorKind::InternalServiceException(inner) => {
-                Error::InternalServiceException(inner)
-            }
-            crate::error::DeleteScalingPolicyErrorKind::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::error::DeleteScalingPolicyErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::DeleteScalingPolicyErrorKind::UnauthorizedException(inner) => {
-                Error::UnauthorizedException(inner)
-            }
-            crate::error::DeleteScalingPolicyErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::DeleteScalingPolicyErrorKind::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::error::DeleteScalingPolicyErrorKind::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::error::DeleteScalingPolicyErrorKind::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::error::DeleteScalingPolicyErrorKind::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::error::DeleteScalingPolicyErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteScriptError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteScriptError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::DeleteScriptError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -1179,39 +632,19 @@ where
 impl From<crate::error::DeleteScriptError> for Error {
     fn from(err: crate::error::DeleteScriptError) -> Self {
         match err.kind {
-            crate::error::DeleteScriptErrorKind::InternalServiceException(inner) => {
-                Error::InternalServiceException(inner)
-            }
-            crate::error::DeleteScriptErrorKind::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::error::DeleteScriptErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::DeleteScriptErrorKind::TaggingFailedException(inner) => {
-                Error::TaggingFailedException(inner)
-            }
-            crate::error::DeleteScriptErrorKind::UnauthorizedException(inner) => {
-                Error::UnauthorizedException(inner)
-            }
-            crate::error::DeleteScriptErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::DeleteScriptErrorKind::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::error::DeleteScriptErrorKind::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::error::DeleteScriptErrorKind::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::error::DeleteScriptErrorKind::TaggingFailedException(inner) => Error::TaggingFailedException(inner),
+            crate::error::DeleteScriptErrorKind::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::error::DeleteScriptErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteVpcPeeringAuthorizationError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DeleteVpcPeeringAuthorizationError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteVpcPeeringAuthorizationError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::DeleteVpcPeeringAuthorizationError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -1219,36 +652,18 @@ where
 impl From<crate::error::DeleteVpcPeeringAuthorizationError> for Error {
     fn from(err: crate::error::DeleteVpcPeeringAuthorizationError) -> Self {
         match err.kind {
-            crate::error::DeleteVpcPeeringAuthorizationErrorKind::InternalServiceException(
-                inner,
-            ) => Error::InternalServiceException(inner),
-            crate::error::DeleteVpcPeeringAuthorizationErrorKind::InvalidRequestException(
-                inner,
-            ) => Error::InvalidRequestException(inner),
-            crate::error::DeleteVpcPeeringAuthorizationErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::DeleteVpcPeeringAuthorizationErrorKind::UnauthorizedException(inner) => {
-                Error::UnauthorizedException(inner)
-            }
-            crate::error::DeleteVpcPeeringAuthorizationErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::DeleteVpcPeeringAuthorizationErrorKind::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::error::DeleteVpcPeeringAuthorizationErrorKind::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::error::DeleteVpcPeeringAuthorizationErrorKind::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::error::DeleteVpcPeeringAuthorizationErrorKind::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::error::DeleteVpcPeeringAuthorizationErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteVpcPeeringConnectionError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DeleteVpcPeeringConnectionError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteVpcPeeringConnectionError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::DeleteVpcPeeringConnectionError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -1256,35 +671,18 @@ where
 impl From<crate::error::DeleteVpcPeeringConnectionError> for Error {
     fn from(err: crate::error::DeleteVpcPeeringConnectionError) -> Self {
         match err.kind {
-            crate::error::DeleteVpcPeeringConnectionErrorKind::InternalServiceException(inner) => {
-                Error::InternalServiceException(inner)
-            }
-            crate::error::DeleteVpcPeeringConnectionErrorKind::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::error::DeleteVpcPeeringConnectionErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::DeleteVpcPeeringConnectionErrorKind::UnauthorizedException(inner) => {
-                Error::UnauthorizedException(inner)
-            }
-            crate::error::DeleteVpcPeeringConnectionErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::DeleteVpcPeeringConnectionErrorKind::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::error::DeleteVpcPeeringConnectionErrorKind::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::error::DeleteVpcPeeringConnectionErrorKind::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::error::DeleteVpcPeeringConnectionErrorKind::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::error::DeleteVpcPeeringConnectionErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeregisterComputeError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DeregisterComputeError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeregisterComputeError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::DeregisterComputeError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -1292,36 +690,18 @@ where
 impl From<crate::error::DeregisterComputeError> for Error {
     fn from(err: crate::error::DeregisterComputeError) -> Self {
         match err.kind {
-            crate::error::DeregisterComputeErrorKind::InternalServiceException(inner) => {
-                Error::InternalServiceException(inner)
-            }
-            crate::error::DeregisterComputeErrorKind::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::error::DeregisterComputeErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::DeregisterComputeErrorKind::UnauthorizedException(inner) => {
-                Error::UnauthorizedException(inner)
-            }
-            crate::error::DeregisterComputeErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::DeregisterComputeErrorKind::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::error::DeregisterComputeErrorKind::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::error::DeregisterComputeErrorKind::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::error::DeregisterComputeErrorKind::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::error::DeregisterComputeErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeregisterGameServerError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DeregisterGameServerError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeregisterGameServerError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::DeregisterGameServerError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -1329,33 +709,18 @@ where
 impl From<crate::error::DeregisterGameServerError> for Error {
     fn from(err: crate::error::DeregisterGameServerError) -> Self {
         match err.kind {
-            crate::error::DeregisterGameServerErrorKind::InternalServiceException(inner) => {
-                Error::InternalServiceException(inner)
-            }
-            crate::error::DeregisterGameServerErrorKind::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::error::DeregisterGameServerErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::DeregisterGameServerErrorKind::UnauthorizedException(inner) => {
-                Error::UnauthorizedException(inner)
-            }
-            crate::error::DeregisterGameServerErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::DeregisterGameServerErrorKind::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::error::DeregisterGameServerErrorKind::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::error::DeregisterGameServerErrorKind::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::error::DeregisterGameServerErrorKind::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::error::DeregisterGameServerErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeAliasError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeAliasError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::DescribeAliasError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -1363,33 +728,18 @@ where
 impl From<crate::error::DescribeAliasError> for Error {
     fn from(err: crate::error::DescribeAliasError) -> Self {
         match err.kind {
-            crate::error::DescribeAliasErrorKind::InternalServiceException(inner) => {
-                Error::InternalServiceException(inner)
-            }
-            crate::error::DescribeAliasErrorKind::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::error::DescribeAliasErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::DescribeAliasErrorKind::UnauthorizedException(inner) => {
-                Error::UnauthorizedException(inner)
-            }
-            crate::error::DescribeAliasErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::DescribeAliasErrorKind::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::error::DescribeAliasErrorKind::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::error::DescribeAliasErrorKind::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::error::DescribeAliasErrorKind::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::error::DescribeAliasErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeBuildError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeBuildError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::DescribeBuildError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -1397,33 +747,18 @@ where
 impl From<crate::error::DescribeBuildError> for Error {
     fn from(err: crate::error::DescribeBuildError) -> Self {
         match err.kind {
-            crate::error::DescribeBuildErrorKind::InternalServiceException(inner) => {
-                Error::InternalServiceException(inner)
-            }
-            crate::error::DescribeBuildErrorKind::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::error::DescribeBuildErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::DescribeBuildErrorKind::UnauthorizedException(inner) => {
-                Error::UnauthorizedException(inner)
-            }
-            crate::error::DescribeBuildErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::DescribeBuildErrorKind::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::error::DescribeBuildErrorKind::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::error::DescribeBuildErrorKind::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::error::DescribeBuildErrorKind::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::error::DescribeBuildErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeComputeError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeComputeError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::DescribeComputeError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -1431,36 +766,18 @@ where
 impl From<crate::error::DescribeComputeError> for Error {
     fn from(err: crate::error::DescribeComputeError) -> Self {
         match err.kind {
-            crate::error::DescribeComputeErrorKind::InternalServiceException(inner) => {
-                Error::InternalServiceException(inner)
-            }
-            crate::error::DescribeComputeErrorKind::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::error::DescribeComputeErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::DescribeComputeErrorKind::UnauthorizedException(inner) => {
-                Error::UnauthorizedException(inner)
-            }
-            crate::error::DescribeComputeErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::DescribeComputeErrorKind::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::error::DescribeComputeErrorKind::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::error::DescribeComputeErrorKind::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::error::DescribeComputeErrorKind::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::error::DescribeComputeErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeEC2InstanceLimitsError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DescribeEC2InstanceLimitsError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeEC2InstanceLimitsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::DescribeEC2InstanceLimitsError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -1468,36 +785,18 @@ where
 impl From<crate::error::DescribeEC2InstanceLimitsError> for Error {
     fn from(err: crate::error::DescribeEC2InstanceLimitsError) -> Self {
         match err.kind {
-            crate::error::DescribeEC2InstanceLimitsErrorKind::InternalServiceException(inner) => {
-                Error::InternalServiceException(inner)
-            }
-            crate::error::DescribeEC2InstanceLimitsErrorKind::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::error::DescribeEC2InstanceLimitsErrorKind::UnauthorizedException(inner) => {
-                Error::UnauthorizedException(inner)
-            }
-            crate::error::DescribeEC2InstanceLimitsErrorKind::UnsupportedRegionException(inner) => {
-                Error::UnsupportedRegionException(inner)
-            }
-            crate::error::DescribeEC2InstanceLimitsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::DescribeEC2InstanceLimitsErrorKind::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::error::DescribeEC2InstanceLimitsErrorKind::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::error::DescribeEC2InstanceLimitsErrorKind::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::error::DescribeEC2InstanceLimitsErrorKind::UnsupportedRegionException(inner) => Error::UnsupportedRegionException(inner),
+            crate::error::DescribeEC2InstanceLimitsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeFleetAttributesError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DescribeFleetAttributesError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeFleetAttributesError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::DescribeFleetAttributesError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -1505,36 +804,18 @@ where
 impl From<crate::error::DescribeFleetAttributesError> for Error {
     fn from(err: crate::error::DescribeFleetAttributesError) -> Self {
         match err.kind {
-            crate::error::DescribeFleetAttributesErrorKind::InternalServiceException(inner) => {
-                Error::InternalServiceException(inner)
-            }
-            crate::error::DescribeFleetAttributesErrorKind::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::error::DescribeFleetAttributesErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::DescribeFleetAttributesErrorKind::UnauthorizedException(inner) => {
-                Error::UnauthorizedException(inner)
-            }
-            crate::error::DescribeFleetAttributesErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::DescribeFleetAttributesErrorKind::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::error::DescribeFleetAttributesErrorKind::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::error::DescribeFleetAttributesErrorKind::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::error::DescribeFleetAttributesErrorKind::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::error::DescribeFleetAttributesErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeFleetCapacityError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DescribeFleetCapacityError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeFleetCapacityError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::DescribeFleetCapacityError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -1542,35 +823,18 @@ where
 impl From<crate::error::DescribeFleetCapacityError> for Error {
     fn from(err: crate::error::DescribeFleetCapacityError) -> Self {
         match err.kind {
-            crate::error::DescribeFleetCapacityErrorKind::InternalServiceException(inner) => {
-                Error::InternalServiceException(inner)
-            }
-            crate::error::DescribeFleetCapacityErrorKind::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::error::DescribeFleetCapacityErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::DescribeFleetCapacityErrorKind::UnauthorizedException(inner) => {
-                Error::UnauthorizedException(inner)
-            }
-            crate::error::DescribeFleetCapacityErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::DescribeFleetCapacityErrorKind::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::error::DescribeFleetCapacityErrorKind::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::error::DescribeFleetCapacityErrorKind::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::error::DescribeFleetCapacityErrorKind::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::error::DescribeFleetCapacityErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeFleetEventsError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DescribeFleetEventsError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeFleetEventsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::DescribeFleetEventsError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -1578,40 +842,18 @@ where
 impl From<crate::error::DescribeFleetEventsError> for Error {
     fn from(err: crate::error::DescribeFleetEventsError) -> Self {
         match err.kind {
-            crate::error::DescribeFleetEventsErrorKind::InternalServiceException(inner) => {
-                Error::InternalServiceException(inner)
-            }
-            crate::error::DescribeFleetEventsErrorKind::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::error::DescribeFleetEventsErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::DescribeFleetEventsErrorKind::UnauthorizedException(inner) => {
-                Error::UnauthorizedException(inner)
-            }
-            crate::error::DescribeFleetEventsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::DescribeFleetEventsErrorKind::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::error::DescribeFleetEventsErrorKind::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::error::DescribeFleetEventsErrorKind::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::error::DescribeFleetEventsErrorKind::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::error::DescribeFleetEventsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R>
-    From<aws_smithy_http::result::SdkError<crate::error::DescribeFleetLocationAttributesError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<
-            crate::error::DescribeFleetLocationAttributesError,
-            R,
-        >,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeFleetLocationAttributesError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::DescribeFleetLocationAttributesError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -1619,39 +861,19 @@ where
 impl From<crate::error::DescribeFleetLocationAttributesError> for Error {
     fn from(err: crate::error::DescribeFleetLocationAttributesError) -> Self {
         match err.kind {
-            crate::error::DescribeFleetLocationAttributesErrorKind::InternalServiceException(
-                inner,
-            ) => Error::InternalServiceException(inner),
-            crate::error::DescribeFleetLocationAttributesErrorKind::InvalidRequestException(
-                inner,
-            ) => Error::InvalidRequestException(inner),
-            crate::error::DescribeFleetLocationAttributesErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::DescribeFleetLocationAttributesErrorKind::UnauthorizedException(
-                inner,
-            ) => Error::UnauthorizedException(inner),
-            crate::error::DescribeFleetLocationAttributesErrorKind::UnsupportedRegionException(
-                inner,
-            ) => Error::UnsupportedRegionException(inner),
-            crate::error::DescribeFleetLocationAttributesErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::DescribeFleetLocationAttributesErrorKind::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::error::DescribeFleetLocationAttributesErrorKind::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::error::DescribeFleetLocationAttributesErrorKind::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::error::DescribeFleetLocationAttributesErrorKind::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::error::DescribeFleetLocationAttributesErrorKind::UnsupportedRegionException(inner) => Error::UnsupportedRegionException(inner),
+            crate::error::DescribeFleetLocationAttributesErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeFleetLocationCapacityError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DescribeFleetLocationCapacityError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeFleetLocationCapacityError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::DescribeFleetLocationCapacityError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -1659,43 +881,19 @@ where
 impl From<crate::error::DescribeFleetLocationCapacityError> for Error {
     fn from(err: crate::error::DescribeFleetLocationCapacityError) -> Self {
         match err.kind {
-            crate::error::DescribeFleetLocationCapacityErrorKind::InternalServiceException(
-                inner,
-            ) => Error::InternalServiceException(inner),
-            crate::error::DescribeFleetLocationCapacityErrorKind::InvalidRequestException(
-                inner,
-            ) => Error::InvalidRequestException(inner),
-            crate::error::DescribeFleetLocationCapacityErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::DescribeFleetLocationCapacityErrorKind::UnauthorizedException(inner) => {
-                Error::UnauthorizedException(inner)
-            }
-            crate::error::DescribeFleetLocationCapacityErrorKind::UnsupportedRegionException(
-                inner,
-            ) => Error::UnsupportedRegionException(inner),
-            crate::error::DescribeFleetLocationCapacityErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::DescribeFleetLocationCapacityErrorKind::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::error::DescribeFleetLocationCapacityErrorKind::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::error::DescribeFleetLocationCapacityErrorKind::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::error::DescribeFleetLocationCapacityErrorKind::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::error::DescribeFleetLocationCapacityErrorKind::UnsupportedRegionException(inner) => Error::UnsupportedRegionException(inner),
+            crate::error::DescribeFleetLocationCapacityErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R>
-    From<aws_smithy_http::result::SdkError<crate::error::DescribeFleetLocationUtilizationError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<
-            crate::error::DescribeFleetLocationUtilizationError,
-            R,
-        >,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeFleetLocationUtilizationError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::DescribeFleetLocationUtilizationError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -1703,39 +901,19 @@ where
 impl From<crate::error::DescribeFleetLocationUtilizationError> for Error {
     fn from(err: crate::error::DescribeFleetLocationUtilizationError) -> Self {
         match err.kind {
-            crate::error::DescribeFleetLocationUtilizationErrorKind::InternalServiceException(
-                inner,
-            ) => Error::InternalServiceException(inner),
-            crate::error::DescribeFleetLocationUtilizationErrorKind::InvalidRequestException(
-                inner,
-            ) => Error::InvalidRequestException(inner),
-            crate::error::DescribeFleetLocationUtilizationErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::DescribeFleetLocationUtilizationErrorKind::UnauthorizedException(
-                inner,
-            ) => Error::UnauthorizedException(inner),
-            crate::error::DescribeFleetLocationUtilizationErrorKind::UnsupportedRegionException(
-                inner,
-            ) => Error::UnsupportedRegionException(inner),
-            crate::error::DescribeFleetLocationUtilizationErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::DescribeFleetLocationUtilizationErrorKind::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::error::DescribeFleetLocationUtilizationErrorKind::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::error::DescribeFleetLocationUtilizationErrorKind::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::error::DescribeFleetLocationUtilizationErrorKind::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::error::DescribeFleetLocationUtilizationErrorKind::UnsupportedRegionException(inner) => Error::UnsupportedRegionException(inner),
+            crate::error::DescribeFleetLocationUtilizationErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeFleetPortSettingsError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DescribeFleetPortSettingsError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeFleetPortSettingsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::DescribeFleetPortSettingsError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -1743,39 +921,19 @@ where
 impl From<crate::error::DescribeFleetPortSettingsError> for Error {
     fn from(err: crate::error::DescribeFleetPortSettingsError) -> Self {
         match err.kind {
-            crate::error::DescribeFleetPortSettingsErrorKind::InternalServiceException(inner) => {
-                Error::InternalServiceException(inner)
-            }
-            crate::error::DescribeFleetPortSettingsErrorKind::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::error::DescribeFleetPortSettingsErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::DescribeFleetPortSettingsErrorKind::UnauthorizedException(inner) => {
-                Error::UnauthorizedException(inner)
-            }
-            crate::error::DescribeFleetPortSettingsErrorKind::UnsupportedRegionException(inner) => {
-                Error::UnsupportedRegionException(inner)
-            }
-            crate::error::DescribeFleetPortSettingsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::DescribeFleetPortSettingsErrorKind::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::error::DescribeFleetPortSettingsErrorKind::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::error::DescribeFleetPortSettingsErrorKind::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::error::DescribeFleetPortSettingsErrorKind::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::error::DescribeFleetPortSettingsErrorKind::UnsupportedRegionException(inner) => Error::UnsupportedRegionException(inner),
+            crate::error::DescribeFleetPortSettingsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeFleetUtilizationError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DescribeFleetUtilizationError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeFleetUtilizationError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::DescribeFleetUtilizationError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -1783,35 +941,18 @@ where
 impl From<crate::error::DescribeFleetUtilizationError> for Error {
     fn from(err: crate::error::DescribeFleetUtilizationError) -> Self {
         match err.kind {
-            crate::error::DescribeFleetUtilizationErrorKind::InternalServiceException(inner) => {
-                Error::InternalServiceException(inner)
-            }
-            crate::error::DescribeFleetUtilizationErrorKind::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::error::DescribeFleetUtilizationErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::DescribeFleetUtilizationErrorKind::UnauthorizedException(inner) => {
-                Error::UnauthorizedException(inner)
-            }
-            crate::error::DescribeFleetUtilizationErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::DescribeFleetUtilizationErrorKind::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::error::DescribeFleetUtilizationErrorKind::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::error::DescribeFleetUtilizationErrorKind::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::error::DescribeFleetUtilizationErrorKind::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::error::DescribeFleetUtilizationErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeGameServerError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DescribeGameServerError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeGameServerError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::DescribeGameServerError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -1819,36 +960,18 @@ where
 impl From<crate::error::DescribeGameServerError> for Error {
     fn from(err: crate::error::DescribeGameServerError) -> Self {
         match err.kind {
-            crate::error::DescribeGameServerErrorKind::InternalServiceException(inner) => {
-                Error::InternalServiceException(inner)
-            }
-            crate::error::DescribeGameServerErrorKind::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::error::DescribeGameServerErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::DescribeGameServerErrorKind::UnauthorizedException(inner) => {
-                Error::UnauthorizedException(inner)
-            }
-            crate::error::DescribeGameServerErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::DescribeGameServerErrorKind::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::error::DescribeGameServerErrorKind::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::error::DescribeGameServerErrorKind::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::error::DescribeGameServerErrorKind::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::error::DescribeGameServerErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeGameServerGroupError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DescribeGameServerGroupError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeGameServerGroupError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::DescribeGameServerGroupError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -1856,36 +979,18 @@ where
 impl From<crate::error::DescribeGameServerGroupError> for Error {
     fn from(err: crate::error::DescribeGameServerGroupError) -> Self {
         match err.kind {
-            crate::error::DescribeGameServerGroupErrorKind::InternalServiceException(inner) => {
-                Error::InternalServiceException(inner)
-            }
-            crate::error::DescribeGameServerGroupErrorKind::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::error::DescribeGameServerGroupErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::DescribeGameServerGroupErrorKind::UnauthorizedException(inner) => {
-                Error::UnauthorizedException(inner)
-            }
-            crate::error::DescribeGameServerGroupErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::DescribeGameServerGroupErrorKind::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::error::DescribeGameServerGroupErrorKind::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::error::DescribeGameServerGroupErrorKind::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::error::DescribeGameServerGroupErrorKind::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::error::DescribeGameServerGroupErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeGameServerInstancesError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DescribeGameServerInstancesError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeGameServerInstancesError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::DescribeGameServerInstancesError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -1893,36 +998,18 @@ where
 impl From<crate::error::DescribeGameServerInstancesError> for Error {
     fn from(err: crate::error::DescribeGameServerInstancesError) -> Self {
         match err.kind {
-            crate::error::DescribeGameServerInstancesErrorKind::InternalServiceException(inner) => {
-                Error::InternalServiceException(inner)
-            }
-            crate::error::DescribeGameServerInstancesErrorKind::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::error::DescribeGameServerInstancesErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::DescribeGameServerInstancesErrorKind::UnauthorizedException(inner) => {
-                Error::UnauthorizedException(inner)
-            }
-            crate::error::DescribeGameServerInstancesErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::DescribeGameServerInstancesErrorKind::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::error::DescribeGameServerInstancesErrorKind::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::error::DescribeGameServerInstancesErrorKind::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::error::DescribeGameServerInstancesErrorKind::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::error::DescribeGameServerInstancesErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeGameSessionDetailsError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DescribeGameSessionDetailsError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeGameSessionDetailsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::DescribeGameSessionDetailsError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -1930,42 +1017,20 @@ where
 impl From<crate::error::DescribeGameSessionDetailsError> for Error {
     fn from(err: crate::error::DescribeGameSessionDetailsError) -> Self {
         match err.kind {
-            crate::error::DescribeGameSessionDetailsErrorKind::InternalServiceException(inner) => {
-                Error::InternalServiceException(inner)
-            }
-            crate::error::DescribeGameSessionDetailsErrorKind::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::error::DescribeGameSessionDetailsErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::DescribeGameSessionDetailsErrorKind::TerminalRoutingStrategyException(
-                inner,
-            ) => Error::TerminalRoutingStrategyException(inner),
-            crate::error::DescribeGameSessionDetailsErrorKind::UnauthorizedException(inner) => {
-                Error::UnauthorizedException(inner)
-            }
-            crate::error::DescribeGameSessionDetailsErrorKind::UnsupportedRegionException(
-                inner,
-            ) => Error::UnsupportedRegionException(inner),
-            crate::error::DescribeGameSessionDetailsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::DescribeGameSessionDetailsErrorKind::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::error::DescribeGameSessionDetailsErrorKind::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::error::DescribeGameSessionDetailsErrorKind::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::error::DescribeGameSessionDetailsErrorKind::TerminalRoutingStrategyException(inner) => Error::TerminalRoutingStrategyException(inner),
+            crate::error::DescribeGameSessionDetailsErrorKind::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::error::DescribeGameSessionDetailsErrorKind::UnsupportedRegionException(inner) => Error::UnsupportedRegionException(inner),
+            crate::error::DescribeGameSessionDetailsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeGameSessionPlacementError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DescribeGameSessionPlacementError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeGameSessionPlacementError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::DescribeGameSessionPlacementError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -1973,36 +1038,18 @@ where
 impl From<crate::error::DescribeGameSessionPlacementError> for Error {
     fn from(err: crate::error::DescribeGameSessionPlacementError) -> Self {
         match err.kind {
-            crate::error::DescribeGameSessionPlacementErrorKind::InternalServiceException(
-                inner,
-            ) => Error::InternalServiceException(inner),
-            crate::error::DescribeGameSessionPlacementErrorKind::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::error::DescribeGameSessionPlacementErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::DescribeGameSessionPlacementErrorKind::UnauthorizedException(inner) => {
-                Error::UnauthorizedException(inner)
-            }
-            crate::error::DescribeGameSessionPlacementErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::DescribeGameSessionPlacementErrorKind::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::error::DescribeGameSessionPlacementErrorKind::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::error::DescribeGameSessionPlacementErrorKind::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::error::DescribeGameSessionPlacementErrorKind::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::error::DescribeGameSessionPlacementErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeGameSessionQueuesError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DescribeGameSessionQueuesError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeGameSessionQueuesError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::DescribeGameSessionQueuesError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -2010,36 +1057,18 @@ where
 impl From<crate::error::DescribeGameSessionQueuesError> for Error {
     fn from(err: crate::error::DescribeGameSessionQueuesError) -> Self {
         match err.kind {
-            crate::error::DescribeGameSessionQueuesErrorKind::InternalServiceException(inner) => {
-                Error::InternalServiceException(inner)
-            }
-            crate::error::DescribeGameSessionQueuesErrorKind::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::error::DescribeGameSessionQueuesErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::DescribeGameSessionQueuesErrorKind::UnauthorizedException(inner) => {
-                Error::UnauthorizedException(inner)
-            }
-            crate::error::DescribeGameSessionQueuesErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::DescribeGameSessionQueuesErrorKind::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::error::DescribeGameSessionQueuesErrorKind::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::error::DescribeGameSessionQueuesErrorKind::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::error::DescribeGameSessionQueuesErrorKind::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::error::DescribeGameSessionQueuesErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeGameSessionsError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DescribeGameSessionsError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeGameSessionsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::DescribeGameSessionsError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -2047,41 +1076,20 @@ where
 impl From<crate::error::DescribeGameSessionsError> for Error {
     fn from(err: crate::error::DescribeGameSessionsError) -> Self {
         match err.kind {
-            crate::error::DescribeGameSessionsErrorKind::InternalServiceException(inner) => {
-                Error::InternalServiceException(inner)
-            }
-            crate::error::DescribeGameSessionsErrorKind::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::error::DescribeGameSessionsErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::DescribeGameSessionsErrorKind::TerminalRoutingStrategyException(
-                inner,
-            ) => Error::TerminalRoutingStrategyException(inner),
-            crate::error::DescribeGameSessionsErrorKind::UnauthorizedException(inner) => {
-                Error::UnauthorizedException(inner)
-            }
-            crate::error::DescribeGameSessionsErrorKind::UnsupportedRegionException(inner) => {
-                Error::UnsupportedRegionException(inner)
-            }
-            crate::error::DescribeGameSessionsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::DescribeGameSessionsErrorKind::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::error::DescribeGameSessionsErrorKind::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::error::DescribeGameSessionsErrorKind::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::error::DescribeGameSessionsErrorKind::TerminalRoutingStrategyException(inner) => Error::TerminalRoutingStrategyException(inner),
+            crate::error::DescribeGameSessionsErrorKind::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::error::DescribeGameSessionsErrorKind::UnsupportedRegionException(inner) => Error::UnsupportedRegionException(inner),
+            crate::error::DescribeGameSessionsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeInstancesError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DescribeInstancesError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeInstancesError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::DescribeInstancesError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -2089,38 +1097,19 @@ where
 impl From<crate::error::DescribeInstancesError> for Error {
     fn from(err: crate::error::DescribeInstancesError) -> Self {
         match err.kind {
-            crate::error::DescribeInstancesErrorKind::InternalServiceException(inner) => {
-                Error::InternalServiceException(inner)
-            }
-            crate::error::DescribeInstancesErrorKind::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::error::DescribeInstancesErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::DescribeInstancesErrorKind::UnauthorizedException(inner) => {
-                Error::UnauthorizedException(inner)
-            }
-            crate::error::DescribeInstancesErrorKind::UnsupportedRegionException(inner) => {
-                Error::UnsupportedRegionException(inner)
-            }
-            crate::error::DescribeInstancesErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::DescribeInstancesErrorKind::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::error::DescribeInstancesErrorKind::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::error::DescribeInstancesErrorKind::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::error::DescribeInstancesErrorKind::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::error::DescribeInstancesErrorKind::UnsupportedRegionException(inner) => Error::UnsupportedRegionException(inner),
+            crate::error::DescribeInstancesErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeMatchmakingError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DescribeMatchmakingError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeMatchmakingError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::DescribeMatchmakingError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -2128,37 +1117,17 @@ where
 impl From<crate::error::DescribeMatchmakingError> for Error {
     fn from(err: crate::error::DescribeMatchmakingError) -> Self {
         match err.kind {
-            crate::error::DescribeMatchmakingErrorKind::InternalServiceException(inner) => {
-                Error::InternalServiceException(inner)
-            }
-            crate::error::DescribeMatchmakingErrorKind::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::error::DescribeMatchmakingErrorKind::UnsupportedRegionException(inner) => {
-                Error::UnsupportedRegionException(inner)
-            }
-            crate::error::DescribeMatchmakingErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::DescribeMatchmakingErrorKind::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::error::DescribeMatchmakingErrorKind::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::error::DescribeMatchmakingErrorKind::UnsupportedRegionException(inner) => Error::UnsupportedRegionException(inner),
+            crate::error::DescribeMatchmakingErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R>
-    From<aws_smithy_http::result::SdkError<crate::error::DescribeMatchmakingConfigurationsError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<
-            crate::error::DescribeMatchmakingConfigurationsError,
-            R,
-        >,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeMatchmakingConfigurationsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::DescribeMatchmakingConfigurationsError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -2173,18 +1142,10 @@ impl From<crate::error::DescribeMatchmakingConfigurationsError> for Error {
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeMatchmakingRuleSetsError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DescribeMatchmakingRuleSetsError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeMatchmakingRuleSetsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::DescribeMatchmakingRuleSetsError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -2192,36 +1153,18 @@ where
 impl From<crate::error::DescribeMatchmakingRuleSetsError> for Error {
     fn from(err: crate::error::DescribeMatchmakingRuleSetsError) -> Self {
         match err.kind {
-            crate::error::DescribeMatchmakingRuleSetsErrorKind::InternalServiceException(inner) => {
-                Error::InternalServiceException(inner)
-            }
-            crate::error::DescribeMatchmakingRuleSetsErrorKind::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::error::DescribeMatchmakingRuleSetsErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::DescribeMatchmakingRuleSetsErrorKind::UnsupportedRegionException(
-                inner,
-            ) => Error::UnsupportedRegionException(inner),
-            crate::error::DescribeMatchmakingRuleSetsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::DescribeMatchmakingRuleSetsErrorKind::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::error::DescribeMatchmakingRuleSetsErrorKind::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::error::DescribeMatchmakingRuleSetsErrorKind::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::error::DescribeMatchmakingRuleSetsErrorKind::UnsupportedRegionException(inner) => Error::UnsupportedRegionException(inner),
+            crate::error::DescribeMatchmakingRuleSetsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribePlayerSessionsError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DescribePlayerSessionsError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribePlayerSessionsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::DescribePlayerSessionsError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -2229,36 +1172,18 @@ where
 impl From<crate::error::DescribePlayerSessionsError> for Error {
     fn from(err: crate::error::DescribePlayerSessionsError) -> Self {
         match err.kind {
-            crate::error::DescribePlayerSessionsErrorKind::InternalServiceException(inner) => {
-                Error::InternalServiceException(inner)
-            }
-            crate::error::DescribePlayerSessionsErrorKind::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::error::DescribePlayerSessionsErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::DescribePlayerSessionsErrorKind::UnauthorizedException(inner) => {
-                Error::UnauthorizedException(inner)
-            }
-            crate::error::DescribePlayerSessionsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::DescribePlayerSessionsErrorKind::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::error::DescribePlayerSessionsErrorKind::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::error::DescribePlayerSessionsErrorKind::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::error::DescribePlayerSessionsErrorKind::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::error::DescribePlayerSessionsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeRuntimeConfigurationError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DescribeRuntimeConfigurationError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeRuntimeConfigurationError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::DescribeRuntimeConfigurationError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -2266,36 +1191,18 @@ where
 impl From<crate::error::DescribeRuntimeConfigurationError> for Error {
     fn from(err: crate::error::DescribeRuntimeConfigurationError) -> Self {
         match err.kind {
-            crate::error::DescribeRuntimeConfigurationErrorKind::InternalServiceException(
-                inner,
-            ) => Error::InternalServiceException(inner),
-            crate::error::DescribeRuntimeConfigurationErrorKind::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::error::DescribeRuntimeConfigurationErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::DescribeRuntimeConfigurationErrorKind::UnauthorizedException(inner) => {
-                Error::UnauthorizedException(inner)
-            }
-            crate::error::DescribeRuntimeConfigurationErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::DescribeRuntimeConfigurationErrorKind::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::error::DescribeRuntimeConfigurationErrorKind::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::error::DescribeRuntimeConfigurationErrorKind::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::error::DescribeRuntimeConfigurationErrorKind::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::error::DescribeRuntimeConfigurationErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeScalingPoliciesError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DescribeScalingPoliciesError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeScalingPoliciesError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::DescribeScalingPoliciesError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -2303,36 +1210,19 @@ where
 impl From<crate::error::DescribeScalingPoliciesError> for Error {
     fn from(err: crate::error::DescribeScalingPoliciesError) -> Self {
         match err.kind {
-            crate::error::DescribeScalingPoliciesErrorKind::InternalServiceException(inner) => {
-                Error::InternalServiceException(inner)
-            }
-            crate::error::DescribeScalingPoliciesErrorKind::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::error::DescribeScalingPoliciesErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::DescribeScalingPoliciesErrorKind::UnauthorizedException(inner) => {
-                Error::UnauthorizedException(inner)
-            }
-            crate::error::DescribeScalingPoliciesErrorKind::UnsupportedRegionException(inner) => {
-                Error::UnsupportedRegionException(inner)
-            }
-            crate::error::DescribeScalingPoliciesErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::DescribeScalingPoliciesErrorKind::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::error::DescribeScalingPoliciesErrorKind::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::error::DescribeScalingPoliciesErrorKind::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::error::DescribeScalingPoliciesErrorKind::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::error::DescribeScalingPoliciesErrorKind::UnsupportedRegionException(inner) => Error::UnsupportedRegionException(inner),
+            crate::error::DescribeScalingPoliciesErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeScriptError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeScriptError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::DescribeScriptError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -2340,40 +1230,18 @@ where
 impl From<crate::error::DescribeScriptError> for Error {
     fn from(err: crate::error::DescribeScriptError) -> Self {
         match err.kind {
-            crate::error::DescribeScriptErrorKind::InternalServiceException(inner) => {
-                Error::InternalServiceException(inner)
-            }
-            crate::error::DescribeScriptErrorKind::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::error::DescribeScriptErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::DescribeScriptErrorKind::UnauthorizedException(inner) => {
-                Error::UnauthorizedException(inner)
-            }
-            crate::error::DescribeScriptErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::DescribeScriptErrorKind::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::error::DescribeScriptErrorKind::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::error::DescribeScriptErrorKind::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::error::DescribeScriptErrorKind::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::error::DescribeScriptErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R>
-    From<aws_smithy_http::result::SdkError<crate::error::DescribeVpcPeeringAuthorizationsError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<
-            crate::error::DescribeVpcPeeringAuthorizationsError,
-            R,
-        >,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeVpcPeeringAuthorizationsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::DescribeVpcPeeringAuthorizationsError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -2381,33 +1249,17 @@ where
 impl From<crate::error::DescribeVpcPeeringAuthorizationsError> for Error {
     fn from(err: crate::error::DescribeVpcPeeringAuthorizationsError) -> Self {
         match err.kind {
-            crate::error::DescribeVpcPeeringAuthorizationsErrorKind::InternalServiceException(
-                inner,
-            ) => Error::InternalServiceException(inner),
-            crate::error::DescribeVpcPeeringAuthorizationsErrorKind::InvalidRequestException(
-                inner,
-            ) => Error::InvalidRequestException(inner),
-            crate::error::DescribeVpcPeeringAuthorizationsErrorKind::UnauthorizedException(
-                inner,
-            ) => Error::UnauthorizedException(inner),
-            crate::error::DescribeVpcPeeringAuthorizationsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::DescribeVpcPeeringAuthorizationsErrorKind::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::error::DescribeVpcPeeringAuthorizationsErrorKind::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::error::DescribeVpcPeeringAuthorizationsErrorKind::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::error::DescribeVpcPeeringAuthorizationsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeVpcPeeringConnectionsError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DescribeVpcPeeringConnectionsError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeVpcPeeringConnectionsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::DescribeVpcPeeringConnectionsError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -2415,35 +1267,18 @@ where
 impl From<crate::error::DescribeVpcPeeringConnectionsError> for Error {
     fn from(err: crate::error::DescribeVpcPeeringConnectionsError) -> Self {
         match err.kind {
-            crate::error::DescribeVpcPeeringConnectionsErrorKind::InternalServiceException(
-                inner,
-            ) => Error::InternalServiceException(inner),
-            crate::error::DescribeVpcPeeringConnectionsErrorKind::InvalidRequestException(
-                inner,
-            ) => Error::InvalidRequestException(inner),
-            crate::error::DescribeVpcPeeringConnectionsErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::DescribeVpcPeeringConnectionsErrorKind::UnauthorizedException(inner) => {
-                Error::UnauthorizedException(inner)
-            }
-            crate::error::DescribeVpcPeeringConnectionsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::DescribeVpcPeeringConnectionsErrorKind::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::error::DescribeVpcPeeringConnectionsErrorKind::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::error::DescribeVpcPeeringConnectionsErrorKind::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::error::DescribeVpcPeeringConnectionsErrorKind::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::error::DescribeVpcPeeringConnectionsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetComputeAccessError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::GetComputeAccessError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetComputeAccessError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::GetComputeAccessError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -2451,35 +1286,18 @@ where
 impl From<crate::error::GetComputeAccessError> for Error {
     fn from(err: crate::error::GetComputeAccessError) -> Self {
         match err.kind {
-            crate::error::GetComputeAccessErrorKind::InternalServiceException(inner) => {
-                Error::InternalServiceException(inner)
-            }
-            crate::error::GetComputeAccessErrorKind::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::error::GetComputeAccessErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::GetComputeAccessErrorKind::UnauthorizedException(inner) => {
-                Error::UnauthorizedException(inner)
-            }
-            crate::error::GetComputeAccessErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::GetComputeAccessErrorKind::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::error::GetComputeAccessErrorKind::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::error::GetComputeAccessErrorKind::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::error::GetComputeAccessErrorKind::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::error::GetComputeAccessErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetComputeAuthTokenError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::GetComputeAuthTokenError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetComputeAuthTokenError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::GetComputeAuthTokenError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -2487,36 +1305,18 @@ where
 impl From<crate::error::GetComputeAuthTokenError> for Error {
     fn from(err: crate::error::GetComputeAuthTokenError) -> Self {
         match err.kind {
-            crate::error::GetComputeAuthTokenErrorKind::InternalServiceException(inner) => {
-                Error::InternalServiceException(inner)
-            }
-            crate::error::GetComputeAuthTokenErrorKind::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::error::GetComputeAuthTokenErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::GetComputeAuthTokenErrorKind::UnauthorizedException(inner) => {
-                Error::UnauthorizedException(inner)
-            }
-            crate::error::GetComputeAuthTokenErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::GetComputeAuthTokenErrorKind::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::error::GetComputeAuthTokenErrorKind::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::error::GetComputeAuthTokenErrorKind::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::error::GetComputeAuthTokenErrorKind::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::error::GetComputeAuthTokenErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetGameSessionLogUrlError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::GetGameSessionLogUrlError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetGameSessionLogUrlError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::GetGameSessionLogUrlError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -2524,35 +1324,18 @@ where
 impl From<crate::error::GetGameSessionLogUrlError> for Error {
     fn from(err: crate::error::GetGameSessionLogUrlError) -> Self {
         match err.kind {
-            crate::error::GetGameSessionLogUrlErrorKind::InternalServiceException(inner) => {
-                Error::InternalServiceException(inner)
-            }
-            crate::error::GetGameSessionLogUrlErrorKind::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::error::GetGameSessionLogUrlErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::GetGameSessionLogUrlErrorKind::UnauthorizedException(inner) => {
-                Error::UnauthorizedException(inner)
-            }
-            crate::error::GetGameSessionLogUrlErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::GetGameSessionLogUrlErrorKind::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::error::GetGameSessionLogUrlErrorKind::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::error::GetGameSessionLogUrlErrorKind::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::error::GetGameSessionLogUrlErrorKind::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::error::GetGameSessionLogUrlErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetInstanceAccessError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::GetInstanceAccessError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetInstanceAccessError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::GetInstanceAccessError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -2560,33 +1343,18 @@ where
 impl From<crate::error::GetInstanceAccessError> for Error {
     fn from(err: crate::error::GetInstanceAccessError) -> Self {
         match err.kind {
-            crate::error::GetInstanceAccessErrorKind::InternalServiceException(inner) => {
-                Error::InternalServiceException(inner)
-            }
-            crate::error::GetInstanceAccessErrorKind::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::error::GetInstanceAccessErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::GetInstanceAccessErrorKind::UnauthorizedException(inner) => {
-                Error::UnauthorizedException(inner)
-            }
-            crate::error::GetInstanceAccessErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::GetInstanceAccessErrorKind::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::error::GetInstanceAccessErrorKind::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::error::GetInstanceAccessErrorKind::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::error::GetInstanceAccessErrorKind::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::error::GetInstanceAccessErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListAliasesError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListAliasesError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::ListAliasesError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -2594,30 +1362,17 @@ where
 impl From<crate::error::ListAliasesError> for Error {
     fn from(err: crate::error::ListAliasesError) -> Self {
         match err.kind {
-            crate::error::ListAliasesErrorKind::InternalServiceException(inner) => {
-                Error::InternalServiceException(inner)
-            }
-            crate::error::ListAliasesErrorKind::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::error::ListAliasesErrorKind::UnauthorizedException(inner) => {
-                Error::UnauthorizedException(inner)
-            }
-            crate::error::ListAliasesErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::ListAliasesErrorKind::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::error::ListAliasesErrorKind::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::error::ListAliasesErrorKind::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::error::ListAliasesErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListBuildsError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListBuildsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::ListBuildsError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -2625,30 +1380,17 @@ where
 impl From<crate::error::ListBuildsError> for Error {
     fn from(err: crate::error::ListBuildsError) -> Self {
         match err.kind {
-            crate::error::ListBuildsErrorKind::InternalServiceException(inner) => {
-                Error::InternalServiceException(inner)
-            }
-            crate::error::ListBuildsErrorKind::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::error::ListBuildsErrorKind::UnauthorizedException(inner) => {
-                Error::UnauthorizedException(inner)
-            }
-            crate::error::ListBuildsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::ListBuildsErrorKind::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::error::ListBuildsErrorKind::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::error::ListBuildsErrorKind::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::error::ListBuildsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListComputeError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListComputeError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::ListComputeError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -2656,30 +1398,17 @@ where
 impl From<crate::error::ListComputeError> for Error {
     fn from(err: crate::error::ListComputeError) -> Self {
         match err.kind {
-            crate::error::ListComputeErrorKind::InternalServiceException(inner) => {
-                Error::InternalServiceException(inner)
-            }
-            crate::error::ListComputeErrorKind::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::error::ListComputeErrorKind::UnauthorizedException(inner) => {
-                Error::UnauthorizedException(inner)
-            }
-            crate::error::ListComputeErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::ListComputeErrorKind::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::error::ListComputeErrorKind::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::error::ListComputeErrorKind::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::error::ListComputeErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListFleetsError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListFleetsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::ListFleetsError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -2687,36 +1416,18 @@ where
 impl From<crate::error::ListFleetsError> for Error {
     fn from(err: crate::error::ListFleetsError) -> Self {
         match err.kind {
-            crate::error::ListFleetsErrorKind::InternalServiceException(inner) => {
-                Error::InternalServiceException(inner)
-            }
-            crate::error::ListFleetsErrorKind::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::error::ListFleetsErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::ListFleetsErrorKind::UnauthorizedException(inner) => {
-                Error::UnauthorizedException(inner)
-            }
-            crate::error::ListFleetsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::ListFleetsErrorKind::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::error::ListFleetsErrorKind::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::error::ListFleetsErrorKind::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::error::ListFleetsErrorKind::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::error::ListFleetsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListGameServerGroupsError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::ListGameServerGroupsError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListGameServerGroupsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::ListGameServerGroupsError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -2724,30 +1435,17 @@ where
 impl From<crate::error::ListGameServerGroupsError> for Error {
     fn from(err: crate::error::ListGameServerGroupsError) -> Self {
         match err.kind {
-            crate::error::ListGameServerGroupsErrorKind::InternalServiceException(inner) => {
-                Error::InternalServiceException(inner)
-            }
-            crate::error::ListGameServerGroupsErrorKind::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::error::ListGameServerGroupsErrorKind::UnauthorizedException(inner) => {
-                Error::UnauthorizedException(inner)
-            }
-            crate::error::ListGameServerGroupsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::ListGameServerGroupsErrorKind::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::error::ListGameServerGroupsErrorKind::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::error::ListGameServerGroupsErrorKind::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::error::ListGameServerGroupsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListGameServersError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListGameServersError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::ListGameServersError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -2755,30 +1453,17 @@ where
 impl From<crate::error::ListGameServersError> for Error {
     fn from(err: crate::error::ListGameServersError) -> Self {
         match err.kind {
-            crate::error::ListGameServersErrorKind::InternalServiceException(inner) => {
-                Error::InternalServiceException(inner)
-            }
-            crate::error::ListGameServersErrorKind::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::error::ListGameServersErrorKind::UnauthorizedException(inner) => {
-                Error::UnauthorizedException(inner)
-            }
-            crate::error::ListGameServersErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::ListGameServersErrorKind::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::error::ListGameServersErrorKind::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::error::ListGameServersErrorKind::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::error::ListGameServersErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListLocationsError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListLocationsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::ListLocationsError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -2786,30 +1471,17 @@ where
 impl From<crate::error::ListLocationsError> for Error {
     fn from(err: crate::error::ListLocationsError) -> Self {
         match err.kind {
-            crate::error::ListLocationsErrorKind::InternalServiceException(inner) => {
-                Error::InternalServiceException(inner)
-            }
-            crate::error::ListLocationsErrorKind::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::error::ListLocationsErrorKind::UnauthorizedException(inner) => {
-                Error::UnauthorizedException(inner)
-            }
-            crate::error::ListLocationsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::ListLocationsErrorKind::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::error::ListLocationsErrorKind::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::error::ListLocationsErrorKind::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::error::ListLocationsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListScriptsError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListScriptsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::ListScriptsError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -2817,32 +1489,17 @@ where
 impl From<crate::error::ListScriptsError> for Error {
     fn from(err: crate::error::ListScriptsError) -> Self {
         match err.kind {
-            crate::error::ListScriptsErrorKind::InternalServiceException(inner) => {
-                Error::InternalServiceException(inner)
-            }
-            crate::error::ListScriptsErrorKind::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::error::ListScriptsErrorKind::UnauthorizedException(inner) => {
-                Error::UnauthorizedException(inner)
-            }
-            crate::error::ListScriptsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::ListScriptsErrorKind::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::error::ListScriptsErrorKind::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::error::ListScriptsErrorKind::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::error::ListScriptsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListTagsForResourceError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::ListTagsForResourceError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListTagsForResourceError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::ListTagsForResourceError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -2850,35 +1507,18 @@ where
 impl From<crate::error::ListTagsForResourceError> for Error {
     fn from(err: crate::error::ListTagsForResourceError) -> Self {
         match err.kind {
-            crate::error::ListTagsForResourceErrorKind::InternalServiceException(inner) => {
-                Error::InternalServiceException(inner)
-            }
-            crate::error::ListTagsForResourceErrorKind::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::error::ListTagsForResourceErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::ListTagsForResourceErrorKind::TaggingFailedException(inner) => {
-                Error::TaggingFailedException(inner)
-            }
-            crate::error::ListTagsForResourceErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::ListTagsForResourceErrorKind::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::error::ListTagsForResourceErrorKind::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::error::ListTagsForResourceErrorKind::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::error::ListTagsForResourceErrorKind::TaggingFailedException(inner) => Error::TaggingFailedException(inner),
+            crate::error::ListTagsForResourceErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::PutScalingPolicyError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::PutScalingPolicyError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::PutScalingPolicyError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::PutScalingPolicyError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -2886,33 +1526,18 @@ where
 impl From<crate::error::PutScalingPolicyError> for Error {
     fn from(err: crate::error::PutScalingPolicyError) -> Self {
         match err.kind {
-            crate::error::PutScalingPolicyErrorKind::InternalServiceException(inner) => {
-                Error::InternalServiceException(inner)
-            }
-            crate::error::PutScalingPolicyErrorKind::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::error::PutScalingPolicyErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::PutScalingPolicyErrorKind::UnauthorizedException(inner) => {
-                Error::UnauthorizedException(inner)
-            }
-            crate::error::PutScalingPolicyErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::PutScalingPolicyErrorKind::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::error::PutScalingPolicyErrorKind::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::error::PutScalingPolicyErrorKind::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::error::PutScalingPolicyErrorKind::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::error::PutScalingPolicyErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::RegisterComputeError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::RegisterComputeError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::RegisterComputeError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -2920,35 +1545,18 @@ where
 impl From<crate::error::RegisterComputeError> for Error {
     fn from(err: crate::error::RegisterComputeError) -> Self {
         match err.kind {
-            crate::error::RegisterComputeErrorKind::ConflictException(inner) => {
-                Error::ConflictException(inner)
-            }
-            crate::error::RegisterComputeErrorKind::InternalServiceException(inner) => {
-                Error::InternalServiceException(inner)
-            }
-            crate::error::RegisterComputeErrorKind::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::error::RegisterComputeErrorKind::UnauthorizedException(inner) => {
-                Error::UnauthorizedException(inner)
-            }
-            crate::error::RegisterComputeErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::RegisterComputeErrorKind::ConflictException(inner) => Error::ConflictException(inner),
+            crate::error::RegisterComputeErrorKind::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::error::RegisterComputeErrorKind::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::error::RegisterComputeErrorKind::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::error::RegisterComputeErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::RegisterGameServerError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::RegisterGameServerError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::RegisterGameServerError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::RegisterGameServerError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -2956,39 +1564,19 @@ where
 impl From<crate::error::RegisterGameServerError> for Error {
     fn from(err: crate::error::RegisterGameServerError) -> Self {
         match err.kind {
-            crate::error::RegisterGameServerErrorKind::ConflictException(inner) => {
-                Error::ConflictException(inner)
-            }
-            crate::error::RegisterGameServerErrorKind::InternalServiceException(inner) => {
-                Error::InternalServiceException(inner)
-            }
-            crate::error::RegisterGameServerErrorKind::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::error::RegisterGameServerErrorKind::LimitExceededException(inner) => {
-                Error::LimitExceededException(inner)
-            }
-            crate::error::RegisterGameServerErrorKind::UnauthorizedException(inner) => {
-                Error::UnauthorizedException(inner)
-            }
-            crate::error::RegisterGameServerErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::RegisterGameServerErrorKind::ConflictException(inner) => Error::ConflictException(inner),
+            crate::error::RegisterGameServerErrorKind::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::error::RegisterGameServerErrorKind::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::error::RegisterGameServerErrorKind::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::error::RegisterGameServerErrorKind::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::error::RegisterGameServerErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::RequestUploadCredentialsError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::RequestUploadCredentialsError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::RequestUploadCredentialsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::RequestUploadCredentialsError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -2996,33 +1584,18 @@ where
 impl From<crate::error::RequestUploadCredentialsError> for Error {
     fn from(err: crate::error::RequestUploadCredentialsError) -> Self {
         match err.kind {
-            crate::error::RequestUploadCredentialsErrorKind::InternalServiceException(inner) => {
-                Error::InternalServiceException(inner)
-            }
-            crate::error::RequestUploadCredentialsErrorKind::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::error::RequestUploadCredentialsErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::RequestUploadCredentialsErrorKind::UnauthorizedException(inner) => {
-                Error::UnauthorizedException(inner)
-            }
-            crate::error::RequestUploadCredentialsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::RequestUploadCredentialsErrorKind::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::error::RequestUploadCredentialsErrorKind::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::error::RequestUploadCredentialsErrorKind::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::error::RequestUploadCredentialsErrorKind::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::error::RequestUploadCredentialsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ResolveAliasError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::ResolveAliasError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::ResolveAliasError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -3030,39 +1603,19 @@ where
 impl From<crate::error::ResolveAliasError> for Error {
     fn from(err: crate::error::ResolveAliasError) -> Self {
         match err.kind {
-            crate::error::ResolveAliasErrorKind::InternalServiceException(inner) => {
-                Error::InternalServiceException(inner)
-            }
-            crate::error::ResolveAliasErrorKind::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::error::ResolveAliasErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::ResolveAliasErrorKind::TerminalRoutingStrategyException(inner) => {
-                Error::TerminalRoutingStrategyException(inner)
-            }
-            crate::error::ResolveAliasErrorKind::UnauthorizedException(inner) => {
-                Error::UnauthorizedException(inner)
-            }
-            crate::error::ResolveAliasErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::ResolveAliasErrorKind::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::error::ResolveAliasErrorKind::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::error::ResolveAliasErrorKind::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::error::ResolveAliasErrorKind::TerminalRoutingStrategyException(inner) => Error::TerminalRoutingStrategyException(inner),
+            crate::error::ResolveAliasErrorKind::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::error::ResolveAliasErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ResumeGameServerGroupError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::ResumeGameServerGroupError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::ResumeGameServerGroupError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::ResumeGameServerGroupError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -3070,35 +1623,18 @@ where
 impl From<crate::error::ResumeGameServerGroupError> for Error {
     fn from(err: crate::error::ResumeGameServerGroupError) -> Self {
         match err.kind {
-            crate::error::ResumeGameServerGroupErrorKind::InternalServiceException(inner) => {
-                Error::InternalServiceException(inner)
-            }
-            crate::error::ResumeGameServerGroupErrorKind::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::error::ResumeGameServerGroupErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::ResumeGameServerGroupErrorKind::UnauthorizedException(inner) => {
-                Error::UnauthorizedException(inner)
-            }
-            crate::error::ResumeGameServerGroupErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::ResumeGameServerGroupErrorKind::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::error::ResumeGameServerGroupErrorKind::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::error::ResumeGameServerGroupErrorKind::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::error::ResumeGameServerGroupErrorKind::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::error::ResumeGameServerGroupErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::SearchGameSessionsError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::SearchGameSessionsError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::SearchGameSessionsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::SearchGameSessionsError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -3106,41 +1642,20 @@ where
 impl From<crate::error::SearchGameSessionsError> for Error {
     fn from(err: crate::error::SearchGameSessionsError) -> Self {
         match err.kind {
-            crate::error::SearchGameSessionsErrorKind::InternalServiceException(inner) => {
-                Error::InternalServiceException(inner)
-            }
-            crate::error::SearchGameSessionsErrorKind::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::error::SearchGameSessionsErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::SearchGameSessionsErrorKind::TerminalRoutingStrategyException(inner) => {
-                Error::TerminalRoutingStrategyException(inner)
-            }
-            crate::error::SearchGameSessionsErrorKind::UnauthorizedException(inner) => {
-                Error::UnauthorizedException(inner)
-            }
-            crate::error::SearchGameSessionsErrorKind::UnsupportedRegionException(inner) => {
-                Error::UnsupportedRegionException(inner)
-            }
-            crate::error::SearchGameSessionsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::SearchGameSessionsErrorKind::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::error::SearchGameSessionsErrorKind::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::error::SearchGameSessionsErrorKind::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::error::SearchGameSessionsErrorKind::TerminalRoutingStrategyException(inner) => Error::TerminalRoutingStrategyException(inner),
+            crate::error::SearchGameSessionsErrorKind::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::error::SearchGameSessionsErrorKind::UnsupportedRegionException(inner) => Error::UnsupportedRegionException(inner),
+            crate::error::SearchGameSessionsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::StartFleetActionsError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::StartFleetActionsError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::StartFleetActionsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::StartFleetActionsError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -3148,39 +1663,19 @@ where
 impl From<crate::error::StartFleetActionsError> for Error {
     fn from(err: crate::error::StartFleetActionsError) -> Self {
         match err.kind {
-            crate::error::StartFleetActionsErrorKind::InternalServiceException(inner) => {
-                Error::InternalServiceException(inner)
-            }
-            crate::error::StartFleetActionsErrorKind::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::error::StartFleetActionsErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::StartFleetActionsErrorKind::UnauthorizedException(inner) => {
-                Error::UnauthorizedException(inner)
-            }
-            crate::error::StartFleetActionsErrorKind::UnsupportedRegionException(inner) => {
-                Error::UnsupportedRegionException(inner)
-            }
-            crate::error::StartFleetActionsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::StartFleetActionsErrorKind::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::error::StartFleetActionsErrorKind::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::error::StartFleetActionsErrorKind::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::error::StartFleetActionsErrorKind::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::error::StartFleetActionsErrorKind::UnsupportedRegionException(inner) => Error::UnsupportedRegionException(inner),
+            crate::error::StartFleetActionsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::StartGameSessionPlacementError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::StartGameSessionPlacementError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::StartGameSessionPlacementError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::StartGameSessionPlacementError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -3188,35 +1683,18 @@ where
 impl From<crate::error::StartGameSessionPlacementError> for Error {
     fn from(err: crate::error::StartGameSessionPlacementError) -> Self {
         match err.kind {
-            crate::error::StartGameSessionPlacementErrorKind::InternalServiceException(inner) => {
-                Error::InternalServiceException(inner)
-            }
-            crate::error::StartGameSessionPlacementErrorKind::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::error::StartGameSessionPlacementErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::StartGameSessionPlacementErrorKind::UnauthorizedException(inner) => {
-                Error::UnauthorizedException(inner)
-            }
-            crate::error::StartGameSessionPlacementErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::StartGameSessionPlacementErrorKind::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::error::StartGameSessionPlacementErrorKind::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::error::StartGameSessionPlacementErrorKind::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::error::StartGameSessionPlacementErrorKind::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::error::StartGameSessionPlacementErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::StartMatchBackfillError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::StartMatchBackfillError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::StartMatchBackfillError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::StartMatchBackfillError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -3224,35 +1702,18 @@ where
 impl From<crate::error::StartMatchBackfillError> for Error {
     fn from(err: crate::error::StartMatchBackfillError) -> Self {
         match err.kind {
-            crate::error::StartMatchBackfillErrorKind::InternalServiceException(inner) => {
-                Error::InternalServiceException(inner)
-            }
-            crate::error::StartMatchBackfillErrorKind::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::error::StartMatchBackfillErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::StartMatchBackfillErrorKind::UnsupportedRegionException(inner) => {
-                Error::UnsupportedRegionException(inner)
-            }
-            crate::error::StartMatchBackfillErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::StartMatchBackfillErrorKind::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::error::StartMatchBackfillErrorKind::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::error::StartMatchBackfillErrorKind::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::error::StartMatchBackfillErrorKind::UnsupportedRegionException(inner) => Error::UnsupportedRegionException(inner),
+            crate::error::StartMatchBackfillErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::StartMatchmakingError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::StartMatchmakingError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::StartMatchmakingError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::StartMatchmakingError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -3260,35 +1721,18 @@ where
 impl From<crate::error::StartMatchmakingError> for Error {
     fn from(err: crate::error::StartMatchmakingError) -> Self {
         match err.kind {
-            crate::error::StartMatchmakingErrorKind::InternalServiceException(inner) => {
-                Error::InternalServiceException(inner)
-            }
-            crate::error::StartMatchmakingErrorKind::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::error::StartMatchmakingErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::StartMatchmakingErrorKind::UnsupportedRegionException(inner) => {
-                Error::UnsupportedRegionException(inner)
-            }
-            crate::error::StartMatchmakingErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::StartMatchmakingErrorKind::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::error::StartMatchmakingErrorKind::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::error::StartMatchmakingErrorKind::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::error::StartMatchmakingErrorKind::UnsupportedRegionException(inner) => Error::UnsupportedRegionException(inner),
+            crate::error::StartMatchmakingErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::StopFleetActionsError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::StopFleetActionsError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::StopFleetActionsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::StopFleetActionsError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -3296,39 +1740,19 @@ where
 impl From<crate::error::StopFleetActionsError> for Error {
     fn from(err: crate::error::StopFleetActionsError) -> Self {
         match err.kind {
-            crate::error::StopFleetActionsErrorKind::InternalServiceException(inner) => {
-                Error::InternalServiceException(inner)
-            }
-            crate::error::StopFleetActionsErrorKind::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::error::StopFleetActionsErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::StopFleetActionsErrorKind::UnauthorizedException(inner) => {
-                Error::UnauthorizedException(inner)
-            }
-            crate::error::StopFleetActionsErrorKind::UnsupportedRegionException(inner) => {
-                Error::UnsupportedRegionException(inner)
-            }
-            crate::error::StopFleetActionsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::StopFleetActionsErrorKind::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::error::StopFleetActionsErrorKind::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::error::StopFleetActionsErrorKind::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::error::StopFleetActionsErrorKind::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::error::StopFleetActionsErrorKind::UnsupportedRegionException(inner) => Error::UnsupportedRegionException(inner),
+            crate::error::StopFleetActionsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::StopGameSessionPlacementError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::StopGameSessionPlacementError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::StopGameSessionPlacementError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::StopGameSessionPlacementError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -3336,33 +1760,18 @@ where
 impl From<crate::error::StopGameSessionPlacementError> for Error {
     fn from(err: crate::error::StopGameSessionPlacementError) -> Self {
         match err.kind {
-            crate::error::StopGameSessionPlacementErrorKind::InternalServiceException(inner) => {
-                Error::InternalServiceException(inner)
-            }
-            crate::error::StopGameSessionPlacementErrorKind::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::error::StopGameSessionPlacementErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::StopGameSessionPlacementErrorKind::UnauthorizedException(inner) => {
-                Error::UnauthorizedException(inner)
-            }
-            crate::error::StopGameSessionPlacementErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::StopGameSessionPlacementErrorKind::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::error::StopGameSessionPlacementErrorKind::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::error::StopGameSessionPlacementErrorKind::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::error::StopGameSessionPlacementErrorKind::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::error::StopGameSessionPlacementErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::StopMatchmakingError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::StopMatchmakingError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::StopMatchmakingError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -3370,36 +1779,18 @@ where
 impl From<crate::error::StopMatchmakingError> for Error {
     fn from(err: crate::error::StopMatchmakingError) -> Self {
         match err.kind {
-            crate::error::StopMatchmakingErrorKind::InternalServiceException(inner) => {
-                Error::InternalServiceException(inner)
-            }
-            crate::error::StopMatchmakingErrorKind::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::error::StopMatchmakingErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::StopMatchmakingErrorKind::UnsupportedRegionException(inner) => {
-                Error::UnsupportedRegionException(inner)
-            }
-            crate::error::StopMatchmakingErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::StopMatchmakingErrorKind::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::error::StopMatchmakingErrorKind::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::error::StopMatchmakingErrorKind::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::error::StopMatchmakingErrorKind::UnsupportedRegionException(inner) => Error::UnsupportedRegionException(inner),
+            crate::error::StopMatchmakingErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::SuspendGameServerGroupError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::SuspendGameServerGroupError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::SuspendGameServerGroupError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::SuspendGameServerGroupError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -3407,33 +1798,18 @@ where
 impl From<crate::error::SuspendGameServerGroupError> for Error {
     fn from(err: crate::error::SuspendGameServerGroupError) -> Self {
         match err.kind {
-            crate::error::SuspendGameServerGroupErrorKind::InternalServiceException(inner) => {
-                Error::InternalServiceException(inner)
-            }
-            crate::error::SuspendGameServerGroupErrorKind::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::error::SuspendGameServerGroupErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::SuspendGameServerGroupErrorKind::UnauthorizedException(inner) => {
-                Error::UnauthorizedException(inner)
-            }
-            crate::error::SuspendGameServerGroupErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::SuspendGameServerGroupErrorKind::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::error::SuspendGameServerGroupErrorKind::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::error::SuspendGameServerGroupErrorKind::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::error::SuspendGameServerGroupErrorKind::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::error::SuspendGameServerGroupErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::TagResourceError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::TagResourceError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::TagResourceError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -3441,33 +1817,18 @@ where
 impl From<crate::error::TagResourceError> for Error {
     fn from(err: crate::error::TagResourceError) -> Self {
         match err.kind {
-            crate::error::TagResourceErrorKind::InternalServiceException(inner) => {
-                Error::InternalServiceException(inner)
-            }
-            crate::error::TagResourceErrorKind::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::error::TagResourceErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::TagResourceErrorKind::TaggingFailedException(inner) => {
-                Error::TaggingFailedException(inner)
-            }
-            crate::error::TagResourceErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::TagResourceErrorKind::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::error::TagResourceErrorKind::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::error::TagResourceErrorKind::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::error::TagResourceErrorKind::TaggingFailedException(inner) => Error::TaggingFailedException(inner),
+            crate::error::TagResourceErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::UntagResourceError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::UntagResourceError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::UntagResourceError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -3475,33 +1836,18 @@ where
 impl From<crate::error::UntagResourceError> for Error {
     fn from(err: crate::error::UntagResourceError) -> Self {
         match err.kind {
-            crate::error::UntagResourceErrorKind::InternalServiceException(inner) => {
-                Error::InternalServiceException(inner)
-            }
-            crate::error::UntagResourceErrorKind::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::error::UntagResourceErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::UntagResourceErrorKind::TaggingFailedException(inner) => {
-                Error::TaggingFailedException(inner)
-            }
-            crate::error::UntagResourceErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::UntagResourceErrorKind::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::error::UntagResourceErrorKind::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::error::UntagResourceErrorKind::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::error::UntagResourceErrorKind::TaggingFailedException(inner) => Error::TaggingFailedException(inner),
+            crate::error::UntagResourceErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateAliasError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateAliasError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::UpdateAliasError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -3509,33 +1855,18 @@ where
 impl From<crate::error::UpdateAliasError> for Error {
     fn from(err: crate::error::UpdateAliasError) -> Self {
         match err.kind {
-            crate::error::UpdateAliasErrorKind::InternalServiceException(inner) => {
-                Error::InternalServiceException(inner)
-            }
-            crate::error::UpdateAliasErrorKind::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::error::UpdateAliasErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::UpdateAliasErrorKind::UnauthorizedException(inner) => {
-                Error::UnauthorizedException(inner)
-            }
-            crate::error::UpdateAliasErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::UpdateAliasErrorKind::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::error::UpdateAliasErrorKind::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::error::UpdateAliasErrorKind::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::error::UpdateAliasErrorKind::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::error::UpdateAliasErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateBuildError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateBuildError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::UpdateBuildError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -3543,36 +1874,18 @@ where
 impl From<crate::error::UpdateBuildError> for Error {
     fn from(err: crate::error::UpdateBuildError) -> Self {
         match err.kind {
-            crate::error::UpdateBuildErrorKind::InternalServiceException(inner) => {
-                Error::InternalServiceException(inner)
-            }
-            crate::error::UpdateBuildErrorKind::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::error::UpdateBuildErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::UpdateBuildErrorKind::UnauthorizedException(inner) => {
-                Error::UnauthorizedException(inner)
-            }
-            crate::error::UpdateBuildErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::UpdateBuildErrorKind::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::error::UpdateBuildErrorKind::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::error::UpdateBuildErrorKind::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::error::UpdateBuildErrorKind::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::error::UpdateBuildErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateFleetAttributesError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::UpdateFleetAttributesError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateFleetAttributesError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::UpdateFleetAttributesError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -3580,44 +1893,21 @@ where
 impl From<crate::error::UpdateFleetAttributesError> for Error {
     fn from(err: crate::error::UpdateFleetAttributesError) -> Self {
         match err.kind {
-            crate::error::UpdateFleetAttributesErrorKind::ConflictException(inner) => {
-                Error::ConflictException(inner)
-            }
-            crate::error::UpdateFleetAttributesErrorKind::InternalServiceException(inner) => {
-                Error::InternalServiceException(inner)
-            }
-            crate::error::UpdateFleetAttributesErrorKind::InvalidFleetStatusException(inner) => {
-                Error::InvalidFleetStatusException(inner)
-            }
-            crate::error::UpdateFleetAttributesErrorKind::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::error::UpdateFleetAttributesErrorKind::LimitExceededException(inner) => {
-                Error::LimitExceededException(inner)
-            }
-            crate::error::UpdateFleetAttributesErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::UpdateFleetAttributesErrorKind::UnauthorizedException(inner) => {
-                Error::UnauthorizedException(inner)
-            }
-            crate::error::UpdateFleetAttributesErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::UpdateFleetAttributesErrorKind::ConflictException(inner) => Error::ConflictException(inner),
+            crate::error::UpdateFleetAttributesErrorKind::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::error::UpdateFleetAttributesErrorKind::InvalidFleetStatusException(inner) => Error::InvalidFleetStatusException(inner),
+            crate::error::UpdateFleetAttributesErrorKind::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::error::UpdateFleetAttributesErrorKind::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::error::UpdateFleetAttributesErrorKind::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::error::UpdateFleetAttributesErrorKind::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::error::UpdateFleetAttributesErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateFleetCapacityError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::UpdateFleetCapacityError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateFleetCapacityError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::UpdateFleetCapacityError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -3625,48 +1915,22 @@ where
 impl From<crate::error::UpdateFleetCapacityError> for Error {
     fn from(err: crate::error::UpdateFleetCapacityError) -> Self {
         match err.kind {
-            crate::error::UpdateFleetCapacityErrorKind::ConflictException(inner) => {
-                Error::ConflictException(inner)
-            }
-            crate::error::UpdateFleetCapacityErrorKind::InternalServiceException(inner) => {
-                Error::InternalServiceException(inner)
-            }
-            crate::error::UpdateFleetCapacityErrorKind::InvalidFleetStatusException(inner) => {
-                Error::InvalidFleetStatusException(inner)
-            }
-            crate::error::UpdateFleetCapacityErrorKind::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::error::UpdateFleetCapacityErrorKind::LimitExceededException(inner) => {
-                Error::LimitExceededException(inner)
-            }
-            crate::error::UpdateFleetCapacityErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::UpdateFleetCapacityErrorKind::UnauthorizedException(inner) => {
-                Error::UnauthorizedException(inner)
-            }
-            crate::error::UpdateFleetCapacityErrorKind::UnsupportedRegionException(inner) => {
-                Error::UnsupportedRegionException(inner)
-            }
-            crate::error::UpdateFleetCapacityErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::UpdateFleetCapacityErrorKind::ConflictException(inner) => Error::ConflictException(inner),
+            crate::error::UpdateFleetCapacityErrorKind::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::error::UpdateFleetCapacityErrorKind::InvalidFleetStatusException(inner) => Error::InvalidFleetStatusException(inner),
+            crate::error::UpdateFleetCapacityErrorKind::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::error::UpdateFleetCapacityErrorKind::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::error::UpdateFleetCapacityErrorKind::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::error::UpdateFleetCapacityErrorKind::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::error::UpdateFleetCapacityErrorKind::UnsupportedRegionException(inner) => Error::UnsupportedRegionException(inner),
+            crate::error::UpdateFleetCapacityErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateFleetPortSettingsError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::UpdateFleetPortSettingsError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateFleetPortSettingsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::UpdateFleetPortSettingsError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -3674,44 +1938,21 @@ where
 impl From<crate::error::UpdateFleetPortSettingsError> for Error {
     fn from(err: crate::error::UpdateFleetPortSettingsError) -> Self {
         match err.kind {
-            crate::error::UpdateFleetPortSettingsErrorKind::ConflictException(inner) => {
-                Error::ConflictException(inner)
-            }
-            crate::error::UpdateFleetPortSettingsErrorKind::InternalServiceException(inner) => {
-                Error::InternalServiceException(inner)
-            }
-            crate::error::UpdateFleetPortSettingsErrorKind::InvalidFleetStatusException(inner) => {
-                Error::InvalidFleetStatusException(inner)
-            }
-            crate::error::UpdateFleetPortSettingsErrorKind::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::error::UpdateFleetPortSettingsErrorKind::LimitExceededException(inner) => {
-                Error::LimitExceededException(inner)
-            }
-            crate::error::UpdateFleetPortSettingsErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::UpdateFleetPortSettingsErrorKind::UnauthorizedException(inner) => {
-                Error::UnauthorizedException(inner)
-            }
-            crate::error::UpdateFleetPortSettingsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::UpdateFleetPortSettingsErrorKind::ConflictException(inner) => Error::ConflictException(inner),
+            crate::error::UpdateFleetPortSettingsErrorKind::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::error::UpdateFleetPortSettingsErrorKind::InvalidFleetStatusException(inner) => Error::InvalidFleetStatusException(inner),
+            crate::error::UpdateFleetPortSettingsErrorKind::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::error::UpdateFleetPortSettingsErrorKind::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::error::UpdateFleetPortSettingsErrorKind::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::error::UpdateFleetPortSettingsErrorKind::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::error::UpdateFleetPortSettingsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateGameServerError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::UpdateGameServerError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateGameServerError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::UpdateGameServerError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -3719,36 +1960,18 @@ where
 impl From<crate::error::UpdateGameServerError> for Error {
     fn from(err: crate::error::UpdateGameServerError) -> Self {
         match err.kind {
-            crate::error::UpdateGameServerErrorKind::InternalServiceException(inner) => {
-                Error::InternalServiceException(inner)
-            }
-            crate::error::UpdateGameServerErrorKind::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::error::UpdateGameServerErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::UpdateGameServerErrorKind::UnauthorizedException(inner) => {
-                Error::UnauthorizedException(inner)
-            }
-            crate::error::UpdateGameServerErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::UpdateGameServerErrorKind::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::error::UpdateGameServerErrorKind::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::error::UpdateGameServerErrorKind::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::error::UpdateGameServerErrorKind::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::error::UpdateGameServerErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateGameServerGroupError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::UpdateGameServerGroupError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateGameServerGroupError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::UpdateGameServerGroupError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -3756,35 +1979,18 @@ where
 impl From<crate::error::UpdateGameServerGroupError> for Error {
     fn from(err: crate::error::UpdateGameServerGroupError) -> Self {
         match err.kind {
-            crate::error::UpdateGameServerGroupErrorKind::InternalServiceException(inner) => {
-                Error::InternalServiceException(inner)
-            }
-            crate::error::UpdateGameServerGroupErrorKind::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::error::UpdateGameServerGroupErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::UpdateGameServerGroupErrorKind::UnauthorizedException(inner) => {
-                Error::UnauthorizedException(inner)
-            }
-            crate::error::UpdateGameServerGroupErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::UpdateGameServerGroupErrorKind::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::error::UpdateGameServerGroupErrorKind::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::error::UpdateGameServerGroupErrorKind::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::error::UpdateGameServerGroupErrorKind::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::error::UpdateGameServerGroupErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateGameSessionError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::UpdateGameSessionError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateGameSessionError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::UpdateGameSessionError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -3792,42 +1998,20 @@ where
 impl From<crate::error::UpdateGameSessionError> for Error {
     fn from(err: crate::error::UpdateGameSessionError) -> Self {
         match err.kind {
-            crate::error::UpdateGameSessionErrorKind::ConflictException(inner) => {
-                Error::ConflictException(inner)
-            }
-            crate::error::UpdateGameSessionErrorKind::InternalServiceException(inner) => {
-                Error::InternalServiceException(inner)
-            }
-            crate::error::UpdateGameSessionErrorKind::InvalidGameSessionStatusException(inner) => {
-                Error::InvalidGameSessionStatusException(inner)
-            }
-            crate::error::UpdateGameSessionErrorKind::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::error::UpdateGameSessionErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::UpdateGameSessionErrorKind::UnauthorizedException(inner) => {
-                Error::UnauthorizedException(inner)
-            }
-            crate::error::UpdateGameSessionErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::UpdateGameSessionErrorKind::ConflictException(inner) => Error::ConflictException(inner),
+            crate::error::UpdateGameSessionErrorKind::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::error::UpdateGameSessionErrorKind::InvalidGameSessionStatusException(inner) => Error::InvalidGameSessionStatusException(inner),
+            crate::error::UpdateGameSessionErrorKind::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::error::UpdateGameSessionErrorKind::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::error::UpdateGameSessionErrorKind::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::error::UpdateGameSessionErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateGameSessionQueueError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::UpdateGameSessionQueueError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateGameSessionQueueError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::UpdateGameSessionQueueError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -3835,40 +2019,18 @@ where
 impl From<crate::error::UpdateGameSessionQueueError> for Error {
     fn from(err: crate::error::UpdateGameSessionQueueError) -> Self {
         match err.kind {
-            crate::error::UpdateGameSessionQueueErrorKind::InternalServiceException(inner) => {
-                Error::InternalServiceException(inner)
-            }
-            crate::error::UpdateGameSessionQueueErrorKind::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::error::UpdateGameSessionQueueErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::UpdateGameSessionQueueErrorKind::UnauthorizedException(inner) => {
-                Error::UnauthorizedException(inner)
-            }
-            crate::error::UpdateGameSessionQueueErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::UpdateGameSessionQueueErrorKind::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::error::UpdateGameSessionQueueErrorKind::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::error::UpdateGameSessionQueueErrorKind::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::error::UpdateGameSessionQueueErrorKind::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::error::UpdateGameSessionQueueErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R>
-    From<aws_smithy_http::result::SdkError<crate::error::UpdateMatchmakingConfigurationError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<
-            crate::error::UpdateMatchmakingConfigurationError,
-            R,
-        >,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateMatchmakingConfigurationError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::UpdateMatchmakingConfigurationError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -3876,36 +2038,18 @@ where
 impl From<crate::error::UpdateMatchmakingConfigurationError> for Error {
     fn from(err: crate::error::UpdateMatchmakingConfigurationError) -> Self {
         match err.kind {
-            crate::error::UpdateMatchmakingConfigurationErrorKind::InternalServiceException(
-                inner,
-            ) => Error::InternalServiceException(inner),
-            crate::error::UpdateMatchmakingConfigurationErrorKind::InvalidRequestException(
-                inner,
-            ) => Error::InvalidRequestException(inner),
-            crate::error::UpdateMatchmakingConfigurationErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::UpdateMatchmakingConfigurationErrorKind::UnsupportedRegionException(
-                inner,
-            ) => Error::UnsupportedRegionException(inner),
-            crate::error::UpdateMatchmakingConfigurationErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::UpdateMatchmakingConfigurationErrorKind::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::error::UpdateMatchmakingConfigurationErrorKind::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::error::UpdateMatchmakingConfigurationErrorKind::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::error::UpdateMatchmakingConfigurationErrorKind::UnsupportedRegionException(inner) => Error::UnsupportedRegionException(inner),
+            crate::error::UpdateMatchmakingConfigurationErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateRuntimeConfigurationError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::UpdateRuntimeConfigurationError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateRuntimeConfigurationError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::UpdateRuntimeConfigurationError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -3913,36 +2057,19 @@ where
 impl From<crate::error::UpdateRuntimeConfigurationError> for Error {
     fn from(err: crate::error::UpdateRuntimeConfigurationError) -> Self {
         match err.kind {
-            crate::error::UpdateRuntimeConfigurationErrorKind::InternalServiceException(inner) => {
-                Error::InternalServiceException(inner)
-            }
-            crate::error::UpdateRuntimeConfigurationErrorKind::InvalidFleetStatusException(
-                inner,
-            ) => Error::InvalidFleetStatusException(inner),
-            crate::error::UpdateRuntimeConfigurationErrorKind::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::error::UpdateRuntimeConfigurationErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::UpdateRuntimeConfigurationErrorKind::UnauthorizedException(inner) => {
-                Error::UnauthorizedException(inner)
-            }
-            crate::error::UpdateRuntimeConfigurationErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::UpdateRuntimeConfigurationErrorKind::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::error::UpdateRuntimeConfigurationErrorKind::InvalidFleetStatusException(inner) => Error::InvalidFleetStatusException(inner),
+            crate::error::UpdateRuntimeConfigurationErrorKind::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::error::UpdateRuntimeConfigurationErrorKind::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::error::UpdateRuntimeConfigurationErrorKind::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::error::UpdateRuntimeConfigurationErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateScriptError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateScriptError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::UpdateScriptError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -3950,36 +2077,18 @@ where
 impl From<crate::error::UpdateScriptError> for Error {
     fn from(err: crate::error::UpdateScriptError) -> Self {
         match err.kind {
-            crate::error::UpdateScriptErrorKind::InternalServiceException(inner) => {
-                Error::InternalServiceException(inner)
-            }
-            crate::error::UpdateScriptErrorKind::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::error::UpdateScriptErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::UpdateScriptErrorKind::UnauthorizedException(inner) => {
-                Error::UnauthorizedException(inner)
-            }
-            crate::error::UpdateScriptErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::UpdateScriptErrorKind::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::error::UpdateScriptErrorKind::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::error::UpdateScriptErrorKind::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::error::UpdateScriptErrorKind::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::error::UpdateScriptErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ValidateMatchmakingRuleSetError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::ValidateMatchmakingRuleSetError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::ValidateMatchmakingRuleSetError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::ValidateMatchmakingRuleSetError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -3987,19 +2096,12 @@ where
 impl From<crate::error::ValidateMatchmakingRuleSetError> for Error {
     fn from(err: crate::error::ValidateMatchmakingRuleSetError) -> Self {
         match err.kind {
-            crate::error::ValidateMatchmakingRuleSetErrorKind::InternalServiceException(inner) => {
-                Error::InternalServiceException(inner)
-            }
-            crate::error::ValidateMatchmakingRuleSetErrorKind::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::error::ValidateMatchmakingRuleSetErrorKind::UnsupportedRegionException(
-                inner,
-            ) => Error::UnsupportedRegionException(inner),
-            crate::error::ValidateMatchmakingRuleSetErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::ValidateMatchmakingRuleSetErrorKind::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::error::ValidateMatchmakingRuleSetErrorKind::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::error::ValidateMatchmakingRuleSetErrorKind::UnsupportedRegionException(inner) => Error::UnsupportedRegionException(inner),
+            crate::error::ValidateMatchmakingRuleSetErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
 impl std::error::Error for Error {}
+

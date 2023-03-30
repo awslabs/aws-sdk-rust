@@ -3,7 +3,7 @@
 /// <p>A description of the file system.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateFileSystemOutput {
+pub struct UpdateFileSystemOutput  {
     /// <p>The Amazon Web Services account that created the file system. If the file system was created by an IAM user, the parent account to which the user belongs is the owner.</p>
     #[doc(hidden)]
     pub owner_id: std::option::Option<std::string::String>,
@@ -58,31 +58,31 @@ pub struct UpdateFileSystemOutput {
 }
 impl UpdateFileSystemOutput {
     /// <p>The Amazon Web Services account that created the file system. If the file system was created by an IAM user, the parent account to which the user belongs is the owner.</p>
-    pub fn owner_id(&self) -> std::option::Option<&str> {
+    pub fn owner_id(&self) -> std::option::Option<& str> {
         self.owner_id.as_deref()
     }
     /// <p>The opaque string specified in the request.</p>
-    pub fn creation_token(&self) -> std::option::Option<&str> {
+    pub fn creation_token(&self) -> std::option::Option<& str> {
         self.creation_token.as_deref()
     }
     /// <p>The ID of the file system, assigned by Amazon EFS.</p>
-    pub fn file_system_id(&self) -> std::option::Option<&str> {
+    pub fn file_system_id(&self) -> std::option::Option<& str> {
         self.file_system_id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) for the EFS file system, in the format <code>arn:aws:elasticfilesystem:<i>region</i>:<i>account-id</i>:file-system/<i>file-system-id</i> </code>. Example with sample data: <code>arn:aws:elasticfilesystem:us-west-2:1111333322228888:file-system/fs-01234567</code> </p>
-    pub fn file_system_arn(&self) -> std::option::Option<&str> {
+    pub fn file_system_arn(&self) -> std::option::Option<& str> {
         self.file_system_arn.as_deref()
     }
     /// <p>The time that the file system was created, in seconds (since 1970-01-01T00:00:00Z).</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The lifecycle phase of the file system.</p>
-    pub fn life_cycle_state(&self) -> std::option::Option<&crate::model::LifeCycleState> {
+    pub fn life_cycle_state(&self) -> std::option::Option<& crate::model::LifeCycleState> {
         self.life_cycle_state.as_ref()
     }
     /// <p>You can add tags to a file system, including a <code>Name</code> tag. For more information, see <code>CreateFileSystem</code>. If the file system has a <code>Name</code> tag, Amazon EFS returns the value in this field. </p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The current number of mount targets that the file system has. For more information, see <code>CreateMountTarget</code>.</p>
@@ -90,11 +90,11 @@ impl UpdateFileSystemOutput {
         self.number_of_mount_targets
     }
     /// <p>The latest known metered size (in bytes) of data stored in the file system, in its <code>Value</code> field, and the time at which that size was determined in its <code>Timestamp</code> field. The <code>Timestamp</code> value is the integer number of seconds since 1970-01-01T00:00:00Z. The <code>SizeInBytes</code> value doesn't represent the size of a consistent snapshot of the file system, but it is eventually consistent when there are no writes to the file system. That is, <code>SizeInBytes</code> represents actual size only if the file system is not modified for a period longer than a couple of hours. Otherwise, the value is not the exact size that the file system was at any point in time. </p>
-    pub fn size_in_bytes(&self) -> std::option::Option<&crate::model::FileSystemSize> {
+    pub fn size_in_bytes(&self) -> std::option::Option<& crate::model::FileSystemSize> {
         self.size_in_bytes.as_ref()
     }
     /// <p>The performance mode of the file system.</p>
-    pub fn performance_mode(&self) -> std::option::Option<&crate::model::PerformanceMode> {
+    pub fn performance_mode(&self) -> std::option::Option<& crate::model::PerformanceMode> {
         self.performance_mode.as_ref()
     }
     /// <p>A Boolean value that, if true, indicates that the file system is encrypted.</p>
@@ -102,11 +102,11 @@ impl UpdateFileSystemOutput {
         self.encrypted
     }
     /// <p>The ID of an KMS key used to protect the encrypted file system.</p>
-    pub fn kms_key_id(&self) -> std::option::Option<&str> {
+    pub fn kms_key_id(&self) -> std::option::Option<& str> {
         self.kms_key_id.as_deref()
     }
     /// <p>Displays the file system's throughput mode. For more information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/performance.html#throughput-modes">Throughput modes</a> in the <i>Amazon EFS User Guide</i>. </p>
-    pub fn throughput_mode(&self) -> std::option::Option<&crate::model::ThroughputMode> {
+    pub fn throughput_mode(&self) -> std::option::Option<& crate::model::ThroughputMode> {
         self.throughput_mode.as_ref()
     }
     /// <p>The amount of provisioned throughput, measured in MiB/s, for the file system. Valid for file systems using <code>ThroughputMode</code> set to <code>provisioned</code>.</p>
@@ -114,21 +114,21 @@ impl UpdateFileSystemOutput {
         self.provisioned_throughput_in_mibps
     }
     /// <p>Describes the Amazon Web Services Availability Zone in which the file system is located, and is valid only for file systems using One Zone storage classes. For more information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/storage-classes.html">Using EFS storage classes</a> in the <i>Amazon EFS User Guide</i>.</p>
-    pub fn availability_zone_name(&self) -> std::option::Option<&str> {
+    pub fn availability_zone_name(&self) -> std::option::Option<& str> {
         self.availability_zone_name.as_deref()
     }
     /// <p>The unique and consistent identifier of the Availability Zone in which the file system's One Zone storage classes exist. For example, <code>use1-az1</code> is an Availability Zone ID for the us-east-1 Amazon Web Services Region, and it has the same location in every Amazon Web Services account.</p>
-    pub fn availability_zone_id(&self) -> std::option::Option<&str> {
+    pub fn availability_zone_id(&self) -> std::option::Option<& str> {
         self.availability_zone_id.as_deref()
     }
     /// <p>The tags associated with the file system, presented as an array of <code>Tag</code> objects.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+    pub fn tags(&self) -> std::option::Option<& [crate::model::Tag]> {
         self.tags.as_deref()
     }
 }
 /// See [`UpdateFileSystemOutput`](crate::output::UpdateFileSystemOutput).
 pub mod update_file_system_output {
-
+    
     /// A builder for [`UpdateFileSystemOutput`](crate::output::UpdateFileSystemOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -158,8 +158,7 @@ pub mod update_file_system_output {
         }
         /// <p>The Amazon Web Services account that created the file system. If the file system was created by an IAM user, the parent account to which the user belongs is the owner.</p>
         pub fn set_owner_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.owner_id = input;
-            self
+            self.owner_id = input; self
         }
         /// <p>The opaque string specified in the request.</p>
         pub fn creation_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -167,12 +166,8 @@ pub mod update_file_system_output {
             self
         }
         /// <p>The opaque string specified in the request.</p>
-        pub fn set_creation_token(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.creation_token = input;
-            self
+        pub fn set_creation_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.creation_token = input; self
         }
         /// <p>The ID of the file system, assigned by Amazon EFS.</p>
         pub fn file_system_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -180,12 +175,8 @@ pub mod update_file_system_output {
             self
         }
         /// <p>The ID of the file system, assigned by Amazon EFS.</p>
-        pub fn set_file_system_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.file_system_id = input;
-            self
+        pub fn set_file_system_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.file_system_id = input; self
         }
         /// <p>The Amazon Resource Name (ARN) for the EFS file system, in the format <code>arn:aws:elasticfilesystem:<i>region</i>:<i>account-id</i>:file-system/<i>file-system-id</i> </code>. Example with sample data: <code>arn:aws:elasticfilesystem:us-west-2:1111333322228888:file-system/fs-01234567</code> </p>
         pub fn file_system_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -193,12 +184,8 @@ pub mod update_file_system_output {
             self
         }
         /// <p>The Amazon Resource Name (ARN) for the EFS file system, in the format <code>arn:aws:elasticfilesystem:<i>region</i>:<i>account-id</i>:file-system/<i>file-system-id</i> </code>. Example with sample data: <code>arn:aws:elasticfilesystem:us-west-2:1111333322228888:file-system/fs-01234567</code> </p>
-        pub fn set_file_system_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.file_system_arn = input;
-            self
+        pub fn set_file_system_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.file_system_arn = input; self
         }
         /// <p>The time that the file system was created, in seconds (since 1970-01-01T00:00:00Z).</p>
         pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -206,12 +193,8 @@ pub mod update_file_system_output {
             self
         }
         /// <p>The time that the file system was created, in seconds (since 1970-01-01T00:00:00Z).</p>
-        pub fn set_creation_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.creation_time = input;
-            self
+        pub fn set_creation_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.creation_time = input; self
         }
         /// <p>The lifecycle phase of the file system.</p>
         pub fn life_cycle_state(mut self, input: crate::model::LifeCycleState) -> Self {
@@ -219,12 +202,8 @@ pub mod update_file_system_output {
             self
         }
         /// <p>The lifecycle phase of the file system.</p>
-        pub fn set_life_cycle_state(
-            mut self,
-            input: std::option::Option<crate::model::LifeCycleState>,
-        ) -> Self {
-            self.life_cycle_state = input;
-            self
+        pub fn set_life_cycle_state(mut self, input: std::option::Option<crate::model::LifeCycleState>) -> Self {
+            self.life_cycle_state = input; self
         }
         /// <p>You can add tags to a file system, including a <code>Name</code> tag. For more information, see <code>CreateFileSystem</code>. If the file system has a <code>Name</code> tag, Amazon EFS returns the value in this field. </p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -233,8 +212,7 @@ pub mod update_file_system_output {
         }
         /// <p>You can add tags to a file system, including a <code>Name</code> tag. For more information, see <code>CreateFileSystem</code>. If the file system has a <code>Name</code> tag, Amazon EFS returns the value in this field. </p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The current number of mount targets that the file system has. For more information, see <code>CreateMountTarget</code>.</p>
         pub fn number_of_mount_targets(mut self, input: i32) -> Self {
@@ -243,8 +221,7 @@ pub mod update_file_system_output {
         }
         /// <p>The current number of mount targets that the file system has. For more information, see <code>CreateMountTarget</code>.</p>
         pub fn set_number_of_mount_targets(mut self, input: std::option::Option<i32>) -> Self {
-            self.number_of_mount_targets = input;
-            self
+            self.number_of_mount_targets = input; self
         }
         /// <p>The latest known metered size (in bytes) of data stored in the file system, in its <code>Value</code> field, and the time at which that size was determined in its <code>Timestamp</code> field. The <code>Timestamp</code> value is the integer number of seconds since 1970-01-01T00:00:00Z. The <code>SizeInBytes</code> value doesn't represent the size of a consistent snapshot of the file system, but it is eventually consistent when there are no writes to the file system. That is, <code>SizeInBytes</code> represents actual size only if the file system is not modified for a period longer than a couple of hours. Otherwise, the value is not the exact size that the file system was at any point in time. </p>
         pub fn size_in_bytes(mut self, input: crate::model::FileSystemSize) -> Self {
@@ -252,12 +229,8 @@ pub mod update_file_system_output {
             self
         }
         /// <p>The latest known metered size (in bytes) of data stored in the file system, in its <code>Value</code> field, and the time at which that size was determined in its <code>Timestamp</code> field. The <code>Timestamp</code> value is the integer number of seconds since 1970-01-01T00:00:00Z. The <code>SizeInBytes</code> value doesn't represent the size of a consistent snapshot of the file system, but it is eventually consistent when there are no writes to the file system. That is, <code>SizeInBytes</code> represents actual size only if the file system is not modified for a period longer than a couple of hours. Otherwise, the value is not the exact size that the file system was at any point in time. </p>
-        pub fn set_size_in_bytes(
-            mut self,
-            input: std::option::Option<crate::model::FileSystemSize>,
-        ) -> Self {
-            self.size_in_bytes = input;
-            self
+        pub fn set_size_in_bytes(mut self, input: std::option::Option<crate::model::FileSystemSize>) -> Self {
+            self.size_in_bytes = input; self
         }
         /// <p>The performance mode of the file system.</p>
         pub fn performance_mode(mut self, input: crate::model::PerformanceMode) -> Self {
@@ -265,12 +238,8 @@ pub mod update_file_system_output {
             self
         }
         /// <p>The performance mode of the file system.</p>
-        pub fn set_performance_mode(
-            mut self,
-            input: std::option::Option<crate::model::PerformanceMode>,
-        ) -> Self {
-            self.performance_mode = input;
-            self
+        pub fn set_performance_mode(mut self, input: std::option::Option<crate::model::PerformanceMode>) -> Self {
+            self.performance_mode = input; self
         }
         /// <p>A Boolean value that, if true, indicates that the file system is encrypted.</p>
         pub fn encrypted(mut self, input: bool) -> Self {
@@ -279,8 +248,7 @@ pub mod update_file_system_output {
         }
         /// <p>A Boolean value that, if true, indicates that the file system is encrypted.</p>
         pub fn set_encrypted(mut self, input: std::option::Option<bool>) -> Self {
-            self.encrypted = input;
-            self
+            self.encrypted = input; self
         }
         /// <p>The ID of an KMS key used to protect the encrypted file system.</p>
         pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -289,8 +257,7 @@ pub mod update_file_system_output {
         }
         /// <p>The ID of an KMS key used to protect the encrypted file system.</p>
         pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.kms_key_id = input;
-            self
+            self.kms_key_id = input; self
         }
         /// <p>Displays the file system's throughput mode. For more information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/performance.html#throughput-modes">Throughput modes</a> in the <i>Amazon EFS User Guide</i>. </p>
         pub fn throughput_mode(mut self, input: crate::model::ThroughputMode) -> Self {
@@ -298,12 +265,8 @@ pub mod update_file_system_output {
             self
         }
         /// <p>Displays the file system's throughput mode. For more information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/performance.html#throughput-modes">Throughput modes</a> in the <i>Amazon EFS User Guide</i>. </p>
-        pub fn set_throughput_mode(
-            mut self,
-            input: std::option::Option<crate::model::ThroughputMode>,
-        ) -> Self {
-            self.throughput_mode = input;
-            self
+        pub fn set_throughput_mode(mut self, input: std::option::Option<crate::model::ThroughputMode>) -> Self {
+            self.throughput_mode = input; self
         }
         /// <p>The amount of provisioned throughput, measured in MiB/s, for the file system. Valid for file systems using <code>ThroughputMode</code> set to <code>provisioned</code>.</p>
         pub fn provisioned_throughput_in_mibps(mut self, input: f64) -> Self {
@@ -311,12 +274,8 @@ pub mod update_file_system_output {
             self
         }
         /// <p>The amount of provisioned throughput, measured in MiB/s, for the file system. Valid for file systems using <code>ThroughputMode</code> set to <code>provisioned</code>.</p>
-        pub fn set_provisioned_throughput_in_mibps(
-            mut self,
-            input: std::option::Option<f64>,
-        ) -> Self {
-            self.provisioned_throughput_in_mibps = input;
-            self
+        pub fn set_provisioned_throughput_in_mibps(mut self, input: std::option::Option<f64>) -> Self {
+            self.provisioned_throughput_in_mibps = input; self
         }
         /// <p>Describes the Amazon Web Services Availability Zone in which the file system is located, and is valid only for file systems using One Zone storage classes. For more information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/storage-classes.html">Using EFS storage classes</a> in the <i>Amazon EFS User Guide</i>.</p>
         pub fn availability_zone_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -324,12 +283,8 @@ pub mod update_file_system_output {
             self
         }
         /// <p>Describes the Amazon Web Services Availability Zone in which the file system is located, and is valid only for file systems using One Zone storage classes. For more information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/storage-classes.html">Using EFS storage classes</a> in the <i>Amazon EFS User Guide</i>.</p>
-        pub fn set_availability_zone_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.availability_zone_name = input;
-            self
+        pub fn set_availability_zone_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.availability_zone_name = input; self
         }
         /// <p>The unique and consistent identifier of the Availability Zone in which the file system's One Zone storage classes exist. For example, <code>use1-az1</code> is an Availability Zone ID for the us-east-1 Amazon Web Services Region, and it has the same location in every Amazon Web Services account.</p>
         pub fn availability_zone_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -337,12 +292,8 @@ pub mod update_file_system_output {
             self
         }
         /// <p>The unique and consistent identifier of the Availability Zone in which the file system's One Zone storage classes exist. For example, <code>use1-az1</code> is an Availability Zone ID for the us-east-1 Amazon Web Services Region, and it has the same location in every Amazon Web Services account.</p>
-        pub fn set_availability_zone_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.availability_zone_id = input;
-            self
+        pub fn set_availability_zone_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.availability_zone_id = input; self
         }
         /// Appends an item to `tags`.
         ///
@@ -351,41 +302,57 @@ pub mod update_file_system_output {
         /// <p>The tags associated with the file system, presented as an array of <code>Tag</code> objects.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input);
-            self.tags = Some(v);
-            self
+                            v.push(input);
+                            self.tags = Some(v);
+                            self
         }
         /// <p>The tags associated with the file system, presented as an array of <code>Tag</code> objects.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::model::Tag>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`UpdateFileSystemOutput`](crate::output::UpdateFileSystemOutput).
         pub fn build(self) -> crate::output::UpdateFileSystemOutput {
             crate::output::UpdateFileSystemOutput {
-                owner_id: self.owner_id,
-                creation_token: self.creation_token,
-                file_system_id: self.file_system_id,
-                file_system_arn: self.file_system_arn,
-                creation_time: self.creation_time,
-                life_cycle_state: self.life_cycle_state,
-                name: self.name,
-                number_of_mount_targets: self.number_of_mount_targets.unwrap_or_default(),
-                size_in_bytes: self.size_in_bytes,
-                performance_mode: self.performance_mode,
-                encrypted: self.encrypted,
-                kms_key_id: self.kms_key_id,
-                throughput_mode: self.throughput_mode,
-                provisioned_throughput_in_mibps: self.provisioned_throughput_in_mibps,
-                availability_zone_name: self.availability_zone_name,
-                availability_zone_id: self.availability_zone_id,
-                tags: self.tags,
+                owner_id: self.owner_id
+                ,
+                creation_token: self.creation_token
+                ,
+                file_system_id: self.file_system_id
+                ,
+                file_system_arn: self.file_system_arn
+                ,
+                creation_time: self.creation_time
+                ,
+                life_cycle_state: self.life_cycle_state
+                ,
+                name: self.name
+                ,
+                number_of_mount_targets: self.number_of_mount_targets
+                    .unwrap_or_default()
+                ,
+                size_in_bytes: self.size_in_bytes
+                ,
+                performance_mode: self.performance_mode
+                ,
+                encrypted: self.encrypted
+                ,
+                kms_key_id: self.kms_key_id
+                ,
+                throughput_mode: self.throughput_mode
+                ,
+                provisioned_throughput_in_mibps: self.provisioned_throughput_in_mibps
+                ,
+                availability_zone_name: self.availability_zone_name
+                ,
+                availability_zone_id: self.availability_zone_id
+                ,
+                tags: self.tags
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateFileSystemOutput {
     /// Creates a new builder-style object to manufacture [`UpdateFileSystemOutput`](crate::output::UpdateFileSystemOutput).
@@ -397,19 +364,24 @@ impl UpdateFileSystemOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UntagResourceOutput {}
+pub struct UntagResourceOutput  {
+}
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput).
 pub mod untag_resource_output {
-
+    
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput).
         pub fn build(self) -> crate::output::UntagResourceOutput {
-            crate::output::UntagResourceOutput {}
+            crate::output::UntagResourceOutput {
+            }
         }
     }
+    
+    
 }
 impl UntagResourceOutput {
     /// Creates a new builder-style object to manufacture [`UntagResourceOutput`](crate::output::UntagResourceOutput).
@@ -421,19 +393,24 @@ impl UntagResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TagResourceOutput {}
+pub struct TagResourceOutput  {
+}
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput).
 pub mod tag_resource_output {
-
+    
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput).
         pub fn build(self) -> crate::output::TagResourceOutput {
-            crate::output::TagResourceOutput {}
+            crate::output::TagResourceOutput {
+            }
         }
     }
+    
+    
 }
 impl TagResourceOutput {
     /// Creates a new builder-style object to manufacture [`TagResourceOutput`](crate::output::TagResourceOutput).
@@ -445,25 +422,24 @@ impl TagResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutLifecycleConfigurationOutput {
+pub struct PutLifecycleConfigurationOutput  {
     /// <p>An array of lifecycle management policies. EFS supports a maximum of one policy per file system.</p>
     #[doc(hidden)]
     pub lifecycle_policies: std::option::Option<std::vec::Vec<crate::model::LifecyclePolicy>>,
 }
 impl PutLifecycleConfigurationOutput {
     /// <p>An array of lifecycle management policies. EFS supports a maximum of one policy per file system.</p>
-    pub fn lifecycle_policies(&self) -> std::option::Option<&[crate::model::LifecyclePolicy]> {
+    pub fn lifecycle_policies(&self) -> std::option::Option<& [crate::model::LifecyclePolicy]> {
         self.lifecycle_policies.as_deref()
     }
 }
 /// See [`PutLifecycleConfigurationOutput`](crate::output::PutLifecycleConfigurationOutput).
 pub mod put_lifecycle_configuration_output {
-
+    
     /// A builder for [`PutLifecycleConfigurationOutput`](crate::output::PutLifecycleConfigurationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) lifecycle_policies:
-            std::option::Option<std::vec::Vec<crate::model::LifecyclePolicy>>,
+        pub(crate) lifecycle_policies: std::option::Option<std::vec::Vec<crate::model::LifecyclePolicy>>,
     }
     impl Builder {
         /// Appends an item to `lifecycle_policies`.
@@ -473,25 +449,24 @@ pub mod put_lifecycle_configuration_output {
         /// <p>An array of lifecycle management policies. EFS supports a maximum of one policy per file system.</p>
         pub fn lifecycle_policies(mut self, input: crate::model::LifecyclePolicy) -> Self {
             let mut v = self.lifecycle_policies.unwrap_or_default();
-            v.push(input);
-            self.lifecycle_policies = Some(v);
-            self
+                            v.push(input);
+                            self.lifecycle_policies = Some(v);
+                            self
         }
         /// <p>An array of lifecycle management policies. EFS supports a maximum of one policy per file system.</p>
-        pub fn set_lifecycle_policies(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::LifecyclePolicy>>,
-        ) -> Self {
-            self.lifecycle_policies = input;
-            self
+        pub fn set_lifecycle_policies(mut self, input: std::option::Option<std::vec::Vec<crate::model::LifecyclePolicy>>) -> Self {
+            self.lifecycle_policies = input; self
         }
         /// Consumes the builder and constructs a [`PutLifecycleConfigurationOutput`](crate::output::PutLifecycleConfigurationOutput).
         pub fn build(self) -> crate::output::PutLifecycleConfigurationOutput {
             crate::output::PutLifecycleConfigurationOutput {
-                lifecycle_policies: self.lifecycle_policies,
+                lifecycle_policies: self.lifecycle_policies
+                ,
             }
         }
     }
+    
+    
 }
 impl PutLifecycleConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`PutLifecycleConfigurationOutput`](crate::output::PutLifecycleConfigurationOutput).
@@ -503,7 +478,7 @@ impl PutLifecycleConfigurationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutFileSystemPolicyOutput {
+pub struct PutFileSystemPolicyOutput  {
     /// <p>Specifies the EFS file system to which the <code>FileSystemPolicy</code> applies.</p>
     #[doc(hidden)]
     pub file_system_id: std::option::Option<std::string::String>,
@@ -513,17 +488,17 @@ pub struct PutFileSystemPolicyOutput {
 }
 impl PutFileSystemPolicyOutput {
     /// <p>Specifies the EFS file system to which the <code>FileSystemPolicy</code> applies.</p>
-    pub fn file_system_id(&self) -> std::option::Option<&str> {
+    pub fn file_system_id(&self) -> std::option::Option<& str> {
         self.file_system_id.as_deref()
     }
     /// <p>The JSON formatted <code>FileSystemPolicy</code> for the EFS file system.</p>
-    pub fn policy(&self) -> std::option::Option<&str> {
+    pub fn policy(&self) -> std::option::Option<& str> {
         self.policy.as_deref()
     }
 }
 /// See [`PutFileSystemPolicyOutput`](crate::output::PutFileSystemPolicyOutput).
 pub mod put_file_system_policy_output {
-
+    
     /// A builder for [`PutFileSystemPolicyOutput`](crate::output::PutFileSystemPolicyOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -537,12 +512,8 @@ pub mod put_file_system_policy_output {
             self
         }
         /// <p>Specifies the EFS file system to which the <code>FileSystemPolicy</code> applies.</p>
-        pub fn set_file_system_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.file_system_id = input;
-            self
+        pub fn set_file_system_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.file_system_id = input; self
         }
         /// <p>The JSON formatted <code>FileSystemPolicy</code> for the EFS file system.</p>
         pub fn policy(mut self, input: impl Into<std::string::String>) -> Self {
@@ -551,17 +522,20 @@ pub mod put_file_system_policy_output {
         }
         /// <p>The JSON formatted <code>FileSystemPolicy</code> for the EFS file system.</p>
         pub fn set_policy(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.policy = input;
-            self
+            self.policy = input; self
         }
         /// Consumes the builder and constructs a [`PutFileSystemPolicyOutput`](crate::output::PutFileSystemPolicyOutput).
         pub fn build(self) -> crate::output::PutFileSystemPolicyOutput {
             crate::output::PutFileSystemPolicyOutput {
-                file_system_id: self.file_system_id,
-                policy: self.policy,
+                file_system_id: self.file_system_id
+                ,
+                policy: self.policy
+                ,
             }
         }
     }
+    
+    
 }
 impl PutFileSystemPolicyOutput {
     /// Creates a new builder-style object to manufacture [`PutFileSystemPolicyOutput`](crate::output::PutFileSystemPolicyOutput).
@@ -573,20 +547,20 @@ impl PutFileSystemPolicyOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutBackupPolicyOutput {
+pub struct PutBackupPolicyOutput  {
     /// <p>Describes the file system's backup policy, indicating whether automatic backups are turned on or off.</p>
     #[doc(hidden)]
     pub backup_policy: std::option::Option<crate::model::BackupPolicy>,
 }
 impl PutBackupPolicyOutput {
     /// <p>Describes the file system's backup policy, indicating whether automatic backups are turned on or off.</p>
-    pub fn backup_policy(&self) -> std::option::Option<&crate::model::BackupPolicy> {
+    pub fn backup_policy(&self) -> std::option::Option<& crate::model::BackupPolicy> {
         self.backup_policy.as_ref()
     }
 }
 /// See [`PutBackupPolicyOutput`](crate::output::PutBackupPolicyOutput).
 pub mod put_backup_policy_output {
-
+    
     /// A builder for [`PutBackupPolicyOutput`](crate::output::PutBackupPolicyOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -599,20 +573,19 @@ pub mod put_backup_policy_output {
             self
         }
         /// <p>Describes the file system's backup policy, indicating whether automatic backups are turned on or off.</p>
-        pub fn set_backup_policy(
-            mut self,
-            input: std::option::Option<crate::model::BackupPolicy>,
-        ) -> Self {
-            self.backup_policy = input;
-            self
+        pub fn set_backup_policy(mut self, input: std::option::Option<crate::model::BackupPolicy>) -> Self {
+            self.backup_policy = input; self
         }
         /// Consumes the builder and constructs a [`PutBackupPolicyOutput`](crate::output::PutBackupPolicyOutput).
         pub fn build(self) -> crate::output::PutBackupPolicyOutput {
             crate::output::PutBackupPolicyOutput {
-                backup_policy: self.backup_policy,
+                backup_policy: self.backup_policy
+                ,
             }
         }
     }
+    
+    
 }
 impl PutBackupPolicyOutput {
     /// Creates a new builder-style object to manufacture [`PutBackupPolicyOutput`](crate::output::PutBackupPolicyOutput).
@@ -624,22 +597,20 @@ impl PutBackupPolicyOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutAccountPreferencesOutput {
+pub struct PutAccountPreferencesOutput  {
     /// <p>Describes the resource type and its ID preference for the user's Amazon Web Services account, in the current Amazon Web Services Region.</p>
     #[doc(hidden)]
     pub resource_id_preference: std::option::Option<crate::model::ResourceIdPreference>,
 }
 impl PutAccountPreferencesOutput {
     /// <p>Describes the resource type and its ID preference for the user's Amazon Web Services account, in the current Amazon Web Services Region.</p>
-    pub fn resource_id_preference(
-        &self,
-    ) -> std::option::Option<&crate::model::ResourceIdPreference> {
+    pub fn resource_id_preference(&self) -> std::option::Option<& crate::model::ResourceIdPreference> {
         self.resource_id_preference.as_ref()
     }
 }
 /// See [`PutAccountPreferencesOutput`](crate::output::PutAccountPreferencesOutput).
 pub mod put_account_preferences_output {
-
+    
     /// A builder for [`PutAccountPreferencesOutput`](crate::output::PutAccountPreferencesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -652,20 +623,19 @@ pub mod put_account_preferences_output {
             self
         }
         /// <p>Describes the resource type and its ID preference for the user's Amazon Web Services account, in the current Amazon Web Services Region.</p>
-        pub fn set_resource_id_preference(
-            mut self,
-            input: std::option::Option<crate::model::ResourceIdPreference>,
-        ) -> Self {
-            self.resource_id_preference = input;
-            self
+        pub fn set_resource_id_preference(mut self, input: std::option::Option<crate::model::ResourceIdPreference>) -> Self {
+            self.resource_id_preference = input; self
         }
         /// Consumes the builder and constructs a [`PutAccountPreferencesOutput`](crate::output::PutAccountPreferencesOutput).
         pub fn build(self) -> crate::output::PutAccountPreferencesOutput {
             crate::output::PutAccountPreferencesOutput {
-                resource_id_preference: self.resource_id_preference,
+                resource_id_preference: self.resource_id_preference
+                ,
             }
         }
     }
+    
+    
 }
 impl PutAccountPreferencesOutput {
     /// Creates a new builder-style object to manufacture [`PutAccountPreferencesOutput`](crate::output::PutAccountPreferencesOutput).
@@ -677,19 +647,24 @@ impl PutAccountPreferencesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ModifyMountTargetSecurityGroupsOutput {}
+pub struct ModifyMountTargetSecurityGroupsOutput  {
+}
 /// See [`ModifyMountTargetSecurityGroupsOutput`](crate::output::ModifyMountTargetSecurityGroupsOutput).
 pub mod modify_mount_target_security_groups_output {
-
+    
     /// A builder for [`ModifyMountTargetSecurityGroupsOutput`](crate::output::ModifyMountTargetSecurityGroupsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`ModifyMountTargetSecurityGroupsOutput`](crate::output::ModifyMountTargetSecurityGroupsOutput).
         pub fn build(self) -> crate::output::ModifyMountTargetSecurityGroupsOutput {
-            crate::output::ModifyMountTargetSecurityGroupsOutput {}
+            crate::output::ModifyMountTargetSecurityGroupsOutput {
+            }
         }
     }
+    
+    
 }
 impl ModifyMountTargetSecurityGroupsOutput {
     /// Creates a new builder-style object to manufacture [`ModifyMountTargetSecurityGroupsOutput`](crate::output::ModifyMountTargetSecurityGroupsOutput).
@@ -701,7 +676,7 @@ impl ModifyMountTargetSecurityGroupsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListTagsForResourceOutput {
+pub struct ListTagsForResourceOutput  {
     /// <p>An array of the tags for the specified EFS resource.</p>
     #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -711,17 +686,17 @@ pub struct ListTagsForResourceOutput {
 }
 impl ListTagsForResourceOutput {
     /// <p>An array of the tags for the specified EFS resource.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+    pub fn tags(&self) -> std::option::Option<& [crate::model::Tag]> {
         self.tags.as_deref()
     }
     /// <p> <code>NextToken</code> is present if the response payload is paginated. You can use <code>NextToken</code> in a subsequent request to fetch the next page of access point descriptions.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
 pub mod list_tags_for_resource_output {
-
+    
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -736,17 +711,13 @@ pub mod list_tags_for_resource_output {
         /// <p>An array of the tags for the specified EFS resource.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input);
-            self.tags = Some(v);
-            self
+                            v.push(input);
+                            self.tags = Some(v);
+                            self
         }
         /// <p>An array of the tags for the specified EFS resource.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::model::Tag>>) -> Self {
+            self.tags = input; self
         }
         /// <p> <code>NextToken</code> is present if the response payload is paginated. You can use <code>NextToken</code> in a subsequent request to fetch the next page of access point descriptions.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -755,17 +726,20 @@ pub mod list_tags_for_resource_output {
         }
         /// <p> <code>NextToken</code> is present if the response payload is paginated. You can use <code>NextToken</code> in a subsequent request to fetch the next page of access point descriptions.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
         pub fn build(self) -> crate::output::ListTagsForResourceOutput {
             crate::output::ListTagsForResourceOutput {
-                tags: self.tags,
-                next_token: self.next_token,
+                tags: self.tags
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListTagsForResourceOutput {
     /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
@@ -777,7 +751,7 @@ impl ListTagsForResourceOutput {
 /// <p></p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeTagsOutput {
+pub struct DescribeTagsOutput  {
     /// <p>If the request included a <code>Marker</code>, the response returns that value in this field.</p>
     #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
@@ -790,21 +764,21 @@ pub struct DescribeTagsOutput {
 }
 impl DescribeTagsOutput {
     /// <p>If the request included a <code>Marker</code>, the response returns that value in this field.</p>
-    pub fn marker(&self) -> std::option::Option<&str> {
+    pub fn marker(&self) -> std::option::Option<& str> {
         self.marker.as_deref()
     }
     /// <p>Returns tags associated with the file system as an array of <code>Tag</code> objects. </p>
-    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+    pub fn tags(&self) -> std::option::Option<& [crate::model::Tag]> {
         self.tags.as_deref()
     }
     /// <p>If a value is present, there are more tags to return. In a subsequent request, you can provide the value of <code>NextMarker</code> as the value of the <code>Marker</code> parameter in your next request to retrieve the next set of tags.</p>
-    pub fn next_marker(&self) -> std::option::Option<&str> {
+    pub fn next_marker(&self) -> std::option::Option<& str> {
         self.next_marker.as_deref()
     }
 }
 /// See [`DescribeTagsOutput`](crate::output::DescribeTagsOutput).
 pub mod describe_tags_output {
-
+    
     /// A builder for [`DescribeTagsOutput`](crate::output::DescribeTagsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -820,8 +794,7 @@ pub mod describe_tags_output {
         }
         /// <p>If the request included a <code>Marker</code>, the response returns that value in this field.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.marker = input;
-            self
+            self.marker = input; self
         }
         /// Appends an item to `tags`.
         ///
@@ -830,17 +803,13 @@ pub mod describe_tags_output {
         /// <p>Returns tags associated with the file system as an array of <code>Tag</code> objects. </p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input);
-            self.tags = Some(v);
-            self
+                            v.push(input);
+                            self.tags = Some(v);
+                            self
         }
         /// <p>Returns tags associated with the file system as an array of <code>Tag</code> objects. </p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::model::Tag>>) -> Self {
+            self.tags = input; self
         }
         /// <p>If a value is present, there are more tags to return. In a subsequent request, you can provide the value of <code>NextMarker</code> as the value of the <code>Marker</code> parameter in your next request to retrieve the next set of tags.</p>
         pub fn next_marker(mut self, input: impl Into<std::string::String>) -> Self {
@@ -849,18 +818,22 @@ pub mod describe_tags_output {
         }
         /// <p>If a value is present, there are more tags to return. In a subsequent request, you can provide the value of <code>NextMarker</code> as the value of the <code>Marker</code> parameter in your next request to retrieve the next set of tags.</p>
         pub fn set_next_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_marker = input;
-            self
+            self.next_marker = input; self
         }
         /// Consumes the builder and constructs a [`DescribeTagsOutput`](crate::output::DescribeTagsOutput).
         pub fn build(self) -> crate::output::DescribeTagsOutput {
             crate::output::DescribeTagsOutput {
-                marker: self.marker,
-                tags: self.tags,
-                next_marker: self.next_marker,
+                marker: self.marker
+                ,
+                tags: self.tags
+                ,
+                next_marker: self.next_marker
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeTagsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeTagsOutput`](crate::output::DescribeTagsOutput).
@@ -872,35 +845,31 @@ impl DescribeTagsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeReplicationConfigurationsOutput {
+pub struct DescribeReplicationConfigurationsOutput  {
     /// <p>The collection of replication configurations that is returned.</p>
     #[doc(hidden)]
-    pub replications:
-        std::option::Option<std::vec::Vec<crate::model::ReplicationConfigurationDescription>>,
+    pub replications: std::option::Option<std::vec::Vec<crate::model::ReplicationConfigurationDescription>>,
     /// <p>You can use the <code>NextToken</code> from the previous response in a subsequent request to fetch the additional descriptions.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeReplicationConfigurationsOutput {
     /// <p>The collection of replication configurations that is returned.</p>
-    pub fn replications(
-        &self,
-    ) -> std::option::Option<&[crate::model::ReplicationConfigurationDescription]> {
+    pub fn replications(&self) -> std::option::Option<& [crate::model::ReplicationConfigurationDescription]> {
         self.replications.as_deref()
     }
     /// <p>You can use the <code>NextToken</code> from the previous response in a subsequent request to fetch the additional descriptions.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`DescribeReplicationConfigurationsOutput`](crate::output::DescribeReplicationConfigurationsOutput).
 pub mod describe_replication_configurations_output {
-
+    
     /// A builder for [`DescribeReplicationConfigurationsOutput`](crate::output::DescribeReplicationConfigurationsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) replications:
-            std::option::Option<std::vec::Vec<crate::model::ReplicationConfigurationDescription>>,
+        pub(crate) replications: std::option::Option<std::vec::Vec<crate::model::ReplicationConfigurationDescription>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -909,24 +878,15 @@ pub mod describe_replication_configurations_output {
         /// To override the contents of this collection use [`set_replications`](Self::set_replications).
         ///
         /// <p>The collection of replication configurations that is returned.</p>
-        pub fn replications(
-            mut self,
-            input: crate::model::ReplicationConfigurationDescription,
-        ) -> Self {
+        pub fn replications(mut self, input: crate::model::ReplicationConfigurationDescription) -> Self {
             let mut v = self.replications.unwrap_or_default();
-            v.push(input);
-            self.replications = Some(v);
-            self
+                            v.push(input);
+                            self.replications = Some(v);
+                            self
         }
         /// <p>The collection of replication configurations that is returned.</p>
-        pub fn set_replications(
-            mut self,
-            input: std::option::Option<
-                std::vec::Vec<crate::model::ReplicationConfigurationDescription>,
-            >,
-        ) -> Self {
-            self.replications = input;
-            self
+        pub fn set_replications(mut self, input: std::option::Option<std::vec::Vec<crate::model::ReplicationConfigurationDescription>>) -> Self {
+            self.replications = input; self
         }
         /// <p>You can use the <code>NextToken</code> from the previous response in a subsequent request to fetch the additional descriptions.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -935,17 +895,20 @@ pub mod describe_replication_configurations_output {
         }
         /// <p>You can use the <code>NextToken</code> from the previous response in a subsequent request to fetch the additional descriptions.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`DescribeReplicationConfigurationsOutput`](crate::output::DescribeReplicationConfigurationsOutput).
         pub fn build(self) -> crate::output::DescribeReplicationConfigurationsOutput {
             crate::output::DescribeReplicationConfigurationsOutput {
-                replications: self.replications,
-                next_token: self.next_token,
+                replications: self.replications
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeReplicationConfigurationsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeReplicationConfigurationsOutput`](crate::output::DescribeReplicationConfigurationsOutput).
@@ -957,20 +920,20 @@ impl DescribeReplicationConfigurationsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeMountTargetSecurityGroupsOutput {
+pub struct DescribeMountTargetSecurityGroupsOutput  {
     /// <p>An array of security groups.</p>
     #[doc(hidden)]
     pub security_groups: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl DescribeMountTargetSecurityGroupsOutput {
     /// <p>An array of security groups.</p>
-    pub fn security_groups(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn security_groups(&self) -> std::option::Option<& [std::string::String]> {
         self.security_groups.as_deref()
     }
 }
 /// See [`DescribeMountTargetSecurityGroupsOutput`](crate::output::DescribeMountTargetSecurityGroupsOutput).
 pub mod describe_mount_target_security_groups_output {
-
+    
     /// A builder for [`DescribeMountTargetSecurityGroupsOutput`](crate::output::DescribeMountTargetSecurityGroupsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -984,25 +947,24 @@ pub mod describe_mount_target_security_groups_output {
         /// <p>An array of security groups.</p>
         pub fn security_groups(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.security_groups.unwrap_or_default();
-            v.push(input.into());
-            self.security_groups = Some(v);
-            self
+                            v.push(input.into());
+                            self.security_groups = Some(v);
+                            self
         }
         /// <p>An array of security groups.</p>
-        pub fn set_security_groups(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.security_groups = input;
-            self
+        pub fn set_security_groups(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.security_groups = input; self
         }
         /// Consumes the builder and constructs a [`DescribeMountTargetSecurityGroupsOutput`](crate::output::DescribeMountTargetSecurityGroupsOutput).
         pub fn build(self) -> crate::output::DescribeMountTargetSecurityGroupsOutput {
             crate::output::DescribeMountTargetSecurityGroupsOutput {
-                security_groups: self.security_groups,
+                security_groups: self.security_groups
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeMountTargetSecurityGroupsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeMountTargetSecurityGroupsOutput`](crate::output::DescribeMountTargetSecurityGroupsOutput).
@@ -1014,7 +976,7 @@ impl DescribeMountTargetSecurityGroupsOutput {
 /// <p></p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeMountTargetsOutput {
+pub struct DescribeMountTargetsOutput  {
     /// <p>If the request included the <code>Marker</code>, the response returns that value in this field.</p>
     #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
@@ -1027,27 +989,26 @@ pub struct DescribeMountTargetsOutput {
 }
 impl DescribeMountTargetsOutput {
     /// <p>If the request included the <code>Marker</code>, the response returns that value in this field.</p>
-    pub fn marker(&self) -> std::option::Option<&str> {
+    pub fn marker(&self) -> std::option::Option<& str> {
         self.marker.as_deref()
     }
     /// <p>Returns the file system's mount targets as an array of <code>MountTargetDescription</code> objects.</p>
-    pub fn mount_targets(&self) -> std::option::Option<&[crate::model::MountTargetDescription]> {
+    pub fn mount_targets(&self) -> std::option::Option<& [crate::model::MountTargetDescription]> {
         self.mount_targets.as_deref()
     }
     /// <p>If a value is present, there are more mount targets to return. In a subsequent request, you can provide <code>Marker</code> in your request with this value to retrieve the next set of mount targets.</p>
-    pub fn next_marker(&self) -> std::option::Option<&str> {
+    pub fn next_marker(&self) -> std::option::Option<& str> {
         self.next_marker.as_deref()
     }
 }
 /// See [`DescribeMountTargetsOutput`](crate::output::DescribeMountTargetsOutput).
 pub mod describe_mount_targets_output {
-
+    
     /// A builder for [`DescribeMountTargetsOutput`](crate::output::DescribeMountTargetsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) marker: std::option::Option<std::string::String>,
-        pub(crate) mount_targets:
-            std::option::Option<std::vec::Vec<crate::model::MountTargetDescription>>,
+        pub(crate) mount_targets: std::option::Option<std::vec::Vec<crate::model::MountTargetDescription>>,
         pub(crate) next_marker: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -1058,8 +1019,7 @@ pub mod describe_mount_targets_output {
         }
         /// <p>If the request included the <code>Marker</code>, the response returns that value in this field.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.marker = input;
-            self
+            self.marker = input; self
         }
         /// Appends an item to `mount_targets`.
         ///
@@ -1068,17 +1028,13 @@ pub mod describe_mount_targets_output {
         /// <p>Returns the file system's mount targets as an array of <code>MountTargetDescription</code> objects.</p>
         pub fn mount_targets(mut self, input: crate::model::MountTargetDescription) -> Self {
             let mut v = self.mount_targets.unwrap_or_default();
-            v.push(input);
-            self.mount_targets = Some(v);
-            self
+                            v.push(input);
+                            self.mount_targets = Some(v);
+                            self
         }
         /// <p>Returns the file system's mount targets as an array of <code>MountTargetDescription</code> objects.</p>
-        pub fn set_mount_targets(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::MountTargetDescription>>,
-        ) -> Self {
-            self.mount_targets = input;
-            self
+        pub fn set_mount_targets(mut self, input: std::option::Option<std::vec::Vec<crate::model::MountTargetDescription>>) -> Self {
+            self.mount_targets = input; self
         }
         /// <p>If a value is present, there are more mount targets to return. In a subsequent request, you can provide <code>Marker</code> in your request with this value to retrieve the next set of mount targets.</p>
         pub fn next_marker(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1087,18 +1043,22 @@ pub mod describe_mount_targets_output {
         }
         /// <p>If a value is present, there are more mount targets to return. In a subsequent request, you can provide <code>Marker</code> in your request with this value to retrieve the next set of mount targets.</p>
         pub fn set_next_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_marker = input;
-            self
+            self.next_marker = input; self
         }
         /// Consumes the builder and constructs a [`DescribeMountTargetsOutput`](crate::output::DescribeMountTargetsOutput).
         pub fn build(self) -> crate::output::DescribeMountTargetsOutput {
             crate::output::DescribeMountTargetsOutput {
-                marker: self.marker,
-                mount_targets: self.mount_targets,
-                next_marker: self.next_marker,
+                marker: self.marker
+                ,
+                mount_targets: self.mount_targets
+                ,
+                next_marker: self.next_marker
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeMountTargetsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeMountTargetsOutput`](crate::output::DescribeMountTargetsOutput).
@@ -1110,25 +1070,24 @@ impl DescribeMountTargetsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeLifecycleConfigurationOutput {
+pub struct DescribeLifecycleConfigurationOutput  {
     /// <p>An array of lifecycle management policies. EFS supports a maximum of one policy per file system.</p>
     #[doc(hidden)]
     pub lifecycle_policies: std::option::Option<std::vec::Vec<crate::model::LifecyclePolicy>>,
 }
 impl DescribeLifecycleConfigurationOutput {
     /// <p>An array of lifecycle management policies. EFS supports a maximum of one policy per file system.</p>
-    pub fn lifecycle_policies(&self) -> std::option::Option<&[crate::model::LifecyclePolicy]> {
+    pub fn lifecycle_policies(&self) -> std::option::Option<& [crate::model::LifecyclePolicy]> {
         self.lifecycle_policies.as_deref()
     }
 }
 /// See [`DescribeLifecycleConfigurationOutput`](crate::output::DescribeLifecycleConfigurationOutput).
 pub mod describe_lifecycle_configuration_output {
-
+    
     /// A builder for [`DescribeLifecycleConfigurationOutput`](crate::output::DescribeLifecycleConfigurationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) lifecycle_policies:
-            std::option::Option<std::vec::Vec<crate::model::LifecyclePolicy>>,
+        pub(crate) lifecycle_policies: std::option::Option<std::vec::Vec<crate::model::LifecyclePolicy>>,
     }
     impl Builder {
         /// Appends an item to `lifecycle_policies`.
@@ -1138,25 +1097,24 @@ pub mod describe_lifecycle_configuration_output {
         /// <p>An array of lifecycle management policies. EFS supports a maximum of one policy per file system.</p>
         pub fn lifecycle_policies(mut self, input: crate::model::LifecyclePolicy) -> Self {
             let mut v = self.lifecycle_policies.unwrap_or_default();
-            v.push(input);
-            self.lifecycle_policies = Some(v);
-            self
+                            v.push(input);
+                            self.lifecycle_policies = Some(v);
+                            self
         }
         /// <p>An array of lifecycle management policies. EFS supports a maximum of one policy per file system.</p>
-        pub fn set_lifecycle_policies(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::LifecyclePolicy>>,
-        ) -> Self {
-            self.lifecycle_policies = input;
-            self
+        pub fn set_lifecycle_policies(mut self, input: std::option::Option<std::vec::Vec<crate::model::LifecyclePolicy>>) -> Self {
+            self.lifecycle_policies = input; self
         }
         /// Consumes the builder and constructs a [`DescribeLifecycleConfigurationOutput`](crate::output::DescribeLifecycleConfigurationOutput).
         pub fn build(self) -> crate::output::DescribeLifecycleConfigurationOutput {
             crate::output::DescribeLifecycleConfigurationOutput {
-                lifecycle_policies: self.lifecycle_policies,
+                lifecycle_policies: self.lifecycle_policies
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeLifecycleConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`DescribeLifecycleConfigurationOutput`](crate::output::DescribeLifecycleConfigurationOutput).
@@ -1168,7 +1126,7 @@ impl DescribeLifecycleConfigurationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeFileSystemsOutput {
+pub struct DescribeFileSystemsOutput  {
     /// <p>Present if provided by caller in the request (String).</p>
     #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
@@ -1181,27 +1139,26 @@ pub struct DescribeFileSystemsOutput {
 }
 impl DescribeFileSystemsOutput {
     /// <p>Present if provided by caller in the request (String).</p>
-    pub fn marker(&self) -> std::option::Option<&str> {
+    pub fn marker(&self) -> std::option::Option<& str> {
         self.marker.as_deref()
     }
     /// <p>An array of file system descriptions.</p>
-    pub fn file_systems(&self) -> std::option::Option<&[crate::model::FileSystemDescription]> {
+    pub fn file_systems(&self) -> std::option::Option<& [crate::model::FileSystemDescription]> {
         self.file_systems.as_deref()
     }
     /// <p>Present if there are more file systems than returned in the response (String). You can use the <code>NextMarker</code> in the subsequent request to fetch the descriptions.</p>
-    pub fn next_marker(&self) -> std::option::Option<&str> {
+    pub fn next_marker(&self) -> std::option::Option<& str> {
         self.next_marker.as_deref()
     }
 }
 /// See [`DescribeFileSystemsOutput`](crate::output::DescribeFileSystemsOutput).
 pub mod describe_file_systems_output {
-
+    
     /// A builder for [`DescribeFileSystemsOutput`](crate::output::DescribeFileSystemsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) marker: std::option::Option<std::string::String>,
-        pub(crate) file_systems:
-            std::option::Option<std::vec::Vec<crate::model::FileSystemDescription>>,
+        pub(crate) file_systems: std::option::Option<std::vec::Vec<crate::model::FileSystemDescription>>,
         pub(crate) next_marker: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -1212,8 +1169,7 @@ pub mod describe_file_systems_output {
         }
         /// <p>Present if provided by caller in the request (String).</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.marker = input;
-            self
+            self.marker = input; self
         }
         /// Appends an item to `file_systems`.
         ///
@@ -1222,17 +1178,13 @@ pub mod describe_file_systems_output {
         /// <p>An array of file system descriptions.</p>
         pub fn file_systems(mut self, input: crate::model::FileSystemDescription) -> Self {
             let mut v = self.file_systems.unwrap_or_default();
-            v.push(input);
-            self.file_systems = Some(v);
-            self
+                            v.push(input);
+                            self.file_systems = Some(v);
+                            self
         }
         /// <p>An array of file system descriptions.</p>
-        pub fn set_file_systems(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::FileSystemDescription>>,
-        ) -> Self {
-            self.file_systems = input;
-            self
+        pub fn set_file_systems(mut self, input: std::option::Option<std::vec::Vec<crate::model::FileSystemDescription>>) -> Self {
+            self.file_systems = input; self
         }
         /// <p>Present if there are more file systems than returned in the response (String). You can use the <code>NextMarker</code> in the subsequent request to fetch the descriptions.</p>
         pub fn next_marker(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1241,18 +1193,22 @@ pub mod describe_file_systems_output {
         }
         /// <p>Present if there are more file systems than returned in the response (String). You can use the <code>NextMarker</code> in the subsequent request to fetch the descriptions.</p>
         pub fn set_next_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_marker = input;
-            self
+            self.next_marker = input; self
         }
         /// Consumes the builder and constructs a [`DescribeFileSystemsOutput`](crate::output::DescribeFileSystemsOutput).
         pub fn build(self) -> crate::output::DescribeFileSystemsOutput {
             crate::output::DescribeFileSystemsOutput {
-                marker: self.marker,
-                file_systems: self.file_systems,
-                next_marker: self.next_marker,
+                marker: self.marker
+                ,
+                file_systems: self.file_systems
+                ,
+                next_marker: self.next_marker
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeFileSystemsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeFileSystemsOutput`](crate::output::DescribeFileSystemsOutput).
@@ -1264,7 +1220,7 @@ impl DescribeFileSystemsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeFileSystemPolicyOutput {
+pub struct DescribeFileSystemPolicyOutput  {
     /// <p>Specifies the EFS file system to which the <code>FileSystemPolicy</code> applies.</p>
     #[doc(hidden)]
     pub file_system_id: std::option::Option<std::string::String>,
@@ -1274,17 +1230,17 @@ pub struct DescribeFileSystemPolicyOutput {
 }
 impl DescribeFileSystemPolicyOutput {
     /// <p>Specifies the EFS file system to which the <code>FileSystemPolicy</code> applies.</p>
-    pub fn file_system_id(&self) -> std::option::Option<&str> {
+    pub fn file_system_id(&self) -> std::option::Option<& str> {
         self.file_system_id.as_deref()
     }
     /// <p>The JSON formatted <code>FileSystemPolicy</code> for the EFS file system.</p>
-    pub fn policy(&self) -> std::option::Option<&str> {
+    pub fn policy(&self) -> std::option::Option<& str> {
         self.policy.as_deref()
     }
 }
 /// See [`DescribeFileSystemPolicyOutput`](crate::output::DescribeFileSystemPolicyOutput).
 pub mod describe_file_system_policy_output {
-
+    
     /// A builder for [`DescribeFileSystemPolicyOutput`](crate::output::DescribeFileSystemPolicyOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1298,12 +1254,8 @@ pub mod describe_file_system_policy_output {
             self
         }
         /// <p>Specifies the EFS file system to which the <code>FileSystemPolicy</code> applies.</p>
-        pub fn set_file_system_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.file_system_id = input;
-            self
+        pub fn set_file_system_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.file_system_id = input; self
         }
         /// <p>The JSON formatted <code>FileSystemPolicy</code> for the EFS file system.</p>
         pub fn policy(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1312,17 +1264,20 @@ pub mod describe_file_system_policy_output {
         }
         /// <p>The JSON formatted <code>FileSystemPolicy</code> for the EFS file system.</p>
         pub fn set_policy(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.policy = input;
-            self
+            self.policy = input; self
         }
         /// Consumes the builder and constructs a [`DescribeFileSystemPolicyOutput`](crate::output::DescribeFileSystemPolicyOutput).
         pub fn build(self) -> crate::output::DescribeFileSystemPolicyOutput {
             crate::output::DescribeFileSystemPolicyOutput {
-                file_system_id: self.file_system_id,
-                policy: self.policy,
+                file_system_id: self.file_system_id
+                ,
+                policy: self.policy
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeFileSystemPolicyOutput {
     /// Creates a new builder-style object to manufacture [`DescribeFileSystemPolicyOutput`](crate::output::DescribeFileSystemPolicyOutput).
@@ -1334,20 +1289,20 @@ impl DescribeFileSystemPolicyOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeBackupPolicyOutput {
+pub struct DescribeBackupPolicyOutput  {
     /// <p>Describes the file system's backup policy, indicating whether automatic backups are turned on or off.</p>
     #[doc(hidden)]
     pub backup_policy: std::option::Option<crate::model::BackupPolicy>,
 }
 impl DescribeBackupPolicyOutput {
     /// <p>Describes the file system's backup policy, indicating whether automatic backups are turned on or off.</p>
-    pub fn backup_policy(&self) -> std::option::Option<&crate::model::BackupPolicy> {
+    pub fn backup_policy(&self) -> std::option::Option<& crate::model::BackupPolicy> {
         self.backup_policy.as_ref()
     }
 }
 /// See [`DescribeBackupPolicyOutput`](crate::output::DescribeBackupPolicyOutput).
 pub mod describe_backup_policy_output {
-
+    
     /// A builder for [`DescribeBackupPolicyOutput`](crate::output::DescribeBackupPolicyOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1360,20 +1315,19 @@ pub mod describe_backup_policy_output {
             self
         }
         /// <p>Describes the file system's backup policy, indicating whether automatic backups are turned on or off.</p>
-        pub fn set_backup_policy(
-            mut self,
-            input: std::option::Option<crate::model::BackupPolicy>,
-        ) -> Self {
-            self.backup_policy = input;
-            self
+        pub fn set_backup_policy(mut self, input: std::option::Option<crate::model::BackupPolicy>) -> Self {
+            self.backup_policy = input; self
         }
         /// Consumes the builder and constructs a [`DescribeBackupPolicyOutput`](crate::output::DescribeBackupPolicyOutput).
         pub fn build(self) -> crate::output::DescribeBackupPolicyOutput {
             crate::output::DescribeBackupPolicyOutput {
-                backup_policy: self.backup_policy,
+                backup_policy: self.backup_policy
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeBackupPolicyOutput {
     /// Creates a new builder-style object to manufacture [`DescribeBackupPolicyOutput`](crate::output::DescribeBackupPolicyOutput).
@@ -1385,7 +1339,7 @@ impl DescribeBackupPolicyOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeAccountPreferencesOutput {
+pub struct DescribeAccountPreferencesOutput  {
     /// <p>Describes the resource ID preference setting for the Amazon Web Services account associated with the user making the request, in the current Amazon Web Services Region.</p>
     #[doc(hidden)]
     pub resource_id_preference: std::option::Option<crate::model::ResourceIdPreference>,
@@ -1395,19 +1349,17 @@ pub struct DescribeAccountPreferencesOutput {
 }
 impl DescribeAccountPreferencesOutput {
     /// <p>Describes the resource ID preference setting for the Amazon Web Services account associated with the user making the request, in the current Amazon Web Services Region.</p>
-    pub fn resource_id_preference(
-        &self,
-    ) -> std::option::Option<&crate::model::ResourceIdPreference> {
+    pub fn resource_id_preference(&self) -> std::option::Option<& crate::model::ResourceIdPreference> {
         self.resource_id_preference.as_ref()
     }
     /// <p>Present if there are more records than returned in the response. You can use the <code>NextToken</code> in the subsequent request to fetch the additional descriptions.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`DescribeAccountPreferencesOutput`](crate::output::DescribeAccountPreferencesOutput).
 pub mod describe_account_preferences_output {
-
+    
     /// A builder for [`DescribeAccountPreferencesOutput`](crate::output::DescribeAccountPreferencesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1421,12 +1373,8 @@ pub mod describe_account_preferences_output {
             self
         }
         /// <p>Describes the resource ID preference setting for the Amazon Web Services account associated with the user making the request, in the current Amazon Web Services Region.</p>
-        pub fn set_resource_id_preference(
-            mut self,
-            input: std::option::Option<crate::model::ResourceIdPreference>,
-        ) -> Self {
-            self.resource_id_preference = input;
-            self
+        pub fn set_resource_id_preference(mut self, input: std::option::Option<crate::model::ResourceIdPreference>) -> Self {
+            self.resource_id_preference = input; self
         }
         /// <p>Present if there are more records than returned in the response. You can use the <code>NextToken</code> in the subsequent request to fetch the additional descriptions.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1435,17 +1383,20 @@ pub mod describe_account_preferences_output {
         }
         /// <p>Present if there are more records than returned in the response. You can use the <code>NextToken</code> in the subsequent request to fetch the additional descriptions.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`DescribeAccountPreferencesOutput`](crate::output::DescribeAccountPreferencesOutput).
         pub fn build(self) -> crate::output::DescribeAccountPreferencesOutput {
             crate::output::DescribeAccountPreferencesOutput {
-                resource_id_preference: self.resource_id_preference,
-                next_token: self.next_token,
+                resource_id_preference: self.resource_id_preference
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeAccountPreferencesOutput {
     /// Creates a new builder-style object to manufacture [`DescribeAccountPreferencesOutput`](crate::output::DescribeAccountPreferencesOutput).
@@ -1457,7 +1408,7 @@ impl DescribeAccountPreferencesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeAccessPointsOutput {
+pub struct DescribeAccessPointsOutput  {
     /// <p>An array of access point descriptions.</p>
     #[doc(hidden)]
     pub access_points: std::option::Option<std::vec::Vec<crate::model::AccessPointDescription>>,
@@ -1467,22 +1418,21 @@ pub struct DescribeAccessPointsOutput {
 }
 impl DescribeAccessPointsOutput {
     /// <p>An array of access point descriptions.</p>
-    pub fn access_points(&self) -> std::option::Option<&[crate::model::AccessPointDescription]> {
+    pub fn access_points(&self) -> std::option::Option<& [crate::model::AccessPointDescription]> {
         self.access_points.as_deref()
     }
     /// <p>Present if there are more access points than returned in the response. You can use the NextMarker in the subsequent request to fetch the additional descriptions.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`DescribeAccessPointsOutput`](crate::output::DescribeAccessPointsOutput).
 pub mod describe_access_points_output {
-
+    
     /// A builder for [`DescribeAccessPointsOutput`](crate::output::DescribeAccessPointsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) access_points:
-            std::option::Option<std::vec::Vec<crate::model::AccessPointDescription>>,
+        pub(crate) access_points: std::option::Option<std::vec::Vec<crate::model::AccessPointDescription>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -1493,17 +1443,13 @@ pub mod describe_access_points_output {
         /// <p>An array of access point descriptions.</p>
         pub fn access_points(mut self, input: crate::model::AccessPointDescription) -> Self {
             let mut v = self.access_points.unwrap_or_default();
-            v.push(input);
-            self.access_points = Some(v);
-            self
+                            v.push(input);
+                            self.access_points = Some(v);
+                            self
         }
         /// <p>An array of access point descriptions.</p>
-        pub fn set_access_points(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::AccessPointDescription>>,
-        ) -> Self {
-            self.access_points = input;
-            self
+        pub fn set_access_points(mut self, input: std::option::Option<std::vec::Vec<crate::model::AccessPointDescription>>) -> Self {
+            self.access_points = input; self
         }
         /// <p>Present if there are more access points than returned in the response. You can use the NextMarker in the subsequent request to fetch the additional descriptions.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1512,17 +1458,20 @@ pub mod describe_access_points_output {
         }
         /// <p>Present if there are more access points than returned in the response. You can use the NextMarker in the subsequent request to fetch the additional descriptions.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`DescribeAccessPointsOutput`](crate::output::DescribeAccessPointsOutput).
         pub fn build(self) -> crate::output::DescribeAccessPointsOutput {
             crate::output::DescribeAccessPointsOutput {
-                access_points: self.access_points,
-                next_token: self.next_token,
+                access_points: self.access_points
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeAccessPointsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeAccessPointsOutput`](crate::output::DescribeAccessPointsOutput).
@@ -1534,19 +1483,24 @@ impl DescribeAccessPointsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteTagsOutput {}
+pub struct DeleteTagsOutput  {
+}
 /// See [`DeleteTagsOutput`](crate::output::DeleteTagsOutput).
 pub mod delete_tags_output {
-
+    
     /// A builder for [`DeleteTagsOutput`](crate::output::DeleteTagsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteTagsOutput`](crate::output::DeleteTagsOutput).
         pub fn build(self) -> crate::output::DeleteTagsOutput {
-            crate::output::DeleteTagsOutput {}
+            crate::output::DeleteTagsOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteTagsOutput {
     /// Creates a new builder-style object to manufacture [`DeleteTagsOutput`](crate::output::DeleteTagsOutput).
@@ -1558,19 +1512,24 @@ impl DeleteTagsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteReplicationConfigurationOutput {}
+pub struct DeleteReplicationConfigurationOutput  {
+}
 /// See [`DeleteReplicationConfigurationOutput`](crate::output::DeleteReplicationConfigurationOutput).
 pub mod delete_replication_configuration_output {
-
+    
     /// A builder for [`DeleteReplicationConfigurationOutput`](crate::output::DeleteReplicationConfigurationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteReplicationConfigurationOutput`](crate::output::DeleteReplicationConfigurationOutput).
         pub fn build(self) -> crate::output::DeleteReplicationConfigurationOutput {
-            crate::output::DeleteReplicationConfigurationOutput {}
+            crate::output::DeleteReplicationConfigurationOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteReplicationConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`DeleteReplicationConfigurationOutput`](crate::output::DeleteReplicationConfigurationOutput).
@@ -1582,19 +1541,24 @@ impl DeleteReplicationConfigurationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteMountTargetOutput {}
+pub struct DeleteMountTargetOutput  {
+}
 /// See [`DeleteMountTargetOutput`](crate::output::DeleteMountTargetOutput).
 pub mod delete_mount_target_output {
-
+    
     /// A builder for [`DeleteMountTargetOutput`](crate::output::DeleteMountTargetOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteMountTargetOutput`](crate::output::DeleteMountTargetOutput).
         pub fn build(self) -> crate::output::DeleteMountTargetOutput {
-            crate::output::DeleteMountTargetOutput {}
+            crate::output::DeleteMountTargetOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteMountTargetOutput {
     /// Creates a new builder-style object to manufacture [`DeleteMountTargetOutput`](crate::output::DeleteMountTargetOutput).
@@ -1606,19 +1570,24 @@ impl DeleteMountTargetOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteFileSystemPolicyOutput {}
+pub struct DeleteFileSystemPolicyOutput  {
+}
 /// See [`DeleteFileSystemPolicyOutput`](crate::output::DeleteFileSystemPolicyOutput).
 pub mod delete_file_system_policy_output {
-
+    
     /// A builder for [`DeleteFileSystemPolicyOutput`](crate::output::DeleteFileSystemPolicyOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteFileSystemPolicyOutput`](crate::output::DeleteFileSystemPolicyOutput).
         pub fn build(self) -> crate::output::DeleteFileSystemPolicyOutput {
-            crate::output::DeleteFileSystemPolicyOutput {}
+            crate::output::DeleteFileSystemPolicyOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteFileSystemPolicyOutput {
     /// Creates a new builder-style object to manufacture [`DeleteFileSystemPolicyOutput`](crate::output::DeleteFileSystemPolicyOutput).
@@ -1630,19 +1599,24 @@ impl DeleteFileSystemPolicyOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteFileSystemOutput {}
+pub struct DeleteFileSystemOutput  {
+}
 /// See [`DeleteFileSystemOutput`](crate::output::DeleteFileSystemOutput).
 pub mod delete_file_system_output {
-
+    
     /// A builder for [`DeleteFileSystemOutput`](crate::output::DeleteFileSystemOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteFileSystemOutput`](crate::output::DeleteFileSystemOutput).
         pub fn build(self) -> crate::output::DeleteFileSystemOutput {
-            crate::output::DeleteFileSystemOutput {}
+            crate::output::DeleteFileSystemOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteFileSystemOutput {
     /// Creates a new builder-style object to manufacture [`DeleteFileSystemOutput`](crate::output::DeleteFileSystemOutput).
@@ -1654,19 +1628,24 @@ impl DeleteFileSystemOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteAccessPointOutput {}
+pub struct DeleteAccessPointOutput  {
+}
 /// See [`DeleteAccessPointOutput`](crate::output::DeleteAccessPointOutput).
 pub mod delete_access_point_output {
-
+    
     /// A builder for [`DeleteAccessPointOutput`](crate::output::DeleteAccessPointOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteAccessPointOutput`](crate::output::DeleteAccessPointOutput).
         pub fn build(self) -> crate::output::DeleteAccessPointOutput {
-            crate::output::DeleteAccessPointOutput {}
+            crate::output::DeleteAccessPointOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteAccessPointOutput {
     /// Creates a new builder-style object to manufacture [`DeleteAccessPointOutput`](crate::output::DeleteAccessPointOutput).
@@ -1678,19 +1657,24 @@ impl DeleteAccessPointOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateTagsOutput {}
+pub struct CreateTagsOutput  {
+}
 /// See [`CreateTagsOutput`](crate::output::CreateTagsOutput).
 pub mod create_tags_output {
-
+    
     /// A builder for [`CreateTagsOutput`](crate::output::CreateTagsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`CreateTagsOutput`](crate::output::CreateTagsOutput).
         pub fn build(self) -> crate::output::CreateTagsOutput {
-            crate::output::CreateTagsOutput {}
+            crate::output::CreateTagsOutput {
+            }
         }
     }
+    
+    
 }
 impl CreateTagsOutput {
     /// Creates a new builder-style object to manufacture [`CreateTagsOutput`](crate::output::CreateTagsOutput).
@@ -1702,7 +1686,7 @@ impl CreateTagsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateReplicationConfigurationOutput {
+pub struct CreateReplicationConfigurationOutput  {
     /// <p>The ID of the source Amazon EFS file system that is being replicated.</p>
     #[doc(hidden)]
     pub source_file_system_id: std::option::Option<std::string::String>,
@@ -1724,33 +1708,33 @@ pub struct CreateReplicationConfigurationOutput {
 }
 impl CreateReplicationConfigurationOutput {
     /// <p>The ID of the source Amazon EFS file system that is being replicated.</p>
-    pub fn source_file_system_id(&self) -> std::option::Option<&str> {
+    pub fn source_file_system_id(&self) -> std::option::Option<& str> {
         self.source_file_system_id.as_deref()
     }
     /// <p>The Amazon Web Services Region in which the source Amazon EFS file system is located.</p>
-    pub fn source_file_system_region(&self) -> std::option::Option<&str> {
+    pub fn source_file_system_region(&self) -> std::option::Option<& str> {
         self.source_file_system_region.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the current source file system in the replication configuration.</p>
-    pub fn source_file_system_arn(&self) -> std::option::Option<&str> {
+    pub fn source_file_system_arn(&self) -> std::option::Option<& str> {
         self.source_file_system_arn.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the original source Amazon EFS file system in the replication configuration.</p>
-    pub fn original_source_file_system_arn(&self) -> std::option::Option<&str> {
+    pub fn original_source_file_system_arn(&self) -> std::option::Option<& str> {
         self.original_source_file_system_arn.as_deref()
     }
     /// <p>Describes when the replication configuration was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>An array of destination objects. Only one destination object is supported.</p>
-    pub fn destinations(&self) -> std::option::Option<&[crate::model::Destination]> {
+    pub fn destinations(&self) -> std::option::Option<& [crate::model::Destination]> {
         self.destinations.as_deref()
     }
 }
 /// See [`CreateReplicationConfigurationOutput`](crate::output::CreateReplicationConfigurationOutput).
 pub mod create_replication_configuration_output {
-
+    
     /// A builder for [`CreateReplicationConfigurationOutput`](crate::output::CreateReplicationConfigurationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1768,12 +1752,8 @@ pub mod create_replication_configuration_output {
             self
         }
         /// <p>The ID of the source Amazon EFS file system that is being replicated.</p>
-        pub fn set_source_file_system_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.source_file_system_id = input;
-            self
+        pub fn set_source_file_system_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.source_file_system_id = input; self
         }
         /// <p>The Amazon Web Services Region in which the source Amazon EFS file system is located.</p>
         pub fn source_file_system_region(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1781,12 +1761,8 @@ pub mod create_replication_configuration_output {
             self
         }
         /// <p>The Amazon Web Services Region in which the source Amazon EFS file system is located.</p>
-        pub fn set_source_file_system_region(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.source_file_system_region = input;
-            self
+        pub fn set_source_file_system_region(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.source_file_system_region = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the current source file system in the replication configuration.</p>
         pub fn source_file_system_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1794,28 +1770,17 @@ pub mod create_replication_configuration_output {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the current source file system in the replication configuration.</p>
-        pub fn set_source_file_system_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.source_file_system_arn = input;
-            self
+        pub fn set_source_file_system_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.source_file_system_arn = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the original source Amazon EFS file system in the replication configuration.</p>
-        pub fn original_source_file_system_arn(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn original_source_file_system_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.original_source_file_system_arn = Some(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the original source Amazon EFS file system in the replication configuration.</p>
-        pub fn set_original_source_file_system_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.original_source_file_system_arn = input;
-            self
+        pub fn set_original_source_file_system_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.original_source_file_system_arn = input; self
         }
         /// <p>Describes when the replication configuration was created.</p>
         pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -1823,12 +1788,8 @@ pub mod create_replication_configuration_output {
             self
         }
         /// <p>Describes when the replication configuration was created.</p>
-        pub fn set_creation_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.creation_time = input;
-            self
+        pub fn set_creation_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.creation_time = input; self
         }
         /// Appends an item to `destinations`.
         ///
@@ -1837,30 +1798,34 @@ pub mod create_replication_configuration_output {
         /// <p>An array of destination objects. Only one destination object is supported.</p>
         pub fn destinations(mut self, input: crate::model::Destination) -> Self {
             let mut v = self.destinations.unwrap_or_default();
-            v.push(input);
-            self.destinations = Some(v);
-            self
+                            v.push(input);
+                            self.destinations = Some(v);
+                            self
         }
         /// <p>An array of destination objects. Only one destination object is supported.</p>
-        pub fn set_destinations(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Destination>>,
-        ) -> Self {
-            self.destinations = input;
-            self
+        pub fn set_destinations(mut self, input: std::option::Option<std::vec::Vec<crate::model::Destination>>) -> Self {
+            self.destinations = input; self
         }
         /// Consumes the builder and constructs a [`CreateReplicationConfigurationOutput`](crate::output::CreateReplicationConfigurationOutput).
         pub fn build(self) -> crate::output::CreateReplicationConfigurationOutput {
             crate::output::CreateReplicationConfigurationOutput {
-                source_file_system_id: self.source_file_system_id,
-                source_file_system_region: self.source_file_system_region,
-                source_file_system_arn: self.source_file_system_arn,
-                original_source_file_system_arn: self.original_source_file_system_arn,
-                creation_time: self.creation_time,
-                destinations: self.destinations,
+                source_file_system_id: self.source_file_system_id
+                ,
+                source_file_system_region: self.source_file_system_region
+                ,
+                source_file_system_arn: self.source_file_system_arn
+                ,
+                original_source_file_system_arn: self.original_source_file_system_arn
+                ,
+                creation_time: self.creation_time
+                ,
+                destinations: self.destinations
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateReplicationConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`CreateReplicationConfigurationOutput`](crate::output::CreateReplicationConfigurationOutput).
@@ -1872,7 +1837,7 @@ impl CreateReplicationConfigurationOutput {
 /// <p>Provides a description of a mount target.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateMountTargetOutput {
+pub struct CreateMountTargetOutput  {
     /// <p>Amazon Web Services account ID that owns the resource.</p>
     #[doc(hidden)]
     pub owner_id: std::option::Option<std::string::String>,
@@ -1906,49 +1871,49 @@ pub struct CreateMountTargetOutput {
 }
 impl CreateMountTargetOutput {
     /// <p>Amazon Web Services account ID that owns the resource.</p>
-    pub fn owner_id(&self) -> std::option::Option<&str> {
+    pub fn owner_id(&self) -> std::option::Option<& str> {
         self.owner_id.as_deref()
     }
     /// <p>System-assigned mount target ID.</p>
-    pub fn mount_target_id(&self) -> std::option::Option<&str> {
+    pub fn mount_target_id(&self) -> std::option::Option<& str> {
         self.mount_target_id.as_deref()
     }
     /// <p>The ID of the file system for which the mount target is intended.</p>
-    pub fn file_system_id(&self) -> std::option::Option<&str> {
+    pub fn file_system_id(&self) -> std::option::Option<& str> {
         self.file_system_id.as_deref()
     }
     /// <p>The ID of the mount target's subnet.</p>
-    pub fn subnet_id(&self) -> std::option::Option<&str> {
+    pub fn subnet_id(&self) -> std::option::Option<& str> {
         self.subnet_id.as_deref()
     }
     /// <p>Lifecycle state of the mount target.</p>
-    pub fn life_cycle_state(&self) -> std::option::Option<&crate::model::LifeCycleState> {
+    pub fn life_cycle_state(&self) -> std::option::Option<& crate::model::LifeCycleState> {
         self.life_cycle_state.as_ref()
     }
     /// <p>Address at which the file system can be mounted by using the mount target.</p>
-    pub fn ip_address(&self) -> std::option::Option<&str> {
+    pub fn ip_address(&self) -> std::option::Option<& str> {
         self.ip_address.as_deref()
     }
     /// <p>The ID of the network interface that Amazon EFS created when it created the mount target.</p>
-    pub fn network_interface_id(&self) -> std::option::Option<&str> {
+    pub fn network_interface_id(&self) -> std::option::Option<& str> {
         self.network_interface_id.as_deref()
     }
     /// <p>The unique and consistent identifier of the Availability Zone that the mount target resides in. For example, <code>use1-az1</code> is an AZ ID for the us-east-1 Region and it has the same location in every Amazon Web Services account.</p>
-    pub fn availability_zone_id(&self) -> std::option::Option<&str> {
+    pub fn availability_zone_id(&self) -> std::option::Option<& str> {
         self.availability_zone_id.as_deref()
     }
     /// <p>The name of the Availability Zone in which the mount target is located. Availability Zones are independently mapped to names for each Amazon Web Services account. For example, the Availability Zone <code>us-east-1a</code> for your Amazon Web Services account might not be the same location as <code>us-east-1a</code> for another Amazon Web Services account.</p>
-    pub fn availability_zone_name(&self) -> std::option::Option<&str> {
+    pub fn availability_zone_name(&self) -> std::option::Option<& str> {
         self.availability_zone_name.as_deref()
     }
     /// <p>The virtual private cloud (VPC) ID that the mount target is configured in.</p>
-    pub fn vpc_id(&self) -> std::option::Option<&str> {
+    pub fn vpc_id(&self) -> std::option::Option<& str> {
         self.vpc_id.as_deref()
     }
 }
 /// See [`CreateMountTargetOutput`](crate::output::CreateMountTargetOutput).
 pub mod create_mount_target_output {
-
+    
     /// A builder for [`CreateMountTargetOutput`](crate::output::CreateMountTargetOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1971,8 +1936,7 @@ pub mod create_mount_target_output {
         }
         /// <p>Amazon Web Services account ID that owns the resource.</p>
         pub fn set_owner_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.owner_id = input;
-            self
+            self.owner_id = input; self
         }
         /// <p>System-assigned mount target ID.</p>
         pub fn mount_target_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1980,12 +1944,8 @@ pub mod create_mount_target_output {
             self
         }
         /// <p>System-assigned mount target ID.</p>
-        pub fn set_mount_target_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.mount_target_id = input;
-            self
+        pub fn set_mount_target_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.mount_target_id = input; self
         }
         /// <p>The ID of the file system for which the mount target is intended.</p>
         pub fn file_system_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1993,12 +1953,8 @@ pub mod create_mount_target_output {
             self
         }
         /// <p>The ID of the file system for which the mount target is intended.</p>
-        pub fn set_file_system_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.file_system_id = input;
-            self
+        pub fn set_file_system_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.file_system_id = input; self
         }
         /// <p>The ID of the mount target's subnet.</p>
         pub fn subnet_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2007,8 +1963,7 @@ pub mod create_mount_target_output {
         }
         /// <p>The ID of the mount target's subnet.</p>
         pub fn set_subnet_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.subnet_id = input;
-            self
+            self.subnet_id = input; self
         }
         /// <p>Lifecycle state of the mount target.</p>
         pub fn life_cycle_state(mut self, input: crate::model::LifeCycleState) -> Self {
@@ -2016,12 +1971,8 @@ pub mod create_mount_target_output {
             self
         }
         /// <p>Lifecycle state of the mount target.</p>
-        pub fn set_life_cycle_state(
-            mut self,
-            input: std::option::Option<crate::model::LifeCycleState>,
-        ) -> Self {
-            self.life_cycle_state = input;
-            self
+        pub fn set_life_cycle_state(mut self, input: std::option::Option<crate::model::LifeCycleState>) -> Self {
+            self.life_cycle_state = input; self
         }
         /// <p>Address at which the file system can be mounted by using the mount target.</p>
         pub fn ip_address(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2030,8 +1981,7 @@ pub mod create_mount_target_output {
         }
         /// <p>Address at which the file system can be mounted by using the mount target.</p>
         pub fn set_ip_address(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.ip_address = input;
-            self
+            self.ip_address = input; self
         }
         /// <p>The ID of the network interface that Amazon EFS created when it created the mount target.</p>
         pub fn network_interface_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2039,12 +1989,8 @@ pub mod create_mount_target_output {
             self
         }
         /// <p>The ID of the network interface that Amazon EFS created when it created the mount target.</p>
-        pub fn set_network_interface_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.network_interface_id = input;
-            self
+        pub fn set_network_interface_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.network_interface_id = input; self
         }
         /// <p>The unique and consistent identifier of the Availability Zone that the mount target resides in. For example, <code>use1-az1</code> is an AZ ID for the us-east-1 Region and it has the same location in every Amazon Web Services account.</p>
         pub fn availability_zone_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2052,12 +1998,8 @@ pub mod create_mount_target_output {
             self
         }
         /// <p>The unique and consistent identifier of the Availability Zone that the mount target resides in. For example, <code>use1-az1</code> is an AZ ID for the us-east-1 Region and it has the same location in every Amazon Web Services account.</p>
-        pub fn set_availability_zone_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.availability_zone_id = input;
-            self
+        pub fn set_availability_zone_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.availability_zone_id = input; self
         }
         /// <p>The name of the Availability Zone in which the mount target is located. Availability Zones are independently mapped to names for each Amazon Web Services account. For example, the Availability Zone <code>us-east-1a</code> for your Amazon Web Services account might not be the same location as <code>us-east-1a</code> for another Amazon Web Services account.</p>
         pub fn availability_zone_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2065,12 +2007,8 @@ pub mod create_mount_target_output {
             self
         }
         /// <p>The name of the Availability Zone in which the mount target is located. Availability Zones are independently mapped to names for each Amazon Web Services account. For example, the Availability Zone <code>us-east-1a</code> for your Amazon Web Services account might not be the same location as <code>us-east-1a</code> for another Amazon Web Services account.</p>
-        pub fn set_availability_zone_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.availability_zone_name = input;
-            self
+        pub fn set_availability_zone_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.availability_zone_name = input; self
         }
         /// <p>The virtual private cloud (VPC) ID that the mount target is configured in.</p>
         pub fn vpc_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2079,25 +2017,36 @@ pub mod create_mount_target_output {
         }
         /// <p>The virtual private cloud (VPC) ID that the mount target is configured in.</p>
         pub fn set_vpc_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.vpc_id = input;
-            self
+            self.vpc_id = input; self
         }
         /// Consumes the builder and constructs a [`CreateMountTargetOutput`](crate::output::CreateMountTargetOutput).
         pub fn build(self) -> crate::output::CreateMountTargetOutput {
             crate::output::CreateMountTargetOutput {
-                owner_id: self.owner_id,
-                mount_target_id: self.mount_target_id,
-                file_system_id: self.file_system_id,
-                subnet_id: self.subnet_id,
-                life_cycle_state: self.life_cycle_state,
-                ip_address: self.ip_address,
-                network_interface_id: self.network_interface_id,
-                availability_zone_id: self.availability_zone_id,
-                availability_zone_name: self.availability_zone_name,
-                vpc_id: self.vpc_id,
+                owner_id: self.owner_id
+                ,
+                mount_target_id: self.mount_target_id
+                ,
+                file_system_id: self.file_system_id
+                ,
+                subnet_id: self.subnet_id
+                ,
+                life_cycle_state: self.life_cycle_state
+                ,
+                ip_address: self.ip_address
+                ,
+                network_interface_id: self.network_interface_id
+                ,
+                availability_zone_id: self.availability_zone_id
+                ,
+                availability_zone_name: self.availability_zone_name
+                ,
+                vpc_id: self.vpc_id
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateMountTargetOutput {
     /// Creates a new builder-style object to manufacture [`CreateMountTargetOutput`](crate::output::CreateMountTargetOutput).
@@ -2109,7 +2058,7 @@ impl CreateMountTargetOutput {
 /// <p>A description of the file system.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateFileSystemOutput {
+pub struct CreateFileSystemOutput  {
     /// <p>The Amazon Web Services account that created the file system. If the file system was created by an IAM user, the parent account to which the user belongs is the owner.</p>
     #[doc(hidden)]
     pub owner_id: std::option::Option<std::string::String>,
@@ -2164,31 +2113,31 @@ pub struct CreateFileSystemOutput {
 }
 impl CreateFileSystemOutput {
     /// <p>The Amazon Web Services account that created the file system. If the file system was created by an IAM user, the parent account to which the user belongs is the owner.</p>
-    pub fn owner_id(&self) -> std::option::Option<&str> {
+    pub fn owner_id(&self) -> std::option::Option<& str> {
         self.owner_id.as_deref()
     }
     /// <p>The opaque string specified in the request.</p>
-    pub fn creation_token(&self) -> std::option::Option<&str> {
+    pub fn creation_token(&self) -> std::option::Option<& str> {
         self.creation_token.as_deref()
     }
     /// <p>The ID of the file system, assigned by Amazon EFS.</p>
-    pub fn file_system_id(&self) -> std::option::Option<&str> {
+    pub fn file_system_id(&self) -> std::option::Option<& str> {
         self.file_system_id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) for the EFS file system, in the format <code>arn:aws:elasticfilesystem:<i>region</i>:<i>account-id</i>:file-system/<i>file-system-id</i> </code>. Example with sample data: <code>arn:aws:elasticfilesystem:us-west-2:1111333322228888:file-system/fs-01234567</code> </p>
-    pub fn file_system_arn(&self) -> std::option::Option<&str> {
+    pub fn file_system_arn(&self) -> std::option::Option<& str> {
         self.file_system_arn.as_deref()
     }
     /// <p>The time that the file system was created, in seconds (since 1970-01-01T00:00:00Z).</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The lifecycle phase of the file system.</p>
-    pub fn life_cycle_state(&self) -> std::option::Option<&crate::model::LifeCycleState> {
+    pub fn life_cycle_state(&self) -> std::option::Option<& crate::model::LifeCycleState> {
         self.life_cycle_state.as_ref()
     }
     /// <p>You can add tags to a file system, including a <code>Name</code> tag. For more information, see <code>CreateFileSystem</code>. If the file system has a <code>Name</code> tag, Amazon EFS returns the value in this field. </p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The current number of mount targets that the file system has. For more information, see <code>CreateMountTarget</code>.</p>
@@ -2196,11 +2145,11 @@ impl CreateFileSystemOutput {
         self.number_of_mount_targets
     }
     /// <p>The latest known metered size (in bytes) of data stored in the file system, in its <code>Value</code> field, and the time at which that size was determined in its <code>Timestamp</code> field. The <code>Timestamp</code> value is the integer number of seconds since 1970-01-01T00:00:00Z. The <code>SizeInBytes</code> value doesn't represent the size of a consistent snapshot of the file system, but it is eventually consistent when there are no writes to the file system. That is, <code>SizeInBytes</code> represents actual size only if the file system is not modified for a period longer than a couple of hours. Otherwise, the value is not the exact size that the file system was at any point in time. </p>
-    pub fn size_in_bytes(&self) -> std::option::Option<&crate::model::FileSystemSize> {
+    pub fn size_in_bytes(&self) -> std::option::Option<& crate::model::FileSystemSize> {
         self.size_in_bytes.as_ref()
     }
     /// <p>The performance mode of the file system.</p>
-    pub fn performance_mode(&self) -> std::option::Option<&crate::model::PerformanceMode> {
+    pub fn performance_mode(&self) -> std::option::Option<& crate::model::PerformanceMode> {
         self.performance_mode.as_ref()
     }
     /// <p>A Boolean value that, if true, indicates that the file system is encrypted.</p>
@@ -2208,11 +2157,11 @@ impl CreateFileSystemOutput {
         self.encrypted
     }
     /// <p>The ID of an KMS key used to protect the encrypted file system.</p>
-    pub fn kms_key_id(&self) -> std::option::Option<&str> {
+    pub fn kms_key_id(&self) -> std::option::Option<& str> {
         self.kms_key_id.as_deref()
     }
     /// <p>Displays the file system's throughput mode. For more information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/performance.html#throughput-modes">Throughput modes</a> in the <i>Amazon EFS User Guide</i>. </p>
-    pub fn throughput_mode(&self) -> std::option::Option<&crate::model::ThroughputMode> {
+    pub fn throughput_mode(&self) -> std::option::Option<& crate::model::ThroughputMode> {
         self.throughput_mode.as_ref()
     }
     /// <p>The amount of provisioned throughput, measured in MiB/s, for the file system. Valid for file systems using <code>ThroughputMode</code> set to <code>provisioned</code>.</p>
@@ -2220,21 +2169,21 @@ impl CreateFileSystemOutput {
         self.provisioned_throughput_in_mibps
     }
     /// <p>Describes the Amazon Web Services Availability Zone in which the file system is located, and is valid only for file systems using One Zone storage classes. For more information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/storage-classes.html">Using EFS storage classes</a> in the <i>Amazon EFS User Guide</i>.</p>
-    pub fn availability_zone_name(&self) -> std::option::Option<&str> {
+    pub fn availability_zone_name(&self) -> std::option::Option<& str> {
         self.availability_zone_name.as_deref()
     }
     /// <p>The unique and consistent identifier of the Availability Zone in which the file system's One Zone storage classes exist. For example, <code>use1-az1</code> is an Availability Zone ID for the us-east-1 Amazon Web Services Region, and it has the same location in every Amazon Web Services account.</p>
-    pub fn availability_zone_id(&self) -> std::option::Option<&str> {
+    pub fn availability_zone_id(&self) -> std::option::Option<& str> {
         self.availability_zone_id.as_deref()
     }
     /// <p>The tags associated with the file system, presented as an array of <code>Tag</code> objects.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+    pub fn tags(&self) -> std::option::Option<& [crate::model::Tag]> {
         self.tags.as_deref()
     }
 }
 /// See [`CreateFileSystemOutput`](crate::output::CreateFileSystemOutput).
 pub mod create_file_system_output {
-
+    
     /// A builder for [`CreateFileSystemOutput`](crate::output::CreateFileSystemOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2264,8 +2213,7 @@ pub mod create_file_system_output {
         }
         /// <p>The Amazon Web Services account that created the file system. If the file system was created by an IAM user, the parent account to which the user belongs is the owner.</p>
         pub fn set_owner_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.owner_id = input;
-            self
+            self.owner_id = input; self
         }
         /// <p>The opaque string specified in the request.</p>
         pub fn creation_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2273,12 +2221,8 @@ pub mod create_file_system_output {
             self
         }
         /// <p>The opaque string specified in the request.</p>
-        pub fn set_creation_token(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.creation_token = input;
-            self
+        pub fn set_creation_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.creation_token = input; self
         }
         /// <p>The ID of the file system, assigned by Amazon EFS.</p>
         pub fn file_system_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2286,12 +2230,8 @@ pub mod create_file_system_output {
             self
         }
         /// <p>The ID of the file system, assigned by Amazon EFS.</p>
-        pub fn set_file_system_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.file_system_id = input;
-            self
+        pub fn set_file_system_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.file_system_id = input; self
         }
         /// <p>The Amazon Resource Name (ARN) for the EFS file system, in the format <code>arn:aws:elasticfilesystem:<i>region</i>:<i>account-id</i>:file-system/<i>file-system-id</i> </code>. Example with sample data: <code>arn:aws:elasticfilesystem:us-west-2:1111333322228888:file-system/fs-01234567</code> </p>
         pub fn file_system_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2299,12 +2239,8 @@ pub mod create_file_system_output {
             self
         }
         /// <p>The Amazon Resource Name (ARN) for the EFS file system, in the format <code>arn:aws:elasticfilesystem:<i>region</i>:<i>account-id</i>:file-system/<i>file-system-id</i> </code>. Example with sample data: <code>arn:aws:elasticfilesystem:us-west-2:1111333322228888:file-system/fs-01234567</code> </p>
-        pub fn set_file_system_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.file_system_arn = input;
-            self
+        pub fn set_file_system_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.file_system_arn = input; self
         }
         /// <p>The time that the file system was created, in seconds (since 1970-01-01T00:00:00Z).</p>
         pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -2312,12 +2248,8 @@ pub mod create_file_system_output {
             self
         }
         /// <p>The time that the file system was created, in seconds (since 1970-01-01T00:00:00Z).</p>
-        pub fn set_creation_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.creation_time = input;
-            self
+        pub fn set_creation_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.creation_time = input; self
         }
         /// <p>The lifecycle phase of the file system.</p>
         pub fn life_cycle_state(mut self, input: crate::model::LifeCycleState) -> Self {
@@ -2325,12 +2257,8 @@ pub mod create_file_system_output {
             self
         }
         /// <p>The lifecycle phase of the file system.</p>
-        pub fn set_life_cycle_state(
-            mut self,
-            input: std::option::Option<crate::model::LifeCycleState>,
-        ) -> Self {
-            self.life_cycle_state = input;
-            self
+        pub fn set_life_cycle_state(mut self, input: std::option::Option<crate::model::LifeCycleState>) -> Self {
+            self.life_cycle_state = input; self
         }
         /// <p>You can add tags to a file system, including a <code>Name</code> tag. For more information, see <code>CreateFileSystem</code>. If the file system has a <code>Name</code> tag, Amazon EFS returns the value in this field. </p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2339,8 +2267,7 @@ pub mod create_file_system_output {
         }
         /// <p>You can add tags to a file system, including a <code>Name</code> tag. For more information, see <code>CreateFileSystem</code>. If the file system has a <code>Name</code> tag, Amazon EFS returns the value in this field. </p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The current number of mount targets that the file system has. For more information, see <code>CreateMountTarget</code>.</p>
         pub fn number_of_mount_targets(mut self, input: i32) -> Self {
@@ -2349,8 +2276,7 @@ pub mod create_file_system_output {
         }
         /// <p>The current number of mount targets that the file system has. For more information, see <code>CreateMountTarget</code>.</p>
         pub fn set_number_of_mount_targets(mut self, input: std::option::Option<i32>) -> Self {
-            self.number_of_mount_targets = input;
-            self
+            self.number_of_mount_targets = input; self
         }
         /// <p>The latest known metered size (in bytes) of data stored in the file system, in its <code>Value</code> field, and the time at which that size was determined in its <code>Timestamp</code> field. The <code>Timestamp</code> value is the integer number of seconds since 1970-01-01T00:00:00Z. The <code>SizeInBytes</code> value doesn't represent the size of a consistent snapshot of the file system, but it is eventually consistent when there are no writes to the file system. That is, <code>SizeInBytes</code> represents actual size only if the file system is not modified for a period longer than a couple of hours. Otherwise, the value is not the exact size that the file system was at any point in time. </p>
         pub fn size_in_bytes(mut self, input: crate::model::FileSystemSize) -> Self {
@@ -2358,12 +2284,8 @@ pub mod create_file_system_output {
             self
         }
         /// <p>The latest known metered size (in bytes) of data stored in the file system, in its <code>Value</code> field, and the time at which that size was determined in its <code>Timestamp</code> field. The <code>Timestamp</code> value is the integer number of seconds since 1970-01-01T00:00:00Z. The <code>SizeInBytes</code> value doesn't represent the size of a consistent snapshot of the file system, but it is eventually consistent when there are no writes to the file system. That is, <code>SizeInBytes</code> represents actual size only if the file system is not modified for a period longer than a couple of hours. Otherwise, the value is not the exact size that the file system was at any point in time. </p>
-        pub fn set_size_in_bytes(
-            mut self,
-            input: std::option::Option<crate::model::FileSystemSize>,
-        ) -> Self {
-            self.size_in_bytes = input;
-            self
+        pub fn set_size_in_bytes(mut self, input: std::option::Option<crate::model::FileSystemSize>) -> Self {
+            self.size_in_bytes = input; self
         }
         /// <p>The performance mode of the file system.</p>
         pub fn performance_mode(mut self, input: crate::model::PerformanceMode) -> Self {
@@ -2371,12 +2293,8 @@ pub mod create_file_system_output {
             self
         }
         /// <p>The performance mode of the file system.</p>
-        pub fn set_performance_mode(
-            mut self,
-            input: std::option::Option<crate::model::PerformanceMode>,
-        ) -> Self {
-            self.performance_mode = input;
-            self
+        pub fn set_performance_mode(mut self, input: std::option::Option<crate::model::PerformanceMode>) -> Self {
+            self.performance_mode = input; self
         }
         /// <p>A Boolean value that, if true, indicates that the file system is encrypted.</p>
         pub fn encrypted(mut self, input: bool) -> Self {
@@ -2385,8 +2303,7 @@ pub mod create_file_system_output {
         }
         /// <p>A Boolean value that, if true, indicates that the file system is encrypted.</p>
         pub fn set_encrypted(mut self, input: std::option::Option<bool>) -> Self {
-            self.encrypted = input;
-            self
+            self.encrypted = input; self
         }
         /// <p>The ID of an KMS key used to protect the encrypted file system.</p>
         pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2395,8 +2312,7 @@ pub mod create_file_system_output {
         }
         /// <p>The ID of an KMS key used to protect the encrypted file system.</p>
         pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.kms_key_id = input;
-            self
+            self.kms_key_id = input; self
         }
         /// <p>Displays the file system's throughput mode. For more information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/performance.html#throughput-modes">Throughput modes</a> in the <i>Amazon EFS User Guide</i>. </p>
         pub fn throughput_mode(mut self, input: crate::model::ThroughputMode) -> Self {
@@ -2404,12 +2320,8 @@ pub mod create_file_system_output {
             self
         }
         /// <p>Displays the file system's throughput mode. For more information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/performance.html#throughput-modes">Throughput modes</a> in the <i>Amazon EFS User Guide</i>. </p>
-        pub fn set_throughput_mode(
-            mut self,
-            input: std::option::Option<crate::model::ThroughputMode>,
-        ) -> Self {
-            self.throughput_mode = input;
-            self
+        pub fn set_throughput_mode(mut self, input: std::option::Option<crate::model::ThroughputMode>) -> Self {
+            self.throughput_mode = input; self
         }
         /// <p>The amount of provisioned throughput, measured in MiB/s, for the file system. Valid for file systems using <code>ThroughputMode</code> set to <code>provisioned</code>.</p>
         pub fn provisioned_throughput_in_mibps(mut self, input: f64) -> Self {
@@ -2417,12 +2329,8 @@ pub mod create_file_system_output {
             self
         }
         /// <p>The amount of provisioned throughput, measured in MiB/s, for the file system. Valid for file systems using <code>ThroughputMode</code> set to <code>provisioned</code>.</p>
-        pub fn set_provisioned_throughput_in_mibps(
-            mut self,
-            input: std::option::Option<f64>,
-        ) -> Self {
-            self.provisioned_throughput_in_mibps = input;
-            self
+        pub fn set_provisioned_throughput_in_mibps(mut self, input: std::option::Option<f64>) -> Self {
+            self.provisioned_throughput_in_mibps = input; self
         }
         /// <p>Describes the Amazon Web Services Availability Zone in which the file system is located, and is valid only for file systems using One Zone storage classes. For more information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/storage-classes.html">Using EFS storage classes</a> in the <i>Amazon EFS User Guide</i>.</p>
         pub fn availability_zone_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2430,12 +2338,8 @@ pub mod create_file_system_output {
             self
         }
         /// <p>Describes the Amazon Web Services Availability Zone in which the file system is located, and is valid only for file systems using One Zone storage classes. For more information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/storage-classes.html">Using EFS storage classes</a> in the <i>Amazon EFS User Guide</i>.</p>
-        pub fn set_availability_zone_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.availability_zone_name = input;
-            self
+        pub fn set_availability_zone_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.availability_zone_name = input; self
         }
         /// <p>The unique and consistent identifier of the Availability Zone in which the file system's One Zone storage classes exist. For example, <code>use1-az1</code> is an Availability Zone ID for the us-east-1 Amazon Web Services Region, and it has the same location in every Amazon Web Services account.</p>
         pub fn availability_zone_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2443,12 +2347,8 @@ pub mod create_file_system_output {
             self
         }
         /// <p>The unique and consistent identifier of the Availability Zone in which the file system's One Zone storage classes exist. For example, <code>use1-az1</code> is an Availability Zone ID for the us-east-1 Amazon Web Services Region, and it has the same location in every Amazon Web Services account.</p>
-        pub fn set_availability_zone_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.availability_zone_id = input;
-            self
+        pub fn set_availability_zone_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.availability_zone_id = input; self
         }
         /// Appends an item to `tags`.
         ///
@@ -2457,41 +2357,57 @@ pub mod create_file_system_output {
         /// <p>The tags associated with the file system, presented as an array of <code>Tag</code> objects.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input);
-            self.tags = Some(v);
-            self
+                            v.push(input);
+                            self.tags = Some(v);
+                            self
         }
         /// <p>The tags associated with the file system, presented as an array of <code>Tag</code> objects.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::model::Tag>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`CreateFileSystemOutput`](crate::output::CreateFileSystemOutput).
         pub fn build(self) -> crate::output::CreateFileSystemOutput {
             crate::output::CreateFileSystemOutput {
-                owner_id: self.owner_id,
-                creation_token: self.creation_token,
-                file_system_id: self.file_system_id,
-                file_system_arn: self.file_system_arn,
-                creation_time: self.creation_time,
-                life_cycle_state: self.life_cycle_state,
-                name: self.name,
-                number_of_mount_targets: self.number_of_mount_targets.unwrap_or_default(),
-                size_in_bytes: self.size_in_bytes,
-                performance_mode: self.performance_mode,
-                encrypted: self.encrypted,
-                kms_key_id: self.kms_key_id,
-                throughput_mode: self.throughput_mode,
-                provisioned_throughput_in_mibps: self.provisioned_throughput_in_mibps,
-                availability_zone_name: self.availability_zone_name,
-                availability_zone_id: self.availability_zone_id,
-                tags: self.tags,
+                owner_id: self.owner_id
+                ,
+                creation_token: self.creation_token
+                ,
+                file_system_id: self.file_system_id
+                ,
+                file_system_arn: self.file_system_arn
+                ,
+                creation_time: self.creation_time
+                ,
+                life_cycle_state: self.life_cycle_state
+                ,
+                name: self.name
+                ,
+                number_of_mount_targets: self.number_of_mount_targets
+                    .unwrap_or_default()
+                ,
+                size_in_bytes: self.size_in_bytes
+                ,
+                performance_mode: self.performance_mode
+                ,
+                encrypted: self.encrypted
+                ,
+                kms_key_id: self.kms_key_id
+                ,
+                throughput_mode: self.throughput_mode
+                ,
+                provisioned_throughput_in_mibps: self.provisioned_throughput_in_mibps
+                ,
+                availability_zone_name: self.availability_zone_name
+                ,
+                availability_zone_id: self.availability_zone_id
+                ,
+                tags: self.tags
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateFileSystemOutput {
     /// Creates a new builder-style object to manufacture [`CreateFileSystemOutput`](crate::output::CreateFileSystemOutput).
@@ -2503,7 +2419,7 @@ impl CreateFileSystemOutput {
 /// <p>Provides a description of an EFS file system access point.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateAccessPointOutput {
+pub struct CreateAccessPointOutput  {
     /// <p>The opaque string specified in the request to ensure idempotent creation.</p>
     #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
@@ -2537,49 +2453,49 @@ pub struct CreateAccessPointOutput {
 }
 impl CreateAccessPointOutput {
     /// <p>The opaque string specified in the request to ensure idempotent creation.</p>
-    pub fn client_token(&self) -> std::option::Option<&str> {
+    pub fn client_token(&self) -> std::option::Option<& str> {
         self.client_token.as_deref()
     }
     /// <p>The name of the access point. This is the value of the <code>Name</code> tag.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The tags associated with the access point, presented as an array of Tag objects.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+    pub fn tags(&self) -> std::option::Option<& [crate::model::Tag]> {
         self.tags.as_deref()
     }
     /// <p>The ID of the access point, assigned by Amazon EFS.</p>
-    pub fn access_point_id(&self) -> std::option::Option<&str> {
+    pub fn access_point_id(&self) -> std::option::Option<& str> {
         self.access_point_id.as_deref()
     }
     /// <p>The unique Amazon Resource Name (ARN) associated with the access point.</p>
-    pub fn access_point_arn(&self) -> std::option::Option<&str> {
+    pub fn access_point_arn(&self) -> std::option::Option<& str> {
         self.access_point_arn.as_deref()
     }
     /// <p>The ID of the EFS file system that the access point applies to.</p>
-    pub fn file_system_id(&self) -> std::option::Option<&str> {
+    pub fn file_system_id(&self) -> std::option::Option<& str> {
         self.file_system_id.as_deref()
     }
     /// <p>The full POSIX identity, including the user ID, group ID, and secondary group IDs on the access point that is used for all file operations by NFS clients using the access point.</p>
-    pub fn posix_user(&self) -> std::option::Option<&crate::model::PosixUser> {
+    pub fn posix_user(&self) -> std::option::Option<& crate::model::PosixUser> {
         self.posix_user.as_ref()
     }
     /// <p>The directory on the Amazon EFS file system that the access point exposes as the root directory to NFS clients using the access point.</p>
-    pub fn root_directory(&self) -> std::option::Option<&crate::model::RootDirectory> {
+    pub fn root_directory(&self) -> std::option::Option<& crate::model::RootDirectory> {
         self.root_directory.as_ref()
     }
     /// <p>Identified the Amazon Web Services account that owns the access point resource.</p>
-    pub fn owner_id(&self) -> std::option::Option<&str> {
+    pub fn owner_id(&self) -> std::option::Option<& str> {
         self.owner_id.as_deref()
     }
     /// <p>Identifies the lifecycle phase of the access point.</p>
-    pub fn life_cycle_state(&self) -> std::option::Option<&crate::model::LifeCycleState> {
+    pub fn life_cycle_state(&self) -> std::option::Option<& crate::model::LifeCycleState> {
         self.life_cycle_state.as_ref()
     }
 }
 /// See [`CreateAccessPointOutput`](crate::output::CreateAccessPointOutput).
 pub mod create_access_point_output {
-
+    
     /// A builder for [`CreateAccessPointOutput`](crate::output::CreateAccessPointOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2602,8 +2518,7 @@ pub mod create_access_point_output {
         }
         /// <p>The opaque string specified in the request to ensure idempotent creation.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.client_token = input;
-            self
+            self.client_token = input; self
         }
         /// <p>The name of the access point. This is the value of the <code>Name</code> tag.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2612,8 +2527,7 @@ pub mod create_access_point_output {
         }
         /// <p>The name of the access point. This is the value of the <code>Name</code> tag.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// Appends an item to `tags`.
         ///
@@ -2622,17 +2536,13 @@ pub mod create_access_point_output {
         /// <p>The tags associated with the access point, presented as an array of Tag objects.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input);
-            self.tags = Some(v);
-            self
+                            v.push(input);
+                            self.tags = Some(v);
+                            self
         }
         /// <p>The tags associated with the access point, presented as an array of Tag objects.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::model::Tag>>) -> Self {
+            self.tags = input; self
         }
         /// <p>The ID of the access point, assigned by Amazon EFS.</p>
         pub fn access_point_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2640,12 +2550,8 @@ pub mod create_access_point_output {
             self
         }
         /// <p>The ID of the access point, assigned by Amazon EFS.</p>
-        pub fn set_access_point_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.access_point_id = input;
-            self
+        pub fn set_access_point_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.access_point_id = input; self
         }
         /// <p>The unique Amazon Resource Name (ARN) associated with the access point.</p>
         pub fn access_point_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2653,12 +2559,8 @@ pub mod create_access_point_output {
             self
         }
         /// <p>The unique Amazon Resource Name (ARN) associated with the access point.</p>
-        pub fn set_access_point_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.access_point_arn = input;
-            self
+        pub fn set_access_point_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.access_point_arn = input; self
         }
         /// <p>The ID of the EFS file system that the access point applies to.</p>
         pub fn file_system_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2666,12 +2568,8 @@ pub mod create_access_point_output {
             self
         }
         /// <p>The ID of the EFS file system that the access point applies to.</p>
-        pub fn set_file_system_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.file_system_id = input;
-            self
+        pub fn set_file_system_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.file_system_id = input; self
         }
         /// <p>The full POSIX identity, including the user ID, group ID, and secondary group IDs on the access point that is used for all file operations by NFS clients using the access point.</p>
         pub fn posix_user(mut self, input: crate::model::PosixUser) -> Self {
@@ -2679,12 +2577,8 @@ pub mod create_access_point_output {
             self
         }
         /// <p>The full POSIX identity, including the user ID, group ID, and secondary group IDs on the access point that is used for all file operations by NFS clients using the access point.</p>
-        pub fn set_posix_user(
-            mut self,
-            input: std::option::Option<crate::model::PosixUser>,
-        ) -> Self {
-            self.posix_user = input;
-            self
+        pub fn set_posix_user(mut self, input: std::option::Option<crate::model::PosixUser>) -> Self {
+            self.posix_user = input; self
         }
         /// <p>The directory on the Amazon EFS file system that the access point exposes as the root directory to NFS clients using the access point.</p>
         pub fn root_directory(mut self, input: crate::model::RootDirectory) -> Self {
@@ -2692,12 +2586,8 @@ pub mod create_access_point_output {
             self
         }
         /// <p>The directory on the Amazon EFS file system that the access point exposes as the root directory to NFS clients using the access point.</p>
-        pub fn set_root_directory(
-            mut self,
-            input: std::option::Option<crate::model::RootDirectory>,
-        ) -> Self {
-            self.root_directory = input;
-            self
+        pub fn set_root_directory(mut self, input: std::option::Option<crate::model::RootDirectory>) -> Self {
+            self.root_directory = input; self
         }
         /// <p>Identified the Amazon Web Services account that owns the access point resource.</p>
         pub fn owner_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2706,8 +2596,7 @@ pub mod create_access_point_output {
         }
         /// <p>Identified the Amazon Web Services account that owns the access point resource.</p>
         pub fn set_owner_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.owner_id = input;
-            self
+            self.owner_id = input; self
         }
         /// <p>Identifies the lifecycle phase of the access point.</p>
         pub fn life_cycle_state(mut self, input: crate::model::LifeCycleState) -> Self {
@@ -2715,29 +2604,37 @@ pub mod create_access_point_output {
             self
         }
         /// <p>Identifies the lifecycle phase of the access point.</p>
-        pub fn set_life_cycle_state(
-            mut self,
-            input: std::option::Option<crate::model::LifeCycleState>,
-        ) -> Self {
-            self.life_cycle_state = input;
-            self
+        pub fn set_life_cycle_state(mut self, input: std::option::Option<crate::model::LifeCycleState>) -> Self {
+            self.life_cycle_state = input; self
         }
         /// Consumes the builder and constructs a [`CreateAccessPointOutput`](crate::output::CreateAccessPointOutput).
         pub fn build(self) -> crate::output::CreateAccessPointOutput {
             crate::output::CreateAccessPointOutput {
-                client_token: self.client_token,
-                name: self.name,
-                tags: self.tags,
-                access_point_id: self.access_point_id,
-                access_point_arn: self.access_point_arn,
-                file_system_id: self.file_system_id,
-                posix_user: self.posix_user,
-                root_directory: self.root_directory,
-                owner_id: self.owner_id,
-                life_cycle_state: self.life_cycle_state,
+                client_token: self.client_token
+                ,
+                name: self.name
+                ,
+                tags: self.tags
+                ,
+                access_point_id: self.access_point_id
+                ,
+                access_point_arn: self.access_point_arn
+                ,
+                file_system_id: self.file_system_id
+                ,
+                posix_user: self.posix_user
+                ,
+                root_directory: self.root_directory
+                ,
+                owner_id: self.owner_id
+                ,
+                life_cycle_state: self.life_cycle_state
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateAccessPointOutput {
     /// Creates a new builder-style object to manufacture [`CreateAccessPointOutput`](crate::output::CreateAccessPointOutput).
@@ -2745,3 +2642,4 @@ impl CreateAccessPointOutput {
         crate::output::create_access_point_output::Builder::default()
     }
 }
+

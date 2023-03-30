@@ -3,20 +3,20 @@
 /// <p>A warning returned by the document service when an issue is discovered while processing an upload request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DocumentServiceWarning {
+pub struct DocumentServiceWarning  {
     /// <p>The description for a warning returned by the document service.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl DocumentServiceWarning {
     /// <p>The description for a warning returned by the document service.</p>
-    pub fn message(&self) -> std::option::Option<&str> {
+    pub fn message(&self) -> std::option::Option<& str> {
         self.message.as_deref()
     }
 }
 /// See [`DocumentServiceWarning`](crate::model::DocumentServiceWarning).
 pub mod document_service_warning {
-
+    
     /// A builder for [`DocumentServiceWarning`](crate::model::DocumentServiceWarning).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -30,16 +30,18 @@ pub mod document_service_warning {
         }
         /// <p>The description for a warning returned by the document service.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`DocumentServiceWarning`](crate::model::DocumentServiceWarning).
         pub fn build(self) -> crate::model::DocumentServiceWarning {
             crate::model::DocumentServiceWarning {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl DocumentServiceWarning {
     /// Creates a new builder-style object to manufacture [`DocumentServiceWarning`](crate::model::DocumentServiceWarning).
@@ -54,9 +56,9 @@ impl DocumentServiceWarning {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let contenttype = unimplemented!();
 /// match contenttype {
@@ -78,58 +80,52 @@ impl DocumentServiceWarning {
 /// Specifically, when `contenttype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ContentType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ContentType {
     #[allow(missing_docs)] // documentation missing in model
     ApplicationJson,
     #[allow(missing_docs)] // documentation missing in model
     ApplicationXml,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ContentType {
     fn from(s: &str) -> Self {
         match s {
             "application/json" => ContentType::ApplicationJson,
             "application/xml" => ContentType::ApplicationXml,
-            other => ContentType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => ContentType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ContentType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ContentType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ContentType::from(s))
+                }
+            }
 impl ContentType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ContentType::ApplicationJson => "application/json",
             ContentType::ApplicationXml => "application/xml",
-            ContentType::Unknown(value) => value.as_str(),
+            ContentType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["application/json", "application/xml"]
+        &[
+            "application/json", "application/xml"
+        ]
     }
 }
 impl AsRef<str> for ContentType {
@@ -141,7 +137,7 @@ impl AsRef<str> for ContentType {
 /// <p>Container for the suggestion information returned in a <code>SuggestResponse</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SuggestModel {
+pub struct SuggestModel  {
     /// <p>The query string specified in the suggest request.</p>
     #[doc(hidden)]
     pub query: std::option::Option<std::string::String>,
@@ -154,7 +150,7 @@ pub struct SuggestModel {
 }
 impl SuggestModel {
     /// <p>The query string specified in the suggest request.</p>
-    pub fn query(&self) -> std::option::Option<&str> {
+    pub fn query(&self) -> std::option::Option<& str> {
         self.query.as_deref()
     }
     /// <p>The number of documents that were found to match the query string.</p>
@@ -162,13 +158,13 @@ impl SuggestModel {
         self.found
     }
     /// <p>The documents that match the query string.</p>
-    pub fn suggestions(&self) -> std::option::Option<&[crate::model::SuggestionMatch]> {
+    pub fn suggestions(&self) -> std::option::Option<& [crate::model::SuggestionMatch]> {
         self.suggestions.as_deref()
     }
 }
 /// See [`SuggestModel`](crate::model::SuggestModel).
 pub mod suggest_model {
-
+    
     /// A builder for [`SuggestModel`](crate::model::SuggestModel).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -184,8 +180,7 @@ pub mod suggest_model {
         }
         /// <p>The query string specified in the suggest request.</p>
         pub fn set_query(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.query = input;
-            self
+            self.query = input; self
         }
         /// <p>The number of documents that were found to match the query string.</p>
         pub fn found(mut self, input: i64) -> Self {
@@ -194,8 +189,7 @@ pub mod suggest_model {
         }
         /// <p>The number of documents that were found to match the query string.</p>
         pub fn set_found(mut self, input: std::option::Option<i64>) -> Self {
-            self.found = input;
-            self
+            self.found = input; self
         }
         /// Appends an item to `suggestions`.
         ///
@@ -204,27 +198,29 @@ pub mod suggest_model {
         /// <p>The documents that match the query string.</p>
         pub fn suggestions(mut self, input: crate::model::SuggestionMatch) -> Self {
             let mut v = self.suggestions.unwrap_or_default();
-            v.push(input);
-            self.suggestions = Some(v);
-            self
+                            v.push(input);
+                            self.suggestions = Some(v);
+                            self
         }
         /// <p>The documents that match the query string.</p>
-        pub fn set_suggestions(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::SuggestionMatch>>,
-        ) -> Self {
-            self.suggestions = input;
-            self
+        pub fn set_suggestions(mut self, input: std::option::Option<std::vec::Vec<crate::model::SuggestionMatch>>) -> Self {
+            self.suggestions = input; self
         }
         /// Consumes the builder and constructs a [`SuggestModel`](crate::model::SuggestModel).
         pub fn build(self) -> crate::model::SuggestModel {
             crate::model::SuggestModel {
-                query: self.query,
-                found: self.found.unwrap_or_default(),
-                suggestions: self.suggestions,
+                query: self.query
+                ,
+                found: self.found
+                    .unwrap_or_default()
+                ,
+                suggestions: self.suggestions
+                ,
             }
         }
     }
+    
+    
 }
 impl SuggestModel {
     /// Creates a new builder-style object to manufacture [`SuggestModel`](crate::model::SuggestModel).
@@ -236,7 +232,7 @@ impl SuggestModel {
 /// <p>An autocomplete suggestion that matches the query string specified in a <code>SuggestRequest</code>. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SuggestionMatch {
+pub struct SuggestionMatch  {
     /// <p>The string that matches the query string specified in the <code>SuggestRequest</code>. </p>
     #[doc(hidden)]
     pub suggestion: std::option::Option<std::string::String>,
@@ -249,7 +245,7 @@ pub struct SuggestionMatch {
 }
 impl SuggestionMatch {
     /// <p>The string that matches the query string specified in the <code>SuggestRequest</code>. </p>
-    pub fn suggestion(&self) -> std::option::Option<&str> {
+    pub fn suggestion(&self) -> std::option::Option<& str> {
         self.suggestion.as_deref()
     }
     /// <p>The relevance score of a suggested match.</p>
@@ -257,13 +253,13 @@ impl SuggestionMatch {
         self.score
     }
     /// <p>The document ID of the suggested document.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
 }
 /// See [`SuggestionMatch`](crate::model::SuggestionMatch).
 pub mod suggestion_match {
-
+    
     /// A builder for [`SuggestionMatch`](crate::model::SuggestionMatch).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -279,8 +275,7 @@ pub mod suggestion_match {
         }
         /// <p>The string that matches the query string specified in the <code>SuggestRequest</code>. </p>
         pub fn set_suggestion(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.suggestion = input;
-            self
+            self.suggestion = input; self
         }
         /// <p>The relevance score of a suggested match.</p>
         pub fn score(mut self, input: i64) -> Self {
@@ -289,8 +284,7 @@ pub mod suggestion_match {
         }
         /// <p>The relevance score of a suggested match.</p>
         pub fn set_score(mut self, input: std::option::Option<i64>) -> Self {
-            self.score = input;
-            self
+            self.score = input; self
         }
         /// <p>The document ID of the suggested document.</p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -299,18 +293,23 @@ pub mod suggestion_match {
         }
         /// <p>The document ID of the suggested document.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// Consumes the builder and constructs a [`SuggestionMatch`](crate::model::SuggestionMatch).
         pub fn build(self) -> crate::model::SuggestionMatch {
             crate::model::SuggestionMatch {
-                suggestion: self.suggestion,
-                score: self.score.unwrap_or_default(),
-                id: self.id,
+                suggestion: self.suggestion
+                ,
+                score: self.score
+                    .unwrap_or_default()
+                ,
+                id: self.id
+                ,
             }
         }
     }
+    
+    
 }
 impl SuggestionMatch {
     /// Creates a new builder-style object to manufacture [`SuggestionMatch`](crate::model::SuggestionMatch).
@@ -322,7 +321,7 @@ impl SuggestionMatch {
 /// <p>Contains the resource id (<code>rid</code>) and the time it took to process the request (<code>timems</code>).</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SuggestStatus {
+pub struct SuggestStatus  {
     /// <p>How long it took to process the request, in milliseconds.</p>
     #[doc(hidden)]
     pub timems: i64,
@@ -336,13 +335,13 @@ impl SuggestStatus {
         self.timems
     }
     /// <p>The encrypted resource ID for the request.</p>
-    pub fn rid(&self) -> std::option::Option<&str> {
+    pub fn rid(&self) -> std::option::Option<& str> {
         self.rid.as_deref()
     }
 }
 /// See [`SuggestStatus`](crate::model::SuggestStatus).
 pub mod suggest_status {
-
+    
     /// A builder for [`SuggestStatus`](crate::model::SuggestStatus).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -357,8 +356,7 @@ pub mod suggest_status {
         }
         /// <p>How long it took to process the request, in milliseconds.</p>
         pub fn set_timems(mut self, input: std::option::Option<i64>) -> Self {
-            self.timems = input;
-            self
+            self.timems = input; self
         }
         /// <p>The encrypted resource ID for the request.</p>
         pub fn rid(mut self, input: impl Into<std::string::String>) -> Self {
@@ -367,17 +365,21 @@ pub mod suggest_status {
         }
         /// <p>The encrypted resource ID for the request.</p>
         pub fn set_rid(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.rid = input;
-            self
+            self.rid = input; self
         }
         /// Consumes the builder and constructs a [`SuggestStatus`](crate::model::SuggestStatus).
         pub fn build(self) -> crate::model::SuggestStatus {
             crate::model::SuggestStatus {
-                timems: self.timems.unwrap_or_default(),
-                rid: self.rid,
+                timems: self.timems
+                    .unwrap_or_default()
+                ,
+                rid: self.rid
+                ,
             }
         }
     }
+    
+    
 }
 impl SuggestStatus {
     /// Creates a new builder-style object to manufacture [`SuggestStatus`](crate::model::SuggestStatus).
@@ -389,12 +391,12 @@ impl SuggestStatus {
 /// <p>The statistics for a field calculated in the request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct FieldStats {
-    /// <p>The minimum value found in the specified field in the result set.</p>
+pub struct FieldStats  {
+    /// <p>The minimum value found in the specified field in the result set.</p> 
     /// <p>If the field is numeric (<code>int</code>, <code>int-array</code>, <code>double</code>, or <code>double-array</code>), <code>min</code> is the string representation of a double-precision 64-bit floating point value. If the field is <code>date</code> or <code>date-array</code>, <code>min</code> is the string representation of a date with the format specified in <a href="http://tools.ietf.org/html/rfc3339">IETF RFC3339</a>: yyyy-mm-ddTHH:mm:ss.SSSZ.</p>
     #[doc(hidden)]
     pub min: std::option::Option<std::string::String>,
-    /// <p>The maximum value found in the specified field in the result set.</p>
+    /// <p>The maximum value found in the specified field in the result set.</p> 
     /// <p>If the field is numeric (<code>int</code>, <code>int-array</code>, <code>double</code>, or <code>double-array</code>), <code>max</code> is the string representation of a double-precision 64-bit floating point value. If the field is <code>date</code> or <code>date-array</code>, <code>max</code> is the string representation of a date with the format specified in <a href="http://tools.ietf.org/html/rfc3339">IETF RFC3339</a>: yyyy-mm-ddTHH:mm:ss.SSSZ.</p>
     #[doc(hidden)]
     pub max: std::option::Option<std::string::String>,
@@ -410,7 +412,7 @@ pub struct FieldStats {
     /// <p>The sum of all field values in the result set squared.</p>
     #[doc(hidden)]
     pub sum_of_squares: f64,
-    /// <p>The average of the values found in the specified field in the result set.</p>
+    /// <p>The average of the values found in the specified field in the result set.</p> 
     /// <p>If the field is numeric (<code>int</code>, <code>int-array</code>, <code>double</code>, or <code>double-array</code>), <code>mean</code> is the string representation of a double-precision 64-bit floating point value. If the field is <code>date</code> or <code>date-array</code>, <code>mean</code> is the string representation of a date with the format specified in <a href="http://tools.ietf.org/html/rfc3339">IETF RFC3339</a>: yyyy-mm-ddTHH:mm:ss.SSSZ.</p>
     #[doc(hidden)]
     pub mean: std::option::Option<std::string::String>,
@@ -419,14 +421,14 @@ pub struct FieldStats {
     pub stddev: f64,
 }
 impl FieldStats {
-    /// <p>The minimum value found in the specified field in the result set.</p>
+    /// <p>The minimum value found in the specified field in the result set.</p> 
     /// <p>If the field is numeric (<code>int</code>, <code>int-array</code>, <code>double</code>, or <code>double-array</code>), <code>min</code> is the string representation of a double-precision 64-bit floating point value. If the field is <code>date</code> or <code>date-array</code>, <code>min</code> is the string representation of a date with the format specified in <a href="http://tools.ietf.org/html/rfc3339">IETF RFC3339</a>: yyyy-mm-ddTHH:mm:ss.SSSZ.</p>
-    pub fn min(&self) -> std::option::Option<&str> {
+    pub fn min(&self) -> std::option::Option<& str> {
         self.min.as_deref()
     }
-    /// <p>The maximum value found in the specified field in the result set.</p>
+    /// <p>The maximum value found in the specified field in the result set.</p> 
     /// <p>If the field is numeric (<code>int</code>, <code>int-array</code>, <code>double</code>, or <code>double-array</code>), <code>max</code> is the string representation of a double-precision 64-bit floating point value. If the field is <code>date</code> or <code>date-array</code>, <code>max</code> is the string representation of a date with the format specified in <a href="http://tools.ietf.org/html/rfc3339">IETF RFC3339</a>: yyyy-mm-ddTHH:mm:ss.SSSZ.</p>
-    pub fn max(&self) -> std::option::Option<&str> {
+    pub fn max(&self) -> std::option::Option<& str> {
         self.max.as_deref()
     }
     /// <p>The number of documents that contain a value in the specified field in the result set.</p>
@@ -445,9 +447,9 @@ impl FieldStats {
     pub fn sum_of_squares(&self) -> f64 {
         self.sum_of_squares
     }
-    /// <p>The average of the values found in the specified field in the result set.</p>
+    /// <p>The average of the values found in the specified field in the result set.</p> 
     /// <p>If the field is numeric (<code>int</code>, <code>int-array</code>, <code>double</code>, or <code>double-array</code>), <code>mean</code> is the string representation of a double-precision 64-bit floating point value. If the field is <code>date</code> or <code>date-array</code>, <code>mean</code> is the string representation of a date with the format specified in <a href="http://tools.ietf.org/html/rfc3339">IETF RFC3339</a>: yyyy-mm-ddTHH:mm:ss.SSSZ.</p>
-    pub fn mean(&self) -> std::option::Option<&str> {
+    pub fn mean(&self) -> std::option::Option<& str> {
         self.mean.as_deref()
     }
     /// <p>The standard deviation of the values in the specified field in the result set.</p>
@@ -457,7 +459,7 @@ impl FieldStats {
 }
 /// See [`FieldStats`](crate::model::FieldStats).
 pub mod field_stats {
-
+    
     /// A builder for [`FieldStats`](crate::model::FieldStats).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -471,29 +473,27 @@ pub mod field_stats {
         pub(crate) stddev: std::option::Option<f64>,
     }
     impl Builder {
-        /// <p>The minimum value found in the specified field in the result set.</p>
+        /// <p>The minimum value found in the specified field in the result set.</p> 
         /// <p>If the field is numeric (<code>int</code>, <code>int-array</code>, <code>double</code>, or <code>double-array</code>), <code>min</code> is the string representation of a double-precision 64-bit floating point value. If the field is <code>date</code> or <code>date-array</code>, <code>min</code> is the string representation of a date with the format specified in <a href="http://tools.ietf.org/html/rfc3339">IETF RFC3339</a>: yyyy-mm-ddTHH:mm:ss.SSSZ.</p>
         pub fn min(mut self, input: impl Into<std::string::String>) -> Self {
             self.min = Some(input.into());
             self
         }
-        /// <p>The minimum value found in the specified field in the result set.</p>
+        /// <p>The minimum value found in the specified field in the result set.</p> 
         /// <p>If the field is numeric (<code>int</code>, <code>int-array</code>, <code>double</code>, or <code>double-array</code>), <code>min</code> is the string representation of a double-precision 64-bit floating point value. If the field is <code>date</code> or <code>date-array</code>, <code>min</code> is the string representation of a date with the format specified in <a href="http://tools.ietf.org/html/rfc3339">IETF RFC3339</a>: yyyy-mm-ddTHH:mm:ss.SSSZ.</p>
         pub fn set_min(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.min = input;
-            self
+            self.min = input; self
         }
-        /// <p>The maximum value found in the specified field in the result set.</p>
+        /// <p>The maximum value found in the specified field in the result set.</p> 
         /// <p>If the field is numeric (<code>int</code>, <code>int-array</code>, <code>double</code>, or <code>double-array</code>), <code>max</code> is the string representation of a double-precision 64-bit floating point value. If the field is <code>date</code> or <code>date-array</code>, <code>max</code> is the string representation of a date with the format specified in <a href="http://tools.ietf.org/html/rfc3339">IETF RFC3339</a>: yyyy-mm-ddTHH:mm:ss.SSSZ.</p>
         pub fn max(mut self, input: impl Into<std::string::String>) -> Self {
             self.max = Some(input.into());
             self
         }
-        /// <p>The maximum value found in the specified field in the result set.</p>
+        /// <p>The maximum value found in the specified field in the result set.</p> 
         /// <p>If the field is numeric (<code>int</code>, <code>int-array</code>, <code>double</code>, or <code>double-array</code>), <code>max</code> is the string representation of a double-precision 64-bit floating point value. If the field is <code>date</code> or <code>date-array</code>, <code>max</code> is the string representation of a date with the format specified in <a href="http://tools.ietf.org/html/rfc3339">IETF RFC3339</a>: yyyy-mm-ddTHH:mm:ss.SSSZ.</p>
         pub fn set_max(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.max = input;
-            self
+            self.max = input; self
         }
         /// <p>The number of documents that contain a value in the specified field in the result set.</p>
         pub fn count(mut self, input: i64) -> Self {
@@ -502,8 +502,7 @@ pub mod field_stats {
         }
         /// <p>The number of documents that contain a value in the specified field in the result set.</p>
         pub fn set_count(mut self, input: std::option::Option<i64>) -> Self {
-            self.count = input;
-            self
+            self.count = input; self
         }
         /// <p>The number of documents that do not contain a value in the specified field in the result set.</p>
         pub fn missing(mut self, input: i64) -> Self {
@@ -512,8 +511,7 @@ pub mod field_stats {
         }
         /// <p>The number of documents that do not contain a value in the specified field in the result set.</p>
         pub fn set_missing(mut self, input: std::option::Option<i64>) -> Self {
-            self.missing = input;
-            self
+            self.missing = input; self
         }
         /// <p>The sum of the field values across the documents in the result set. <code>null</code> for date fields.</p>
         pub fn sum(mut self, input: f64) -> Self {
@@ -522,8 +520,7 @@ pub mod field_stats {
         }
         /// <p>The sum of the field values across the documents in the result set. <code>null</code> for date fields.</p>
         pub fn set_sum(mut self, input: std::option::Option<f64>) -> Self {
-            self.sum = input;
-            self
+            self.sum = input; self
         }
         /// <p>The sum of all field values in the result set squared.</p>
         pub fn sum_of_squares(mut self, input: f64) -> Self {
@@ -532,20 +529,18 @@ pub mod field_stats {
         }
         /// <p>The sum of all field values in the result set squared.</p>
         pub fn set_sum_of_squares(mut self, input: std::option::Option<f64>) -> Self {
-            self.sum_of_squares = input;
-            self
+            self.sum_of_squares = input; self
         }
-        /// <p>The average of the values found in the specified field in the result set.</p>
+        /// <p>The average of the values found in the specified field in the result set.</p> 
         /// <p>If the field is numeric (<code>int</code>, <code>int-array</code>, <code>double</code>, or <code>double-array</code>), <code>mean</code> is the string representation of a double-precision 64-bit floating point value. If the field is <code>date</code> or <code>date-array</code>, <code>mean</code> is the string representation of a date with the format specified in <a href="http://tools.ietf.org/html/rfc3339">IETF RFC3339</a>: yyyy-mm-ddTHH:mm:ss.SSSZ.</p>
         pub fn mean(mut self, input: impl Into<std::string::String>) -> Self {
             self.mean = Some(input.into());
             self
         }
-        /// <p>The average of the values found in the specified field in the result set.</p>
+        /// <p>The average of the values found in the specified field in the result set.</p> 
         /// <p>If the field is numeric (<code>int</code>, <code>int-array</code>, <code>double</code>, or <code>double-array</code>), <code>mean</code> is the string representation of a double-precision 64-bit floating point value. If the field is <code>date</code> or <code>date-array</code>, <code>mean</code> is the string representation of a date with the format specified in <a href="http://tools.ietf.org/html/rfc3339">IETF RFC3339</a>: yyyy-mm-ddTHH:mm:ss.SSSZ.</p>
         pub fn set_mean(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.mean = input;
-            self
+            self.mean = input; self
         }
         /// <p>The standard deviation of the values in the specified field in the result set.</p>
         pub fn stddev(mut self, input: f64) -> Self {
@@ -554,23 +549,37 @@ pub mod field_stats {
         }
         /// <p>The standard deviation of the values in the specified field in the result set.</p>
         pub fn set_stddev(mut self, input: std::option::Option<f64>) -> Self {
-            self.stddev = input;
-            self
+            self.stddev = input; self
         }
         /// Consumes the builder and constructs a [`FieldStats`](crate::model::FieldStats).
         pub fn build(self) -> crate::model::FieldStats {
             crate::model::FieldStats {
-                min: self.min,
-                max: self.max,
-                count: self.count.unwrap_or_default(),
-                missing: self.missing.unwrap_or_default(),
-                sum: self.sum.unwrap_or_default(),
-                sum_of_squares: self.sum_of_squares.unwrap_or_default(),
-                mean: self.mean,
-                stddev: self.stddev.unwrap_or_default(),
+                min: self.min
+                ,
+                max: self.max
+                ,
+                count: self.count
+                    .unwrap_or_default()
+                ,
+                missing: self.missing
+                    .unwrap_or_default()
+                ,
+                sum: self.sum
+                    .unwrap_or_default()
+                ,
+                sum_of_squares: self.sum_of_squares
+                    .unwrap_or_default()
+                ,
+                mean: self.mean
+                ,
+                stddev: self.stddev
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl FieldStats {
     /// Creates a new builder-style object to manufacture [`FieldStats`](crate::model::FieldStats).
@@ -582,20 +591,20 @@ impl FieldStats {
 /// <p>A container for the calculated facet values and counts.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BucketInfo {
+pub struct BucketInfo  {
     /// <p>A list of the calculated facet values and counts.</p>
     #[doc(hidden)]
     pub buckets: std::option::Option<std::vec::Vec<crate::model::Bucket>>,
 }
 impl BucketInfo {
     /// <p>A list of the calculated facet values and counts.</p>
-    pub fn buckets(&self) -> std::option::Option<&[crate::model::Bucket]> {
+    pub fn buckets(&self) -> std::option::Option<& [crate::model::Bucket]> {
         self.buckets.as_deref()
     }
 }
 /// See [`BucketInfo`](crate::model::BucketInfo).
 pub mod bucket_info {
-
+    
     /// A builder for [`BucketInfo`](crate::model::BucketInfo).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -609,25 +618,24 @@ pub mod bucket_info {
         /// <p>A list of the calculated facet values and counts.</p>
         pub fn buckets(mut self, input: crate::model::Bucket) -> Self {
             let mut v = self.buckets.unwrap_or_default();
-            v.push(input);
-            self.buckets = Some(v);
-            self
+                            v.push(input);
+                            self.buckets = Some(v);
+                            self
         }
         /// <p>A list of the calculated facet values and counts.</p>
-        pub fn set_buckets(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Bucket>>,
-        ) -> Self {
-            self.buckets = input;
-            self
+        pub fn set_buckets(mut self, input: std::option::Option<std::vec::Vec<crate::model::Bucket>>) -> Self {
+            self.buckets = input; self
         }
         /// Consumes the builder and constructs a [`BucketInfo`](crate::model::BucketInfo).
         pub fn build(self) -> crate::model::BucketInfo {
             crate::model::BucketInfo {
-                buckets: self.buckets,
+                buckets: self.buckets
+                ,
             }
         }
     }
+    
+    
 }
 impl BucketInfo {
     /// Creates a new builder-style object to manufacture [`BucketInfo`](crate::model::BucketInfo).
@@ -639,7 +647,7 @@ impl BucketInfo {
 /// <p>A container for facet information. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Bucket {
+pub struct Bucket  {
     /// <p>The facet value being counted.</p>
     #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
@@ -649,7 +657,7 @@ pub struct Bucket {
 }
 impl Bucket {
     /// <p>The facet value being counted.</p>
-    pub fn value(&self) -> std::option::Option<&str> {
+    pub fn value(&self) -> std::option::Option<& str> {
         self.value.as_deref()
     }
     /// <p>The number of hits that contain the facet value in the specified facet field.</p>
@@ -659,7 +667,7 @@ impl Bucket {
 }
 /// See [`Bucket`](crate::model::Bucket).
 pub mod bucket {
-
+    
     /// A builder for [`Bucket`](crate::model::Bucket).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -674,8 +682,7 @@ pub mod bucket {
         }
         /// <p>The facet value being counted.</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.value = input;
-            self
+            self.value = input; self
         }
         /// <p>The number of hits that contain the facet value in the specified facet field.</p>
         pub fn count(mut self, input: i64) -> Self {
@@ -684,17 +691,21 @@ pub mod bucket {
         }
         /// <p>The number of hits that contain the facet value in the specified facet field.</p>
         pub fn set_count(mut self, input: std::option::Option<i64>) -> Self {
-            self.count = input;
-            self
+            self.count = input; self
         }
         /// Consumes the builder and constructs a [`Bucket`](crate::model::Bucket).
         pub fn build(self) -> crate::model::Bucket {
             crate::model::Bucket {
-                value: self.value,
-                count: self.count.unwrap_or_default(),
+                value: self.value
+                ,
+                count: self.count
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl Bucket {
     /// Creates a new builder-style object to manufacture [`Bucket`](crate::model::Bucket).
@@ -706,7 +717,7 @@ impl Bucket {
 /// <p>The collection of documents that match the search request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Hits {
+pub struct Hits  {
     /// <p>The total number of documents that match the search request.</p>
     #[doc(hidden)]
     pub found: i64,
@@ -730,17 +741,17 @@ impl Hits {
         self.start
     }
     /// <p>A cursor that can be used to retrieve the next set of matching documents when you want to page through a large result set.</p>
-    pub fn cursor(&self) -> std::option::Option<&str> {
+    pub fn cursor(&self) -> std::option::Option<& str> {
         self.cursor.as_deref()
     }
     /// <p>A document that matches the search request.</p>
-    pub fn hit(&self) -> std::option::Option<&[crate::model::Hit]> {
+    pub fn hit(&self) -> std::option::Option<& [crate::model::Hit]> {
         self.hit.as_deref()
     }
 }
 /// See [`Hits`](crate::model::Hits).
 pub mod hits {
-
+    
     /// A builder for [`Hits`](crate::model::Hits).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -757,8 +768,7 @@ pub mod hits {
         }
         /// <p>The total number of documents that match the search request.</p>
         pub fn set_found(mut self, input: std::option::Option<i64>) -> Self {
-            self.found = input;
-            self
+            self.found = input; self
         }
         /// <p>The index of the first matching document.</p>
         pub fn start(mut self, input: i64) -> Self {
@@ -767,8 +777,7 @@ pub mod hits {
         }
         /// <p>The index of the first matching document.</p>
         pub fn set_start(mut self, input: std::option::Option<i64>) -> Self {
-            self.start = input;
-            self
+            self.start = input; self
         }
         /// <p>A cursor that can be used to retrieve the next set of matching documents when you want to page through a large result set.</p>
         pub fn cursor(mut self, input: impl Into<std::string::String>) -> Self {
@@ -777,8 +786,7 @@ pub mod hits {
         }
         /// <p>A cursor that can be used to retrieve the next set of matching documents when you want to page through a large result set.</p>
         pub fn set_cursor(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.cursor = input;
-            self
+            self.cursor = input; self
         }
         /// Appends an item to `hit`.
         ///
@@ -787,28 +795,32 @@ pub mod hits {
         /// <p>A document that matches the search request.</p>
         pub fn hit(mut self, input: crate::model::Hit) -> Self {
             let mut v = self.hit.unwrap_or_default();
-            v.push(input);
-            self.hit = Some(v);
-            self
+                            v.push(input);
+                            self.hit = Some(v);
+                            self
         }
         /// <p>A document that matches the search request.</p>
-        pub fn set_hit(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Hit>>,
-        ) -> Self {
-            self.hit = input;
-            self
+        pub fn set_hit(mut self, input: std::option::Option<std::vec::Vec<crate::model::Hit>>) -> Self {
+            self.hit = input; self
         }
         /// Consumes the builder and constructs a [`Hits`](crate::model::Hits).
         pub fn build(self) -> crate::model::Hits {
             crate::model::Hits {
-                found: self.found.unwrap_or_default(),
-                start: self.start.unwrap_or_default(),
-                cursor: self.cursor,
-                hit: self.hit,
+                found: self.found
+                    .unwrap_or_default()
+                ,
+                start: self.start
+                    .unwrap_or_default()
+                ,
+                cursor: self.cursor
+                ,
+                hit: self.hit
+                ,
             }
         }
     }
+    
+    
 }
 impl Hits {
     /// Creates a new builder-style object to manufacture [`Hits`](crate::model::Hits).
@@ -820,68 +832,48 @@ impl Hits {
 /// <p>Information about a document that matches the search request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Hit {
+pub struct Hit  {
     /// <p>The document ID of a document that matches the search request.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The fields returned from a document that matches the search request.</p>
     #[doc(hidden)]
-    pub fields: std::option::Option<
-        std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
-    >,
+    pub fields: std::option::Option<std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>>,
     /// <p>The expressions returned from a document that matches the search request.</p>
     #[doc(hidden)]
-    pub exprs:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub exprs: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The highlights returned from a document that matches the search request.</p>
     #[doc(hidden)]
-    pub highlights:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub highlights: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl Hit {
     /// <p>The document ID of a document that matches the search request.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The fields returned from a document that matches the search request.</p>
-    pub fn fields(
-        &self,
-    ) -> std::option::Option<
-        &std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
-    > {
+    pub fn fields(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>> {
         self.fields.as_ref()
     }
     /// <p>The expressions returned from a document that matches the search request.</p>
-    pub fn exprs(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn exprs(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.exprs.as_ref()
     }
     /// <p>The highlights returned from a document that matches the search request.</p>
-    pub fn highlights(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn highlights(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.highlights.as_ref()
     }
 }
 /// See [`Hit`](crate::model::Hit).
 pub mod hit {
-
+    
     /// A builder for [`Hit`](crate::model::Hit).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
-        pub(crate) fields: std::option::Option<
-            std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
-        >,
-        pub(crate) exprs: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
-        pub(crate) highlights: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) fields: std::option::Option<std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>>,
+        pub(crate) exprs: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+        pub(crate) highlights: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     }
     impl Builder {
         /// <p>The document ID of a document that matches the search request.</p>
@@ -891,94 +883,69 @@ pub mod hit {
         }
         /// <p>The document ID of a document that matches the search request.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// Adds a key-value pair to `fields`.
         ///
         /// To override the contents of this collection use [`set_fields`](Self::set_fields).
         ///
         /// <p>The fields returned from a document that matches the search request.</p>
-        pub fn fields(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: std::vec::Vec<std::string::String>,
-        ) -> Self {
+        pub fn fields(mut self, k: impl Into<std::string::String>, v: std::vec::Vec<std::string::String>) -> Self {
             let mut hash_map = self.fields.unwrap_or_default();
-            hash_map.insert(k.into(), v);
-            self.fields = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v);
+                            self.fields = Some(hash_map);
+                            self
         }
         /// <p>The fields returned from a document that matches the search request.</p>
-        pub fn set_fields(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
-            >,
-        ) -> Self {
-            self.fields = input;
-            self
+        pub fn set_fields(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>>) -> Self {
+            self.fields = input; self
         }
         /// Adds a key-value pair to `exprs`.
         ///
         /// To override the contents of this collection use [`set_exprs`](Self::set_exprs).
         ///
         /// <p>The expressions returned from a document that matches the search request.</p>
-        pub fn exprs(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn exprs(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.exprs.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.exprs = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.exprs = Some(hash_map);
+                            self
         }
         /// <p>The expressions returned from a document that matches the search request.</p>
-        pub fn set_exprs(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.exprs = input;
-            self
+        pub fn set_exprs(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.exprs = input; self
         }
         /// Adds a key-value pair to `highlights`.
         ///
         /// To override the contents of this collection use [`set_highlights`](Self::set_highlights).
         ///
         /// <p>The highlights returned from a document that matches the search request.</p>
-        pub fn highlights(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn highlights(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.highlights.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.highlights = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.highlights = Some(hash_map);
+                            self
         }
         /// <p>The highlights returned from a document that matches the search request.</p>
-        pub fn set_highlights(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.highlights = input;
-            self
+        pub fn set_highlights(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.highlights = input; self
         }
         /// Consumes the builder and constructs a [`Hit`](crate::model::Hit).
         pub fn build(self) -> crate::model::Hit {
             crate::model::Hit {
-                id: self.id,
-                fields: self.fields,
-                exprs: self.exprs,
-                highlights: self.highlights,
+                id: self.id
+                ,
+                fields: self.fields
+                ,
+                exprs: self.exprs
+                ,
+                highlights: self.highlights
+                ,
             }
         }
     }
+    
+    
 }
 impl Hit {
     /// Creates a new builder-style object to manufacture [`Hit`](crate::model::Hit).
@@ -990,7 +957,7 @@ impl Hit {
 /// <p>Contains the resource id (<code>rid</code>) and the time it took to process the request (<code>timems</code>).</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SearchStatus {
+pub struct SearchStatus  {
     /// <p>How long it took to process the request, in milliseconds.</p>
     #[doc(hidden)]
     pub timems: i64,
@@ -1004,13 +971,13 @@ impl SearchStatus {
         self.timems
     }
     /// <p>The encrypted resource ID for the request.</p>
-    pub fn rid(&self) -> std::option::Option<&str> {
+    pub fn rid(&self) -> std::option::Option<& str> {
         self.rid.as_deref()
     }
 }
 /// See [`SearchStatus`](crate::model::SearchStatus).
 pub mod search_status {
-
+    
     /// A builder for [`SearchStatus`](crate::model::SearchStatus).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1025,8 +992,7 @@ pub mod search_status {
         }
         /// <p>How long it took to process the request, in milliseconds.</p>
         pub fn set_timems(mut self, input: std::option::Option<i64>) -> Self {
-            self.timems = input;
-            self
+            self.timems = input; self
         }
         /// <p>The encrypted resource ID for the request.</p>
         pub fn rid(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1035,17 +1001,21 @@ pub mod search_status {
         }
         /// <p>The encrypted resource ID for the request.</p>
         pub fn set_rid(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.rid = input;
-            self
+            self.rid = input; self
         }
         /// Consumes the builder and constructs a [`SearchStatus`](crate::model::SearchStatus).
         pub fn build(self) -> crate::model::SearchStatus {
             crate::model::SearchStatus {
-                timems: self.timems.unwrap_or_default(),
-                rid: self.rid,
+                timems: self.timems
+                    .unwrap_or_default()
+                ,
+                rid: self.rid
+                ,
             }
         }
     }
+    
+    
 }
 impl SearchStatus {
     /// Creates a new builder-style object to manufacture [`SearchStatus`](crate::model::SearchStatus).
@@ -1060,9 +1030,9 @@ impl SearchStatus {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let queryparser = unimplemented!();
 /// match queryparser {
@@ -1086,22 +1056,14 @@ impl SearchStatus {
 /// Specifically, when `queryparser` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `QueryParser::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum QueryParser {
     #[allow(missing_docs)] // documentation missing in model
     Dismax,
@@ -1112,7 +1074,7 @@ pub enum QueryParser {
     #[allow(missing_docs)] // documentation missing in model
     Structured,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for QueryParser {
     fn from(s: &str) -> Self {
@@ -1121,17 +1083,17 @@ impl std::convert::From<&str> for QueryParser {
             "lucene" => QueryParser::Lucene,
             "simple" => QueryParser::Simple,
             "structured" => QueryParser::Structured,
-            other => QueryParser::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => QueryParser::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for QueryParser {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(QueryParser::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(QueryParser::from(s))
+                }
+            }
 impl QueryParser {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -1140,12 +1102,14 @@ impl QueryParser {
             QueryParser::Lucene => "lucene",
             QueryParser::Simple => "simple",
             QueryParser::Structured => "structured",
-            QueryParser::Unknown(value) => value.as_str(),
+            QueryParser::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["dismax", "lucene", "simple", "structured"]
+        &[
+            "dismax", "lucene", "simple", "structured"
+        ]
     }
 }
 impl AsRef<str> for QueryParser {
@@ -1153,3 +1117,4 @@ impl AsRef<str> for QueryParser {
         self.as_str()
     }
 }
+

@@ -2,14 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeviceDescription {
+pub struct DeviceDescription  {
     /// <p>The ARN of the device.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>An array of zero or more elements of DeviceAttribute objects providing user specified device attributes.</p>
     #[doc(hidden)]
-    pub attributes:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub attributes: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The unique identifier of the device.</p>
     #[doc(hidden)]
     pub device_id: std::option::Option<std::string::String>,
@@ -24,23 +23,19 @@ pub struct DeviceDescription {
     pub r#type: std::option::Option<std::string::String>,
     /// <p>The tags currently associated with the AWS IoT 1-Click device.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl DeviceDescription {
     /// <p>The ARN of the device.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>An array of zero or more elements of DeviceAttribute objects providing user specified device attributes.</p>
-    pub fn attributes(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn attributes(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.attributes.as_ref()
     }
     /// <p>The unique identifier of the device.</p>
-    pub fn device_id(&self) -> std::option::Option<&str> {
+    pub fn device_id(&self) -> std::option::Option<& str> {
         self.device_id.as_deref()
     }
     /// <p>A Boolean value indicating whether or not the device is enabled.</p>
@@ -52,34 +47,27 @@ impl DeviceDescription {
         self.remaining_life
     }
     /// <p>The type of the device, such as "button".</p>
-    pub fn r#type(&self) -> std::option::Option<&str> {
+    pub fn r#type(&self) -> std::option::Option<& str> {
         self.r#type.as_deref()
     }
     /// <p>The tags currently associated with the AWS IoT 1-Click device.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
 }
 /// See [`DeviceDescription`](crate::model::DeviceDescription).
 pub mod device_description {
-
+    
     /// A builder for [`DeviceDescription`](crate::model::DeviceDescription).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
-        pub(crate) attributes: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) attributes: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
         pub(crate) device_id: std::option::Option<std::string::String>,
         pub(crate) enabled: std::option::Option<bool>,
         pub(crate) remaining_life: std::option::Option<f64>,
         pub(crate) r#type: std::option::Option<std::string::String>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     }
     impl Builder {
         /// <p>The ARN of the device.</p>
@@ -89,33 +77,22 @@ pub mod device_description {
         }
         /// <p>The ARN of the device.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// Adds a key-value pair to `attributes`.
         ///
         /// To override the contents of this collection use [`set_attributes`](Self::set_attributes).
         ///
         /// <p>An array of zero or more elements of DeviceAttribute objects providing user specified device attributes.</p>
-        pub fn attributes(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn attributes(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.attributes.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.attributes = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.attributes = Some(hash_map);
+                            self
         }
         /// <p>An array of zero or more elements of DeviceAttribute objects providing user specified device attributes.</p>
-        pub fn set_attributes(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.attributes = input;
-            self
+        pub fn set_attributes(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.attributes = input; self
         }
         /// <p>The unique identifier of the device.</p>
         pub fn device_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -124,8 +101,7 @@ pub mod device_description {
         }
         /// <p>The unique identifier of the device.</p>
         pub fn set_device_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.device_id = input;
-            self
+            self.device_id = input; self
         }
         /// <p>A Boolean value indicating whether or not the device is enabled.</p>
         pub fn enabled(mut self, input: bool) -> Self {
@@ -134,8 +110,7 @@ pub mod device_description {
         }
         /// <p>A Boolean value indicating whether or not the device is enabled.</p>
         pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
-            self.enabled = input;
-            self
+            self.enabled = input; self
         }
         /// <p>A value between 0 and 1 inclusive, representing the fraction of life remaining for the device.</p>
         pub fn remaining_life(mut self, input: f64) -> Self {
@@ -144,8 +119,7 @@ pub mod device_description {
         }
         /// <p>A value between 0 and 1 inclusive, representing the fraction of life remaining for the device.</p>
         pub fn set_remaining_life(mut self, input: std::option::Option<f64>) -> Self {
-            self.remaining_life = input;
-            self
+            self.remaining_life = input; self
         }
         /// <p>The type of the device, such as "button".</p>
         pub fn r#type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -154,47 +128,47 @@ pub mod device_description {
         }
         /// <p>The type of the device, such as "button".</p>
         pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.r#type = input;
-            self
+            self.r#type = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags currently associated with the AWS IoT 1-Click device.</p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// <p>The tags currently associated with the AWS IoT 1-Click device.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`DeviceDescription`](crate::model::DeviceDescription).
         pub fn build(self) -> crate::model::DeviceDescription {
             crate::model::DeviceDescription {
-                arn: self.arn,
-                attributes: self.attributes,
-                device_id: self.device_id,
-                enabled: self.enabled.unwrap_or_default(),
-                remaining_life: self.remaining_life.unwrap_or_default(),
-                r#type: self.r#type,
-                tags: self.tags,
+                arn: self.arn
+                ,
+                attributes: self.attributes
+                ,
+                device_id: self.device_id
+                ,
+                enabled: self.enabled
+                    .unwrap_or_default()
+                ,
+                remaining_life: self.remaining_life
+                    .unwrap_or_default()
+                ,
+                r#type: self.r#type
+                ,
+                tags: self.tags
+                ,
             }
         }
     }
+    
+    
 }
 impl DeviceDescription {
     /// Creates a new builder-style object to manufacture [`DeviceDescription`](crate::model::DeviceDescription).
@@ -206,7 +180,7 @@ impl DeviceDescription {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeviceEvent {
+pub struct DeviceEvent  {
     /// <p>An object representing the device associated with the event.</p>
     #[doc(hidden)]
     pub device: std::option::Option<crate::model::Device>,
@@ -216,17 +190,17 @@ pub struct DeviceEvent {
 }
 impl DeviceEvent {
     /// <p>An object representing the device associated with the event.</p>
-    pub fn device(&self) -> std::option::Option<&crate::model::Device> {
+    pub fn device(&self) -> std::option::Option<& crate::model::Device> {
         self.device.as_ref()
     }
     /// <p>A serialized JSON object representing the device-type specific event.</p>
-    pub fn std_event(&self) -> std::option::Option<&str> {
+    pub fn std_event(&self) -> std::option::Option<& str> {
         self.std_event.as_deref()
     }
 }
 /// See [`DeviceEvent`](crate::model::DeviceEvent).
 pub mod device_event {
-
+    
     /// A builder for [`DeviceEvent`](crate::model::DeviceEvent).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -241,8 +215,7 @@ pub mod device_event {
         }
         /// <p>An object representing the device associated with the event.</p>
         pub fn set_device(mut self, input: std::option::Option<crate::model::Device>) -> Self {
-            self.device = input;
-            self
+            self.device = input; self
         }
         /// <p>A serialized JSON object representing the device-type specific event.</p>
         pub fn std_event(mut self, input: impl Into<std::string::String>) -> Self {
@@ -251,17 +224,20 @@ pub mod device_event {
         }
         /// <p>A serialized JSON object representing the device-type specific event.</p>
         pub fn set_std_event(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.std_event = input;
-            self
+            self.std_event = input; self
         }
         /// Consumes the builder and constructs a [`DeviceEvent`](crate::model::DeviceEvent).
         pub fn build(self) -> crate::model::DeviceEvent {
             crate::model::DeviceEvent {
-                device: self.device,
-                std_event: self.std_event,
+                device: self.device
+                ,
+                std_event: self.std_event
+                ,
             }
         }
     }
+    
+    
 }
 impl DeviceEvent {
     /// Creates a new builder-style object to manufacture [`DeviceEvent`](crate::model::DeviceEvent).
@@ -273,7 +249,7 @@ impl DeviceEvent {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Device {
+pub struct Device  {
     /// <p>The user specified attributes associated with the device for an event.</p>
     #[doc(hidden)]
     pub attributes: std::option::Option<crate::model::Attributes>,
@@ -286,21 +262,21 @@ pub struct Device {
 }
 impl Device {
     /// <p>The user specified attributes associated with the device for an event.</p>
-    pub fn attributes(&self) -> std::option::Option<&crate::model::Attributes> {
+    pub fn attributes(&self) -> std::option::Option<& crate::model::Attributes> {
         self.attributes.as_ref()
     }
     /// <p>The unique identifier of the device.</p>
-    pub fn device_id(&self) -> std::option::Option<&str> {
+    pub fn device_id(&self) -> std::option::Option<& str> {
         self.device_id.as_deref()
     }
     /// <p>The device type, such as "button".</p>
-    pub fn r#type(&self) -> std::option::Option<&str> {
+    pub fn r#type(&self) -> std::option::Option<& str> {
         self.r#type.as_deref()
     }
 }
 /// See [`Device`](crate::model::Device).
 pub mod device {
-
+    
     /// A builder for [`Device`](crate::model::Device).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -315,12 +291,8 @@ pub mod device {
             self
         }
         /// <p>The user specified attributes associated with the device for an event.</p>
-        pub fn set_attributes(
-            mut self,
-            input: std::option::Option<crate::model::Attributes>,
-        ) -> Self {
-            self.attributes = input;
-            self
+        pub fn set_attributes(mut self, input: std::option::Option<crate::model::Attributes>) -> Self {
+            self.attributes = input; self
         }
         /// <p>The unique identifier of the device.</p>
         pub fn device_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -329,8 +301,7 @@ pub mod device {
         }
         /// <p>The unique identifier of the device.</p>
         pub fn set_device_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.device_id = input;
-            self
+            self.device_id = input; self
         }
         /// <p>The device type, such as "button".</p>
         pub fn r#type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -339,18 +310,22 @@ pub mod device {
         }
         /// <p>The device type, such as "button".</p>
         pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.r#type = input;
-            self
+            self.r#type = input; self
         }
         /// Consumes the builder and constructs a [`Device`](crate::model::Device).
         pub fn build(self) -> crate::model::Device {
             crate::model::Device {
-                attributes: self.attributes,
-                device_id: self.device_id,
-                r#type: self.r#type,
+                attributes: self.attributes
+                ,
+                device_id: self.device_id
+                ,
+                r#type: self.r#type
+                ,
             }
         }
     }
+    
+    
 }
 impl Device {
     /// Creates a new builder-style object to manufacture [`Device`](crate::model::Device).
@@ -362,19 +337,24 @@ impl Device {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Attributes {}
+pub struct Attributes  {
+}
 /// See [`Attributes`](crate::model::Attributes).
 pub mod attributes {
-
+    
     /// A builder for [`Attributes`](crate::model::Attributes).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`Attributes`](crate::model::Attributes).
         pub fn build(self) -> crate::model::Attributes {
-            crate::model::Attributes {}
+            crate::model::Attributes {
+            }
         }
     }
+    
+    
 }
 impl Attributes {
     /// Creates a new builder-style object to manufacture [`Attributes`](crate::model::Attributes).
@@ -386,7 +366,7 @@ impl Attributes {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeviceMethod {
+pub struct DeviceMethod  {
     /// <p>The type of the device, such as "button".</p>
     #[doc(hidden)]
     pub device_type: std::option::Option<std::string::String>,
@@ -396,17 +376,17 @@ pub struct DeviceMethod {
 }
 impl DeviceMethod {
     /// <p>The type of the device, such as "button".</p>
-    pub fn device_type(&self) -> std::option::Option<&str> {
+    pub fn device_type(&self) -> std::option::Option<& str> {
         self.device_type.as_deref()
     }
     /// <p>The name of the method applicable to the deviceType.</p>
-    pub fn method_name(&self) -> std::option::Option<&str> {
+    pub fn method_name(&self) -> std::option::Option<& str> {
         self.method_name.as_deref()
     }
 }
 /// See [`DeviceMethod`](crate::model::DeviceMethod).
 pub mod device_method {
-
+    
     /// A builder for [`DeviceMethod`](crate::model::DeviceMethod).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -421,8 +401,7 @@ pub mod device_method {
         }
         /// <p>The type of the device, such as "button".</p>
         pub fn set_device_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.device_type = input;
-            self
+            self.device_type = input; self
         }
         /// <p>The name of the method applicable to the deviceType.</p>
         pub fn method_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -431,17 +410,20 @@ pub mod device_method {
         }
         /// <p>The name of the method applicable to the deviceType.</p>
         pub fn set_method_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.method_name = input;
-            self
+            self.method_name = input; self
         }
         /// Consumes the builder and constructs a [`DeviceMethod`](crate::model::DeviceMethod).
         pub fn build(self) -> crate::model::DeviceMethod {
             crate::model::DeviceMethod {
-                device_type: self.device_type,
-                method_name: self.method_name,
+                device_type: self.device_type
+                ,
+                method_name: self.method_name
+                ,
             }
         }
     }
+    
+    
 }
 impl DeviceMethod {
     /// Creates a new builder-style object to manufacture [`DeviceMethod`](crate::model::DeviceMethod).
@@ -449,3 +431,4 @@ impl DeviceMethod {
         crate::model::device_method::Builder::default()
     }
 }
+

@@ -2,20 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetDashboardForJobRunOutput {
+pub struct GetDashboardForJobRunOutput  {
     /// <p>The URL to view job run's dashboard.</p>
     #[doc(hidden)]
     pub url: std::option::Option<std::string::String>,
 }
 impl GetDashboardForJobRunOutput {
     /// <p>The URL to view job run's dashboard.</p>
-    pub fn url(&self) -> std::option::Option<&str> {
+    pub fn url(&self) -> std::option::Option<& str> {
         self.url.as_deref()
     }
 }
 /// See [`GetDashboardForJobRunOutput`](crate::output::GetDashboardForJobRunOutput).
 pub mod get_dashboard_for_job_run_output {
-
+    
     /// A builder for [`GetDashboardForJobRunOutput`](crate::output::GetDashboardForJobRunOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -29,14 +29,18 @@ pub mod get_dashboard_for_job_run_output {
         }
         /// <p>The URL to view job run's dashboard.</p>
         pub fn set_url(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.url = input;
-            self
+            self.url = input; self
         }
         /// Consumes the builder and constructs a [`GetDashboardForJobRunOutput`](crate::output::GetDashboardForJobRunOutput).
         pub fn build(self) -> crate::output::GetDashboardForJobRunOutput {
-            crate::output::GetDashboardForJobRunOutput { url: self.url }
+            crate::output::GetDashboardForJobRunOutput {
+                url: self.url
+                ,
+            }
         }
     }
+    
+    
 }
 impl GetDashboardForJobRunOutput {
     /// Creates a new builder-style object to manufacture [`GetDashboardForJobRunOutput`](crate::output::GetDashboardForJobRunOutput).
@@ -48,7 +52,7 @@ impl GetDashboardForJobRunOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListJobRunsOutput {
+pub struct ListJobRunsOutput  {
     /// <p>The output lists information about the specified job runs.</p>
     #[doc(hidden)]
     pub job_runs: std::option::Option<std::vec::Vec<crate::model::JobRunSummary>>,
@@ -58,17 +62,17 @@ pub struct ListJobRunsOutput {
 }
 impl ListJobRunsOutput {
     /// <p>The output lists information about the specified job runs.</p>
-    pub fn job_runs(&self) -> std::option::Option<&[crate::model::JobRunSummary]> {
+    pub fn job_runs(&self) -> std::option::Option<& [crate::model::JobRunSummary]> {
         self.job_runs.as_deref()
     }
     /// <p>The output displays the token for the next set of job run results. This is required for pagination and is available as a response of the previous request.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListJobRunsOutput`](crate::output::ListJobRunsOutput).
 pub mod list_job_runs_output {
-
+    
     /// A builder for [`ListJobRunsOutput`](crate::output::ListJobRunsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -83,17 +87,13 @@ pub mod list_job_runs_output {
         /// <p>The output lists information about the specified job runs.</p>
         pub fn job_runs(mut self, input: crate::model::JobRunSummary) -> Self {
             let mut v = self.job_runs.unwrap_or_default();
-            v.push(input);
-            self.job_runs = Some(v);
-            self
+                            v.push(input);
+                            self.job_runs = Some(v);
+                            self
         }
         /// <p>The output lists information about the specified job runs.</p>
-        pub fn set_job_runs(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::JobRunSummary>>,
-        ) -> Self {
-            self.job_runs = input;
-            self
+        pub fn set_job_runs(mut self, input: std::option::Option<std::vec::Vec<crate::model::JobRunSummary>>) -> Self {
+            self.job_runs = input; self
         }
         /// <p>The output displays the token for the next set of job run results. This is required for pagination and is available as a response of the previous request.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -102,17 +102,20 @@ pub mod list_job_runs_output {
         }
         /// <p>The output displays the token for the next set of job run results. This is required for pagination and is available as a response of the previous request.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListJobRunsOutput`](crate::output::ListJobRunsOutput).
         pub fn build(self) -> crate::output::ListJobRunsOutput {
             crate::output::ListJobRunsOutput {
-                job_runs: self.job_runs,
-                next_token: self.next_token,
+                job_runs: self.job_runs
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListJobRunsOutput {
     /// Creates a new builder-style object to manufacture [`ListJobRunsOutput`](crate::output::ListJobRunsOutput).
@@ -124,7 +127,7 @@ impl ListJobRunsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StartJobRunOutput {
+pub struct StartJobRunOutput  {
     /// <p>This output displays the application ID on which the job run was submitted.</p>
     #[doc(hidden)]
     pub application_id: std::option::Option<std::string::String>,
@@ -137,21 +140,21 @@ pub struct StartJobRunOutput {
 }
 impl StartJobRunOutput {
     /// <p>This output displays the application ID on which the job run was submitted.</p>
-    pub fn application_id(&self) -> std::option::Option<&str> {
+    pub fn application_id(&self) -> std::option::Option<& str> {
         self.application_id.as_deref()
     }
     /// <p>The output contains the ID of the started job run.</p>
-    pub fn job_run_id(&self) -> std::option::Option<&str> {
+    pub fn job_run_id(&self) -> std::option::Option<& str> {
         self.job_run_id.as_deref()
     }
     /// <p>The output lists the execution role ARN of the job run.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
 }
 /// See [`StartJobRunOutput`](crate::output::StartJobRunOutput).
 pub mod start_job_run_output {
-
+    
     /// A builder for [`StartJobRunOutput`](crate::output::StartJobRunOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -166,12 +169,8 @@ pub mod start_job_run_output {
             self
         }
         /// <p>This output displays the application ID on which the job run was submitted.</p>
-        pub fn set_application_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.application_id = input;
-            self
+        pub fn set_application_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.application_id = input; self
         }
         /// <p>The output contains the ID of the started job run.</p>
         pub fn job_run_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -180,8 +179,7 @@ pub mod start_job_run_output {
         }
         /// <p>The output contains the ID of the started job run.</p>
         pub fn set_job_run_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.job_run_id = input;
-            self
+            self.job_run_id = input; self
         }
         /// <p>The output lists the execution role ARN of the job run.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -190,18 +188,22 @@ pub mod start_job_run_output {
         }
         /// <p>The output lists the execution role ARN of the job run.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// Consumes the builder and constructs a [`StartJobRunOutput`](crate::output::StartJobRunOutput).
         pub fn build(self) -> crate::output::StartJobRunOutput {
             crate::output::StartJobRunOutput {
-                application_id: self.application_id,
-                job_run_id: self.job_run_id,
-                arn: self.arn,
+                application_id: self.application_id
+                ,
+                job_run_id: self.job_run_id
+                ,
+                arn: self.arn
+                ,
             }
         }
     }
+    
+    
 }
 impl StartJobRunOutput {
     /// Creates a new builder-style object to manufacture [`StartJobRunOutput`](crate::output::StartJobRunOutput).
@@ -213,7 +215,7 @@ impl StartJobRunOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CancelJobRunOutput {
+pub struct CancelJobRunOutput  {
     /// <p>The output contains the application ID on which the job run is cancelled.</p>
     #[doc(hidden)]
     pub application_id: std::option::Option<std::string::String>,
@@ -223,17 +225,17 @@ pub struct CancelJobRunOutput {
 }
 impl CancelJobRunOutput {
     /// <p>The output contains the application ID on which the job run is cancelled.</p>
-    pub fn application_id(&self) -> std::option::Option<&str> {
+    pub fn application_id(&self) -> std::option::Option<& str> {
         self.application_id.as_deref()
     }
     /// <p>The output contains the ID of the cancelled job run.</p>
-    pub fn job_run_id(&self) -> std::option::Option<&str> {
+    pub fn job_run_id(&self) -> std::option::Option<& str> {
         self.job_run_id.as_deref()
     }
 }
 /// See [`CancelJobRunOutput`](crate::output::CancelJobRunOutput).
 pub mod cancel_job_run_output {
-
+    
     /// A builder for [`CancelJobRunOutput`](crate::output::CancelJobRunOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -247,12 +249,8 @@ pub mod cancel_job_run_output {
             self
         }
         /// <p>The output contains the application ID on which the job run is cancelled.</p>
-        pub fn set_application_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.application_id = input;
-            self
+        pub fn set_application_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.application_id = input; self
         }
         /// <p>The output contains the ID of the cancelled job run.</p>
         pub fn job_run_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -261,17 +259,20 @@ pub mod cancel_job_run_output {
         }
         /// <p>The output contains the ID of the cancelled job run.</p>
         pub fn set_job_run_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.job_run_id = input;
-            self
+            self.job_run_id = input; self
         }
         /// Consumes the builder and constructs a [`CancelJobRunOutput`](crate::output::CancelJobRunOutput).
         pub fn build(self) -> crate::output::CancelJobRunOutput {
             crate::output::CancelJobRunOutput {
-                application_id: self.application_id,
-                job_run_id: self.job_run_id,
+                application_id: self.application_id
+                ,
+                job_run_id: self.job_run_id
+                ,
             }
         }
     }
+    
+    
 }
 impl CancelJobRunOutput {
     /// Creates a new builder-style object to manufacture [`CancelJobRunOutput`](crate::output::CancelJobRunOutput).
@@ -283,20 +284,20 @@ impl CancelJobRunOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetJobRunOutput {
+pub struct GetJobRunOutput  {
     /// <p>The output displays information about the job run.</p>
     #[doc(hidden)]
     pub job_run: std::option::Option<crate::model::JobRun>,
 }
 impl GetJobRunOutput {
     /// <p>The output displays information about the job run.</p>
-    pub fn job_run(&self) -> std::option::Option<&crate::model::JobRun> {
+    pub fn job_run(&self) -> std::option::Option<& crate::model::JobRun> {
         self.job_run.as_ref()
     }
 }
 /// See [`GetJobRunOutput`](crate::output::GetJobRunOutput).
 pub mod get_job_run_output {
-
+    
     /// A builder for [`GetJobRunOutput`](crate::output::GetJobRunOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -310,16 +311,18 @@ pub mod get_job_run_output {
         }
         /// <p>The output displays information about the job run.</p>
         pub fn set_job_run(mut self, input: std::option::Option<crate::model::JobRun>) -> Self {
-            self.job_run = input;
-            self
+            self.job_run = input; self
         }
         /// Consumes the builder and constructs a [`GetJobRunOutput`](crate::output::GetJobRunOutput).
         pub fn build(self) -> crate::output::GetJobRunOutput {
             crate::output::GetJobRunOutput {
-                job_run: self.job_run,
+                job_run: self.job_run
+                ,
             }
         }
     }
+    
+    
 }
 impl GetJobRunOutput {
     /// Creates a new builder-style object to manufacture [`GetJobRunOutput`](crate::output::GetJobRunOutput).
@@ -331,19 +334,24 @@ impl GetJobRunOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StopApplicationOutput {}
+pub struct StopApplicationOutput  {
+}
 /// See [`StopApplicationOutput`](crate::output::StopApplicationOutput).
 pub mod stop_application_output {
-
+    
     /// A builder for [`StopApplicationOutput`](crate::output::StopApplicationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`StopApplicationOutput`](crate::output::StopApplicationOutput).
         pub fn build(self) -> crate::output::StopApplicationOutput {
-            crate::output::StopApplicationOutput {}
+            crate::output::StopApplicationOutput {
+            }
         }
     }
+    
+    
 }
 impl StopApplicationOutput {
     /// Creates a new builder-style object to manufacture [`StopApplicationOutput`](crate::output::StopApplicationOutput).
@@ -355,19 +363,24 @@ impl StopApplicationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StartApplicationOutput {}
+pub struct StartApplicationOutput  {
+}
 /// See [`StartApplicationOutput`](crate::output::StartApplicationOutput).
 pub mod start_application_output {
-
+    
     /// A builder for [`StartApplicationOutput`](crate::output::StartApplicationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`StartApplicationOutput`](crate::output::StartApplicationOutput).
         pub fn build(self) -> crate::output::StartApplicationOutput {
-            crate::output::StartApplicationOutput {}
+            crate::output::StartApplicationOutput {
+            }
         }
     }
+    
+    
 }
 impl StartApplicationOutput {
     /// Creates a new builder-style object to manufacture [`StartApplicationOutput`](crate::output::StartApplicationOutput).
@@ -379,7 +392,7 @@ impl StartApplicationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListApplicationsOutput {
+pub struct ListApplicationsOutput  {
     /// <p>The output lists the specified applications.</p>
     #[doc(hidden)]
     pub applications: std::option::Option<std::vec::Vec<crate::model::ApplicationSummary>>,
@@ -389,22 +402,21 @@ pub struct ListApplicationsOutput {
 }
 impl ListApplicationsOutput {
     /// <p>The output lists the specified applications.</p>
-    pub fn applications(&self) -> std::option::Option<&[crate::model::ApplicationSummary]> {
+    pub fn applications(&self) -> std::option::Option<& [crate::model::ApplicationSummary]> {
         self.applications.as_deref()
     }
     /// <p>The output displays the token for the next set of application results. This is required for pagination and is available as a response of the previous request.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListApplicationsOutput`](crate::output::ListApplicationsOutput).
 pub mod list_applications_output {
-
+    
     /// A builder for [`ListApplicationsOutput`](crate::output::ListApplicationsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) applications:
-            std::option::Option<std::vec::Vec<crate::model::ApplicationSummary>>,
+        pub(crate) applications: std::option::Option<std::vec::Vec<crate::model::ApplicationSummary>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -415,17 +427,13 @@ pub mod list_applications_output {
         /// <p>The output lists the specified applications.</p>
         pub fn applications(mut self, input: crate::model::ApplicationSummary) -> Self {
             let mut v = self.applications.unwrap_or_default();
-            v.push(input);
-            self.applications = Some(v);
-            self
+                            v.push(input);
+                            self.applications = Some(v);
+                            self
         }
         /// <p>The output lists the specified applications.</p>
-        pub fn set_applications(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ApplicationSummary>>,
-        ) -> Self {
-            self.applications = input;
-            self
+        pub fn set_applications(mut self, input: std::option::Option<std::vec::Vec<crate::model::ApplicationSummary>>) -> Self {
+            self.applications = input; self
         }
         /// <p>The output displays the token for the next set of application results. This is required for pagination and is available as a response of the previous request.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -434,17 +442,20 @@ pub mod list_applications_output {
         }
         /// <p>The output displays the token for the next set of application results. This is required for pagination and is available as a response of the previous request.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListApplicationsOutput`](crate::output::ListApplicationsOutput).
         pub fn build(self) -> crate::output::ListApplicationsOutput {
             crate::output::ListApplicationsOutput {
-                applications: self.applications,
-                next_token: self.next_token,
+                applications: self.applications
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListApplicationsOutput {
     /// Creates a new builder-style object to manufacture [`ListApplicationsOutput`](crate::output::ListApplicationsOutput).
@@ -456,7 +467,7 @@ impl ListApplicationsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateApplicationOutput {
+pub struct CreateApplicationOutput  {
     /// <p>The output contains the application ID.</p>
     #[doc(hidden)]
     pub application_id: std::option::Option<std::string::String>,
@@ -469,21 +480,21 @@ pub struct CreateApplicationOutput {
 }
 impl CreateApplicationOutput {
     /// <p>The output contains the application ID.</p>
-    pub fn application_id(&self) -> std::option::Option<&str> {
+    pub fn application_id(&self) -> std::option::Option<& str> {
         self.application_id.as_deref()
     }
     /// <p>The output contains the name of the application.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The output contains the ARN of the application.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
 }
 /// See [`CreateApplicationOutput`](crate::output::CreateApplicationOutput).
 pub mod create_application_output {
-
+    
     /// A builder for [`CreateApplicationOutput`](crate::output::CreateApplicationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -498,12 +509,8 @@ pub mod create_application_output {
             self
         }
         /// <p>The output contains the application ID.</p>
-        pub fn set_application_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.application_id = input;
-            self
+        pub fn set_application_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.application_id = input; self
         }
         /// <p>The output contains the name of the application.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -512,8 +519,7 @@ pub mod create_application_output {
         }
         /// <p>The output contains the name of the application.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The output contains the ARN of the application.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -522,18 +528,22 @@ pub mod create_application_output {
         }
         /// <p>The output contains the ARN of the application.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// Consumes the builder and constructs a [`CreateApplicationOutput`](crate::output::CreateApplicationOutput).
         pub fn build(self) -> crate::output::CreateApplicationOutput {
             crate::output::CreateApplicationOutput {
-                application_id: self.application_id,
-                name: self.name,
-                arn: self.arn,
+                application_id: self.application_id
+                ,
+                name: self.name
+                ,
+                arn: self.arn
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateApplicationOutput {
     /// Creates a new builder-style object to manufacture [`CreateApplicationOutput`](crate::output::CreateApplicationOutput).
@@ -545,19 +555,24 @@ impl CreateApplicationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteApplicationOutput {}
+pub struct DeleteApplicationOutput  {
+}
 /// See [`DeleteApplicationOutput`](crate::output::DeleteApplicationOutput).
 pub mod delete_application_output {
-
+    
     /// A builder for [`DeleteApplicationOutput`](crate::output::DeleteApplicationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteApplicationOutput`](crate::output::DeleteApplicationOutput).
         pub fn build(self) -> crate::output::DeleteApplicationOutput {
-            crate::output::DeleteApplicationOutput {}
+            crate::output::DeleteApplicationOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteApplicationOutput {
     /// Creates a new builder-style object to manufacture [`DeleteApplicationOutput`](crate::output::DeleteApplicationOutput).
@@ -569,20 +584,20 @@ impl DeleteApplicationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateApplicationOutput {
+pub struct UpdateApplicationOutput  {
     /// <p>Information about the updated application.</p>
     #[doc(hidden)]
     pub application: std::option::Option<crate::model::Application>,
 }
 impl UpdateApplicationOutput {
     /// <p>Information about the updated application.</p>
-    pub fn application(&self) -> std::option::Option<&crate::model::Application> {
+    pub fn application(&self) -> std::option::Option<& crate::model::Application> {
         self.application.as_ref()
     }
 }
 /// See [`UpdateApplicationOutput`](crate::output::UpdateApplicationOutput).
 pub mod update_application_output {
-
+    
     /// A builder for [`UpdateApplicationOutput`](crate::output::UpdateApplicationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -595,20 +610,19 @@ pub mod update_application_output {
             self
         }
         /// <p>Information about the updated application.</p>
-        pub fn set_application(
-            mut self,
-            input: std::option::Option<crate::model::Application>,
-        ) -> Self {
-            self.application = input;
-            self
+        pub fn set_application(mut self, input: std::option::Option<crate::model::Application>) -> Self {
+            self.application = input; self
         }
         /// Consumes the builder and constructs a [`UpdateApplicationOutput`](crate::output::UpdateApplicationOutput).
         pub fn build(self) -> crate::output::UpdateApplicationOutput {
             crate::output::UpdateApplicationOutput {
-                application: self.application,
+                application: self.application
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateApplicationOutput {
     /// Creates a new builder-style object to manufacture [`UpdateApplicationOutput`](crate::output::UpdateApplicationOutput).
@@ -620,20 +634,20 @@ impl UpdateApplicationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetApplicationOutput {
+pub struct GetApplicationOutput  {
     /// <p>The output displays information about the specified application.</p>
     #[doc(hidden)]
     pub application: std::option::Option<crate::model::Application>,
 }
 impl GetApplicationOutput {
     /// <p>The output displays information about the specified application.</p>
-    pub fn application(&self) -> std::option::Option<&crate::model::Application> {
+    pub fn application(&self) -> std::option::Option<& crate::model::Application> {
         self.application.as_ref()
     }
 }
 /// See [`GetApplicationOutput`](crate::output::GetApplicationOutput).
 pub mod get_application_output {
-
+    
     /// A builder for [`GetApplicationOutput`](crate::output::GetApplicationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -646,20 +660,19 @@ pub mod get_application_output {
             self
         }
         /// <p>The output displays information about the specified application.</p>
-        pub fn set_application(
-            mut self,
-            input: std::option::Option<crate::model::Application>,
-        ) -> Self {
-            self.application = input;
-            self
+        pub fn set_application(mut self, input: std::option::Option<crate::model::Application>) -> Self {
+            self.application = input; self
         }
         /// Consumes the builder and constructs a [`GetApplicationOutput`](crate::output::GetApplicationOutput).
         pub fn build(self) -> crate::output::GetApplicationOutput {
             crate::output::GetApplicationOutput {
-                application: self.application,
+                application: self.application
+                ,
             }
         }
     }
+    
+    
 }
 impl GetApplicationOutput {
     /// Creates a new builder-style object to manufacture [`GetApplicationOutput`](crate::output::GetApplicationOutput).
@@ -671,19 +684,24 @@ impl GetApplicationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UntagResourceOutput {}
+pub struct UntagResourceOutput  {
+}
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput).
 pub mod untag_resource_output {
-
+    
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput).
         pub fn build(self) -> crate::output::UntagResourceOutput {
-            crate::output::UntagResourceOutput {}
+            crate::output::UntagResourceOutput {
+            }
         }
     }
+    
+    
 }
 impl UntagResourceOutput {
     /// Creates a new builder-style object to manufacture [`UntagResourceOutput`](crate::output::UntagResourceOutput).
@@ -695,19 +713,24 @@ impl UntagResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TagResourceOutput {}
+pub struct TagResourceOutput  {
+}
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput).
 pub mod tag_resource_output {
-
+    
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput).
         pub fn build(self) -> crate::output::TagResourceOutput {
-            crate::output::TagResourceOutput {}
+            crate::output::TagResourceOutput {
+            }
         }
     }
+    
+    
 }
 impl TagResourceOutput {
     /// Creates a new builder-style object to manufacture [`TagResourceOutput`](crate::output::TagResourceOutput).
@@ -719,30 +742,24 @@ impl TagResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListTagsForResourceOutput {
+pub struct ListTagsForResourceOutput  {
     /// <p>The tags for the resource.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl ListTagsForResourceOutput {
     /// <p>The tags for the resource.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
 }
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
 pub mod list_tags_for_resource_output {
-
+    
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     }
     impl Builder {
         /// Adds a key-value pair to `tags`.
@@ -750,31 +767,26 @@ pub mod list_tags_for_resource_output {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags for the resource.</p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// <p>The tags for the resource.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
         pub fn build(self) -> crate::output::ListTagsForResourceOutput {
-            crate::output::ListTagsForResourceOutput { tags: self.tags }
+            crate::output::ListTagsForResourceOutput {
+                tags: self.tags
+                ,
+            }
         }
     }
+    
+    
 }
 impl ListTagsForResourceOutput {
     /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
@@ -782,3 +794,4 @@ impl ListTagsForResourceOutput {
         crate::output::list_tags_for_resource_output::Builder::default()
     }
 }
+

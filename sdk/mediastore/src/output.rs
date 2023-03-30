@@ -2,19 +2,24 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UntagResourceOutput {}
+pub struct UntagResourceOutput  {
+}
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput).
 pub mod untag_resource_output {
-
+    
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput).
         pub fn build(self) -> crate::output::UntagResourceOutput {
-            crate::output::UntagResourceOutput {}
+            crate::output::UntagResourceOutput {
+            }
         }
     }
+    
+    
 }
 impl UntagResourceOutput {
     /// Creates a new builder-style object to manufacture [`UntagResourceOutput`](crate::output::UntagResourceOutput).
@@ -26,19 +31,24 @@ impl UntagResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TagResourceOutput {}
+pub struct TagResourceOutput  {
+}
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput).
 pub mod tag_resource_output {
-
+    
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput).
         pub fn build(self) -> crate::output::TagResourceOutput {
-            crate::output::TagResourceOutput {}
+            crate::output::TagResourceOutput {
+            }
         }
     }
+    
+    
 }
 impl TagResourceOutput {
     /// Creates a new builder-style object to manufacture [`TagResourceOutput`](crate::output::TagResourceOutput).
@@ -50,19 +60,24 @@ impl TagResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StopAccessLoggingOutput {}
+pub struct StopAccessLoggingOutput  {
+}
 /// See [`StopAccessLoggingOutput`](crate::output::StopAccessLoggingOutput).
 pub mod stop_access_logging_output {
-
+    
     /// A builder for [`StopAccessLoggingOutput`](crate::output::StopAccessLoggingOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`StopAccessLoggingOutput`](crate::output::StopAccessLoggingOutput).
         pub fn build(self) -> crate::output::StopAccessLoggingOutput {
-            crate::output::StopAccessLoggingOutput {}
+            crate::output::StopAccessLoggingOutput {
+            }
         }
     }
+    
+    
 }
 impl StopAccessLoggingOutput {
     /// Creates a new builder-style object to manufacture [`StopAccessLoggingOutput`](crate::output::StopAccessLoggingOutput).
@@ -74,19 +89,24 @@ impl StopAccessLoggingOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StartAccessLoggingOutput {}
+pub struct StartAccessLoggingOutput  {
+}
 /// See [`StartAccessLoggingOutput`](crate::output::StartAccessLoggingOutput).
 pub mod start_access_logging_output {
-
+    
     /// A builder for [`StartAccessLoggingOutput`](crate::output::StartAccessLoggingOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`StartAccessLoggingOutput`](crate::output::StartAccessLoggingOutput).
         pub fn build(self) -> crate::output::StartAccessLoggingOutput {
-            crate::output::StartAccessLoggingOutput {}
+            crate::output::StartAccessLoggingOutput {
+            }
         }
     }
+    
+    
 }
 impl StartAccessLoggingOutput {
     /// Creates a new builder-style object to manufacture [`StartAccessLoggingOutput`](crate::output::StartAccessLoggingOutput).
@@ -98,19 +118,24 @@ impl StartAccessLoggingOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutMetricPolicyOutput {}
+pub struct PutMetricPolicyOutput  {
+}
 /// See [`PutMetricPolicyOutput`](crate::output::PutMetricPolicyOutput).
 pub mod put_metric_policy_output {
-
+    
     /// A builder for [`PutMetricPolicyOutput`](crate::output::PutMetricPolicyOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`PutMetricPolicyOutput`](crate::output::PutMetricPolicyOutput).
         pub fn build(self) -> crate::output::PutMetricPolicyOutput {
-            crate::output::PutMetricPolicyOutput {}
+            crate::output::PutMetricPolicyOutput {
+            }
         }
     }
+    
+    
 }
 impl PutMetricPolicyOutput {
     /// Creates a new builder-style object to manufacture [`PutMetricPolicyOutput`](crate::output::PutMetricPolicyOutput).
@@ -122,19 +147,24 @@ impl PutMetricPolicyOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutLifecyclePolicyOutput {}
+pub struct PutLifecyclePolicyOutput  {
+}
 /// See [`PutLifecyclePolicyOutput`](crate::output::PutLifecyclePolicyOutput).
 pub mod put_lifecycle_policy_output {
-
+    
     /// A builder for [`PutLifecyclePolicyOutput`](crate::output::PutLifecyclePolicyOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`PutLifecyclePolicyOutput`](crate::output::PutLifecyclePolicyOutput).
         pub fn build(self) -> crate::output::PutLifecyclePolicyOutput {
-            crate::output::PutLifecyclePolicyOutput {}
+            crate::output::PutLifecyclePolicyOutput {
+            }
         }
     }
+    
+    
 }
 impl PutLifecyclePolicyOutput {
     /// Creates a new builder-style object to manufacture [`PutLifecyclePolicyOutput`](crate::output::PutLifecyclePolicyOutput).
@@ -146,19 +176,24 @@ impl PutLifecyclePolicyOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutCorsPolicyOutput {}
+pub struct PutCorsPolicyOutput  {
+}
 /// See [`PutCorsPolicyOutput`](crate::output::PutCorsPolicyOutput).
 pub mod put_cors_policy_output {
-
+    
     /// A builder for [`PutCorsPolicyOutput`](crate::output::PutCorsPolicyOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`PutCorsPolicyOutput`](crate::output::PutCorsPolicyOutput).
         pub fn build(self) -> crate::output::PutCorsPolicyOutput {
-            crate::output::PutCorsPolicyOutput {}
+            crate::output::PutCorsPolicyOutput {
+            }
         }
     }
+    
+    
 }
 impl PutCorsPolicyOutput {
     /// Creates a new builder-style object to manufacture [`PutCorsPolicyOutput`](crate::output::PutCorsPolicyOutput).
@@ -170,19 +205,24 @@ impl PutCorsPolicyOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutContainerPolicyOutput {}
+pub struct PutContainerPolicyOutput  {
+}
 /// See [`PutContainerPolicyOutput`](crate::output::PutContainerPolicyOutput).
 pub mod put_container_policy_output {
-
+    
     /// A builder for [`PutContainerPolicyOutput`](crate::output::PutContainerPolicyOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`PutContainerPolicyOutput`](crate::output::PutContainerPolicyOutput).
         pub fn build(self) -> crate::output::PutContainerPolicyOutput {
-            crate::output::PutContainerPolicyOutput {}
+            crate::output::PutContainerPolicyOutput {
+            }
         }
     }
+    
+    
 }
 impl PutContainerPolicyOutput {
     /// Creates a new builder-style object to manufacture [`PutContainerPolicyOutput`](crate::output::PutContainerPolicyOutput).
@@ -194,20 +234,20 @@ impl PutContainerPolicyOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListTagsForResourceOutput {
+pub struct ListTagsForResourceOutput  {
     /// <p>An array of key:value pairs that are assigned to the container.</p>
     #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl ListTagsForResourceOutput {
     /// <p>An array of key:value pairs that are assigned to the container.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+    pub fn tags(&self) -> std::option::Option<& [crate::model::Tag]> {
         self.tags.as_deref()
     }
 }
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
 pub mod list_tags_for_resource_output {
-
+    
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -221,23 +261,24 @@ pub mod list_tags_for_resource_output {
         /// <p>An array of key:value pairs that are assigned to the container.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input);
-            self.tags = Some(v);
-            self
+                            v.push(input);
+                            self.tags = Some(v);
+                            self
         }
         /// <p>An array of key:value pairs that are assigned to the container.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::model::Tag>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
         pub fn build(self) -> crate::output::ListTagsForResourceOutput {
-            crate::output::ListTagsForResourceOutput { tags: self.tags }
+            crate::output::ListTagsForResourceOutput {
+                tags: self.tags
+                ,
+            }
         }
     }
+    
+    
 }
 impl ListTagsForResourceOutput {
     /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
@@ -249,7 +290,7 @@ impl ListTagsForResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListContainersOutput {
+pub struct ListContainersOutput  {
     /// <p>The names of the containers.</p>
     #[doc(hidden)]
     pub containers: std::option::Option<std::vec::Vec<crate::model::Container>>,
@@ -259,17 +300,17 @@ pub struct ListContainersOutput {
 }
 impl ListContainersOutput {
     /// <p>The names of the containers.</p>
-    pub fn containers(&self) -> std::option::Option<&[crate::model::Container]> {
+    pub fn containers(&self) -> std::option::Option<& [crate::model::Container]> {
         self.containers.as_deref()
     }
     /// <p> <code>NextToken</code> is the token to use in the next call to <code>ListContainers</code>. This token is returned only if you included the <code>MaxResults</code> tag in the original command, and only if there are still containers to return. </p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListContainersOutput`](crate::output::ListContainersOutput).
 pub mod list_containers_output {
-
+    
     /// A builder for [`ListContainersOutput`](crate::output::ListContainersOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -284,17 +325,13 @@ pub mod list_containers_output {
         /// <p>The names of the containers.</p>
         pub fn containers(mut self, input: crate::model::Container) -> Self {
             let mut v = self.containers.unwrap_or_default();
-            v.push(input);
-            self.containers = Some(v);
-            self
+                            v.push(input);
+                            self.containers = Some(v);
+                            self
         }
         /// <p>The names of the containers.</p>
-        pub fn set_containers(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Container>>,
-        ) -> Self {
-            self.containers = input;
-            self
+        pub fn set_containers(mut self, input: std::option::Option<std::vec::Vec<crate::model::Container>>) -> Self {
+            self.containers = input; self
         }
         /// <p> <code>NextToken</code> is the token to use in the next call to <code>ListContainers</code>. This token is returned only if you included the <code>MaxResults</code> tag in the original command, and only if there are still containers to return. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -303,17 +340,20 @@ pub mod list_containers_output {
         }
         /// <p> <code>NextToken</code> is the token to use in the next call to <code>ListContainers</code>. This token is returned only if you included the <code>MaxResults</code> tag in the original command, and only if there are still containers to return. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListContainersOutput`](crate::output::ListContainersOutput).
         pub fn build(self) -> crate::output::ListContainersOutput {
             crate::output::ListContainersOutput {
-                containers: self.containers,
-                next_token: self.next_token,
+                containers: self.containers
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListContainersOutput {
     /// Creates a new builder-style object to manufacture [`ListContainersOutput`](crate::output::ListContainersOutput).
@@ -325,20 +365,20 @@ impl ListContainersOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetMetricPolicyOutput {
+pub struct GetMetricPolicyOutput  {
     /// <p>The metric policy that is associated with the specific container.</p>
     #[doc(hidden)]
     pub metric_policy: std::option::Option<crate::model::MetricPolicy>,
 }
 impl GetMetricPolicyOutput {
     /// <p>The metric policy that is associated with the specific container.</p>
-    pub fn metric_policy(&self) -> std::option::Option<&crate::model::MetricPolicy> {
+    pub fn metric_policy(&self) -> std::option::Option<& crate::model::MetricPolicy> {
         self.metric_policy.as_ref()
     }
 }
 /// See [`GetMetricPolicyOutput`](crate::output::GetMetricPolicyOutput).
 pub mod get_metric_policy_output {
-
+    
     /// A builder for [`GetMetricPolicyOutput`](crate::output::GetMetricPolicyOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -351,20 +391,19 @@ pub mod get_metric_policy_output {
             self
         }
         /// <p>The metric policy that is associated with the specific container.</p>
-        pub fn set_metric_policy(
-            mut self,
-            input: std::option::Option<crate::model::MetricPolicy>,
-        ) -> Self {
-            self.metric_policy = input;
-            self
+        pub fn set_metric_policy(mut self, input: std::option::Option<crate::model::MetricPolicy>) -> Self {
+            self.metric_policy = input; self
         }
         /// Consumes the builder and constructs a [`GetMetricPolicyOutput`](crate::output::GetMetricPolicyOutput).
         pub fn build(self) -> crate::output::GetMetricPolicyOutput {
             crate::output::GetMetricPolicyOutput {
-                metric_policy: self.metric_policy,
+                metric_policy: self.metric_policy
+                ,
             }
         }
     }
+    
+    
 }
 impl GetMetricPolicyOutput {
     /// Creates a new builder-style object to manufacture [`GetMetricPolicyOutput`](crate::output::GetMetricPolicyOutput).
@@ -376,20 +415,20 @@ impl GetMetricPolicyOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetLifecyclePolicyOutput {
+pub struct GetLifecyclePolicyOutput  {
     /// <p>The object lifecycle policy that is assigned to the container.</p>
     #[doc(hidden)]
     pub lifecycle_policy: std::option::Option<std::string::String>,
 }
 impl GetLifecyclePolicyOutput {
     /// <p>The object lifecycle policy that is assigned to the container.</p>
-    pub fn lifecycle_policy(&self) -> std::option::Option<&str> {
+    pub fn lifecycle_policy(&self) -> std::option::Option<& str> {
         self.lifecycle_policy.as_deref()
     }
 }
 /// See [`GetLifecyclePolicyOutput`](crate::output::GetLifecyclePolicyOutput).
 pub mod get_lifecycle_policy_output {
-
+    
     /// A builder for [`GetLifecyclePolicyOutput`](crate::output::GetLifecyclePolicyOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -402,20 +441,19 @@ pub mod get_lifecycle_policy_output {
             self
         }
         /// <p>The object lifecycle policy that is assigned to the container.</p>
-        pub fn set_lifecycle_policy(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.lifecycle_policy = input;
-            self
+        pub fn set_lifecycle_policy(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.lifecycle_policy = input; self
         }
         /// Consumes the builder and constructs a [`GetLifecyclePolicyOutput`](crate::output::GetLifecyclePolicyOutput).
         pub fn build(self) -> crate::output::GetLifecyclePolicyOutput {
             crate::output::GetLifecyclePolicyOutput {
-                lifecycle_policy: self.lifecycle_policy,
+                lifecycle_policy: self.lifecycle_policy
+                ,
             }
         }
     }
+    
+    
 }
 impl GetLifecyclePolicyOutput {
     /// Creates a new builder-style object to manufacture [`GetLifecyclePolicyOutput`](crate::output::GetLifecyclePolicyOutput).
@@ -427,20 +465,20 @@ impl GetLifecyclePolicyOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetCorsPolicyOutput {
+pub struct GetCorsPolicyOutput  {
     /// <p>The CORS policy assigned to the container.</p>
     #[doc(hidden)]
     pub cors_policy: std::option::Option<std::vec::Vec<crate::model::CorsRule>>,
 }
 impl GetCorsPolicyOutput {
     /// <p>The CORS policy assigned to the container.</p>
-    pub fn cors_policy(&self) -> std::option::Option<&[crate::model::CorsRule]> {
+    pub fn cors_policy(&self) -> std::option::Option<& [crate::model::CorsRule]> {
         self.cors_policy.as_deref()
     }
 }
 /// See [`GetCorsPolicyOutput`](crate::output::GetCorsPolicyOutput).
 pub mod get_cors_policy_output {
-
+    
     /// A builder for [`GetCorsPolicyOutput`](crate::output::GetCorsPolicyOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -454,25 +492,24 @@ pub mod get_cors_policy_output {
         /// <p>The CORS policy assigned to the container.</p>
         pub fn cors_policy(mut self, input: crate::model::CorsRule) -> Self {
             let mut v = self.cors_policy.unwrap_or_default();
-            v.push(input);
-            self.cors_policy = Some(v);
-            self
+                            v.push(input);
+                            self.cors_policy = Some(v);
+                            self
         }
         /// <p>The CORS policy assigned to the container.</p>
-        pub fn set_cors_policy(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::CorsRule>>,
-        ) -> Self {
-            self.cors_policy = input;
-            self
+        pub fn set_cors_policy(mut self, input: std::option::Option<std::vec::Vec<crate::model::CorsRule>>) -> Self {
+            self.cors_policy = input; self
         }
         /// Consumes the builder and constructs a [`GetCorsPolicyOutput`](crate::output::GetCorsPolicyOutput).
         pub fn build(self) -> crate::output::GetCorsPolicyOutput {
             crate::output::GetCorsPolicyOutput {
-                cors_policy: self.cors_policy,
+                cors_policy: self.cors_policy
+                ,
             }
         }
     }
+    
+    
 }
 impl GetCorsPolicyOutput {
     /// Creates a new builder-style object to manufacture [`GetCorsPolicyOutput`](crate::output::GetCorsPolicyOutput).
@@ -484,20 +521,20 @@ impl GetCorsPolicyOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetContainerPolicyOutput {
+pub struct GetContainerPolicyOutput  {
     /// <p>The contents of the access policy.</p>
     #[doc(hidden)]
     pub policy: std::option::Option<std::string::String>,
 }
 impl GetContainerPolicyOutput {
     /// <p>The contents of the access policy.</p>
-    pub fn policy(&self) -> std::option::Option<&str> {
+    pub fn policy(&self) -> std::option::Option<& str> {
         self.policy.as_deref()
     }
 }
 /// See [`GetContainerPolicyOutput`](crate::output::GetContainerPolicyOutput).
 pub mod get_container_policy_output {
-
+    
     /// A builder for [`GetContainerPolicyOutput`](crate::output::GetContainerPolicyOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -511,16 +548,18 @@ pub mod get_container_policy_output {
         }
         /// <p>The contents of the access policy.</p>
         pub fn set_policy(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.policy = input;
-            self
+            self.policy = input; self
         }
         /// Consumes the builder and constructs a [`GetContainerPolicyOutput`](crate::output::GetContainerPolicyOutput).
         pub fn build(self) -> crate::output::GetContainerPolicyOutput {
             crate::output::GetContainerPolicyOutput {
-                policy: self.policy,
+                policy: self.policy
+                ,
             }
         }
     }
+    
+    
 }
 impl GetContainerPolicyOutput {
     /// Creates a new builder-style object to manufacture [`GetContainerPolicyOutput`](crate::output::GetContainerPolicyOutput).
@@ -532,20 +571,20 @@ impl GetContainerPolicyOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeContainerOutput {
+pub struct DescribeContainerOutput  {
     /// <p>The name of the queried container.</p>
     #[doc(hidden)]
     pub container: std::option::Option<crate::model::Container>,
 }
 impl DescribeContainerOutput {
     /// <p>The name of the queried container.</p>
-    pub fn container(&self) -> std::option::Option<&crate::model::Container> {
+    pub fn container(&self) -> std::option::Option<& crate::model::Container> {
         self.container.as_ref()
     }
 }
 /// See [`DescribeContainerOutput`](crate::output::DescribeContainerOutput).
 pub mod describe_container_output {
-
+    
     /// A builder for [`DescribeContainerOutput`](crate::output::DescribeContainerOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -558,20 +597,19 @@ pub mod describe_container_output {
             self
         }
         /// <p>The name of the queried container.</p>
-        pub fn set_container(
-            mut self,
-            input: std::option::Option<crate::model::Container>,
-        ) -> Self {
-            self.container = input;
-            self
+        pub fn set_container(mut self, input: std::option::Option<crate::model::Container>) -> Self {
+            self.container = input; self
         }
         /// Consumes the builder and constructs a [`DescribeContainerOutput`](crate::output::DescribeContainerOutput).
         pub fn build(self) -> crate::output::DescribeContainerOutput {
             crate::output::DescribeContainerOutput {
-                container: self.container,
+                container: self.container
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeContainerOutput {
     /// Creates a new builder-style object to manufacture [`DescribeContainerOutput`](crate::output::DescribeContainerOutput).
@@ -583,19 +621,24 @@ impl DescribeContainerOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteMetricPolicyOutput {}
+pub struct DeleteMetricPolicyOutput  {
+}
 /// See [`DeleteMetricPolicyOutput`](crate::output::DeleteMetricPolicyOutput).
 pub mod delete_metric_policy_output {
-
+    
     /// A builder for [`DeleteMetricPolicyOutput`](crate::output::DeleteMetricPolicyOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteMetricPolicyOutput`](crate::output::DeleteMetricPolicyOutput).
         pub fn build(self) -> crate::output::DeleteMetricPolicyOutput {
-            crate::output::DeleteMetricPolicyOutput {}
+            crate::output::DeleteMetricPolicyOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteMetricPolicyOutput {
     /// Creates a new builder-style object to manufacture [`DeleteMetricPolicyOutput`](crate::output::DeleteMetricPolicyOutput).
@@ -607,19 +650,24 @@ impl DeleteMetricPolicyOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteLifecyclePolicyOutput {}
+pub struct DeleteLifecyclePolicyOutput  {
+}
 /// See [`DeleteLifecyclePolicyOutput`](crate::output::DeleteLifecyclePolicyOutput).
 pub mod delete_lifecycle_policy_output {
-
+    
     /// A builder for [`DeleteLifecyclePolicyOutput`](crate::output::DeleteLifecyclePolicyOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteLifecyclePolicyOutput`](crate::output::DeleteLifecyclePolicyOutput).
         pub fn build(self) -> crate::output::DeleteLifecyclePolicyOutput {
-            crate::output::DeleteLifecyclePolicyOutput {}
+            crate::output::DeleteLifecyclePolicyOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteLifecyclePolicyOutput {
     /// Creates a new builder-style object to manufacture [`DeleteLifecyclePolicyOutput`](crate::output::DeleteLifecyclePolicyOutput).
@@ -631,19 +679,24 @@ impl DeleteLifecyclePolicyOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteCorsPolicyOutput {}
+pub struct DeleteCorsPolicyOutput  {
+}
 /// See [`DeleteCorsPolicyOutput`](crate::output::DeleteCorsPolicyOutput).
 pub mod delete_cors_policy_output {
-
+    
     /// A builder for [`DeleteCorsPolicyOutput`](crate::output::DeleteCorsPolicyOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteCorsPolicyOutput`](crate::output::DeleteCorsPolicyOutput).
         pub fn build(self) -> crate::output::DeleteCorsPolicyOutput {
-            crate::output::DeleteCorsPolicyOutput {}
+            crate::output::DeleteCorsPolicyOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteCorsPolicyOutput {
     /// Creates a new builder-style object to manufacture [`DeleteCorsPolicyOutput`](crate::output::DeleteCorsPolicyOutput).
@@ -655,19 +708,24 @@ impl DeleteCorsPolicyOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteContainerPolicyOutput {}
+pub struct DeleteContainerPolicyOutput  {
+}
 /// See [`DeleteContainerPolicyOutput`](crate::output::DeleteContainerPolicyOutput).
 pub mod delete_container_policy_output {
-
+    
     /// A builder for [`DeleteContainerPolicyOutput`](crate::output::DeleteContainerPolicyOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteContainerPolicyOutput`](crate::output::DeleteContainerPolicyOutput).
         pub fn build(self) -> crate::output::DeleteContainerPolicyOutput {
-            crate::output::DeleteContainerPolicyOutput {}
+            crate::output::DeleteContainerPolicyOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteContainerPolicyOutput {
     /// Creates a new builder-style object to manufacture [`DeleteContainerPolicyOutput`](crate::output::DeleteContainerPolicyOutput).
@@ -679,19 +737,24 @@ impl DeleteContainerPolicyOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteContainerOutput {}
+pub struct DeleteContainerOutput  {
+}
 /// See [`DeleteContainerOutput`](crate::output::DeleteContainerOutput).
 pub mod delete_container_output {
-
+    
     /// A builder for [`DeleteContainerOutput`](crate::output::DeleteContainerOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteContainerOutput`](crate::output::DeleteContainerOutput).
         pub fn build(self) -> crate::output::DeleteContainerOutput {
-            crate::output::DeleteContainerOutput {}
+            crate::output::DeleteContainerOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteContainerOutput {
     /// Creates a new builder-style object to manufacture [`DeleteContainerOutput`](crate::output::DeleteContainerOutput).
@@ -703,19 +766,19 @@ impl DeleteContainerOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateContainerOutput {
+pub struct CreateContainerOutput  {
     /// <p>ContainerARN: The Amazon Resource Name (ARN) of the newly created container. The ARN has the following format: arn:aws:<region>
     /// :
     /// <account that owns this container>
     /// :container/
     /// <name of container>
-    /// . For example: arn:aws:mediastore:us-west-2:111122223333:container/movies
+    /// . For example: arn:aws:mediastore:us-west-2:111122223333:container/movies 
     /// </name>
     /// </account>
-    /// </region></p>
-    /// <p>ContainerName: The container name as specified in the request.</p>
-    /// <p>CreationTime: Unix time stamp.</p>
-    /// <p>Status: The status of container creation or deletion. The status is one of the following: <code>CREATING</code>, <code>ACTIVE</code>, or <code>DELETING</code>. While the service is creating the container, the status is <code>CREATING</code>. When an endpoint is available, the status changes to <code>ACTIVE</code>.</p>
+    /// </region></p> 
+    /// <p>ContainerName: The container name as specified in the request.</p> 
+    /// <p>CreationTime: Unix time stamp.</p> 
+    /// <p>Status: The status of container creation or deletion. The status is one of the following: <code>CREATING</code>, <code>ACTIVE</code>, or <code>DELETING</code>. While the service is creating the container, the status is <code>CREATING</code>. When an endpoint is available, the status changes to <code>ACTIVE</code>.</p> 
     /// <p>The return value does not include the container's endpoint. To make downstream requests, you must obtain this value by using <code>DescribeContainer</code> or <code>ListContainers</code>.</p>
     #[doc(hidden)]
     pub container: std::option::Option<crate::model::Container>,
@@ -726,21 +789,21 @@ impl CreateContainerOutput {
     /// <account that owns this container>
     /// :container/
     /// <name of container>
-    /// . For example: arn:aws:mediastore:us-west-2:111122223333:container/movies
+    /// . For example: arn:aws:mediastore:us-west-2:111122223333:container/movies 
     /// </name>
     /// </account>
-    /// </region></p>
-    /// <p>ContainerName: The container name as specified in the request.</p>
-    /// <p>CreationTime: Unix time stamp.</p>
-    /// <p>Status: The status of container creation or deletion. The status is one of the following: <code>CREATING</code>, <code>ACTIVE</code>, or <code>DELETING</code>. While the service is creating the container, the status is <code>CREATING</code>. When an endpoint is available, the status changes to <code>ACTIVE</code>.</p>
+    /// </region></p> 
+    /// <p>ContainerName: The container name as specified in the request.</p> 
+    /// <p>CreationTime: Unix time stamp.</p> 
+    /// <p>Status: The status of container creation or deletion. The status is one of the following: <code>CREATING</code>, <code>ACTIVE</code>, or <code>DELETING</code>. While the service is creating the container, the status is <code>CREATING</code>. When an endpoint is available, the status changes to <code>ACTIVE</code>.</p> 
     /// <p>The return value does not include the container's endpoint. To make downstream requests, you must obtain this value by using <code>DescribeContainer</code> or <code>ListContainers</code>.</p>
-    pub fn container(&self) -> std::option::Option<&crate::model::Container> {
+    pub fn container(&self) -> std::option::Option<& crate::model::Container> {
         self.container.as_ref()
     }
 }
 /// See [`CreateContainerOutput`](crate::output::CreateContainerOutput).
 pub mod create_container_output {
-
+    
     /// A builder for [`CreateContainerOutput`](crate::output::CreateContainerOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -752,13 +815,13 @@ pub mod create_container_output {
         /// <account that owns this container>
         /// :container/
         /// <name of container>
-        /// . For example: arn:aws:mediastore:us-west-2:111122223333:container/movies
+        /// . For example: arn:aws:mediastore:us-west-2:111122223333:container/movies 
         /// </name>
         /// </account>
-        /// </region></p>
-        /// <p>ContainerName: The container name as specified in the request.</p>
-        /// <p>CreationTime: Unix time stamp.</p>
-        /// <p>Status: The status of container creation or deletion. The status is one of the following: <code>CREATING</code>, <code>ACTIVE</code>, or <code>DELETING</code>. While the service is creating the container, the status is <code>CREATING</code>. When an endpoint is available, the status changes to <code>ACTIVE</code>.</p>
+        /// </region></p> 
+        /// <p>ContainerName: The container name as specified in the request.</p> 
+        /// <p>CreationTime: Unix time stamp.</p> 
+        /// <p>Status: The status of container creation or deletion. The status is one of the following: <code>CREATING</code>, <code>ACTIVE</code>, or <code>DELETING</code>. While the service is creating the container, the status is <code>CREATING</code>. When an endpoint is available, the status changes to <code>ACTIVE</code>.</p> 
         /// <p>The return value does not include the container's endpoint. To make downstream requests, you must obtain this value by using <code>DescribeContainer</code> or <code>ListContainers</code>.</p>
         pub fn container(mut self, input: crate::model::Container) -> Self {
             self.container = Some(input);
@@ -769,28 +832,27 @@ pub mod create_container_output {
         /// <account that owns this container>
         /// :container/
         /// <name of container>
-        /// . For example: arn:aws:mediastore:us-west-2:111122223333:container/movies
+        /// . For example: arn:aws:mediastore:us-west-2:111122223333:container/movies 
         /// </name>
         /// </account>
-        /// </region></p>
-        /// <p>ContainerName: The container name as specified in the request.</p>
-        /// <p>CreationTime: Unix time stamp.</p>
-        /// <p>Status: The status of container creation or deletion. The status is one of the following: <code>CREATING</code>, <code>ACTIVE</code>, or <code>DELETING</code>. While the service is creating the container, the status is <code>CREATING</code>. When an endpoint is available, the status changes to <code>ACTIVE</code>.</p>
+        /// </region></p> 
+        /// <p>ContainerName: The container name as specified in the request.</p> 
+        /// <p>CreationTime: Unix time stamp.</p> 
+        /// <p>Status: The status of container creation or deletion. The status is one of the following: <code>CREATING</code>, <code>ACTIVE</code>, or <code>DELETING</code>. While the service is creating the container, the status is <code>CREATING</code>. When an endpoint is available, the status changes to <code>ACTIVE</code>.</p> 
         /// <p>The return value does not include the container's endpoint. To make downstream requests, you must obtain this value by using <code>DescribeContainer</code> or <code>ListContainers</code>.</p>
-        pub fn set_container(
-            mut self,
-            input: std::option::Option<crate::model::Container>,
-        ) -> Self {
-            self.container = input;
-            self
+        pub fn set_container(mut self, input: std::option::Option<crate::model::Container>) -> Self {
+            self.container = input; self
         }
         /// Consumes the builder and constructs a [`CreateContainerOutput`](crate::output::CreateContainerOutput).
         pub fn build(self) -> crate::output::CreateContainerOutput {
             crate::output::CreateContainerOutput {
-                container: self.container,
+                container: self.container
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateContainerOutput {
     /// Creates a new builder-style object to manufacture [`CreateContainerOutput`](crate::output::CreateContainerOutput).
@@ -798,3 +860,4 @@ impl CreateContainerOutput {
         crate::output::create_container_output::Builder::default()
     }
 }
+

@@ -2,19 +2,24 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StopClockOutput {}
+pub struct StopClockOutput  {
+}
 /// See [`StopClockOutput`](crate::output::StopClockOutput).
 pub mod stop_clock_output {
-
+    
     /// A builder for [`StopClockOutput`](crate::output::StopClockOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`StopClockOutput`](crate::output::StopClockOutput).
         pub fn build(self) -> crate::output::StopClockOutput {
-            crate::output::StopClockOutput {}
+            crate::output::StopClockOutput {
+            }
         }
     }
+    
+    
 }
 impl StopClockOutput {
     /// Creates a new builder-style object to manufacture [`StopClockOutput`](crate::output::StopClockOutput).
@@ -26,19 +31,24 @@ impl StopClockOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StopAppOutput {}
+pub struct StopAppOutput  {
+}
 /// See [`StopAppOutput`](crate::output::StopAppOutput).
 pub mod stop_app_output {
-
+    
     /// A builder for [`StopAppOutput`](crate::output::StopAppOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`StopAppOutput`](crate::output::StopAppOutput).
         pub fn build(self) -> crate::output::StopAppOutput {
-            crate::output::StopAppOutput {}
+            crate::output::StopAppOutput {
+            }
         }
     }
+    
+    
 }
 impl StopAppOutput {
     /// Creates a new builder-style object to manufacture [`StopAppOutput`](crate::output::StopAppOutput).
@@ -50,19 +60,24 @@ impl StopAppOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StartClockOutput {}
+pub struct StartClockOutput  {
+}
 /// See [`StartClockOutput`](crate::output::StartClockOutput).
 pub mod start_clock_output {
-
+    
     /// A builder for [`StartClockOutput`](crate::output::StartClockOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`StartClockOutput`](crate::output::StartClockOutput).
         pub fn build(self) -> crate::output::StartClockOutput {
-            crate::output::StartClockOutput {}
+            crate::output::StartClockOutput {
+            }
         }
     }
+    
+    
 }
 impl StartClockOutput {
     /// Creates a new builder-style object to manufacture [`StartClockOutput`](crate::output::StartClockOutput).
@@ -74,7 +89,7 @@ impl StartClockOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StartAppOutput {
+pub struct StartAppOutput  {
     /// <p>The name of the app.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -87,21 +102,21 @@ pub struct StartAppOutput {
 }
 impl StartAppOutput {
     /// <p>The name of the app.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The name of the domain of the app.</p>
-    pub fn domain(&self) -> std::option::Option<&str> {
+    pub fn domain(&self) -> std::option::Option<& str> {
         self.domain.as_deref()
     }
     /// <p>The name of the simulation of the app.</p>
-    pub fn simulation(&self) -> std::option::Option<&str> {
+    pub fn simulation(&self) -> std::option::Option<& str> {
         self.simulation.as_deref()
     }
 }
 /// See [`StartAppOutput`](crate::output::StartAppOutput).
 pub mod start_app_output {
-
+    
     /// A builder for [`StartAppOutput`](crate::output::StartAppOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -117,8 +132,7 @@ pub mod start_app_output {
         }
         /// <p>The name of the app.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The name of the domain of the app.</p>
         pub fn domain(mut self, input: impl Into<std::string::String>) -> Self {
@@ -127,8 +141,7 @@ pub mod start_app_output {
         }
         /// <p>The name of the domain of the app.</p>
         pub fn set_domain(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.domain = input;
-            self
+            self.domain = input; self
         }
         /// <p>The name of the simulation of the app.</p>
         pub fn simulation(mut self, input: impl Into<std::string::String>) -> Self {
@@ -137,18 +150,22 @@ pub mod start_app_output {
         }
         /// <p>The name of the simulation of the app.</p>
         pub fn set_simulation(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.simulation = input;
-            self
+            self.simulation = input; self
         }
         /// Consumes the builder and constructs a [`StartAppOutput`](crate::output::StartAppOutput).
         pub fn build(self) -> crate::output::StartAppOutput {
             crate::output::StartAppOutput {
-                name: self.name,
-                domain: self.domain,
-                simulation: self.simulation,
+                name: self.name
+                ,
+                domain: self.domain
+                ,
+                simulation: self.simulation
+                ,
             }
         }
     }
+    
+    
 }
 impl StartAppOutput {
     /// Creates a new builder-style object to manufacture [`StartAppOutput`](crate::output::StartAppOutput).
@@ -160,7 +177,7 @@ impl StartAppOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListAppsOutput {
+pub struct ListAppsOutput  {
     /// <p>The list of apps for the given simulation and domain.</p>
     #[doc(hidden)]
     pub apps: std::option::Option<std::vec::Vec<crate::model::SimulationAppMetadata>>,
@@ -170,17 +187,17 @@ pub struct ListAppsOutput {
 }
 impl ListAppsOutput {
     /// <p>The list of apps for the given simulation and domain.</p>
-    pub fn apps(&self) -> std::option::Option<&[crate::model::SimulationAppMetadata]> {
+    pub fn apps(&self) -> std::option::Option<& [crate::model::SimulationAppMetadata]> {
         self.apps.as_deref()
     }
     /// <p>If SimSpace Weaver returns <code>nextToken</code>, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. To retrieve the next page, call the operation again using the returned token. Keep all other arguments unchanged. If no results remain, <code>nextToken</code> is set to <code>null</code>. Each pagination token expires after 24 hours. If you provide a token that isn't valid, you receive an <i>HTTP 400 ValidationException</i> error.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListAppsOutput`](crate::output::ListAppsOutput).
 pub mod list_apps_output {
-
+    
     /// A builder for [`ListAppsOutput`](crate::output::ListAppsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -195,17 +212,13 @@ pub mod list_apps_output {
         /// <p>The list of apps for the given simulation and domain.</p>
         pub fn apps(mut self, input: crate::model::SimulationAppMetadata) -> Self {
             let mut v = self.apps.unwrap_or_default();
-            v.push(input);
-            self.apps = Some(v);
-            self
+                            v.push(input);
+                            self.apps = Some(v);
+                            self
         }
         /// <p>The list of apps for the given simulation and domain.</p>
-        pub fn set_apps(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::SimulationAppMetadata>>,
-        ) -> Self {
-            self.apps = input;
-            self
+        pub fn set_apps(mut self, input: std::option::Option<std::vec::Vec<crate::model::SimulationAppMetadata>>) -> Self {
+            self.apps = input; self
         }
         /// <p>If SimSpace Weaver returns <code>nextToken</code>, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. To retrieve the next page, call the operation again using the returned token. Keep all other arguments unchanged. If no results remain, <code>nextToken</code> is set to <code>null</code>. Each pagination token expires after 24 hours. If you provide a token that isn't valid, you receive an <i>HTTP 400 ValidationException</i> error.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -214,17 +227,20 @@ pub mod list_apps_output {
         }
         /// <p>If SimSpace Weaver returns <code>nextToken</code>, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. To retrieve the next page, call the operation again using the returned token. Keep all other arguments unchanged. If no results remain, <code>nextToken</code> is set to <code>null</code>. Each pagination token expires after 24 hours. If you provide a token that isn't valid, you receive an <i>HTTP 400 ValidationException</i> error.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListAppsOutput`](crate::output::ListAppsOutput).
         pub fn build(self) -> crate::output::ListAppsOutput {
             crate::output::ListAppsOutput {
-                apps: self.apps,
-                next_token: self.next_token,
+                apps: self.apps
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListAppsOutput {
     /// Creates a new builder-style object to manufacture [`ListAppsOutput`](crate::output::ListAppsOutput).
@@ -236,7 +252,7 @@ impl ListAppsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeAppOutput {
+pub struct DescribeAppOutput  {
     /// <p>The name of the app.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -264,41 +280,41 @@ pub struct DescribeAppOutput {
 }
 impl DescribeAppOutput {
     /// <p>The name of the app.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The name of the simulation of the app.</p>
-    pub fn simulation(&self) -> std::option::Option<&str> {
+    pub fn simulation(&self) -> std::option::Option<& str> {
         self.simulation.as_deref()
     }
     /// <p>The name of the domain of the app.</p>
-    pub fn domain(&self) -> std::option::Option<&str> {
+    pub fn domain(&self) -> std::option::Option<& str> {
         self.domain.as_deref()
     }
     /// <p>The current lifecycle state of the custom app.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::SimulationAppStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::SimulationAppStatus> {
         self.status.as_ref()
     }
     /// <p>The desired lifecycle state of the custom app.</p>
-    pub fn target_status(&self) -> std::option::Option<&crate::model::SimulationAppTargetStatus> {
+    pub fn target_status(&self) -> std::option::Option<& crate::model::SimulationAppTargetStatus> {
         self.target_status.as_ref()
     }
     /// <p>Options that apply when the app starts. These optiAons override default behavior.</p>
-    pub fn launch_overrides(&self) -> std::option::Option<&crate::model::LaunchOverrides> {
+    pub fn launch_overrides(&self) -> std::option::Option<& crate::model::LaunchOverrides> {
         self.launch_overrides.as_ref()
     }
     /// <p>The description of the app.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>Information about the network endpoint for the custom app. You can use the endpoint to connect to the custom app.</p>
-    pub fn endpoint_info(&self) -> std::option::Option<&crate::model::SimulationAppEndpointInfo> {
+    pub fn endpoint_info(&self) -> std::option::Option<& crate::model::SimulationAppEndpointInfo> {
         self.endpoint_info.as_ref()
     }
 }
 /// See [`DescribeAppOutput`](crate::output::DescribeAppOutput).
 pub mod describe_app_output {
-
+    
     /// A builder for [`DescribeAppOutput`](crate::output::DescribeAppOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -319,8 +335,7 @@ pub mod describe_app_output {
         }
         /// <p>The name of the app.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The name of the simulation of the app.</p>
         pub fn simulation(mut self, input: impl Into<std::string::String>) -> Self {
@@ -329,8 +344,7 @@ pub mod describe_app_output {
         }
         /// <p>The name of the simulation of the app.</p>
         pub fn set_simulation(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.simulation = input;
-            self
+            self.simulation = input; self
         }
         /// <p>The name of the domain of the app.</p>
         pub fn domain(mut self, input: impl Into<std::string::String>) -> Self {
@@ -339,8 +353,7 @@ pub mod describe_app_output {
         }
         /// <p>The name of the domain of the app.</p>
         pub fn set_domain(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.domain = input;
-            self
+            self.domain = input; self
         }
         /// <p>The current lifecycle state of the custom app.</p>
         pub fn status(mut self, input: crate::model::SimulationAppStatus) -> Self {
@@ -348,12 +361,8 @@ pub mod describe_app_output {
             self
         }
         /// <p>The current lifecycle state of the custom app.</p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::SimulationAppStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::SimulationAppStatus>) -> Self {
+            self.status = input; self
         }
         /// <p>The desired lifecycle state of the custom app.</p>
         pub fn target_status(mut self, input: crate::model::SimulationAppTargetStatus) -> Self {
@@ -361,12 +370,8 @@ pub mod describe_app_output {
             self
         }
         /// <p>The desired lifecycle state of the custom app.</p>
-        pub fn set_target_status(
-            mut self,
-            input: std::option::Option<crate::model::SimulationAppTargetStatus>,
-        ) -> Self {
-            self.target_status = input;
-            self
+        pub fn set_target_status(mut self, input: std::option::Option<crate::model::SimulationAppTargetStatus>) -> Self {
+            self.target_status = input; self
         }
         /// <p>Options that apply when the app starts. These optiAons override default behavior.</p>
         pub fn launch_overrides(mut self, input: crate::model::LaunchOverrides) -> Self {
@@ -374,12 +379,8 @@ pub mod describe_app_output {
             self
         }
         /// <p>Options that apply when the app starts. These optiAons override default behavior.</p>
-        pub fn set_launch_overrides(
-            mut self,
-            input: std::option::Option<crate::model::LaunchOverrides>,
-        ) -> Self {
-            self.launch_overrides = input;
-            self
+        pub fn set_launch_overrides(mut self, input: std::option::Option<crate::model::LaunchOverrides>) -> Self {
+            self.launch_overrides = input; self
         }
         /// <p>The description of the app.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -388,8 +389,7 @@ pub mod describe_app_output {
         }
         /// <p>The description of the app.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>Information about the network endpoint for the custom app. You can use the endpoint to connect to the custom app.</p>
         pub fn endpoint_info(mut self, input: crate::model::SimulationAppEndpointInfo) -> Self {
@@ -397,27 +397,33 @@ pub mod describe_app_output {
             self
         }
         /// <p>Information about the network endpoint for the custom app. You can use the endpoint to connect to the custom app.</p>
-        pub fn set_endpoint_info(
-            mut self,
-            input: std::option::Option<crate::model::SimulationAppEndpointInfo>,
-        ) -> Self {
-            self.endpoint_info = input;
-            self
+        pub fn set_endpoint_info(mut self, input: std::option::Option<crate::model::SimulationAppEndpointInfo>) -> Self {
+            self.endpoint_info = input; self
         }
         /// Consumes the builder and constructs a [`DescribeAppOutput`](crate::output::DescribeAppOutput).
         pub fn build(self) -> crate::output::DescribeAppOutput {
             crate::output::DescribeAppOutput {
-                name: self.name,
-                simulation: self.simulation,
-                domain: self.domain,
-                status: self.status,
-                target_status: self.target_status,
-                launch_overrides: self.launch_overrides,
-                description: self.description,
-                endpoint_info: self.endpoint_info,
+                name: self.name
+                ,
+                simulation: self.simulation
+                ,
+                domain: self.domain
+                ,
+                status: self.status
+                ,
+                target_status: self.target_status
+                ,
+                launch_overrides: self.launch_overrides
+                ,
+                description: self.description
+                ,
+                endpoint_info: self.endpoint_info
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeAppOutput {
     /// Creates a new builder-style object to manufacture [`DescribeAppOutput`](crate::output::DescribeAppOutput).
@@ -429,19 +435,24 @@ impl DescribeAppOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteAppOutput {}
+pub struct DeleteAppOutput  {
+}
 /// See [`DeleteAppOutput`](crate::output::DeleteAppOutput).
 pub mod delete_app_output {
-
+    
     /// A builder for [`DeleteAppOutput`](crate::output::DeleteAppOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteAppOutput`](crate::output::DeleteAppOutput).
         pub fn build(self) -> crate::output::DeleteAppOutput {
-            crate::output::DeleteAppOutput {}
+            crate::output::DeleteAppOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteAppOutput {
     /// Creates a new builder-style object to manufacture [`DeleteAppOutput`](crate::output::DeleteAppOutput).
@@ -453,7 +464,7 @@ impl DeleteAppOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListSimulationsOutput {
+pub struct ListSimulationsOutput  {
     /// <p>The list of simulations.</p>
     #[doc(hidden)]
     pub simulations: std::option::Option<std::vec::Vec<crate::model::SimulationMetadata>>,
@@ -463,22 +474,21 @@ pub struct ListSimulationsOutput {
 }
 impl ListSimulationsOutput {
     /// <p>The list of simulations.</p>
-    pub fn simulations(&self) -> std::option::Option<&[crate::model::SimulationMetadata]> {
+    pub fn simulations(&self) -> std::option::Option<& [crate::model::SimulationMetadata]> {
         self.simulations.as_deref()
     }
     /// <p>If SimSpace Weaver returns <code>nextToken</code>, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. To retrieve the next page, call the operation again using the returned token. Keep all other arguments unchanged. If no results remain, <code>nextToken</code> is set to <code>null</code>. Each pagination token expires after 24 hours. If you provide a token that isn't valid, you receive an <i>HTTP 400 ValidationException</i> error.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListSimulationsOutput`](crate::output::ListSimulationsOutput).
 pub mod list_simulations_output {
-
+    
     /// A builder for [`ListSimulationsOutput`](crate::output::ListSimulationsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) simulations:
-            std::option::Option<std::vec::Vec<crate::model::SimulationMetadata>>,
+        pub(crate) simulations: std::option::Option<std::vec::Vec<crate::model::SimulationMetadata>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -489,17 +499,13 @@ pub mod list_simulations_output {
         /// <p>The list of simulations.</p>
         pub fn simulations(mut self, input: crate::model::SimulationMetadata) -> Self {
             let mut v = self.simulations.unwrap_or_default();
-            v.push(input);
-            self.simulations = Some(v);
-            self
+                            v.push(input);
+                            self.simulations = Some(v);
+                            self
         }
         /// <p>The list of simulations.</p>
-        pub fn set_simulations(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::SimulationMetadata>>,
-        ) -> Self {
-            self.simulations = input;
-            self
+        pub fn set_simulations(mut self, input: std::option::Option<std::vec::Vec<crate::model::SimulationMetadata>>) -> Self {
+            self.simulations = input; self
         }
         /// <p>If SimSpace Weaver returns <code>nextToken</code>, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. To retrieve the next page, call the operation again using the returned token. Keep all other arguments unchanged. If no results remain, <code>nextToken</code> is set to <code>null</code>. Each pagination token expires after 24 hours. If you provide a token that isn't valid, you receive an <i>HTTP 400 ValidationException</i> error.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -508,17 +514,20 @@ pub mod list_simulations_output {
         }
         /// <p>If SimSpace Weaver returns <code>nextToken</code>, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. To retrieve the next page, call the operation again using the returned token. Keep all other arguments unchanged. If no results remain, <code>nextToken</code> is set to <code>null</code>. Each pagination token expires after 24 hours. If you provide a token that isn't valid, you receive an <i>HTTP 400 ValidationException</i> error.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListSimulationsOutput`](crate::output::ListSimulationsOutput).
         pub fn build(self) -> crate::output::ListSimulationsOutput {
             crate::output::ListSimulationsOutput {
-                simulations: self.simulations,
-                next_token: self.next_token,
+                simulations: self.simulations
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListSimulationsOutput {
     /// Creates a new builder-style object to manufacture [`ListSimulationsOutput`](crate::output::ListSimulationsOutput).
@@ -530,7 +539,7 @@ impl ListSimulationsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StartSimulationOutput {
+pub struct StartSimulationOutput  {
     /// <p>The Amazon Resource Name (ARN) of the simulation. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -543,21 +552,21 @@ pub struct StartSimulationOutput {
 }
 impl StartSimulationOutput {
     /// <p>The Amazon Resource Name (ARN) of the simulation. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>A universally unique identifier (UUID) for this simulation.</p>
-    pub fn execution_id(&self) -> std::option::Option<&str> {
+    pub fn execution_id(&self) -> std::option::Option<& str> {
         self.execution_id.as_deref()
     }
     /// <p>The time when the simulation was created, expressed as the number of seconds and milliseconds in UTC since the Unix epoch (0:0:0.000, January 1, 1970).</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
 }
 /// See [`StartSimulationOutput`](crate::output::StartSimulationOutput).
 pub mod start_simulation_output {
-
+    
     /// A builder for [`StartSimulationOutput`](crate::output::StartSimulationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -573,8 +582,7 @@ pub mod start_simulation_output {
         }
         /// <p>The Amazon Resource Name (ARN) of the simulation. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>A universally unique identifier (UUID) for this simulation.</p>
         pub fn execution_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -583,8 +591,7 @@ pub mod start_simulation_output {
         }
         /// <p>A universally unique identifier (UUID) for this simulation.</p>
         pub fn set_execution_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.execution_id = input;
-            self
+            self.execution_id = input; self
         }
         /// <p>The time when the simulation was created, expressed as the number of seconds and milliseconds in UTC since the Unix epoch (0:0:0.000, January 1, 1970).</p>
         pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -592,22 +599,23 @@ pub mod start_simulation_output {
             self
         }
         /// <p>The time when the simulation was created, expressed as the number of seconds and milliseconds in UTC since the Unix epoch (0:0:0.000, January 1, 1970).</p>
-        pub fn set_creation_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.creation_time = input;
-            self
+        pub fn set_creation_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.creation_time = input; self
         }
         /// Consumes the builder and constructs a [`StartSimulationOutput`](crate::output::StartSimulationOutput).
         pub fn build(self) -> crate::output::StartSimulationOutput {
             crate::output::StartSimulationOutput {
-                arn: self.arn,
-                execution_id: self.execution_id,
-                creation_time: self.creation_time,
+                arn: self.arn
+                ,
+                execution_id: self.execution_id
+                ,
+                creation_time: self.creation_time
+                ,
             }
         }
     }
+    
+    
 }
 impl StartSimulationOutput {
     /// Creates a new builder-style object to manufacture [`StartSimulationOutput`](crate::output::StartSimulationOutput).
@@ -619,19 +627,24 @@ impl StartSimulationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteSimulationOutput {}
+pub struct DeleteSimulationOutput  {
+}
 /// See [`DeleteSimulationOutput`](crate::output::DeleteSimulationOutput).
 pub mod delete_simulation_output {
-
+    
     /// A builder for [`DeleteSimulationOutput`](crate::output::DeleteSimulationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteSimulationOutput`](crate::output::DeleteSimulationOutput).
         pub fn build(self) -> crate::output::DeleteSimulationOutput {
-            crate::output::DeleteSimulationOutput {}
+            crate::output::DeleteSimulationOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteSimulationOutput {
     /// Creates a new builder-style object to manufacture [`DeleteSimulationOutput`](crate::output::DeleteSimulationOutput).
@@ -643,19 +656,24 @@ impl DeleteSimulationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StopSimulationOutput {}
+pub struct StopSimulationOutput  {
+}
 /// See [`StopSimulationOutput`](crate::output::StopSimulationOutput).
 pub mod stop_simulation_output {
-
+    
     /// A builder for [`StopSimulationOutput`](crate::output::StopSimulationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`StopSimulationOutput`](crate::output::StopSimulationOutput).
         pub fn build(self) -> crate::output::StopSimulationOutput {
-            crate::output::StopSimulationOutput {}
+            crate::output::StopSimulationOutput {
+            }
         }
     }
+    
+    
 }
 impl StopSimulationOutput {
     /// Creates a new builder-style object to manufacture [`StopSimulationOutput`](crate::output::StopSimulationOutput).
@@ -667,7 +685,7 @@ impl StopSimulationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeSimulationOutput {
+pub struct DescribeSimulationOutput  {
     /// <p>The name of the simulation.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -710,63 +728,61 @@ pub struct DescribeSimulationOutput {
 }
 impl DescribeSimulationOutput {
     /// <p>The name of the simulation.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>A universally unique identifier (UUID) for this simulation.</p>
-    pub fn execution_id(&self) -> std::option::Option<&str> {
+    pub fn execution_id(&self) -> std::option::Option<& str> {
         self.execution_id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the simulation. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The description of the simulation.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role that the simulation assumes to perform actions. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>. For more information about IAM roles, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles.html">IAM roles</a> in the <i>Identity and Access Management User Guide</i>.</p>
-    pub fn role_arn(&self) -> std::option::Option<&str> {
+    pub fn role_arn(&self) -> std::option::Option<& str> {
         self.role_arn.as_deref()
     }
     /// <p>The time when the simulation was created, expressed as the number of seconds and milliseconds in UTC since the Unix epoch (0:0:0.000, January 1, 1970).</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The current lifecycle state of the simulation.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::SimulationStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::SimulationStatus> {
         self.status.as_ref()
     }
     /// <p>The desired lifecycle state of the simulation.</p>
-    pub fn target_status(&self) -> std::option::Option<&crate::model::SimulationTargetStatus> {
+    pub fn target_status(&self) -> std::option::Option<& crate::model::SimulationTargetStatus> {
         self.target_status.as_ref()
     }
     /// <p>The location of the simulation schema in Amazon Simple Storage Service (Amazon S3). For more information about Amazon S3, see the <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/Welcome.html"> <i>Amazon Simple Storage Service User Guide</i> </a>.</p>
-    pub fn schema_s3_location(&self) -> std::option::Option<&crate::model::S3Location> {
+    pub fn schema_s3_location(&self) -> std::option::Option<& crate::model::S3Location> {
         self.schema_s3_location.as_ref()
     }
     /// <p>An error message that SimSpace Weaver returns only if there is a problem with the simulation schema.</p>
-    pub fn schema_error(&self) -> std::option::Option<&str> {
+    pub fn schema_error(&self) -> std::option::Option<& str> {
         self.schema_error.as_deref()
     }
     /// <p>Settings that control how SimSpace Weaver handles your simulation log data.</p>
-    pub fn logging_configuration(
-        &self,
-    ) -> std::option::Option<&crate::model::LoggingConfiguration> {
+    pub fn logging_configuration(&self) -> std::option::Option<& crate::model::LoggingConfiguration> {
         self.logging_configuration.as_ref()
     }
     /// <p>A collection of additional state information, such as domain and clock configuration.</p>
-    pub fn live_simulation_state(&self) -> std::option::Option<&crate::model::LiveSimulationState> {
+    pub fn live_simulation_state(&self) -> std::option::Option<& crate::model::LiveSimulationState> {
         self.live_simulation_state.as_ref()
     }
     /// <p>The maximum running time of the simulation, specified as a number of months (m or M), hours (h or H), or days (d or D). The simulation stops when it reaches this limit.</p>
-    pub fn maximum_duration(&self) -> std::option::Option<&str> {
+    pub fn maximum_duration(&self) -> std::option::Option<& str> {
         self.maximum_duration.as_deref()
     }
 }
 /// See [`DescribeSimulationOutput`](crate::output::DescribeSimulationOutput).
 pub mod describe_simulation_output {
-
+    
     /// A builder for [`DescribeSimulationOutput`](crate::output::DescribeSimulationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -792,8 +808,7 @@ pub mod describe_simulation_output {
         }
         /// <p>The name of the simulation.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>A universally unique identifier (UUID) for this simulation.</p>
         pub fn execution_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -802,8 +817,7 @@ pub mod describe_simulation_output {
         }
         /// <p>A universally unique identifier (UUID) for this simulation.</p>
         pub fn set_execution_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.execution_id = input;
-            self
+            self.execution_id = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the simulation. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -812,8 +826,7 @@ pub mod describe_simulation_output {
         }
         /// <p>The Amazon Resource Name (ARN) of the simulation. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>The description of the simulation.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -822,8 +835,7 @@ pub mod describe_simulation_output {
         }
         /// <p>The description of the simulation.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role that the simulation assumes to perform actions. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>. For more information about IAM roles, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles.html">IAM roles</a> in the <i>Identity and Access Management User Guide</i>.</p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -832,8 +844,7 @@ pub mod describe_simulation_output {
         }
         /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role that the simulation assumes to perform actions. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>. For more information about IAM roles, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles.html">IAM roles</a> in the <i>Identity and Access Management User Guide</i>.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.role_arn = input;
-            self
+            self.role_arn = input; self
         }
         /// <p>The time when the simulation was created, expressed as the number of seconds and milliseconds in UTC since the Unix epoch (0:0:0.000, January 1, 1970).</p>
         pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -841,12 +852,8 @@ pub mod describe_simulation_output {
             self
         }
         /// <p>The time when the simulation was created, expressed as the number of seconds and milliseconds in UTC since the Unix epoch (0:0:0.000, January 1, 1970).</p>
-        pub fn set_creation_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.creation_time = input;
-            self
+        pub fn set_creation_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.creation_time = input; self
         }
         /// <p>The current lifecycle state of the simulation.</p>
         pub fn status(mut self, input: crate::model::SimulationStatus) -> Self {
@@ -854,12 +861,8 @@ pub mod describe_simulation_output {
             self
         }
         /// <p>The current lifecycle state of the simulation.</p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::SimulationStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::SimulationStatus>) -> Self {
+            self.status = input; self
         }
         /// <p>The desired lifecycle state of the simulation.</p>
         pub fn target_status(mut self, input: crate::model::SimulationTargetStatus) -> Self {
@@ -867,12 +870,8 @@ pub mod describe_simulation_output {
             self
         }
         /// <p>The desired lifecycle state of the simulation.</p>
-        pub fn set_target_status(
-            mut self,
-            input: std::option::Option<crate::model::SimulationTargetStatus>,
-        ) -> Self {
-            self.target_status = input;
-            self
+        pub fn set_target_status(mut self, input: std::option::Option<crate::model::SimulationTargetStatus>) -> Self {
+            self.target_status = input; self
         }
         /// <p>The location of the simulation schema in Amazon Simple Storage Service (Amazon S3). For more information about Amazon S3, see the <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/Welcome.html"> <i>Amazon Simple Storage Service User Guide</i> </a>.</p>
         pub fn schema_s3_location(mut self, input: crate::model::S3Location) -> Self {
@@ -880,12 +879,8 @@ pub mod describe_simulation_output {
             self
         }
         /// <p>The location of the simulation schema in Amazon Simple Storage Service (Amazon S3). For more information about Amazon S3, see the <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/Welcome.html"> <i>Amazon Simple Storage Service User Guide</i> </a>.</p>
-        pub fn set_schema_s3_location(
-            mut self,
-            input: std::option::Option<crate::model::S3Location>,
-        ) -> Self {
-            self.schema_s3_location = input;
-            self
+        pub fn set_schema_s3_location(mut self, input: std::option::Option<crate::model::S3Location>) -> Self {
+            self.schema_s3_location = input; self
         }
         /// <p>An error message that SimSpace Weaver returns only if there is a problem with the simulation schema.</p>
         pub fn schema_error(mut self, input: impl Into<std::string::String>) -> Self {
@@ -894,8 +889,7 @@ pub mod describe_simulation_output {
         }
         /// <p>An error message that SimSpace Weaver returns only if there is a problem with the simulation schema.</p>
         pub fn set_schema_error(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.schema_error = input;
-            self
+            self.schema_error = input; self
         }
         /// <p>Settings that control how SimSpace Weaver handles your simulation log data.</p>
         pub fn logging_configuration(mut self, input: crate::model::LoggingConfiguration) -> Self {
@@ -903,12 +897,8 @@ pub mod describe_simulation_output {
             self
         }
         /// <p>Settings that control how SimSpace Weaver handles your simulation log data.</p>
-        pub fn set_logging_configuration(
-            mut self,
-            input: std::option::Option<crate::model::LoggingConfiguration>,
-        ) -> Self {
-            self.logging_configuration = input;
-            self
+        pub fn set_logging_configuration(mut self, input: std::option::Option<crate::model::LoggingConfiguration>) -> Self {
+            self.logging_configuration = input; self
         }
         /// <p>A collection of additional state information, such as domain and clock configuration.</p>
         pub fn live_simulation_state(mut self, input: crate::model::LiveSimulationState) -> Self {
@@ -916,12 +906,8 @@ pub mod describe_simulation_output {
             self
         }
         /// <p>A collection of additional state information, such as domain and clock configuration.</p>
-        pub fn set_live_simulation_state(
-            mut self,
-            input: std::option::Option<crate::model::LiveSimulationState>,
-        ) -> Self {
-            self.live_simulation_state = input;
-            self
+        pub fn set_live_simulation_state(mut self, input: std::option::Option<crate::model::LiveSimulationState>) -> Self {
+            self.live_simulation_state = input; self
         }
         /// <p>The maximum running time of the simulation, specified as a number of months (m or M), hours (h or H), or days (d or D). The simulation stops when it reaches this limit.</p>
         pub fn maximum_duration(mut self, input: impl Into<std::string::String>) -> Self {
@@ -929,32 +915,43 @@ pub mod describe_simulation_output {
             self
         }
         /// <p>The maximum running time of the simulation, specified as a number of months (m or M), hours (h or H), or days (d or D). The simulation stops when it reaches this limit.</p>
-        pub fn set_maximum_duration(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.maximum_duration = input;
-            self
+        pub fn set_maximum_duration(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.maximum_duration = input; self
         }
         /// Consumes the builder and constructs a [`DescribeSimulationOutput`](crate::output::DescribeSimulationOutput).
         pub fn build(self) -> crate::output::DescribeSimulationOutput {
             crate::output::DescribeSimulationOutput {
-                name: self.name,
-                execution_id: self.execution_id,
-                arn: self.arn,
-                description: self.description,
-                role_arn: self.role_arn,
-                creation_time: self.creation_time,
-                status: self.status,
-                target_status: self.target_status,
-                schema_s3_location: self.schema_s3_location,
-                schema_error: self.schema_error,
-                logging_configuration: self.logging_configuration,
-                live_simulation_state: self.live_simulation_state,
-                maximum_duration: self.maximum_duration,
+                name: self.name
+                ,
+                execution_id: self.execution_id
+                ,
+                arn: self.arn
+                ,
+                description: self.description
+                ,
+                role_arn: self.role_arn
+                ,
+                creation_time: self.creation_time
+                ,
+                status: self.status
+                ,
+                target_status: self.target_status
+                ,
+                schema_s3_location: self.schema_s3_location
+                ,
+                schema_error: self.schema_error
+                ,
+                logging_configuration: self.logging_configuration
+                ,
+                live_simulation_state: self.live_simulation_state
+                ,
+                maximum_duration: self.maximum_duration
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeSimulationOutput {
     /// Creates a new builder-style object to manufacture [`DescribeSimulationOutput`](crate::output::DescribeSimulationOutput).
@@ -966,19 +963,24 @@ impl DescribeSimulationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UntagResourceOutput {}
+pub struct UntagResourceOutput  {
+}
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput).
 pub mod untag_resource_output {
-
+    
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput).
         pub fn build(self) -> crate::output::UntagResourceOutput {
-            crate::output::UntagResourceOutput {}
+            crate::output::UntagResourceOutput {
+            }
         }
     }
+    
+    
 }
 impl UntagResourceOutput {
     /// Creates a new builder-style object to manufacture [`UntagResourceOutput`](crate::output::UntagResourceOutput).
@@ -990,19 +992,24 @@ impl UntagResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TagResourceOutput {}
+pub struct TagResourceOutput  {
+}
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput).
 pub mod tag_resource_output {
-
+    
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput).
         pub fn build(self) -> crate::output::TagResourceOutput {
-            crate::output::TagResourceOutput {}
+            crate::output::TagResourceOutput {
+            }
         }
     }
+    
+    
 }
 impl TagResourceOutput {
     /// Creates a new builder-style object to manufacture [`TagResourceOutput`](crate::output::TagResourceOutput).
@@ -1014,30 +1021,24 @@ impl TagResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListTagsForResourceOutput {
+pub struct ListTagsForResourceOutput  {
     /// <p>The list of tags for the resource.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl ListTagsForResourceOutput {
     /// <p>The list of tags for the resource.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
 }
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
 pub mod list_tags_for_resource_output {
-
+    
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     }
     impl Builder {
         /// Adds a key-value pair to `tags`.
@@ -1045,31 +1046,26 @@ pub mod list_tags_for_resource_output {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The list of tags for the resource.</p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// <p>The list of tags for the resource.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
         pub fn build(self) -> crate::output::ListTagsForResourceOutput {
-            crate::output::ListTagsForResourceOutput { tags: self.tags }
+            crate::output::ListTagsForResourceOutput {
+                tags: self.tags
+                ,
+            }
         }
     }
+    
+    
 }
 impl ListTagsForResourceOutput {
     /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
@@ -1077,3 +1073,4 @@ impl ListTagsForResourceOutput {
         crate::output::list_tags_for_resource_output::Builder::default()
     }
 }
+

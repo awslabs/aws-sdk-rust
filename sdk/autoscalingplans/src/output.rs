@@ -2,19 +2,24 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateScalingPlanOutput {}
+pub struct UpdateScalingPlanOutput  {
+}
 /// See [`UpdateScalingPlanOutput`](crate::output::UpdateScalingPlanOutput).
 pub mod update_scaling_plan_output {
-
+    
     /// A builder for [`UpdateScalingPlanOutput`](crate::output::UpdateScalingPlanOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`UpdateScalingPlanOutput`](crate::output::UpdateScalingPlanOutput).
         pub fn build(self) -> crate::output::UpdateScalingPlanOutput {
-            crate::output::UpdateScalingPlanOutput {}
+            crate::output::UpdateScalingPlanOutput {
+            }
         }
     }
+    
+    
 }
 impl UpdateScalingPlanOutput {
     /// Creates a new builder-style object to manufacture [`UpdateScalingPlanOutput`](crate::output::UpdateScalingPlanOutput).
@@ -26,20 +31,20 @@ impl UpdateScalingPlanOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetScalingPlanResourceForecastDataOutput {
+pub struct GetScalingPlanResourceForecastDataOutput  {
     /// <p>The data points to return.</p>
     #[doc(hidden)]
     pub datapoints: std::option::Option<std::vec::Vec<crate::model::Datapoint>>,
 }
 impl GetScalingPlanResourceForecastDataOutput {
     /// <p>The data points to return.</p>
-    pub fn datapoints(&self) -> std::option::Option<&[crate::model::Datapoint]> {
+    pub fn datapoints(&self) -> std::option::Option<& [crate::model::Datapoint]> {
         self.datapoints.as_deref()
     }
 }
 /// See [`GetScalingPlanResourceForecastDataOutput`](crate::output::GetScalingPlanResourceForecastDataOutput).
 pub mod get_scaling_plan_resource_forecast_data_output {
-
+    
     /// A builder for [`GetScalingPlanResourceForecastDataOutput`](crate::output::GetScalingPlanResourceForecastDataOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -53,25 +58,24 @@ pub mod get_scaling_plan_resource_forecast_data_output {
         /// <p>The data points to return.</p>
         pub fn datapoints(mut self, input: crate::model::Datapoint) -> Self {
             let mut v = self.datapoints.unwrap_or_default();
-            v.push(input);
-            self.datapoints = Some(v);
-            self
+                            v.push(input);
+                            self.datapoints = Some(v);
+                            self
         }
         /// <p>The data points to return.</p>
-        pub fn set_datapoints(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Datapoint>>,
-        ) -> Self {
-            self.datapoints = input;
-            self
+        pub fn set_datapoints(mut self, input: std::option::Option<std::vec::Vec<crate::model::Datapoint>>) -> Self {
+            self.datapoints = input; self
         }
         /// Consumes the builder and constructs a [`GetScalingPlanResourceForecastDataOutput`](crate::output::GetScalingPlanResourceForecastDataOutput).
         pub fn build(self) -> crate::output::GetScalingPlanResourceForecastDataOutput {
             crate::output::GetScalingPlanResourceForecastDataOutput {
-                datapoints: self.datapoints,
+                datapoints: self.datapoints
+                ,
             }
         }
     }
+    
+    
 }
 impl GetScalingPlanResourceForecastDataOutput {
     /// Creates a new builder-style object to manufacture [`GetScalingPlanResourceForecastDataOutput`](crate::output::GetScalingPlanResourceForecastDataOutput).
@@ -83,7 +87,7 @@ impl GetScalingPlanResourceForecastDataOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeScalingPlansOutput {
+pub struct DescribeScalingPlansOutput  {
     /// <p>Information about the scaling plans.</p>
     #[doc(hidden)]
     pub scaling_plans: std::option::Option<std::vec::Vec<crate::model::ScalingPlan>>,
@@ -93,17 +97,17 @@ pub struct DescribeScalingPlansOutput {
 }
 impl DescribeScalingPlansOutput {
     /// <p>Information about the scaling plans.</p>
-    pub fn scaling_plans(&self) -> std::option::Option<&[crate::model::ScalingPlan]> {
+    pub fn scaling_plans(&self) -> std::option::Option<& [crate::model::ScalingPlan]> {
         self.scaling_plans.as_deref()
     }
     /// <p>The token required to get the next set of results. This value is <code>null</code> if there are no more results to return.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`DescribeScalingPlansOutput`](crate::output::DescribeScalingPlansOutput).
 pub mod describe_scaling_plans_output {
-
+    
     /// A builder for [`DescribeScalingPlansOutput`](crate::output::DescribeScalingPlansOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -118,17 +122,13 @@ pub mod describe_scaling_plans_output {
         /// <p>Information about the scaling plans.</p>
         pub fn scaling_plans(mut self, input: crate::model::ScalingPlan) -> Self {
             let mut v = self.scaling_plans.unwrap_or_default();
-            v.push(input);
-            self.scaling_plans = Some(v);
-            self
+                            v.push(input);
+                            self.scaling_plans = Some(v);
+                            self
         }
         /// <p>Information about the scaling plans.</p>
-        pub fn set_scaling_plans(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ScalingPlan>>,
-        ) -> Self {
-            self.scaling_plans = input;
-            self
+        pub fn set_scaling_plans(mut self, input: std::option::Option<std::vec::Vec<crate::model::ScalingPlan>>) -> Self {
+            self.scaling_plans = input; self
         }
         /// <p>The token required to get the next set of results. This value is <code>null</code> if there are no more results to return.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -137,17 +137,20 @@ pub mod describe_scaling_plans_output {
         }
         /// <p>The token required to get the next set of results. This value is <code>null</code> if there are no more results to return.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`DescribeScalingPlansOutput`](crate::output::DescribeScalingPlansOutput).
         pub fn build(self) -> crate::output::DescribeScalingPlansOutput {
             crate::output::DescribeScalingPlansOutput {
-                scaling_plans: self.scaling_plans,
-                next_token: self.next_token,
+                scaling_plans: self.scaling_plans
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeScalingPlansOutput {
     /// Creates a new builder-style object to manufacture [`DescribeScalingPlansOutput`](crate::output::DescribeScalingPlansOutput).
@@ -159,35 +162,31 @@ impl DescribeScalingPlansOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeScalingPlanResourcesOutput {
+pub struct DescribeScalingPlanResourcesOutput  {
     /// <p>Information about the scalable resources.</p>
     #[doc(hidden)]
-    pub scaling_plan_resources:
-        std::option::Option<std::vec::Vec<crate::model::ScalingPlanResource>>,
+    pub scaling_plan_resources: std::option::Option<std::vec::Vec<crate::model::ScalingPlanResource>>,
     /// <p>The token required to get the next set of results. This value is <code>null</code> if there are no more results to return.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeScalingPlanResourcesOutput {
     /// <p>Information about the scalable resources.</p>
-    pub fn scaling_plan_resources(
-        &self,
-    ) -> std::option::Option<&[crate::model::ScalingPlanResource]> {
+    pub fn scaling_plan_resources(&self) -> std::option::Option<& [crate::model::ScalingPlanResource]> {
         self.scaling_plan_resources.as_deref()
     }
     /// <p>The token required to get the next set of results. This value is <code>null</code> if there are no more results to return.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`DescribeScalingPlanResourcesOutput`](crate::output::DescribeScalingPlanResourcesOutput).
 pub mod describe_scaling_plan_resources_output {
-
+    
     /// A builder for [`DescribeScalingPlanResourcesOutput`](crate::output::DescribeScalingPlanResourcesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) scaling_plan_resources:
-            std::option::Option<std::vec::Vec<crate::model::ScalingPlanResource>>,
+        pub(crate) scaling_plan_resources: std::option::Option<std::vec::Vec<crate::model::ScalingPlanResource>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -198,17 +197,13 @@ pub mod describe_scaling_plan_resources_output {
         /// <p>Information about the scalable resources.</p>
         pub fn scaling_plan_resources(mut self, input: crate::model::ScalingPlanResource) -> Self {
             let mut v = self.scaling_plan_resources.unwrap_or_default();
-            v.push(input);
-            self.scaling_plan_resources = Some(v);
-            self
+                            v.push(input);
+                            self.scaling_plan_resources = Some(v);
+                            self
         }
         /// <p>Information about the scalable resources.</p>
-        pub fn set_scaling_plan_resources(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ScalingPlanResource>>,
-        ) -> Self {
-            self.scaling_plan_resources = input;
-            self
+        pub fn set_scaling_plan_resources(mut self, input: std::option::Option<std::vec::Vec<crate::model::ScalingPlanResource>>) -> Self {
+            self.scaling_plan_resources = input; self
         }
         /// <p>The token required to get the next set of results. This value is <code>null</code> if there are no more results to return.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -217,17 +212,20 @@ pub mod describe_scaling_plan_resources_output {
         }
         /// <p>The token required to get the next set of results. This value is <code>null</code> if there are no more results to return.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`DescribeScalingPlanResourcesOutput`](crate::output::DescribeScalingPlanResourcesOutput).
         pub fn build(self) -> crate::output::DescribeScalingPlanResourcesOutput {
             crate::output::DescribeScalingPlanResourcesOutput {
-                scaling_plan_resources: self.scaling_plan_resources,
-                next_token: self.next_token,
+                scaling_plan_resources: self.scaling_plan_resources
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeScalingPlanResourcesOutput {
     /// Creates a new builder-style object to manufacture [`DescribeScalingPlanResourcesOutput`](crate::output::DescribeScalingPlanResourcesOutput).
@@ -239,19 +237,24 @@ impl DescribeScalingPlanResourcesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteScalingPlanOutput {}
+pub struct DeleteScalingPlanOutput  {
+}
 /// See [`DeleteScalingPlanOutput`](crate::output::DeleteScalingPlanOutput).
 pub mod delete_scaling_plan_output {
-
+    
     /// A builder for [`DeleteScalingPlanOutput`](crate::output::DeleteScalingPlanOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteScalingPlanOutput`](crate::output::DeleteScalingPlanOutput).
         pub fn build(self) -> crate::output::DeleteScalingPlanOutput {
-            crate::output::DeleteScalingPlanOutput {}
+            crate::output::DeleteScalingPlanOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteScalingPlanOutput {
     /// Creates a new builder-style object to manufacture [`DeleteScalingPlanOutput`](crate::output::DeleteScalingPlanOutput).
@@ -263,7 +266,7 @@ impl DeleteScalingPlanOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateScalingPlanOutput {
+pub struct CreateScalingPlanOutput  {
     /// <p>The version number of the scaling plan. This value is always <code>1</code>. Currently, you cannot have multiple scaling plan versions.</p>
     #[doc(hidden)]
     pub scaling_plan_version: std::option::Option<i64>,
@@ -276,7 +279,7 @@ impl CreateScalingPlanOutput {
 }
 /// See [`CreateScalingPlanOutput`](crate::output::CreateScalingPlanOutput).
 pub mod create_scaling_plan_output {
-
+    
     /// A builder for [`CreateScalingPlanOutput`](crate::output::CreateScalingPlanOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -290,16 +293,18 @@ pub mod create_scaling_plan_output {
         }
         /// <p>The version number of the scaling plan. This value is always <code>1</code>. Currently, you cannot have multiple scaling plan versions.</p>
         pub fn set_scaling_plan_version(mut self, input: std::option::Option<i64>) -> Self {
-            self.scaling_plan_version = input;
-            self
+            self.scaling_plan_version = input; self
         }
         /// Consumes the builder and constructs a [`CreateScalingPlanOutput`](crate::output::CreateScalingPlanOutput).
         pub fn build(self) -> crate::output::CreateScalingPlanOutput {
             crate::output::CreateScalingPlanOutput {
-                scaling_plan_version: self.scaling_plan_version,
+                scaling_plan_version: self.scaling_plan_version
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateScalingPlanOutput {
     /// Creates a new builder-style object to manufacture [`CreateScalingPlanOutput`](crate::output::CreateScalingPlanOutput).
@@ -307,3 +312,4 @@ impl CreateScalingPlanOutput {
         crate::output::create_scaling_plan_output::Builder::default()
     }
 }
+

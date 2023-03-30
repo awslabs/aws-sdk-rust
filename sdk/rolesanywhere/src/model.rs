@@ -3,7 +3,7 @@
 /// <p>The state of the trust anchor after a read or write operation. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TrustAnchorDetail {
+pub struct TrustAnchorDetail  {
     /// <p>The unique identifier of the trust anchor.</p>
     #[doc(hidden)]
     pub trust_anchor_id: std::option::Option<std::string::String>,
@@ -28,19 +28,19 @@ pub struct TrustAnchorDetail {
 }
 impl TrustAnchorDetail {
     /// <p>The unique identifier of the trust anchor.</p>
-    pub fn trust_anchor_id(&self) -> std::option::Option<&str> {
+    pub fn trust_anchor_id(&self) -> std::option::Option<& str> {
         self.trust_anchor_id.as_deref()
     }
     /// <p>The ARN of the trust anchor.</p>
-    pub fn trust_anchor_arn(&self) -> std::option::Option<&str> {
+    pub fn trust_anchor_arn(&self) -> std::option::Option<& str> {
         self.trust_anchor_arn.as_deref()
     }
     /// <p>The name of the trust anchor.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The trust anchor type and its related certificate data.</p>
-    pub fn source(&self) -> std::option::Option<&crate::model::Source> {
+    pub fn source(&self) -> std::option::Option<& crate::model::Source> {
         self.source.as_ref()
     }
     /// <p>Indicates whether the trust anchor is enabled.</p>
@@ -48,17 +48,17 @@ impl TrustAnchorDetail {
         self.enabled
     }
     /// <p>The ISO-8601 timestamp when the trust anchor was created. </p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The ISO-8601 timestamp when the trust anchor was last updated. </p>
-    pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn updated_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
     }
 }
 /// See [`TrustAnchorDetail`](crate::model::TrustAnchorDetail).
 pub mod trust_anchor_detail {
-
+    
     /// A builder for [`TrustAnchorDetail`](crate::model::TrustAnchorDetail).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -77,12 +77,8 @@ pub mod trust_anchor_detail {
             self
         }
         /// <p>The unique identifier of the trust anchor.</p>
-        pub fn set_trust_anchor_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.trust_anchor_id = input;
-            self
+        pub fn set_trust_anchor_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.trust_anchor_id = input; self
         }
         /// <p>The ARN of the trust anchor.</p>
         pub fn trust_anchor_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -90,12 +86,8 @@ pub mod trust_anchor_detail {
             self
         }
         /// <p>The ARN of the trust anchor.</p>
-        pub fn set_trust_anchor_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.trust_anchor_arn = input;
-            self
+        pub fn set_trust_anchor_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.trust_anchor_arn = input; self
         }
         /// <p>The name of the trust anchor.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -104,8 +96,7 @@ pub mod trust_anchor_detail {
         }
         /// <p>The name of the trust anchor.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The trust anchor type and its related certificate data.</p>
         pub fn source(mut self, input: crate::model::Source) -> Self {
@@ -114,8 +105,7 @@ pub mod trust_anchor_detail {
         }
         /// <p>The trust anchor type and its related certificate data.</p>
         pub fn set_source(mut self, input: std::option::Option<crate::model::Source>) -> Self {
-            self.source = input;
-            self
+            self.source = input; self
         }
         /// <p>Indicates whether the trust anchor is enabled.</p>
         pub fn enabled(mut self, input: bool) -> Self {
@@ -124,8 +114,7 @@ pub mod trust_anchor_detail {
         }
         /// <p>Indicates whether the trust anchor is enabled.</p>
         pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
-            self.enabled = input;
-            self
+            self.enabled = input; self
         }
         /// <p>The ISO-8601 timestamp when the trust anchor was created. </p>
         pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -133,12 +122,8 @@ pub mod trust_anchor_detail {
             self
         }
         /// <p>The ISO-8601 timestamp when the trust anchor was created. </p>
-        pub fn set_created_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.created_at = input;
-            self
+        pub fn set_created_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.created_at = input; self
         }
         /// <p>The ISO-8601 timestamp when the trust anchor was last updated. </p>
         pub fn updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -146,26 +131,31 @@ pub mod trust_anchor_detail {
             self
         }
         /// <p>The ISO-8601 timestamp when the trust anchor was last updated. </p>
-        pub fn set_updated_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.updated_at = input;
-            self
+        pub fn set_updated_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.updated_at = input; self
         }
         /// Consumes the builder and constructs a [`TrustAnchorDetail`](crate::model::TrustAnchorDetail).
         pub fn build(self) -> crate::model::TrustAnchorDetail {
             crate::model::TrustAnchorDetail {
-                trust_anchor_id: self.trust_anchor_id,
-                trust_anchor_arn: self.trust_anchor_arn,
-                name: self.name,
-                source: self.source,
-                enabled: self.enabled,
-                created_at: self.created_at,
-                updated_at: self.updated_at,
+                trust_anchor_id: self.trust_anchor_id
+                ,
+                trust_anchor_arn: self.trust_anchor_arn
+                ,
+                name: self.name
+                ,
+                source: self.source
+                ,
+                enabled: self.enabled
+                ,
+                created_at: self.created_at
+                ,
+                updated_at: self.updated_at
+                ,
             }
         }
     }
+    
+    
 }
 impl TrustAnchorDetail {
     /// Creates a new builder-style object to manufacture [`TrustAnchorDetail`](crate::model::TrustAnchorDetail).
@@ -177,7 +167,7 @@ impl TrustAnchorDetail {
 /// <p>The trust anchor type and its related certificate data.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Source {
+pub struct Source  {
     /// <p>The type of the trust anchor. </p>
     #[doc(hidden)]
     pub source_type: std::option::Option<crate::model::TrustAnchorType>,
@@ -187,17 +177,17 @@ pub struct Source {
 }
 impl Source {
     /// <p>The type of the trust anchor. </p>
-    pub fn source_type(&self) -> std::option::Option<&crate::model::TrustAnchorType> {
+    pub fn source_type(&self) -> std::option::Option<& crate::model::TrustAnchorType> {
         self.source_type.as_ref()
     }
     /// <p>The data field of the trust anchor depending on its type. </p>
-    pub fn source_data(&self) -> std::option::Option<&crate::model::SourceData> {
+    pub fn source_data(&self) -> std::option::Option<& crate::model::SourceData> {
         self.source_data.as_ref()
     }
 }
 /// See [`Source`](crate::model::Source).
 pub mod source {
-
+    
     /// A builder for [`Source`](crate::model::Source).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -211,12 +201,8 @@ pub mod source {
             self
         }
         /// <p>The type of the trust anchor. </p>
-        pub fn set_source_type(
-            mut self,
-            input: std::option::Option<crate::model::TrustAnchorType>,
-        ) -> Self {
-            self.source_type = input;
-            self
+        pub fn set_source_type(mut self, input: std::option::Option<crate::model::TrustAnchorType>) -> Self {
+            self.source_type = input; self
         }
         /// <p>The data field of the trust anchor depending on its type. </p>
         pub fn source_data(mut self, input: crate::model::SourceData) -> Self {
@@ -224,21 +210,21 @@ pub mod source {
             self
         }
         /// <p>The data field of the trust anchor depending on its type. </p>
-        pub fn set_source_data(
-            mut self,
-            input: std::option::Option<crate::model::SourceData>,
-        ) -> Self {
-            self.source_data = input;
-            self
+        pub fn set_source_data(mut self, input: std::option::Option<crate::model::SourceData>) -> Self {
+            self.source_data = input; self
         }
         /// Consumes the builder and constructs a [`Source`](crate::model::Source).
         pub fn build(self) -> crate::model::Source {
             crate::model::Source {
-                source_type: self.source_type,
-                source_data: self.source_data,
+                source_type: self.source_type
+                ,
+                source_data: self.source_data
+                ,
             }
         }
     }
+    
+    
 }
 impl Source {
     /// Creates a new builder-style object to manufacture [`Source`](crate::model::Source).
@@ -269,11 +255,7 @@ impl SourceData {
     /// Tries to convert the enum instance into [`AcmPcaArn`](crate::model::SourceData::AcmPcaArn), extracting the inner [`String`](std::string::String).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_acm_pca_arn(&self) -> std::result::Result<&std::string::String, &Self> {
-        if let SourceData::AcmPcaArn(val) = &self {
-            Ok(val)
-        } else {
-            Err(self)
-        }
+        if let SourceData::AcmPcaArn(val) = &self { Ok(val) } else { Err(self) }
     }
     /// Returns true if this is a [`AcmPcaArn`](crate::model::SourceData::AcmPcaArn).
     pub fn is_acm_pca_arn(&self) -> bool {
@@ -282,11 +264,7 @@ impl SourceData {
     /// Tries to convert the enum instance into [`X509CertificateData`](crate::model::SourceData::X509CertificateData), extracting the inner [`String`](std::string::String).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_x509_certificate_data(&self) -> std::result::Result<&std::string::String, &Self> {
-        if let SourceData::X509CertificateData(val) = &self {
-            Ok(val)
-        } else {
-            Err(self)
-        }
+        if let SourceData::X509CertificateData(val) = &self { Ok(val) } else { Err(self) }
     }
     /// Returns true if this is a [`X509CertificateData`](crate::model::SourceData::X509CertificateData).
     pub fn is_x509_certificate_data(&self) -> bool {
@@ -304,9 +282,9 @@ impl SourceData {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let trustanchortype = unimplemented!();
 /// match trustanchortype {
@@ -329,22 +307,14 @@ impl SourceData {
 /// Specifically, when `trustanchortype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `TrustAnchorType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum TrustAnchorType {
     #[allow(missing_docs)] // documentation missing in model
     AwsAcmPca,
@@ -353,7 +323,7 @@ pub enum TrustAnchorType {
     #[allow(missing_docs)] // documentation missing in model
     SelfSignedRepository,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for TrustAnchorType {
     fn from(s: &str) -> Self {
@@ -361,17 +331,17 @@ impl std::convert::From<&str> for TrustAnchorType {
             "AWS_ACM_PCA" => TrustAnchorType::AwsAcmPca,
             "CERTIFICATE_BUNDLE" => TrustAnchorType::CertificateBundle,
             "SELF_SIGNED_REPOSITORY" => TrustAnchorType::SelfSignedRepository,
-            other => TrustAnchorType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => TrustAnchorType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for TrustAnchorType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(TrustAnchorType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(TrustAnchorType::from(s))
+                }
+            }
 impl TrustAnchorType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -379,15 +349,13 @@ impl TrustAnchorType {
             TrustAnchorType::AwsAcmPca => "AWS_ACM_PCA",
             TrustAnchorType::CertificateBundle => "CERTIFICATE_BUNDLE",
             TrustAnchorType::SelfSignedRepository => "SELF_SIGNED_REPOSITORY",
-            TrustAnchorType::Unknown(value) => value.as_str(),
+            TrustAnchorType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "AWS_ACM_PCA",
-            "CERTIFICATE_BUNDLE",
-            "SELF_SIGNED_REPOSITORY",
+            "AWS_ACM_PCA", "CERTIFICATE_BUNDLE", "SELF_SIGNED_REPOSITORY"
         ]
     }
 }
@@ -400,7 +368,7 @@ impl AsRef<str> for TrustAnchorType {
 /// <p>A label that consists of a key and value you define. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct Tag {
+pub struct Tag  {
     /// <p>The tag key.</p>
     #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
@@ -410,15 +378,15 @@ pub struct Tag {
 }
 impl Tag {
     /// <p>The tag key.</p>
-    pub fn key(&self) -> std::option::Option<&str> {
+    pub fn key(&self) -> std::option::Option<& str> {
         self.key.as_deref()
     }
     /// <p>The tag value.</p>
-    pub fn value(&self) -> std::option::Option<&str> {
+    pub fn value(&self) -> std::option::Option<& str> {
         self.value.as_deref()
     }
 }
-impl std::fmt::Debug for Tag {
+impl  std::fmt::Debug for Tag  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Tag");
         formatter.field("key", &"*** Sensitive Data Redacted ***");
@@ -428,7 +396,7 @@ impl std::fmt::Debug for Tag {
 }
 /// See [`Tag`](crate::model::Tag).
 pub mod tag {
-
+    
     /// A builder for [`Tag`](crate::model::Tag).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
@@ -443,8 +411,7 @@ pub mod tag {
         }
         /// <p>The tag key.</p>
         pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.key = input;
-            self
+            self.key = input; self
         }
         /// <p>The tag value.</p>
         pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
@@ -453,14 +420,15 @@ pub mod tag {
         }
         /// <p>The tag value.</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.value = input;
-            self
+            self.value = input; self
         }
         /// Consumes the builder and constructs a [`Tag`](crate::model::Tag).
         pub fn build(self) -> crate::model::Tag {
             crate::model::Tag {
-                key: self.key,
-                value: self.value,
+                key: self.key
+                ,
+                value: self.value
+                ,
             }
         }
     }
@@ -472,6 +440,8 @@ pub mod tag {
             formatter.finish()
         }
     }
+    
+    
 }
 impl Tag {
     /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
@@ -483,7 +453,7 @@ impl Tag {
 /// <p>A summary representation of Subject resources returned in read operations; primarily ListSubjects.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SubjectSummary {
+pub struct SubjectSummary  {
     /// <p>The ARN of the resource.</p>
     #[doc(hidden)]
     pub subject_arn: std::option::Option<std::string::String>,
@@ -508,11 +478,11 @@ pub struct SubjectSummary {
 }
 impl SubjectSummary {
     /// <p>The ARN of the resource.</p>
-    pub fn subject_arn(&self) -> std::option::Option<&str> {
+    pub fn subject_arn(&self) -> std::option::Option<& str> {
         self.subject_arn.as_deref()
     }
     /// <p>The id of the resource.</p>
-    pub fn subject_id(&self) -> std::option::Option<&str> {
+    pub fn subject_id(&self) -> std::option::Option<& str> {
         self.subject_id.as_deref()
     }
     /// <p>The enabled status of the Subject. </p>
@@ -520,25 +490,25 @@ impl SubjectSummary {
         self.enabled
     }
     /// <p>The x509 principal identifier of the authenticating certificate.</p>
-    pub fn x509_subject(&self) -> std::option::Option<&str> {
+    pub fn x509_subject(&self) -> std::option::Option<& str> {
         self.x509_subject.as_deref()
     }
     /// <p>The ISO-8601 time stamp of when the certificate was last used in a <a href="https://docs.aws.amazon.com/rolesanywhere/latest/APIReference/API_CreateSession.html">CreateSession</a> operation.</p>
-    pub fn last_seen_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_seen_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_seen_at.as_ref()
     }
     /// <p>The ISO-8601 time stamp of when the certificate was first used in a <a href="https://docs.aws.amazon.com/rolesanywhere/latest/APIReference/API_CreateSession.html">CreateSession</a> operation.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The ISO-8601 timestamp when the subject was last updated. </p>
-    pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn updated_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
     }
 }
 /// See [`SubjectSummary`](crate::model::SubjectSummary).
 pub mod subject_summary {
-
+    
     /// A builder for [`SubjectSummary`](crate::model::SubjectSummary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -558,8 +528,7 @@ pub mod subject_summary {
         }
         /// <p>The ARN of the resource.</p>
         pub fn set_subject_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.subject_arn = input;
-            self
+            self.subject_arn = input; self
         }
         /// <p>The id of the resource.</p>
         pub fn subject_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -568,8 +537,7 @@ pub mod subject_summary {
         }
         /// <p>The id of the resource.</p>
         pub fn set_subject_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.subject_id = input;
-            self
+            self.subject_id = input; self
         }
         /// <p>The enabled status of the Subject. </p>
         pub fn enabled(mut self, input: bool) -> Self {
@@ -578,8 +546,7 @@ pub mod subject_summary {
         }
         /// <p>The enabled status of the Subject. </p>
         pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
-            self.enabled = input;
-            self
+            self.enabled = input; self
         }
         /// <p>The x509 principal identifier of the authenticating certificate.</p>
         pub fn x509_subject(mut self, input: impl Into<std::string::String>) -> Self {
@@ -588,8 +555,7 @@ pub mod subject_summary {
         }
         /// <p>The x509 principal identifier of the authenticating certificate.</p>
         pub fn set_x509_subject(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.x509_subject = input;
-            self
+            self.x509_subject = input; self
         }
         /// <p>The ISO-8601 time stamp of when the certificate was last used in a <a href="https://docs.aws.amazon.com/rolesanywhere/latest/APIReference/API_CreateSession.html">CreateSession</a> operation.</p>
         pub fn last_seen_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -597,12 +563,8 @@ pub mod subject_summary {
             self
         }
         /// <p>The ISO-8601 time stamp of when the certificate was last used in a <a href="https://docs.aws.amazon.com/rolesanywhere/latest/APIReference/API_CreateSession.html">CreateSession</a> operation.</p>
-        pub fn set_last_seen_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_seen_at = input;
-            self
+        pub fn set_last_seen_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_seen_at = input; self
         }
         /// <p>The ISO-8601 time stamp of when the certificate was first used in a <a href="https://docs.aws.amazon.com/rolesanywhere/latest/APIReference/API_CreateSession.html">CreateSession</a> operation.</p>
         pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -610,12 +572,8 @@ pub mod subject_summary {
             self
         }
         /// <p>The ISO-8601 time stamp of when the certificate was first used in a <a href="https://docs.aws.amazon.com/rolesanywhere/latest/APIReference/API_CreateSession.html">CreateSession</a> operation.</p>
-        pub fn set_created_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.created_at = input;
-            self
+        pub fn set_created_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.created_at = input; self
         }
         /// <p>The ISO-8601 timestamp when the subject was last updated. </p>
         pub fn updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -623,26 +581,31 @@ pub mod subject_summary {
             self
         }
         /// <p>The ISO-8601 timestamp when the subject was last updated. </p>
-        pub fn set_updated_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.updated_at = input;
-            self
+        pub fn set_updated_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.updated_at = input; self
         }
         /// Consumes the builder and constructs a [`SubjectSummary`](crate::model::SubjectSummary).
         pub fn build(self) -> crate::model::SubjectSummary {
             crate::model::SubjectSummary {
-                subject_arn: self.subject_arn,
-                subject_id: self.subject_id,
-                enabled: self.enabled,
-                x509_subject: self.x509_subject,
-                last_seen_at: self.last_seen_at,
-                created_at: self.created_at,
-                updated_at: self.updated_at,
+                subject_arn: self.subject_arn
+                ,
+                subject_id: self.subject_id
+                ,
+                enabled: self.enabled
+                ,
+                x509_subject: self.x509_subject
+                ,
+                last_seen_at: self.last_seen_at
+                ,
+                created_at: self.created_at
+                ,
+                updated_at: self.updated_at
+                ,
             }
         }
     }
+    
+    
 }
 impl SubjectSummary {
     /// Creates a new builder-style object to manufacture [`SubjectSummary`](crate::model::SubjectSummary).
@@ -654,7 +617,7 @@ impl SubjectSummary {
 /// <p>The state of the subject after a read or write operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SubjectDetail {
+pub struct SubjectDetail  {
     /// <p>The ARN of the resource.</p>
     #[doc(hidden)]
     pub subject_arn: std::option::Option<std::string::String>,
@@ -685,11 +648,11 @@ pub struct SubjectDetail {
 }
 impl SubjectDetail {
     /// <p>The ARN of the resource.</p>
-    pub fn subject_arn(&self) -> std::option::Option<&str> {
+    pub fn subject_arn(&self) -> std::option::Option<& str> {
         self.subject_arn.as_deref()
     }
     /// <p>The id of the resource</p>
-    pub fn subject_id(&self) -> std::option::Option<&str> {
+    pub fn subject_id(&self) -> std::option::Option<& str> {
         self.subject_id.as_deref()
     }
     /// <p>The enabled status of the subject.</p>
@@ -697,33 +660,33 @@ impl SubjectDetail {
         self.enabled
     }
     /// <p>The x509 principal identifier of the authenticating certificate.</p>
-    pub fn x509_subject(&self) -> std::option::Option<&str> {
+    pub fn x509_subject(&self) -> std::option::Option<& str> {
         self.x509_subject.as_deref()
     }
     /// <p>The ISO-8601 timestamp of the last time this Subject requested temporary session credentials.</p>
-    pub fn last_seen_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_seen_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_seen_at.as_ref()
     }
     /// <p>The ISO-8601 timestamp when the subject was created. </p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The ISO-8601 timestamp when the subject was last updated.</p>
-    pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn updated_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
     }
     /// <p>The temporary session credentials vended at the last authenticating call with this Subject.</p>
-    pub fn credentials(&self) -> std::option::Option<&[crate::model::CredentialSummary]> {
+    pub fn credentials(&self) -> std::option::Option<& [crate::model::CredentialSummary]> {
         self.credentials.as_deref()
     }
     /// <p>The specified instance properties associated with the request.</p>
-    pub fn instance_properties(&self) -> std::option::Option<&[crate::model::InstanceProperty]> {
+    pub fn instance_properties(&self) -> std::option::Option<& [crate::model::InstanceProperty]> {
         self.instance_properties.as_deref()
     }
 }
 /// See [`SubjectDetail`](crate::model::SubjectDetail).
 pub mod subject_detail {
-
+    
     /// A builder for [`SubjectDetail`](crate::model::SubjectDetail).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -735,8 +698,7 @@ pub mod subject_detail {
         pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) updated_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) credentials: std::option::Option<std::vec::Vec<crate::model::CredentialSummary>>,
-        pub(crate) instance_properties:
-            std::option::Option<std::vec::Vec<crate::model::InstanceProperty>>,
+        pub(crate) instance_properties: std::option::Option<std::vec::Vec<crate::model::InstanceProperty>>,
     }
     impl Builder {
         /// <p>The ARN of the resource.</p>
@@ -746,8 +708,7 @@ pub mod subject_detail {
         }
         /// <p>The ARN of the resource.</p>
         pub fn set_subject_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.subject_arn = input;
-            self
+            self.subject_arn = input; self
         }
         /// <p>The id of the resource</p>
         pub fn subject_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -756,8 +717,7 @@ pub mod subject_detail {
         }
         /// <p>The id of the resource</p>
         pub fn set_subject_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.subject_id = input;
-            self
+            self.subject_id = input; self
         }
         /// <p>The enabled status of the subject.</p>
         pub fn enabled(mut self, input: bool) -> Self {
@@ -766,8 +726,7 @@ pub mod subject_detail {
         }
         /// <p>The enabled status of the subject.</p>
         pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
-            self.enabled = input;
-            self
+            self.enabled = input; self
         }
         /// <p>The x509 principal identifier of the authenticating certificate.</p>
         pub fn x509_subject(mut self, input: impl Into<std::string::String>) -> Self {
@@ -776,8 +735,7 @@ pub mod subject_detail {
         }
         /// <p>The x509 principal identifier of the authenticating certificate.</p>
         pub fn set_x509_subject(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.x509_subject = input;
-            self
+            self.x509_subject = input; self
         }
         /// <p>The ISO-8601 timestamp of the last time this Subject requested temporary session credentials.</p>
         pub fn last_seen_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -785,12 +743,8 @@ pub mod subject_detail {
             self
         }
         /// <p>The ISO-8601 timestamp of the last time this Subject requested temporary session credentials.</p>
-        pub fn set_last_seen_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_seen_at = input;
-            self
+        pub fn set_last_seen_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_seen_at = input; self
         }
         /// <p>The ISO-8601 timestamp when the subject was created. </p>
         pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -798,12 +752,8 @@ pub mod subject_detail {
             self
         }
         /// <p>The ISO-8601 timestamp when the subject was created. </p>
-        pub fn set_created_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.created_at = input;
-            self
+        pub fn set_created_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.created_at = input; self
         }
         /// <p>The ISO-8601 timestamp when the subject was last updated.</p>
         pub fn updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -811,12 +761,8 @@ pub mod subject_detail {
             self
         }
         /// <p>The ISO-8601 timestamp when the subject was last updated.</p>
-        pub fn set_updated_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.updated_at = input;
-            self
+        pub fn set_updated_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.updated_at = input; self
         }
         /// Appends an item to `credentials`.
         ///
@@ -825,17 +771,13 @@ pub mod subject_detail {
         /// <p>The temporary session credentials vended at the last authenticating call with this Subject.</p>
         pub fn credentials(mut self, input: crate::model::CredentialSummary) -> Self {
             let mut v = self.credentials.unwrap_or_default();
-            v.push(input);
-            self.credentials = Some(v);
-            self
+                            v.push(input);
+                            self.credentials = Some(v);
+                            self
         }
         /// <p>The temporary session credentials vended at the last authenticating call with this Subject.</p>
-        pub fn set_credentials(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::CredentialSummary>>,
-        ) -> Self {
-            self.credentials = input;
-            self
+        pub fn set_credentials(mut self, input: std::option::Option<std::vec::Vec<crate::model::CredentialSummary>>) -> Self {
+            self.credentials = input; self
         }
         /// Appends an item to `instance_properties`.
         ///
@@ -844,33 +786,40 @@ pub mod subject_detail {
         /// <p>The specified instance properties associated with the request.</p>
         pub fn instance_properties(mut self, input: crate::model::InstanceProperty) -> Self {
             let mut v = self.instance_properties.unwrap_or_default();
-            v.push(input);
-            self.instance_properties = Some(v);
-            self
+                            v.push(input);
+                            self.instance_properties = Some(v);
+                            self
         }
         /// <p>The specified instance properties associated with the request.</p>
-        pub fn set_instance_properties(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::InstanceProperty>>,
-        ) -> Self {
-            self.instance_properties = input;
-            self
+        pub fn set_instance_properties(mut self, input: std::option::Option<std::vec::Vec<crate::model::InstanceProperty>>) -> Self {
+            self.instance_properties = input; self
         }
         /// Consumes the builder and constructs a [`SubjectDetail`](crate::model::SubjectDetail).
         pub fn build(self) -> crate::model::SubjectDetail {
             crate::model::SubjectDetail {
-                subject_arn: self.subject_arn,
-                subject_id: self.subject_id,
-                enabled: self.enabled,
-                x509_subject: self.x509_subject,
-                last_seen_at: self.last_seen_at,
-                created_at: self.created_at,
-                updated_at: self.updated_at,
-                credentials: self.credentials,
-                instance_properties: self.instance_properties,
+                subject_arn: self.subject_arn
+                ,
+                subject_id: self.subject_id
+                ,
+                enabled: self.enabled
+                ,
+                x509_subject: self.x509_subject
+                ,
+                last_seen_at: self.last_seen_at
+                ,
+                created_at: self.created_at
+                ,
+                updated_at: self.updated_at
+                ,
+                credentials: self.credentials
+                ,
+                instance_properties: self.instance_properties
+                ,
             }
         }
     }
+    
+    
 }
 impl SubjectDetail {
     /// Creates a new builder-style object to manufacture [`SubjectDetail`](crate::model::SubjectDetail).
@@ -882,28 +831,24 @@ impl SubjectDetail {
 /// <p>A key-value pair you set that identifies a property of the authenticating instance.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InstanceProperty {
+pub struct InstanceProperty  {
     /// <p>The ISO-8601 time stamp of when the certificate was last used in a <a href="https://docs.aws.amazon.com/rolesanywhere/latest/APIReference/API_CreateSession.html">CreateSession</a> operation.</p>
     #[doc(hidden)]
     pub seen_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A list of instanceProperty objects. </p>
     #[doc(hidden)]
-    pub properties:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub properties: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>Indicates whether the <a href="https://docs.aws.amazon.com/rolesanywhere/latest/APIReference/API_CreateSession.html">CreateSession</a> operation was successful. </p>
     #[doc(hidden)]
     pub failed: std::option::Option<bool>,
 }
 impl InstanceProperty {
     /// <p>The ISO-8601 time stamp of when the certificate was last used in a <a href="https://docs.aws.amazon.com/rolesanywhere/latest/APIReference/API_CreateSession.html">CreateSession</a> operation.</p>
-    pub fn seen_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn seen_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.seen_at.as_ref()
     }
     /// <p>A list of instanceProperty objects. </p>
-    pub fn properties(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn properties(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.properties.as_ref()
     }
     /// <p>Indicates whether the <a href="https://docs.aws.amazon.com/rolesanywhere/latest/APIReference/API_CreateSession.html">CreateSession</a> operation was successful. </p>
@@ -913,14 +858,12 @@ impl InstanceProperty {
 }
 /// See [`InstanceProperty`](crate::model::InstanceProperty).
 pub mod instance_property {
-
+    
     /// A builder for [`InstanceProperty`](crate::model::InstanceProperty).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) seen_at: std::option::Option<aws_smithy_types::DateTime>,
-        pub(crate) properties: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) properties: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
         pub(crate) failed: std::option::Option<bool>,
     }
     impl Builder {
@@ -930,37 +873,23 @@ pub mod instance_property {
             self
         }
         /// <p>The ISO-8601 time stamp of when the certificate was last used in a <a href="https://docs.aws.amazon.com/rolesanywhere/latest/APIReference/API_CreateSession.html">CreateSession</a> operation.</p>
-        pub fn set_seen_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.seen_at = input;
-            self
+        pub fn set_seen_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.seen_at = input; self
         }
         /// Adds a key-value pair to `properties`.
         ///
         /// To override the contents of this collection use [`set_properties`](Self::set_properties).
         ///
         /// <p>A list of instanceProperty objects. </p>
-        pub fn properties(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn properties(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.properties.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.properties = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.properties = Some(hash_map);
+                            self
         }
         /// <p>A list of instanceProperty objects. </p>
-        pub fn set_properties(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.properties = input;
-            self
+        pub fn set_properties(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.properties = input; self
         }
         /// <p>Indicates whether the <a href="https://docs.aws.amazon.com/rolesanywhere/latest/APIReference/API_CreateSession.html">CreateSession</a> operation was successful. </p>
         pub fn failed(mut self, input: bool) -> Self {
@@ -969,18 +898,22 @@ pub mod instance_property {
         }
         /// <p>Indicates whether the <a href="https://docs.aws.amazon.com/rolesanywhere/latest/APIReference/API_CreateSession.html">CreateSession</a> operation was successful. </p>
         pub fn set_failed(mut self, input: std::option::Option<bool>) -> Self {
-            self.failed = input;
-            self
+            self.failed = input; self
         }
         /// Consumes the builder and constructs a [`InstanceProperty`](crate::model::InstanceProperty).
         pub fn build(self) -> crate::model::InstanceProperty {
             crate::model::InstanceProperty {
-                seen_at: self.seen_at,
-                properties: self.properties,
-                failed: self.failed,
+                seen_at: self.seen_at
+                ,
+                properties: self.properties
+                ,
+                failed: self.failed
+                ,
             }
         }
     }
+    
+    
 }
 impl InstanceProperty {
     /// Creates a new builder-style object to manufacture [`InstanceProperty`](crate::model::InstanceProperty).
@@ -992,7 +925,7 @@ impl InstanceProperty {
 /// <p>A record of a presented X509 credential to <a href="https://docs.aws.amazon.com/rolesanywhere/latest/APIReference/API_CreateSession.html">CreateSession</a>. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CredentialSummary {
+pub struct CredentialSummary  {
     /// <p>The ISO-8601 time stamp of when the certificate was last used in a <a href="https://docs.aws.amazon.com/rolesanywhere/latest/APIReference/API_CreateSession.html">CreateSession</a> operation.</p>
     #[doc(hidden)]
     pub seen_at: std::option::Option<aws_smithy_types::DateTime>,
@@ -1014,15 +947,15 @@ pub struct CredentialSummary {
 }
 impl CredentialSummary {
     /// <p>The ISO-8601 time stamp of when the certificate was last used in a <a href="https://docs.aws.amazon.com/rolesanywhere/latest/APIReference/API_CreateSession.html">CreateSession</a> operation.</p>
-    pub fn seen_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn seen_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.seen_at.as_ref()
     }
     /// <p>The serial number of the certificate.</p>
-    pub fn serial_number(&self) -> std::option::Option<&str> {
+    pub fn serial_number(&self) -> std::option::Option<& str> {
         self.serial_number.as_deref()
     }
     /// <p>The fully qualified domain name of the issuing certificate for the presented end-entity certificate.</p>
-    pub fn issuer(&self) -> std::option::Option<&str> {
+    pub fn issuer(&self) -> std::option::Option<& str> {
         self.issuer.as_deref()
     }
     /// <p>Indicates whether the credential is enabled.</p>
@@ -1030,7 +963,7 @@ impl CredentialSummary {
         self.enabled
     }
     /// <p>The PEM-encoded data of the certificate.</p>
-    pub fn x509_certificate_data(&self) -> std::option::Option<&str> {
+    pub fn x509_certificate_data(&self) -> std::option::Option<& str> {
         self.x509_certificate_data.as_deref()
     }
     /// <p>Indicates whether the <a href="https://docs.aws.amazon.com/rolesanywhere/latest/APIReference/API_CreateSession.html">CreateSession</a> operation was successful. </p>
@@ -1040,7 +973,7 @@ impl CredentialSummary {
 }
 /// See [`CredentialSummary`](crate::model::CredentialSummary).
 pub mod credential_summary {
-
+    
     /// A builder for [`CredentialSummary`](crate::model::CredentialSummary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1058,12 +991,8 @@ pub mod credential_summary {
             self
         }
         /// <p>The ISO-8601 time stamp of when the certificate was last used in a <a href="https://docs.aws.amazon.com/rolesanywhere/latest/APIReference/API_CreateSession.html">CreateSession</a> operation.</p>
-        pub fn set_seen_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.seen_at = input;
-            self
+        pub fn set_seen_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.seen_at = input; self
         }
         /// <p>The serial number of the certificate.</p>
         pub fn serial_number(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1071,12 +1000,8 @@ pub mod credential_summary {
             self
         }
         /// <p>The serial number of the certificate.</p>
-        pub fn set_serial_number(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.serial_number = input;
-            self
+        pub fn set_serial_number(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.serial_number = input; self
         }
         /// <p>The fully qualified domain name of the issuing certificate for the presented end-entity certificate.</p>
         pub fn issuer(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1085,8 +1010,7 @@ pub mod credential_summary {
         }
         /// <p>The fully qualified domain name of the issuing certificate for the presented end-entity certificate.</p>
         pub fn set_issuer(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.issuer = input;
-            self
+            self.issuer = input; self
         }
         /// <p>Indicates whether the credential is enabled.</p>
         pub fn enabled(mut self, input: bool) -> Self {
@@ -1095,8 +1019,7 @@ pub mod credential_summary {
         }
         /// <p>Indicates whether the credential is enabled.</p>
         pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
-            self.enabled = input;
-            self
+            self.enabled = input; self
         }
         /// <p>The PEM-encoded data of the certificate.</p>
         pub fn x509_certificate_data(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1104,12 +1027,8 @@ pub mod credential_summary {
             self
         }
         /// <p>The PEM-encoded data of the certificate.</p>
-        pub fn set_x509_certificate_data(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.x509_certificate_data = input;
-            self
+        pub fn set_x509_certificate_data(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.x509_certificate_data = input; self
         }
         /// <p>Indicates whether the <a href="https://docs.aws.amazon.com/rolesanywhere/latest/APIReference/API_CreateSession.html">CreateSession</a> operation was successful. </p>
         pub fn failed(mut self, input: bool) -> Self {
@@ -1118,21 +1037,28 @@ pub mod credential_summary {
         }
         /// <p>Indicates whether the <a href="https://docs.aws.amazon.com/rolesanywhere/latest/APIReference/API_CreateSession.html">CreateSession</a> operation was successful. </p>
         pub fn set_failed(mut self, input: std::option::Option<bool>) -> Self {
-            self.failed = input;
-            self
+            self.failed = input; self
         }
         /// Consumes the builder and constructs a [`CredentialSummary`](crate::model::CredentialSummary).
         pub fn build(self) -> crate::model::CredentialSummary {
             crate::model::CredentialSummary {
-                seen_at: self.seen_at,
-                serial_number: self.serial_number,
-                issuer: self.issuer,
-                enabled: self.enabled,
-                x509_certificate_data: self.x509_certificate_data,
-                failed: self.failed,
+                seen_at: self.seen_at
+                ,
+                serial_number: self.serial_number
+                ,
+                issuer: self.issuer
+                ,
+                enabled: self.enabled
+                ,
+                x509_certificate_data: self.x509_certificate_data
+                ,
+                failed: self.failed
+                ,
             }
         }
     }
+    
+    
 }
 impl CredentialSummary {
     /// Creates a new builder-style object to manufacture [`CredentialSummary`](crate::model::CredentialSummary).
@@ -1144,7 +1070,7 @@ impl CredentialSummary {
 /// <p>The state of the profile after a read or write operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ProfileDetail {
+pub struct ProfileDetail  {
     /// <p>The unique identifier of the profile.</p>
     #[doc(hidden)]
     pub profile_id: std::option::Option<std::string::String>,
@@ -1184,15 +1110,15 @@ pub struct ProfileDetail {
 }
 impl ProfileDetail {
     /// <p>The unique identifier of the profile.</p>
-    pub fn profile_id(&self) -> std::option::Option<&str> {
+    pub fn profile_id(&self) -> std::option::Option<& str> {
         self.profile_id.as_deref()
     }
     /// <p>The ARN of the profile.</p>
-    pub fn profile_arn(&self) -> std::option::Option<&str> {
+    pub fn profile_arn(&self) -> std::option::Option<& str> {
         self.profile_arn.as_deref()
     }
     /// <p>The name of the profile.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>Specifies whether instance properties are required in <a href="https://docs.aws.amazon.com/rolesanywhere/latest/APIReference/API_CreateSession.html">CreateSession</a> requests with this profile. </p>
@@ -1204,27 +1130,27 @@ impl ProfileDetail {
         self.enabled
     }
     /// <p>The Amazon Web Services account that created the profile.</p>
-    pub fn created_by(&self) -> std::option::Option<&str> {
+    pub fn created_by(&self) -> std::option::Option<& str> {
         self.created_by.as_deref()
     }
     /// <p>A session policy that applies to the trust boundary of the vended session credentials. </p>
-    pub fn session_policy(&self) -> std::option::Option<&str> {
+    pub fn session_policy(&self) -> std::option::Option<& str> {
         self.session_policy.as_deref()
     }
     /// <p>A list of IAM roles that this profile can assume in a <a href="https://docs.aws.amazon.com/rolesanywhere/latest/APIReference/API_CreateSession.html">CreateSession</a> operation.</p>
-    pub fn role_arns(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn role_arns(&self) -> std::option::Option<& [std::string::String]> {
         self.role_arns.as_deref()
     }
     /// <p>A list of managed policy ARNs that apply to the vended session credentials. </p>
-    pub fn managed_policy_arns(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn managed_policy_arns(&self) -> std::option::Option<& [std::string::String]> {
         self.managed_policy_arns.as_deref()
     }
     /// <p>The ISO-8601 timestamp when the profile was created. </p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The ISO-8601 timestamp when the profile was last updated. </p>
-    pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn updated_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
     }
     /// <p> The number of seconds the vended session credentials are valid for. </p>
@@ -1234,7 +1160,7 @@ impl ProfileDetail {
 }
 /// See [`ProfileDetail`](crate::model::ProfileDetail).
 pub mod profile_detail {
-
+    
     /// A builder for [`ProfileDetail`](crate::model::ProfileDetail).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1259,8 +1185,7 @@ pub mod profile_detail {
         }
         /// <p>The unique identifier of the profile.</p>
         pub fn set_profile_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.profile_id = input;
-            self
+            self.profile_id = input; self
         }
         /// <p>The ARN of the profile.</p>
         pub fn profile_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1269,8 +1194,7 @@ pub mod profile_detail {
         }
         /// <p>The ARN of the profile.</p>
         pub fn set_profile_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.profile_arn = input;
-            self
+            self.profile_arn = input; self
         }
         /// <p>The name of the profile.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1279,8 +1203,7 @@ pub mod profile_detail {
         }
         /// <p>The name of the profile.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>Specifies whether instance properties are required in <a href="https://docs.aws.amazon.com/rolesanywhere/latest/APIReference/API_CreateSession.html">CreateSession</a> requests with this profile. </p>
         pub fn require_instance_properties(mut self, input: bool) -> Self {
@@ -1289,8 +1212,7 @@ pub mod profile_detail {
         }
         /// <p>Specifies whether instance properties are required in <a href="https://docs.aws.amazon.com/rolesanywhere/latest/APIReference/API_CreateSession.html">CreateSession</a> requests with this profile. </p>
         pub fn set_require_instance_properties(mut self, input: std::option::Option<bool>) -> Self {
-            self.require_instance_properties = input;
-            self
+            self.require_instance_properties = input; self
         }
         /// <p>Indicates whether the profile is enabled.</p>
         pub fn enabled(mut self, input: bool) -> Self {
@@ -1299,8 +1221,7 @@ pub mod profile_detail {
         }
         /// <p>Indicates whether the profile is enabled.</p>
         pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
-            self.enabled = input;
-            self
+            self.enabled = input; self
         }
         /// <p>The Amazon Web Services account that created the profile.</p>
         pub fn created_by(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1309,8 +1230,7 @@ pub mod profile_detail {
         }
         /// <p>The Amazon Web Services account that created the profile.</p>
         pub fn set_created_by(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.created_by = input;
-            self
+            self.created_by = input; self
         }
         /// <p>A session policy that applies to the trust boundary of the vended session credentials. </p>
         pub fn session_policy(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1318,12 +1238,8 @@ pub mod profile_detail {
             self
         }
         /// <p>A session policy that applies to the trust boundary of the vended session credentials. </p>
-        pub fn set_session_policy(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.session_policy = input;
-            self
+        pub fn set_session_policy(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.session_policy = input; self
         }
         /// Appends an item to `role_arns`.
         ///
@@ -1332,17 +1248,13 @@ pub mod profile_detail {
         /// <p>A list of IAM roles that this profile can assume in a <a href="https://docs.aws.amazon.com/rolesanywhere/latest/APIReference/API_CreateSession.html">CreateSession</a> operation.</p>
         pub fn role_arns(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.role_arns.unwrap_or_default();
-            v.push(input.into());
-            self.role_arns = Some(v);
-            self
+                            v.push(input.into());
+                            self.role_arns = Some(v);
+                            self
         }
         /// <p>A list of IAM roles that this profile can assume in a <a href="https://docs.aws.amazon.com/rolesanywhere/latest/APIReference/API_CreateSession.html">CreateSession</a> operation.</p>
-        pub fn set_role_arns(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.role_arns = input;
-            self
+        pub fn set_role_arns(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.role_arns = input; self
         }
         /// Appends an item to `managed_policy_arns`.
         ///
@@ -1351,17 +1263,13 @@ pub mod profile_detail {
         /// <p>A list of managed policy ARNs that apply to the vended session credentials. </p>
         pub fn managed_policy_arns(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.managed_policy_arns.unwrap_or_default();
-            v.push(input.into());
-            self.managed_policy_arns = Some(v);
-            self
+                            v.push(input.into());
+                            self.managed_policy_arns = Some(v);
+                            self
         }
         /// <p>A list of managed policy ARNs that apply to the vended session credentials. </p>
-        pub fn set_managed_policy_arns(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.managed_policy_arns = input;
-            self
+        pub fn set_managed_policy_arns(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.managed_policy_arns = input; self
         }
         /// <p>The ISO-8601 timestamp when the profile was created. </p>
         pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -1369,12 +1277,8 @@ pub mod profile_detail {
             self
         }
         /// <p>The ISO-8601 timestamp when the profile was created. </p>
-        pub fn set_created_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.created_at = input;
-            self
+        pub fn set_created_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.created_at = input; self
         }
         /// <p>The ISO-8601 timestamp when the profile was last updated. </p>
         pub fn updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -1382,12 +1286,8 @@ pub mod profile_detail {
             self
         }
         /// <p>The ISO-8601 timestamp when the profile was last updated. </p>
-        pub fn set_updated_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.updated_at = input;
-            self
+        pub fn set_updated_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.updated_at = input; self
         }
         /// <p> The number of seconds the vended session credentials are valid for. </p>
         pub fn duration_seconds(mut self, input: i32) -> Self {
@@ -1396,27 +1296,40 @@ pub mod profile_detail {
         }
         /// <p> The number of seconds the vended session credentials are valid for. </p>
         pub fn set_duration_seconds(mut self, input: std::option::Option<i32>) -> Self {
-            self.duration_seconds = input;
-            self
+            self.duration_seconds = input; self
         }
         /// Consumes the builder and constructs a [`ProfileDetail`](crate::model::ProfileDetail).
         pub fn build(self) -> crate::model::ProfileDetail {
             crate::model::ProfileDetail {
-                profile_id: self.profile_id,
-                profile_arn: self.profile_arn,
-                name: self.name,
-                require_instance_properties: self.require_instance_properties,
-                enabled: self.enabled,
-                created_by: self.created_by,
-                session_policy: self.session_policy,
-                role_arns: self.role_arns,
-                managed_policy_arns: self.managed_policy_arns,
-                created_at: self.created_at,
-                updated_at: self.updated_at,
-                duration_seconds: self.duration_seconds,
+                profile_id: self.profile_id
+                ,
+                profile_arn: self.profile_arn
+                ,
+                name: self.name
+                ,
+                require_instance_properties: self.require_instance_properties
+                ,
+                enabled: self.enabled
+                ,
+                created_by: self.created_by
+                ,
+                session_policy: self.session_policy
+                ,
+                role_arns: self.role_arns
+                ,
+                managed_policy_arns: self.managed_policy_arns
+                ,
+                created_at: self.created_at
+                ,
+                updated_at: self.updated_at
+                ,
+                duration_seconds: self.duration_seconds
+                ,
             }
         }
     }
+    
+    
 }
 impl ProfileDetail {
     /// Creates a new builder-style object to manufacture [`ProfileDetail`](crate::model::ProfileDetail).
@@ -1428,7 +1341,7 @@ impl ProfileDetail {
 /// <p>The state of the certificate revocation list (CRL) after a read or write operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CrlDetail {
+pub struct CrlDetail  {
     /// <p>The unique identifier of the certificate revocation list (CRL).</p>
     #[doc(hidden)]
     pub crl_id: std::option::Option<std::string::String>,
@@ -1456,15 +1369,15 @@ pub struct CrlDetail {
 }
 impl CrlDetail {
     /// <p>The unique identifier of the certificate revocation list (CRL).</p>
-    pub fn crl_id(&self) -> std::option::Option<&str> {
+    pub fn crl_id(&self) -> std::option::Option<& str> {
         self.crl_id.as_deref()
     }
     /// <p>The ARN of the certificate revocation list (CRL).</p>
-    pub fn crl_arn(&self) -> std::option::Option<&str> {
+    pub fn crl_arn(&self) -> std::option::Option<& str> {
         self.crl_arn.as_deref()
     }
     /// <p>The name of the certificate revocation list (CRL).</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>Indicates whether the certificate revocation list (CRL) is enabled.</p>
@@ -1472,25 +1385,25 @@ impl CrlDetail {
         self.enabled
     }
     /// <p>The state of the certificate revocation list (CRL) after a read or write operation.</p>
-    pub fn crl_data(&self) -> std::option::Option<&aws_smithy_types::Blob> {
+    pub fn crl_data(&self) -> std::option::Option<& aws_smithy_types::Blob> {
         self.crl_data.as_ref()
     }
     /// <p>The ARN of the TrustAnchor the certificate revocation list (CRL) will provide revocation for. </p>
-    pub fn trust_anchor_arn(&self) -> std::option::Option<&str> {
+    pub fn trust_anchor_arn(&self) -> std::option::Option<& str> {
         self.trust_anchor_arn.as_deref()
     }
     /// <p>The ISO-8601 timestamp when the certificate revocation list (CRL) was created. </p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The ISO-8601 timestamp when the certificate revocation list (CRL) was last updated. </p>
-    pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn updated_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
     }
 }
 /// See [`CrlDetail`](crate::model::CrlDetail).
 pub mod crl_detail {
-
+    
     /// A builder for [`CrlDetail`](crate::model::CrlDetail).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1511,8 +1424,7 @@ pub mod crl_detail {
         }
         /// <p>The unique identifier of the certificate revocation list (CRL).</p>
         pub fn set_crl_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.crl_id = input;
-            self
+            self.crl_id = input; self
         }
         /// <p>The ARN of the certificate revocation list (CRL).</p>
         pub fn crl_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1521,8 +1433,7 @@ pub mod crl_detail {
         }
         /// <p>The ARN of the certificate revocation list (CRL).</p>
         pub fn set_crl_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.crl_arn = input;
-            self
+            self.crl_arn = input; self
         }
         /// <p>The name of the certificate revocation list (CRL).</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1531,8 +1442,7 @@ pub mod crl_detail {
         }
         /// <p>The name of the certificate revocation list (CRL).</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>Indicates whether the certificate revocation list (CRL) is enabled.</p>
         pub fn enabled(mut self, input: bool) -> Self {
@@ -1541,8 +1451,7 @@ pub mod crl_detail {
         }
         /// <p>Indicates whether the certificate revocation list (CRL) is enabled.</p>
         pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
-            self.enabled = input;
-            self
+            self.enabled = input; self
         }
         /// <p>The state of the certificate revocation list (CRL) after a read or write operation.</p>
         pub fn crl_data(mut self, input: aws_smithy_types::Blob) -> Self {
@@ -1551,8 +1460,7 @@ pub mod crl_detail {
         }
         /// <p>The state of the certificate revocation list (CRL) after a read or write operation.</p>
         pub fn set_crl_data(mut self, input: std::option::Option<aws_smithy_types::Blob>) -> Self {
-            self.crl_data = input;
-            self
+            self.crl_data = input; self
         }
         /// <p>The ARN of the TrustAnchor the certificate revocation list (CRL) will provide revocation for. </p>
         pub fn trust_anchor_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1560,12 +1468,8 @@ pub mod crl_detail {
             self
         }
         /// <p>The ARN of the TrustAnchor the certificate revocation list (CRL) will provide revocation for. </p>
-        pub fn set_trust_anchor_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.trust_anchor_arn = input;
-            self
+        pub fn set_trust_anchor_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.trust_anchor_arn = input; self
         }
         /// <p>The ISO-8601 timestamp when the certificate revocation list (CRL) was created. </p>
         pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -1573,12 +1477,8 @@ pub mod crl_detail {
             self
         }
         /// <p>The ISO-8601 timestamp when the certificate revocation list (CRL) was created. </p>
-        pub fn set_created_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.created_at = input;
-            self
+        pub fn set_created_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.created_at = input; self
         }
         /// <p>The ISO-8601 timestamp when the certificate revocation list (CRL) was last updated. </p>
         pub fn updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -1586,27 +1486,33 @@ pub mod crl_detail {
             self
         }
         /// <p>The ISO-8601 timestamp when the certificate revocation list (CRL) was last updated. </p>
-        pub fn set_updated_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.updated_at = input;
-            self
+        pub fn set_updated_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.updated_at = input; self
         }
         /// Consumes the builder and constructs a [`CrlDetail`](crate::model::CrlDetail).
         pub fn build(self) -> crate::model::CrlDetail {
             crate::model::CrlDetail {
-                crl_id: self.crl_id,
-                crl_arn: self.crl_arn,
-                name: self.name,
-                enabled: self.enabled,
-                crl_data: self.crl_data,
-                trust_anchor_arn: self.trust_anchor_arn,
-                created_at: self.created_at,
-                updated_at: self.updated_at,
+                crl_id: self.crl_id
+                ,
+                crl_arn: self.crl_arn
+                ,
+                name: self.name
+                ,
+                enabled: self.enabled
+                ,
+                crl_data: self.crl_data
+                ,
+                trust_anchor_arn: self.trust_anchor_arn
+                ,
+                created_at: self.created_at
+                ,
+                updated_at: self.updated_at
+                ,
             }
         }
     }
+    
+    
 }
 impl CrlDetail {
     /// Creates a new builder-style object to manufacture [`CrlDetail`](crate::model::CrlDetail).
@@ -1614,3 +1520,4 @@ impl CrlDetail {
         crate::model::crl_detail::Builder::default()
     }
 }
+

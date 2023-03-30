@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateApplicationOutput {
+pub struct UpdateApplicationOutput  {
     /// <p>The application Amazon Resource Name (ARN).</p>
     #[doc(hidden)]
     pub application_id: std::option::Option<std::string::String>,
@@ -54,26 +54,26 @@ pub struct UpdateApplicationOutput {
 }
 impl UpdateApplicationOutput {
     /// <p>The application Amazon Resource Name (ARN).</p>
-    pub fn application_id(&self) -> std::option::Option<&str> {
+    pub fn application_id(&self) -> std::option::Option<& str> {
         self.application_id.as_deref()
     }
     /// <p>The name of the author publishing the app.</p>
     /// <p>Minimum length=1. Maximum length=127.</p>
     /// <p>Pattern "^[a-z0-9](([a-z0-9]|-(?!-))*[a-z0-9])?$";</p>
-    pub fn author(&self) -> std::option::Option<&str> {
+    pub fn author(&self) -> std::option::Option<& str> {
         self.author.as_deref()
     }
     /// <p>The date and time this resource was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<&str> {
+    pub fn creation_time(&self) -> std::option::Option<& str> {
         self.creation_time.as_deref()
     }
     /// <p>The description of the application.</p>
     /// <p>Minimum length=1. Maximum length=256</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>A URL with more information about the application, for example the location of your GitHub repository for the application.</p>
-    pub fn home_page_url(&self) -> std::option::Option<&str> {
+    pub fn home_page_url(&self) -> std::option::Option<& str> {
         self.home_page_url.as_deref()
     }
     /// <p>Whether the author of this application has been verified. This means means that AWS has made a good faith review, as a reasonable and prudent service provider, of the information provided by the requester and has confirmed that the requester's identity is as claimed.</p>
@@ -83,41 +83,41 @@ impl UpdateApplicationOutput {
     /// <p>Labels to improve discovery of apps in search results.</p>
     /// <p>Minimum length=1. Maximum length=127. Maximum number of labels: 10</p>
     /// <p>Pattern: "^[a-zA-Z0-9+\\-_:\\/@]+$";</p>
-    pub fn labels(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn labels(&self) -> std::option::Option<& [std::string::String]> {
         self.labels.as_deref()
     }
     /// <p>A link to a license file of the app that matches the spdxLicenseID value of your application.</p>
     /// <p>Maximum size 5 MB</p>
-    pub fn license_url(&self) -> std::option::Option<&str> {
+    pub fn license_url(&self) -> std::option::Option<& str> {
         self.license_url.as_deref()
     }
     /// <p>The name of the application.</p>
     /// <p>Minimum length=1. Maximum length=140</p>
     /// <p>Pattern: "[a-zA-Z0-9\\-]+";</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>A link to the readme file in Markdown language that contains a more detailed description of the application and how it works.</p>
     /// <p>Maximum size 5 MB</p>
-    pub fn readme_url(&self) -> std::option::Option<&str> {
+    pub fn readme_url(&self) -> std::option::Option<& str> {
         self.readme_url.as_deref()
     }
     /// <p>A valid identifier from https://spdx.org/licenses/.</p>
-    pub fn spdx_license_id(&self) -> std::option::Option<&str> {
+    pub fn spdx_license_id(&self) -> std::option::Option<& str> {
         self.spdx_license_id.as_deref()
     }
     /// <p>The URL to the public profile of a verified author. This URL is submitted by the author.</p>
-    pub fn verified_author_url(&self) -> std::option::Option<&str> {
+    pub fn verified_author_url(&self) -> std::option::Option<& str> {
         self.verified_author_url.as_deref()
     }
     /// <p>Version information about the application.</p>
-    pub fn version(&self) -> std::option::Option<&crate::model::Version> {
+    pub fn version(&self) -> std::option::Option<& crate::model::Version> {
         self.version.as_ref()
     }
 }
 /// See [`UpdateApplicationOutput`](crate::output::UpdateApplicationOutput).
 pub mod update_application_output {
-
+    
     /// A builder for [`UpdateApplicationOutput`](crate::output::UpdateApplicationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -142,12 +142,8 @@ pub mod update_application_output {
             self
         }
         /// <p>The application Amazon Resource Name (ARN).</p>
-        pub fn set_application_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.application_id = input;
-            self
+        pub fn set_application_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.application_id = input; self
         }
         /// <p>The name of the author publishing the app.</p>
         /// <p>Minimum length=1. Maximum length=127.</p>
@@ -160,8 +156,7 @@ pub mod update_application_output {
         /// <p>Minimum length=1. Maximum length=127.</p>
         /// <p>Pattern "^[a-z0-9](([a-z0-9]|-(?!-))*[a-z0-9])?$";</p>
         pub fn set_author(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.author = input;
-            self
+            self.author = input; self
         }
         /// <p>The date and time this resource was created.</p>
         pub fn creation_time(mut self, input: impl Into<std::string::String>) -> Self {
@@ -169,12 +164,8 @@ pub mod update_application_output {
             self
         }
         /// <p>The date and time this resource was created.</p>
-        pub fn set_creation_time(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.creation_time = input;
-            self
+        pub fn set_creation_time(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.creation_time = input; self
         }
         /// <p>The description of the application.</p>
         /// <p>Minimum length=1. Maximum length=256</p>
@@ -185,8 +176,7 @@ pub mod update_application_output {
         /// <p>The description of the application.</p>
         /// <p>Minimum length=1. Maximum length=256</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>A URL with more information about the application, for example the location of your GitHub repository for the application.</p>
         pub fn home_page_url(mut self, input: impl Into<std::string::String>) -> Self {
@@ -194,12 +184,8 @@ pub mod update_application_output {
             self
         }
         /// <p>A URL with more information about the application, for example the location of your GitHub repository for the application.</p>
-        pub fn set_home_page_url(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.home_page_url = input;
-            self
+        pub fn set_home_page_url(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.home_page_url = input; self
         }
         /// <p>Whether the author of this application has been verified. This means means that AWS has made a good faith review, as a reasonable and prudent service provider, of the information provided by the requester and has confirmed that the requester's identity is as claimed.</p>
         pub fn is_verified_author(mut self, input: bool) -> Self {
@@ -208,8 +194,7 @@ pub mod update_application_output {
         }
         /// <p>Whether the author of this application has been verified. This means means that AWS has made a good faith review, as a reasonable and prudent service provider, of the information provided by the requester and has confirmed that the requester's identity is as claimed.</p>
         pub fn set_is_verified_author(mut self, input: std::option::Option<bool>) -> Self {
-            self.is_verified_author = input;
-            self
+            self.is_verified_author = input; self
         }
         /// Appends an item to `labels`.
         ///
@@ -220,19 +205,15 @@ pub mod update_application_output {
         /// <p>Pattern: "^[a-zA-Z0-9+\\-_:\\/@]+$";</p>
         pub fn labels(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.labels.unwrap_or_default();
-            v.push(input.into());
-            self.labels = Some(v);
-            self
+                            v.push(input.into());
+                            self.labels = Some(v);
+                            self
         }
         /// <p>Labels to improve discovery of apps in search results.</p>
         /// <p>Minimum length=1. Maximum length=127. Maximum number of labels: 10</p>
         /// <p>Pattern: "^[a-zA-Z0-9+\\-_:\\/@]+$";</p>
-        pub fn set_labels(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.labels = input;
-            self
+        pub fn set_labels(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.labels = input; self
         }
         /// <p>A link to a license file of the app that matches the spdxLicenseID value of your application.</p>
         /// <p>Maximum size 5 MB</p>
@@ -243,8 +224,7 @@ pub mod update_application_output {
         /// <p>A link to a license file of the app that matches the spdxLicenseID value of your application.</p>
         /// <p>Maximum size 5 MB</p>
         pub fn set_license_url(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.license_url = input;
-            self
+            self.license_url = input; self
         }
         /// <p>The name of the application.</p>
         /// <p>Minimum length=1. Maximum length=140</p>
@@ -257,8 +237,7 @@ pub mod update_application_output {
         /// <p>Minimum length=1. Maximum length=140</p>
         /// <p>Pattern: "[a-zA-Z0-9\\-]+";</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>A link to the readme file in Markdown language that contains a more detailed description of the application and how it works.</p>
         /// <p>Maximum size 5 MB</p>
@@ -269,8 +248,7 @@ pub mod update_application_output {
         /// <p>A link to the readme file in Markdown language that contains a more detailed description of the application and how it works.</p>
         /// <p>Maximum size 5 MB</p>
         pub fn set_readme_url(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.readme_url = input;
-            self
+            self.readme_url = input; self
         }
         /// <p>A valid identifier from https://spdx.org/licenses/.</p>
         pub fn spdx_license_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -278,12 +256,8 @@ pub mod update_application_output {
             self
         }
         /// <p>A valid identifier from https://spdx.org/licenses/.</p>
-        pub fn set_spdx_license_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.spdx_license_id = input;
-            self
+        pub fn set_spdx_license_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.spdx_license_id = input; self
         }
         /// <p>The URL to the public profile of a verified author. This URL is submitted by the author.</p>
         pub fn verified_author_url(mut self, input: impl Into<std::string::String>) -> Self {
@@ -291,12 +265,8 @@ pub mod update_application_output {
             self
         }
         /// <p>The URL to the public profile of a verified author. This URL is submitted by the author.</p>
-        pub fn set_verified_author_url(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.verified_author_url = input;
-            self
+        pub fn set_verified_author_url(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.verified_author_url = input; self
         }
         /// <p>Version information about the application.</p>
         pub fn version(mut self, input: crate::model::Version) -> Self {
@@ -305,28 +275,43 @@ pub mod update_application_output {
         }
         /// <p>Version information about the application.</p>
         pub fn set_version(mut self, input: std::option::Option<crate::model::Version>) -> Self {
-            self.version = input;
-            self
+            self.version = input; self
         }
         /// Consumes the builder and constructs a [`UpdateApplicationOutput`](crate::output::UpdateApplicationOutput).
         pub fn build(self) -> crate::output::UpdateApplicationOutput {
             crate::output::UpdateApplicationOutput {
-                application_id: self.application_id,
-                author: self.author,
-                creation_time: self.creation_time,
-                description: self.description,
-                home_page_url: self.home_page_url,
-                is_verified_author: self.is_verified_author.unwrap_or_default(),
-                labels: self.labels,
-                license_url: self.license_url,
-                name: self.name,
-                readme_url: self.readme_url,
-                spdx_license_id: self.spdx_license_id,
-                verified_author_url: self.verified_author_url,
-                version: self.version,
+                application_id: self.application_id
+                ,
+                author: self.author
+                ,
+                creation_time: self.creation_time
+                ,
+                description: self.description
+                ,
+                home_page_url: self.home_page_url
+                ,
+                is_verified_author: self.is_verified_author
+                    .unwrap_or_default()
+                ,
+                labels: self.labels
+                ,
+                license_url: self.license_url
+                ,
+                name: self.name
+                ,
+                readme_url: self.readme_url
+                ,
+                spdx_license_id: self.spdx_license_id
+                ,
+                verified_author_url: self.verified_author_url
+                ,
+                version: self.version
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateApplicationOutput {
     /// Creates a new builder-style object to manufacture [`UpdateApplicationOutput`](crate::output::UpdateApplicationOutput).
@@ -338,19 +323,24 @@ impl UpdateApplicationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UnshareApplicationOutput {}
+pub struct UnshareApplicationOutput  {
+}
 /// See [`UnshareApplicationOutput`](crate::output::UnshareApplicationOutput).
 pub mod unshare_application_output {
-
+    
     /// A builder for [`UnshareApplicationOutput`](crate::output::UnshareApplicationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`UnshareApplicationOutput`](crate::output::UnshareApplicationOutput).
         pub fn build(self) -> crate::output::UnshareApplicationOutput {
-            crate::output::UnshareApplicationOutput {}
+            crate::output::UnshareApplicationOutput {
+            }
         }
     }
+    
+    
 }
 impl UnshareApplicationOutput {
     /// Creates a new builder-style object to manufacture [`UnshareApplicationOutput`](crate::output::UnshareApplicationOutput).
@@ -362,25 +352,24 @@ impl UnshareApplicationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutApplicationPolicyOutput {
+pub struct PutApplicationPolicyOutput  {
     /// <p>An array of policy statements applied to the application.</p>
     #[doc(hidden)]
     pub statements: std::option::Option<std::vec::Vec<crate::model::ApplicationPolicyStatement>>,
 }
 impl PutApplicationPolicyOutput {
     /// <p>An array of policy statements applied to the application.</p>
-    pub fn statements(&self) -> std::option::Option<&[crate::model::ApplicationPolicyStatement]> {
+    pub fn statements(&self) -> std::option::Option<& [crate::model::ApplicationPolicyStatement]> {
         self.statements.as_deref()
     }
 }
 /// See [`PutApplicationPolicyOutput`](crate::output::PutApplicationPolicyOutput).
 pub mod put_application_policy_output {
-
+    
     /// A builder for [`PutApplicationPolicyOutput`](crate::output::PutApplicationPolicyOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) statements:
-            std::option::Option<std::vec::Vec<crate::model::ApplicationPolicyStatement>>,
+        pub(crate) statements: std::option::Option<std::vec::Vec<crate::model::ApplicationPolicyStatement>>,
     }
     impl Builder {
         /// Appends an item to `statements`.
@@ -390,25 +379,24 @@ pub mod put_application_policy_output {
         /// <p>An array of policy statements applied to the application.</p>
         pub fn statements(mut self, input: crate::model::ApplicationPolicyStatement) -> Self {
             let mut v = self.statements.unwrap_or_default();
-            v.push(input);
-            self.statements = Some(v);
-            self
+                            v.push(input);
+                            self.statements = Some(v);
+                            self
         }
         /// <p>An array of policy statements applied to the application.</p>
-        pub fn set_statements(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ApplicationPolicyStatement>>,
-        ) -> Self {
-            self.statements = input;
-            self
+        pub fn set_statements(mut self, input: std::option::Option<std::vec::Vec<crate::model::ApplicationPolicyStatement>>) -> Self {
+            self.statements = input; self
         }
         /// Consumes the builder and constructs a [`PutApplicationPolicyOutput`](crate::output::PutApplicationPolicyOutput).
         pub fn build(self) -> crate::output::PutApplicationPolicyOutput {
             crate::output::PutApplicationPolicyOutput {
-                statements: self.statements,
+                statements: self.statements
+                ,
             }
         }
     }
+    
+    
 }
 impl PutApplicationPolicyOutput {
     /// Creates a new builder-style object to manufacture [`PutApplicationPolicyOutput`](crate::output::PutApplicationPolicyOutput).
@@ -420,7 +408,7 @@ impl PutApplicationPolicyOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListApplicationVersionsOutput {
+pub struct ListApplicationVersionsOutput  {
     /// <p>The token to request the next page of results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -430,17 +418,17 @@ pub struct ListApplicationVersionsOutput {
 }
 impl ListApplicationVersionsOutput {
     /// <p>The token to request the next page of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>An array of version summaries for the application.</p>
-    pub fn versions(&self) -> std::option::Option<&[crate::model::VersionSummary]> {
+    pub fn versions(&self) -> std::option::Option<& [crate::model::VersionSummary]> {
         self.versions.as_deref()
     }
 }
 /// See [`ListApplicationVersionsOutput`](crate::output::ListApplicationVersionsOutput).
 pub mod list_application_versions_output {
-
+    
     /// A builder for [`ListApplicationVersionsOutput`](crate::output::ListApplicationVersionsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -455,8 +443,7 @@ pub mod list_application_versions_output {
         }
         /// <p>The token to request the next page of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Appends an item to `versions`.
         ///
@@ -465,26 +452,26 @@ pub mod list_application_versions_output {
         /// <p>An array of version summaries for the application.</p>
         pub fn versions(mut self, input: crate::model::VersionSummary) -> Self {
             let mut v = self.versions.unwrap_or_default();
-            v.push(input);
-            self.versions = Some(v);
-            self
+                            v.push(input);
+                            self.versions = Some(v);
+                            self
         }
         /// <p>An array of version summaries for the application.</p>
-        pub fn set_versions(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::VersionSummary>>,
-        ) -> Self {
-            self.versions = input;
-            self
+        pub fn set_versions(mut self, input: std::option::Option<std::vec::Vec<crate::model::VersionSummary>>) -> Self {
+            self.versions = input; self
         }
         /// Consumes the builder and constructs a [`ListApplicationVersionsOutput`](crate::output::ListApplicationVersionsOutput).
         pub fn build(self) -> crate::output::ListApplicationVersionsOutput {
             crate::output::ListApplicationVersionsOutput {
-                next_token: self.next_token,
-                versions: self.versions,
+                next_token: self.next_token
+                ,
+                versions: self.versions
+                ,
             }
         }
     }
+    
+    
 }
 impl ListApplicationVersionsOutput {
     /// Creates a new builder-style object to manufacture [`ListApplicationVersionsOutput`](crate::output::ListApplicationVersionsOutput).
@@ -496,7 +483,7 @@ impl ListApplicationVersionsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListApplicationsOutput {
+pub struct ListApplicationsOutput  {
     /// <p>An array of application summaries.</p>
     #[doc(hidden)]
     pub applications: std::option::Option<std::vec::Vec<crate::model::ApplicationSummary>>,
@@ -506,22 +493,21 @@ pub struct ListApplicationsOutput {
 }
 impl ListApplicationsOutput {
     /// <p>An array of application summaries.</p>
-    pub fn applications(&self) -> std::option::Option<&[crate::model::ApplicationSummary]> {
+    pub fn applications(&self) -> std::option::Option<& [crate::model::ApplicationSummary]> {
         self.applications.as_deref()
     }
     /// <p>The token to request the next page of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListApplicationsOutput`](crate::output::ListApplicationsOutput).
 pub mod list_applications_output {
-
+    
     /// A builder for [`ListApplicationsOutput`](crate::output::ListApplicationsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) applications:
-            std::option::Option<std::vec::Vec<crate::model::ApplicationSummary>>,
+        pub(crate) applications: std::option::Option<std::vec::Vec<crate::model::ApplicationSummary>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -532,17 +518,13 @@ pub mod list_applications_output {
         /// <p>An array of application summaries.</p>
         pub fn applications(mut self, input: crate::model::ApplicationSummary) -> Self {
             let mut v = self.applications.unwrap_or_default();
-            v.push(input);
-            self.applications = Some(v);
-            self
+                            v.push(input);
+                            self.applications = Some(v);
+                            self
         }
         /// <p>An array of application summaries.</p>
-        pub fn set_applications(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ApplicationSummary>>,
-        ) -> Self {
-            self.applications = input;
-            self
+        pub fn set_applications(mut self, input: std::option::Option<std::vec::Vec<crate::model::ApplicationSummary>>) -> Self {
+            self.applications = input; self
         }
         /// <p>The token to request the next page of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -551,17 +533,20 @@ pub mod list_applications_output {
         }
         /// <p>The token to request the next page of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListApplicationsOutput`](crate::output::ListApplicationsOutput).
         pub fn build(self) -> crate::output::ListApplicationsOutput {
             crate::output::ListApplicationsOutput {
-                applications: self.applications,
-                next_token: self.next_token,
+                applications: self.applications
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListApplicationsOutput {
     /// Creates a new builder-style object to manufacture [`ListApplicationsOutput`](crate::output::ListApplicationsOutput).
@@ -573,35 +558,31 @@ impl ListApplicationsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListApplicationDependenciesOutput {
+pub struct ListApplicationDependenciesOutput  {
     /// <p>An array of application summaries nested in the application.</p>
     #[doc(hidden)]
-    pub dependencies:
-        std::option::Option<std::vec::Vec<crate::model::ApplicationDependencySummary>>,
+    pub dependencies: std::option::Option<std::vec::Vec<crate::model::ApplicationDependencySummary>>,
     /// <p>The token to request the next page of results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListApplicationDependenciesOutput {
     /// <p>An array of application summaries nested in the application.</p>
-    pub fn dependencies(
-        &self,
-    ) -> std::option::Option<&[crate::model::ApplicationDependencySummary]> {
+    pub fn dependencies(&self) -> std::option::Option<& [crate::model::ApplicationDependencySummary]> {
         self.dependencies.as_deref()
     }
     /// <p>The token to request the next page of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListApplicationDependenciesOutput`](crate::output::ListApplicationDependenciesOutput).
 pub mod list_application_dependencies_output {
-
+    
     /// A builder for [`ListApplicationDependenciesOutput`](crate::output::ListApplicationDependenciesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) dependencies:
-            std::option::Option<std::vec::Vec<crate::model::ApplicationDependencySummary>>,
+        pub(crate) dependencies: std::option::Option<std::vec::Vec<crate::model::ApplicationDependencySummary>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -612,17 +593,13 @@ pub mod list_application_dependencies_output {
         /// <p>An array of application summaries nested in the application.</p>
         pub fn dependencies(mut self, input: crate::model::ApplicationDependencySummary) -> Self {
             let mut v = self.dependencies.unwrap_or_default();
-            v.push(input);
-            self.dependencies = Some(v);
-            self
+                            v.push(input);
+                            self.dependencies = Some(v);
+                            self
         }
         /// <p>An array of application summaries nested in the application.</p>
-        pub fn set_dependencies(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ApplicationDependencySummary>>,
-        ) -> Self {
-            self.dependencies = input;
-            self
+        pub fn set_dependencies(mut self, input: std::option::Option<std::vec::Vec<crate::model::ApplicationDependencySummary>>) -> Self {
+            self.dependencies = input; self
         }
         /// <p>The token to request the next page of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -631,17 +608,20 @@ pub mod list_application_dependencies_output {
         }
         /// <p>The token to request the next page of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListApplicationDependenciesOutput`](crate::output::ListApplicationDependenciesOutput).
         pub fn build(self) -> crate::output::ListApplicationDependenciesOutput {
             crate::output::ListApplicationDependenciesOutput {
-                dependencies: self.dependencies,
-                next_token: self.next_token,
+                dependencies: self.dependencies
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListApplicationDependenciesOutput {
     /// Creates a new builder-style object to manufacture [`ListApplicationDependenciesOutput`](crate::output::ListApplicationDependenciesOutput).
@@ -653,7 +633,7 @@ impl ListApplicationDependenciesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetCloudFormationTemplateOutput {
+pub struct GetCloudFormationTemplateOutput  {
     /// <p>The application Amazon Resource Name (ARN).</p>
     #[doc(hidden)]
     pub application_id: std::option::Option<std::string::String>,
@@ -681,40 +661,40 @@ pub struct GetCloudFormationTemplateOutput {
 }
 impl GetCloudFormationTemplateOutput {
     /// <p>The application Amazon Resource Name (ARN).</p>
-    pub fn application_id(&self) -> std::option::Option<&str> {
+    pub fn application_id(&self) -> std::option::Option<& str> {
         self.application_id.as_deref()
     }
     /// <p>The date and time this resource was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<&str> {
+    pub fn creation_time(&self) -> std::option::Option<& str> {
         self.creation_time.as_deref()
     }
     /// <p>The date and time this template expires. Templates expire 1 hour after creation.</p>
-    pub fn expiration_time(&self) -> std::option::Option<&str> {
+    pub fn expiration_time(&self) -> std::option::Option<& str> {
         self.expiration_time.as_deref()
     }
     /// <p>The semantic version of the application:</p>
     /// <p> <a href="https://semver.org/">https://semver.org/</a> </p>
-    pub fn semantic_version(&self) -> std::option::Option<&str> {
+    pub fn semantic_version(&self) -> std::option::Option<& str> {
         self.semantic_version.as_deref()
     }
     /// <p>Status of the template creation workflow.</p>
     /// <p>Possible values: PREPARING | ACTIVE | EXPIRED </p>
-    pub fn status(&self) -> std::option::Option<&crate::model::Status> {
+    pub fn status(&self) -> std::option::Option<& crate::model::Status> {
         self.status.as_ref()
     }
     /// <p>The UUID returned by CreateCloudFormationTemplate.</p>
     /// <p>Pattern: [0-9a-fA-F]{8}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{12}</p>
-    pub fn template_id(&self) -> std::option::Option<&str> {
+    pub fn template_id(&self) -> std::option::Option<& str> {
         self.template_id.as_deref()
     }
     /// <p>A link to the template that can be used to deploy the application using AWS CloudFormation.</p>
-    pub fn template_url(&self) -> std::option::Option<&str> {
+    pub fn template_url(&self) -> std::option::Option<& str> {
         self.template_url.as_deref()
     }
 }
 /// See [`GetCloudFormationTemplateOutput`](crate::output::GetCloudFormationTemplateOutput).
 pub mod get_cloud_formation_template_output {
-
+    
     /// A builder for [`GetCloudFormationTemplateOutput`](crate::output::GetCloudFormationTemplateOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -733,12 +713,8 @@ pub mod get_cloud_formation_template_output {
             self
         }
         /// <p>The application Amazon Resource Name (ARN).</p>
-        pub fn set_application_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.application_id = input;
-            self
+        pub fn set_application_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.application_id = input; self
         }
         /// <p>The date and time this resource was created.</p>
         pub fn creation_time(mut self, input: impl Into<std::string::String>) -> Self {
@@ -746,12 +722,8 @@ pub mod get_cloud_formation_template_output {
             self
         }
         /// <p>The date and time this resource was created.</p>
-        pub fn set_creation_time(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.creation_time = input;
-            self
+        pub fn set_creation_time(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.creation_time = input; self
         }
         /// <p>The date and time this template expires. Templates expire 1 hour after creation.</p>
         pub fn expiration_time(mut self, input: impl Into<std::string::String>) -> Self {
@@ -759,12 +731,8 @@ pub mod get_cloud_formation_template_output {
             self
         }
         /// <p>The date and time this template expires. Templates expire 1 hour after creation.</p>
-        pub fn set_expiration_time(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.expiration_time = input;
-            self
+        pub fn set_expiration_time(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.expiration_time = input; self
         }
         /// <p>The semantic version of the application:</p>
         /// <p> <a href="https://semver.org/">https://semver.org/</a> </p>
@@ -774,12 +742,8 @@ pub mod get_cloud_formation_template_output {
         }
         /// <p>The semantic version of the application:</p>
         /// <p> <a href="https://semver.org/">https://semver.org/</a> </p>
-        pub fn set_semantic_version(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.semantic_version = input;
-            self
+        pub fn set_semantic_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.semantic_version = input; self
         }
         /// <p>Status of the template creation workflow.</p>
         /// <p>Possible values: PREPARING | ACTIVE | EXPIRED </p>
@@ -790,8 +754,7 @@ pub mod get_cloud_formation_template_output {
         /// <p>Status of the template creation workflow.</p>
         /// <p>Possible values: PREPARING | ACTIVE | EXPIRED </p>
         pub fn set_status(mut self, input: std::option::Option<crate::model::Status>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// <p>The UUID returned by CreateCloudFormationTemplate.</p>
         /// <p>Pattern: [0-9a-fA-F]{8}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{12}</p>
@@ -802,8 +765,7 @@ pub mod get_cloud_formation_template_output {
         /// <p>The UUID returned by CreateCloudFormationTemplate.</p>
         /// <p>Pattern: [0-9a-fA-F]{8}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{12}</p>
         pub fn set_template_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.template_id = input;
-            self
+            self.template_id = input; self
         }
         /// <p>A link to the template that can be used to deploy the application using AWS CloudFormation.</p>
         pub fn template_url(mut self, input: impl Into<std::string::String>) -> Self {
@@ -812,22 +774,30 @@ pub mod get_cloud_formation_template_output {
         }
         /// <p>A link to the template that can be used to deploy the application using AWS CloudFormation.</p>
         pub fn set_template_url(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.template_url = input;
-            self
+            self.template_url = input; self
         }
         /// Consumes the builder and constructs a [`GetCloudFormationTemplateOutput`](crate::output::GetCloudFormationTemplateOutput).
         pub fn build(self) -> crate::output::GetCloudFormationTemplateOutput {
             crate::output::GetCloudFormationTemplateOutput {
-                application_id: self.application_id,
-                creation_time: self.creation_time,
-                expiration_time: self.expiration_time,
-                semantic_version: self.semantic_version,
-                status: self.status,
-                template_id: self.template_id,
-                template_url: self.template_url,
+                application_id: self.application_id
+                ,
+                creation_time: self.creation_time
+                ,
+                expiration_time: self.expiration_time
+                ,
+                semantic_version: self.semantic_version
+                ,
+                status: self.status
+                ,
+                template_id: self.template_id
+                ,
+                template_url: self.template_url
+                ,
             }
         }
     }
+    
+    
 }
 impl GetCloudFormationTemplateOutput {
     /// Creates a new builder-style object to manufacture [`GetCloudFormationTemplateOutput`](crate::output::GetCloudFormationTemplateOutput).
@@ -839,25 +809,24 @@ impl GetCloudFormationTemplateOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetApplicationPolicyOutput {
+pub struct GetApplicationPolicyOutput  {
     /// <p>An array of policy statements applied to the application.</p>
     #[doc(hidden)]
     pub statements: std::option::Option<std::vec::Vec<crate::model::ApplicationPolicyStatement>>,
 }
 impl GetApplicationPolicyOutput {
     /// <p>An array of policy statements applied to the application.</p>
-    pub fn statements(&self) -> std::option::Option<&[crate::model::ApplicationPolicyStatement]> {
+    pub fn statements(&self) -> std::option::Option<& [crate::model::ApplicationPolicyStatement]> {
         self.statements.as_deref()
     }
 }
 /// See [`GetApplicationPolicyOutput`](crate::output::GetApplicationPolicyOutput).
 pub mod get_application_policy_output {
-
+    
     /// A builder for [`GetApplicationPolicyOutput`](crate::output::GetApplicationPolicyOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) statements:
-            std::option::Option<std::vec::Vec<crate::model::ApplicationPolicyStatement>>,
+        pub(crate) statements: std::option::Option<std::vec::Vec<crate::model::ApplicationPolicyStatement>>,
     }
     impl Builder {
         /// Appends an item to `statements`.
@@ -867,25 +836,24 @@ pub mod get_application_policy_output {
         /// <p>An array of policy statements applied to the application.</p>
         pub fn statements(mut self, input: crate::model::ApplicationPolicyStatement) -> Self {
             let mut v = self.statements.unwrap_or_default();
-            v.push(input);
-            self.statements = Some(v);
-            self
+                            v.push(input);
+                            self.statements = Some(v);
+                            self
         }
         /// <p>An array of policy statements applied to the application.</p>
-        pub fn set_statements(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ApplicationPolicyStatement>>,
-        ) -> Self {
-            self.statements = input;
-            self
+        pub fn set_statements(mut self, input: std::option::Option<std::vec::Vec<crate::model::ApplicationPolicyStatement>>) -> Self {
+            self.statements = input; self
         }
         /// Consumes the builder and constructs a [`GetApplicationPolicyOutput`](crate::output::GetApplicationPolicyOutput).
         pub fn build(self) -> crate::output::GetApplicationPolicyOutput {
             crate::output::GetApplicationPolicyOutput {
-                statements: self.statements,
+                statements: self.statements
+                ,
             }
         }
     }
+    
+    
 }
 impl GetApplicationPolicyOutput {
     /// Creates a new builder-style object to manufacture [`GetApplicationPolicyOutput`](crate::output::GetApplicationPolicyOutput).
@@ -897,7 +865,7 @@ impl GetApplicationPolicyOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetApplicationOutput {
+pub struct GetApplicationOutput  {
     /// <p>The application Amazon Resource Name (ARN).</p>
     #[doc(hidden)]
     pub application_id: std::option::Option<std::string::String>,
@@ -949,26 +917,26 @@ pub struct GetApplicationOutput {
 }
 impl GetApplicationOutput {
     /// <p>The application Amazon Resource Name (ARN).</p>
-    pub fn application_id(&self) -> std::option::Option<&str> {
+    pub fn application_id(&self) -> std::option::Option<& str> {
         self.application_id.as_deref()
     }
     /// <p>The name of the author publishing the app.</p>
     /// <p>Minimum length=1. Maximum length=127.</p>
     /// <p>Pattern "^[a-z0-9](([a-z0-9]|-(?!-))*[a-z0-9])?$";</p>
-    pub fn author(&self) -> std::option::Option<&str> {
+    pub fn author(&self) -> std::option::Option<& str> {
         self.author.as_deref()
     }
     /// <p>The date and time this resource was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<&str> {
+    pub fn creation_time(&self) -> std::option::Option<& str> {
         self.creation_time.as_deref()
     }
     /// <p>The description of the application.</p>
     /// <p>Minimum length=1. Maximum length=256</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>A URL with more information about the application, for example the location of your GitHub repository for the application.</p>
-    pub fn home_page_url(&self) -> std::option::Option<&str> {
+    pub fn home_page_url(&self) -> std::option::Option<& str> {
         self.home_page_url.as_deref()
     }
     /// <p>Whether the author of this application has been verified. This means means that AWS has made a good faith review, as a reasonable and prudent service provider, of the information provided by the requester and has confirmed that the requester's identity is as claimed.</p>
@@ -978,41 +946,41 @@ impl GetApplicationOutput {
     /// <p>Labels to improve discovery of apps in search results.</p>
     /// <p>Minimum length=1. Maximum length=127. Maximum number of labels: 10</p>
     /// <p>Pattern: "^[a-zA-Z0-9+\\-_:\\/@]+$";</p>
-    pub fn labels(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn labels(&self) -> std::option::Option<& [std::string::String]> {
         self.labels.as_deref()
     }
     /// <p>A link to a license file of the app that matches the spdxLicenseID value of your application.</p>
     /// <p>Maximum size 5 MB</p>
-    pub fn license_url(&self) -> std::option::Option<&str> {
+    pub fn license_url(&self) -> std::option::Option<& str> {
         self.license_url.as_deref()
     }
     /// <p>The name of the application.</p>
     /// <p>Minimum length=1. Maximum length=140</p>
     /// <p>Pattern: "[a-zA-Z0-9\\-]+";</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>A link to the readme file in Markdown language that contains a more detailed description of the application and how it works.</p>
     /// <p>Maximum size 5 MB</p>
-    pub fn readme_url(&self) -> std::option::Option<&str> {
+    pub fn readme_url(&self) -> std::option::Option<& str> {
         self.readme_url.as_deref()
     }
     /// <p>A valid identifier from https://spdx.org/licenses/.</p>
-    pub fn spdx_license_id(&self) -> std::option::Option<&str> {
+    pub fn spdx_license_id(&self) -> std::option::Option<& str> {
         self.spdx_license_id.as_deref()
     }
     /// <p>The URL to the public profile of a verified author. This URL is submitted by the author.</p>
-    pub fn verified_author_url(&self) -> std::option::Option<&str> {
+    pub fn verified_author_url(&self) -> std::option::Option<& str> {
         self.verified_author_url.as_deref()
     }
     /// <p>Version information about the application.</p>
-    pub fn version(&self) -> std::option::Option<&crate::model::Version> {
+    pub fn version(&self) -> std::option::Option<& crate::model::Version> {
         self.version.as_ref()
     }
 }
 /// See [`GetApplicationOutput`](crate::output::GetApplicationOutput).
 pub mod get_application_output {
-
+    
     /// A builder for [`GetApplicationOutput`](crate::output::GetApplicationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1037,12 +1005,8 @@ pub mod get_application_output {
             self
         }
         /// <p>The application Amazon Resource Name (ARN).</p>
-        pub fn set_application_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.application_id = input;
-            self
+        pub fn set_application_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.application_id = input; self
         }
         /// <p>The name of the author publishing the app.</p>
         /// <p>Minimum length=1. Maximum length=127.</p>
@@ -1055,8 +1019,7 @@ pub mod get_application_output {
         /// <p>Minimum length=1. Maximum length=127.</p>
         /// <p>Pattern "^[a-z0-9](([a-z0-9]|-(?!-))*[a-z0-9])?$";</p>
         pub fn set_author(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.author = input;
-            self
+            self.author = input; self
         }
         /// <p>The date and time this resource was created.</p>
         pub fn creation_time(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1064,12 +1027,8 @@ pub mod get_application_output {
             self
         }
         /// <p>The date and time this resource was created.</p>
-        pub fn set_creation_time(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.creation_time = input;
-            self
+        pub fn set_creation_time(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.creation_time = input; self
         }
         /// <p>The description of the application.</p>
         /// <p>Minimum length=1. Maximum length=256</p>
@@ -1080,8 +1039,7 @@ pub mod get_application_output {
         /// <p>The description of the application.</p>
         /// <p>Minimum length=1. Maximum length=256</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>A URL with more information about the application, for example the location of your GitHub repository for the application.</p>
         pub fn home_page_url(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1089,12 +1047,8 @@ pub mod get_application_output {
             self
         }
         /// <p>A URL with more information about the application, for example the location of your GitHub repository for the application.</p>
-        pub fn set_home_page_url(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.home_page_url = input;
-            self
+        pub fn set_home_page_url(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.home_page_url = input; self
         }
         /// <p>Whether the author of this application has been verified. This means means that AWS has made a good faith review, as a reasonable and prudent service provider, of the information provided by the requester and has confirmed that the requester's identity is as claimed.</p>
         pub fn is_verified_author(mut self, input: bool) -> Self {
@@ -1103,8 +1057,7 @@ pub mod get_application_output {
         }
         /// <p>Whether the author of this application has been verified. This means means that AWS has made a good faith review, as a reasonable and prudent service provider, of the information provided by the requester and has confirmed that the requester's identity is as claimed.</p>
         pub fn set_is_verified_author(mut self, input: std::option::Option<bool>) -> Self {
-            self.is_verified_author = input;
-            self
+            self.is_verified_author = input; self
         }
         /// Appends an item to `labels`.
         ///
@@ -1115,19 +1068,15 @@ pub mod get_application_output {
         /// <p>Pattern: "^[a-zA-Z0-9+\\-_:\\/@]+$";</p>
         pub fn labels(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.labels.unwrap_or_default();
-            v.push(input.into());
-            self.labels = Some(v);
-            self
+                            v.push(input.into());
+                            self.labels = Some(v);
+                            self
         }
         /// <p>Labels to improve discovery of apps in search results.</p>
         /// <p>Minimum length=1. Maximum length=127. Maximum number of labels: 10</p>
         /// <p>Pattern: "^[a-zA-Z0-9+\\-_:\\/@]+$";</p>
-        pub fn set_labels(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.labels = input;
-            self
+        pub fn set_labels(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.labels = input; self
         }
         /// <p>A link to a license file of the app that matches the spdxLicenseID value of your application.</p>
         /// <p>Maximum size 5 MB</p>
@@ -1138,8 +1087,7 @@ pub mod get_application_output {
         /// <p>A link to a license file of the app that matches the spdxLicenseID value of your application.</p>
         /// <p>Maximum size 5 MB</p>
         pub fn set_license_url(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.license_url = input;
-            self
+            self.license_url = input; self
         }
         /// <p>The name of the application.</p>
         /// <p>Minimum length=1. Maximum length=140</p>
@@ -1152,8 +1100,7 @@ pub mod get_application_output {
         /// <p>Minimum length=1. Maximum length=140</p>
         /// <p>Pattern: "[a-zA-Z0-9\\-]+";</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>A link to the readme file in Markdown language that contains a more detailed description of the application and how it works.</p>
         /// <p>Maximum size 5 MB</p>
@@ -1164,8 +1111,7 @@ pub mod get_application_output {
         /// <p>A link to the readme file in Markdown language that contains a more detailed description of the application and how it works.</p>
         /// <p>Maximum size 5 MB</p>
         pub fn set_readme_url(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.readme_url = input;
-            self
+            self.readme_url = input; self
         }
         /// <p>A valid identifier from https://spdx.org/licenses/.</p>
         pub fn spdx_license_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1173,12 +1119,8 @@ pub mod get_application_output {
             self
         }
         /// <p>A valid identifier from https://spdx.org/licenses/.</p>
-        pub fn set_spdx_license_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.spdx_license_id = input;
-            self
+        pub fn set_spdx_license_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.spdx_license_id = input; self
         }
         /// <p>The URL to the public profile of a verified author. This URL is submitted by the author.</p>
         pub fn verified_author_url(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1186,12 +1128,8 @@ pub mod get_application_output {
             self
         }
         /// <p>The URL to the public profile of a verified author. This URL is submitted by the author.</p>
-        pub fn set_verified_author_url(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.verified_author_url = input;
-            self
+        pub fn set_verified_author_url(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.verified_author_url = input; self
         }
         /// <p>Version information about the application.</p>
         pub fn version(mut self, input: crate::model::Version) -> Self {
@@ -1200,28 +1138,43 @@ pub mod get_application_output {
         }
         /// <p>Version information about the application.</p>
         pub fn set_version(mut self, input: std::option::Option<crate::model::Version>) -> Self {
-            self.version = input;
-            self
+            self.version = input; self
         }
         /// Consumes the builder and constructs a [`GetApplicationOutput`](crate::output::GetApplicationOutput).
         pub fn build(self) -> crate::output::GetApplicationOutput {
             crate::output::GetApplicationOutput {
-                application_id: self.application_id,
-                author: self.author,
-                creation_time: self.creation_time,
-                description: self.description,
-                home_page_url: self.home_page_url,
-                is_verified_author: self.is_verified_author.unwrap_or_default(),
-                labels: self.labels,
-                license_url: self.license_url,
-                name: self.name,
-                readme_url: self.readme_url,
-                spdx_license_id: self.spdx_license_id,
-                verified_author_url: self.verified_author_url,
-                version: self.version,
+                application_id: self.application_id
+                ,
+                author: self.author
+                ,
+                creation_time: self.creation_time
+                ,
+                description: self.description
+                ,
+                home_page_url: self.home_page_url
+                ,
+                is_verified_author: self.is_verified_author
+                    .unwrap_or_default()
+                ,
+                labels: self.labels
+                ,
+                license_url: self.license_url
+                ,
+                name: self.name
+                ,
+                readme_url: self.readme_url
+                ,
+                spdx_license_id: self.spdx_license_id
+                ,
+                verified_author_url: self.verified_author_url
+                ,
+                version: self.version
+                ,
             }
         }
     }
+    
+    
 }
 impl GetApplicationOutput {
     /// Creates a new builder-style object to manufacture [`GetApplicationOutput`](crate::output::GetApplicationOutput).
@@ -1233,19 +1186,24 @@ impl GetApplicationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteApplicationOutput {}
+pub struct DeleteApplicationOutput  {
+}
 /// See [`DeleteApplicationOutput`](crate::output::DeleteApplicationOutput).
 pub mod delete_application_output {
-
+    
     /// A builder for [`DeleteApplicationOutput`](crate::output::DeleteApplicationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteApplicationOutput`](crate::output::DeleteApplicationOutput).
         pub fn build(self) -> crate::output::DeleteApplicationOutput {
-            crate::output::DeleteApplicationOutput {}
+            crate::output::DeleteApplicationOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteApplicationOutput {
     /// Creates a new builder-style object to manufacture [`DeleteApplicationOutput`](crate::output::DeleteApplicationOutput).
@@ -1257,7 +1215,7 @@ impl DeleteApplicationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateCloudFormationTemplateOutput {
+pub struct CreateCloudFormationTemplateOutput  {
     /// <p>The application Amazon Resource Name (ARN).</p>
     #[doc(hidden)]
     pub application_id: std::option::Option<std::string::String>,
@@ -1285,40 +1243,40 @@ pub struct CreateCloudFormationTemplateOutput {
 }
 impl CreateCloudFormationTemplateOutput {
     /// <p>The application Amazon Resource Name (ARN).</p>
-    pub fn application_id(&self) -> std::option::Option<&str> {
+    pub fn application_id(&self) -> std::option::Option<& str> {
         self.application_id.as_deref()
     }
     /// <p>The date and time this resource was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<&str> {
+    pub fn creation_time(&self) -> std::option::Option<& str> {
         self.creation_time.as_deref()
     }
     /// <p>The date and time this template expires. Templates expire 1 hour after creation.</p>
-    pub fn expiration_time(&self) -> std::option::Option<&str> {
+    pub fn expiration_time(&self) -> std::option::Option<& str> {
         self.expiration_time.as_deref()
     }
     /// <p>The semantic version of the application:</p>
     /// <p> <a href="https://semver.org/">https://semver.org/</a> </p>
-    pub fn semantic_version(&self) -> std::option::Option<&str> {
+    pub fn semantic_version(&self) -> std::option::Option<& str> {
         self.semantic_version.as_deref()
     }
     /// <p>Status of the template creation workflow.</p>
     /// <p>Possible values: PREPARING | ACTIVE | EXPIRED </p>
-    pub fn status(&self) -> std::option::Option<&crate::model::Status> {
+    pub fn status(&self) -> std::option::Option<& crate::model::Status> {
         self.status.as_ref()
     }
     /// <p>The UUID returned by CreateCloudFormationTemplate.</p>
     /// <p>Pattern: [0-9a-fA-F]{8}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{12}</p>
-    pub fn template_id(&self) -> std::option::Option<&str> {
+    pub fn template_id(&self) -> std::option::Option<& str> {
         self.template_id.as_deref()
     }
     /// <p>A link to the template that can be used to deploy the application using AWS CloudFormation.</p>
-    pub fn template_url(&self) -> std::option::Option<&str> {
+    pub fn template_url(&self) -> std::option::Option<& str> {
         self.template_url.as_deref()
     }
 }
 /// See [`CreateCloudFormationTemplateOutput`](crate::output::CreateCloudFormationTemplateOutput).
 pub mod create_cloud_formation_template_output {
-
+    
     /// A builder for [`CreateCloudFormationTemplateOutput`](crate::output::CreateCloudFormationTemplateOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1337,12 +1295,8 @@ pub mod create_cloud_formation_template_output {
             self
         }
         /// <p>The application Amazon Resource Name (ARN).</p>
-        pub fn set_application_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.application_id = input;
-            self
+        pub fn set_application_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.application_id = input; self
         }
         /// <p>The date and time this resource was created.</p>
         pub fn creation_time(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1350,12 +1304,8 @@ pub mod create_cloud_formation_template_output {
             self
         }
         /// <p>The date and time this resource was created.</p>
-        pub fn set_creation_time(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.creation_time = input;
-            self
+        pub fn set_creation_time(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.creation_time = input; self
         }
         /// <p>The date and time this template expires. Templates expire 1 hour after creation.</p>
         pub fn expiration_time(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1363,12 +1313,8 @@ pub mod create_cloud_formation_template_output {
             self
         }
         /// <p>The date and time this template expires. Templates expire 1 hour after creation.</p>
-        pub fn set_expiration_time(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.expiration_time = input;
-            self
+        pub fn set_expiration_time(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.expiration_time = input; self
         }
         /// <p>The semantic version of the application:</p>
         /// <p> <a href="https://semver.org/">https://semver.org/</a> </p>
@@ -1378,12 +1324,8 @@ pub mod create_cloud_formation_template_output {
         }
         /// <p>The semantic version of the application:</p>
         /// <p> <a href="https://semver.org/">https://semver.org/</a> </p>
-        pub fn set_semantic_version(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.semantic_version = input;
-            self
+        pub fn set_semantic_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.semantic_version = input; self
         }
         /// <p>Status of the template creation workflow.</p>
         /// <p>Possible values: PREPARING | ACTIVE | EXPIRED </p>
@@ -1394,8 +1336,7 @@ pub mod create_cloud_formation_template_output {
         /// <p>Status of the template creation workflow.</p>
         /// <p>Possible values: PREPARING | ACTIVE | EXPIRED </p>
         pub fn set_status(mut self, input: std::option::Option<crate::model::Status>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// <p>The UUID returned by CreateCloudFormationTemplate.</p>
         /// <p>Pattern: [0-9a-fA-F]{8}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{12}</p>
@@ -1406,8 +1347,7 @@ pub mod create_cloud_formation_template_output {
         /// <p>The UUID returned by CreateCloudFormationTemplate.</p>
         /// <p>Pattern: [0-9a-fA-F]{8}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{12}</p>
         pub fn set_template_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.template_id = input;
-            self
+            self.template_id = input; self
         }
         /// <p>A link to the template that can be used to deploy the application using AWS CloudFormation.</p>
         pub fn template_url(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1416,22 +1356,30 @@ pub mod create_cloud_formation_template_output {
         }
         /// <p>A link to the template that can be used to deploy the application using AWS CloudFormation.</p>
         pub fn set_template_url(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.template_url = input;
-            self
+            self.template_url = input; self
         }
         /// Consumes the builder and constructs a [`CreateCloudFormationTemplateOutput`](crate::output::CreateCloudFormationTemplateOutput).
         pub fn build(self) -> crate::output::CreateCloudFormationTemplateOutput {
             crate::output::CreateCloudFormationTemplateOutput {
-                application_id: self.application_id,
-                creation_time: self.creation_time,
-                expiration_time: self.expiration_time,
-                semantic_version: self.semantic_version,
-                status: self.status,
-                template_id: self.template_id,
-                template_url: self.template_url,
+                application_id: self.application_id
+                ,
+                creation_time: self.creation_time
+                ,
+                expiration_time: self.expiration_time
+                ,
+                semantic_version: self.semantic_version
+                ,
+                status: self.status
+                ,
+                template_id: self.template_id
+                ,
+                template_url: self.template_url
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateCloudFormationTemplateOutput {
     /// Creates a new builder-style object to manufacture [`CreateCloudFormationTemplateOutput`](crate::output::CreateCloudFormationTemplateOutput).
@@ -1443,7 +1391,7 @@ impl CreateCloudFormationTemplateOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateCloudFormationChangeSetOutput {
+pub struct CreateCloudFormationChangeSetOutput  {
     /// <p>The application Amazon Resource Name (ARN).</p>
     #[doc(hidden)]
     pub application_id: std::option::Option<std::string::String>,
@@ -1462,28 +1410,28 @@ pub struct CreateCloudFormationChangeSetOutput {
 }
 impl CreateCloudFormationChangeSetOutput {
     /// <p>The application Amazon Resource Name (ARN).</p>
-    pub fn application_id(&self) -> std::option::Option<&str> {
+    pub fn application_id(&self) -> std::option::Option<& str> {
         self.application_id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the change set.</p>
     /// <p>Length constraints: Minimum length of 1.</p>
     /// <p>Pattern: ARN:[-a-zA-Z0-9:/]*</p>
-    pub fn change_set_id(&self) -> std::option::Option<&str> {
+    pub fn change_set_id(&self) -> std::option::Option<& str> {
         self.change_set_id.as_deref()
     }
     /// <p>The semantic version of the application:</p>
     /// <p> <a href="https://semver.org/">https://semver.org/</a> </p>
-    pub fn semantic_version(&self) -> std::option::Option<&str> {
+    pub fn semantic_version(&self) -> std::option::Option<& str> {
         self.semantic_version.as_deref()
     }
     /// <p>The unique ID of the stack.</p>
-    pub fn stack_id(&self) -> std::option::Option<&str> {
+    pub fn stack_id(&self) -> std::option::Option<& str> {
         self.stack_id.as_deref()
     }
 }
 /// See [`CreateCloudFormationChangeSetOutput`](crate::output::CreateCloudFormationChangeSetOutput).
 pub mod create_cloud_formation_change_set_output {
-
+    
     /// A builder for [`CreateCloudFormationChangeSetOutput`](crate::output::CreateCloudFormationChangeSetOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1499,12 +1447,8 @@ pub mod create_cloud_formation_change_set_output {
             self
         }
         /// <p>The application Amazon Resource Name (ARN).</p>
-        pub fn set_application_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.application_id = input;
-            self
+        pub fn set_application_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.application_id = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the change set.</p>
         /// <p>Length constraints: Minimum length of 1.</p>
@@ -1516,12 +1460,8 @@ pub mod create_cloud_formation_change_set_output {
         /// <p>The Amazon Resource Name (ARN) of the change set.</p>
         /// <p>Length constraints: Minimum length of 1.</p>
         /// <p>Pattern: ARN:[-a-zA-Z0-9:/]*</p>
-        pub fn set_change_set_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.change_set_id = input;
-            self
+        pub fn set_change_set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.change_set_id = input; self
         }
         /// <p>The semantic version of the application:</p>
         /// <p> <a href="https://semver.org/">https://semver.org/</a> </p>
@@ -1531,12 +1471,8 @@ pub mod create_cloud_formation_change_set_output {
         }
         /// <p>The semantic version of the application:</p>
         /// <p> <a href="https://semver.org/">https://semver.org/</a> </p>
-        pub fn set_semantic_version(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.semantic_version = input;
-            self
+        pub fn set_semantic_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.semantic_version = input; self
         }
         /// <p>The unique ID of the stack.</p>
         pub fn stack_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1545,19 +1481,24 @@ pub mod create_cloud_formation_change_set_output {
         }
         /// <p>The unique ID of the stack.</p>
         pub fn set_stack_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.stack_id = input;
-            self
+            self.stack_id = input; self
         }
         /// Consumes the builder and constructs a [`CreateCloudFormationChangeSetOutput`](crate::output::CreateCloudFormationChangeSetOutput).
         pub fn build(self) -> crate::output::CreateCloudFormationChangeSetOutput {
             crate::output::CreateCloudFormationChangeSetOutput {
-                application_id: self.application_id,
-                change_set_id: self.change_set_id,
-                semantic_version: self.semantic_version,
-                stack_id: self.stack_id,
+                application_id: self.application_id
+                ,
+                change_set_id: self.change_set_id
+                ,
+                semantic_version: self.semantic_version
+                ,
+                stack_id: self.stack_id
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateCloudFormationChangeSetOutput {
     /// Creates a new builder-style object to manufacture [`CreateCloudFormationChangeSetOutput`](crate::output::CreateCloudFormationChangeSetOutput).
@@ -1569,7 +1510,7 @@ impl CreateCloudFormationChangeSetOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateApplicationVersionOutput {
+pub struct CreateApplicationVersionOutput  {
     /// <p>The application Amazon Resource Name (ARN).</p>
     #[doc(hidden)]
     pub application_id: std::option::Option<std::string::String>,
@@ -1578,8 +1519,7 @@ pub struct CreateApplicationVersionOutput {
     pub creation_time: std::option::Option<std::string::String>,
     /// <p>An array of parameter types supported by the application.</p>
     #[doc(hidden)]
-    pub parameter_definitions:
-        std::option::Option<std::vec::Vec<crate::model::ParameterDefinition>>,
+    pub parameter_definitions: std::option::Option<std::vec::Vec<crate::model::ParameterDefinition>>,
     /// <p>A list of values that you must specify before you can deploy certain applications. Some applications might include resources that can affect permissions in your AWS account, for example, by creating new AWS Identity and Access Management (IAM) users. For those applications, you must explicitly acknowledge their capabilities by specifying this parameter.</p>
     /// <p>The only valid values are CAPABILITY_IAM, CAPABILITY_NAMED_IAM, CAPABILITY_RESOURCE_POLICY, and CAPABILITY_AUTO_EXPAND.</p>
     /// <p>The following resources require you to specify CAPABILITY_IAM or CAPABILITY_NAMED_IAM: <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html">AWS::IAM::Group</a>, <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html">AWS::IAM::InstanceProfile</a>, <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-policy.html">AWS::IAM::Policy</a>, and <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html">AWS::IAM::Role</a>. If the application contains IAM resources, you can specify either CAPABILITY_IAM or CAPABILITY_NAMED_IAM. If the application contains IAM resources with custom names, you must specify CAPABILITY_NAMED_IAM.</p>
@@ -1608,17 +1548,15 @@ pub struct CreateApplicationVersionOutput {
 }
 impl CreateApplicationVersionOutput {
     /// <p>The application Amazon Resource Name (ARN).</p>
-    pub fn application_id(&self) -> std::option::Option<&str> {
+    pub fn application_id(&self) -> std::option::Option<& str> {
         self.application_id.as_deref()
     }
     /// <p>The date and time this resource was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<&str> {
+    pub fn creation_time(&self) -> std::option::Option<& str> {
         self.creation_time.as_deref()
     }
     /// <p>An array of parameter types supported by the application.</p>
-    pub fn parameter_definitions(
-        &self,
-    ) -> std::option::Option<&[crate::model::ParameterDefinition]> {
+    pub fn parameter_definitions(&self) -> std::option::Option<& [crate::model::ParameterDefinition]> {
         self.parameter_definitions.as_deref()
     }
     /// <p>A list of values that you must specify before you can deploy certain applications. Some applications might include resources that can affect permissions in your AWS account, for example, by creating new AWS Identity and Access Management (IAM) users. For those applications, you must explicitly acknowledge their capabilities by specifying this parameter.</p>
@@ -1627,7 +1565,7 @@ impl CreateApplicationVersionOutput {
     /// <p>The following resources require you to specify CAPABILITY_RESOURCE_POLICY: <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-permission.html">AWS::Lambda::Permission</a>, <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-policy.html">AWS::IAM:Policy</a>, <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-applicationautoscaling-scalingpolicy.html">AWS::ApplicationAutoScaling::ScalingPolicy</a>, <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-policy.html">AWS::S3::BucketPolicy</a>, <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sqs-policy.html">AWS::SQS::QueuePolicy</a>, and <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sns-policy.html">AWS::SNS::TopicPolicy</a>.</p>
     /// <p>Applications that contain one or more nested applications require you to specify CAPABILITY_AUTO_EXPAND.</p>
     /// <p>If your application template contains any of the above resources, we recommend that you review all permissions associated with the application before deploying. If you don't specify this parameter for an application that requires capabilities, the call will fail.</p>
-    pub fn required_capabilities(&self) -> std::option::Option<&[crate::model::Capability]> {
+    pub fn required_capabilities(&self) -> std::option::Option<& [crate::model::Capability]> {
         self.required_capabilities.as_deref()
     }
     /// <p>Whether all of the AWS resources contained in this application are supported in the region in which it is being retrieved.</p>
@@ -1636,35 +1574,33 @@ impl CreateApplicationVersionOutput {
     }
     /// <p>The semantic version of the application:</p>
     /// <p> <a href="https://semver.org/">https://semver.org/</a> </p>
-    pub fn semantic_version(&self) -> std::option::Option<&str> {
+    pub fn semantic_version(&self) -> std::option::Option<& str> {
         self.semantic_version.as_deref()
     }
     /// <p>A link to the S3 object that contains the ZIP archive of the source code for this version of your application.</p>
     /// <p>Maximum size 50 MB</p>
-    pub fn source_code_archive_url(&self) -> std::option::Option<&str> {
+    pub fn source_code_archive_url(&self) -> std::option::Option<& str> {
         self.source_code_archive_url.as_deref()
     }
     /// <p>A link to a public repository for the source code of your application, for example the URL of a specific GitHub commit.</p>
-    pub fn source_code_url(&self) -> std::option::Option<&str> {
+    pub fn source_code_url(&self) -> std::option::Option<& str> {
         self.source_code_url.as_deref()
     }
     /// <p>A link to the packaged AWS SAM template of your application.</p>
-    pub fn template_url(&self) -> std::option::Option<&str> {
+    pub fn template_url(&self) -> std::option::Option<& str> {
         self.template_url.as_deref()
     }
 }
 /// See [`CreateApplicationVersionOutput`](crate::output::CreateApplicationVersionOutput).
 pub mod create_application_version_output {
-
+    
     /// A builder for [`CreateApplicationVersionOutput`](crate::output::CreateApplicationVersionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_id: std::option::Option<std::string::String>,
         pub(crate) creation_time: std::option::Option<std::string::String>,
-        pub(crate) parameter_definitions:
-            std::option::Option<std::vec::Vec<crate::model::ParameterDefinition>>,
-        pub(crate) required_capabilities:
-            std::option::Option<std::vec::Vec<crate::model::Capability>>,
+        pub(crate) parameter_definitions: std::option::Option<std::vec::Vec<crate::model::ParameterDefinition>>,
+        pub(crate) required_capabilities: std::option::Option<std::vec::Vec<crate::model::Capability>>,
         pub(crate) resources_supported: std::option::Option<bool>,
         pub(crate) semantic_version: std::option::Option<std::string::String>,
         pub(crate) source_code_archive_url: std::option::Option<std::string::String>,
@@ -1678,12 +1614,8 @@ pub mod create_application_version_output {
             self
         }
         /// <p>The application Amazon Resource Name (ARN).</p>
-        pub fn set_application_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.application_id = input;
-            self
+        pub fn set_application_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.application_id = input; self
         }
         /// <p>The date and time this resource was created.</p>
         pub fn creation_time(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1691,12 +1623,8 @@ pub mod create_application_version_output {
             self
         }
         /// <p>The date and time this resource was created.</p>
-        pub fn set_creation_time(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.creation_time = input;
-            self
+        pub fn set_creation_time(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.creation_time = input; self
         }
         /// Appends an item to `parameter_definitions`.
         ///
@@ -1705,17 +1633,13 @@ pub mod create_application_version_output {
         /// <p>An array of parameter types supported by the application.</p>
         pub fn parameter_definitions(mut self, input: crate::model::ParameterDefinition) -> Self {
             let mut v = self.parameter_definitions.unwrap_or_default();
-            v.push(input);
-            self.parameter_definitions = Some(v);
-            self
+                            v.push(input);
+                            self.parameter_definitions = Some(v);
+                            self
         }
         /// <p>An array of parameter types supported by the application.</p>
-        pub fn set_parameter_definitions(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ParameterDefinition>>,
-        ) -> Self {
-            self.parameter_definitions = input;
-            self
+        pub fn set_parameter_definitions(mut self, input: std::option::Option<std::vec::Vec<crate::model::ParameterDefinition>>) -> Self {
+            self.parameter_definitions = input; self
         }
         /// Appends an item to `required_capabilities`.
         ///
@@ -1729,9 +1653,9 @@ pub mod create_application_version_output {
         /// <p>If your application template contains any of the above resources, we recommend that you review all permissions associated with the application before deploying. If you don't specify this parameter for an application that requires capabilities, the call will fail.</p>
         pub fn required_capabilities(mut self, input: crate::model::Capability) -> Self {
             let mut v = self.required_capabilities.unwrap_or_default();
-            v.push(input);
-            self.required_capabilities = Some(v);
-            self
+                            v.push(input);
+                            self.required_capabilities = Some(v);
+                            self
         }
         /// <p>A list of values that you must specify before you can deploy certain applications. Some applications might include resources that can affect permissions in your AWS account, for example, by creating new AWS Identity and Access Management (IAM) users. For those applications, you must explicitly acknowledge their capabilities by specifying this parameter.</p>
         /// <p>The only valid values are CAPABILITY_IAM, CAPABILITY_NAMED_IAM, CAPABILITY_RESOURCE_POLICY, and CAPABILITY_AUTO_EXPAND.</p>
@@ -1739,12 +1663,8 @@ pub mod create_application_version_output {
         /// <p>The following resources require you to specify CAPABILITY_RESOURCE_POLICY: <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-permission.html">AWS::Lambda::Permission</a>, <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-policy.html">AWS::IAM:Policy</a>, <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-applicationautoscaling-scalingpolicy.html">AWS::ApplicationAutoScaling::ScalingPolicy</a>, <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-policy.html">AWS::S3::BucketPolicy</a>, <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sqs-policy.html">AWS::SQS::QueuePolicy</a>, and <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sns-policy.html">AWS::SNS::TopicPolicy</a>.</p>
         /// <p>Applications that contain one or more nested applications require you to specify CAPABILITY_AUTO_EXPAND.</p>
         /// <p>If your application template contains any of the above resources, we recommend that you review all permissions associated with the application before deploying. If you don't specify this parameter for an application that requires capabilities, the call will fail.</p>
-        pub fn set_required_capabilities(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Capability>>,
-        ) -> Self {
-            self.required_capabilities = input;
-            self
+        pub fn set_required_capabilities(mut self, input: std::option::Option<std::vec::Vec<crate::model::Capability>>) -> Self {
+            self.required_capabilities = input; self
         }
         /// <p>Whether all of the AWS resources contained in this application are supported in the region in which it is being retrieved.</p>
         pub fn resources_supported(mut self, input: bool) -> Self {
@@ -1753,8 +1673,7 @@ pub mod create_application_version_output {
         }
         /// <p>Whether all of the AWS resources contained in this application are supported in the region in which it is being retrieved.</p>
         pub fn set_resources_supported(mut self, input: std::option::Option<bool>) -> Self {
-            self.resources_supported = input;
-            self
+            self.resources_supported = input; self
         }
         /// <p>The semantic version of the application:</p>
         /// <p> <a href="https://semver.org/">https://semver.org/</a> </p>
@@ -1764,12 +1683,8 @@ pub mod create_application_version_output {
         }
         /// <p>The semantic version of the application:</p>
         /// <p> <a href="https://semver.org/">https://semver.org/</a> </p>
-        pub fn set_semantic_version(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.semantic_version = input;
-            self
+        pub fn set_semantic_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.semantic_version = input; self
         }
         /// <p>A link to the S3 object that contains the ZIP archive of the source code for this version of your application.</p>
         /// <p>Maximum size 50 MB</p>
@@ -1779,12 +1694,8 @@ pub mod create_application_version_output {
         }
         /// <p>A link to the S3 object that contains the ZIP archive of the source code for this version of your application.</p>
         /// <p>Maximum size 50 MB</p>
-        pub fn set_source_code_archive_url(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.source_code_archive_url = input;
-            self
+        pub fn set_source_code_archive_url(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.source_code_archive_url = input; self
         }
         /// <p>A link to a public repository for the source code of your application, for example the URL of a specific GitHub commit.</p>
         pub fn source_code_url(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1792,12 +1703,8 @@ pub mod create_application_version_output {
             self
         }
         /// <p>A link to a public repository for the source code of your application, for example the URL of a specific GitHub commit.</p>
-        pub fn set_source_code_url(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.source_code_url = input;
-            self
+        pub fn set_source_code_url(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.source_code_url = input; self
         }
         /// <p>A link to the packaged AWS SAM template of your application.</p>
         pub fn template_url(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1806,24 +1713,35 @@ pub mod create_application_version_output {
         }
         /// <p>A link to the packaged AWS SAM template of your application.</p>
         pub fn set_template_url(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.template_url = input;
-            self
+            self.template_url = input; self
         }
         /// Consumes the builder and constructs a [`CreateApplicationVersionOutput`](crate::output::CreateApplicationVersionOutput).
         pub fn build(self) -> crate::output::CreateApplicationVersionOutput {
             crate::output::CreateApplicationVersionOutput {
-                application_id: self.application_id,
-                creation_time: self.creation_time,
-                parameter_definitions: self.parameter_definitions,
-                required_capabilities: self.required_capabilities,
-                resources_supported: self.resources_supported.unwrap_or_default(),
-                semantic_version: self.semantic_version,
-                source_code_archive_url: self.source_code_archive_url,
-                source_code_url: self.source_code_url,
-                template_url: self.template_url,
+                application_id: self.application_id
+                ,
+                creation_time: self.creation_time
+                ,
+                parameter_definitions: self.parameter_definitions
+                ,
+                required_capabilities: self.required_capabilities
+                ,
+                resources_supported: self.resources_supported
+                    .unwrap_or_default()
+                ,
+                semantic_version: self.semantic_version
+                ,
+                source_code_archive_url: self.source_code_archive_url
+                ,
+                source_code_url: self.source_code_url
+                ,
+                template_url: self.template_url
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateApplicationVersionOutput {
     /// Creates a new builder-style object to manufacture [`CreateApplicationVersionOutput`](crate::output::CreateApplicationVersionOutput).
@@ -1835,7 +1753,7 @@ impl CreateApplicationVersionOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateApplicationOutput {
+pub struct CreateApplicationOutput  {
     /// <p>The application Amazon Resource Name (ARN).</p>
     #[doc(hidden)]
     pub application_id: std::option::Option<std::string::String>,
@@ -1887,26 +1805,26 @@ pub struct CreateApplicationOutput {
 }
 impl CreateApplicationOutput {
     /// <p>The application Amazon Resource Name (ARN).</p>
-    pub fn application_id(&self) -> std::option::Option<&str> {
+    pub fn application_id(&self) -> std::option::Option<& str> {
         self.application_id.as_deref()
     }
     /// <p>The name of the author publishing the app.</p>
     /// <p>Minimum length=1. Maximum length=127.</p>
     /// <p>Pattern "^[a-z0-9](([a-z0-9]|-(?!-))*[a-z0-9])?$";</p>
-    pub fn author(&self) -> std::option::Option<&str> {
+    pub fn author(&self) -> std::option::Option<& str> {
         self.author.as_deref()
     }
     /// <p>The date and time this resource was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<&str> {
+    pub fn creation_time(&self) -> std::option::Option<& str> {
         self.creation_time.as_deref()
     }
     /// <p>The description of the application.</p>
     /// <p>Minimum length=1. Maximum length=256</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>A URL with more information about the application, for example the location of your GitHub repository for the application.</p>
-    pub fn home_page_url(&self) -> std::option::Option<&str> {
+    pub fn home_page_url(&self) -> std::option::Option<& str> {
         self.home_page_url.as_deref()
     }
     /// <p>Whether the author of this application has been verified. This means means that AWS has made a good faith review, as a reasonable and prudent service provider, of the information provided by the requester and has confirmed that the requester's identity is as claimed.</p>
@@ -1916,41 +1834,41 @@ impl CreateApplicationOutput {
     /// <p>Labels to improve discovery of apps in search results.</p>
     /// <p>Minimum length=1. Maximum length=127. Maximum number of labels: 10</p>
     /// <p>Pattern: "^[a-zA-Z0-9+\\-_:\\/@]+$";</p>
-    pub fn labels(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn labels(&self) -> std::option::Option<& [std::string::String]> {
         self.labels.as_deref()
     }
     /// <p>A link to a license file of the app that matches the spdxLicenseID value of your application.</p>
     /// <p>Maximum size 5 MB</p>
-    pub fn license_url(&self) -> std::option::Option<&str> {
+    pub fn license_url(&self) -> std::option::Option<& str> {
         self.license_url.as_deref()
     }
     /// <p>The name of the application.</p>
     /// <p>Minimum length=1. Maximum length=140</p>
     /// <p>Pattern: "[a-zA-Z0-9\\-]+";</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>A link to the readme file in Markdown language that contains a more detailed description of the application and how it works.</p>
     /// <p>Maximum size 5 MB</p>
-    pub fn readme_url(&self) -> std::option::Option<&str> {
+    pub fn readme_url(&self) -> std::option::Option<& str> {
         self.readme_url.as_deref()
     }
     /// <p>A valid identifier from https://spdx.org/licenses/.</p>
-    pub fn spdx_license_id(&self) -> std::option::Option<&str> {
+    pub fn spdx_license_id(&self) -> std::option::Option<& str> {
         self.spdx_license_id.as_deref()
     }
     /// <p>The URL to the public profile of a verified author. This URL is submitted by the author.</p>
-    pub fn verified_author_url(&self) -> std::option::Option<&str> {
+    pub fn verified_author_url(&self) -> std::option::Option<& str> {
         self.verified_author_url.as_deref()
     }
     /// <p>Version information about the application.</p>
-    pub fn version(&self) -> std::option::Option<&crate::model::Version> {
+    pub fn version(&self) -> std::option::Option<& crate::model::Version> {
         self.version.as_ref()
     }
 }
 /// See [`CreateApplicationOutput`](crate::output::CreateApplicationOutput).
 pub mod create_application_output {
-
+    
     /// A builder for [`CreateApplicationOutput`](crate::output::CreateApplicationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1975,12 +1893,8 @@ pub mod create_application_output {
             self
         }
         /// <p>The application Amazon Resource Name (ARN).</p>
-        pub fn set_application_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.application_id = input;
-            self
+        pub fn set_application_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.application_id = input; self
         }
         /// <p>The name of the author publishing the app.</p>
         /// <p>Minimum length=1. Maximum length=127.</p>
@@ -1993,8 +1907,7 @@ pub mod create_application_output {
         /// <p>Minimum length=1. Maximum length=127.</p>
         /// <p>Pattern "^[a-z0-9](([a-z0-9]|-(?!-))*[a-z0-9])?$";</p>
         pub fn set_author(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.author = input;
-            self
+            self.author = input; self
         }
         /// <p>The date and time this resource was created.</p>
         pub fn creation_time(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2002,12 +1915,8 @@ pub mod create_application_output {
             self
         }
         /// <p>The date and time this resource was created.</p>
-        pub fn set_creation_time(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.creation_time = input;
-            self
+        pub fn set_creation_time(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.creation_time = input; self
         }
         /// <p>The description of the application.</p>
         /// <p>Minimum length=1. Maximum length=256</p>
@@ -2018,8 +1927,7 @@ pub mod create_application_output {
         /// <p>The description of the application.</p>
         /// <p>Minimum length=1. Maximum length=256</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>A URL with more information about the application, for example the location of your GitHub repository for the application.</p>
         pub fn home_page_url(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2027,12 +1935,8 @@ pub mod create_application_output {
             self
         }
         /// <p>A URL with more information about the application, for example the location of your GitHub repository for the application.</p>
-        pub fn set_home_page_url(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.home_page_url = input;
-            self
+        pub fn set_home_page_url(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.home_page_url = input; self
         }
         /// <p>Whether the author of this application has been verified. This means means that AWS has made a good faith review, as a reasonable and prudent service provider, of the information provided by the requester and has confirmed that the requester's identity is as claimed.</p>
         pub fn is_verified_author(mut self, input: bool) -> Self {
@@ -2041,8 +1945,7 @@ pub mod create_application_output {
         }
         /// <p>Whether the author of this application has been verified. This means means that AWS has made a good faith review, as a reasonable and prudent service provider, of the information provided by the requester and has confirmed that the requester's identity is as claimed.</p>
         pub fn set_is_verified_author(mut self, input: std::option::Option<bool>) -> Self {
-            self.is_verified_author = input;
-            self
+            self.is_verified_author = input; self
         }
         /// Appends an item to `labels`.
         ///
@@ -2053,19 +1956,15 @@ pub mod create_application_output {
         /// <p>Pattern: "^[a-zA-Z0-9+\\-_:\\/@]+$";</p>
         pub fn labels(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.labels.unwrap_or_default();
-            v.push(input.into());
-            self.labels = Some(v);
-            self
+                            v.push(input.into());
+                            self.labels = Some(v);
+                            self
         }
         /// <p>Labels to improve discovery of apps in search results.</p>
         /// <p>Minimum length=1. Maximum length=127. Maximum number of labels: 10</p>
         /// <p>Pattern: "^[a-zA-Z0-9+\\-_:\\/@]+$";</p>
-        pub fn set_labels(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.labels = input;
-            self
+        pub fn set_labels(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.labels = input; self
         }
         /// <p>A link to a license file of the app that matches the spdxLicenseID value of your application.</p>
         /// <p>Maximum size 5 MB</p>
@@ -2076,8 +1975,7 @@ pub mod create_application_output {
         /// <p>A link to a license file of the app that matches the spdxLicenseID value of your application.</p>
         /// <p>Maximum size 5 MB</p>
         pub fn set_license_url(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.license_url = input;
-            self
+            self.license_url = input; self
         }
         /// <p>The name of the application.</p>
         /// <p>Minimum length=1. Maximum length=140</p>
@@ -2090,8 +1988,7 @@ pub mod create_application_output {
         /// <p>Minimum length=1. Maximum length=140</p>
         /// <p>Pattern: "[a-zA-Z0-9\\-]+";</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>A link to the readme file in Markdown language that contains a more detailed description of the application and how it works.</p>
         /// <p>Maximum size 5 MB</p>
@@ -2102,8 +1999,7 @@ pub mod create_application_output {
         /// <p>A link to the readme file in Markdown language that contains a more detailed description of the application and how it works.</p>
         /// <p>Maximum size 5 MB</p>
         pub fn set_readme_url(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.readme_url = input;
-            self
+            self.readme_url = input; self
         }
         /// <p>A valid identifier from https://spdx.org/licenses/.</p>
         pub fn spdx_license_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2111,12 +2007,8 @@ pub mod create_application_output {
             self
         }
         /// <p>A valid identifier from https://spdx.org/licenses/.</p>
-        pub fn set_spdx_license_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.spdx_license_id = input;
-            self
+        pub fn set_spdx_license_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.spdx_license_id = input; self
         }
         /// <p>The URL to the public profile of a verified author. This URL is submitted by the author.</p>
         pub fn verified_author_url(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2124,12 +2016,8 @@ pub mod create_application_output {
             self
         }
         /// <p>The URL to the public profile of a verified author. This URL is submitted by the author.</p>
-        pub fn set_verified_author_url(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.verified_author_url = input;
-            self
+        pub fn set_verified_author_url(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.verified_author_url = input; self
         }
         /// <p>Version information about the application.</p>
         pub fn version(mut self, input: crate::model::Version) -> Self {
@@ -2138,28 +2026,43 @@ pub mod create_application_output {
         }
         /// <p>Version information about the application.</p>
         pub fn set_version(mut self, input: std::option::Option<crate::model::Version>) -> Self {
-            self.version = input;
-            self
+            self.version = input; self
         }
         /// Consumes the builder and constructs a [`CreateApplicationOutput`](crate::output::CreateApplicationOutput).
         pub fn build(self) -> crate::output::CreateApplicationOutput {
             crate::output::CreateApplicationOutput {
-                application_id: self.application_id,
-                author: self.author,
-                creation_time: self.creation_time,
-                description: self.description,
-                home_page_url: self.home_page_url,
-                is_verified_author: self.is_verified_author.unwrap_or_default(),
-                labels: self.labels,
-                license_url: self.license_url,
-                name: self.name,
-                readme_url: self.readme_url,
-                spdx_license_id: self.spdx_license_id,
-                verified_author_url: self.verified_author_url,
-                version: self.version,
+                application_id: self.application_id
+                ,
+                author: self.author
+                ,
+                creation_time: self.creation_time
+                ,
+                description: self.description
+                ,
+                home_page_url: self.home_page_url
+                ,
+                is_verified_author: self.is_verified_author
+                    .unwrap_or_default()
+                ,
+                labels: self.labels
+                ,
+                license_url: self.license_url
+                ,
+                name: self.name
+                ,
+                readme_url: self.readme_url
+                ,
+                spdx_license_id: self.spdx_license_id
+                ,
+                verified_author_url: self.verified_author_url
+                ,
+                version: self.version
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateApplicationOutput {
     /// Creates a new builder-style object to manufacture [`CreateApplicationOutput`](crate::output::CreateApplicationOutput).
@@ -2167,3 +2070,4 @@ impl CreateApplicationOutput {
         crate::output::create_application_output::Builder::default()
     }
 }
+

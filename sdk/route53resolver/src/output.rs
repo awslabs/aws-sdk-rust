@@ -2,20 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateResolverRuleOutput {
+pub struct UpdateResolverRuleOutput  {
     /// <p>The response to an <code>UpdateResolverRule</code> request.</p>
     #[doc(hidden)]
     pub resolver_rule: std::option::Option<crate::model::ResolverRule>,
 }
 impl UpdateResolverRuleOutput {
     /// <p>The response to an <code>UpdateResolverRule</code> request.</p>
-    pub fn resolver_rule(&self) -> std::option::Option<&crate::model::ResolverRule> {
+    pub fn resolver_rule(&self) -> std::option::Option<& crate::model::ResolverRule> {
         self.resolver_rule.as_ref()
     }
 }
 /// See [`UpdateResolverRuleOutput`](crate::output::UpdateResolverRuleOutput).
 pub mod update_resolver_rule_output {
-
+    
     /// A builder for [`UpdateResolverRuleOutput`](crate::output::UpdateResolverRuleOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -28,20 +28,19 @@ pub mod update_resolver_rule_output {
             self
         }
         /// <p>The response to an <code>UpdateResolverRule</code> request.</p>
-        pub fn set_resolver_rule(
-            mut self,
-            input: std::option::Option<crate::model::ResolverRule>,
-        ) -> Self {
-            self.resolver_rule = input;
-            self
+        pub fn set_resolver_rule(mut self, input: std::option::Option<crate::model::ResolverRule>) -> Self {
+            self.resolver_rule = input; self
         }
         /// Consumes the builder and constructs a [`UpdateResolverRuleOutput`](crate::output::UpdateResolverRuleOutput).
         pub fn build(self) -> crate::output::UpdateResolverRuleOutput {
             crate::output::UpdateResolverRuleOutput {
-                resolver_rule: self.resolver_rule,
+                resolver_rule: self.resolver_rule
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateResolverRuleOutput {
     /// Creates a new builder-style object to manufacture [`UpdateResolverRuleOutput`](crate::output::UpdateResolverRuleOutput).
@@ -53,20 +52,20 @@ impl UpdateResolverRuleOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateResolverEndpointOutput {
+pub struct UpdateResolverEndpointOutput  {
     /// <p>The response to an <code>UpdateResolverEndpoint</code> request.</p>
     #[doc(hidden)]
     pub resolver_endpoint: std::option::Option<crate::model::ResolverEndpoint>,
 }
 impl UpdateResolverEndpointOutput {
     /// <p>The response to an <code>UpdateResolverEndpoint</code> request.</p>
-    pub fn resolver_endpoint(&self) -> std::option::Option<&crate::model::ResolverEndpoint> {
+    pub fn resolver_endpoint(&self) -> std::option::Option<& crate::model::ResolverEndpoint> {
         self.resolver_endpoint.as_ref()
     }
 }
 /// See [`UpdateResolverEndpointOutput`](crate::output::UpdateResolverEndpointOutput).
 pub mod update_resolver_endpoint_output {
-
+    
     /// A builder for [`UpdateResolverEndpointOutput`](crate::output::UpdateResolverEndpointOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -79,20 +78,19 @@ pub mod update_resolver_endpoint_output {
             self
         }
         /// <p>The response to an <code>UpdateResolverEndpoint</code> request.</p>
-        pub fn set_resolver_endpoint(
-            mut self,
-            input: std::option::Option<crate::model::ResolverEndpoint>,
-        ) -> Self {
-            self.resolver_endpoint = input;
-            self
+        pub fn set_resolver_endpoint(mut self, input: std::option::Option<crate::model::ResolverEndpoint>) -> Self {
+            self.resolver_endpoint = input; self
         }
         /// Consumes the builder and constructs a [`UpdateResolverEndpointOutput`](crate::output::UpdateResolverEndpointOutput).
         pub fn build(self) -> crate::output::UpdateResolverEndpointOutput {
             crate::output::UpdateResolverEndpointOutput {
-                resolver_endpoint: self.resolver_endpoint,
+                resolver_endpoint: self.resolver_endpoint
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateResolverEndpointOutput {
     /// Creates a new builder-style object to manufacture [`UpdateResolverEndpointOutput`](crate::output::UpdateResolverEndpointOutput).
@@ -104,22 +102,20 @@ impl UpdateResolverEndpointOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateResolverDnssecConfigOutput {
+pub struct UpdateResolverDnssecConfigOutput  {
     /// <p>A complex type that contains settings for the specified DNSSEC configuration.</p>
     #[doc(hidden)]
     pub resolver_dnssec_config: std::option::Option<crate::model::ResolverDnssecConfig>,
 }
 impl UpdateResolverDnssecConfigOutput {
     /// <p>A complex type that contains settings for the specified DNSSEC configuration.</p>
-    pub fn resolver_dnssec_config(
-        &self,
-    ) -> std::option::Option<&crate::model::ResolverDnssecConfig> {
+    pub fn resolver_dnssec_config(&self) -> std::option::Option<& crate::model::ResolverDnssecConfig> {
         self.resolver_dnssec_config.as_ref()
     }
 }
 /// See [`UpdateResolverDnssecConfigOutput`](crate::output::UpdateResolverDnssecConfigOutput).
 pub mod update_resolver_dnssec_config_output {
-
+    
     /// A builder for [`UpdateResolverDnssecConfigOutput`](crate::output::UpdateResolverDnssecConfigOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -132,20 +128,19 @@ pub mod update_resolver_dnssec_config_output {
             self
         }
         /// <p>A complex type that contains settings for the specified DNSSEC configuration.</p>
-        pub fn set_resolver_dnssec_config(
-            mut self,
-            input: std::option::Option<crate::model::ResolverDnssecConfig>,
-        ) -> Self {
-            self.resolver_dnssec_config = input;
-            self
+        pub fn set_resolver_dnssec_config(mut self, input: std::option::Option<crate::model::ResolverDnssecConfig>) -> Self {
+            self.resolver_dnssec_config = input; self
         }
         /// Consumes the builder and constructs a [`UpdateResolverDnssecConfigOutput`](crate::output::UpdateResolverDnssecConfigOutput).
         pub fn build(self) -> crate::output::UpdateResolverDnssecConfigOutput {
             crate::output::UpdateResolverDnssecConfigOutput {
-                resolver_dnssec_config: self.resolver_dnssec_config,
+                resolver_dnssec_config: self.resolver_dnssec_config
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateResolverDnssecConfigOutput {
     /// Creates a new builder-style object to manufacture [`UpdateResolverDnssecConfigOutput`](crate::output::UpdateResolverDnssecConfigOutput).
@@ -157,20 +152,20 @@ impl UpdateResolverDnssecConfigOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateResolverConfigOutput {
+pub struct UpdateResolverConfigOutput  {
     /// <p>An array that contains settings for the specified Resolver configuration.</p>
     #[doc(hidden)]
     pub resolver_config: std::option::Option<crate::model::ResolverConfig>,
 }
 impl UpdateResolverConfigOutput {
     /// <p>An array that contains settings for the specified Resolver configuration.</p>
-    pub fn resolver_config(&self) -> std::option::Option<&crate::model::ResolverConfig> {
+    pub fn resolver_config(&self) -> std::option::Option<& crate::model::ResolverConfig> {
         self.resolver_config.as_ref()
     }
 }
 /// See [`UpdateResolverConfigOutput`](crate::output::UpdateResolverConfigOutput).
 pub mod update_resolver_config_output {
-
+    
     /// A builder for [`UpdateResolverConfigOutput`](crate::output::UpdateResolverConfigOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -183,20 +178,19 @@ pub mod update_resolver_config_output {
             self
         }
         /// <p>An array that contains settings for the specified Resolver configuration.</p>
-        pub fn set_resolver_config(
-            mut self,
-            input: std::option::Option<crate::model::ResolverConfig>,
-        ) -> Self {
-            self.resolver_config = input;
-            self
+        pub fn set_resolver_config(mut self, input: std::option::Option<crate::model::ResolverConfig>) -> Self {
+            self.resolver_config = input; self
         }
         /// Consumes the builder and constructs a [`UpdateResolverConfigOutput`](crate::output::UpdateResolverConfigOutput).
         pub fn build(self) -> crate::output::UpdateResolverConfigOutput {
             crate::output::UpdateResolverConfigOutput {
-                resolver_config: self.resolver_config,
+                resolver_config: self.resolver_config
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateResolverConfigOutput {
     /// Creates a new builder-style object to manufacture [`UpdateResolverConfigOutput`](crate::output::UpdateResolverConfigOutput).
@@ -208,53 +202,45 @@ impl UpdateResolverConfigOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateFirewallRuleGroupAssociationOutput {
+pub struct UpdateFirewallRuleGroupAssociationOutput  {
     /// <p>The association that you just updated. </p>
     #[doc(hidden)]
-    pub firewall_rule_group_association:
-        std::option::Option<crate::model::FirewallRuleGroupAssociation>,
+    pub firewall_rule_group_association: std::option::Option<crate::model::FirewallRuleGroupAssociation>,
 }
 impl UpdateFirewallRuleGroupAssociationOutput {
     /// <p>The association that you just updated. </p>
-    pub fn firewall_rule_group_association(
-        &self,
-    ) -> std::option::Option<&crate::model::FirewallRuleGroupAssociation> {
+    pub fn firewall_rule_group_association(&self) -> std::option::Option<& crate::model::FirewallRuleGroupAssociation> {
         self.firewall_rule_group_association.as_ref()
     }
 }
 /// See [`UpdateFirewallRuleGroupAssociationOutput`](crate::output::UpdateFirewallRuleGroupAssociationOutput).
 pub mod update_firewall_rule_group_association_output {
-
+    
     /// A builder for [`UpdateFirewallRuleGroupAssociationOutput`](crate::output::UpdateFirewallRuleGroupAssociationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) firewall_rule_group_association:
-            std::option::Option<crate::model::FirewallRuleGroupAssociation>,
+        pub(crate) firewall_rule_group_association: std::option::Option<crate::model::FirewallRuleGroupAssociation>,
     }
     impl Builder {
         /// <p>The association that you just updated. </p>
-        pub fn firewall_rule_group_association(
-            mut self,
-            input: crate::model::FirewallRuleGroupAssociation,
-        ) -> Self {
+        pub fn firewall_rule_group_association(mut self, input: crate::model::FirewallRuleGroupAssociation) -> Self {
             self.firewall_rule_group_association = Some(input);
             self
         }
         /// <p>The association that you just updated. </p>
-        pub fn set_firewall_rule_group_association(
-            mut self,
-            input: std::option::Option<crate::model::FirewallRuleGroupAssociation>,
-        ) -> Self {
-            self.firewall_rule_group_association = input;
-            self
+        pub fn set_firewall_rule_group_association(mut self, input: std::option::Option<crate::model::FirewallRuleGroupAssociation>) -> Self {
+            self.firewall_rule_group_association = input; self
         }
         /// Consumes the builder and constructs a [`UpdateFirewallRuleGroupAssociationOutput`](crate::output::UpdateFirewallRuleGroupAssociationOutput).
         pub fn build(self) -> crate::output::UpdateFirewallRuleGroupAssociationOutput {
             crate::output::UpdateFirewallRuleGroupAssociationOutput {
-                firewall_rule_group_association: self.firewall_rule_group_association,
+                firewall_rule_group_association: self.firewall_rule_group_association
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateFirewallRuleGroupAssociationOutput {
     /// Creates a new builder-style object to manufacture [`UpdateFirewallRuleGroupAssociationOutput`](crate::output::UpdateFirewallRuleGroupAssociationOutput).
@@ -266,20 +252,20 @@ impl UpdateFirewallRuleGroupAssociationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateFirewallRuleOutput {
+pub struct UpdateFirewallRuleOutput  {
     /// <p>The firewall rule that you just updated. </p>
     #[doc(hidden)]
     pub firewall_rule: std::option::Option<crate::model::FirewallRule>,
 }
 impl UpdateFirewallRuleOutput {
     /// <p>The firewall rule that you just updated. </p>
-    pub fn firewall_rule(&self) -> std::option::Option<&crate::model::FirewallRule> {
+    pub fn firewall_rule(&self) -> std::option::Option<& crate::model::FirewallRule> {
         self.firewall_rule.as_ref()
     }
 }
 /// See [`UpdateFirewallRuleOutput`](crate::output::UpdateFirewallRuleOutput).
 pub mod update_firewall_rule_output {
-
+    
     /// A builder for [`UpdateFirewallRuleOutput`](crate::output::UpdateFirewallRuleOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -292,20 +278,19 @@ pub mod update_firewall_rule_output {
             self
         }
         /// <p>The firewall rule that you just updated. </p>
-        pub fn set_firewall_rule(
-            mut self,
-            input: std::option::Option<crate::model::FirewallRule>,
-        ) -> Self {
-            self.firewall_rule = input;
-            self
+        pub fn set_firewall_rule(mut self, input: std::option::Option<crate::model::FirewallRule>) -> Self {
+            self.firewall_rule = input; self
         }
         /// Consumes the builder and constructs a [`UpdateFirewallRuleOutput`](crate::output::UpdateFirewallRuleOutput).
         pub fn build(self) -> crate::output::UpdateFirewallRuleOutput {
             crate::output::UpdateFirewallRuleOutput {
-                firewall_rule: self.firewall_rule,
+                firewall_rule: self.firewall_rule
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateFirewallRuleOutput {
     /// Creates a new builder-style object to manufacture [`UpdateFirewallRuleOutput`](crate::output::UpdateFirewallRuleOutput).
@@ -317,7 +302,7 @@ impl UpdateFirewallRuleOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateFirewallDomainsOutput {
+pub struct UpdateFirewallDomainsOutput  {
     /// <p>The ID of the firewall domain list that DNS Firewall just updated.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -333,25 +318,25 @@ pub struct UpdateFirewallDomainsOutput {
 }
 impl UpdateFirewallDomainsOutput {
     /// <p>The ID of the firewall domain list that DNS Firewall just updated.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The name of the domain list. </p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p> </p>
-    pub fn status(&self) -> std::option::Option<&crate::model::FirewallDomainListStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::FirewallDomainListStatus> {
         self.status.as_ref()
     }
     /// <p>Additional information about the status of the list, if available.</p>
-    pub fn status_message(&self) -> std::option::Option<&str> {
+    pub fn status_message(&self) -> std::option::Option<& str> {
         self.status_message.as_deref()
     }
 }
 /// See [`UpdateFirewallDomainsOutput`](crate::output::UpdateFirewallDomainsOutput).
 pub mod update_firewall_domains_output {
-
+    
     /// A builder for [`UpdateFirewallDomainsOutput`](crate::output::UpdateFirewallDomainsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -368,8 +353,7 @@ pub mod update_firewall_domains_output {
         }
         /// <p>The ID of the firewall domain list that DNS Firewall just updated.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// <p>The name of the domain list. </p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -378,8 +362,7 @@ pub mod update_firewall_domains_output {
         }
         /// <p>The name of the domain list. </p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p> </p>
         pub fn status(mut self, input: crate::model::FirewallDomainListStatus) -> Self {
@@ -387,12 +370,8 @@ pub mod update_firewall_domains_output {
             self
         }
         /// <p> </p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::FirewallDomainListStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::FirewallDomainListStatus>) -> Self {
+            self.status = input; self
         }
         /// <p>Additional information about the status of the list, if available.</p>
         pub fn status_message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -400,23 +379,25 @@ pub mod update_firewall_domains_output {
             self
         }
         /// <p>Additional information about the status of the list, if available.</p>
-        pub fn set_status_message(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.status_message = input;
-            self
+        pub fn set_status_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.status_message = input; self
         }
         /// Consumes the builder and constructs a [`UpdateFirewallDomainsOutput`](crate::output::UpdateFirewallDomainsOutput).
         pub fn build(self) -> crate::output::UpdateFirewallDomainsOutput {
             crate::output::UpdateFirewallDomainsOutput {
-                id: self.id,
-                name: self.name,
-                status: self.status,
-                status_message: self.status_message,
+                id: self.id
+                ,
+                name: self.name
+                ,
+                status: self.status
+                ,
+                status_message: self.status_message
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateFirewallDomainsOutput {
     /// Creates a new builder-style object to manufacture [`UpdateFirewallDomainsOutput`](crate::output::UpdateFirewallDomainsOutput).
@@ -428,20 +409,20 @@ impl UpdateFirewallDomainsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateFirewallConfigOutput {
+pub struct UpdateFirewallConfigOutput  {
     /// <p>Configuration of the firewall behavior provided by DNS Firewall for a single VPC. </p>
     #[doc(hidden)]
     pub firewall_config: std::option::Option<crate::model::FirewallConfig>,
 }
 impl UpdateFirewallConfigOutput {
     /// <p>Configuration of the firewall behavior provided by DNS Firewall for a single VPC. </p>
-    pub fn firewall_config(&self) -> std::option::Option<&crate::model::FirewallConfig> {
+    pub fn firewall_config(&self) -> std::option::Option<& crate::model::FirewallConfig> {
         self.firewall_config.as_ref()
     }
 }
 /// See [`UpdateFirewallConfigOutput`](crate::output::UpdateFirewallConfigOutput).
 pub mod update_firewall_config_output {
-
+    
     /// A builder for [`UpdateFirewallConfigOutput`](crate::output::UpdateFirewallConfigOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -454,20 +435,19 @@ pub mod update_firewall_config_output {
             self
         }
         /// <p>Configuration of the firewall behavior provided by DNS Firewall for a single VPC. </p>
-        pub fn set_firewall_config(
-            mut self,
-            input: std::option::Option<crate::model::FirewallConfig>,
-        ) -> Self {
-            self.firewall_config = input;
-            self
+        pub fn set_firewall_config(mut self, input: std::option::Option<crate::model::FirewallConfig>) -> Self {
+            self.firewall_config = input; self
         }
         /// Consumes the builder and constructs a [`UpdateFirewallConfigOutput`](crate::output::UpdateFirewallConfigOutput).
         pub fn build(self) -> crate::output::UpdateFirewallConfigOutput {
             crate::output::UpdateFirewallConfigOutput {
-                firewall_config: self.firewall_config,
+                firewall_config: self.firewall_config
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateFirewallConfigOutput {
     /// Creates a new builder-style object to manufacture [`UpdateFirewallConfigOutput`](crate::output::UpdateFirewallConfigOutput).
@@ -479,19 +459,24 @@ impl UpdateFirewallConfigOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UntagResourceOutput {}
+pub struct UntagResourceOutput  {
+}
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput).
 pub mod untag_resource_output {
-
+    
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput).
         pub fn build(self) -> crate::output::UntagResourceOutput {
-            crate::output::UntagResourceOutput {}
+            crate::output::UntagResourceOutput {
+            }
         }
     }
+    
+    
 }
 impl UntagResourceOutput {
     /// Creates a new builder-style object to manufacture [`UntagResourceOutput`](crate::output::UntagResourceOutput).
@@ -503,19 +488,24 @@ impl UntagResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TagResourceOutput {}
+pub struct TagResourceOutput  {
+}
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput).
 pub mod tag_resource_output {
-
+    
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput).
         pub fn build(self) -> crate::output::TagResourceOutput {
-            crate::output::TagResourceOutput {}
+            crate::output::TagResourceOutput {
+            }
         }
     }
+    
+    
 }
 impl TagResourceOutput {
     /// Creates a new builder-style object to manufacture [`TagResourceOutput`](crate::output::TagResourceOutput).
@@ -527,7 +517,7 @@ impl TagResourceOutput {
 /// <p>The response to a <code>PutResolverRulePolicy</code> request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutResolverRulePolicyOutput {
+pub struct PutResolverRulePolicyOutput  {
     /// <p>Whether the <code>PutResolverRulePolicy</code> request was successful.</p>
     #[doc(hidden)]
     pub return_value: bool,
@@ -540,7 +530,7 @@ impl PutResolverRulePolicyOutput {
 }
 /// See [`PutResolverRulePolicyOutput`](crate::output::PutResolverRulePolicyOutput).
 pub mod put_resolver_rule_policy_output {
-
+    
     /// A builder for [`PutResolverRulePolicyOutput`](crate::output::PutResolverRulePolicyOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -554,16 +544,19 @@ pub mod put_resolver_rule_policy_output {
         }
         /// <p>Whether the <code>PutResolverRulePolicy</code> request was successful.</p>
         pub fn set_return_value(mut self, input: std::option::Option<bool>) -> Self {
-            self.return_value = input;
-            self
+            self.return_value = input; self
         }
         /// Consumes the builder and constructs a [`PutResolverRulePolicyOutput`](crate::output::PutResolverRulePolicyOutput).
         pub fn build(self) -> crate::output::PutResolverRulePolicyOutput {
             crate::output::PutResolverRulePolicyOutput {
-                return_value: self.return_value.unwrap_or_default(),
+                return_value: self.return_value
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl PutResolverRulePolicyOutput {
     /// Creates a new builder-style object to manufacture [`PutResolverRulePolicyOutput`](crate::output::PutResolverRulePolicyOutput).
@@ -575,7 +568,7 @@ impl PutResolverRulePolicyOutput {
 /// <p>The response to a <code>PutResolverQueryLogConfigPolicy</code> request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutResolverQueryLogConfigPolicyOutput {
+pub struct PutResolverQueryLogConfigPolicyOutput  {
     /// <p>Whether the <code>PutResolverQueryLogConfigPolicy</code> request was successful.</p>
     #[doc(hidden)]
     pub return_value: bool,
@@ -588,7 +581,7 @@ impl PutResolverQueryLogConfigPolicyOutput {
 }
 /// See [`PutResolverQueryLogConfigPolicyOutput`](crate::output::PutResolverQueryLogConfigPolicyOutput).
 pub mod put_resolver_query_log_config_policy_output {
-
+    
     /// A builder for [`PutResolverQueryLogConfigPolicyOutput`](crate::output::PutResolverQueryLogConfigPolicyOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -602,16 +595,19 @@ pub mod put_resolver_query_log_config_policy_output {
         }
         /// <p>Whether the <code>PutResolverQueryLogConfigPolicy</code> request was successful.</p>
         pub fn set_return_value(mut self, input: std::option::Option<bool>) -> Self {
-            self.return_value = input;
-            self
+            self.return_value = input; self
         }
         /// Consumes the builder and constructs a [`PutResolverQueryLogConfigPolicyOutput`](crate::output::PutResolverQueryLogConfigPolicyOutput).
         pub fn build(self) -> crate::output::PutResolverQueryLogConfigPolicyOutput {
             crate::output::PutResolverQueryLogConfigPolicyOutput {
-                return_value: self.return_value.unwrap_or_default(),
+                return_value: self.return_value
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl PutResolverQueryLogConfigPolicyOutput {
     /// Creates a new builder-style object to manufacture [`PutResolverQueryLogConfigPolicyOutput`](crate::output::PutResolverQueryLogConfigPolicyOutput).
@@ -623,7 +619,7 @@ impl PutResolverQueryLogConfigPolicyOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutFirewallRuleGroupPolicyOutput {
+pub struct PutFirewallRuleGroupPolicyOutput  {
     /// <p></p>
     #[doc(hidden)]
     pub return_value: bool,
@@ -636,7 +632,7 @@ impl PutFirewallRuleGroupPolicyOutput {
 }
 /// See [`PutFirewallRuleGroupPolicyOutput`](crate::output::PutFirewallRuleGroupPolicyOutput).
 pub mod put_firewall_rule_group_policy_output {
-
+    
     /// A builder for [`PutFirewallRuleGroupPolicyOutput`](crate::output::PutFirewallRuleGroupPolicyOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -650,16 +646,19 @@ pub mod put_firewall_rule_group_policy_output {
         }
         /// <p></p>
         pub fn set_return_value(mut self, input: std::option::Option<bool>) -> Self {
-            self.return_value = input;
-            self
+            self.return_value = input; self
         }
         /// Consumes the builder and constructs a [`PutFirewallRuleGroupPolicyOutput`](crate::output::PutFirewallRuleGroupPolicyOutput).
         pub fn build(self) -> crate::output::PutFirewallRuleGroupPolicyOutput {
             crate::output::PutFirewallRuleGroupPolicyOutput {
-                return_value: self.return_value.unwrap_or_default(),
+                return_value: self.return_value
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl PutFirewallRuleGroupPolicyOutput {
     /// Creates a new builder-style object to manufacture [`PutFirewallRuleGroupPolicyOutput`](crate::output::PutFirewallRuleGroupPolicyOutput).
@@ -671,7 +670,7 @@ impl PutFirewallRuleGroupPolicyOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListTagsForResourceOutput {
+pub struct ListTagsForResourceOutput  {
     /// <p>The tags that are associated with the resource that you specified in the <code>ListTagsForResource</code> request.</p>
     #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -681,17 +680,17 @@ pub struct ListTagsForResourceOutput {
 }
 impl ListTagsForResourceOutput {
     /// <p>The tags that are associated with the resource that you specified in the <code>ListTagsForResource</code> request.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+    pub fn tags(&self) -> std::option::Option<& [crate::model::Tag]> {
         self.tags.as_deref()
     }
     /// <p>If more than <code>MaxResults</code> tags match the specified criteria, you can submit another <code>ListTagsForResource</code> request to get the next group of results. In the next request, specify the value of <code>NextToken</code> from the previous response. </p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
 pub mod list_tags_for_resource_output {
-
+    
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -706,17 +705,13 @@ pub mod list_tags_for_resource_output {
         /// <p>The tags that are associated with the resource that you specified in the <code>ListTagsForResource</code> request.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input);
-            self.tags = Some(v);
-            self
+                            v.push(input);
+                            self.tags = Some(v);
+                            self
         }
         /// <p>The tags that are associated with the resource that you specified in the <code>ListTagsForResource</code> request.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::model::Tag>>) -> Self {
+            self.tags = input; self
         }
         /// <p>If more than <code>MaxResults</code> tags match the specified criteria, you can submit another <code>ListTagsForResource</code> request to get the next group of results. In the next request, specify the value of <code>NextToken</code> from the previous response. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -725,17 +720,20 @@ pub mod list_tags_for_resource_output {
         }
         /// <p>If more than <code>MaxResults</code> tags match the specified criteria, you can submit another <code>ListTagsForResource</code> request to get the next group of results. In the next request, specify the value of <code>NextToken</code> from the previous response. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
         pub fn build(self) -> crate::output::ListTagsForResourceOutput {
             crate::output::ListTagsForResourceOutput {
-                tags: self.tags,
-                next_token: self.next_token,
+                tags: self.tags
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListTagsForResourceOutput {
     /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
@@ -747,7 +745,7 @@ impl ListTagsForResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListResolverRulesOutput {
+pub struct ListResolverRulesOutput  {
     /// <p>If more than <code>MaxResults</code> Resolver rules match the specified criteria, you can submit another <code>ListResolverRules</code> request to get the next group of results. In the next request, specify the value of <code>NextToken</code> from the previous response. </p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -760,7 +758,7 @@ pub struct ListResolverRulesOutput {
 }
 impl ListResolverRulesOutput {
     /// <p>If more than <code>MaxResults</code> Resolver rules match the specified criteria, you can submit another <code>ListResolverRules</code> request to get the next group of results. In the next request, specify the value of <code>NextToken</code> from the previous response. </p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The value that you specified for <code>MaxResults</code> in the request.</p>
@@ -768,13 +766,13 @@ impl ListResolverRulesOutput {
         self.max_results
     }
     /// <p>The Resolver rules that were created using the current Amazon Web Services account and that match the specified filters, if any.</p>
-    pub fn resolver_rules(&self) -> std::option::Option<&[crate::model::ResolverRule]> {
+    pub fn resolver_rules(&self) -> std::option::Option<& [crate::model::ResolverRule]> {
         self.resolver_rules.as_deref()
     }
 }
 /// See [`ListResolverRulesOutput`](crate::output::ListResolverRulesOutput).
 pub mod list_resolver_rules_output {
-
+    
     /// A builder for [`ListResolverRulesOutput`](crate::output::ListResolverRulesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -790,8 +788,7 @@ pub mod list_resolver_rules_output {
         }
         /// <p>If more than <code>MaxResults</code> Resolver rules match the specified criteria, you can submit another <code>ListResolverRules</code> request to get the next group of results. In the next request, specify the value of <code>NextToken</code> from the previous response. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// <p>The value that you specified for <code>MaxResults</code> in the request.</p>
         pub fn max_results(mut self, input: i32) -> Self {
@@ -800,8 +797,7 @@ pub mod list_resolver_rules_output {
         }
         /// <p>The value that you specified for <code>MaxResults</code> in the request.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_results = input;
-            self
+            self.max_results = input; self
         }
         /// Appends an item to `resolver_rules`.
         ///
@@ -810,27 +806,28 @@ pub mod list_resolver_rules_output {
         /// <p>The Resolver rules that were created using the current Amazon Web Services account and that match the specified filters, if any.</p>
         pub fn resolver_rules(mut self, input: crate::model::ResolverRule) -> Self {
             let mut v = self.resolver_rules.unwrap_or_default();
-            v.push(input);
-            self.resolver_rules = Some(v);
-            self
+                            v.push(input);
+                            self.resolver_rules = Some(v);
+                            self
         }
         /// <p>The Resolver rules that were created using the current Amazon Web Services account and that match the specified filters, if any.</p>
-        pub fn set_resolver_rules(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ResolverRule>>,
-        ) -> Self {
-            self.resolver_rules = input;
-            self
+        pub fn set_resolver_rules(mut self, input: std::option::Option<std::vec::Vec<crate::model::ResolverRule>>) -> Self {
+            self.resolver_rules = input; self
         }
         /// Consumes the builder and constructs a [`ListResolverRulesOutput`](crate::output::ListResolverRulesOutput).
         pub fn build(self) -> crate::output::ListResolverRulesOutput {
             crate::output::ListResolverRulesOutput {
-                next_token: self.next_token,
-                max_results: self.max_results,
-                resolver_rules: self.resolver_rules,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+                resolver_rules: self.resolver_rules
+                ,
             }
         }
     }
+    
+    
 }
 impl ListResolverRulesOutput {
     /// Creates a new builder-style object to manufacture [`ListResolverRulesOutput`](crate::output::ListResolverRulesOutput).
@@ -842,7 +839,7 @@ impl ListResolverRulesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListResolverRuleAssociationsOutput {
+pub struct ListResolverRuleAssociationsOutput  {
     /// <p>If more than <code>MaxResults</code> rule associations match the specified criteria, you can submit another <code>ListResolverRuleAssociation</code> request to get the next group of results. In the next request, specify the value of <code>NextToken</code> from the previous response. </p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -851,12 +848,11 @@ pub struct ListResolverRuleAssociationsOutput {
     pub max_results: std::option::Option<i32>,
     /// <p>The associations that were created between Resolver rules and VPCs using the current Amazon Web Services account, and that match the specified filters, if any.</p>
     #[doc(hidden)]
-    pub resolver_rule_associations:
-        std::option::Option<std::vec::Vec<crate::model::ResolverRuleAssociation>>,
+    pub resolver_rule_associations: std::option::Option<std::vec::Vec<crate::model::ResolverRuleAssociation>>,
 }
 impl ListResolverRuleAssociationsOutput {
     /// <p>If more than <code>MaxResults</code> rule associations match the specified criteria, you can submit another <code>ListResolverRuleAssociation</code> request to get the next group of results. In the next request, specify the value of <code>NextToken</code> from the previous response. </p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The value that you specified for <code>MaxResults</code> in the request.</p>
@@ -864,22 +860,19 @@ impl ListResolverRuleAssociationsOutput {
         self.max_results
     }
     /// <p>The associations that were created between Resolver rules and VPCs using the current Amazon Web Services account, and that match the specified filters, if any.</p>
-    pub fn resolver_rule_associations(
-        &self,
-    ) -> std::option::Option<&[crate::model::ResolverRuleAssociation]> {
+    pub fn resolver_rule_associations(&self) -> std::option::Option<& [crate::model::ResolverRuleAssociation]> {
         self.resolver_rule_associations.as_deref()
     }
 }
 /// See [`ListResolverRuleAssociationsOutput`](crate::output::ListResolverRuleAssociationsOutput).
 pub mod list_resolver_rule_associations_output {
-
+    
     /// A builder for [`ListResolverRuleAssociationsOutput`](crate::output::ListResolverRuleAssociationsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
-        pub(crate) resolver_rule_associations:
-            std::option::Option<std::vec::Vec<crate::model::ResolverRuleAssociation>>,
+        pub(crate) resolver_rule_associations: std::option::Option<std::vec::Vec<crate::model::ResolverRuleAssociation>>,
     }
     impl Builder {
         /// <p>If more than <code>MaxResults</code> rule associations match the specified criteria, you can submit another <code>ListResolverRuleAssociation</code> request to get the next group of results. In the next request, specify the value of <code>NextToken</code> from the previous response. </p>
@@ -889,8 +882,7 @@ pub mod list_resolver_rule_associations_output {
         }
         /// <p>If more than <code>MaxResults</code> rule associations match the specified criteria, you can submit another <code>ListResolverRuleAssociation</code> request to get the next group of results. In the next request, specify the value of <code>NextToken</code> from the previous response. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// <p>The value that you specified for <code>MaxResults</code> in the request.</p>
         pub fn max_results(mut self, input: i32) -> Self {
@@ -899,40 +891,37 @@ pub mod list_resolver_rule_associations_output {
         }
         /// <p>The value that you specified for <code>MaxResults</code> in the request.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_results = input;
-            self
+            self.max_results = input; self
         }
         /// Appends an item to `resolver_rule_associations`.
         ///
         /// To override the contents of this collection use [`set_resolver_rule_associations`](Self::set_resolver_rule_associations).
         ///
         /// <p>The associations that were created between Resolver rules and VPCs using the current Amazon Web Services account, and that match the specified filters, if any.</p>
-        pub fn resolver_rule_associations(
-            mut self,
-            input: crate::model::ResolverRuleAssociation,
-        ) -> Self {
+        pub fn resolver_rule_associations(mut self, input: crate::model::ResolverRuleAssociation) -> Self {
             let mut v = self.resolver_rule_associations.unwrap_or_default();
-            v.push(input);
-            self.resolver_rule_associations = Some(v);
-            self
+                            v.push(input);
+                            self.resolver_rule_associations = Some(v);
+                            self
         }
         /// <p>The associations that were created between Resolver rules and VPCs using the current Amazon Web Services account, and that match the specified filters, if any.</p>
-        pub fn set_resolver_rule_associations(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ResolverRuleAssociation>>,
-        ) -> Self {
-            self.resolver_rule_associations = input;
-            self
+        pub fn set_resolver_rule_associations(mut self, input: std::option::Option<std::vec::Vec<crate::model::ResolverRuleAssociation>>) -> Self {
+            self.resolver_rule_associations = input; self
         }
         /// Consumes the builder and constructs a [`ListResolverRuleAssociationsOutput`](crate::output::ListResolverRuleAssociationsOutput).
         pub fn build(self) -> crate::output::ListResolverRuleAssociationsOutput {
             crate::output::ListResolverRuleAssociationsOutput {
-                next_token: self.next_token,
-                max_results: self.max_results,
-                resolver_rule_associations: self.resolver_rule_associations,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+                resolver_rule_associations: self.resolver_rule_associations
+                ,
             }
         }
     }
+    
+    
 }
 impl ListResolverRuleAssociationsOutput {
     /// Creates a new builder-style object to manufacture [`ListResolverRuleAssociationsOutput`](crate::output::ListResolverRuleAssociationsOutput).
@@ -944,7 +933,7 @@ impl ListResolverRuleAssociationsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListResolverQueryLogConfigsOutput {
+pub struct ListResolverQueryLogConfigsOutput  {
     /// <p>If there are more than <code>MaxResults</code> query logging configurations, you can submit another <code>ListResolverQueryLogConfigs</code> request to get the next group of configurations. In the next request, specify the value of <code>NextToken</code> from the previous response. </p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -956,12 +945,11 @@ pub struct ListResolverQueryLogConfigsOutput {
     pub total_filtered_count: i32,
     /// <p>A list that contains one <code>ResolverQueryLogConfig</code> element for each query logging configuration that matches the values that you specified for <code>Filter</code>.</p>
     #[doc(hidden)]
-    pub resolver_query_log_configs:
-        std::option::Option<std::vec::Vec<crate::model::ResolverQueryLogConfig>>,
+    pub resolver_query_log_configs: std::option::Option<std::vec::Vec<crate::model::ResolverQueryLogConfig>>,
 }
 impl ListResolverQueryLogConfigsOutput {
     /// <p>If there are more than <code>MaxResults</code> query logging configurations, you can submit another <code>ListResolverQueryLogConfigs</code> request to get the next group of configurations. In the next request, specify the value of <code>NextToken</code> from the previous response. </p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The total number of query logging configurations that were created by the current account in the specified Region. This count can differ from the number of query logging configurations that are returned in a <code>ListResolverQueryLogConfigs</code> response, depending on the values that you specify in the request.</p>
@@ -973,23 +961,20 @@ impl ListResolverQueryLogConfigsOutput {
         self.total_filtered_count
     }
     /// <p>A list that contains one <code>ResolverQueryLogConfig</code> element for each query logging configuration that matches the values that you specified for <code>Filter</code>.</p>
-    pub fn resolver_query_log_configs(
-        &self,
-    ) -> std::option::Option<&[crate::model::ResolverQueryLogConfig]> {
+    pub fn resolver_query_log_configs(&self) -> std::option::Option<& [crate::model::ResolverQueryLogConfig]> {
         self.resolver_query_log_configs.as_deref()
     }
 }
 /// See [`ListResolverQueryLogConfigsOutput`](crate::output::ListResolverQueryLogConfigsOutput).
 pub mod list_resolver_query_log_configs_output {
-
+    
     /// A builder for [`ListResolverQueryLogConfigsOutput`](crate::output::ListResolverQueryLogConfigsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) total_count: std::option::Option<i32>,
         pub(crate) total_filtered_count: std::option::Option<i32>,
-        pub(crate) resolver_query_log_configs:
-            std::option::Option<std::vec::Vec<crate::model::ResolverQueryLogConfig>>,
+        pub(crate) resolver_query_log_configs: std::option::Option<std::vec::Vec<crate::model::ResolverQueryLogConfig>>,
     }
     impl Builder {
         /// <p>If there are more than <code>MaxResults</code> query logging configurations, you can submit another <code>ListResolverQueryLogConfigs</code> request to get the next group of configurations. In the next request, specify the value of <code>NextToken</code> from the previous response. </p>
@@ -999,8 +984,7 @@ pub mod list_resolver_query_log_configs_output {
         }
         /// <p>If there are more than <code>MaxResults</code> query logging configurations, you can submit another <code>ListResolverQueryLogConfigs</code> request to get the next group of configurations. In the next request, specify the value of <code>NextToken</code> from the previous response. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// <p>The total number of query logging configurations that were created by the current account in the specified Region. This count can differ from the number of query logging configurations that are returned in a <code>ListResolverQueryLogConfigs</code> response, depending on the values that you specify in the request.</p>
         pub fn total_count(mut self, input: i32) -> Self {
@@ -1009,8 +993,7 @@ pub mod list_resolver_query_log_configs_output {
         }
         /// <p>The total number of query logging configurations that were created by the current account in the specified Region. This count can differ from the number of query logging configurations that are returned in a <code>ListResolverQueryLogConfigs</code> response, depending on the values that you specify in the request.</p>
         pub fn set_total_count(mut self, input: std::option::Option<i32>) -> Self {
-            self.total_count = input;
-            self
+            self.total_count = input; self
         }
         /// <p>The total number of query logging configurations that were created by the current account in the specified Region and that match the filters that were specified in the <code>ListResolverQueryLogConfigs</code> request. For the total number of query logging configurations that were created by the current account in the specified Region, see <code>TotalCount</code>.</p>
         pub fn total_filtered_count(mut self, input: i32) -> Self {
@@ -1019,41 +1002,41 @@ pub mod list_resolver_query_log_configs_output {
         }
         /// <p>The total number of query logging configurations that were created by the current account in the specified Region and that match the filters that were specified in the <code>ListResolverQueryLogConfigs</code> request. For the total number of query logging configurations that were created by the current account in the specified Region, see <code>TotalCount</code>.</p>
         pub fn set_total_filtered_count(mut self, input: std::option::Option<i32>) -> Self {
-            self.total_filtered_count = input;
-            self
+            self.total_filtered_count = input; self
         }
         /// Appends an item to `resolver_query_log_configs`.
         ///
         /// To override the contents of this collection use [`set_resolver_query_log_configs`](Self::set_resolver_query_log_configs).
         ///
         /// <p>A list that contains one <code>ResolverQueryLogConfig</code> element for each query logging configuration that matches the values that you specified for <code>Filter</code>.</p>
-        pub fn resolver_query_log_configs(
-            mut self,
-            input: crate::model::ResolverQueryLogConfig,
-        ) -> Self {
+        pub fn resolver_query_log_configs(mut self, input: crate::model::ResolverQueryLogConfig) -> Self {
             let mut v = self.resolver_query_log_configs.unwrap_or_default();
-            v.push(input);
-            self.resolver_query_log_configs = Some(v);
-            self
+                            v.push(input);
+                            self.resolver_query_log_configs = Some(v);
+                            self
         }
         /// <p>A list that contains one <code>ResolverQueryLogConfig</code> element for each query logging configuration that matches the values that you specified for <code>Filter</code>.</p>
-        pub fn set_resolver_query_log_configs(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ResolverQueryLogConfig>>,
-        ) -> Self {
-            self.resolver_query_log_configs = input;
-            self
+        pub fn set_resolver_query_log_configs(mut self, input: std::option::Option<std::vec::Vec<crate::model::ResolverQueryLogConfig>>) -> Self {
+            self.resolver_query_log_configs = input; self
         }
         /// Consumes the builder and constructs a [`ListResolverQueryLogConfigsOutput`](crate::output::ListResolverQueryLogConfigsOutput).
         pub fn build(self) -> crate::output::ListResolverQueryLogConfigsOutput {
             crate::output::ListResolverQueryLogConfigsOutput {
-                next_token: self.next_token,
-                total_count: self.total_count.unwrap_or_default(),
-                total_filtered_count: self.total_filtered_count.unwrap_or_default(),
-                resolver_query_log_configs: self.resolver_query_log_configs,
+                next_token: self.next_token
+                ,
+                total_count: self.total_count
+                    .unwrap_or_default()
+                ,
+                total_filtered_count: self.total_filtered_count
+                    .unwrap_or_default()
+                ,
+                resolver_query_log_configs: self.resolver_query_log_configs
+                ,
             }
         }
     }
+    
+    
 }
 impl ListResolverQueryLogConfigsOutput {
     /// Creates a new builder-style object to manufacture [`ListResolverQueryLogConfigsOutput`](crate::output::ListResolverQueryLogConfigsOutput).
@@ -1065,7 +1048,7 @@ impl ListResolverQueryLogConfigsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListResolverQueryLogConfigAssociationsOutput {
+pub struct ListResolverQueryLogConfigAssociationsOutput  {
     /// <p>If there are more than <code>MaxResults</code> query logging associations, you can submit another <code>ListResolverQueryLogConfigAssociations</code> request to get the next group of associations. In the next request, specify the value of <code>NextToken</code> from the previous response. </p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -1077,12 +1060,11 @@ pub struct ListResolverQueryLogConfigAssociationsOutput {
     pub total_filtered_count: i32,
     /// <p>A list that contains one <code>ResolverQueryLogConfigAssociations</code> element for each query logging association that matches the values that you specified for <code>Filter</code>.</p>
     #[doc(hidden)]
-    pub resolver_query_log_config_associations:
-        std::option::Option<std::vec::Vec<crate::model::ResolverQueryLogConfigAssociation>>,
+    pub resolver_query_log_config_associations: std::option::Option<std::vec::Vec<crate::model::ResolverQueryLogConfigAssociation>>,
 }
 impl ListResolverQueryLogConfigAssociationsOutput {
     /// <p>If there are more than <code>MaxResults</code> query logging associations, you can submit another <code>ListResolverQueryLogConfigAssociations</code> request to get the next group of associations. In the next request, specify the value of <code>NextToken</code> from the previous response. </p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The total number of query logging associations that were created by the current account in the specified Region. This count can differ from the number of associations that are returned in a <code>ListResolverQueryLogConfigAssociations</code> response, depending on the values that you specify in the request.</p>
@@ -1094,23 +1076,20 @@ impl ListResolverQueryLogConfigAssociationsOutput {
         self.total_filtered_count
     }
     /// <p>A list that contains one <code>ResolverQueryLogConfigAssociations</code> element for each query logging association that matches the values that you specified for <code>Filter</code>.</p>
-    pub fn resolver_query_log_config_associations(
-        &self,
-    ) -> std::option::Option<&[crate::model::ResolverQueryLogConfigAssociation]> {
+    pub fn resolver_query_log_config_associations(&self) -> std::option::Option<& [crate::model::ResolverQueryLogConfigAssociation]> {
         self.resolver_query_log_config_associations.as_deref()
     }
 }
 /// See [`ListResolverQueryLogConfigAssociationsOutput`](crate::output::ListResolverQueryLogConfigAssociationsOutput).
 pub mod list_resolver_query_log_config_associations_output {
-
+    
     /// A builder for [`ListResolverQueryLogConfigAssociationsOutput`](crate::output::ListResolverQueryLogConfigAssociationsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) total_count: std::option::Option<i32>,
         pub(crate) total_filtered_count: std::option::Option<i32>,
-        pub(crate) resolver_query_log_config_associations:
-            std::option::Option<std::vec::Vec<crate::model::ResolverQueryLogConfigAssociation>>,
+        pub(crate) resolver_query_log_config_associations: std::option::Option<std::vec::Vec<crate::model::ResolverQueryLogConfigAssociation>>,
     }
     impl Builder {
         /// <p>If there are more than <code>MaxResults</code> query logging associations, you can submit another <code>ListResolverQueryLogConfigAssociations</code> request to get the next group of associations. In the next request, specify the value of <code>NextToken</code> from the previous response. </p>
@@ -1120,8 +1099,7 @@ pub mod list_resolver_query_log_config_associations_output {
         }
         /// <p>If there are more than <code>MaxResults</code> query logging associations, you can submit another <code>ListResolverQueryLogConfigAssociations</code> request to get the next group of associations. In the next request, specify the value of <code>NextToken</code> from the previous response. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// <p>The total number of query logging associations that were created by the current account in the specified Region. This count can differ from the number of associations that are returned in a <code>ListResolverQueryLogConfigAssociations</code> response, depending on the values that you specify in the request.</p>
         pub fn total_count(mut self, input: i32) -> Self {
@@ -1130,8 +1108,7 @@ pub mod list_resolver_query_log_config_associations_output {
         }
         /// <p>The total number of query logging associations that were created by the current account in the specified Region. This count can differ from the number of associations that are returned in a <code>ListResolverQueryLogConfigAssociations</code> response, depending on the values that you specify in the request.</p>
         pub fn set_total_count(mut self, input: std::option::Option<i32>) -> Self {
-            self.total_count = input;
-            self
+            self.total_count = input; self
         }
         /// <p>The total number of query logging associations that were created by the current account in the specified Region and that match the filters that were specified in the <code>ListResolverQueryLogConfigAssociations</code> request. For the total number of associations that were created by the current account in the specified Region, see <code>TotalCount</code>.</p>
         pub fn total_filtered_count(mut self, input: i32) -> Self {
@@ -1140,45 +1117,41 @@ pub mod list_resolver_query_log_config_associations_output {
         }
         /// <p>The total number of query logging associations that were created by the current account in the specified Region and that match the filters that were specified in the <code>ListResolverQueryLogConfigAssociations</code> request. For the total number of associations that were created by the current account in the specified Region, see <code>TotalCount</code>.</p>
         pub fn set_total_filtered_count(mut self, input: std::option::Option<i32>) -> Self {
-            self.total_filtered_count = input;
-            self
+            self.total_filtered_count = input; self
         }
         /// Appends an item to `resolver_query_log_config_associations`.
         ///
         /// To override the contents of this collection use [`set_resolver_query_log_config_associations`](Self::set_resolver_query_log_config_associations).
         ///
         /// <p>A list that contains one <code>ResolverQueryLogConfigAssociations</code> element for each query logging association that matches the values that you specified for <code>Filter</code>.</p>
-        pub fn resolver_query_log_config_associations(
-            mut self,
-            input: crate::model::ResolverQueryLogConfigAssociation,
-        ) -> Self {
-            let mut v = self
-                .resolver_query_log_config_associations
-                .unwrap_or_default();
-            v.push(input);
-            self.resolver_query_log_config_associations = Some(v);
-            self
+        pub fn resolver_query_log_config_associations(mut self, input: crate::model::ResolverQueryLogConfigAssociation) -> Self {
+            let mut v = self.resolver_query_log_config_associations.unwrap_or_default();
+                            v.push(input);
+                            self.resolver_query_log_config_associations = Some(v);
+                            self
         }
         /// <p>A list that contains one <code>ResolverQueryLogConfigAssociations</code> element for each query logging association that matches the values that you specified for <code>Filter</code>.</p>
-        pub fn set_resolver_query_log_config_associations(
-            mut self,
-            input: std::option::Option<
-                std::vec::Vec<crate::model::ResolverQueryLogConfigAssociation>,
-            >,
-        ) -> Self {
-            self.resolver_query_log_config_associations = input;
-            self
+        pub fn set_resolver_query_log_config_associations(mut self, input: std::option::Option<std::vec::Vec<crate::model::ResolverQueryLogConfigAssociation>>) -> Self {
+            self.resolver_query_log_config_associations = input; self
         }
         /// Consumes the builder and constructs a [`ListResolverQueryLogConfigAssociationsOutput`](crate::output::ListResolverQueryLogConfigAssociationsOutput).
         pub fn build(self) -> crate::output::ListResolverQueryLogConfigAssociationsOutput {
             crate::output::ListResolverQueryLogConfigAssociationsOutput {
-                next_token: self.next_token,
-                total_count: self.total_count.unwrap_or_default(),
-                total_filtered_count: self.total_filtered_count.unwrap_or_default(),
-                resolver_query_log_config_associations: self.resolver_query_log_config_associations,
+                next_token: self.next_token
+                ,
+                total_count: self.total_count
+                    .unwrap_or_default()
+                ,
+                total_filtered_count: self.total_filtered_count
+                    .unwrap_or_default()
+                ,
+                resolver_query_log_config_associations: self.resolver_query_log_config_associations
+                ,
             }
         }
     }
+    
+    
 }
 impl ListResolverQueryLogConfigAssociationsOutput {
     /// Creates a new builder-style object to manufacture [`ListResolverQueryLogConfigAssociationsOutput`](crate::output::ListResolverQueryLogConfigAssociationsOutput).
@@ -1190,7 +1163,7 @@ impl ListResolverQueryLogConfigAssociationsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListResolverEndpointsOutput {
+pub struct ListResolverEndpointsOutput  {
     /// <p>If more than <code>MaxResults</code> IP addresses match the specified criteria, you can submit another <code>ListResolverEndpoint</code> request to get the next group of results. In the next request, specify the value of <code>NextToken</code> from the previous response. </p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -1203,7 +1176,7 @@ pub struct ListResolverEndpointsOutput {
 }
 impl ListResolverEndpointsOutput {
     /// <p>If more than <code>MaxResults</code> IP addresses match the specified criteria, you can submit another <code>ListResolverEndpoint</code> request to get the next group of results. In the next request, specify the value of <code>NextToken</code> from the previous response. </p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The value that you specified for <code>MaxResults</code> in the request.</p>
@@ -1211,20 +1184,19 @@ impl ListResolverEndpointsOutput {
         self.max_results
     }
     /// <p>The Resolver endpoints that were created by using the current Amazon Web Services account, and that match the specified filters, if any.</p>
-    pub fn resolver_endpoints(&self) -> std::option::Option<&[crate::model::ResolverEndpoint]> {
+    pub fn resolver_endpoints(&self) -> std::option::Option<& [crate::model::ResolverEndpoint]> {
         self.resolver_endpoints.as_deref()
     }
 }
 /// See [`ListResolverEndpointsOutput`](crate::output::ListResolverEndpointsOutput).
 pub mod list_resolver_endpoints_output {
-
+    
     /// A builder for [`ListResolverEndpointsOutput`](crate::output::ListResolverEndpointsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
-        pub(crate) resolver_endpoints:
-            std::option::Option<std::vec::Vec<crate::model::ResolverEndpoint>>,
+        pub(crate) resolver_endpoints: std::option::Option<std::vec::Vec<crate::model::ResolverEndpoint>>,
     }
     impl Builder {
         /// <p>If more than <code>MaxResults</code> IP addresses match the specified criteria, you can submit another <code>ListResolverEndpoint</code> request to get the next group of results. In the next request, specify the value of <code>NextToken</code> from the previous response. </p>
@@ -1234,8 +1206,7 @@ pub mod list_resolver_endpoints_output {
         }
         /// <p>If more than <code>MaxResults</code> IP addresses match the specified criteria, you can submit another <code>ListResolverEndpoint</code> request to get the next group of results. In the next request, specify the value of <code>NextToken</code> from the previous response. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// <p>The value that you specified for <code>MaxResults</code> in the request.</p>
         pub fn max_results(mut self, input: i32) -> Self {
@@ -1244,8 +1215,7 @@ pub mod list_resolver_endpoints_output {
         }
         /// <p>The value that you specified for <code>MaxResults</code> in the request.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_results = input;
-            self
+            self.max_results = input; self
         }
         /// Appends an item to `resolver_endpoints`.
         ///
@@ -1254,27 +1224,28 @@ pub mod list_resolver_endpoints_output {
         /// <p>The Resolver endpoints that were created by using the current Amazon Web Services account, and that match the specified filters, if any.</p>
         pub fn resolver_endpoints(mut self, input: crate::model::ResolverEndpoint) -> Self {
             let mut v = self.resolver_endpoints.unwrap_or_default();
-            v.push(input);
-            self.resolver_endpoints = Some(v);
-            self
+                            v.push(input);
+                            self.resolver_endpoints = Some(v);
+                            self
         }
         /// <p>The Resolver endpoints that were created by using the current Amazon Web Services account, and that match the specified filters, if any.</p>
-        pub fn set_resolver_endpoints(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ResolverEndpoint>>,
-        ) -> Self {
-            self.resolver_endpoints = input;
-            self
+        pub fn set_resolver_endpoints(mut self, input: std::option::Option<std::vec::Vec<crate::model::ResolverEndpoint>>) -> Self {
+            self.resolver_endpoints = input; self
         }
         /// Consumes the builder and constructs a [`ListResolverEndpointsOutput`](crate::output::ListResolverEndpointsOutput).
         pub fn build(self) -> crate::output::ListResolverEndpointsOutput {
             crate::output::ListResolverEndpointsOutput {
-                next_token: self.next_token,
-                max_results: self.max_results,
-                resolver_endpoints: self.resolver_endpoints,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+                resolver_endpoints: self.resolver_endpoints
+                ,
             }
         }
     }
+    
+    
 }
 impl ListResolverEndpointsOutput {
     /// Creates a new builder-style object to manufacture [`ListResolverEndpointsOutput`](crate::output::ListResolverEndpointsOutput).
@@ -1286,7 +1257,7 @@ impl ListResolverEndpointsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListResolverEndpointIpAddressesOutput {
+pub struct ListResolverEndpointIpAddressesOutput  {
     /// <p>If the specified endpoint has more than <code>MaxResults</code> IP addresses, you can submit another <code>ListResolverEndpointIpAddresses</code> request to get the next group of IP addresses. In the next request, specify the value of <code>NextToken</code> from the previous response. </p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -1299,7 +1270,7 @@ pub struct ListResolverEndpointIpAddressesOutput {
 }
 impl ListResolverEndpointIpAddressesOutput {
     /// <p>If the specified endpoint has more than <code>MaxResults</code> IP addresses, you can submit another <code>ListResolverEndpointIpAddresses</code> request to get the next group of IP addresses. In the next request, specify the value of <code>NextToken</code> from the previous response. </p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The value that you specified for <code>MaxResults</code> in the request.</p>
@@ -1307,20 +1278,19 @@ impl ListResolverEndpointIpAddressesOutput {
         self.max_results
     }
     /// <p>Information about the IP addresses in your VPC that DNS queries originate from (for outbound endpoints) or that you forward DNS queries to (for inbound endpoints).</p>
-    pub fn ip_addresses(&self) -> std::option::Option<&[crate::model::IpAddressResponse]> {
+    pub fn ip_addresses(&self) -> std::option::Option<& [crate::model::IpAddressResponse]> {
         self.ip_addresses.as_deref()
     }
 }
 /// See [`ListResolverEndpointIpAddressesOutput`](crate::output::ListResolverEndpointIpAddressesOutput).
 pub mod list_resolver_endpoint_ip_addresses_output {
-
+    
     /// A builder for [`ListResolverEndpointIpAddressesOutput`](crate::output::ListResolverEndpointIpAddressesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
-        pub(crate) ip_addresses:
-            std::option::Option<std::vec::Vec<crate::model::IpAddressResponse>>,
+        pub(crate) ip_addresses: std::option::Option<std::vec::Vec<crate::model::IpAddressResponse>>,
     }
     impl Builder {
         /// <p>If the specified endpoint has more than <code>MaxResults</code> IP addresses, you can submit another <code>ListResolverEndpointIpAddresses</code> request to get the next group of IP addresses. In the next request, specify the value of <code>NextToken</code> from the previous response. </p>
@@ -1330,8 +1300,7 @@ pub mod list_resolver_endpoint_ip_addresses_output {
         }
         /// <p>If the specified endpoint has more than <code>MaxResults</code> IP addresses, you can submit another <code>ListResolverEndpointIpAddresses</code> request to get the next group of IP addresses. In the next request, specify the value of <code>NextToken</code> from the previous response. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// <p>The value that you specified for <code>MaxResults</code> in the request.</p>
         pub fn max_results(mut self, input: i32) -> Self {
@@ -1340,8 +1309,7 @@ pub mod list_resolver_endpoint_ip_addresses_output {
         }
         /// <p>The value that you specified for <code>MaxResults</code> in the request.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_results = input;
-            self
+            self.max_results = input; self
         }
         /// Appends an item to `ip_addresses`.
         ///
@@ -1350,27 +1318,28 @@ pub mod list_resolver_endpoint_ip_addresses_output {
         /// <p>Information about the IP addresses in your VPC that DNS queries originate from (for outbound endpoints) or that you forward DNS queries to (for inbound endpoints).</p>
         pub fn ip_addresses(mut self, input: crate::model::IpAddressResponse) -> Self {
             let mut v = self.ip_addresses.unwrap_or_default();
-            v.push(input);
-            self.ip_addresses = Some(v);
-            self
+                            v.push(input);
+                            self.ip_addresses = Some(v);
+                            self
         }
         /// <p>Information about the IP addresses in your VPC that DNS queries originate from (for outbound endpoints) or that you forward DNS queries to (for inbound endpoints).</p>
-        pub fn set_ip_addresses(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::IpAddressResponse>>,
-        ) -> Self {
-            self.ip_addresses = input;
-            self
+        pub fn set_ip_addresses(mut self, input: std::option::Option<std::vec::Vec<crate::model::IpAddressResponse>>) -> Self {
+            self.ip_addresses = input; self
         }
         /// Consumes the builder and constructs a [`ListResolverEndpointIpAddressesOutput`](crate::output::ListResolverEndpointIpAddressesOutput).
         pub fn build(self) -> crate::output::ListResolverEndpointIpAddressesOutput {
             crate::output::ListResolverEndpointIpAddressesOutput {
-                next_token: self.next_token,
-                max_results: self.max_results,
-                ip_addresses: self.ip_addresses,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+                ip_addresses: self.ip_addresses
+                ,
             }
         }
     }
+    
+    
 }
 impl ListResolverEndpointIpAddressesOutput {
     /// Creates a new builder-style object to manufacture [`ListResolverEndpointIpAddressesOutput`](crate::output::ListResolverEndpointIpAddressesOutput).
@@ -1382,82 +1351,74 @@ impl ListResolverEndpointIpAddressesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListResolverDnssecConfigsOutput {
-    /// <p>If a response includes the last of the DNSSEC configurations that are associated with the current Amazon Web Services account, <code>NextToken</code> doesn't appear in the response.</p>
+pub struct ListResolverDnssecConfigsOutput  {
+    /// <p>If a response includes the last of the DNSSEC configurations that are associated with the current Amazon Web Services account, <code>NextToken</code> doesn't appear in the response.</p> 
     /// <p>If a response doesn't include the last of the configurations, you can get more configurations by submitting another <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_ListResolverDnssecConfigs.html">ListResolverDnssecConfigs</a> request. Get the value of <code>NextToken</code> that Amazon Route 53 returned in the previous response and include it in <code>NextToken</code> in the next request.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>An array that contains one <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_ResolverDnssecConfig.html">ResolverDnssecConfig</a> element for each configuration for DNSSEC validation that is associated with the current Amazon Web Services account.</p>
     #[doc(hidden)]
-    pub resolver_dnssec_configs:
-        std::option::Option<std::vec::Vec<crate::model::ResolverDnssecConfig>>,
+    pub resolver_dnssec_configs: std::option::Option<std::vec::Vec<crate::model::ResolverDnssecConfig>>,
 }
 impl ListResolverDnssecConfigsOutput {
-    /// <p>If a response includes the last of the DNSSEC configurations that are associated with the current Amazon Web Services account, <code>NextToken</code> doesn't appear in the response.</p>
+    /// <p>If a response includes the last of the DNSSEC configurations that are associated with the current Amazon Web Services account, <code>NextToken</code> doesn't appear in the response.</p> 
     /// <p>If a response doesn't include the last of the configurations, you can get more configurations by submitting another <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_ListResolverDnssecConfigs.html">ListResolverDnssecConfigs</a> request. Get the value of <code>NextToken</code> that Amazon Route 53 returned in the previous response and include it in <code>NextToken</code> in the next request.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>An array that contains one <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_ResolverDnssecConfig.html">ResolverDnssecConfig</a> element for each configuration for DNSSEC validation that is associated with the current Amazon Web Services account.</p>
-    pub fn resolver_dnssec_configs(
-        &self,
-    ) -> std::option::Option<&[crate::model::ResolverDnssecConfig]> {
+    pub fn resolver_dnssec_configs(&self) -> std::option::Option<& [crate::model::ResolverDnssecConfig]> {
         self.resolver_dnssec_configs.as_deref()
     }
 }
 /// See [`ListResolverDnssecConfigsOutput`](crate::output::ListResolverDnssecConfigsOutput).
 pub mod list_resolver_dnssec_configs_output {
-
+    
     /// A builder for [`ListResolverDnssecConfigsOutput`](crate::output::ListResolverDnssecConfigsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
-        pub(crate) resolver_dnssec_configs:
-            std::option::Option<std::vec::Vec<crate::model::ResolverDnssecConfig>>,
+        pub(crate) resolver_dnssec_configs: std::option::Option<std::vec::Vec<crate::model::ResolverDnssecConfig>>,
     }
     impl Builder {
-        /// <p>If a response includes the last of the DNSSEC configurations that are associated with the current Amazon Web Services account, <code>NextToken</code> doesn't appear in the response.</p>
+        /// <p>If a response includes the last of the DNSSEC configurations that are associated with the current Amazon Web Services account, <code>NextToken</code> doesn't appear in the response.</p> 
         /// <p>If a response doesn't include the last of the configurations, you can get more configurations by submitting another <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_ListResolverDnssecConfigs.html">ListResolverDnssecConfigs</a> request. Get the value of <code>NextToken</code> that Amazon Route 53 returned in the previous response and include it in <code>NextToken</code> in the next request.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If a response includes the last of the DNSSEC configurations that are associated with the current Amazon Web Services account, <code>NextToken</code> doesn't appear in the response.</p>
+        /// <p>If a response includes the last of the DNSSEC configurations that are associated with the current Amazon Web Services account, <code>NextToken</code> doesn't appear in the response.</p> 
         /// <p>If a response doesn't include the last of the configurations, you can get more configurations by submitting another <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_ListResolverDnssecConfigs.html">ListResolverDnssecConfigs</a> request. Get the value of <code>NextToken</code> that Amazon Route 53 returned in the previous response and include it in <code>NextToken</code> in the next request.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Appends an item to `resolver_dnssec_configs`.
         ///
         /// To override the contents of this collection use [`set_resolver_dnssec_configs`](Self::set_resolver_dnssec_configs).
         ///
         /// <p>An array that contains one <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_ResolverDnssecConfig.html">ResolverDnssecConfig</a> element for each configuration for DNSSEC validation that is associated with the current Amazon Web Services account.</p>
-        pub fn resolver_dnssec_configs(
-            mut self,
-            input: crate::model::ResolverDnssecConfig,
-        ) -> Self {
+        pub fn resolver_dnssec_configs(mut self, input: crate::model::ResolverDnssecConfig) -> Self {
             let mut v = self.resolver_dnssec_configs.unwrap_or_default();
-            v.push(input);
-            self.resolver_dnssec_configs = Some(v);
-            self
+                            v.push(input);
+                            self.resolver_dnssec_configs = Some(v);
+                            self
         }
         /// <p>An array that contains one <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_ResolverDnssecConfig.html">ResolverDnssecConfig</a> element for each configuration for DNSSEC validation that is associated with the current Amazon Web Services account.</p>
-        pub fn set_resolver_dnssec_configs(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ResolverDnssecConfig>>,
-        ) -> Self {
-            self.resolver_dnssec_configs = input;
-            self
+        pub fn set_resolver_dnssec_configs(mut self, input: std::option::Option<std::vec::Vec<crate::model::ResolverDnssecConfig>>) -> Self {
+            self.resolver_dnssec_configs = input; self
         }
         /// Consumes the builder and constructs a [`ListResolverDnssecConfigsOutput`](crate::output::ListResolverDnssecConfigsOutput).
         pub fn build(self) -> crate::output::ListResolverDnssecConfigsOutput {
             crate::output::ListResolverDnssecConfigsOutput {
-                next_token: self.next_token,
-                resolver_dnssec_configs: self.resolver_dnssec_configs,
+                next_token: self.next_token
+                ,
+                resolver_dnssec_configs: self.resolver_dnssec_configs
+                ,
             }
         }
     }
+    
+    
 }
 impl ListResolverDnssecConfigsOutput {
     /// Creates a new builder-style object to manufacture [`ListResolverDnssecConfigsOutput`](crate::output::ListResolverDnssecConfigsOutput).
@@ -1469,8 +1430,8 @@ impl ListResolverDnssecConfigsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListResolverConfigsOutput {
-    /// <p>If a response includes the last of the Resolver configurations that are associated with the current Amazon Web Services account, <code>NextToken</code> doesn't appear in the response.</p>
+pub struct ListResolverConfigsOutput  {
+    /// <p>If a response includes the last of the Resolver configurations that are associated with the current Amazon Web Services account, <code>NextToken</code> doesn't appear in the response.</p> 
     /// <p>If a response doesn't include the last of the configurations, you can get more configurations by submitting another <code>ListResolverConfigs</code> request. Get the value of <code>NextToken</code> that Amazon Route 53 returned in the previous response and include it in <code>NextToken</code> in the next request.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -1479,38 +1440,36 @@ pub struct ListResolverConfigsOutput {
     pub resolver_configs: std::option::Option<std::vec::Vec<crate::model::ResolverConfig>>,
 }
 impl ListResolverConfigsOutput {
-    /// <p>If a response includes the last of the Resolver configurations that are associated with the current Amazon Web Services account, <code>NextToken</code> doesn't appear in the response.</p>
+    /// <p>If a response includes the last of the Resolver configurations that are associated with the current Amazon Web Services account, <code>NextToken</code> doesn't appear in the response.</p> 
     /// <p>If a response doesn't include the last of the configurations, you can get more configurations by submitting another <code>ListResolverConfigs</code> request. Get the value of <code>NextToken</code> that Amazon Route 53 returned in the previous response and include it in <code>NextToken</code> in the next request.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>An array that contains one <code>ResolverConfigs</code> element for each Resolver configuration that is associated with the current Amazon Web Services account.</p>
-    pub fn resolver_configs(&self) -> std::option::Option<&[crate::model::ResolverConfig]> {
+    pub fn resolver_configs(&self) -> std::option::Option<& [crate::model::ResolverConfig]> {
         self.resolver_configs.as_deref()
     }
 }
 /// See [`ListResolverConfigsOutput`](crate::output::ListResolverConfigsOutput).
 pub mod list_resolver_configs_output {
-
+    
     /// A builder for [`ListResolverConfigsOutput`](crate::output::ListResolverConfigsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
-        pub(crate) resolver_configs:
-            std::option::Option<std::vec::Vec<crate::model::ResolverConfig>>,
+        pub(crate) resolver_configs: std::option::Option<std::vec::Vec<crate::model::ResolverConfig>>,
     }
     impl Builder {
-        /// <p>If a response includes the last of the Resolver configurations that are associated with the current Amazon Web Services account, <code>NextToken</code> doesn't appear in the response.</p>
+        /// <p>If a response includes the last of the Resolver configurations that are associated with the current Amazon Web Services account, <code>NextToken</code> doesn't appear in the response.</p> 
         /// <p>If a response doesn't include the last of the configurations, you can get more configurations by submitting another <code>ListResolverConfigs</code> request. Get the value of <code>NextToken</code> that Amazon Route 53 returned in the previous response and include it in <code>NextToken</code> in the next request.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If a response includes the last of the Resolver configurations that are associated with the current Amazon Web Services account, <code>NextToken</code> doesn't appear in the response.</p>
+        /// <p>If a response includes the last of the Resolver configurations that are associated with the current Amazon Web Services account, <code>NextToken</code> doesn't appear in the response.</p> 
         /// <p>If a response doesn't include the last of the configurations, you can get more configurations by submitting another <code>ListResolverConfigs</code> request. Get the value of <code>NextToken</code> that Amazon Route 53 returned in the previous response and include it in <code>NextToken</code> in the next request.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Appends an item to `resolver_configs`.
         ///
@@ -1519,26 +1478,26 @@ pub mod list_resolver_configs_output {
         /// <p>An array that contains one <code>ResolverConfigs</code> element for each Resolver configuration that is associated with the current Amazon Web Services account.</p>
         pub fn resolver_configs(mut self, input: crate::model::ResolverConfig) -> Self {
             let mut v = self.resolver_configs.unwrap_or_default();
-            v.push(input);
-            self.resolver_configs = Some(v);
-            self
+                            v.push(input);
+                            self.resolver_configs = Some(v);
+                            self
         }
         /// <p>An array that contains one <code>ResolverConfigs</code> element for each Resolver configuration that is associated with the current Amazon Web Services account.</p>
-        pub fn set_resolver_configs(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ResolverConfig>>,
-        ) -> Self {
-            self.resolver_configs = input;
-            self
+        pub fn set_resolver_configs(mut self, input: std::option::Option<std::vec::Vec<crate::model::ResolverConfig>>) -> Self {
+            self.resolver_configs = input; self
         }
         /// Consumes the builder and constructs a [`ListResolverConfigsOutput`](crate::output::ListResolverConfigsOutput).
         pub fn build(self) -> crate::output::ListResolverConfigsOutput {
             crate::output::ListResolverConfigsOutput {
-                next_token: self.next_token,
-                resolver_configs: self.resolver_configs,
+                next_token: self.next_token
+                ,
+                resolver_configs: self.resolver_configs
+                ,
             }
         }
     }
+    
+    
 }
 impl ListResolverConfigsOutput {
     /// Creates a new builder-style object to manufacture [`ListResolverConfigsOutput`](crate::output::ListResolverConfigsOutput).
@@ -1550,29 +1509,29 @@ impl ListResolverConfigsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListFirewallRulesOutput {
+pub struct ListFirewallRulesOutput  {
     /// <p>If objects are still available for retrieval, Resolver returns this token in the response. To retrieve the next batch of objects, provide this token in your next request.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>A list of the rules that you have defined. </p>
+    /// <p>A list of the rules that you have defined. </p> 
     /// <p>This might be a partial list of the firewall rules that you've defined. For information, see <code>MaxResults</code>. </p>
     #[doc(hidden)]
     pub firewall_rules: std::option::Option<std::vec::Vec<crate::model::FirewallRule>>,
 }
 impl ListFirewallRulesOutput {
     /// <p>If objects are still available for retrieval, Resolver returns this token in the response. To retrieve the next batch of objects, provide this token in your next request.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
-    /// <p>A list of the rules that you have defined. </p>
+    /// <p>A list of the rules that you have defined. </p> 
     /// <p>This might be a partial list of the firewall rules that you've defined. For information, see <code>MaxResults</code>. </p>
-    pub fn firewall_rules(&self) -> std::option::Option<&[crate::model::FirewallRule]> {
+    pub fn firewall_rules(&self) -> std::option::Option<& [crate::model::FirewallRule]> {
         self.firewall_rules.as_deref()
     }
 }
 /// See [`ListFirewallRulesOutput`](crate::output::ListFirewallRulesOutput).
 pub mod list_firewall_rules_output {
-
+    
     /// A builder for [`ListFirewallRulesOutput`](crate::output::ListFirewallRulesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1587,38 +1546,37 @@ pub mod list_firewall_rules_output {
         }
         /// <p>If objects are still available for retrieval, Resolver returns this token in the response. To retrieve the next batch of objects, provide this token in your next request.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Appends an item to `firewall_rules`.
         ///
         /// To override the contents of this collection use [`set_firewall_rules`](Self::set_firewall_rules).
         ///
-        /// <p>A list of the rules that you have defined. </p>
+        /// <p>A list of the rules that you have defined. </p> 
         /// <p>This might be a partial list of the firewall rules that you've defined. For information, see <code>MaxResults</code>. </p>
         pub fn firewall_rules(mut self, input: crate::model::FirewallRule) -> Self {
             let mut v = self.firewall_rules.unwrap_or_default();
-            v.push(input);
-            self.firewall_rules = Some(v);
-            self
+                            v.push(input);
+                            self.firewall_rules = Some(v);
+                            self
         }
-        /// <p>A list of the rules that you have defined. </p>
+        /// <p>A list of the rules that you have defined. </p> 
         /// <p>This might be a partial list of the firewall rules that you've defined. For information, see <code>MaxResults</code>. </p>
-        pub fn set_firewall_rules(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::FirewallRule>>,
-        ) -> Self {
-            self.firewall_rules = input;
-            self
+        pub fn set_firewall_rules(mut self, input: std::option::Option<std::vec::Vec<crate::model::FirewallRule>>) -> Self {
+            self.firewall_rules = input; self
         }
         /// Consumes the builder and constructs a [`ListFirewallRulesOutput`](crate::output::ListFirewallRulesOutput).
         pub fn build(self) -> crate::output::ListFirewallRulesOutput {
             crate::output::ListFirewallRulesOutput {
-                next_token: self.next_token,
-                firewall_rules: self.firewall_rules,
+                next_token: self.next_token
+                ,
+                firewall_rules: self.firewall_rules
+                ,
             }
         }
     }
+    
+    
 }
 impl ListFirewallRulesOutput {
     /// Creates a new builder-style object to manufacture [`ListFirewallRulesOutput`](crate::output::ListFirewallRulesOutput).
@@ -1630,38 +1588,34 @@ impl ListFirewallRulesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListFirewallRuleGroupsOutput {
+pub struct ListFirewallRuleGroupsOutput  {
     /// <p>If objects are still available for retrieval, Resolver returns this token in the response. To retrieve the next batch of objects, provide this token in your next request.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>A list of your firewall rule groups.</p>
+    /// <p>A list of your firewall rule groups.</p> 
     /// <p>This might be a partial list of the rule groups that you have defined. For information, see <code>MaxResults</code>. </p>
     #[doc(hidden)]
-    pub firewall_rule_groups:
-        std::option::Option<std::vec::Vec<crate::model::FirewallRuleGroupMetadata>>,
+    pub firewall_rule_groups: std::option::Option<std::vec::Vec<crate::model::FirewallRuleGroupMetadata>>,
 }
 impl ListFirewallRuleGroupsOutput {
     /// <p>If objects are still available for retrieval, Resolver returns this token in the response. To retrieve the next batch of objects, provide this token in your next request.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
-    /// <p>A list of your firewall rule groups.</p>
+    /// <p>A list of your firewall rule groups.</p> 
     /// <p>This might be a partial list of the rule groups that you have defined. For information, see <code>MaxResults</code>. </p>
-    pub fn firewall_rule_groups(
-        &self,
-    ) -> std::option::Option<&[crate::model::FirewallRuleGroupMetadata]> {
+    pub fn firewall_rule_groups(&self) -> std::option::Option<& [crate::model::FirewallRuleGroupMetadata]> {
         self.firewall_rule_groups.as_deref()
     }
 }
 /// See [`ListFirewallRuleGroupsOutput`](crate::output::ListFirewallRuleGroupsOutput).
 pub mod list_firewall_rule_groups_output {
-
+    
     /// A builder for [`ListFirewallRuleGroupsOutput`](crate::output::ListFirewallRuleGroupsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
-        pub(crate) firewall_rule_groups:
-            std::option::Option<std::vec::Vec<crate::model::FirewallRuleGroupMetadata>>,
+        pub(crate) firewall_rule_groups: std::option::Option<std::vec::Vec<crate::model::FirewallRuleGroupMetadata>>,
     }
     impl Builder {
         /// <p>If objects are still available for retrieval, Resolver returns this token in the response. To retrieve the next batch of objects, provide this token in your next request.</p>
@@ -1671,41 +1625,37 @@ pub mod list_firewall_rule_groups_output {
         }
         /// <p>If objects are still available for retrieval, Resolver returns this token in the response. To retrieve the next batch of objects, provide this token in your next request.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Appends an item to `firewall_rule_groups`.
         ///
         /// To override the contents of this collection use [`set_firewall_rule_groups`](Self::set_firewall_rule_groups).
         ///
-        /// <p>A list of your firewall rule groups.</p>
+        /// <p>A list of your firewall rule groups.</p> 
         /// <p>This might be a partial list of the rule groups that you have defined. For information, see <code>MaxResults</code>. </p>
-        pub fn firewall_rule_groups(
-            mut self,
-            input: crate::model::FirewallRuleGroupMetadata,
-        ) -> Self {
+        pub fn firewall_rule_groups(mut self, input: crate::model::FirewallRuleGroupMetadata) -> Self {
             let mut v = self.firewall_rule_groups.unwrap_or_default();
-            v.push(input);
-            self.firewall_rule_groups = Some(v);
-            self
+                            v.push(input);
+                            self.firewall_rule_groups = Some(v);
+                            self
         }
-        /// <p>A list of your firewall rule groups.</p>
+        /// <p>A list of your firewall rule groups.</p> 
         /// <p>This might be a partial list of the rule groups that you have defined. For information, see <code>MaxResults</code>. </p>
-        pub fn set_firewall_rule_groups(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::FirewallRuleGroupMetadata>>,
-        ) -> Self {
-            self.firewall_rule_groups = input;
-            self
+        pub fn set_firewall_rule_groups(mut self, input: std::option::Option<std::vec::Vec<crate::model::FirewallRuleGroupMetadata>>) -> Self {
+            self.firewall_rule_groups = input; self
         }
         /// Consumes the builder and constructs a [`ListFirewallRuleGroupsOutput`](crate::output::ListFirewallRuleGroupsOutput).
         pub fn build(self) -> crate::output::ListFirewallRuleGroupsOutput {
             crate::output::ListFirewallRuleGroupsOutput {
-                next_token: self.next_token,
-                firewall_rule_groups: self.firewall_rule_groups,
+                next_token: self.next_token
+                ,
+                firewall_rule_groups: self.firewall_rule_groups
+                ,
             }
         }
     }
+    
+    
 }
 impl ListFirewallRuleGroupsOutput {
     /// Creates a new builder-style object to manufacture [`ListFirewallRuleGroupsOutput`](crate::output::ListFirewallRuleGroupsOutput).
@@ -1717,38 +1667,34 @@ impl ListFirewallRuleGroupsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListFirewallRuleGroupAssociationsOutput {
+pub struct ListFirewallRuleGroupAssociationsOutput  {
     /// <p>If objects are still available for retrieval, Resolver returns this token in the response. To retrieve the next batch of objects, provide this token in your next request.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>A list of your firewall rule group associations.</p>
+    /// <p>A list of your firewall rule group associations.</p> 
     /// <p>This might be a partial list of the associations that you have defined. For information, see <code>MaxResults</code>. </p>
     #[doc(hidden)]
-    pub firewall_rule_group_associations:
-        std::option::Option<std::vec::Vec<crate::model::FirewallRuleGroupAssociation>>,
+    pub firewall_rule_group_associations: std::option::Option<std::vec::Vec<crate::model::FirewallRuleGroupAssociation>>,
 }
 impl ListFirewallRuleGroupAssociationsOutput {
     /// <p>If objects are still available for retrieval, Resolver returns this token in the response. To retrieve the next batch of objects, provide this token in your next request.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
-    /// <p>A list of your firewall rule group associations.</p>
+    /// <p>A list of your firewall rule group associations.</p> 
     /// <p>This might be a partial list of the associations that you have defined. For information, see <code>MaxResults</code>. </p>
-    pub fn firewall_rule_group_associations(
-        &self,
-    ) -> std::option::Option<&[crate::model::FirewallRuleGroupAssociation]> {
+    pub fn firewall_rule_group_associations(&self) -> std::option::Option<& [crate::model::FirewallRuleGroupAssociation]> {
         self.firewall_rule_group_associations.as_deref()
     }
 }
 /// See [`ListFirewallRuleGroupAssociationsOutput`](crate::output::ListFirewallRuleGroupAssociationsOutput).
 pub mod list_firewall_rule_group_associations_output {
-
+    
     /// A builder for [`ListFirewallRuleGroupAssociationsOutput`](crate::output::ListFirewallRuleGroupAssociationsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
-        pub(crate) firewall_rule_group_associations:
-            std::option::Option<std::vec::Vec<crate::model::FirewallRuleGroupAssociation>>,
+        pub(crate) firewall_rule_group_associations: std::option::Option<std::vec::Vec<crate::model::FirewallRuleGroupAssociation>>,
     }
     impl Builder {
         /// <p>If objects are still available for retrieval, Resolver returns this token in the response. To retrieve the next batch of objects, provide this token in your next request.</p>
@@ -1758,41 +1704,37 @@ pub mod list_firewall_rule_group_associations_output {
         }
         /// <p>If objects are still available for retrieval, Resolver returns this token in the response. To retrieve the next batch of objects, provide this token in your next request.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Appends an item to `firewall_rule_group_associations`.
         ///
         /// To override the contents of this collection use [`set_firewall_rule_group_associations`](Self::set_firewall_rule_group_associations).
         ///
-        /// <p>A list of your firewall rule group associations.</p>
+        /// <p>A list of your firewall rule group associations.</p> 
         /// <p>This might be a partial list of the associations that you have defined. For information, see <code>MaxResults</code>. </p>
-        pub fn firewall_rule_group_associations(
-            mut self,
-            input: crate::model::FirewallRuleGroupAssociation,
-        ) -> Self {
+        pub fn firewall_rule_group_associations(mut self, input: crate::model::FirewallRuleGroupAssociation) -> Self {
             let mut v = self.firewall_rule_group_associations.unwrap_or_default();
-            v.push(input);
-            self.firewall_rule_group_associations = Some(v);
-            self
+                            v.push(input);
+                            self.firewall_rule_group_associations = Some(v);
+                            self
         }
-        /// <p>A list of your firewall rule group associations.</p>
+        /// <p>A list of your firewall rule group associations.</p> 
         /// <p>This might be a partial list of the associations that you have defined. For information, see <code>MaxResults</code>. </p>
-        pub fn set_firewall_rule_group_associations(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::FirewallRuleGroupAssociation>>,
-        ) -> Self {
-            self.firewall_rule_group_associations = input;
-            self
+        pub fn set_firewall_rule_group_associations(mut self, input: std::option::Option<std::vec::Vec<crate::model::FirewallRuleGroupAssociation>>) -> Self {
+            self.firewall_rule_group_associations = input; self
         }
         /// Consumes the builder and constructs a [`ListFirewallRuleGroupAssociationsOutput`](crate::output::ListFirewallRuleGroupAssociationsOutput).
         pub fn build(self) -> crate::output::ListFirewallRuleGroupAssociationsOutput {
             crate::output::ListFirewallRuleGroupAssociationsOutput {
-                next_token: self.next_token,
-                firewall_rule_group_associations: self.firewall_rule_group_associations,
+                next_token: self.next_token
+                ,
+                firewall_rule_group_associations: self.firewall_rule_group_associations
+                ,
             }
         }
     }
+    
+    
 }
 impl ListFirewallRuleGroupAssociationsOutput {
     /// Creates a new builder-style object to manufacture [`ListFirewallRuleGroupAssociationsOutput`](crate::output::ListFirewallRuleGroupAssociationsOutput).
@@ -1804,29 +1746,29 @@ impl ListFirewallRuleGroupAssociationsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListFirewallDomainsOutput {
+pub struct ListFirewallDomainsOutput  {
     /// <p>If objects are still available for retrieval, Resolver returns this token in the response. To retrieve the next batch of objects, provide this token in your next request.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>A list of the domains in the firewall domain list. </p>
+    /// <p>A list of the domains in the firewall domain list. </p> 
     /// <p>This might be a partial list of the domains that you've defined in the domain list. For information, see <code>MaxResults</code>. </p>
     #[doc(hidden)]
     pub domains: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl ListFirewallDomainsOutput {
     /// <p>If objects are still available for retrieval, Resolver returns this token in the response. To retrieve the next batch of objects, provide this token in your next request.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
-    /// <p>A list of the domains in the firewall domain list. </p>
+    /// <p>A list of the domains in the firewall domain list. </p> 
     /// <p>This might be a partial list of the domains that you've defined in the domain list. For information, see <code>MaxResults</code>. </p>
-    pub fn domains(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn domains(&self) -> std::option::Option<& [std::string::String]> {
         self.domains.as_deref()
     }
 }
 /// See [`ListFirewallDomainsOutput`](crate::output::ListFirewallDomainsOutput).
 pub mod list_firewall_domains_output {
-
+    
     /// A builder for [`ListFirewallDomainsOutput`](crate::output::ListFirewallDomainsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1841,38 +1783,37 @@ pub mod list_firewall_domains_output {
         }
         /// <p>If objects are still available for retrieval, Resolver returns this token in the response. To retrieve the next batch of objects, provide this token in your next request.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Appends an item to `domains`.
         ///
         /// To override the contents of this collection use [`set_domains`](Self::set_domains).
         ///
-        /// <p>A list of the domains in the firewall domain list. </p>
+        /// <p>A list of the domains in the firewall domain list. </p> 
         /// <p>This might be a partial list of the domains that you've defined in the domain list. For information, see <code>MaxResults</code>. </p>
         pub fn domains(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.domains.unwrap_or_default();
-            v.push(input.into());
-            self.domains = Some(v);
-            self
+                            v.push(input.into());
+                            self.domains = Some(v);
+                            self
         }
-        /// <p>A list of the domains in the firewall domain list. </p>
+        /// <p>A list of the domains in the firewall domain list. </p> 
         /// <p>This might be a partial list of the domains that you've defined in the domain list. For information, see <code>MaxResults</code>. </p>
-        pub fn set_domains(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.domains = input;
-            self
+        pub fn set_domains(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.domains = input; self
         }
         /// Consumes the builder and constructs a [`ListFirewallDomainsOutput`](crate::output::ListFirewallDomainsOutput).
         pub fn build(self) -> crate::output::ListFirewallDomainsOutput {
             crate::output::ListFirewallDomainsOutput {
-                next_token: self.next_token,
-                domains: self.domains,
+                next_token: self.next_token
+                ,
+                domains: self.domains
+                ,
             }
         }
     }
+    
+    
 }
 impl ListFirewallDomainsOutput {
     /// Creates a new builder-style object to manufacture [`ListFirewallDomainsOutput`](crate::output::ListFirewallDomainsOutput).
@@ -1884,38 +1825,34 @@ impl ListFirewallDomainsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListFirewallDomainListsOutput {
+pub struct ListFirewallDomainListsOutput  {
     /// <p>If objects are still available for retrieval, Resolver returns this token in the response. To retrieve the next batch of objects, provide this token in your next request.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>A list of the domain lists that you have defined. </p>
+    /// <p>A list of the domain lists that you have defined. </p> 
     /// <p>This might be a partial list of the domain lists that you've defined. For information, see <code>MaxResults</code>. </p>
     #[doc(hidden)]
-    pub firewall_domain_lists:
-        std::option::Option<std::vec::Vec<crate::model::FirewallDomainListMetadata>>,
+    pub firewall_domain_lists: std::option::Option<std::vec::Vec<crate::model::FirewallDomainListMetadata>>,
 }
 impl ListFirewallDomainListsOutput {
     /// <p>If objects are still available for retrieval, Resolver returns this token in the response. To retrieve the next batch of objects, provide this token in your next request.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
-    /// <p>A list of the domain lists that you have defined. </p>
+    /// <p>A list of the domain lists that you have defined. </p> 
     /// <p>This might be a partial list of the domain lists that you've defined. For information, see <code>MaxResults</code>. </p>
-    pub fn firewall_domain_lists(
-        &self,
-    ) -> std::option::Option<&[crate::model::FirewallDomainListMetadata]> {
+    pub fn firewall_domain_lists(&self) -> std::option::Option<& [crate::model::FirewallDomainListMetadata]> {
         self.firewall_domain_lists.as_deref()
     }
 }
 /// See [`ListFirewallDomainListsOutput`](crate::output::ListFirewallDomainListsOutput).
 pub mod list_firewall_domain_lists_output {
-
+    
     /// A builder for [`ListFirewallDomainListsOutput`](crate::output::ListFirewallDomainListsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
-        pub(crate) firewall_domain_lists:
-            std::option::Option<std::vec::Vec<crate::model::FirewallDomainListMetadata>>,
+        pub(crate) firewall_domain_lists: std::option::Option<std::vec::Vec<crate::model::FirewallDomainListMetadata>>,
     }
     impl Builder {
         /// <p>If objects are still available for retrieval, Resolver returns this token in the response. To retrieve the next batch of objects, provide this token in your next request.</p>
@@ -1925,41 +1862,37 @@ pub mod list_firewall_domain_lists_output {
         }
         /// <p>If objects are still available for retrieval, Resolver returns this token in the response. To retrieve the next batch of objects, provide this token in your next request.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Appends an item to `firewall_domain_lists`.
         ///
         /// To override the contents of this collection use [`set_firewall_domain_lists`](Self::set_firewall_domain_lists).
         ///
-        /// <p>A list of the domain lists that you have defined. </p>
+        /// <p>A list of the domain lists that you have defined. </p> 
         /// <p>This might be a partial list of the domain lists that you've defined. For information, see <code>MaxResults</code>. </p>
-        pub fn firewall_domain_lists(
-            mut self,
-            input: crate::model::FirewallDomainListMetadata,
-        ) -> Self {
+        pub fn firewall_domain_lists(mut self, input: crate::model::FirewallDomainListMetadata) -> Self {
             let mut v = self.firewall_domain_lists.unwrap_or_default();
-            v.push(input);
-            self.firewall_domain_lists = Some(v);
-            self
+                            v.push(input);
+                            self.firewall_domain_lists = Some(v);
+                            self
         }
-        /// <p>A list of the domain lists that you have defined. </p>
+        /// <p>A list of the domain lists that you have defined. </p> 
         /// <p>This might be a partial list of the domain lists that you've defined. For information, see <code>MaxResults</code>. </p>
-        pub fn set_firewall_domain_lists(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::FirewallDomainListMetadata>>,
-        ) -> Self {
-            self.firewall_domain_lists = input;
-            self
+        pub fn set_firewall_domain_lists(mut self, input: std::option::Option<std::vec::Vec<crate::model::FirewallDomainListMetadata>>) -> Self {
+            self.firewall_domain_lists = input; self
         }
         /// Consumes the builder and constructs a [`ListFirewallDomainListsOutput`](crate::output::ListFirewallDomainListsOutput).
         pub fn build(self) -> crate::output::ListFirewallDomainListsOutput {
             crate::output::ListFirewallDomainListsOutput {
-                next_token: self.next_token,
-                firewall_domain_lists: self.firewall_domain_lists,
+                next_token: self.next_token
+                ,
+                firewall_domain_lists: self.firewall_domain_lists
+                ,
             }
         }
     }
+    
+    
 }
 impl ListFirewallDomainListsOutput {
     /// Creates a new builder-style object to manufacture [`ListFirewallDomainListsOutput`](crate::output::ListFirewallDomainListsOutput).
@@ -1971,7 +1904,7 @@ impl ListFirewallDomainListsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListFirewallConfigsOutput {
+pub struct ListFirewallConfigsOutput  {
     /// <p>If objects are still available for retrieval, Resolver returns this token in the response. To retrieve the next batch of objects, provide this token in your next request.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -1981,23 +1914,22 @@ pub struct ListFirewallConfigsOutput {
 }
 impl ListFirewallConfigsOutput {
     /// <p>If objects are still available for retrieval, Resolver returns this token in the response. To retrieve the next batch of objects, provide this token in your next request.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The configurations for the firewall behavior provided by DNS Firewall for VPCs from Amazon Virtual Private Cloud (Amazon VPC). </p>
-    pub fn firewall_configs(&self) -> std::option::Option<&[crate::model::FirewallConfig]> {
+    pub fn firewall_configs(&self) -> std::option::Option<& [crate::model::FirewallConfig]> {
         self.firewall_configs.as_deref()
     }
 }
 /// See [`ListFirewallConfigsOutput`](crate::output::ListFirewallConfigsOutput).
 pub mod list_firewall_configs_output {
-
+    
     /// A builder for [`ListFirewallConfigsOutput`](crate::output::ListFirewallConfigsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
-        pub(crate) firewall_configs:
-            std::option::Option<std::vec::Vec<crate::model::FirewallConfig>>,
+        pub(crate) firewall_configs: std::option::Option<std::vec::Vec<crate::model::FirewallConfig>>,
     }
     impl Builder {
         /// <p>If objects are still available for retrieval, Resolver returns this token in the response. To retrieve the next batch of objects, provide this token in your next request.</p>
@@ -2007,8 +1939,7 @@ pub mod list_firewall_configs_output {
         }
         /// <p>If objects are still available for retrieval, Resolver returns this token in the response. To retrieve the next batch of objects, provide this token in your next request.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Appends an item to `firewall_configs`.
         ///
@@ -2017,26 +1948,26 @@ pub mod list_firewall_configs_output {
         /// <p>The configurations for the firewall behavior provided by DNS Firewall for VPCs from Amazon Virtual Private Cloud (Amazon VPC). </p>
         pub fn firewall_configs(mut self, input: crate::model::FirewallConfig) -> Self {
             let mut v = self.firewall_configs.unwrap_or_default();
-            v.push(input);
-            self.firewall_configs = Some(v);
-            self
+                            v.push(input);
+                            self.firewall_configs = Some(v);
+                            self
         }
         /// <p>The configurations for the firewall behavior provided by DNS Firewall for VPCs from Amazon Virtual Private Cloud (Amazon VPC). </p>
-        pub fn set_firewall_configs(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::FirewallConfig>>,
-        ) -> Self {
-            self.firewall_configs = input;
-            self
+        pub fn set_firewall_configs(mut self, input: std::option::Option<std::vec::Vec<crate::model::FirewallConfig>>) -> Self {
+            self.firewall_configs = input; self
         }
         /// Consumes the builder and constructs a [`ListFirewallConfigsOutput`](crate::output::ListFirewallConfigsOutput).
         pub fn build(self) -> crate::output::ListFirewallConfigsOutput {
             crate::output::ListFirewallConfigsOutput {
-                next_token: self.next_token,
-                firewall_configs: self.firewall_configs,
+                next_token: self.next_token
+                ,
+                firewall_configs: self.firewall_configs
+                ,
             }
         }
     }
+    
+    
 }
 impl ListFirewallConfigsOutput {
     /// Creates a new builder-style object to manufacture [`ListFirewallConfigsOutput`](crate::output::ListFirewallConfigsOutput).
@@ -2048,7 +1979,7 @@ impl ListFirewallConfigsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ImportFirewallDomainsOutput {
+pub struct ImportFirewallDomainsOutput  {
     /// <p>The Id of the firewall domain list that DNS Firewall just updated.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -2064,25 +1995,25 @@ pub struct ImportFirewallDomainsOutput {
 }
 impl ImportFirewallDomainsOutput {
     /// <p>The Id of the firewall domain list that DNS Firewall just updated.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The name of the domain list. </p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p> </p>
-    pub fn status(&self) -> std::option::Option<&crate::model::FirewallDomainListStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::FirewallDomainListStatus> {
         self.status.as_ref()
     }
     /// <p>Additional information about the status of the list, if available.</p>
-    pub fn status_message(&self) -> std::option::Option<&str> {
+    pub fn status_message(&self) -> std::option::Option<& str> {
         self.status_message.as_deref()
     }
 }
 /// See [`ImportFirewallDomainsOutput`](crate::output::ImportFirewallDomainsOutput).
 pub mod import_firewall_domains_output {
-
+    
     /// A builder for [`ImportFirewallDomainsOutput`](crate::output::ImportFirewallDomainsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2099,8 +2030,7 @@ pub mod import_firewall_domains_output {
         }
         /// <p>The Id of the firewall domain list that DNS Firewall just updated.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// <p>The name of the domain list. </p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2109,8 +2039,7 @@ pub mod import_firewall_domains_output {
         }
         /// <p>The name of the domain list. </p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p> </p>
         pub fn status(mut self, input: crate::model::FirewallDomainListStatus) -> Self {
@@ -2118,12 +2047,8 @@ pub mod import_firewall_domains_output {
             self
         }
         /// <p> </p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::FirewallDomainListStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::FirewallDomainListStatus>) -> Self {
+            self.status = input; self
         }
         /// <p>Additional information about the status of the list, if available.</p>
         pub fn status_message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2131,23 +2056,25 @@ pub mod import_firewall_domains_output {
             self
         }
         /// <p>Additional information about the status of the list, if available.</p>
-        pub fn set_status_message(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.status_message = input;
-            self
+        pub fn set_status_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.status_message = input; self
         }
         /// Consumes the builder and constructs a [`ImportFirewallDomainsOutput`](crate::output::ImportFirewallDomainsOutput).
         pub fn build(self) -> crate::output::ImportFirewallDomainsOutput {
             crate::output::ImportFirewallDomainsOutput {
-                id: self.id,
-                name: self.name,
-                status: self.status,
-                status_message: self.status_message,
+                id: self.id
+                ,
+                name: self.name
+                ,
+                status: self.status
+                ,
+                status_message: self.status_message
+                ,
             }
         }
     }
+    
+    
 }
 impl ImportFirewallDomainsOutput {
     /// Creates a new builder-style object to manufacture [`ImportFirewallDomainsOutput`](crate::output::ImportFirewallDomainsOutput).
@@ -2159,20 +2086,20 @@ impl ImportFirewallDomainsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetResolverRulePolicyOutput {
+pub struct GetResolverRulePolicyOutput  {
     /// <p>The Resolver rule policy for the rule that you specified in a <code>GetResolverRulePolicy</code> request.</p>
     #[doc(hidden)]
     pub resolver_rule_policy: std::option::Option<std::string::String>,
 }
 impl GetResolverRulePolicyOutput {
     /// <p>The Resolver rule policy for the rule that you specified in a <code>GetResolverRulePolicy</code> request.</p>
-    pub fn resolver_rule_policy(&self) -> std::option::Option<&str> {
+    pub fn resolver_rule_policy(&self) -> std::option::Option<& str> {
         self.resolver_rule_policy.as_deref()
     }
 }
 /// See [`GetResolverRulePolicyOutput`](crate::output::GetResolverRulePolicyOutput).
 pub mod get_resolver_rule_policy_output {
-
+    
     /// A builder for [`GetResolverRulePolicyOutput`](crate::output::GetResolverRulePolicyOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2185,20 +2112,19 @@ pub mod get_resolver_rule_policy_output {
             self
         }
         /// <p>The Resolver rule policy for the rule that you specified in a <code>GetResolverRulePolicy</code> request.</p>
-        pub fn set_resolver_rule_policy(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.resolver_rule_policy = input;
-            self
+        pub fn set_resolver_rule_policy(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.resolver_rule_policy = input; self
         }
         /// Consumes the builder and constructs a [`GetResolverRulePolicyOutput`](crate::output::GetResolverRulePolicyOutput).
         pub fn build(self) -> crate::output::GetResolverRulePolicyOutput {
             crate::output::GetResolverRulePolicyOutput {
-                resolver_rule_policy: self.resolver_rule_policy,
+                resolver_rule_policy: self.resolver_rule_policy
+                ,
             }
         }
     }
+    
+    
 }
 impl GetResolverRulePolicyOutput {
     /// Creates a new builder-style object to manufacture [`GetResolverRulePolicyOutput`](crate::output::GetResolverRulePolicyOutput).
@@ -2210,52 +2136,45 @@ impl GetResolverRulePolicyOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetResolverRuleAssociationOutput {
+pub struct GetResolverRuleAssociationOutput  {
     /// <p>Information about the Resolver rule association that you specified in a <code>GetResolverRuleAssociation</code> request.</p>
     #[doc(hidden)]
     pub resolver_rule_association: std::option::Option<crate::model::ResolverRuleAssociation>,
 }
 impl GetResolverRuleAssociationOutput {
     /// <p>Information about the Resolver rule association that you specified in a <code>GetResolverRuleAssociation</code> request.</p>
-    pub fn resolver_rule_association(
-        &self,
-    ) -> std::option::Option<&crate::model::ResolverRuleAssociation> {
+    pub fn resolver_rule_association(&self) -> std::option::Option<& crate::model::ResolverRuleAssociation> {
         self.resolver_rule_association.as_ref()
     }
 }
 /// See [`GetResolverRuleAssociationOutput`](crate::output::GetResolverRuleAssociationOutput).
 pub mod get_resolver_rule_association_output {
-
+    
     /// A builder for [`GetResolverRuleAssociationOutput`](crate::output::GetResolverRuleAssociationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) resolver_rule_association:
-            std::option::Option<crate::model::ResolverRuleAssociation>,
+        pub(crate) resolver_rule_association: std::option::Option<crate::model::ResolverRuleAssociation>,
     }
     impl Builder {
         /// <p>Information about the Resolver rule association that you specified in a <code>GetResolverRuleAssociation</code> request.</p>
-        pub fn resolver_rule_association(
-            mut self,
-            input: crate::model::ResolverRuleAssociation,
-        ) -> Self {
+        pub fn resolver_rule_association(mut self, input: crate::model::ResolverRuleAssociation) -> Self {
             self.resolver_rule_association = Some(input);
             self
         }
         /// <p>Information about the Resolver rule association that you specified in a <code>GetResolverRuleAssociation</code> request.</p>
-        pub fn set_resolver_rule_association(
-            mut self,
-            input: std::option::Option<crate::model::ResolverRuleAssociation>,
-        ) -> Self {
-            self.resolver_rule_association = input;
-            self
+        pub fn set_resolver_rule_association(mut self, input: std::option::Option<crate::model::ResolverRuleAssociation>) -> Self {
+            self.resolver_rule_association = input; self
         }
         /// Consumes the builder and constructs a [`GetResolverRuleAssociationOutput`](crate::output::GetResolverRuleAssociationOutput).
         pub fn build(self) -> crate::output::GetResolverRuleAssociationOutput {
             crate::output::GetResolverRuleAssociationOutput {
-                resolver_rule_association: self.resolver_rule_association,
+                resolver_rule_association: self.resolver_rule_association
+                ,
             }
         }
     }
+    
+    
 }
 impl GetResolverRuleAssociationOutput {
     /// Creates a new builder-style object to manufacture [`GetResolverRuleAssociationOutput`](crate::output::GetResolverRuleAssociationOutput).
@@ -2267,20 +2186,20 @@ impl GetResolverRuleAssociationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetResolverRuleOutput {
+pub struct GetResolverRuleOutput  {
     /// <p>Information about the Resolver rule that you specified in a <code>GetResolverRule</code> request.</p>
     #[doc(hidden)]
     pub resolver_rule: std::option::Option<crate::model::ResolverRule>,
 }
 impl GetResolverRuleOutput {
     /// <p>Information about the Resolver rule that you specified in a <code>GetResolverRule</code> request.</p>
-    pub fn resolver_rule(&self) -> std::option::Option<&crate::model::ResolverRule> {
+    pub fn resolver_rule(&self) -> std::option::Option<& crate::model::ResolverRule> {
         self.resolver_rule.as_ref()
     }
 }
 /// See [`GetResolverRuleOutput`](crate::output::GetResolverRuleOutput).
 pub mod get_resolver_rule_output {
-
+    
     /// A builder for [`GetResolverRuleOutput`](crate::output::GetResolverRuleOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2293,20 +2212,19 @@ pub mod get_resolver_rule_output {
             self
         }
         /// <p>Information about the Resolver rule that you specified in a <code>GetResolverRule</code> request.</p>
-        pub fn set_resolver_rule(
-            mut self,
-            input: std::option::Option<crate::model::ResolverRule>,
-        ) -> Self {
-            self.resolver_rule = input;
-            self
+        pub fn set_resolver_rule(mut self, input: std::option::Option<crate::model::ResolverRule>) -> Self {
+            self.resolver_rule = input; self
         }
         /// Consumes the builder and constructs a [`GetResolverRuleOutput`](crate::output::GetResolverRuleOutput).
         pub fn build(self) -> crate::output::GetResolverRuleOutput {
             crate::output::GetResolverRuleOutput {
-                resolver_rule: self.resolver_rule,
+                resolver_rule: self.resolver_rule
+                ,
             }
         }
     }
+    
+    
 }
 impl GetResolverRuleOutput {
     /// Creates a new builder-style object to manufacture [`GetResolverRuleOutput`](crate::output::GetResolverRuleOutput).
@@ -2318,20 +2236,20 @@ impl GetResolverRuleOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetResolverQueryLogConfigPolicyOutput {
+pub struct GetResolverQueryLogConfigPolicyOutput  {
     /// <p>Information about the query logging policy for the query logging configuration that you specified in a <code>GetResolverQueryLogConfigPolicy</code> request.</p>
     #[doc(hidden)]
     pub resolver_query_log_config_policy: std::option::Option<std::string::String>,
 }
 impl GetResolverQueryLogConfigPolicyOutput {
     /// <p>Information about the query logging policy for the query logging configuration that you specified in a <code>GetResolverQueryLogConfigPolicy</code> request.</p>
-    pub fn resolver_query_log_config_policy(&self) -> std::option::Option<&str> {
+    pub fn resolver_query_log_config_policy(&self) -> std::option::Option<& str> {
         self.resolver_query_log_config_policy.as_deref()
     }
 }
 /// See [`GetResolverQueryLogConfigPolicyOutput`](crate::output::GetResolverQueryLogConfigPolicyOutput).
 pub mod get_resolver_query_log_config_policy_output {
-
+    
     /// A builder for [`GetResolverQueryLogConfigPolicyOutput`](crate::output::GetResolverQueryLogConfigPolicyOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2339,28 +2257,24 @@ pub mod get_resolver_query_log_config_policy_output {
     }
     impl Builder {
         /// <p>Information about the query logging policy for the query logging configuration that you specified in a <code>GetResolverQueryLogConfigPolicy</code> request.</p>
-        pub fn resolver_query_log_config_policy(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn resolver_query_log_config_policy(mut self, input: impl Into<std::string::String>) -> Self {
             self.resolver_query_log_config_policy = Some(input.into());
             self
         }
         /// <p>Information about the query logging policy for the query logging configuration that you specified in a <code>GetResolverQueryLogConfigPolicy</code> request.</p>
-        pub fn set_resolver_query_log_config_policy(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.resolver_query_log_config_policy = input;
-            self
+        pub fn set_resolver_query_log_config_policy(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.resolver_query_log_config_policy = input; self
         }
         /// Consumes the builder and constructs a [`GetResolverQueryLogConfigPolicyOutput`](crate::output::GetResolverQueryLogConfigPolicyOutput).
         pub fn build(self) -> crate::output::GetResolverQueryLogConfigPolicyOutput {
             crate::output::GetResolverQueryLogConfigPolicyOutput {
-                resolver_query_log_config_policy: self.resolver_query_log_config_policy,
+                resolver_query_log_config_policy: self.resolver_query_log_config_policy
+                ,
             }
         }
     }
+    
+    
 }
 impl GetResolverQueryLogConfigPolicyOutput {
     /// Creates a new builder-style object to manufacture [`GetResolverQueryLogConfigPolicyOutput`](crate::output::GetResolverQueryLogConfigPolicyOutput).
@@ -2372,53 +2286,45 @@ impl GetResolverQueryLogConfigPolicyOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetResolverQueryLogConfigAssociationOutput {
+pub struct GetResolverQueryLogConfigAssociationOutput  {
     /// <p>Information about the Resolver query logging configuration association that you specified in a <code>GetQueryLogConfigAssociation</code> request.</p>
     #[doc(hidden)]
-    pub resolver_query_log_config_association:
-        std::option::Option<crate::model::ResolverQueryLogConfigAssociation>,
+    pub resolver_query_log_config_association: std::option::Option<crate::model::ResolverQueryLogConfigAssociation>,
 }
 impl GetResolverQueryLogConfigAssociationOutput {
     /// <p>Information about the Resolver query logging configuration association that you specified in a <code>GetQueryLogConfigAssociation</code> request.</p>
-    pub fn resolver_query_log_config_association(
-        &self,
-    ) -> std::option::Option<&crate::model::ResolverQueryLogConfigAssociation> {
+    pub fn resolver_query_log_config_association(&self) -> std::option::Option<& crate::model::ResolverQueryLogConfigAssociation> {
         self.resolver_query_log_config_association.as_ref()
     }
 }
 /// See [`GetResolverQueryLogConfigAssociationOutput`](crate::output::GetResolverQueryLogConfigAssociationOutput).
 pub mod get_resolver_query_log_config_association_output {
-
+    
     /// A builder for [`GetResolverQueryLogConfigAssociationOutput`](crate::output::GetResolverQueryLogConfigAssociationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) resolver_query_log_config_association:
-            std::option::Option<crate::model::ResolverQueryLogConfigAssociation>,
+        pub(crate) resolver_query_log_config_association: std::option::Option<crate::model::ResolverQueryLogConfigAssociation>,
     }
     impl Builder {
         /// <p>Information about the Resolver query logging configuration association that you specified in a <code>GetQueryLogConfigAssociation</code> request.</p>
-        pub fn resolver_query_log_config_association(
-            mut self,
-            input: crate::model::ResolverQueryLogConfigAssociation,
-        ) -> Self {
+        pub fn resolver_query_log_config_association(mut self, input: crate::model::ResolverQueryLogConfigAssociation) -> Self {
             self.resolver_query_log_config_association = Some(input);
             self
         }
         /// <p>Information about the Resolver query logging configuration association that you specified in a <code>GetQueryLogConfigAssociation</code> request.</p>
-        pub fn set_resolver_query_log_config_association(
-            mut self,
-            input: std::option::Option<crate::model::ResolverQueryLogConfigAssociation>,
-        ) -> Self {
-            self.resolver_query_log_config_association = input;
-            self
+        pub fn set_resolver_query_log_config_association(mut self, input: std::option::Option<crate::model::ResolverQueryLogConfigAssociation>) -> Self {
+            self.resolver_query_log_config_association = input; self
         }
         /// Consumes the builder and constructs a [`GetResolverQueryLogConfigAssociationOutput`](crate::output::GetResolverQueryLogConfigAssociationOutput).
         pub fn build(self) -> crate::output::GetResolverQueryLogConfigAssociationOutput {
             crate::output::GetResolverQueryLogConfigAssociationOutput {
-                resolver_query_log_config_association: self.resolver_query_log_config_association,
+                resolver_query_log_config_association: self.resolver_query_log_config_association
+                ,
             }
         }
     }
+    
+    
 }
 impl GetResolverQueryLogConfigAssociationOutput {
     /// Creates a new builder-style object to manufacture [`GetResolverQueryLogConfigAssociationOutput`](crate::output::GetResolverQueryLogConfigAssociationOutput).
@@ -2430,52 +2336,45 @@ impl GetResolverQueryLogConfigAssociationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetResolverQueryLogConfigOutput {
+pub struct GetResolverQueryLogConfigOutput  {
     /// <p>Information about the Resolver query logging configuration that you specified in a <code>GetQueryLogConfig</code> request.</p>
     #[doc(hidden)]
     pub resolver_query_log_config: std::option::Option<crate::model::ResolverQueryLogConfig>,
 }
 impl GetResolverQueryLogConfigOutput {
     /// <p>Information about the Resolver query logging configuration that you specified in a <code>GetQueryLogConfig</code> request.</p>
-    pub fn resolver_query_log_config(
-        &self,
-    ) -> std::option::Option<&crate::model::ResolverQueryLogConfig> {
+    pub fn resolver_query_log_config(&self) -> std::option::Option<& crate::model::ResolverQueryLogConfig> {
         self.resolver_query_log_config.as_ref()
     }
 }
 /// See [`GetResolverQueryLogConfigOutput`](crate::output::GetResolverQueryLogConfigOutput).
 pub mod get_resolver_query_log_config_output {
-
+    
     /// A builder for [`GetResolverQueryLogConfigOutput`](crate::output::GetResolverQueryLogConfigOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) resolver_query_log_config:
-            std::option::Option<crate::model::ResolverQueryLogConfig>,
+        pub(crate) resolver_query_log_config: std::option::Option<crate::model::ResolverQueryLogConfig>,
     }
     impl Builder {
         /// <p>Information about the Resolver query logging configuration that you specified in a <code>GetQueryLogConfig</code> request.</p>
-        pub fn resolver_query_log_config(
-            mut self,
-            input: crate::model::ResolverQueryLogConfig,
-        ) -> Self {
+        pub fn resolver_query_log_config(mut self, input: crate::model::ResolverQueryLogConfig) -> Self {
             self.resolver_query_log_config = Some(input);
             self
         }
         /// <p>Information about the Resolver query logging configuration that you specified in a <code>GetQueryLogConfig</code> request.</p>
-        pub fn set_resolver_query_log_config(
-            mut self,
-            input: std::option::Option<crate::model::ResolverQueryLogConfig>,
-        ) -> Self {
-            self.resolver_query_log_config = input;
-            self
+        pub fn set_resolver_query_log_config(mut self, input: std::option::Option<crate::model::ResolverQueryLogConfig>) -> Self {
+            self.resolver_query_log_config = input; self
         }
         /// Consumes the builder and constructs a [`GetResolverQueryLogConfigOutput`](crate::output::GetResolverQueryLogConfigOutput).
         pub fn build(self) -> crate::output::GetResolverQueryLogConfigOutput {
             crate::output::GetResolverQueryLogConfigOutput {
-                resolver_query_log_config: self.resolver_query_log_config,
+                resolver_query_log_config: self.resolver_query_log_config
+                ,
             }
         }
     }
+    
+    
 }
 impl GetResolverQueryLogConfigOutput {
     /// Creates a new builder-style object to manufacture [`GetResolverQueryLogConfigOutput`](crate::output::GetResolverQueryLogConfigOutput).
@@ -2487,20 +2386,20 @@ impl GetResolverQueryLogConfigOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetResolverEndpointOutput {
+pub struct GetResolverEndpointOutput  {
     /// <p>Information about the Resolver endpoint that you specified in a <code>GetResolverEndpoint</code> request.</p>
     #[doc(hidden)]
     pub resolver_endpoint: std::option::Option<crate::model::ResolverEndpoint>,
 }
 impl GetResolverEndpointOutput {
     /// <p>Information about the Resolver endpoint that you specified in a <code>GetResolverEndpoint</code> request.</p>
-    pub fn resolver_endpoint(&self) -> std::option::Option<&crate::model::ResolverEndpoint> {
+    pub fn resolver_endpoint(&self) -> std::option::Option<& crate::model::ResolverEndpoint> {
         self.resolver_endpoint.as_ref()
     }
 }
 /// See [`GetResolverEndpointOutput`](crate::output::GetResolverEndpointOutput).
 pub mod get_resolver_endpoint_output {
-
+    
     /// A builder for [`GetResolverEndpointOutput`](crate::output::GetResolverEndpointOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2513,20 +2412,19 @@ pub mod get_resolver_endpoint_output {
             self
         }
         /// <p>Information about the Resolver endpoint that you specified in a <code>GetResolverEndpoint</code> request.</p>
-        pub fn set_resolver_endpoint(
-            mut self,
-            input: std::option::Option<crate::model::ResolverEndpoint>,
-        ) -> Self {
-            self.resolver_endpoint = input;
-            self
+        pub fn set_resolver_endpoint(mut self, input: std::option::Option<crate::model::ResolverEndpoint>) -> Self {
+            self.resolver_endpoint = input; self
         }
         /// Consumes the builder and constructs a [`GetResolverEndpointOutput`](crate::output::GetResolverEndpointOutput).
         pub fn build(self) -> crate::output::GetResolverEndpointOutput {
             crate::output::GetResolverEndpointOutput {
-                resolver_endpoint: self.resolver_endpoint,
+                resolver_endpoint: self.resolver_endpoint
+                ,
             }
         }
     }
+    
+    
 }
 impl GetResolverEndpointOutput {
     /// Creates a new builder-style object to manufacture [`GetResolverEndpointOutput`](crate::output::GetResolverEndpointOutput).
@@ -2538,22 +2436,20 @@ impl GetResolverEndpointOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetResolverDnssecConfigOutput {
+pub struct GetResolverDnssecConfigOutput  {
     /// <p>The information about a configuration for DNSSEC validation.</p>
     #[doc(hidden)]
     pub resolver_dnssec_config: std::option::Option<crate::model::ResolverDnssecConfig>,
 }
 impl GetResolverDnssecConfigOutput {
     /// <p>The information about a configuration for DNSSEC validation.</p>
-    pub fn resolver_dnssec_config(
-        &self,
-    ) -> std::option::Option<&crate::model::ResolverDnssecConfig> {
+    pub fn resolver_dnssec_config(&self) -> std::option::Option<& crate::model::ResolverDnssecConfig> {
         self.resolver_dnssec_config.as_ref()
     }
 }
 /// See [`GetResolverDnssecConfigOutput`](crate::output::GetResolverDnssecConfigOutput).
 pub mod get_resolver_dnssec_config_output {
-
+    
     /// A builder for [`GetResolverDnssecConfigOutput`](crate::output::GetResolverDnssecConfigOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2566,20 +2462,19 @@ pub mod get_resolver_dnssec_config_output {
             self
         }
         /// <p>The information about a configuration for DNSSEC validation.</p>
-        pub fn set_resolver_dnssec_config(
-            mut self,
-            input: std::option::Option<crate::model::ResolverDnssecConfig>,
-        ) -> Self {
-            self.resolver_dnssec_config = input;
-            self
+        pub fn set_resolver_dnssec_config(mut self, input: std::option::Option<crate::model::ResolverDnssecConfig>) -> Self {
+            self.resolver_dnssec_config = input; self
         }
         /// Consumes the builder and constructs a [`GetResolverDnssecConfigOutput`](crate::output::GetResolverDnssecConfigOutput).
         pub fn build(self) -> crate::output::GetResolverDnssecConfigOutput {
             crate::output::GetResolverDnssecConfigOutput {
-                resolver_dnssec_config: self.resolver_dnssec_config,
+                resolver_dnssec_config: self.resolver_dnssec_config
+                ,
             }
         }
     }
+    
+    
 }
 impl GetResolverDnssecConfigOutput {
     /// Creates a new builder-style object to manufacture [`GetResolverDnssecConfigOutput`](crate::output::GetResolverDnssecConfigOutput).
@@ -2591,20 +2486,20 @@ impl GetResolverDnssecConfigOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetResolverConfigOutput {
+pub struct GetResolverConfigOutput  {
     /// <p>Information about the behavior configuration of Route 53 Resolver behavior for the VPC you specified in the <code>GetResolverConfig</code> request.</p>
     #[doc(hidden)]
     pub resolver_config: std::option::Option<crate::model::ResolverConfig>,
 }
 impl GetResolverConfigOutput {
     /// <p>Information about the behavior configuration of Route 53 Resolver behavior for the VPC you specified in the <code>GetResolverConfig</code> request.</p>
-    pub fn resolver_config(&self) -> std::option::Option<&crate::model::ResolverConfig> {
+    pub fn resolver_config(&self) -> std::option::Option<& crate::model::ResolverConfig> {
         self.resolver_config.as_ref()
     }
 }
 /// See [`GetResolverConfigOutput`](crate::output::GetResolverConfigOutput).
 pub mod get_resolver_config_output {
-
+    
     /// A builder for [`GetResolverConfigOutput`](crate::output::GetResolverConfigOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2617,20 +2512,19 @@ pub mod get_resolver_config_output {
             self
         }
         /// <p>Information about the behavior configuration of Route 53 Resolver behavior for the VPC you specified in the <code>GetResolverConfig</code> request.</p>
-        pub fn set_resolver_config(
-            mut self,
-            input: std::option::Option<crate::model::ResolverConfig>,
-        ) -> Self {
-            self.resolver_config = input;
-            self
+        pub fn set_resolver_config(mut self, input: std::option::Option<crate::model::ResolverConfig>) -> Self {
+            self.resolver_config = input; self
         }
         /// Consumes the builder and constructs a [`GetResolverConfigOutput`](crate::output::GetResolverConfigOutput).
         pub fn build(self) -> crate::output::GetResolverConfigOutput {
             crate::output::GetResolverConfigOutput {
-                resolver_config: self.resolver_config,
+                resolver_config: self.resolver_config
+                ,
             }
         }
     }
+    
+    
 }
 impl GetResolverConfigOutput {
     /// Creates a new builder-style object to manufacture [`GetResolverConfigOutput`](crate::output::GetResolverConfigOutput).
@@ -2642,20 +2536,20 @@ impl GetResolverConfigOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetFirewallRuleGroupPolicyOutput {
+pub struct GetFirewallRuleGroupPolicyOutput  {
     /// <p>The Identity and Access Management (Amazon Web Services IAM) policy for sharing the specified rule group. You can use the policy to share the rule group using Resource Access Manager (RAM). </p>
     #[doc(hidden)]
     pub firewall_rule_group_policy: std::option::Option<std::string::String>,
 }
 impl GetFirewallRuleGroupPolicyOutput {
     /// <p>The Identity and Access Management (Amazon Web Services IAM) policy for sharing the specified rule group. You can use the policy to share the rule group using Resource Access Manager (RAM). </p>
-    pub fn firewall_rule_group_policy(&self) -> std::option::Option<&str> {
+    pub fn firewall_rule_group_policy(&self) -> std::option::Option<& str> {
         self.firewall_rule_group_policy.as_deref()
     }
 }
 /// See [`GetFirewallRuleGroupPolicyOutput`](crate::output::GetFirewallRuleGroupPolicyOutput).
 pub mod get_firewall_rule_group_policy_output {
-
+    
     /// A builder for [`GetFirewallRuleGroupPolicyOutput`](crate::output::GetFirewallRuleGroupPolicyOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2668,20 +2562,19 @@ pub mod get_firewall_rule_group_policy_output {
             self
         }
         /// <p>The Identity and Access Management (Amazon Web Services IAM) policy for sharing the specified rule group. You can use the policy to share the rule group using Resource Access Manager (RAM). </p>
-        pub fn set_firewall_rule_group_policy(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.firewall_rule_group_policy = input;
-            self
+        pub fn set_firewall_rule_group_policy(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.firewall_rule_group_policy = input; self
         }
         /// Consumes the builder and constructs a [`GetFirewallRuleGroupPolicyOutput`](crate::output::GetFirewallRuleGroupPolicyOutput).
         pub fn build(self) -> crate::output::GetFirewallRuleGroupPolicyOutput {
             crate::output::GetFirewallRuleGroupPolicyOutput {
-                firewall_rule_group_policy: self.firewall_rule_group_policy,
+                firewall_rule_group_policy: self.firewall_rule_group_policy
+                ,
             }
         }
     }
+    
+    
 }
 impl GetFirewallRuleGroupPolicyOutput {
     /// Creates a new builder-style object to manufacture [`GetFirewallRuleGroupPolicyOutput`](crate::output::GetFirewallRuleGroupPolicyOutput).
@@ -2693,53 +2586,45 @@ impl GetFirewallRuleGroupPolicyOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetFirewallRuleGroupAssociationOutput {
+pub struct GetFirewallRuleGroupAssociationOutput  {
     /// <p>The association that you requested. </p>
     #[doc(hidden)]
-    pub firewall_rule_group_association:
-        std::option::Option<crate::model::FirewallRuleGroupAssociation>,
+    pub firewall_rule_group_association: std::option::Option<crate::model::FirewallRuleGroupAssociation>,
 }
 impl GetFirewallRuleGroupAssociationOutput {
     /// <p>The association that you requested. </p>
-    pub fn firewall_rule_group_association(
-        &self,
-    ) -> std::option::Option<&crate::model::FirewallRuleGroupAssociation> {
+    pub fn firewall_rule_group_association(&self) -> std::option::Option<& crate::model::FirewallRuleGroupAssociation> {
         self.firewall_rule_group_association.as_ref()
     }
 }
 /// See [`GetFirewallRuleGroupAssociationOutput`](crate::output::GetFirewallRuleGroupAssociationOutput).
 pub mod get_firewall_rule_group_association_output {
-
+    
     /// A builder for [`GetFirewallRuleGroupAssociationOutput`](crate::output::GetFirewallRuleGroupAssociationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) firewall_rule_group_association:
-            std::option::Option<crate::model::FirewallRuleGroupAssociation>,
+        pub(crate) firewall_rule_group_association: std::option::Option<crate::model::FirewallRuleGroupAssociation>,
     }
     impl Builder {
         /// <p>The association that you requested. </p>
-        pub fn firewall_rule_group_association(
-            mut self,
-            input: crate::model::FirewallRuleGroupAssociation,
-        ) -> Self {
+        pub fn firewall_rule_group_association(mut self, input: crate::model::FirewallRuleGroupAssociation) -> Self {
             self.firewall_rule_group_association = Some(input);
             self
         }
         /// <p>The association that you requested. </p>
-        pub fn set_firewall_rule_group_association(
-            mut self,
-            input: std::option::Option<crate::model::FirewallRuleGroupAssociation>,
-        ) -> Self {
-            self.firewall_rule_group_association = input;
-            self
+        pub fn set_firewall_rule_group_association(mut self, input: std::option::Option<crate::model::FirewallRuleGroupAssociation>) -> Self {
+            self.firewall_rule_group_association = input; self
         }
         /// Consumes the builder and constructs a [`GetFirewallRuleGroupAssociationOutput`](crate::output::GetFirewallRuleGroupAssociationOutput).
         pub fn build(self) -> crate::output::GetFirewallRuleGroupAssociationOutput {
             crate::output::GetFirewallRuleGroupAssociationOutput {
-                firewall_rule_group_association: self.firewall_rule_group_association,
+                firewall_rule_group_association: self.firewall_rule_group_association
+                ,
             }
         }
     }
+    
+    
 }
 impl GetFirewallRuleGroupAssociationOutput {
     /// Creates a new builder-style object to manufacture [`GetFirewallRuleGroupAssociationOutput`](crate::output::GetFirewallRuleGroupAssociationOutput).
@@ -2751,20 +2636,20 @@ impl GetFirewallRuleGroupAssociationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetFirewallRuleGroupOutput {
+pub struct GetFirewallRuleGroupOutput  {
     /// <p>A collection of rules used to filter DNS network traffic. </p>
     #[doc(hidden)]
     pub firewall_rule_group: std::option::Option<crate::model::FirewallRuleGroup>,
 }
 impl GetFirewallRuleGroupOutput {
     /// <p>A collection of rules used to filter DNS network traffic. </p>
-    pub fn firewall_rule_group(&self) -> std::option::Option<&crate::model::FirewallRuleGroup> {
+    pub fn firewall_rule_group(&self) -> std::option::Option<& crate::model::FirewallRuleGroup> {
         self.firewall_rule_group.as_ref()
     }
 }
 /// See [`GetFirewallRuleGroupOutput`](crate::output::GetFirewallRuleGroupOutput).
 pub mod get_firewall_rule_group_output {
-
+    
     /// A builder for [`GetFirewallRuleGroupOutput`](crate::output::GetFirewallRuleGroupOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2777,20 +2662,19 @@ pub mod get_firewall_rule_group_output {
             self
         }
         /// <p>A collection of rules used to filter DNS network traffic. </p>
-        pub fn set_firewall_rule_group(
-            mut self,
-            input: std::option::Option<crate::model::FirewallRuleGroup>,
-        ) -> Self {
-            self.firewall_rule_group = input;
-            self
+        pub fn set_firewall_rule_group(mut self, input: std::option::Option<crate::model::FirewallRuleGroup>) -> Self {
+            self.firewall_rule_group = input; self
         }
         /// Consumes the builder and constructs a [`GetFirewallRuleGroupOutput`](crate::output::GetFirewallRuleGroupOutput).
         pub fn build(self) -> crate::output::GetFirewallRuleGroupOutput {
             crate::output::GetFirewallRuleGroupOutput {
-                firewall_rule_group: self.firewall_rule_group,
+                firewall_rule_group: self.firewall_rule_group
+                ,
             }
         }
     }
+    
+    
 }
 impl GetFirewallRuleGroupOutput {
     /// Creates a new builder-style object to manufacture [`GetFirewallRuleGroupOutput`](crate::output::GetFirewallRuleGroupOutput).
@@ -2802,20 +2686,20 @@ impl GetFirewallRuleGroupOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetFirewallDomainListOutput {
+pub struct GetFirewallDomainListOutput  {
     /// <p>The domain list that you requested. </p>
     #[doc(hidden)]
     pub firewall_domain_list: std::option::Option<crate::model::FirewallDomainList>,
 }
 impl GetFirewallDomainListOutput {
     /// <p>The domain list that you requested. </p>
-    pub fn firewall_domain_list(&self) -> std::option::Option<&crate::model::FirewallDomainList> {
+    pub fn firewall_domain_list(&self) -> std::option::Option<& crate::model::FirewallDomainList> {
         self.firewall_domain_list.as_ref()
     }
 }
 /// See [`GetFirewallDomainListOutput`](crate::output::GetFirewallDomainListOutput).
 pub mod get_firewall_domain_list_output {
-
+    
     /// A builder for [`GetFirewallDomainListOutput`](crate::output::GetFirewallDomainListOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2828,20 +2712,19 @@ pub mod get_firewall_domain_list_output {
             self
         }
         /// <p>The domain list that you requested. </p>
-        pub fn set_firewall_domain_list(
-            mut self,
-            input: std::option::Option<crate::model::FirewallDomainList>,
-        ) -> Self {
-            self.firewall_domain_list = input;
-            self
+        pub fn set_firewall_domain_list(mut self, input: std::option::Option<crate::model::FirewallDomainList>) -> Self {
+            self.firewall_domain_list = input; self
         }
         /// Consumes the builder and constructs a [`GetFirewallDomainListOutput`](crate::output::GetFirewallDomainListOutput).
         pub fn build(self) -> crate::output::GetFirewallDomainListOutput {
             crate::output::GetFirewallDomainListOutput {
-                firewall_domain_list: self.firewall_domain_list,
+                firewall_domain_list: self.firewall_domain_list
+                ,
             }
         }
     }
+    
+    
 }
 impl GetFirewallDomainListOutput {
     /// Creates a new builder-style object to manufacture [`GetFirewallDomainListOutput`](crate::output::GetFirewallDomainListOutput).
@@ -2853,20 +2736,20 @@ impl GetFirewallDomainListOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetFirewallConfigOutput {
+pub struct GetFirewallConfigOutput  {
     /// <p>Configuration of the firewall behavior provided by DNS Firewall for a single VPC from AmazonVPC. </p>
     #[doc(hidden)]
     pub firewall_config: std::option::Option<crate::model::FirewallConfig>,
 }
 impl GetFirewallConfigOutput {
     /// <p>Configuration of the firewall behavior provided by DNS Firewall for a single VPC from AmazonVPC. </p>
-    pub fn firewall_config(&self) -> std::option::Option<&crate::model::FirewallConfig> {
+    pub fn firewall_config(&self) -> std::option::Option<& crate::model::FirewallConfig> {
         self.firewall_config.as_ref()
     }
 }
 /// See [`GetFirewallConfigOutput`](crate::output::GetFirewallConfigOutput).
 pub mod get_firewall_config_output {
-
+    
     /// A builder for [`GetFirewallConfigOutput`](crate::output::GetFirewallConfigOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2879,20 +2762,19 @@ pub mod get_firewall_config_output {
             self
         }
         /// <p>Configuration of the firewall behavior provided by DNS Firewall for a single VPC from AmazonVPC. </p>
-        pub fn set_firewall_config(
-            mut self,
-            input: std::option::Option<crate::model::FirewallConfig>,
-        ) -> Self {
-            self.firewall_config = input;
-            self
+        pub fn set_firewall_config(mut self, input: std::option::Option<crate::model::FirewallConfig>) -> Self {
+            self.firewall_config = input; self
         }
         /// Consumes the builder and constructs a [`GetFirewallConfigOutput`](crate::output::GetFirewallConfigOutput).
         pub fn build(self) -> crate::output::GetFirewallConfigOutput {
             crate::output::GetFirewallConfigOutput {
-                firewall_config: self.firewall_config,
+                firewall_config: self.firewall_config
+                ,
             }
         }
     }
+    
+    
 }
 impl GetFirewallConfigOutput {
     /// Creates a new builder-style object to manufacture [`GetFirewallConfigOutput`](crate::output::GetFirewallConfigOutput).
@@ -2904,52 +2786,45 @@ impl GetFirewallConfigOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DisassociateResolverRuleOutput {
+pub struct DisassociateResolverRuleOutput  {
     /// <p>Information about the <code>DisassociateResolverRule</code> request, including the status of the request.</p>
     #[doc(hidden)]
     pub resolver_rule_association: std::option::Option<crate::model::ResolverRuleAssociation>,
 }
 impl DisassociateResolverRuleOutput {
     /// <p>Information about the <code>DisassociateResolverRule</code> request, including the status of the request.</p>
-    pub fn resolver_rule_association(
-        &self,
-    ) -> std::option::Option<&crate::model::ResolverRuleAssociation> {
+    pub fn resolver_rule_association(&self) -> std::option::Option<& crate::model::ResolverRuleAssociation> {
         self.resolver_rule_association.as_ref()
     }
 }
 /// See [`DisassociateResolverRuleOutput`](crate::output::DisassociateResolverRuleOutput).
 pub mod disassociate_resolver_rule_output {
-
+    
     /// A builder for [`DisassociateResolverRuleOutput`](crate::output::DisassociateResolverRuleOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) resolver_rule_association:
-            std::option::Option<crate::model::ResolverRuleAssociation>,
+        pub(crate) resolver_rule_association: std::option::Option<crate::model::ResolverRuleAssociation>,
     }
     impl Builder {
         /// <p>Information about the <code>DisassociateResolverRule</code> request, including the status of the request.</p>
-        pub fn resolver_rule_association(
-            mut self,
-            input: crate::model::ResolverRuleAssociation,
-        ) -> Self {
+        pub fn resolver_rule_association(mut self, input: crate::model::ResolverRuleAssociation) -> Self {
             self.resolver_rule_association = Some(input);
             self
         }
         /// <p>Information about the <code>DisassociateResolverRule</code> request, including the status of the request.</p>
-        pub fn set_resolver_rule_association(
-            mut self,
-            input: std::option::Option<crate::model::ResolverRuleAssociation>,
-        ) -> Self {
-            self.resolver_rule_association = input;
-            self
+        pub fn set_resolver_rule_association(mut self, input: std::option::Option<crate::model::ResolverRuleAssociation>) -> Self {
+            self.resolver_rule_association = input; self
         }
         /// Consumes the builder and constructs a [`DisassociateResolverRuleOutput`](crate::output::DisassociateResolverRuleOutput).
         pub fn build(self) -> crate::output::DisassociateResolverRuleOutput {
             crate::output::DisassociateResolverRuleOutput {
-                resolver_rule_association: self.resolver_rule_association,
+                resolver_rule_association: self.resolver_rule_association
+                ,
             }
         }
     }
+    
+    
 }
 impl DisassociateResolverRuleOutput {
     /// Creates a new builder-style object to manufacture [`DisassociateResolverRuleOutput`](crate::output::DisassociateResolverRuleOutput).
@@ -2961,53 +2836,45 @@ impl DisassociateResolverRuleOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DisassociateResolverQueryLogConfigOutput {
+pub struct DisassociateResolverQueryLogConfigOutput  {
     /// <p>A complex type that contains settings for the association that you deleted between an Amazon VPC and a query logging configuration.</p>
     #[doc(hidden)]
-    pub resolver_query_log_config_association:
-        std::option::Option<crate::model::ResolverQueryLogConfigAssociation>,
+    pub resolver_query_log_config_association: std::option::Option<crate::model::ResolverQueryLogConfigAssociation>,
 }
 impl DisassociateResolverQueryLogConfigOutput {
     /// <p>A complex type that contains settings for the association that you deleted between an Amazon VPC and a query logging configuration.</p>
-    pub fn resolver_query_log_config_association(
-        &self,
-    ) -> std::option::Option<&crate::model::ResolverQueryLogConfigAssociation> {
+    pub fn resolver_query_log_config_association(&self) -> std::option::Option<& crate::model::ResolverQueryLogConfigAssociation> {
         self.resolver_query_log_config_association.as_ref()
     }
 }
 /// See [`DisassociateResolverQueryLogConfigOutput`](crate::output::DisassociateResolverQueryLogConfigOutput).
 pub mod disassociate_resolver_query_log_config_output {
-
+    
     /// A builder for [`DisassociateResolverQueryLogConfigOutput`](crate::output::DisassociateResolverQueryLogConfigOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) resolver_query_log_config_association:
-            std::option::Option<crate::model::ResolverQueryLogConfigAssociation>,
+        pub(crate) resolver_query_log_config_association: std::option::Option<crate::model::ResolverQueryLogConfigAssociation>,
     }
     impl Builder {
         /// <p>A complex type that contains settings for the association that you deleted between an Amazon VPC and a query logging configuration.</p>
-        pub fn resolver_query_log_config_association(
-            mut self,
-            input: crate::model::ResolverQueryLogConfigAssociation,
-        ) -> Self {
+        pub fn resolver_query_log_config_association(mut self, input: crate::model::ResolverQueryLogConfigAssociation) -> Self {
             self.resolver_query_log_config_association = Some(input);
             self
         }
         /// <p>A complex type that contains settings for the association that you deleted between an Amazon VPC and a query logging configuration.</p>
-        pub fn set_resolver_query_log_config_association(
-            mut self,
-            input: std::option::Option<crate::model::ResolverQueryLogConfigAssociation>,
-        ) -> Self {
-            self.resolver_query_log_config_association = input;
-            self
+        pub fn set_resolver_query_log_config_association(mut self, input: std::option::Option<crate::model::ResolverQueryLogConfigAssociation>) -> Self {
+            self.resolver_query_log_config_association = input; self
         }
         /// Consumes the builder and constructs a [`DisassociateResolverQueryLogConfigOutput`](crate::output::DisassociateResolverQueryLogConfigOutput).
         pub fn build(self) -> crate::output::DisassociateResolverQueryLogConfigOutput {
             crate::output::DisassociateResolverQueryLogConfigOutput {
-                resolver_query_log_config_association: self.resolver_query_log_config_association,
+                resolver_query_log_config_association: self.resolver_query_log_config_association
+                ,
             }
         }
     }
+    
+    
 }
 impl DisassociateResolverQueryLogConfigOutput {
     /// Creates a new builder-style object to manufacture [`DisassociateResolverQueryLogConfigOutput`](crate::output::DisassociateResolverQueryLogConfigOutput).
@@ -3019,20 +2886,20 @@ impl DisassociateResolverQueryLogConfigOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DisassociateResolverEndpointIpAddressOutput {
+pub struct DisassociateResolverEndpointIpAddressOutput  {
     /// <p>The response to an <code>DisassociateResolverEndpointIpAddress</code> request.</p>
     #[doc(hidden)]
     pub resolver_endpoint: std::option::Option<crate::model::ResolverEndpoint>,
 }
 impl DisassociateResolverEndpointIpAddressOutput {
     /// <p>The response to an <code>DisassociateResolverEndpointIpAddress</code> request.</p>
-    pub fn resolver_endpoint(&self) -> std::option::Option<&crate::model::ResolverEndpoint> {
+    pub fn resolver_endpoint(&self) -> std::option::Option<& crate::model::ResolverEndpoint> {
         self.resolver_endpoint.as_ref()
     }
 }
 /// See [`DisassociateResolverEndpointIpAddressOutput`](crate::output::DisassociateResolverEndpointIpAddressOutput).
 pub mod disassociate_resolver_endpoint_ip_address_output {
-
+    
     /// A builder for [`DisassociateResolverEndpointIpAddressOutput`](crate::output::DisassociateResolverEndpointIpAddressOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3045,20 +2912,19 @@ pub mod disassociate_resolver_endpoint_ip_address_output {
             self
         }
         /// <p>The response to an <code>DisassociateResolverEndpointIpAddress</code> request.</p>
-        pub fn set_resolver_endpoint(
-            mut self,
-            input: std::option::Option<crate::model::ResolverEndpoint>,
-        ) -> Self {
-            self.resolver_endpoint = input;
-            self
+        pub fn set_resolver_endpoint(mut self, input: std::option::Option<crate::model::ResolverEndpoint>) -> Self {
+            self.resolver_endpoint = input; self
         }
         /// Consumes the builder and constructs a [`DisassociateResolverEndpointIpAddressOutput`](crate::output::DisassociateResolverEndpointIpAddressOutput).
         pub fn build(self) -> crate::output::DisassociateResolverEndpointIpAddressOutput {
             crate::output::DisassociateResolverEndpointIpAddressOutput {
-                resolver_endpoint: self.resolver_endpoint,
+                resolver_endpoint: self.resolver_endpoint
+                ,
             }
         }
     }
+    
+    
 }
 impl DisassociateResolverEndpointIpAddressOutput {
     /// Creates a new builder-style object to manufacture [`DisassociateResolverEndpointIpAddressOutput`](crate::output::DisassociateResolverEndpointIpAddressOutput).
@@ -3070,53 +2936,45 @@ impl DisassociateResolverEndpointIpAddressOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DisassociateFirewallRuleGroupOutput {
+pub struct DisassociateFirewallRuleGroupOutput  {
     /// <p>The firewall rule group association that you just removed. </p>
     #[doc(hidden)]
-    pub firewall_rule_group_association:
-        std::option::Option<crate::model::FirewallRuleGroupAssociation>,
+    pub firewall_rule_group_association: std::option::Option<crate::model::FirewallRuleGroupAssociation>,
 }
 impl DisassociateFirewallRuleGroupOutput {
     /// <p>The firewall rule group association that you just removed. </p>
-    pub fn firewall_rule_group_association(
-        &self,
-    ) -> std::option::Option<&crate::model::FirewallRuleGroupAssociation> {
+    pub fn firewall_rule_group_association(&self) -> std::option::Option<& crate::model::FirewallRuleGroupAssociation> {
         self.firewall_rule_group_association.as_ref()
     }
 }
 /// See [`DisassociateFirewallRuleGroupOutput`](crate::output::DisassociateFirewallRuleGroupOutput).
 pub mod disassociate_firewall_rule_group_output {
-
+    
     /// A builder for [`DisassociateFirewallRuleGroupOutput`](crate::output::DisassociateFirewallRuleGroupOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) firewall_rule_group_association:
-            std::option::Option<crate::model::FirewallRuleGroupAssociation>,
+        pub(crate) firewall_rule_group_association: std::option::Option<crate::model::FirewallRuleGroupAssociation>,
     }
     impl Builder {
         /// <p>The firewall rule group association that you just removed. </p>
-        pub fn firewall_rule_group_association(
-            mut self,
-            input: crate::model::FirewallRuleGroupAssociation,
-        ) -> Self {
+        pub fn firewall_rule_group_association(mut self, input: crate::model::FirewallRuleGroupAssociation) -> Self {
             self.firewall_rule_group_association = Some(input);
             self
         }
         /// <p>The firewall rule group association that you just removed. </p>
-        pub fn set_firewall_rule_group_association(
-            mut self,
-            input: std::option::Option<crate::model::FirewallRuleGroupAssociation>,
-        ) -> Self {
-            self.firewall_rule_group_association = input;
-            self
+        pub fn set_firewall_rule_group_association(mut self, input: std::option::Option<crate::model::FirewallRuleGroupAssociation>) -> Self {
+            self.firewall_rule_group_association = input; self
         }
         /// Consumes the builder and constructs a [`DisassociateFirewallRuleGroupOutput`](crate::output::DisassociateFirewallRuleGroupOutput).
         pub fn build(self) -> crate::output::DisassociateFirewallRuleGroupOutput {
             crate::output::DisassociateFirewallRuleGroupOutput {
-                firewall_rule_group_association: self.firewall_rule_group_association,
+                firewall_rule_group_association: self.firewall_rule_group_association
+                ,
             }
         }
     }
+    
+    
 }
 impl DisassociateFirewallRuleGroupOutput {
     /// Creates a new builder-style object to manufacture [`DisassociateFirewallRuleGroupOutput`](crate::output::DisassociateFirewallRuleGroupOutput).
@@ -3128,20 +2986,20 @@ impl DisassociateFirewallRuleGroupOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteResolverRuleOutput {
+pub struct DeleteResolverRuleOutput  {
     /// <p>Information about the <code>DeleteResolverRule</code> request, including the status of the request.</p>
     #[doc(hidden)]
     pub resolver_rule: std::option::Option<crate::model::ResolverRule>,
 }
 impl DeleteResolverRuleOutput {
     /// <p>Information about the <code>DeleteResolverRule</code> request, including the status of the request.</p>
-    pub fn resolver_rule(&self) -> std::option::Option<&crate::model::ResolverRule> {
+    pub fn resolver_rule(&self) -> std::option::Option<& crate::model::ResolverRule> {
         self.resolver_rule.as_ref()
     }
 }
 /// See [`DeleteResolverRuleOutput`](crate::output::DeleteResolverRuleOutput).
 pub mod delete_resolver_rule_output {
-
+    
     /// A builder for [`DeleteResolverRuleOutput`](crate::output::DeleteResolverRuleOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3154,20 +3012,19 @@ pub mod delete_resolver_rule_output {
             self
         }
         /// <p>Information about the <code>DeleteResolverRule</code> request, including the status of the request.</p>
-        pub fn set_resolver_rule(
-            mut self,
-            input: std::option::Option<crate::model::ResolverRule>,
-        ) -> Self {
-            self.resolver_rule = input;
-            self
+        pub fn set_resolver_rule(mut self, input: std::option::Option<crate::model::ResolverRule>) -> Self {
+            self.resolver_rule = input; self
         }
         /// Consumes the builder and constructs a [`DeleteResolverRuleOutput`](crate::output::DeleteResolverRuleOutput).
         pub fn build(self) -> crate::output::DeleteResolverRuleOutput {
             crate::output::DeleteResolverRuleOutput {
-                resolver_rule: self.resolver_rule,
+                resolver_rule: self.resolver_rule
+                ,
             }
         }
     }
+    
+    
 }
 impl DeleteResolverRuleOutput {
     /// Creates a new builder-style object to manufacture [`DeleteResolverRuleOutput`](crate::output::DeleteResolverRuleOutput).
@@ -3179,52 +3036,45 @@ impl DeleteResolverRuleOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteResolverQueryLogConfigOutput {
+pub struct DeleteResolverQueryLogConfigOutput  {
     /// <p>Information about the query logging configuration that you deleted, including the status of the request.</p>
     #[doc(hidden)]
     pub resolver_query_log_config: std::option::Option<crate::model::ResolverQueryLogConfig>,
 }
 impl DeleteResolverQueryLogConfigOutput {
     /// <p>Information about the query logging configuration that you deleted, including the status of the request.</p>
-    pub fn resolver_query_log_config(
-        &self,
-    ) -> std::option::Option<&crate::model::ResolverQueryLogConfig> {
+    pub fn resolver_query_log_config(&self) -> std::option::Option<& crate::model::ResolverQueryLogConfig> {
         self.resolver_query_log_config.as_ref()
     }
 }
 /// See [`DeleteResolverQueryLogConfigOutput`](crate::output::DeleteResolverQueryLogConfigOutput).
 pub mod delete_resolver_query_log_config_output {
-
+    
     /// A builder for [`DeleteResolverQueryLogConfigOutput`](crate::output::DeleteResolverQueryLogConfigOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) resolver_query_log_config:
-            std::option::Option<crate::model::ResolverQueryLogConfig>,
+        pub(crate) resolver_query_log_config: std::option::Option<crate::model::ResolverQueryLogConfig>,
     }
     impl Builder {
         /// <p>Information about the query logging configuration that you deleted, including the status of the request.</p>
-        pub fn resolver_query_log_config(
-            mut self,
-            input: crate::model::ResolverQueryLogConfig,
-        ) -> Self {
+        pub fn resolver_query_log_config(mut self, input: crate::model::ResolverQueryLogConfig) -> Self {
             self.resolver_query_log_config = Some(input);
             self
         }
         /// <p>Information about the query logging configuration that you deleted, including the status of the request.</p>
-        pub fn set_resolver_query_log_config(
-            mut self,
-            input: std::option::Option<crate::model::ResolverQueryLogConfig>,
-        ) -> Self {
-            self.resolver_query_log_config = input;
-            self
+        pub fn set_resolver_query_log_config(mut self, input: std::option::Option<crate::model::ResolverQueryLogConfig>) -> Self {
+            self.resolver_query_log_config = input; self
         }
         /// Consumes the builder and constructs a [`DeleteResolverQueryLogConfigOutput`](crate::output::DeleteResolverQueryLogConfigOutput).
         pub fn build(self) -> crate::output::DeleteResolverQueryLogConfigOutput {
             crate::output::DeleteResolverQueryLogConfigOutput {
-                resolver_query_log_config: self.resolver_query_log_config,
+                resolver_query_log_config: self.resolver_query_log_config
+                ,
             }
         }
     }
+    
+    
 }
 impl DeleteResolverQueryLogConfigOutput {
     /// Creates a new builder-style object to manufacture [`DeleteResolverQueryLogConfigOutput`](crate::output::DeleteResolverQueryLogConfigOutput).
@@ -3236,20 +3086,20 @@ impl DeleteResolverQueryLogConfigOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteResolverEndpointOutput {
+pub struct DeleteResolverEndpointOutput  {
     /// <p>Information about the <code>DeleteResolverEndpoint</code> request, including the status of the request.</p>
     #[doc(hidden)]
     pub resolver_endpoint: std::option::Option<crate::model::ResolverEndpoint>,
 }
 impl DeleteResolverEndpointOutput {
     /// <p>Information about the <code>DeleteResolverEndpoint</code> request, including the status of the request.</p>
-    pub fn resolver_endpoint(&self) -> std::option::Option<&crate::model::ResolverEndpoint> {
+    pub fn resolver_endpoint(&self) -> std::option::Option<& crate::model::ResolverEndpoint> {
         self.resolver_endpoint.as_ref()
     }
 }
 /// See [`DeleteResolverEndpointOutput`](crate::output::DeleteResolverEndpointOutput).
 pub mod delete_resolver_endpoint_output {
-
+    
     /// A builder for [`DeleteResolverEndpointOutput`](crate::output::DeleteResolverEndpointOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3262,20 +3112,19 @@ pub mod delete_resolver_endpoint_output {
             self
         }
         /// <p>Information about the <code>DeleteResolverEndpoint</code> request, including the status of the request.</p>
-        pub fn set_resolver_endpoint(
-            mut self,
-            input: std::option::Option<crate::model::ResolverEndpoint>,
-        ) -> Self {
-            self.resolver_endpoint = input;
-            self
+        pub fn set_resolver_endpoint(mut self, input: std::option::Option<crate::model::ResolverEndpoint>) -> Self {
+            self.resolver_endpoint = input; self
         }
         /// Consumes the builder and constructs a [`DeleteResolverEndpointOutput`](crate::output::DeleteResolverEndpointOutput).
         pub fn build(self) -> crate::output::DeleteResolverEndpointOutput {
             crate::output::DeleteResolverEndpointOutput {
-                resolver_endpoint: self.resolver_endpoint,
+                resolver_endpoint: self.resolver_endpoint
+                ,
             }
         }
     }
+    
+    
 }
 impl DeleteResolverEndpointOutput {
     /// Creates a new builder-style object to manufacture [`DeleteResolverEndpointOutput`](crate::output::DeleteResolverEndpointOutput).
@@ -3287,20 +3136,20 @@ impl DeleteResolverEndpointOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteFirewallRuleGroupOutput {
+pub struct DeleteFirewallRuleGroupOutput  {
     /// <p>A collection of rules used to filter DNS network traffic. </p>
     #[doc(hidden)]
     pub firewall_rule_group: std::option::Option<crate::model::FirewallRuleGroup>,
 }
 impl DeleteFirewallRuleGroupOutput {
     /// <p>A collection of rules used to filter DNS network traffic. </p>
-    pub fn firewall_rule_group(&self) -> std::option::Option<&crate::model::FirewallRuleGroup> {
+    pub fn firewall_rule_group(&self) -> std::option::Option<& crate::model::FirewallRuleGroup> {
         self.firewall_rule_group.as_ref()
     }
 }
 /// See [`DeleteFirewallRuleGroupOutput`](crate::output::DeleteFirewallRuleGroupOutput).
 pub mod delete_firewall_rule_group_output {
-
+    
     /// A builder for [`DeleteFirewallRuleGroupOutput`](crate::output::DeleteFirewallRuleGroupOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3313,20 +3162,19 @@ pub mod delete_firewall_rule_group_output {
             self
         }
         /// <p>A collection of rules used to filter DNS network traffic. </p>
-        pub fn set_firewall_rule_group(
-            mut self,
-            input: std::option::Option<crate::model::FirewallRuleGroup>,
-        ) -> Self {
-            self.firewall_rule_group = input;
-            self
+        pub fn set_firewall_rule_group(mut self, input: std::option::Option<crate::model::FirewallRuleGroup>) -> Self {
+            self.firewall_rule_group = input; self
         }
         /// Consumes the builder and constructs a [`DeleteFirewallRuleGroupOutput`](crate::output::DeleteFirewallRuleGroupOutput).
         pub fn build(self) -> crate::output::DeleteFirewallRuleGroupOutput {
             crate::output::DeleteFirewallRuleGroupOutput {
-                firewall_rule_group: self.firewall_rule_group,
+                firewall_rule_group: self.firewall_rule_group
+                ,
             }
         }
     }
+    
+    
 }
 impl DeleteFirewallRuleGroupOutput {
     /// Creates a new builder-style object to manufacture [`DeleteFirewallRuleGroupOutput`](crate::output::DeleteFirewallRuleGroupOutput).
@@ -3338,20 +3186,20 @@ impl DeleteFirewallRuleGroupOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteFirewallRuleOutput {
+pub struct DeleteFirewallRuleOutput  {
     /// <p>The specification for the firewall rule that you just deleted.</p>
     #[doc(hidden)]
     pub firewall_rule: std::option::Option<crate::model::FirewallRule>,
 }
 impl DeleteFirewallRuleOutput {
     /// <p>The specification for the firewall rule that you just deleted.</p>
-    pub fn firewall_rule(&self) -> std::option::Option<&crate::model::FirewallRule> {
+    pub fn firewall_rule(&self) -> std::option::Option<& crate::model::FirewallRule> {
         self.firewall_rule.as_ref()
     }
 }
 /// See [`DeleteFirewallRuleOutput`](crate::output::DeleteFirewallRuleOutput).
 pub mod delete_firewall_rule_output {
-
+    
     /// A builder for [`DeleteFirewallRuleOutput`](crate::output::DeleteFirewallRuleOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3364,20 +3212,19 @@ pub mod delete_firewall_rule_output {
             self
         }
         /// <p>The specification for the firewall rule that you just deleted.</p>
-        pub fn set_firewall_rule(
-            mut self,
-            input: std::option::Option<crate::model::FirewallRule>,
-        ) -> Self {
-            self.firewall_rule = input;
-            self
+        pub fn set_firewall_rule(mut self, input: std::option::Option<crate::model::FirewallRule>) -> Self {
+            self.firewall_rule = input; self
         }
         /// Consumes the builder and constructs a [`DeleteFirewallRuleOutput`](crate::output::DeleteFirewallRuleOutput).
         pub fn build(self) -> crate::output::DeleteFirewallRuleOutput {
             crate::output::DeleteFirewallRuleOutput {
-                firewall_rule: self.firewall_rule,
+                firewall_rule: self.firewall_rule
+                ,
             }
         }
     }
+    
+    
 }
 impl DeleteFirewallRuleOutput {
     /// Creates a new builder-style object to manufacture [`DeleteFirewallRuleOutput`](crate::output::DeleteFirewallRuleOutput).
@@ -3389,20 +3236,20 @@ impl DeleteFirewallRuleOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteFirewallDomainListOutput {
+pub struct DeleteFirewallDomainListOutput  {
     /// <p>The domain list that you just deleted. </p>
     #[doc(hidden)]
     pub firewall_domain_list: std::option::Option<crate::model::FirewallDomainList>,
 }
 impl DeleteFirewallDomainListOutput {
     /// <p>The domain list that you just deleted. </p>
-    pub fn firewall_domain_list(&self) -> std::option::Option<&crate::model::FirewallDomainList> {
+    pub fn firewall_domain_list(&self) -> std::option::Option<& crate::model::FirewallDomainList> {
         self.firewall_domain_list.as_ref()
     }
 }
 /// See [`DeleteFirewallDomainListOutput`](crate::output::DeleteFirewallDomainListOutput).
 pub mod delete_firewall_domain_list_output {
-
+    
     /// A builder for [`DeleteFirewallDomainListOutput`](crate::output::DeleteFirewallDomainListOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3415,20 +3262,19 @@ pub mod delete_firewall_domain_list_output {
             self
         }
         /// <p>The domain list that you just deleted. </p>
-        pub fn set_firewall_domain_list(
-            mut self,
-            input: std::option::Option<crate::model::FirewallDomainList>,
-        ) -> Self {
-            self.firewall_domain_list = input;
-            self
+        pub fn set_firewall_domain_list(mut self, input: std::option::Option<crate::model::FirewallDomainList>) -> Self {
+            self.firewall_domain_list = input; self
         }
         /// Consumes the builder and constructs a [`DeleteFirewallDomainListOutput`](crate::output::DeleteFirewallDomainListOutput).
         pub fn build(self) -> crate::output::DeleteFirewallDomainListOutput {
             crate::output::DeleteFirewallDomainListOutput {
-                firewall_domain_list: self.firewall_domain_list,
+                firewall_domain_list: self.firewall_domain_list
+                ,
             }
         }
     }
+    
+    
 }
 impl DeleteFirewallDomainListOutput {
     /// Creates a new builder-style object to manufacture [`DeleteFirewallDomainListOutput`](crate::output::DeleteFirewallDomainListOutput).
@@ -3440,20 +3286,20 @@ impl DeleteFirewallDomainListOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateResolverRuleOutput {
+pub struct CreateResolverRuleOutput  {
     /// <p>Information about the <code>CreateResolverRule</code> request, including the status of the request.</p>
     #[doc(hidden)]
     pub resolver_rule: std::option::Option<crate::model::ResolverRule>,
 }
 impl CreateResolverRuleOutput {
     /// <p>Information about the <code>CreateResolverRule</code> request, including the status of the request.</p>
-    pub fn resolver_rule(&self) -> std::option::Option<&crate::model::ResolverRule> {
+    pub fn resolver_rule(&self) -> std::option::Option<& crate::model::ResolverRule> {
         self.resolver_rule.as_ref()
     }
 }
 /// See [`CreateResolverRuleOutput`](crate::output::CreateResolverRuleOutput).
 pub mod create_resolver_rule_output {
-
+    
     /// A builder for [`CreateResolverRuleOutput`](crate::output::CreateResolverRuleOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3466,20 +3312,19 @@ pub mod create_resolver_rule_output {
             self
         }
         /// <p>Information about the <code>CreateResolverRule</code> request, including the status of the request.</p>
-        pub fn set_resolver_rule(
-            mut self,
-            input: std::option::Option<crate::model::ResolverRule>,
-        ) -> Self {
-            self.resolver_rule = input;
-            self
+        pub fn set_resolver_rule(mut self, input: std::option::Option<crate::model::ResolverRule>) -> Self {
+            self.resolver_rule = input; self
         }
         /// Consumes the builder and constructs a [`CreateResolverRuleOutput`](crate::output::CreateResolverRuleOutput).
         pub fn build(self) -> crate::output::CreateResolverRuleOutput {
             crate::output::CreateResolverRuleOutput {
-                resolver_rule: self.resolver_rule,
+                resolver_rule: self.resolver_rule
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateResolverRuleOutput {
     /// Creates a new builder-style object to manufacture [`CreateResolverRuleOutput`](crate::output::CreateResolverRuleOutput).
@@ -3491,52 +3336,45 @@ impl CreateResolverRuleOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateResolverQueryLogConfigOutput {
+pub struct CreateResolverQueryLogConfigOutput  {
     /// <p>Information about the <code>CreateResolverQueryLogConfig</code> request, including the status of the request.</p>
     #[doc(hidden)]
     pub resolver_query_log_config: std::option::Option<crate::model::ResolverQueryLogConfig>,
 }
 impl CreateResolverQueryLogConfigOutput {
     /// <p>Information about the <code>CreateResolverQueryLogConfig</code> request, including the status of the request.</p>
-    pub fn resolver_query_log_config(
-        &self,
-    ) -> std::option::Option<&crate::model::ResolverQueryLogConfig> {
+    pub fn resolver_query_log_config(&self) -> std::option::Option<& crate::model::ResolverQueryLogConfig> {
         self.resolver_query_log_config.as_ref()
     }
 }
 /// See [`CreateResolverQueryLogConfigOutput`](crate::output::CreateResolverQueryLogConfigOutput).
 pub mod create_resolver_query_log_config_output {
-
+    
     /// A builder for [`CreateResolverQueryLogConfigOutput`](crate::output::CreateResolverQueryLogConfigOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) resolver_query_log_config:
-            std::option::Option<crate::model::ResolverQueryLogConfig>,
+        pub(crate) resolver_query_log_config: std::option::Option<crate::model::ResolverQueryLogConfig>,
     }
     impl Builder {
         /// <p>Information about the <code>CreateResolverQueryLogConfig</code> request, including the status of the request.</p>
-        pub fn resolver_query_log_config(
-            mut self,
-            input: crate::model::ResolverQueryLogConfig,
-        ) -> Self {
+        pub fn resolver_query_log_config(mut self, input: crate::model::ResolverQueryLogConfig) -> Self {
             self.resolver_query_log_config = Some(input);
             self
         }
         /// <p>Information about the <code>CreateResolverQueryLogConfig</code> request, including the status of the request.</p>
-        pub fn set_resolver_query_log_config(
-            mut self,
-            input: std::option::Option<crate::model::ResolverQueryLogConfig>,
-        ) -> Self {
-            self.resolver_query_log_config = input;
-            self
+        pub fn set_resolver_query_log_config(mut self, input: std::option::Option<crate::model::ResolverQueryLogConfig>) -> Self {
+            self.resolver_query_log_config = input; self
         }
         /// Consumes the builder and constructs a [`CreateResolverQueryLogConfigOutput`](crate::output::CreateResolverQueryLogConfigOutput).
         pub fn build(self) -> crate::output::CreateResolverQueryLogConfigOutput {
             crate::output::CreateResolverQueryLogConfigOutput {
-                resolver_query_log_config: self.resolver_query_log_config,
+                resolver_query_log_config: self.resolver_query_log_config
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateResolverQueryLogConfigOutput {
     /// Creates a new builder-style object to manufacture [`CreateResolverQueryLogConfigOutput`](crate::output::CreateResolverQueryLogConfigOutput).
@@ -3548,20 +3386,20 @@ impl CreateResolverQueryLogConfigOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateResolverEndpointOutput {
+pub struct CreateResolverEndpointOutput  {
     /// <p>Information about the <code>CreateResolverEndpoint</code> request, including the status of the request.</p>
     #[doc(hidden)]
     pub resolver_endpoint: std::option::Option<crate::model::ResolverEndpoint>,
 }
 impl CreateResolverEndpointOutput {
     /// <p>Information about the <code>CreateResolverEndpoint</code> request, including the status of the request.</p>
-    pub fn resolver_endpoint(&self) -> std::option::Option<&crate::model::ResolverEndpoint> {
+    pub fn resolver_endpoint(&self) -> std::option::Option<& crate::model::ResolverEndpoint> {
         self.resolver_endpoint.as_ref()
     }
 }
 /// See [`CreateResolverEndpointOutput`](crate::output::CreateResolverEndpointOutput).
 pub mod create_resolver_endpoint_output {
-
+    
     /// A builder for [`CreateResolverEndpointOutput`](crate::output::CreateResolverEndpointOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3574,20 +3412,19 @@ pub mod create_resolver_endpoint_output {
             self
         }
         /// <p>Information about the <code>CreateResolverEndpoint</code> request, including the status of the request.</p>
-        pub fn set_resolver_endpoint(
-            mut self,
-            input: std::option::Option<crate::model::ResolverEndpoint>,
-        ) -> Self {
-            self.resolver_endpoint = input;
-            self
+        pub fn set_resolver_endpoint(mut self, input: std::option::Option<crate::model::ResolverEndpoint>) -> Self {
+            self.resolver_endpoint = input; self
         }
         /// Consumes the builder and constructs a [`CreateResolverEndpointOutput`](crate::output::CreateResolverEndpointOutput).
         pub fn build(self) -> crate::output::CreateResolverEndpointOutput {
             crate::output::CreateResolverEndpointOutput {
-                resolver_endpoint: self.resolver_endpoint,
+                resolver_endpoint: self.resolver_endpoint
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateResolverEndpointOutput {
     /// Creates a new builder-style object to manufacture [`CreateResolverEndpointOutput`](crate::output::CreateResolverEndpointOutput).
@@ -3599,20 +3436,20 @@ impl CreateResolverEndpointOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateFirewallRuleGroupOutput {
+pub struct CreateFirewallRuleGroupOutput  {
     /// <p>A collection of rules used to filter DNS network traffic. </p>
     #[doc(hidden)]
     pub firewall_rule_group: std::option::Option<crate::model::FirewallRuleGroup>,
 }
 impl CreateFirewallRuleGroupOutput {
     /// <p>A collection of rules used to filter DNS network traffic. </p>
-    pub fn firewall_rule_group(&self) -> std::option::Option<&crate::model::FirewallRuleGroup> {
+    pub fn firewall_rule_group(&self) -> std::option::Option<& crate::model::FirewallRuleGroup> {
         self.firewall_rule_group.as_ref()
     }
 }
 /// See [`CreateFirewallRuleGroupOutput`](crate::output::CreateFirewallRuleGroupOutput).
 pub mod create_firewall_rule_group_output {
-
+    
     /// A builder for [`CreateFirewallRuleGroupOutput`](crate::output::CreateFirewallRuleGroupOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3625,20 +3462,19 @@ pub mod create_firewall_rule_group_output {
             self
         }
         /// <p>A collection of rules used to filter DNS network traffic. </p>
-        pub fn set_firewall_rule_group(
-            mut self,
-            input: std::option::Option<crate::model::FirewallRuleGroup>,
-        ) -> Self {
-            self.firewall_rule_group = input;
-            self
+        pub fn set_firewall_rule_group(mut self, input: std::option::Option<crate::model::FirewallRuleGroup>) -> Self {
+            self.firewall_rule_group = input; self
         }
         /// Consumes the builder and constructs a [`CreateFirewallRuleGroupOutput`](crate::output::CreateFirewallRuleGroupOutput).
         pub fn build(self) -> crate::output::CreateFirewallRuleGroupOutput {
             crate::output::CreateFirewallRuleGroupOutput {
-                firewall_rule_group: self.firewall_rule_group,
+                firewall_rule_group: self.firewall_rule_group
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateFirewallRuleGroupOutput {
     /// Creates a new builder-style object to manufacture [`CreateFirewallRuleGroupOutput`](crate::output::CreateFirewallRuleGroupOutput).
@@ -3650,20 +3486,20 @@ impl CreateFirewallRuleGroupOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateFirewallRuleOutput {
+pub struct CreateFirewallRuleOutput  {
     /// <p>The firewall rule that you just created. </p>
     #[doc(hidden)]
     pub firewall_rule: std::option::Option<crate::model::FirewallRule>,
 }
 impl CreateFirewallRuleOutput {
     /// <p>The firewall rule that you just created. </p>
-    pub fn firewall_rule(&self) -> std::option::Option<&crate::model::FirewallRule> {
+    pub fn firewall_rule(&self) -> std::option::Option<& crate::model::FirewallRule> {
         self.firewall_rule.as_ref()
     }
 }
 /// See [`CreateFirewallRuleOutput`](crate::output::CreateFirewallRuleOutput).
 pub mod create_firewall_rule_output {
-
+    
     /// A builder for [`CreateFirewallRuleOutput`](crate::output::CreateFirewallRuleOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3676,20 +3512,19 @@ pub mod create_firewall_rule_output {
             self
         }
         /// <p>The firewall rule that you just created. </p>
-        pub fn set_firewall_rule(
-            mut self,
-            input: std::option::Option<crate::model::FirewallRule>,
-        ) -> Self {
-            self.firewall_rule = input;
-            self
+        pub fn set_firewall_rule(mut self, input: std::option::Option<crate::model::FirewallRule>) -> Self {
+            self.firewall_rule = input; self
         }
         /// Consumes the builder and constructs a [`CreateFirewallRuleOutput`](crate::output::CreateFirewallRuleOutput).
         pub fn build(self) -> crate::output::CreateFirewallRuleOutput {
             crate::output::CreateFirewallRuleOutput {
-                firewall_rule: self.firewall_rule,
+                firewall_rule: self.firewall_rule
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateFirewallRuleOutput {
     /// Creates a new builder-style object to manufacture [`CreateFirewallRuleOutput`](crate::output::CreateFirewallRuleOutput).
@@ -3701,20 +3536,20 @@ impl CreateFirewallRuleOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateFirewallDomainListOutput {
+pub struct CreateFirewallDomainListOutput  {
     /// <p>The domain list that you just created.</p>
     #[doc(hidden)]
     pub firewall_domain_list: std::option::Option<crate::model::FirewallDomainList>,
 }
 impl CreateFirewallDomainListOutput {
     /// <p>The domain list that you just created.</p>
-    pub fn firewall_domain_list(&self) -> std::option::Option<&crate::model::FirewallDomainList> {
+    pub fn firewall_domain_list(&self) -> std::option::Option<& crate::model::FirewallDomainList> {
         self.firewall_domain_list.as_ref()
     }
 }
 /// See [`CreateFirewallDomainListOutput`](crate::output::CreateFirewallDomainListOutput).
 pub mod create_firewall_domain_list_output {
-
+    
     /// A builder for [`CreateFirewallDomainListOutput`](crate::output::CreateFirewallDomainListOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3727,20 +3562,19 @@ pub mod create_firewall_domain_list_output {
             self
         }
         /// <p>The domain list that you just created.</p>
-        pub fn set_firewall_domain_list(
-            mut self,
-            input: std::option::Option<crate::model::FirewallDomainList>,
-        ) -> Self {
-            self.firewall_domain_list = input;
-            self
+        pub fn set_firewall_domain_list(mut self, input: std::option::Option<crate::model::FirewallDomainList>) -> Self {
+            self.firewall_domain_list = input; self
         }
         /// Consumes the builder and constructs a [`CreateFirewallDomainListOutput`](crate::output::CreateFirewallDomainListOutput).
         pub fn build(self) -> crate::output::CreateFirewallDomainListOutput {
             crate::output::CreateFirewallDomainListOutput {
-                firewall_domain_list: self.firewall_domain_list,
+                firewall_domain_list: self.firewall_domain_list
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateFirewallDomainListOutput {
     /// Creates a new builder-style object to manufacture [`CreateFirewallDomainListOutput`](crate::output::CreateFirewallDomainListOutput).
@@ -3752,52 +3586,45 @@ impl CreateFirewallDomainListOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AssociateResolverRuleOutput {
+pub struct AssociateResolverRuleOutput  {
     /// <p>Information about the <code>AssociateResolverRule</code> request, including the status of the request.</p>
     #[doc(hidden)]
     pub resolver_rule_association: std::option::Option<crate::model::ResolverRuleAssociation>,
 }
 impl AssociateResolverRuleOutput {
     /// <p>Information about the <code>AssociateResolverRule</code> request, including the status of the request.</p>
-    pub fn resolver_rule_association(
-        &self,
-    ) -> std::option::Option<&crate::model::ResolverRuleAssociation> {
+    pub fn resolver_rule_association(&self) -> std::option::Option<& crate::model::ResolverRuleAssociation> {
         self.resolver_rule_association.as_ref()
     }
 }
 /// See [`AssociateResolverRuleOutput`](crate::output::AssociateResolverRuleOutput).
 pub mod associate_resolver_rule_output {
-
+    
     /// A builder for [`AssociateResolverRuleOutput`](crate::output::AssociateResolverRuleOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) resolver_rule_association:
-            std::option::Option<crate::model::ResolverRuleAssociation>,
+        pub(crate) resolver_rule_association: std::option::Option<crate::model::ResolverRuleAssociation>,
     }
     impl Builder {
         /// <p>Information about the <code>AssociateResolverRule</code> request, including the status of the request.</p>
-        pub fn resolver_rule_association(
-            mut self,
-            input: crate::model::ResolverRuleAssociation,
-        ) -> Self {
+        pub fn resolver_rule_association(mut self, input: crate::model::ResolverRuleAssociation) -> Self {
             self.resolver_rule_association = Some(input);
             self
         }
         /// <p>Information about the <code>AssociateResolverRule</code> request, including the status of the request.</p>
-        pub fn set_resolver_rule_association(
-            mut self,
-            input: std::option::Option<crate::model::ResolverRuleAssociation>,
-        ) -> Self {
-            self.resolver_rule_association = input;
-            self
+        pub fn set_resolver_rule_association(mut self, input: std::option::Option<crate::model::ResolverRuleAssociation>) -> Self {
+            self.resolver_rule_association = input; self
         }
         /// Consumes the builder and constructs a [`AssociateResolverRuleOutput`](crate::output::AssociateResolverRuleOutput).
         pub fn build(self) -> crate::output::AssociateResolverRuleOutput {
             crate::output::AssociateResolverRuleOutput {
-                resolver_rule_association: self.resolver_rule_association,
+                resolver_rule_association: self.resolver_rule_association
+                ,
             }
         }
     }
+    
+    
 }
 impl AssociateResolverRuleOutput {
     /// Creates a new builder-style object to manufacture [`AssociateResolverRuleOutput`](crate::output::AssociateResolverRuleOutput).
@@ -3809,53 +3636,45 @@ impl AssociateResolverRuleOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AssociateResolverQueryLogConfigOutput {
+pub struct AssociateResolverQueryLogConfigOutput  {
     /// <p>A complex type that contains settings for a specified association between an Amazon VPC and a query logging configuration.</p>
     #[doc(hidden)]
-    pub resolver_query_log_config_association:
-        std::option::Option<crate::model::ResolverQueryLogConfigAssociation>,
+    pub resolver_query_log_config_association: std::option::Option<crate::model::ResolverQueryLogConfigAssociation>,
 }
 impl AssociateResolverQueryLogConfigOutput {
     /// <p>A complex type that contains settings for a specified association between an Amazon VPC and a query logging configuration.</p>
-    pub fn resolver_query_log_config_association(
-        &self,
-    ) -> std::option::Option<&crate::model::ResolverQueryLogConfigAssociation> {
+    pub fn resolver_query_log_config_association(&self) -> std::option::Option<& crate::model::ResolverQueryLogConfigAssociation> {
         self.resolver_query_log_config_association.as_ref()
     }
 }
 /// See [`AssociateResolverQueryLogConfigOutput`](crate::output::AssociateResolverQueryLogConfigOutput).
 pub mod associate_resolver_query_log_config_output {
-
+    
     /// A builder for [`AssociateResolverQueryLogConfigOutput`](crate::output::AssociateResolverQueryLogConfigOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) resolver_query_log_config_association:
-            std::option::Option<crate::model::ResolverQueryLogConfigAssociation>,
+        pub(crate) resolver_query_log_config_association: std::option::Option<crate::model::ResolverQueryLogConfigAssociation>,
     }
     impl Builder {
         /// <p>A complex type that contains settings for a specified association between an Amazon VPC and a query logging configuration.</p>
-        pub fn resolver_query_log_config_association(
-            mut self,
-            input: crate::model::ResolverQueryLogConfigAssociation,
-        ) -> Self {
+        pub fn resolver_query_log_config_association(mut self, input: crate::model::ResolverQueryLogConfigAssociation) -> Self {
             self.resolver_query_log_config_association = Some(input);
             self
         }
         /// <p>A complex type that contains settings for a specified association between an Amazon VPC and a query logging configuration.</p>
-        pub fn set_resolver_query_log_config_association(
-            mut self,
-            input: std::option::Option<crate::model::ResolverQueryLogConfigAssociation>,
-        ) -> Self {
-            self.resolver_query_log_config_association = input;
-            self
+        pub fn set_resolver_query_log_config_association(mut self, input: std::option::Option<crate::model::ResolverQueryLogConfigAssociation>) -> Self {
+            self.resolver_query_log_config_association = input; self
         }
         /// Consumes the builder and constructs a [`AssociateResolverQueryLogConfigOutput`](crate::output::AssociateResolverQueryLogConfigOutput).
         pub fn build(self) -> crate::output::AssociateResolverQueryLogConfigOutput {
             crate::output::AssociateResolverQueryLogConfigOutput {
-                resolver_query_log_config_association: self.resolver_query_log_config_association,
+                resolver_query_log_config_association: self.resolver_query_log_config_association
+                ,
             }
         }
     }
+    
+    
 }
 impl AssociateResolverQueryLogConfigOutput {
     /// Creates a new builder-style object to manufacture [`AssociateResolverQueryLogConfigOutput`](crate::output::AssociateResolverQueryLogConfigOutput).
@@ -3867,20 +3686,20 @@ impl AssociateResolverQueryLogConfigOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AssociateResolverEndpointIpAddressOutput {
+pub struct AssociateResolverEndpointIpAddressOutput  {
     /// <p>The response to an <code>AssociateResolverEndpointIpAddress</code> request.</p>
     #[doc(hidden)]
     pub resolver_endpoint: std::option::Option<crate::model::ResolverEndpoint>,
 }
 impl AssociateResolverEndpointIpAddressOutput {
     /// <p>The response to an <code>AssociateResolverEndpointIpAddress</code> request.</p>
-    pub fn resolver_endpoint(&self) -> std::option::Option<&crate::model::ResolverEndpoint> {
+    pub fn resolver_endpoint(&self) -> std::option::Option<& crate::model::ResolverEndpoint> {
         self.resolver_endpoint.as_ref()
     }
 }
 /// See [`AssociateResolverEndpointIpAddressOutput`](crate::output::AssociateResolverEndpointIpAddressOutput).
 pub mod associate_resolver_endpoint_ip_address_output {
-
+    
     /// A builder for [`AssociateResolverEndpointIpAddressOutput`](crate::output::AssociateResolverEndpointIpAddressOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3893,20 +3712,19 @@ pub mod associate_resolver_endpoint_ip_address_output {
             self
         }
         /// <p>The response to an <code>AssociateResolverEndpointIpAddress</code> request.</p>
-        pub fn set_resolver_endpoint(
-            mut self,
-            input: std::option::Option<crate::model::ResolverEndpoint>,
-        ) -> Self {
-            self.resolver_endpoint = input;
-            self
+        pub fn set_resolver_endpoint(mut self, input: std::option::Option<crate::model::ResolverEndpoint>) -> Self {
+            self.resolver_endpoint = input; self
         }
         /// Consumes the builder and constructs a [`AssociateResolverEndpointIpAddressOutput`](crate::output::AssociateResolverEndpointIpAddressOutput).
         pub fn build(self) -> crate::output::AssociateResolverEndpointIpAddressOutput {
             crate::output::AssociateResolverEndpointIpAddressOutput {
-                resolver_endpoint: self.resolver_endpoint,
+                resolver_endpoint: self.resolver_endpoint
+                ,
             }
         }
     }
+    
+    
 }
 impl AssociateResolverEndpointIpAddressOutput {
     /// Creates a new builder-style object to manufacture [`AssociateResolverEndpointIpAddressOutput`](crate::output::AssociateResolverEndpointIpAddressOutput).
@@ -3918,53 +3736,45 @@ impl AssociateResolverEndpointIpAddressOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AssociateFirewallRuleGroupOutput {
+pub struct AssociateFirewallRuleGroupOutput  {
     /// <p>The association that you just created. The association has an ID that you can use to identify it in other requests, like update and delete.</p>
     #[doc(hidden)]
-    pub firewall_rule_group_association:
-        std::option::Option<crate::model::FirewallRuleGroupAssociation>,
+    pub firewall_rule_group_association: std::option::Option<crate::model::FirewallRuleGroupAssociation>,
 }
 impl AssociateFirewallRuleGroupOutput {
     /// <p>The association that you just created. The association has an ID that you can use to identify it in other requests, like update and delete.</p>
-    pub fn firewall_rule_group_association(
-        &self,
-    ) -> std::option::Option<&crate::model::FirewallRuleGroupAssociation> {
+    pub fn firewall_rule_group_association(&self) -> std::option::Option<& crate::model::FirewallRuleGroupAssociation> {
         self.firewall_rule_group_association.as_ref()
     }
 }
 /// See [`AssociateFirewallRuleGroupOutput`](crate::output::AssociateFirewallRuleGroupOutput).
 pub mod associate_firewall_rule_group_output {
-
+    
     /// A builder for [`AssociateFirewallRuleGroupOutput`](crate::output::AssociateFirewallRuleGroupOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) firewall_rule_group_association:
-            std::option::Option<crate::model::FirewallRuleGroupAssociation>,
+        pub(crate) firewall_rule_group_association: std::option::Option<crate::model::FirewallRuleGroupAssociation>,
     }
     impl Builder {
         /// <p>The association that you just created. The association has an ID that you can use to identify it in other requests, like update and delete.</p>
-        pub fn firewall_rule_group_association(
-            mut self,
-            input: crate::model::FirewallRuleGroupAssociation,
-        ) -> Self {
+        pub fn firewall_rule_group_association(mut self, input: crate::model::FirewallRuleGroupAssociation) -> Self {
             self.firewall_rule_group_association = Some(input);
             self
         }
         /// <p>The association that you just created. The association has an ID that you can use to identify it in other requests, like update and delete.</p>
-        pub fn set_firewall_rule_group_association(
-            mut self,
-            input: std::option::Option<crate::model::FirewallRuleGroupAssociation>,
-        ) -> Self {
-            self.firewall_rule_group_association = input;
-            self
+        pub fn set_firewall_rule_group_association(mut self, input: std::option::Option<crate::model::FirewallRuleGroupAssociation>) -> Self {
+            self.firewall_rule_group_association = input; self
         }
         /// Consumes the builder and constructs a [`AssociateFirewallRuleGroupOutput`](crate::output::AssociateFirewallRuleGroupOutput).
         pub fn build(self) -> crate::output::AssociateFirewallRuleGroupOutput {
             crate::output::AssociateFirewallRuleGroupOutput {
-                firewall_rule_group_association: self.firewall_rule_group_association,
+                firewall_rule_group_association: self.firewall_rule_group_association
+                ,
             }
         }
     }
+    
+    
 }
 impl AssociateFirewallRuleGroupOutput {
     /// Creates a new builder-style object to manufacture [`AssociateFirewallRuleGroupOutput`](crate::output::AssociateFirewallRuleGroupOutput).
@@ -3972,3 +3782,4 @@ impl AssociateFirewallRuleGroupOutput {
         crate::output::associate_firewall_rule_group_output::Builder::default()
     }
 }
+

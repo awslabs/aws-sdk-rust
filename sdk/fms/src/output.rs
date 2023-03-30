@@ -2,19 +2,24 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UntagResourceOutput {}
+pub struct UntagResourceOutput  {
+}
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput).
 pub mod untag_resource_output {
-
+    
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput).
         pub fn build(self) -> crate::output::UntagResourceOutput {
-            crate::output::UntagResourceOutput {}
+            crate::output::UntagResourceOutput {
+            }
         }
     }
+    
+    
 }
 impl UntagResourceOutput {
     /// Creates a new builder-style object to manufacture [`UntagResourceOutput`](crate::output::UntagResourceOutput).
@@ -26,19 +31,24 @@ impl UntagResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TagResourceOutput {}
+pub struct TagResourceOutput  {
+}
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput).
 pub mod tag_resource_output {
-
+    
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput).
         pub fn build(self) -> crate::output::TagResourceOutput {
-            crate::output::TagResourceOutput {}
+            crate::output::TagResourceOutput {
+            }
         }
     }
+    
+    
 }
 impl TagResourceOutput {
     /// Creates a new builder-style object to manufacture [`TagResourceOutput`](crate::output::TagResourceOutput).
@@ -50,7 +60,7 @@ impl TagResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutResourceSetOutput {
+pub struct PutResourceSetOutput  {
     /// <p>Details about the resource set.</p>
     #[doc(hidden)]
     pub resource_set: std::option::Option<crate::model::ResourceSet>,
@@ -60,17 +70,17 @@ pub struct PutResourceSetOutput {
 }
 impl PutResourceSetOutput {
     /// <p>Details about the resource set.</p>
-    pub fn resource_set(&self) -> std::option::Option<&crate::model::ResourceSet> {
+    pub fn resource_set(&self) -> std::option::Option<& crate::model::ResourceSet> {
         self.resource_set.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the resource set.</p>
-    pub fn resource_set_arn(&self) -> std::option::Option<&str> {
+    pub fn resource_set_arn(&self) -> std::option::Option<& str> {
         self.resource_set_arn.as_deref()
     }
 }
 /// See [`PutResourceSetOutput`](crate::output::PutResourceSetOutput).
 pub mod put_resource_set_output {
-
+    
     /// A builder for [`PutResourceSetOutput`](crate::output::PutResourceSetOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -84,12 +94,8 @@ pub mod put_resource_set_output {
             self
         }
         /// <p>Details about the resource set.</p>
-        pub fn set_resource_set(
-            mut self,
-            input: std::option::Option<crate::model::ResourceSet>,
-        ) -> Self {
-            self.resource_set = input;
-            self
+        pub fn set_resource_set(mut self, input: std::option::Option<crate::model::ResourceSet>) -> Self {
+            self.resource_set = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the resource set.</p>
         pub fn resource_set_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -97,21 +103,21 @@ pub mod put_resource_set_output {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the resource set.</p>
-        pub fn set_resource_set_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.resource_set_arn = input;
-            self
+        pub fn set_resource_set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.resource_set_arn = input; self
         }
         /// Consumes the builder and constructs a [`PutResourceSetOutput`](crate::output::PutResourceSetOutput).
         pub fn build(self) -> crate::output::PutResourceSetOutput {
             crate::output::PutResourceSetOutput {
-                resource_set: self.resource_set,
-                resource_set_arn: self.resource_set_arn,
+                resource_set: self.resource_set
+                ,
+                resource_set_arn: self.resource_set_arn
+                ,
             }
         }
     }
+    
+    
 }
 impl PutResourceSetOutput {
     /// Creates a new builder-style object to manufacture [`PutResourceSetOutput`](crate::output::PutResourceSetOutput).
@@ -123,7 +129,7 @@ impl PutResourceSetOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutProtocolsListOutput {
+pub struct PutProtocolsListOutput  {
     /// <p>The details of the Firewall Manager protocols list.</p>
     #[doc(hidden)]
     pub protocols_list: std::option::Option<crate::model::ProtocolsListData>,
@@ -133,17 +139,17 @@ pub struct PutProtocolsListOutput {
 }
 impl PutProtocolsListOutput {
     /// <p>The details of the Firewall Manager protocols list.</p>
-    pub fn protocols_list(&self) -> std::option::Option<&crate::model::ProtocolsListData> {
+    pub fn protocols_list(&self) -> std::option::Option<& crate::model::ProtocolsListData> {
         self.protocols_list.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the protocols list.</p>
-    pub fn protocols_list_arn(&self) -> std::option::Option<&str> {
+    pub fn protocols_list_arn(&self) -> std::option::Option<& str> {
         self.protocols_list_arn.as_deref()
     }
 }
 /// See [`PutProtocolsListOutput`](crate::output::PutProtocolsListOutput).
 pub mod put_protocols_list_output {
-
+    
     /// A builder for [`PutProtocolsListOutput`](crate::output::PutProtocolsListOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -157,12 +163,8 @@ pub mod put_protocols_list_output {
             self
         }
         /// <p>The details of the Firewall Manager protocols list.</p>
-        pub fn set_protocols_list(
-            mut self,
-            input: std::option::Option<crate::model::ProtocolsListData>,
-        ) -> Self {
-            self.protocols_list = input;
-            self
+        pub fn set_protocols_list(mut self, input: std::option::Option<crate::model::ProtocolsListData>) -> Self {
+            self.protocols_list = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the protocols list.</p>
         pub fn protocols_list_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -170,21 +172,21 @@ pub mod put_protocols_list_output {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the protocols list.</p>
-        pub fn set_protocols_list_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.protocols_list_arn = input;
-            self
+        pub fn set_protocols_list_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.protocols_list_arn = input; self
         }
         /// Consumes the builder and constructs a [`PutProtocolsListOutput`](crate::output::PutProtocolsListOutput).
         pub fn build(self) -> crate::output::PutProtocolsListOutput {
             crate::output::PutProtocolsListOutput {
-                protocols_list: self.protocols_list,
-                protocols_list_arn: self.protocols_list_arn,
+                protocols_list: self.protocols_list
+                ,
+                protocols_list_arn: self.protocols_list_arn
+                ,
             }
         }
     }
+    
+    
 }
 impl PutProtocolsListOutput {
     /// Creates a new builder-style object to manufacture [`PutProtocolsListOutput`](crate::output::PutProtocolsListOutput).
@@ -196,7 +198,7 @@ impl PutProtocolsListOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutPolicyOutput {
+pub struct PutPolicyOutput  {
     /// <p>The details of the Firewall Manager policy.</p>
     #[doc(hidden)]
     pub policy: std::option::Option<crate::model::Policy>,
@@ -206,17 +208,17 @@ pub struct PutPolicyOutput {
 }
 impl PutPolicyOutput {
     /// <p>The details of the Firewall Manager policy.</p>
-    pub fn policy(&self) -> std::option::Option<&crate::model::Policy> {
+    pub fn policy(&self) -> std::option::Option<& crate::model::Policy> {
         self.policy.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the policy.</p>
-    pub fn policy_arn(&self) -> std::option::Option<&str> {
+    pub fn policy_arn(&self) -> std::option::Option<& str> {
         self.policy_arn.as_deref()
     }
 }
 /// See [`PutPolicyOutput`](crate::output::PutPolicyOutput).
 pub mod put_policy_output {
-
+    
     /// A builder for [`PutPolicyOutput`](crate::output::PutPolicyOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -231,8 +233,7 @@ pub mod put_policy_output {
         }
         /// <p>The details of the Firewall Manager policy.</p>
         pub fn set_policy(mut self, input: std::option::Option<crate::model::Policy>) -> Self {
-            self.policy = input;
-            self
+            self.policy = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the policy.</p>
         pub fn policy_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -241,17 +242,20 @@ pub mod put_policy_output {
         }
         /// <p>The Amazon Resource Name (ARN) of the policy.</p>
         pub fn set_policy_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.policy_arn = input;
-            self
+            self.policy_arn = input; self
         }
         /// Consumes the builder and constructs a [`PutPolicyOutput`](crate::output::PutPolicyOutput).
         pub fn build(self) -> crate::output::PutPolicyOutput {
             crate::output::PutPolicyOutput {
-                policy: self.policy,
-                policy_arn: self.policy_arn,
+                policy: self.policy
+                ,
+                policy_arn: self.policy_arn
+                ,
             }
         }
     }
+    
+    
 }
 impl PutPolicyOutput {
     /// Creates a new builder-style object to manufacture [`PutPolicyOutput`](crate::output::PutPolicyOutput).
@@ -263,19 +267,24 @@ impl PutPolicyOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutNotificationChannelOutput {}
+pub struct PutNotificationChannelOutput  {
+}
 /// See [`PutNotificationChannelOutput`](crate::output::PutNotificationChannelOutput).
 pub mod put_notification_channel_output {
-
+    
     /// A builder for [`PutNotificationChannelOutput`](crate::output::PutNotificationChannelOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`PutNotificationChannelOutput`](crate::output::PutNotificationChannelOutput).
         pub fn build(self) -> crate::output::PutNotificationChannelOutput {
-            crate::output::PutNotificationChannelOutput {}
+            crate::output::PutNotificationChannelOutput {
+            }
         }
     }
+    
+    
 }
 impl PutNotificationChannelOutput {
     /// Creates a new builder-style object to manufacture [`PutNotificationChannelOutput`](crate::output::PutNotificationChannelOutput).
@@ -287,7 +296,7 @@ impl PutNotificationChannelOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutAppsListOutput {
+pub struct PutAppsListOutput  {
     /// <p>The details of the Firewall Manager applications list.</p>
     #[doc(hidden)]
     pub apps_list: std::option::Option<crate::model::AppsListData>,
@@ -297,17 +306,17 @@ pub struct PutAppsListOutput {
 }
 impl PutAppsListOutput {
     /// <p>The details of the Firewall Manager applications list.</p>
-    pub fn apps_list(&self) -> std::option::Option<&crate::model::AppsListData> {
+    pub fn apps_list(&self) -> std::option::Option<& crate::model::AppsListData> {
         self.apps_list.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the applications list.</p>
-    pub fn apps_list_arn(&self) -> std::option::Option<&str> {
+    pub fn apps_list_arn(&self) -> std::option::Option<& str> {
         self.apps_list_arn.as_deref()
     }
 }
 /// See [`PutAppsListOutput`](crate::output::PutAppsListOutput).
 pub mod put_apps_list_output {
-
+    
     /// A builder for [`PutAppsListOutput`](crate::output::PutAppsListOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -321,12 +330,8 @@ pub mod put_apps_list_output {
             self
         }
         /// <p>The details of the Firewall Manager applications list.</p>
-        pub fn set_apps_list(
-            mut self,
-            input: std::option::Option<crate::model::AppsListData>,
-        ) -> Self {
-            self.apps_list = input;
-            self
+        pub fn set_apps_list(mut self, input: std::option::Option<crate::model::AppsListData>) -> Self {
+            self.apps_list = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the applications list.</p>
         pub fn apps_list_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -334,21 +339,21 @@ pub mod put_apps_list_output {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the applications list.</p>
-        pub fn set_apps_list_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.apps_list_arn = input;
-            self
+        pub fn set_apps_list_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.apps_list_arn = input; self
         }
         /// Consumes the builder and constructs a [`PutAppsListOutput`](crate::output::PutAppsListOutput).
         pub fn build(self) -> crate::output::PutAppsListOutput {
             crate::output::PutAppsListOutput {
-                apps_list: self.apps_list,
-                apps_list_arn: self.apps_list_arn,
+                apps_list: self.apps_list
+                ,
+                apps_list_arn: self.apps_list_arn
+                ,
             }
         }
     }
+    
+    
 }
 impl PutAppsListOutput {
     /// Creates a new builder-style object to manufacture [`PutAppsListOutput`](crate::output::PutAppsListOutput).
@@ -360,35 +365,31 @@ impl PutAppsListOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListThirdPartyFirewallFirewallPoliciesOutput {
+pub struct ListThirdPartyFirewallFirewallPoliciesOutput  {
     /// <p>A list that contains one <code>ThirdPartyFirewallFirewallPolicies</code> element for each third-party firewall policies that the specified third-party firewall vendor is associated with. Each <code>ThirdPartyFirewallFirewallPolicies</code> element contains the firewall policy name and ID.</p>
     #[doc(hidden)]
-    pub third_party_firewall_firewall_policies:
-        std::option::Option<std::vec::Vec<crate::model::ThirdPartyFirewallFirewallPolicy>>,
+    pub third_party_firewall_firewall_policies: std::option::Option<std::vec::Vec<crate::model::ThirdPartyFirewallFirewallPolicy>>,
     /// <p>The value that you will use for <code>NextToken</code> in the next <code>ListThirdPartyFirewallFirewallPolicies</code> request.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListThirdPartyFirewallFirewallPoliciesOutput {
     /// <p>A list that contains one <code>ThirdPartyFirewallFirewallPolicies</code> element for each third-party firewall policies that the specified third-party firewall vendor is associated with. Each <code>ThirdPartyFirewallFirewallPolicies</code> element contains the firewall policy name and ID.</p>
-    pub fn third_party_firewall_firewall_policies(
-        &self,
-    ) -> std::option::Option<&[crate::model::ThirdPartyFirewallFirewallPolicy]> {
+    pub fn third_party_firewall_firewall_policies(&self) -> std::option::Option<& [crate::model::ThirdPartyFirewallFirewallPolicy]> {
         self.third_party_firewall_firewall_policies.as_deref()
     }
     /// <p>The value that you will use for <code>NextToken</code> in the next <code>ListThirdPartyFirewallFirewallPolicies</code> request.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListThirdPartyFirewallFirewallPoliciesOutput`](crate::output::ListThirdPartyFirewallFirewallPoliciesOutput).
 pub mod list_third_party_firewall_firewall_policies_output {
-
+    
     /// A builder for [`ListThirdPartyFirewallFirewallPoliciesOutput`](crate::output::ListThirdPartyFirewallFirewallPoliciesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) third_party_firewall_firewall_policies:
-            std::option::Option<std::vec::Vec<crate::model::ThirdPartyFirewallFirewallPolicy>>,
+        pub(crate) third_party_firewall_firewall_policies: std::option::Option<std::vec::Vec<crate::model::ThirdPartyFirewallFirewallPolicy>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -397,26 +398,15 @@ pub mod list_third_party_firewall_firewall_policies_output {
         /// To override the contents of this collection use [`set_third_party_firewall_firewall_policies`](Self::set_third_party_firewall_firewall_policies).
         ///
         /// <p>A list that contains one <code>ThirdPartyFirewallFirewallPolicies</code> element for each third-party firewall policies that the specified third-party firewall vendor is associated with. Each <code>ThirdPartyFirewallFirewallPolicies</code> element contains the firewall policy name and ID.</p>
-        pub fn third_party_firewall_firewall_policies(
-            mut self,
-            input: crate::model::ThirdPartyFirewallFirewallPolicy,
-        ) -> Self {
-            let mut v = self
-                .third_party_firewall_firewall_policies
-                .unwrap_or_default();
-            v.push(input);
-            self.third_party_firewall_firewall_policies = Some(v);
-            self
+        pub fn third_party_firewall_firewall_policies(mut self, input: crate::model::ThirdPartyFirewallFirewallPolicy) -> Self {
+            let mut v = self.third_party_firewall_firewall_policies.unwrap_or_default();
+                            v.push(input);
+                            self.third_party_firewall_firewall_policies = Some(v);
+                            self
         }
         /// <p>A list that contains one <code>ThirdPartyFirewallFirewallPolicies</code> element for each third-party firewall policies that the specified third-party firewall vendor is associated with. Each <code>ThirdPartyFirewallFirewallPolicies</code> element contains the firewall policy name and ID.</p>
-        pub fn set_third_party_firewall_firewall_policies(
-            mut self,
-            input: std::option::Option<
-                std::vec::Vec<crate::model::ThirdPartyFirewallFirewallPolicy>,
-            >,
-        ) -> Self {
-            self.third_party_firewall_firewall_policies = input;
-            self
+        pub fn set_third_party_firewall_firewall_policies(mut self, input: std::option::Option<std::vec::Vec<crate::model::ThirdPartyFirewallFirewallPolicy>>) -> Self {
+            self.third_party_firewall_firewall_policies = input; self
         }
         /// <p>The value that you will use for <code>NextToken</code> in the next <code>ListThirdPartyFirewallFirewallPolicies</code> request.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -425,17 +415,20 @@ pub mod list_third_party_firewall_firewall_policies_output {
         }
         /// <p>The value that you will use for <code>NextToken</code> in the next <code>ListThirdPartyFirewallFirewallPolicies</code> request.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListThirdPartyFirewallFirewallPoliciesOutput`](crate::output::ListThirdPartyFirewallFirewallPoliciesOutput).
         pub fn build(self) -> crate::output::ListThirdPartyFirewallFirewallPoliciesOutput {
             crate::output::ListThirdPartyFirewallFirewallPoliciesOutput {
-                third_party_firewall_firewall_policies: self.third_party_firewall_firewall_policies,
-                next_token: self.next_token,
+                third_party_firewall_firewall_policies: self.third_party_firewall_firewall_policies
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListThirdPartyFirewallFirewallPoliciesOutput {
     /// Creates a new builder-style object to manufacture [`ListThirdPartyFirewallFirewallPoliciesOutput`](crate::output::ListThirdPartyFirewallFirewallPoliciesOutput).
@@ -447,20 +440,20 @@ impl ListThirdPartyFirewallFirewallPoliciesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListTagsForResourceOutput {
+pub struct ListTagsForResourceOutput  {
     /// <p>The tags associated with the resource.</p>
     #[doc(hidden)]
     pub tag_list: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl ListTagsForResourceOutput {
     /// <p>The tags associated with the resource.</p>
-    pub fn tag_list(&self) -> std::option::Option<&[crate::model::Tag]> {
+    pub fn tag_list(&self) -> std::option::Option<& [crate::model::Tag]> {
         self.tag_list.as_deref()
     }
 }
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
 pub mod list_tags_for_resource_output {
-
+    
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -474,25 +467,24 @@ pub mod list_tags_for_resource_output {
         /// <p>The tags associated with the resource.</p>
         pub fn tag_list(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tag_list.unwrap_or_default();
-            v.push(input);
-            self.tag_list = Some(v);
-            self
+                            v.push(input);
+                            self.tag_list = Some(v);
+                            self
         }
         /// <p>The tags associated with the resource.</p>
-        pub fn set_tag_list(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-        ) -> Self {
-            self.tag_list = input;
-            self
+        pub fn set_tag_list(mut self, input: std::option::Option<std::vec::Vec<crate::model::Tag>>) -> Self {
+            self.tag_list = input; self
         }
         /// Consumes the builder and constructs a [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
         pub fn build(self) -> crate::output::ListTagsForResourceOutput {
             crate::output::ListTagsForResourceOutput {
-                tag_list: self.tag_list,
+                tag_list: self.tag_list
+                ,
             }
         }
     }
+    
+    
 }
 impl ListTagsForResourceOutput {
     /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
@@ -504,7 +496,7 @@ impl ListTagsForResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListResourceSetsOutput {
+pub struct ListResourceSetsOutput  {
     /// <p>An array of <code>ResourceSetSummary</code> objects.</p>
     #[doc(hidden)]
     pub resource_sets: std::option::Option<std::vec::Vec<crate::model::ResourceSetSummary>>,
@@ -514,22 +506,21 @@ pub struct ListResourceSetsOutput {
 }
 impl ListResourceSetsOutput {
     /// <p>An array of <code>ResourceSetSummary</code> objects.</p>
-    pub fn resource_sets(&self) -> std::option::Option<&[crate::model::ResourceSetSummary]> {
+    pub fn resource_sets(&self) -> std::option::Option<& [crate::model::ResourceSetSummary]> {
         self.resource_sets.as_deref()
     }
     /// <p>When you request a list of objects with a <code>MaxResults</code> setting, if the number of objects that are still available for retrieval exceeds the maximum you requested, Firewall Manager returns a <code>NextToken</code> value in the response. To retrieve the next batch of objects, use the token returned from the prior request in your next request.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListResourceSetsOutput`](crate::output::ListResourceSetsOutput).
 pub mod list_resource_sets_output {
-
+    
     /// A builder for [`ListResourceSetsOutput`](crate::output::ListResourceSetsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) resource_sets:
-            std::option::Option<std::vec::Vec<crate::model::ResourceSetSummary>>,
+        pub(crate) resource_sets: std::option::Option<std::vec::Vec<crate::model::ResourceSetSummary>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -540,17 +531,13 @@ pub mod list_resource_sets_output {
         /// <p>An array of <code>ResourceSetSummary</code> objects.</p>
         pub fn resource_sets(mut self, input: crate::model::ResourceSetSummary) -> Self {
             let mut v = self.resource_sets.unwrap_or_default();
-            v.push(input);
-            self.resource_sets = Some(v);
-            self
+                            v.push(input);
+                            self.resource_sets = Some(v);
+                            self
         }
         /// <p>An array of <code>ResourceSetSummary</code> objects.</p>
-        pub fn set_resource_sets(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ResourceSetSummary>>,
-        ) -> Self {
-            self.resource_sets = input;
-            self
+        pub fn set_resource_sets(mut self, input: std::option::Option<std::vec::Vec<crate::model::ResourceSetSummary>>) -> Self {
+            self.resource_sets = input; self
         }
         /// <p>When you request a list of objects with a <code>MaxResults</code> setting, if the number of objects that are still available for retrieval exceeds the maximum you requested, Firewall Manager returns a <code>NextToken</code> value in the response. To retrieve the next batch of objects, use the token returned from the prior request in your next request.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -559,17 +546,20 @@ pub mod list_resource_sets_output {
         }
         /// <p>When you request a list of objects with a <code>MaxResults</code> setting, if the number of objects that are still available for retrieval exceeds the maximum you requested, Firewall Manager returns a <code>NextToken</code> value in the response. To retrieve the next batch of objects, use the token returned from the prior request in your next request.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListResourceSetsOutput`](crate::output::ListResourceSetsOutput).
         pub fn build(self) -> crate::output::ListResourceSetsOutput {
             crate::output::ListResourceSetsOutput {
-                resource_sets: self.resource_sets,
-                next_token: self.next_token,
+                resource_sets: self.resource_sets
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListResourceSetsOutput {
     /// Creates a new builder-style object to manufacture [`ListResourceSetsOutput`](crate::output::ListResourceSetsOutput).
@@ -581,7 +571,7 @@ impl ListResourceSetsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListResourceSetResourcesOutput {
+pub struct ListResourceSetResourcesOutput  {
     /// <p>An array of the associated resources' uniform resource identifiers (URI).</p>
     #[doc(hidden)]
     pub items: std::option::Option<std::vec::Vec<crate::model::Resource>>,
@@ -591,17 +581,17 @@ pub struct ListResourceSetResourcesOutput {
 }
 impl ListResourceSetResourcesOutput {
     /// <p>An array of the associated resources' uniform resource identifiers (URI).</p>
-    pub fn items(&self) -> std::option::Option<&[crate::model::Resource]> {
+    pub fn items(&self) -> std::option::Option<& [crate::model::Resource]> {
         self.items.as_deref()
     }
     /// <p>When you request a list of objects with a <code>MaxResults</code> setting, if the number of objects that are still available for retrieval exceeds the maximum you requested, Firewall Manager returns a <code>NextToken</code> value in the response. To retrieve the next batch of objects, use the token returned from the prior request in your next request.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListResourceSetResourcesOutput`](crate::output::ListResourceSetResourcesOutput).
 pub mod list_resource_set_resources_output {
-
+    
     /// A builder for [`ListResourceSetResourcesOutput`](crate::output::ListResourceSetResourcesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -616,17 +606,13 @@ pub mod list_resource_set_resources_output {
         /// <p>An array of the associated resources' uniform resource identifiers (URI).</p>
         pub fn items(mut self, input: crate::model::Resource) -> Self {
             let mut v = self.items.unwrap_or_default();
-            v.push(input);
-            self.items = Some(v);
-            self
+                            v.push(input);
+                            self.items = Some(v);
+                            self
         }
         /// <p>An array of the associated resources' uniform resource identifiers (URI).</p>
-        pub fn set_items(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Resource>>,
-        ) -> Self {
-            self.items = input;
-            self
+        pub fn set_items(mut self, input: std::option::Option<std::vec::Vec<crate::model::Resource>>) -> Self {
+            self.items = input; self
         }
         /// <p>When you request a list of objects with a <code>MaxResults</code> setting, if the number of objects that are still available for retrieval exceeds the maximum you requested, Firewall Manager returns a <code>NextToken</code> value in the response. To retrieve the next batch of objects, use the token returned from the prior request in your next request.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -635,17 +621,20 @@ pub mod list_resource_set_resources_output {
         }
         /// <p>When you request a list of objects with a <code>MaxResults</code> setting, if the number of objects that are still available for retrieval exceeds the maximum you requested, Firewall Manager returns a <code>NextToken</code> value in the response. To retrieve the next batch of objects, use the token returned from the prior request in your next request.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListResourceSetResourcesOutput`](crate::output::ListResourceSetResourcesOutput).
         pub fn build(self) -> crate::output::ListResourceSetResourcesOutput {
             crate::output::ListResourceSetResourcesOutput {
-                items: self.items,
-                next_token: self.next_token,
+                items: self.items
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListResourceSetResourcesOutput {
     /// Creates a new builder-style object to manufacture [`ListResourceSetResourcesOutput`](crate::output::ListResourceSetResourcesOutput).
@@ -657,7 +646,7 @@ impl ListResourceSetResourcesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListProtocolsListsOutput {
+pub struct ListProtocolsListsOutput  {
     /// <p>An array of <code>ProtocolsListDataSummary</code> objects.</p>
     #[doc(hidden)]
     pub protocols_lists: std::option::Option<std::vec::Vec<crate::model::ProtocolsListDataSummary>>,
@@ -667,24 +656,21 @@ pub struct ListProtocolsListsOutput {
 }
 impl ListProtocolsListsOutput {
     /// <p>An array of <code>ProtocolsListDataSummary</code> objects.</p>
-    pub fn protocols_lists(
-        &self,
-    ) -> std::option::Option<&[crate::model::ProtocolsListDataSummary]> {
+    pub fn protocols_lists(&self) -> std::option::Option<& [crate::model::ProtocolsListDataSummary]> {
         self.protocols_lists.as_deref()
     }
     /// <p>If you specify a value for <code>MaxResults</code> in your list request, and you have more objects than the maximum, Firewall Manager returns this token in the response. You can use this token in subsequent requests to retrieve the next batch of objects.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListProtocolsListsOutput`](crate::output::ListProtocolsListsOutput).
 pub mod list_protocols_lists_output {
-
+    
     /// A builder for [`ListProtocolsListsOutput`](crate::output::ListProtocolsListsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) protocols_lists:
-            std::option::Option<std::vec::Vec<crate::model::ProtocolsListDataSummary>>,
+        pub(crate) protocols_lists: std::option::Option<std::vec::Vec<crate::model::ProtocolsListDataSummary>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -695,17 +681,13 @@ pub mod list_protocols_lists_output {
         /// <p>An array of <code>ProtocolsListDataSummary</code> objects.</p>
         pub fn protocols_lists(mut self, input: crate::model::ProtocolsListDataSummary) -> Self {
             let mut v = self.protocols_lists.unwrap_or_default();
-            v.push(input);
-            self.protocols_lists = Some(v);
-            self
+                            v.push(input);
+                            self.protocols_lists = Some(v);
+                            self
         }
         /// <p>An array of <code>ProtocolsListDataSummary</code> objects.</p>
-        pub fn set_protocols_lists(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ProtocolsListDataSummary>>,
-        ) -> Self {
-            self.protocols_lists = input;
-            self
+        pub fn set_protocols_lists(mut self, input: std::option::Option<std::vec::Vec<crate::model::ProtocolsListDataSummary>>) -> Self {
+            self.protocols_lists = input; self
         }
         /// <p>If you specify a value for <code>MaxResults</code> in your list request, and you have more objects than the maximum, Firewall Manager returns this token in the response. You can use this token in subsequent requests to retrieve the next batch of objects.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -714,17 +696,20 @@ pub mod list_protocols_lists_output {
         }
         /// <p>If you specify a value for <code>MaxResults</code> in your list request, and you have more objects than the maximum, Firewall Manager returns this token in the response. You can use this token in subsequent requests to retrieve the next batch of objects.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListProtocolsListsOutput`](crate::output::ListProtocolsListsOutput).
         pub fn build(self) -> crate::output::ListProtocolsListsOutput {
             crate::output::ListProtocolsListsOutput {
-                protocols_lists: self.protocols_lists,
-                next_token: self.next_token,
+                protocols_lists: self.protocols_lists
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListProtocolsListsOutput {
     /// Creates a new builder-style object to manufacture [`ListProtocolsListsOutput`](crate::output::ListProtocolsListsOutput).
@@ -736,7 +721,7 @@ impl ListProtocolsListsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListPoliciesOutput {
+pub struct ListPoliciesOutput  {
     /// <p>An array of <code>PolicySummary</code> objects.</p>
     #[doc(hidden)]
     pub policy_list: std::option::Option<std::vec::Vec<crate::model::PolicySummary>>,
@@ -746,17 +731,17 @@ pub struct ListPoliciesOutput {
 }
 impl ListPoliciesOutput {
     /// <p>An array of <code>PolicySummary</code> objects.</p>
-    pub fn policy_list(&self) -> std::option::Option<&[crate::model::PolicySummary]> {
+    pub fn policy_list(&self) -> std::option::Option<& [crate::model::PolicySummary]> {
         self.policy_list.as_deref()
     }
     /// <p>If you have more <code>PolicySummary</code> objects than the number that you specified for <code>MaxResults</code> in the request, the response includes a <code>NextToken</code> value. To list more <code>PolicySummary</code> objects, submit another <code>ListPolicies</code> request, and specify the <code>NextToken</code> value from the response in the <code>NextToken</code> value in the next request.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListPoliciesOutput`](crate::output::ListPoliciesOutput).
 pub mod list_policies_output {
-
+    
     /// A builder for [`ListPoliciesOutput`](crate::output::ListPoliciesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -771,17 +756,13 @@ pub mod list_policies_output {
         /// <p>An array of <code>PolicySummary</code> objects.</p>
         pub fn policy_list(mut self, input: crate::model::PolicySummary) -> Self {
             let mut v = self.policy_list.unwrap_or_default();
-            v.push(input);
-            self.policy_list = Some(v);
-            self
+                            v.push(input);
+                            self.policy_list = Some(v);
+                            self
         }
         /// <p>An array of <code>PolicySummary</code> objects.</p>
-        pub fn set_policy_list(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::PolicySummary>>,
-        ) -> Self {
-            self.policy_list = input;
-            self
+        pub fn set_policy_list(mut self, input: std::option::Option<std::vec::Vec<crate::model::PolicySummary>>) -> Self {
+            self.policy_list = input; self
         }
         /// <p>If you have more <code>PolicySummary</code> objects than the number that you specified for <code>MaxResults</code> in the request, the response includes a <code>NextToken</code> value. To list more <code>PolicySummary</code> objects, submit another <code>ListPolicies</code> request, and specify the <code>NextToken</code> value from the response in the <code>NextToken</code> value in the next request.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -790,17 +771,20 @@ pub mod list_policies_output {
         }
         /// <p>If you have more <code>PolicySummary</code> objects than the number that you specified for <code>MaxResults</code> in the request, the response includes a <code>NextToken</code> value. To list more <code>PolicySummary</code> objects, submit another <code>ListPolicies</code> request, and specify the <code>NextToken</code> value from the response in the <code>NextToken</code> value in the next request.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListPoliciesOutput`](crate::output::ListPoliciesOutput).
         pub fn build(self) -> crate::output::ListPoliciesOutput {
             crate::output::ListPoliciesOutput {
-                policy_list: self.policy_list,
-                next_token: self.next_token,
+                policy_list: self.policy_list
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListPoliciesOutput {
     /// Creates a new builder-style object to manufacture [`ListPoliciesOutput`](crate::output::ListPoliciesOutput).
@@ -812,7 +796,7 @@ impl ListPoliciesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListMemberAccountsOutput {
+pub struct ListMemberAccountsOutput  {
     /// <p>An array of account IDs.</p>
     #[doc(hidden)]
     pub member_accounts: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -822,17 +806,17 @@ pub struct ListMemberAccountsOutput {
 }
 impl ListMemberAccountsOutput {
     /// <p>An array of account IDs.</p>
-    pub fn member_accounts(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn member_accounts(&self) -> std::option::Option<& [std::string::String]> {
         self.member_accounts.as_deref()
     }
     /// <p>If you have more member account IDs than the number that you specified for <code>MaxResults</code> in the request, the response includes a <code>NextToken</code> value. To list more IDs, submit another <code>ListMemberAccounts</code> request, and specify the <code>NextToken</code> value from the response in the <code>NextToken</code> value in the next request.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListMemberAccountsOutput`](crate::output::ListMemberAccountsOutput).
 pub mod list_member_accounts_output {
-
+    
     /// A builder for [`ListMemberAccountsOutput`](crate::output::ListMemberAccountsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -847,17 +831,13 @@ pub mod list_member_accounts_output {
         /// <p>An array of account IDs.</p>
         pub fn member_accounts(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.member_accounts.unwrap_or_default();
-            v.push(input.into());
-            self.member_accounts = Some(v);
-            self
+                            v.push(input.into());
+                            self.member_accounts = Some(v);
+                            self
         }
         /// <p>An array of account IDs.</p>
-        pub fn set_member_accounts(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.member_accounts = input;
-            self
+        pub fn set_member_accounts(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.member_accounts = input; self
         }
         /// <p>If you have more member account IDs than the number that you specified for <code>MaxResults</code> in the request, the response includes a <code>NextToken</code> value. To list more IDs, submit another <code>ListMemberAccounts</code> request, and specify the <code>NextToken</code> value from the response in the <code>NextToken</code> value in the next request.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -866,17 +846,20 @@ pub mod list_member_accounts_output {
         }
         /// <p>If you have more member account IDs than the number that you specified for <code>MaxResults</code> in the request, the response includes a <code>NextToken</code> value. To list more IDs, submit another <code>ListMemberAccounts</code> request, and specify the <code>NextToken</code> value from the response in the <code>NextToken</code> value in the next request.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListMemberAccountsOutput`](crate::output::ListMemberAccountsOutput).
         pub fn build(self) -> crate::output::ListMemberAccountsOutput {
             crate::output::ListMemberAccountsOutput {
-                member_accounts: self.member_accounts,
-                next_token: self.next_token,
+                member_accounts: self.member_accounts
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListMemberAccountsOutput {
     /// Creates a new builder-style object to manufacture [`ListMemberAccountsOutput`](crate::output::ListMemberAccountsOutput).
@@ -888,7 +871,7 @@ impl ListMemberAccountsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListDiscoveredResourcesOutput {
+pub struct ListDiscoveredResourcesOutput  {
     /// <p>Details of the resources that were discovered.</p>
     #[doc(hidden)]
     pub items: std::option::Option<std::vec::Vec<crate::model::DiscoveredResource>>,
@@ -898,17 +881,17 @@ pub struct ListDiscoveredResourcesOutput {
 }
 impl ListDiscoveredResourcesOutput {
     /// <p>Details of the resources that were discovered.</p>
-    pub fn items(&self) -> std::option::Option<&[crate::model::DiscoveredResource]> {
+    pub fn items(&self) -> std::option::Option<& [crate::model::DiscoveredResource]> {
         self.items.as_deref()
     }
     /// <p>When you request a list of objects with a <code>MaxResults</code> setting, if the number of objects that are still available for retrieval exceeds the maximum you requested, Firewall Manager returns a <code>NextToken</code> value in the response. To retrieve the next batch of objects, use the token returned from the prior request in your next request.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListDiscoveredResourcesOutput`](crate::output::ListDiscoveredResourcesOutput).
 pub mod list_discovered_resources_output {
-
+    
     /// A builder for [`ListDiscoveredResourcesOutput`](crate::output::ListDiscoveredResourcesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -923,17 +906,13 @@ pub mod list_discovered_resources_output {
         /// <p>Details of the resources that were discovered.</p>
         pub fn items(mut self, input: crate::model::DiscoveredResource) -> Self {
             let mut v = self.items.unwrap_or_default();
-            v.push(input);
-            self.items = Some(v);
-            self
+                            v.push(input);
+                            self.items = Some(v);
+                            self
         }
         /// <p>Details of the resources that were discovered.</p>
-        pub fn set_items(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::DiscoveredResource>>,
-        ) -> Self {
-            self.items = input;
-            self
+        pub fn set_items(mut self, input: std::option::Option<std::vec::Vec<crate::model::DiscoveredResource>>) -> Self {
+            self.items = input; self
         }
         /// <p>When you request a list of objects with a <code>MaxResults</code> setting, if the number of objects that are still available for retrieval exceeds the maximum you requested, Firewall Manager returns a <code>NextToken</code> value in the response. To retrieve the next batch of objects, use the token returned from the prior request in your next request.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -942,17 +921,20 @@ pub mod list_discovered_resources_output {
         }
         /// <p>When you request a list of objects with a <code>MaxResults</code> setting, if the number of objects that are still available for retrieval exceeds the maximum you requested, Firewall Manager returns a <code>NextToken</code> value in the response. To retrieve the next batch of objects, use the token returned from the prior request in your next request.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListDiscoveredResourcesOutput`](crate::output::ListDiscoveredResourcesOutput).
         pub fn build(self) -> crate::output::ListDiscoveredResourcesOutput {
             crate::output::ListDiscoveredResourcesOutput {
-                items: self.items,
-                next_token: self.next_token,
+                items: self.items
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListDiscoveredResourcesOutput {
     /// Creates a new builder-style object to manufacture [`ListDiscoveredResourcesOutput`](crate::output::ListDiscoveredResourcesOutput).
@@ -964,35 +946,31 @@ impl ListDiscoveredResourcesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListComplianceStatusOutput {
+pub struct ListComplianceStatusOutput  {
     /// <p>An array of <code>PolicyComplianceStatus</code> objects.</p>
     #[doc(hidden)]
-    pub policy_compliance_status_list:
-        std::option::Option<std::vec::Vec<crate::model::PolicyComplianceStatus>>,
+    pub policy_compliance_status_list: std::option::Option<std::vec::Vec<crate::model::PolicyComplianceStatus>>,
     /// <p>If you have more <code>PolicyComplianceStatus</code> objects than the number that you specified for <code>MaxResults</code> in the request, the response includes a <code>NextToken</code> value. To list more <code>PolicyComplianceStatus</code> objects, submit another <code>ListComplianceStatus</code> request, and specify the <code>NextToken</code> value from the response in the <code>NextToken</code> value in the next request.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListComplianceStatusOutput {
     /// <p>An array of <code>PolicyComplianceStatus</code> objects.</p>
-    pub fn policy_compliance_status_list(
-        &self,
-    ) -> std::option::Option<&[crate::model::PolicyComplianceStatus]> {
+    pub fn policy_compliance_status_list(&self) -> std::option::Option<& [crate::model::PolicyComplianceStatus]> {
         self.policy_compliance_status_list.as_deref()
     }
     /// <p>If you have more <code>PolicyComplianceStatus</code> objects than the number that you specified for <code>MaxResults</code> in the request, the response includes a <code>NextToken</code> value. To list more <code>PolicyComplianceStatus</code> objects, submit another <code>ListComplianceStatus</code> request, and specify the <code>NextToken</code> value from the response in the <code>NextToken</code> value in the next request.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListComplianceStatusOutput`](crate::output::ListComplianceStatusOutput).
 pub mod list_compliance_status_output {
-
+    
     /// A builder for [`ListComplianceStatusOutput`](crate::output::ListComplianceStatusOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) policy_compliance_status_list:
-            std::option::Option<std::vec::Vec<crate::model::PolicyComplianceStatus>>,
+        pub(crate) policy_compliance_status_list: std::option::Option<std::vec::Vec<crate::model::PolicyComplianceStatus>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -1001,22 +979,15 @@ pub mod list_compliance_status_output {
         /// To override the contents of this collection use [`set_policy_compliance_status_list`](Self::set_policy_compliance_status_list).
         ///
         /// <p>An array of <code>PolicyComplianceStatus</code> objects.</p>
-        pub fn policy_compliance_status_list(
-            mut self,
-            input: crate::model::PolicyComplianceStatus,
-        ) -> Self {
+        pub fn policy_compliance_status_list(mut self, input: crate::model::PolicyComplianceStatus) -> Self {
             let mut v = self.policy_compliance_status_list.unwrap_or_default();
-            v.push(input);
-            self.policy_compliance_status_list = Some(v);
-            self
+                            v.push(input);
+                            self.policy_compliance_status_list = Some(v);
+                            self
         }
         /// <p>An array of <code>PolicyComplianceStatus</code> objects.</p>
-        pub fn set_policy_compliance_status_list(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::PolicyComplianceStatus>>,
-        ) -> Self {
-            self.policy_compliance_status_list = input;
-            self
+        pub fn set_policy_compliance_status_list(mut self, input: std::option::Option<std::vec::Vec<crate::model::PolicyComplianceStatus>>) -> Self {
+            self.policy_compliance_status_list = input; self
         }
         /// <p>If you have more <code>PolicyComplianceStatus</code> objects than the number that you specified for <code>MaxResults</code> in the request, the response includes a <code>NextToken</code> value. To list more <code>PolicyComplianceStatus</code> objects, submit another <code>ListComplianceStatus</code> request, and specify the <code>NextToken</code> value from the response in the <code>NextToken</code> value in the next request.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1025,17 +996,20 @@ pub mod list_compliance_status_output {
         }
         /// <p>If you have more <code>PolicyComplianceStatus</code> objects than the number that you specified for <code>MaxResults</code> in the request, the response includes a <code>NextToken</code> value. To list more <code>PolicyComplianceStatus</code> objects, submit another <code>ListComplianceStatus</code> request, and specify the <code>NextToken</code> value from the response in the <code>NextToken</code> value in the next request.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListComplianceStatusOutput`](crate::output::ListComplianceStatusOutput).
         pub fn build(self) -> crate::output::ListComplianceStatusOutput {
             crate::output::ListComplianceStatusOutput {
-                policy_compliance_status_list: self.policy_compliance_status_list,
-                next_token: self.next_token,
+                policy_compliance_status_list: self.policy_compliance_status_list
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListComplianceStatusOutput {
     /// Creates a new builder-style object to manufacture [`ListComplianceStatusOutput`](crate::output::ListComplianceStatusOutput).
@@ -1047,7 +1021,7 @@ impl ListComplianceStatusOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListAppsListsOutput {
+pub struct ListAppsListsOutput  {
     /// <p>An array of <code>AppsListDataSummary</code> objects.</p>
     #[doc(hidden)]
     pub apps_lists: std::option::Option<std::vec::Vec<crate::model::AppsListDataSummary>>,
@@ -1057,22 +1031,21 @@ pub struct ListAppsListsOutput {
 }
 impl ListAppsListsOutput {
     /// <p>An array of <code>AppsListDataSummary</code> objects.</p>
-    pub fn apps_lists(&self) -> std::option::Option<&[crate::model::AppsListDataSummary]> {
+    pub fn apps_lists(&self) -> std::option::Option<& [crate::model::AppsListDataSummary]> {
         self.apps_lists.as_deref()
     }
     /// <p>If you specify a value for <code>MaxResults</code> in your list request, and you have more objects than the maximum, Firewall Manager returns this token in the response. You can use this token in subsequent requests to retrieve the next batch of objects.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListAppsListsOutput`](crate::output::ListAppsListsOutput).
 pub mod list_apps_lists_output {
-
+    
     /// A builder for [`ListAppsListsOutput`](crate::output::ListAppsListsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) apps_lists:
-            std::option::Option<std::vec::Vec<crate::model::AppsListDataSummary>>,
+        pub(crate) apps_lists: std::option::Option<std::vec::Vec<crate::model::AppsListDataSummary>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -1083,17 +1056,13 @@ pub mod list_apps_lists_output {
         /// <p>An array of <code>AppsListDataSummary</code> objects.</p>
         pub fn apps_lists(mut self, input: crate::model::AppsListDataSummary) -> Self {
             let mut v = self.apps_lists.unwrap_or_default();
-            v.push(input);
-            self.apps_lists = Some(v);
-            self
+                            v.push(input);
+                            self.apps_lists = Some(v);
+                            self
         }
         /// <p>An array of <code>AppsListDataSummary</code> objects.</p>
-        pub fn set_apps_lists(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::AppsListDataSummary>>,
-        ) -> Self {
-            self.apps_lists = input;
-            self
+        pub fn set_apps_lists(mut self, input: std::option::Option<std::vec::Vec<crate::model::AppsListDataSummary>>) -> Self {
+            self.apps_lists = input; self
         }
         /// <p>If you specify a value for <code>MaxResults</code> in your list request, and you have more objects than the maximum, Firewall Manager returns this token in the response. You can use this token in subsequent requests to retrieve the next batch of objects.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1102,17 +1071,20 @@ pub mod list_apps_lists_output {
         }
         /// <p>If you specify a value for <code>MaxResults</code> in your list request, and you have more objects than the maximum, Firewall Manager returns this token in the response. You can use this token in subsequent requests to retrieve the next batch of objects.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListAppsListsOutput`](crate::output::ListAppsListsOutput).
         pub fn build(self) -> crate::output::ListAppsListsOutput {
             crate::output::ListAppsListsOutput {
-                apps_lists: self.apps_lists,
-                next_token: self.next_token,
+                apps_lists: self.apps_lists
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListAppsListsOutput {
     /// Creates a new builder-style object to manufacture [`ListAppsListsOutput`](crate::output::ListAppsListsOutput).
@@ -1124,20 +1096,20 @@ impl ListAppsListsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetViolationDetailsOutput {
+pub struct GetViolationDetailsOutput  {
     /// <p>Violation detail for a resource.</p>
     #[doc(hidden)]
     pub violation_detail: std::option::Option<crate::model::ViolationDetail>,
 }
 impl GetViolationDetailsOutput {
     /// <p>Violation detail for a resource.</p>
-    pub fn violation_detail(&self) -> std::option::Option<&crate::model::ViolationDetail> {
+    pub fn violation_detail(&self) -> std::option::Option<& crate::model::ViolationDetail> {
         self.violation_detail.as_ref()
     }
 }
 /// See [`GetViolationDetailsOutput`](crate::output::GetViolationDetailsOutput).
 pub mod get_violation_details_output {
-
+    
     /// A builder for [`GetViolationDetailsOutput`](crate::output::GetViolationDetailsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1150,20 +1122,19 @@ pub mod get_violation_details_output {
             self
         }
         /// <p>Violation detail for a resource.</p>
-        pub fn set_violation_detail(
-            mut self,
-            input: std::option::Option<crate::model::ViolationDetail>,
-        ) -> Self {
-            self.violation_detail = input;
-            self
+        pub fn set_violation_detail(mut self, input: std::option::Option<crate::model::ViolationDetail>) -> Self {
+            self.violation_detail = input; self
         }
         /// Consumes the builder and constructs a [`GetViolationDetailsOutput`](crate::output::GetViolationDetailsOutput).
         pub fn build(self) -> crate::output::GetViolationDetailsOutput {
             crate::output::GetViolationDetailsOutput {
-                violation_detail: self.violation_detail,
+                violation_detail: self.violation_detail
+                ,
             }
         }
     }
+    
+    
 }
 impl GetViolationDetailsOutput {
     /// Creates a new builder-style object to manufacture [`GetViolationDetailsOutput`](crate::output::GetViolationDetailsOutput).
@@ -1175,130 +1146,112 @@ impl GetViolationDetailsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetThirdPartyFirewallAssociationStatusOutput {
-    /// <p>The current status for setting a Firewall Manager policy administrators account as an administrator of the third-party firewall tenant.</p>
-    /// <ul>
-    /// <li> <p> <code>ONBOARDING</code> - The Firewall Manager policy administrator is being designated as a tenant administrator.</p> </li>
-    /// <li> <p> <code>ONBOARD_COMPLETE</code> - The Firewall Manager policy administrator is designated as a tenant administrator.</p> </li>
-    /// <li> <p> <code>OFFBOARDING</code> - The Firewall Manager policy administrator is being removed as a tenant administrator.</p> </li>
-    /// <li> <p> <code>OFFBOARD_COMPLETE</code> - The Firewall Manager policy administrator has been removed as a tenant administrator.</p> </li>
-    /// <li> <p> <code>NOT_EXIST</code> - The Firewall Manager policy administrator doesn't exist as a tenant administrator.</p> </li>
+pub struct GetThirdPartyFirewallAssociationStatusOutput  {
+    /// <p>The current status for setting a Firewall Manager policy administrators account as an administrator of the third-party firewall tenant.</p> 
+    /// <ul> 
+    /// <li> <p> <code>ONBOARDING</code> - The Firewall Manager policy administrator is being designated as a tenant administrator.</p> </li> 
+    /// <li> <p> <code>ONBOARD_COMPLETE</code> - The Firewall Manager policy administrator is designated as a tenant administrator.</p> </li> 
+    /// <li> <p> <code>OFFBOARDING</code> - The Firewall Manager policy administrator is being removed as a tenant administrator.</p> </li> 
+    /// <li> <p> <code>OFFBOARD_COMPLETE</code> - The Firewall Manager policy administrator has been removed as a tenant administrator.</p> </li> 
+    /// <li> <p> <code>NOT_EXIST</code> - The Firewall Manager policy administrator doesn't exist as a tenant administrator.</p> </li> 
     /// </ul>
     #[doc(hidden)]
-    pub third_party_firewall_status:
-        std::option::Option<crate::model::ThirdPartyFirewallAssociationStatus>,
-    /// <p>The status for subscribing to the third-party firewall vendor in the Amazon Web Services Marketplace.</p>
-    /// <ul>
-    /// <li> <p> <code>NO_SUBSCRIPTION</code> - The Firewall Manager policy administrator isn't subscribed to the third-party firewall service in the Amazon Web Services Marketplace.</p> </li>
-    /// <li> <p> <code>NOT_COMPLETE</code> - The Firewall Manager policy administrator is in the process of subscribing to the third-party firewall service in the Amazon Web Services Marketplace, but doesn't yet have an active subscription.</p> </li>
-    /// <li> <p> <code>COMPLETE</code> - The Firewall Manager policy administrator has an active subscription to the third-party firewall service in the Amazon Web Services Marketplace.</p> </li>
+    pub third_party_firewall_status: std::option::Option<crate::model::ThirdPartyFirewallAssociationStatus>,
+    /// <p>The status for subscribing to the third-party firewall vendor in the Amazon Web Services Marketplace.</p> 
+    /// <ul> 
+    /// <li> <p> <code>NO_SUBSCRIPTION</code> - The Firewall Manager policy administrator isn't subscribed to the third-party firewall service in the Amazon Web Services Marketplace.</p> </li> 
+    /// <li> <p> <code>NOT_COMPLETE</code> - The Firewall Manager policy administrator is in the process of subscribing to the third-party firewall service in the Amazon Web Services Marketplace, but doesn't yet have an active subscription.</p> </li> 
+    /// <li> <p> <code>COMPLETE</code> - The Firewall Manager policy administrator has an active subscription to the third-party firewall service in the Amazon Web Services Marketplace.</p> </li> 
     /// </ul>
     #[doc(hidden)]
-    pub marketplace_onboarding_status:
-        std::option::Option<crate::model::MarketplaceSubscriptionOnboardingStatus>,
+    pub marketplace_onboarding_status: std::option::Option<crate::model::MarketplaceSubscriptionOnboardingStatus>,
 }
 impl GetThirdPartyFirewallAssociationStatusOutput {
-    /// <p>The current status for setting a Firewall Manager policy administrators account as an administrator of the third-party firewall tenant.</p>
-    /// <ul>
-    /// <li> <p> <code>ONBOARDING</code> - The Firewall Manager policy administrator is being designated as a tenant administrator.</p> </li>
-    /// <li> <p> <code>ONBOARD_COMPLETE</code> - The Firewall Manager policy administrator is designated as a tenant administrator.</p> </li>
-    /// <li> <p> <code>OFFBOARDING</code> - The Firewall Manager policy administrator is being removed as a tenant administrator.</p> </li>
-    /// <li> <p> <code>OFFBOARD_COMPLETE</code> - The Firewall Manager policy administrator has been removed as a tenant administrator.</p> </li>
-    /// <li> <p> <code>NOT_EXIST</code> - The Firewall Manager policy administrator doesn't exist as a tenant administrator.</p> </li>
+    /// <p>The current status for setting a Firewall Manager policy administrators account as an administrator of the third-party firewall tenant.</p> 
+    /// <ul> 
+    /// <li> <p> <code>ONBOARDING</code> - The Firewall Manager policy administrator is being designated as a tenant administrator.</p> </li> 
+    /// <li> <p> <code>ONBOARD_COMPLETE</code> - The Firewall Manager policy administrator is designated as a tenant administrator.</p> </li> 
+    /// <li> <p> <code>OFFBOARDING</code> - The Firewall Manager policy administrator is being removed as a tenant administrator.</p> </li> 
+    /// <li> <p> <code>OFFBOARD_COMPLETE</code> - The Firewall Manager policy administrator has been removed as a tenant administrator.</p> </li> 
+    /// <li> <p> <code>NOT_EXIST</code> - The Firewall Manager policy administrator doesn't exist as a tenant administrator.</p> </li> 
     /// </ul>
-    pub fn third_party_firewall_status(
-        &self,
-    ) -> std::option::Option<&crate::model::ThirdPartyFirewallAssociationStatus> {
+    pub fn third_party_firewall_status(&self) -> std::option::Option<& crate::model::ThirdPartyFirewallAssociationStatus> {
         self.third_party_firewall_status.as_ref()
     }
-    /// <p>The status for subscribing to the third-party firewall vendor in the Amazon Web Services Marketplace.</p>
-    /// <ul>
-    /// <li> <p> <code>NO_SUBSCRIPTION</code> - The Firewall Manager policy administrator isn't subscribed to the third-party firewall service in the Amazon Web Services Marketplace.</p> </li>
-    /// <li> <p> <code>NOT_COMPLETE</code> - The Firewall Manager policy administrator is in the process of subscribing to the third-party firewall service in the Amazon Web Services Marketplace, but doesn't yet have an active subscription.</p> </li>
-    /// <li> <p> <code>COMPLETE</code> - The Firewall Manager policy administrator has an active subscription to the third-party firewall service in the Amazon Web Services Marketplace.</p> </li>
+    /// <p>The status for subscribing to the third-party firewall vendor in the Amazon Web Services Marketplace.</p> 
+    /// <ul> 
+    /// <li> <p> <code>NO_SUBSCRIPTION</code> - The Firewall Manager policy administrator isn't subscribed to the third-party firewall service in the Amazon Web Services Marketplace.</p> </li> 
+    /// <li> <p> <code>NOT_COMPLETE</code> - The Firewall Manager policy administrator is in the process of subscribing to the third-party firewall service in the Amazon Web Services Marketplace, but doesn't yet have an active subscription.</p> </li> 
+    /// <li> <p> <code>COMPLETE</code> - The Firewall Manager policy administrator has an active subscription to the third-party firewall service in the Amazon Web Services Marketplace.</p> </li> 
     /// </ul>
-    pub fn marketplace_onboarding_status(
-        &self,
-    ) -> std::option::Option<&crate::model::MarketplaceSubscriptionOnboardingStatus> {
+    pub fn marketplace_onboarding_status(&self) -> std::option::Option<& crate::model::MarketplaceSubscriptionOnboardingStatus> {
         self.marketplace_onboarding_status.as_ref()
     }
 }
 /// See [`GetThirdPartyFirewallAssociationStatusOutput`](crate::output::GetThirdPartyFirewallAssociationStatusOutput).
 pub mod get_third_party_firewall_association_status_output {
-
+    
     /// A builder for [`GetThirdPartyFirewallAssociationStatusOutput`](crate::output::GetThirdPartyFirewallAssociationStatusOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) third_party_firewall_status:
-            std::option::Option<crate::model::ThirdPartyFirewallAssociationStatus>,
-        pub(crate) marketplace_onboarding_status:
-            std::option::Option<crate::model::MarketplaceSubscriptionOnboardingStatus>,
+        pub(crate) third_party_firewall_status: std::option::Option<crate::model::ThirdPartyFirewallAssociationStatus>,
+        pub(crate) marketplace_onboarding_status: std::option::Option<crate::model::MarketplaceSubscriptionOnboardingStatus>,
     }
     impl Builder {
-        /// <p>The current status for setting a Firewall Manager policy administrators account as an administrator of the third-party firewall tenant.</p>
-        /// <ul>
-        /// <li> <p> <code>ONBOARDING</code> - The Firewall Manager policy administrator is being designated as a tenant administrator.</p> </li>
-        /// <li> <p> <code>ONBOARD_COMPLETE</code> - The Firewall Manager policy administrator is designated as a tenant administrator.</p> </li>
-        /// <li> <p> <code>OFFBOARDING</code> - The Firewall Manager policy administrator is being removed as a tenant administrator.</p> </li>
-        /// <li> <p> <code>OFFBOARD_COMPLETE</code> - The Firewall Manager policy administrator has been removed as a tenant administrator.</p> </li>
-        /// <li> <p> <code>NOT_EXIST</code> - The Firewall Manager policy administrator doesn't exist as a tenant administrator.</p> </li>
+        /// <p>The current status for setting a Firewall Manager policy administrators account as an administrator of the third-party firewall tenant.</p> 
+        /// <ul> 
+        /// <li> <p> <code>ONBOARDING</code> - The Firewall Manager policy administrator is being designated as a tenant administrator.</p> </li> 
+        /// <li> <p> <code>ONBOARD_COMPLETE</code> - The Firewall Manager policy administrator is designated as a tenant administrator.</p> </li> 
+        /// <li> <p> <code>OFFBOARDING</code> - The Firewall Manager policy administrator is being removed as a tenant administrator.</p> </li> 
+        /// <li> <p> <code>OFFBOARD_COMPLETE</code> - The Firewall Manager policy administrator has been removed as a tenant administrator.</p> </li> 
+        /// <li> <p> <code>NOT_EXIST</code> - The Firewall Manager policy administrator doesn't exist as a tenant administrator.</p> </li> 
         /// </ul>
-        pub fn third_party_firewall_status(
-            mut self,
-            input: crate::model::ThirdPartyFirewallAssociationStatus,
-        ) -> Self {
+        pub fn third_party_firewall_status(mut self, input: crate::model::ThirdPartyFirewallAssociationStatus) -> Self {
             self.third_party_firewall_status = Some(input);
             self
         }
-        /// <p>The current status for setting a Firewall Manager policy administrators account as an administrator of the third-party firewall tenant.</p>
-        /// <ul>
-        /// <li> <p> <code>ONBOARDING</code> - The Firewall Manager policy administrator is being designated as a tenant administrator.</p> </li>
-        /// <li> <p> <code>ONBOARD_COMPLETE</code> - The Firewall Manager policy administrator is designated as a tenant administrator.</p> </li>
-        /// <li> <p> <code>OFFBOARDING</code> - The Firewall Manager policy administrator is being removed as a tenant administrator.</p> </li>
-        /// <li> <p> <code>OFFBOARD_COMPLETE</code> - The Firewall Manager policy administrator has been removed as a tenant administrator.</p> </li>
-        /// <li> <p> <code>NOT_EXIST</code> - The Firewall Manager policy administrator doesn't exist as a tenant administrator.</p> </li>
+        /// <p>The current status for setting a Firewall Manager policy administrators account as an administrator of the third-party firewall tenant.</p> 
+        /// <ul> 
+        /// <li> <p> <code>ONBOARDING</code> - The Firewall Manager policy administrator is being designated as a tenant administrator.</p> </li> 
+        /// <li> <p> <code>ONBOARD_COMPLETE</code> - The Firewall Manager policy administrator is designated as a tenant administrator.</p> </li> 
+        /// <li> <p> <code>OFFBOARDING</code> - The Firewall Manager policy administrator is being removed as a tenant administrator.</p> </li> 
+        /// <li> <p> <code>OFFBOARD_COMPLETE</code> - The Firewall Manager policy administrator has been removed as a tenant administrator.</p> </li> 
+        /// <li> <p> <code>NOT_EXIST</code> - The Firewall Manager policy administrator doesn't exist as a tenant administrator.</p> </li> 
         /// </ul>
-        pub fn set_third_party_firewall_status(
-            mut self,
-            input: std::option::Option<crate::model::ThirdPartyFirewallAssociationStatus>,
-        ) -> Self {
-            self.third_party_firewall_status = input;
-            self
+        pub fn set_third_party_firewall_status(mut self, input: std::option::Option<crate::model::ThirdPartyFirewallAssociationStatus>) -> Self {
+            self.third_party_firewall_status = input; self
         }
-        /// <p>The status for subscribing to the third-party firewall vendor in the Amazon Web Services Marketplace.</p>
-        /// <ul>
-        /// <li> <p> <code>NO_SUBSCRIPTION</code> - The Firewall Manager policy administrator isn't subscribed to the third-party firewall service in the Amazon Web Services Marketplace.</p> </li>
-        /// <li> <p> <code>NOT_COMPLETE</code> - The Firewall Manager policy administrator is in the process of subscribing to the third-party firewall service in the Amazon Web Services Marketplace, but doesn't yet have an active subscription.</p> </li>
-        /// <li> <p> <code>COMPLETE</code> - The Firewall Manager policy administrator has an active subscription to the third-party firewall service in the Amazon Web Services Marketplace.</p> </li>
+        /// <p>The status for subscribing to the third-party firewall vendor in the Amazon Web Services Marketplace.</p> 
+        /// <ul> 
+        /// <li> <p> <code>NO_SUBSCRIPTION</code> - The Firewall Manager policy administrator isn't subscribed to the third-party firewall service in the Amazon Web Services Marketplace.</p> </li> 
+        /// <li> <p> <code>NOT_COMPLETE</code> - The Firewall Manager policy administrator is in the process of subscribing to the third-party firewall service in the Amazon Web Services Marketplace, but doesn't yet have an active subscription.</p> </li> 
+        /// <li> <p> <code>COMPLETE</code> - The Firewall Manager policy administrator has an active subscription to the third-party firewall service in the Amazon Web Services Marketplace.</p> </li> 
         /// </ul>
-        pub fn marketplace_onboarding_status(
-            mut self,
-            input: crate::model::MarketplaceSubscriptionOnboardingStatus,
-        ) -> Self {
+        pub fn marketplace_onboarding_status(mut self, input: crate::model::MarketplaceSubscriptionOnboardingStatus) -> Self {
             self.marketplace_onboarding_status = Some(input);
             self
         }
-        /// <p>The status for subscribing to the third-party firewall vendor in the Amazon Web Services Marketplace.</p>
-        /// <ul>
-        /// <li> <p> <code>NO_SUBSCRIPTION</code> - The Firewall Manager policy administrator isn't subscribed to the third-party firewall service in the Amazon Web Services Marketplace.</p> </li>
-        /// <li> <p> <code>NOT_COMPLETE</code> - The Firewall Manager policy administrator is in the process of subscribing to the third-party firewall service in the Amazon Web Services Marketplace, but doesn't yet have an active subscription.</p> </li>
-        /// <li> <p> <code>COMPLETE</code> - The Firewall Manager policy administrator has an active subscription to the third-party firewall service in the Amazon Web Services Marketplace.</p> </li>
+        /// <p>The status for subscribing to the third-party firewall vendor in the Amazon Web Services Marketplace.</p> 
+        /// <ul> 
+        /// <li> <p> <code>NO_SUBSCRIPTION</code> - The Firewall Manager policy administrator isn't subscribed to the third-party firewall service in the Amazon Web Services Marketplace.</p> </li> 
+        /// <li> <p> <code>NOT_COMPLETE</code> - The Firewall Manager policy administrator is in the process of subscribing to the third-party firewall service in the Amazon Web Services Marketplace, but doesn't yet have an active subscription.</p> </li> 
+        /// <li> <p> <code>COMPLETE</code> - The Firewall Manager policy administrator has an active subscription to the third-party firewall service in the Amazon Web Services Marketplace.</p> </li> 
         /// </ul>
-        pub fn set_marketplace_onboarding_status(
-            mut self,
-            input: std::option::Option<crate::model::MarketplaceSubscriptionOnboardingStatus>,
-        ) -> Self {
-            self.marketplace_onboarding_status = input;
-            self
+        pub fn set_marketplace_onboarding_status(mut self, input: std::option::Option<crate::model::MarketplaceSubscriptionOnboardingStatus>) -> Self {
+            self.marketplace_onboarding_status = input; self
         }
         /// Consumes the builder and constructs a [`GetThirdPartyFirewallAssociationStatusOutput`](crate::output::GetThirdPartyFirewallAssociationStatusOutput).
         pub fn build(self) -> crate::output::GetThirdPartyFirewallAssociationStatusOutput {
             crate::output::GetThirdPartyFirewallAssociationStatusOutput {
-                third_party_firewall_status: self.third_party_firewall_status,
-                marketplace_onboarding_status: self.marketplace_onboarding_status,
+                third_party_firewall_status: self.third_party_firewall_status
+                ,
+                marketplace_onboarding_status: self.marketplace_onboarding_status
+                ,
             }
         }
     }
+    
+    
 }
 impl GetThirdPartyFirewallAssociationStatusOutput {
     /// Creates a new builder-style object to manufacture [`GetThirdPartyFirewallAssociationStatusOutput`](crate::output::GetThirdPartyFirewallAssociationStatusOutput).
@@ -1310,7 +1263,7 @@ impl GetThirdPartyFirewallAssociationStatusOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetResourceSetOutput {
+pub struct GetResourceSetOutput  {
     /// <p>Information about the specified resource set.</p>
     #[doc(hidden)]
     pub resource_set: std::option::Option<crate::model::ResourceSet>,
@@ -1320,17 +1273,17 @@ pub struct GetResourceSetOutput {
 }
 impl GetResourceSetOutput {
     /// <p>Information about the specified resource set.</p>
-    pub fn resource_set(&self) -> std::option::Option<&crate::model::ResourceSet> {
+    pub fn resource_set(&self) -> std::option::Option<& crate::model::ResourceSet> {
         self.resource_set.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the resource set.</p>
-    pub fn resource_set_arn(&self) -> std::option::Option<&str> {
+    pub fn resource_set_arn(&self) -> std::option::Option<& str> {
         self.resource_set_arn.as_deref()
     }
 }
 /// See [`GetResourceSetOutput`](crate::output::GetResourceSetOutput).
 pub mod get_resource_set_output {
-
+    
     /// A builder for [`GetResourceSetOutput`](crate::output::GetResourceSetOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1344,12 +1297,8 @@ pub mod get_resource_set_output {
             self
         }
         /// <p>Information about the specified resource set.</p>
-        pub fn set_resource_set(
-            mut self,
-            input: std::option::Option<crate::model::ResourceSet>,
-        ) -> Self {
-            self.resource_set = input;
-            self
+        pub fn set_resource_set(mut self, input: std::option::Option<crate::model::ResourceSet>) -> Self {
+            self.resource_set = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the resource set.</p>
         pub fn resource_set_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1357,21 +1306,21 @@ pub mod get_resource_set_output {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the resource set.</p>
-        pub fn set_resource_set_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.resource_set_arn = input;
-            self
+        pub fn set_resource_set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.resource_set_arn = input; self
         }
         /// Consumes the builder and constructs a [`GetResourceSetOutput`](crate::output::GetResourceSetOutput).
         pub fn build(self) -> crate::output::GetResourceSetOutput {
             crate::output::GetResourceSetOutput {
-                resource_set: self.resource_set,
-                resource_set_arn: self.resource_set_arn,
+                resource_set: self.resource_set
+                ,
+                resource_set_arn: self.resource_set_arn
+                ,
             }
         }
     }
+    
+    
 }
 impl GetResourceSetOutput {
     /// Creates a new builder-style object to manufacture [`GetResourceSetOutput`](crate::output::GetResourceSetOutput).
@@ -1383,7 +1332,7 @@ impl GetResourceSetOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetProtocolsListOutput {
+pub struct GetProtocolsListOutput  {
     /// <p>Information about the specified Firewall Manager protocols list.</p>
     #[doc(hidden)]
     pub protocols_list: std::option::Option<crate::model::ProtocolsListData>,
@@ -1393,17 +1342,17 @@ pub struct GetProtocolsListOutput {
 }
 impl GetProtocolsListOutput {
     /// <p>Information about the specified Firewall Manager protocols list.</p>
-    pub fn protocols_list(&self) -> std::option::Option<&crate::model::ProtocolsListData> {
+    pub fn protocols_list(&self) -> std::option::Option<& crate::model::ProtocolsListData> {
         self.protocols_list.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the specified protocols list.</p>
-    pub fn protocols_list_arn(&self) -> std::option::Option<&str> {
+    pub fn protocols_list_arn(&self) -> std::option::Option<& str> {
         self.protocols_list_arn.as_deref()
     }
 }
 /// See [`GetProtocolsListOutput`](crate::output::GetProtocolsListOutput).
 pub mod get_protocols_list_output {
-
+    
     /// A builder for [`GetProtocolsListOutput`](crate::output::GetProtocolsListOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1417,12 +1366,8 @@ pub mod get_protocols_list_output {
             self
         }
         /// <p>Information about the specified Firewall Manager protocols list.</p>
-        pub fn set_protocols_list(
-            mut self,
-            input: std::option::Option<crate::model::ProtocolsListData>,
-        ) -> Self {
-            self.protocols_list = input;
-            self
+        pub fn set_protocols_list(mut self, input: std::option::Option<crate::model::ProtocolsListData>) -> Self {
+            self.protocols_list = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the specified protocols list.</p>
         pub fn protocols_list_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1430,21 +1375,21 @@ pub mod get_protocols_list_output {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the specified protocols list.</p>
-        pub fn set_protocols_list_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.protocols_list_arn = input;
-            self
+        pub fn set_protocols_list_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.protocols_list_arn = input; self
         }
         /// Consumes the builder and constructs a [`GetProtocolsListOutput`](crate::output::GetProtocolsListOutput).
         pub fn build(self) -> crate::output::GetProtocolsListOutput {
             crate::output::GetProtocolsListOutput {
-                protocols_list: self.protocols_list,
-                protocols_list_arn: self.protocols_list_arn,
+                protocols_list: self.protocols_list
+                ,
+                protocols_list_arn: self.protocols_list_arn
+                ,
             }
         }
     }
+    
+    
 }
 impl GetProtocolsListOutput {
     /// Creates a new builder-style object to manufacture [`GetProtocolsListOutput`](crate::output::GetProtocolsListOutput).
@@ -1456,59 +1401,59 @@ impl GetProtocolsListOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetProtectionStatusOutput {
+pub struct GetProtectionStatusOutput  {
     /// <p>The ID of the Firewall Manager administrator account for this policy.</p>
     #[doc(hidden)]
     pub admin_account_id: std::option::Option<std::string::String>,
     /// <p>The service type that is protected by the policy. Currently, this is always <code>SHIELD_ADVANCED</code>.</p>
     #[doc(hidden)]
     pub service_type: std::option::Option<crate::model::SecurityServiceType>,
-    /// <p>Details about the attack, including the following:</p>
-    /// <ul>
-    /// <li> <p>Attack type</p> </li>
-    /// <li> <p>Account ID</p> </li>
-    /// <li> <p>ARN of the resource attacked</p> </li>
-    /// <li> <p>Start time of the attack</p> </li>
-    /// <li> <p>End time of the attack (ongoing attacks will not have an end time)</p> </li>
-    /// </ul>
+    /// <p>Details about the attack, including the following:</p> 
+    /// <ul> 
+    /// <li> <p>Attack type</p> </li> 
+    /// <li> <p>Account ID</p> </li> 
+    /// <li> <p>ARN of the resource attacked</p> </li> 
+    /// <li> <p>Start time of the attack</p> </li> 
+    /// <li> <p>End time of the attack (ongoing attacks will not have an end time)</p> </li> 
+    /// </ul> 
     /// <p>The details are in JSON format. </p>
     #[doc(hidden)]
     pub data: std::option::Option<std::string::String>,
-    /// <p>If you have more objects than the number that you specified for <code>MaxResults</code> in the request, the response includes a <code>NextToken</code> value. To list more objects, submit another <code>GetProtectionStatus</code> request, and specify the <code>NextToken</code> value from the response in the <code>NextToken</code> value in the next request.</p>
+    /// <p>If you have more objects than the number that you specified for <code>MaxResults</code> in the request, the response includes a <code>NextToken</code> value. To list more objects, submit another <code>GetProtectionStatus</code> request, and specify the <code>NextToken</code> value from the response in the <code>NextToken</code> value in the next request.</p> 
     /// <p>Amazon Web Services SDKs provide auto-pagination that identify <code>NextToken</code> in a response and make subsequent request calls automatically on your behalf. However, this feature is not supported by <code>GetProtectionStatus</code>. You must submit subsequent requests with <code>NextToken</code> using your own processes. </p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetProtectionStatusOutput {
     /// <p>The ID of the Firewall Manager administrator account for this policy.</p>
-    pub fn admin_account_id(&self) -> std::option::Option<&str> {
+    pub fn admin_account_id(&self) -> std::option::Option<& str> {
         self.admin_account_id.as_deref()
     }
     /// <p>The service type that is protected by the policy. Currently, this is always <code>SHIELD_ADVANCED</code>.</p>
-    pub fn service_type(&self) -> std::option::Option<&crate::model::SecurityServiceType> {
+    pub fn service_type(&self) -> std::option::Option<& crate::model::SecurityServiceType> {
         self.service_type.as_ref()
     }
-    /// <p>Details about the attack, including the following:</p>
-    /// <ul>
-    /// <li> <p>Attack type</p> </li>
-    /// <li> <p>Account ID</p> </li>
-    /// <li> <p>ARN of the resource attacked</p> </li>
-    /// <li> <p>Start time of the attack</p> </li>
-    /// <li> <p>End time of the attack (ongoing attacks will not have an end time)</p> </li>
-    /// </ul>
+    /// <p>Details about the attack, including the following:</p> 
+    /// <ul> 
+    /// <li> <p>Attack type</p> </li> 
+    /// <li> <p>Account ID</p> </li> 
+    /// <li> <p>ARN of the resource attacked</p> </li> 
+    /// <li> <p>Start time of the attack</p> </li> 
+    /// <li> <p>End time of the attack (ongoing attacks will not have an end time)</p> </li> 
+    /// </ul> 
     /// <p>The details are in JSON format. </p>
-    pub fn data(&self) -> std::option::Option<&str> {
+    pub fn data(&self) -> std::option::Option<& str> {
         self.data.as_deref()
     }
-    /// <p>If you have more objects than the number that you specified for <code>MaxResults</code> in the request, the response includes a <code>NextToken</code> value. To list more objects, submit another <code>GetProtectionStatus</code> request, and specify the <code>NextToken</code> value from the response in the <code>NextToken</code> value in the next request.</p>
+    /// <p>If you have more objects than the number that you specified for <code>MaxResults</code> in the request, the response includes a <code>NextToken</code> value. To list more objects, submit another <code>GetProtectionStatus</code> request, and specify the <code>NextToken</code> value from the response in the <code>NextToken</code> value in the next request.</p> 
     /// <p>Amazon Web Services SDKs provide auto-pagination that identify <code>NextToken</code> in a response and make subsequent request calls automatically on your behalf. However, this feature is not supported by <code>GetProtectionStatus</code>. You must submit subsequent requests with <code>NextToken</code> using your own processes. </p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`GetProtectionStatusOutput`](crate::output::GetProtectionStatusOutput).
 pub mod get_protection_status_output {
-
+    
     /// A builder for [`GetProtectionStatusOutput`](crate::output::GetProtectionStatusOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1524,12 +1469,8 @@ pub mod get_protection_status_output {
             self
         }
         /// <p>The ID of the Firewall Manager administrator account for this policy.</p>
-        pub fn set_admin_account_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.admin_account_id = input;
-            self
+        pub fn set_admin_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.admin_account_id = input; self
         }
         /// <p>The service type that is protected by the policy. Currently, this is always <code>SHIELD_ADVANCED</code>.</p>
         pub fn service_type(mut self, input: crate::model::SecurityServiceType) -> Self {
@@ -1537,61 +1478,61 @@ pub mod get_protection_status_output {
             self
         }
         /// <p>The service type that is protected by the policy. Currently, this is always <code>SHIELD_ADVANCED</code>.</p>
-        pub fn set_service_type(
-            mut self,
-            input: std::option::Option<crate::model::SecurityServiceType>,
-        ) -> Self {
-            self.service_type = input;
-            self
+        pub fn set_service_type(mut self, input: std::option::Option<crate::model::SecurityServiceType>) -> Self {
+            self.service_type = input; self
         }
-        /// <p>Details about the attack, including the following:</p>
-        /// <ul>
-        /// <li> <p>Attack type</p> </li>
-        /// <li> <p>Account ID</p> </li>
-        /// <li> <p>ARN of the resource attacked</p> </li>
-        /// <li> <p>Start time of the attack</p> </li>
-        /// <li> <p>End time of the attack (ongoing attacks will not have an end time)</p> </li>
-        /// </ul>
+        /// <p>Details about the attack, including the following:</p> 
+        /// <ul> 
+        /// <li> <p>Attack type</p> </li> 
+        /// <li> <p>Account ID</p> </li> 
+        /// <li> <p>ARN of the resource attacked</p> </li> 
+        /// <li> <p>Start time of the attack</p> </li> 
+        /// <li> <p>End time of the attack (ongoing attacks will not have an end time)</p> </li> 
+        /// </ul> 
         /// <p>The details are in JSON format. </p>
         pub fn data(mut self, input: impl Into<std::string::String>) -> Self {
             self.data = Some(input.into());
             self
         }
-        /// <p>Details about the attack, including the following:</p>
-        /// <ul>
-        /// <li> <p>Attack type</p> </li>
-        /// <li> <p>Account ID</p> </li>
-        /// <li> <p>ARN of the resource attacked</p> </li>
-        /// <li> <p>Start time of the attack</p> </li>
-        /// <li> <p>End time of the attack (ongoing attacks will not have an end time)</p> </li>
-        /// </ul>
+        /// <p>Details about the attack, including the following:</p> 
+        /// <ul> 
+        /// <li> <p>Attack type</p> </li> 
+        /// <li> <p>Account ID</p> </li> 
+        /// <li> <p>ARN of the resource attacked</p> </li> 
+        /// <li> <p>Start time of the attack</p> </li> 
+        /// <li> <p>End time of the attack (ongoing attacks will not have an end time)</p> </li> 
+        /// </ul> 
         /// <p>The details are in JSON format. </p>
         pub fn set_data(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.data = input;
-            self
+            self.data = input; self
         }
-        /// <p>If you have more objects than the number that you specified for <code>MaxResults</code> in the request, the response includes a <code>NextToken</code> value. To list more objects, submit another <code>GetProtectionStatus</code> request, and specify the <code>NextToken</code> value from the response in the <code>NextToken</code> value in the next request.</p>
+        /// <p>If you have more objects than the number that you specified for <code>MaxResults</code> in the request, the response includes a <code>NextToken</code> value. To list more objects, submit another <code>GetProtectionStatus</code> request, and specify the <code>NextToken</code> value from the response in the <code>NextToken</code> value in the next request.</p> 
         /// <p>Amazon Web Services SDKs provide auto-pagination that identify <code>NextToken</code> in a response and make subsequent request calls automatically on your behalf. However, this feature is not supported by <code>GetProtectionStatus</code>. You must submit subsequent requests with <code>NextToken</code> using your own processes. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If you have more objects than the number that you specified for <code>MaxResults</code> in the request, the response includes a <code>NextToken</code> value. To list more objects, submit another <code>GetProtectionStatus</code> request, and specify the <code>NextToken</code> value from the response in the <code>NextToken</code> value in the next request.</p>
+        /// <p>If you have more objects than the number that you specified for <code>MaxResults</code> in the request, the response includes a <code>NextToken</code> value. To list more objects, submit another <code>GetProtectionStatus</code> request, and specify the <code>NextToken</code> value from the response in the <code>NextToken</code> value in the next request.</p> 
         /// <p>Amazon Web Services SDKs provide auto-pagination that identify <code>NextToken</code> in a response and make subsequent request calls automatically on your behalf. However, this feature is not supported by <code>GetProtectionStatus</code>. You must submit subsequent requests with <code>NextToken</code> using your own processes. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`GetProtectionStatusOutput`](crate::output::GetProtectionStatusOutput).
         pub fn build(self) -> crate::output::GetProtectionStatusOutput {
             crate::output::GetProtectionStatusOutput {
-                admin_account_id: self.admin_account_id,
-                service_type: self.service_type,
-                data: self.data,
-                next_token: self.next_token,
+                admin_account_id: self.admin_account_id
+                ,
+                service_type: self.service_type
+                ,
+                data: self.data
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl GetProtectionStatusOutput {
     /// Creates a new builder-style object to manufacture [`GetProtectionStatusOutput`](crate::output::GetProtectionStatusOutput).
@@ -1603,7 +1544,7 @@ impl GetProtectionStatusOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetPolicyOutput {
+pub struct GetPolicyOutput  {
     /// <p>Information about the specified Firewall Manager policy.</p>
     #[doc(hidden)]
     pub policy: std::option::Option<crate::model::Policy>,
@@ -1613,17 +1554,17 @@ pub struct GetPolicyOutput {
 }
 impl GetPolicyOutput {
     /// <p>Information about the specified Firewall Manager policy.</p>
-    pub fn policy(&self) -> std::option::Option<&crate::model::Policy> {
+    pub fn policy(&self) -> std::option::Option<& crate::model::Policy> {
         self.policy.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the specified policy.</p>
-    pub fn policy_arn(&self) -> std::option::Option<&str> {
+    pub fn policy_arn(&self) -> std::option::Option<& str> {
         self.policy_arn.as_deref()
     }
 }
 /// See [`GetPolicyOutput`](crate::output::GetPolicyOutput).
 pub mod get_policy_output {
-
+    
     /// A builder for [`GetPolicyOutput`](crate::output::GetPolicyOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1638,8 +1579,7 @@ pub mod get_policy_output {
         }
         /// <p>Information about the specified Firewall Manager policy.</p>
         pub fn set_policy(mut self, input: std::option::Option<crate::model::Policy>) -> Self {
-            self.policy = input;
-            self
+            self.policy = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the specified policy.</p>
         pub fn policy_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1648,17 +1588,20 @@ pub mod get_policy_output {
         }
         /// <p>The Amazon Resource Name (ARN) of the specified policy.</p>
         pub fn set_policy_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.policy_arn = input;
-            self
+            self.policy_arn = input; self
         }
         /// Consumes the builder and constructs a [`GetPolicyOutput`](crate::output::GetPolicyOutput).
         pub fn build(self) -> crate::output::GetPolicyOutput {
             crate::output::GetPolicyOutput {
-                policy: self.policy,
-                policy_arn: self.policy_arn,
+                policy: self.policy
+                ,
+                policy_arn: self.policy_arn
+                ,
             }
         }
     }
+    
+    
 }
 impl GetPolicyOutput {
     /// Creates a new builder-style object to manufacture [`GetPolicyOutput`](crate::output::GetPolicyOutput).
@@ -1670,7 +1613,7 @@ impl GetPolicyOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetNotificationChannelOutput {
+pub struct GetNotificationChannelOutput  {
     /// <p>The SNS topic that records Firewall Manager activity. </p>
     #[doc(hidden)]
     pub sns_topic_arn: std::option::Option<std::string::String>,
@@ -1680,17 +1623,17 @@ pub struct GetNotificationChannelOutput {
 }
 impl GetNotificationChannelOutput {
     /// <p>The SNS topic that records Firewall Manager activity. </p>
-    pub fn sns_topic_arn(&self) -> std::option::Option<&str> {
+    pub fn sns_topic_arn(&self) -> std::option::Option<& str> {
         self.sns_topic_arn.as_deref()
     }
     /// <p>The IAM role that is used by Firewall Manager to record activity to SNS.</p>
-    pub fn sns_role_name(&self) -> std::option::Option<&str> {
+    pub fn sns_role_name(&self) -> std::option::Option<& str> {
         self.sns_role_name.as_deref()
     }
 }
 /// See [`GetNotificationChannelOutput`](crate::output::GetNotificationChannelOutput).
 pub mod get_notification_channel_output {
-
+    
     /// A builder for [`GetNotificationChannelOutput`](crate::output::GetNotificationChannelOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1704,12 +1647,8 @@ pub mod get_notification_channel_output {
             self
         }
         /// <p>The SNS topic that records Firewall Manager activity. </p>
-        pub fn set_sns_topic_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.sns_topic_arn = input;
-            self
+        pub fn set_sns_topic_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.sns_topic_arn = input; self
         }
         /// <p>The IAM role that is used by Firewall Manager to record activity to SNS.</p>
         pub fn sns_role_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1717,21 +1656,21 @@ pub mod get_notification_channel_output {
             self
         }
         /// <p>The IAM role that is used by Firewall Manager to record activity to SNS.</p>
-        pub fn set_sns_role_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.sns_role_name = input;
-            self
+        pub fn set_sns_role_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.sns_role_name = input; self
         }
         /// Consumes the builder and constructs a [`GetNotificationChannelOutput`](crate::output::GetNotificationChannelOutput).
         pub fn build(self) -> crate::output::GetNotificationChannelOutput {
             crate::output::GetNotificationChannelOutput {
-                sns_topic_arn: self.sns_topic_arn,
-                sns_role_name: self.sns_role_name,
+                sns_topic_arn: self.sns_topic_arn
+                ,
+                sns_role_name: self.sns_role_name
+                ,
             }
         }
     }
+    
+    
 }
 impl GetNotificationChannelOutput {
     /// Creates a new builder-style object to manufacture [`GetNotificationChannelOutput`](crate::output::GetNotificationChannelOutput).
@@ -1743,52 +1682,45 @@ impl GetNotificationChannelOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetComplianceDetailOutput {
+pub struct GetComplianceDetailOutput  {
     /// <p>Information about the resources and the policy that you specified in the <code>GetComplianceDetail</code> request.</p>
     #[doc(hidden)]
     pub policy_compliance_detail: std::option::Option<crate::model::PolicyComplianceDetail>,
 }
 impl GetComplianceDetailOutput {
     /// <p>Information about the resources and the policy that you specified in the <code>GetComplianceDetail</code> request.</p>
-    pub fn policy_compliance_detail(
-        &self,
-    ) -> std::option::Option<&crate::model::PolicyComplianceDetail> {
+    pub fn policy_compliance_detail(&self) -> std::option::Option<& crate::model::PolicyComplianceDetail> {
         self.policy_compliance_detail.as_ref()
     }
 }
 /// See [`GetComplianceDetailOutput`](crate::output::GetComplianceDetailOutput).
 pub mod get_compliance_detail_output {
-
+    
     /// A builder for [`GetComplianceDetailOutput`](crate::output::GetComplianceDetailOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) policy_compliance_detail:
-            std::option::Option<crate::model::PolicyComplianceDetail>,
+        pub(crate) policy_compliance_detail: std::option::Option<crate::model::PolicyComplianceDetail>,
     }
     impl Builder {
         /// <p>Information about the resources and the policy that you specified in the <code>GetComplianceDetail</code> request.</p>
-        pub fn policy_compliance_detail(
-            mut self,
-            input: crate::model::PolicyComplianceDetail,
-        ) -> Self {
+        pub fn policy_compliance_detail(mut self, input: crate::model::PolicyComplianceDetail) -> Self {
             self.policy_compliance_detail = Some(input);
             self
         }
         /// <p>Information about the resources and the policy that you specified in the <code>GetComplianceDetail</code> request.</p>
-        pub fn set_policy_compliance_detail(
-            mut self,
-            input: std::option::Option<crate::model::PolicyComplianceDetail>,
-        ) -> Self {
-            self.policy_compliance_detail = input;
-            self
+        pub fn set_policy_compliance_detail(mut self, input: std::option::Option<crate::model::PolicyComplianceDetail>) -> Self {
+            self.policy_compliance_detail = input; self
         }
         /// Consumes the builder and constructs a [`GetComplianceDetailOutput`](crate::output::GetComplianceDetailOutput).
         pub fn build(self) -> crate::output::GetComplianceDetailOutput {
             crate::output::GetComplianceDetailOutput {
-                policy_compliance_detail: self.policy_compliance_detail,
+                policy_compliance_detail: self.policy_compliance_detail
+                ,
             }
         }
     }
+    
+    
 }
 impl GetComplianceDetailOutput {
     /// Creates a new builder-style object to manufacture [`GetComplianceDetailOutput`](crate::output::GetComplianceDetailOutput).
@@ -1800,7 +1732,7 @@ impl GetComplianceDetailOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetAppsListOutput {
+pub struct GetAppsListOutput  {
     /// <p>Information about the specified Firewall Manager applications list.</p>
     #[doc(hidden)]
     pub apps_list: std::option::Option<crate::model::AppsListData>,
@@ -1810,17 +1742,17 @@ pub struct GetAppsListOutput {
 }
 impl GetAppsListOutput {
     /// <p>Information about the specified Firewall Manager applications list.</p>
-    pub fn apps_list(&self) -> std::option::Option<&crate::model::AppsListData> {
+    pub fn apps_list(&self) -> std::option::Option<& crate::model::AppsListData> {
         self.apps_list.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the applications list.</p>
-    pub fn apps_list_arn(&self) -> std::option::Option<&str> {
+    pub fn apps_list_arn(&self) -> std::option::Option<& str> {
         self.apps_list_arn.as_deref()
     }
 }
 /// See [`GetAppsListOutput`](crate::output::GetAppsListOutput).
 pub mod get_apps_list_output {
-
+    
     /// A builder for [`GetAppsListOutput`](crate::output::GetAppsListOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1834,12 +1766,8 @@ pub mod get_apps_list_output {
             self
         }
         /// <p>Information about the specified Firewall Manager applications list.</p>
-        pub fn set_apps_list(
-            mut self,
-            input: std::option::Option<crate::model::AppsListData>,
-        ) -> Self {
-            self.apps_list = input;
-            self
+        pub fn set_apps_list(mut self, input: std::option::Option<crate::model::AppsListData>) -> Self {
+            self.apps_list = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the applications list.</p>
         pub fn apps_list_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1847,21 +1775,21 @@ pub mod get_apps_list_output {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the applications list.</p>
-        pub fn set_apps_list_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.apps_list_arn = input;
-            self
+        pub fn set_apps_list_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.apps_list_arn = input; self
         }
         /// Consumes the builder and constructs a [`GetAppsListOutput`](crate::output::GetAppsListOutput).
         pub fn build(self) -> crate::output::GetAppsListOutput {
             crate::output::GetAppsListOutput {
-                apps_list: self.apps_list,
-                apps_list_arn: self.apps_list_arn,
+                apps_list: self.apps_list
+                ,
+                apps_list_arn: self.apps_list_arn
+                ,
             }
         }
     }
+    
+    
 }
 impl GetAppsListOutput {
     /// Creates a new builder-style object to manufacture [`GetAppsListOutput`](crate::output::GetAppsListOutput).
@@ -1873,7 +1801,7 @@ impl GetAppsListOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetAdminAccountOutput {
+pub struct GetAdminAccountOutput  {
     /// <p>The Amazon Web Services account that is set as the Firewall Manager administrator.</p>
     #[doc(hidden)]
     pub admin_account: std::option::Option<std::string::String>,
@@ -1883,17 +1811,17 @@ pub struct GetAdminAccountOutput {
 }
 impl GetAdminAccountOutput {
     /// <p>The Amazon Web Services account that is set as the Firewall Manager administrator.</p>
-    pub fn admin_account(&self) -> std::option::Option<&str> {
+    pub fn admin_account(&self) -> std::option::Option<& str> {
         self.admin_account.as_deref()
     }
     /// <p>The status of the Amazon Web Services account that you set as the Firewall Manager administrator.</p>
-    pub fn role_status(&self) -> std::option::Option<&crate::model::AccountRoleStatus> {
+    pub fn role_status(&self) -> std::option::Option<& crate::model::AccountRoleStatus> {
         self.role_status.as_ref()
     }
 }
 /// See [`GetAdminAccountOutput`](crate::output::GetAdminAccountOutput).
 pub mod get_admin_account_output {
-
+    
     /// A builder for [`GetAdminAccountOutput`](crate::output::GetAdminAccountOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1907,12 +1835,8 @@ pub mod get_admin_account_output {
             self
         }
         /// <p>The Amazon Web Services account that is set as the Firewall Manager administrator.</p>
-        pub fn set_admin_account(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.admin_account = input;
-            self
+        pub fn set_admin_account(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.admin_account = input; self
         }
         /// <p>The status of the Amazon Web Services account that you set as the Firewall Manager administrator.</p>
         pub fn role_status(mut self, input: crate::model::AccountRoleStatus) -> Self {
@@ -1920,21 +1844,21 @@ pub mod get_admin_account_output {
             self
         }
         /// <p>The status of the Amazon Web Services account that you set as the Firewall Manager administrator.</p>
-        pub fn set_role_status(
-            mut self,
-            input: std::option::Option<crate::model::AccountRoleStatus>,
-        ) -> Self {
-            self.role_status = input;
-            self
+        pub fn set_role_status(mut self, input: std::option::Option<crate::model::AccountRoleStatus>) -> Self {
+            self.role_status = input; self
         }
         /// Consumes the builder and constructs a [`GetAdminAccountOutput`](crate::output::GetAdminAccountOutput).
         pub fn build(self) -> crate::output::GetAdminAccountOutput {
             crate::output::GetAdminAccountOutput {
-                admin_account: self.admin_account,
-                role_status: self.role_status,
+                admin_account: self.admin_account
+                ,
+                role_status: self.role_status
+                ,
             }
         }
     }
+    
+    
 }
 impl GetAdminAccountOutput {
     /// Creates a new builder-style object to manufacture [`GetAdminAccountOutput`](crate::output::GetAdminAccountOutput).
@@ -1946,53 +1870,45 @@ impl GetAdminAccountOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DisassociateThirdPartyFirewallOutput {
+pub struct DisassociateThirdPartyFirewallOutput  {
     /// <p>The current status for the disassociation of a Firewall Manager administrators account with a third-party firewall.</p>
     #[doc(hidden)]
-    pub third_party_firewall_status:
-        std::option::Option<crate::model::ThirdPartyFirewallAssociationStatus>,
+    pub third_party_firewall_status: std::option::Option<crate::model::ThirdPartyFirewallAssociationStatus>,
 }
 impl DisassociateThirdPartyFirewallOutput {
     /// <p>The current status for the disassociation of a Firewall Manager administrators account with a third-party firewall.</p>
-    pub fn third_party_firewall_status(
-        &self,
-    ) -> std::option::Option<&crate::model::ThirdPartyFirewallAssociationStatus> {
+    pub fn third_party_firewall_status(&self) -> std::option::Option<& crate::model::ThirdPartyFirewallAssociationStatus> {
         self.third_party_firewall_status.as_ref()
     }
 }
 /// See [`DisassociateThirdPartyFirewallOutput`](crate::output::DisassociateThirdPartyFirewallOutput).
 pub mod disassociate_third_party_firewall_output {
-
+    
     /// A builder for [`DisassociateThirdPartyFirewallOutput`](crate::output::DisassociateThirdPartyFirewallOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) third_party_firewall_status:
-            std::option::Option<crate::model::ThirdPartyFirewallAssociationStatus>,
+        pub(crate) third_party_firewall_status: std::option::Option<crate::model::ThirdPartyFirewallAssociationStatus>,
     }
     impl Builder {
         /// <p>The current status for the disassociation of a Firewall Manager administrators account with a third-party firewall.</p>
-        pub fn third_party_firewall_status(
-            mut self,
-            input: crate::model::ThirdPartyFirewallAssociationStatus,
-        ) -> Self {
+        pub fn third_party_firewall_status(mut self, input: crate::model::ThirdPartyFirewallAssociationStatus) -> Self {
             self.third_party_firewall_status = Some(input);
             self
         }
         /// <p>The current status for the disassociation of a Firewall Manager administrators account with a third-party firewall.</p>
-        pub fn set_third_party_firewall_status(
-            mut self,
-            input: std::option::Option<crate::model::ThirdPartyFirewallAssociationStatus>,
-        ) -> Self {
-            self.third_party_firewall_status = input;
-            self
+        pub fn set_third_party_firewall_status(mut self, input: std::option::Option<crate::model::ThirdPartyFirewallAssociationStatus>) -> Self {
+            self.third_party_firewall_status = input; self
         }
         /// Consumes the builder and constructs a [`DisassociateThirdPartyFirewallOutput`](crate::output::DisassociateThirdPartyFirewallOutput).
         pub fn build(self) -> crate::output::DisassociateThirdPartyFirewallOutput {
             crate::output::DisassociateThirdPartyFirewallOutput {
-                third_party_firewall_status: self.third_party_firewall_status,
+                third_party_firewall_status: self.third_party_firewall_status
+                ,
             }
         }
     }
+    
+    
 }
 impl DisassociateThirdPartyFirewallOutput {
     /// Creates a new builder-style object to manufacture [`DisassociateThirdPartyFirewallOutput`](crate::output::DisassociateThirdPartyFirewallOutput).
@@ -2004,19 +1920,24 @@ impl DisassociateThirdPartyFirewallOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DisassociateAdminAccountOutput {}
+pub struct DisassociateAdminAccountOutput  {
+}
 /// See [`DisassociateAdminAccountOutput`](crate::output::DisassociateAdminAccountOutput).
 pub mod disassociate_admin_account_output {
-
+    
     /// A builder for [`DisassociateAdminAccountOutput`](crate::output::DisassociateAdminAccountOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DisassociateAdminAccountOutput`](crate::output::DisassociateAdminAccountOutput).
         pub fn build(self) -> crate::output::DisassociateAdminAccountOutput {
-            crate::output::DisassociateAdminAccountOutput {}
+            crate::output::DisassociateAdminAccountOutput {
+            }
         }
     }
+    
+    
 }
 impl DisassociateAdminAccountOutput {
     /// Creates a new builder-style object to manufacture [`DisassociateAdminAccountOutput`](crate::output::DisassociateAdminAccountOutput).
@@ -2028,19 +1949,24 @@ impl DisassociateAdminAccountOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteResourceSetOutput {}
+pub struct DeleteResourceSetOutput  {
+}
 /// See [`DeleteResourceSetOutput`](crate::output::DeleteResourceSetOutput).
 pub mod delete_resource_set_output {
-
+    
     /// A builder for [`DeleteResourceSetOutput`](crate::output::DeleteResourceSetOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteResourceSetOutput`](crate::output::DeleteResourceSetOutput).
         pub fn build(self) -> crate::output::DeleteResourceSetOutput {
-            crate::output::DeleteResourceSetOutput {}
+            crate::output::DeleteResourceSetOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteResourceSetOutput {
     /// Creates a new builder-style object to manufacture [`DeleteResourceSetOutput`](crate::output::DeleteResourceSetOutput).
@@ -2052,19 +1978,24 @@ impl DeleteResourceSetOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteProtocolsListOutput {}
+pub struct DeleteProtocolsListOutput  {
+}
 /// See [`DeleteProtocolsListOutput`](crate::output::DeleteProtocolsListOutput).
 pub mod delete_protocols_list_output {
-
+    
     /// A builder for [`DeleteProtocolsListOutput`](crate::output::DeleteProtocolsListOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteProtocolsListOutput`](crate::output::DeleteProtocolsListOutput).
         pub fn build(self) -> crate::output::DeleteProtocolsListOutput {
-            crate::output::DeleteProtocolsListOutput {}
+            crate::output::DeleteProtocolsListOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteProtocolsListOutput {
     /// Creates a new builder-style object to manufacture [`DeleteProtocolsListOutput`](crate::output::DeleteProtocolsListOutput).
@@ -2076,19 +2007,24 @@ impl DeleteProtocolsListOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeletePolicyOutput {}
+pub struct DeletePolicyOutput  {
+}
 /// See [`DeletePolicyOutput`](crate::output::DeletePolicyOutput).
 pub mod delete_policy_output {
-
+    
     /// A builder for [`DeletePolicyOutput`](crate::output::DeletePolicyOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeletePolicyOutput`](crate::output::DeletePolicyOutput).
         pub fn build(self) -> crate::output::DeletePolicyOutput {
-            crate::output::DeletePolicyOutput {}
+            crate::output::DeletePolicyOutput {
+            }
         }
     }
+    
+    
 }
 impl DeletePolicyOutput {
     /// Creates a new builder-style object to manufacture [`DeletePolicyOutput`](crate::output::DeletePolicyOutput).
@@ -2100,19 +2036,24 @@ impl DeletePolicyOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteNotificationChannelOutput {}
+pub struct DeleteNotificationChannelOutput  {
+}
 /// See [`DeleteNotificationChannelOutput`](crate::output::DeleteNotificationChannelOutput).
 pub mod delete_notification_channel_output {
-
+    
     /// A builder for [`DeleteNotificationChannelOutput`](crate::output::DeleteNotificationChannelOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteNotificationChannelOutput`](crate::output::DeleteNotificationChannelOutput).
         pub fn build(self) -> crate::output::DeleteNotificationChannelOutput {
-            crate::output::DeleteNotificationChannelOutput {}
+            crate::output::DeleteNotificationChannelOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteNotificationChannelOutput {
     /// Creates a new builder-style object to manufacture [`DeleteNotificationChannelOutput`](crate::output::DeleteNotificationChannelOutput).
@@ -2124,19 +2065,24 @@ impl DeleteNotificationChannelOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteAppsListOutput {}
+pub struct DeleteAppsListOutput  {
+}
 /// See [`DeleteAppsListOutput`](crate::output::DeleteAppsListOutput).
 pub mod delete_apps_list_output {
-
+    
     /// A builder for [`DeleteAppsListOutput`](crate::output::DeleteAppsListOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteAppsListOutput`](crate::output::DeleteAppsListOutput).
         pub fn build(self) -> crate::output::DeleteAppsListOutput {
-            crate::output::DeleteAppsListOutput {}
+            crate::output::DeleteAppsListOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteAppsListOutput {
     /// Creates a new builder-style object to manufacture [`DeleteAppsListOutput`](crate::output::DeleteAppsListOutput).
@@ -2148,7 +2094,7 @@ impl DeleteAppsListOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchDisassociateResourceOutput {
+pub struct BatchDisassociateResourceOutput  {
     /// <p>A unique identifier for the resource set, used in a TODO to refer to the resource set.</p>
     #[doc(hidden)]
     pub resource_set_identifier: std::option::Option<std::string::String>,
@@ -2158,17 +2104,17 @@ pub struct BatchDisassociateResourceOutput {
 }
 impl BatchDisassociateResourceOutput {
     /// <p>A unique identifier for the resource set, used in a TODO to refer to the resource set.</p>
-    pub fn resource_set_identifier(&self) -> std::option::Option<&str> {
+    pub fn resource_set_identifier(&self) -> std::option::Option<& str> {
         self.resource_set_identifier.as_deref()
     }
     /// <p>The resources that failed to disassociate from the resource set.</p>
-    pub fn failed_items(&self) -> std::option::Option<&[crate::model::FailedItem]> {
+    pub fn failed_items(&self) -> std::option::Option<& [crate::model::FailedItem]> {
         self.failed_items.as_deref()
     }
 }
 /// See [`BatchDisassociateResourceOutput`](crate::output::BatchDisassociateResourceOutput).
 pub mod batch_disassociate_resource_output {
-
+    
     /// A builder for [`BatchDisassociateResourceOutput`](crate::output::BatchDisassociateResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2182,12 +2128,8 @@ pub mod batch_disassociate_resource_output {
             self
         }
         /// <p>A unique identifier for the resource set, used in a TODO to refer to the resource set.</p>
-        pub fn set_resource_set_identifier(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.resource_set_identifier = input;
-            self
+        pub fn set_resource_set_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.resource_set_identifier = input; self
         }
         /// Appends an item to `failed_items`.
         ///
@@ -2196,26 +2138,26 @@ pub mod batch_disassociate_resource_output {
         /// <p>The resources that failed to disassociate from the resource set.</p>
         pub fn failed_items(mut self, input: crate::model::FailedItem) -> Self {
             let mut v = self.failed_items.unwrap_or_default();
-            v.push(input);
-            self.failed_items = Some(v);
-            self
+                            v.push(input);
+                            self.failed_items = Some(v);
+                            self
         }
         /// <p>The resources that failed to disassociate from the resource set.</p>
-        pub fn set_failed_items(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::FailedItem>>,
-        ) -> Self {
-            self.failed_items = input;
-            self
+        pub fn set_failed_items(mut self, input: std::option::Option<std::vec::Vec<crate::model::FailedItem>>) -> Self {
+            self.failed_items = input; self
         }
         /// Consumes the builder and constructs a [`BatchDisassociateResourceOutput`](crate::output::BatchDisassociateResourceOutput).
         pub fn build(self) -> crate::output::BatchDisassociateResourceOutput {
             crate::output::BatchDisassociateResourceOutput {
-                resource_set_identifier: self.resource_set_identifier,
-                failed_items: self.failed_items,
+                resource_set_identifier: self.resource_set_identifier
+                ,
+                failed_items: self.failed_items
+                ,
             }
         }
     }
+    
+    
 }
 impl BatchDisassociateResourceOutput {
     /// Creates a new builder-style object to manufacture [`BatchDisassociateResourceOutput`](crate::output::BatchDisassociateResourceOutput).
@@ -2227,7 +2169,7 @@ impl BatchDisassociateResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchAssociateResourceOutput {
+pub struct BatchAssociateResourceOutput  {
     /// <p>A unique identifier for the resource set, used in a TODO to refer to the resource set.</p>
     #[doc(hidden)]
     pub resource_set_identifier: std::option::Option<std::string::String>,
@@ -2237,17 +2179,17 @@ pub struct BatchAssociateResourceOutput {
 }
 impl BatchAssociateResourceOutput {
     /// <p>A unique identifier for the resource set, used in a TODO to refer to the resource set.</p>
-    pub fn resource_set_identifier(&self) -> std::option::Option<&str> {
+    pub fn resource_set_identifier(&self) -> std::option::Option<& str> {
         self.resource_set_identifier.as_deref()
     }
     /// <p>The resources that failed to associate to the resource set.</p>
-    pub fn failed_items(&self) -> std::option::Option<&[crate::model::FailedItem]> {
+    pub fn failed_items(&self) -> std::option::Option<& [crate::model::FailedItem]> {
         self.failed_items.as_deref()
     }
 }
 /// See [`BatchAssociateResourceOutput`](crate::output::BatchAssociateResourceOutput).
 pub mod batch_associate_resource_output {
-
+    
     /// A builder for [`BatchAssociateResourceOutput`](crate::output::BatchAssociateResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2261,12 +2203,8 @@ pub mod batch_associate_resource_output {
             self
         }
         /// <p>A unique identifier for the resource set, used in a TODO to refer to the resource set.</p>
-        pub fn set_resource_set_identifier(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.resource_set_identifier = input;
-            self
+        pub fn set_resource_set_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.resource_set_identifier = input; self
         }
         /// Appends an item to `failed_items`.
         ///
@@ -2275,26 +2213,26 @@ pub mod batch_associate_resource_output {
         /// <p>The resources that failed to associate to the resource set.</p>
         pub fn failed_items(mut self, input: crate::model::FailedItem) -> Self {
             let mut v = self.failed_items.unwrap_or_default();
-            v.push(input);
-            self.failed_items = Some(v);
-            self
+                            v.push(input);
+                            self.failed_items = Some(v);
+                            self
         }
         /// <p>The resources that failed to associate to the resource set.</p>
-        pub fn set_failed_items(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::FailedItem>>,
-        ) -> Self {
-            self.failed_items = input;
-            self
+        pub fn set_failed_items(mut self, input: std::option::Option<std::vec::Vec<crate::model::FailedItem>>) -> Self {
+            self.failed_items = input; self
         }
         /// Consumes the builder and constructs a [`BatchAssociateResourceOutput`](crate::output::BatchAssociateResourceOutput).
         pub fn build(self) -> crate::output::BatchAssociateResourceOutput {
             crate::output::BatchAssociateResourceOutput {
-                resource_set_identifier: self.resource_set_identifier,
-                failed_items: self.failed_items,
+                resource_set_identifier: self.resource_set_identifier
+                ,
+                failed_items: self.failed_items
+                ,
             }
         }
     }
+    
+    
 }
 impl BatchAssociateResourceOutput {
     /// Creates a new builder-style object to manufacture [`BatchAssociateResourceOutput`](crate::output::BatchAssociateResourceOutput).
@@ -2306,81 +2244,73 @@ impl BatchAssociateResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AssociateThirdPartyFirewallOutput {
-    /// <p>The current status for setting a Firewall Manager policy administrator's account as an administrator of the third-party firewall tenant.</p>
-    /// <ul>
-    /// <li> <p> <code>ONBOARDING</code> - The Firewall Manager policy administrator is being designated as a tenant administrator.</p> </li>
-    /// <li> <p> <code>ONBOARD_COMPLETE</code> - The Firewall Manager policy administrator is designated as a tenant administrator.</p> </li>
-    /// <li> <p> <code>OFFBOARDING</code> - The Firewall Manager policy administrator is being removed as a tenant administrator.</p> </li>
-    /// <li> <p> <code>OFFBOARD_COMPLETE</code> - The Firewall Manager policy administrator has been removed as a tenant administrator.</p> </li>
-    /// <li> <p> <code>NOT_EXIST</code> - The Firewall Manager policy administrator doesn't exist as a tenant administrator.</p> </li>
+pub struct AssociateThirdPartyFirewallOutput  {
+    /// <p>The current status for setting a Firewall Manager policy administrator's account as an administrator of the third-party firewall tenant.</p> 
+    /// <ul> 
+    /// <li> <p> <code>ONBOARDING</code> - The Firewall Manager policy administrator is being designated as a tenant administrator.</p> </li> 
+    /// <li> <p> <code>ONBOARD_COMPLETE</code> - The Firewall Manager policy administrator is designated as a tenant administrator.</p> </li> 
+    /// <li> <p> <code>OFFBOARDING</code> - The Firewall Manager policy administrator is being removed as a tenant administrator.</p> </li> 
+    /// <li> <p> <code>OFFBOARD_COMPLETE</code> - The Firewall Manager policy administrator has been removed as a tenant administrator.</p> </li> 
+    /// <li> <p> <code>NOT_EXIST</code> - The Firewall Manager policy administrator doesn't exist as a tenant administrator.</p> </li> 
     /// </ul>
     #[doc(hidden)]
-    pub third_party_firewall_status:
-        std::option::Option<crate::model::ThirdPartyFirewallAssociationStatus>,
+    pub third_party_firewall_status: std::option::Option<crate::model::ThirdPartyFirewallAssociationStatus>,
 }
 impl AssociateThirdPartyFirewallOutput {
-    /// <p>The current status for setting a Firewall Manager policy administrator's account as an administrator of the third-party firewall tenant.</p>
-    /// <ul>
-    /// <li> <p> <code>ONBOARDING</code> - The Firewall Manager policy administrator is being designated as a tenant administrator.</p> </li>
-    /// <li> <p> <code>ONBOARD_COMPLETE</code> - The Firewall Manager policy administrator is designated as a tenant administrator.</p> </li>
-    /// <li> <p> <code>OFFBOARDING</code> - The Firewall Manager policy administrator is being removed as a tenant administrator.</p> </li>
-    /// <li> <p> <code>OFFBOARD_COMPLETE</code> - The Firewall Manager policy administrator has been removed as a tenant administrator.</p> </li>
-    /// <li> <p> <code>NOT_EXIST</code> - The Firewall Manager policy administrator doesn't exist as a tenant administrator.</p> </li>
+    /// <p>The current status for setting a Firewall Manager policy administrator's account as an administrator of the third-party firewall tenant.</p> 
+    /// <ul> 
+    /// <li> <p> <code>ONBOARDING</code> - The Firewall Manager policy administrator is being designated as a tenant administrator.</p> </li> 
+    /// <li> <p> <code>ONBOARD_COMPLETE</code> - The Firewall Manager policy administrator is designated as a tenant administrator.</p> </li> 
+    /// <li> <p> <code>OFFBOARDING</code> - The Firewall Manager policy administrator is being removed as a tenant administrator.</p> </li> 
+    /// <li> <p> <code>OFFBOARD_COMPLETE</code> - The Firewall Manager policy administrator has been removed as a tenant administrator.</p> </li> 
+    /// <li> <p> <code>NOT_EXIST</code> - The Firewall Manager policy administrator doesn't exist as a tenant administrator.</p> </li> 
     /// </ul>
-    pub fn third_party_firewall_status(
-        &self,
-    ) -> std::option::Option<&crate::model::ThirdPartyFirewallAssociationStatus> {
+    pub fn third_party_firewall_status(&self) -> std::option::Option<& crate::model::ThirdPartyFirewallAssociationStatus> {
         self.third_party_firewall_status.as_ref()
     }
 }
 /// See [`AssociateThirdPartyFirewallOutput`](crate::output::AssociateThirdPartyFirewallOutput).
 pub mod associate_third_party_firewall_output {
-
+    
     /// A builder for [`AssociateThirdPartyFirewallOutput`](crate::output::AssociateThirdPartyFirewallOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) third_party_firewall_status:
-            std::option::Option<crate::model::ThirdPartyFirewallAssociationStatus>,
+        pub(crate) third_party_firewall_status: std::option::Option<crate::model::ThirdPartyFirewallAssociationStatus>,
     }
     impl Builder {
-        /// <p>The current status for setting a Firewall Manager policy administrator's account as an administrator of the third-party firewall tenant.</p>
-        /// <ul>
-        /// <li> <p> <code>ONBOARDING</code> - The Firewall Manager policy administrator is being designated as a tenant administrator.</p> </li>
-        /// <li> <p> <code>ONBOARD_COMPLETE</code> - The Firewall Manager policy administrator is designated as a tenant administrator.</p> </li>
-        /// <li> <p> <code>OFFBOARDING</code> - The Firewall Manager policy administrator is being removed as a tenant administrator.</p> </li>
-        /// <li> <p> <code>OFFBOARD_COMPLETE</code> - The Firewall Manager policy administrator has been removed as a tenant administrator.</p> </li>
-        /// <li> <p> <code>NOT_EXIST</code> - The Firewall Manager policy administrator doesn't exist as a tenant administrator.</p> </li>
+        /// <p>The current status for setting a Firewall Manager policy administrator's account as an administrator of the third-party firewall tenant.</p> 
+        /// <ul> 
+        /// <li> <p> <code>ONBOARDING</code> - The Firewall Manager policy administrator is being designated as a tenant administrator.</p> </li> 
+        /// <li> <p> <code>ONBOARD_COMPLETE</code> - The Firewall Manager policy administrator is designated as a tenant administrator.</p> </li> 
+        /// <li> <p> <code>OFFBOARDING</code> - The Firewall Manager policy administrator is being removed as a tenant administrator.</p> </li> 
+        /// <li> <p> <code>OFFBOARD_COMPLETE</code> - The Firewall Manager policy administrator has been removed as a tenant administrator.</p> </li> 
+        /// <li> <p> <code>NOT_EXIST</code> - The Firewall Manager policy administrator doesn't exist as a tenant administrator.</p> </li> 
         /// </ul>
-        pub fn third_party_firewall_status(
-            mut self,
-            input: crate::model::ThirdPartyFirewallAssociationStatus,
-        ) -> Self {
+        pub fn third_party_firewall_status(mut self, input: crate::model::ThirdPartyFirewallAssociationStatus) -> Self {
             self.third_party_firewall_status = Some(input);
             self
         }
-        /// <p>The current status for setting a Firewall Manager policy administrator's account as an administrator of the third-party firewall tenant.</p>
-        /// <ul>
-        /// <li> <p> <code>ONBOARDING</code> - The Firewall Manager policy administrator is being designated as a tenant administrator.</p> </li>
-        /// <li> <p> <code>ONBOARD_COMPLETE</code> - The Firewall Manager policy administrator is designated as a tenant administrator.</p> </li>
-        /// <li> <p> <code>OFFBOARDING</code> - The Firewall Manager policy administrator is being removed as a tenant administrator.</p> </li>
-        /// <li> <p> <code>OFFBOARD_COMPLETE</code> - The Firewall Manager policy administrator has been removed as a tenant administrator.</p> </li>
-        /// <li> <p> <code>NOT_EXIST</code> - The Firewall Manager policy administrator doesn't exist as a tenant administrator.</p> </li>
+        /// <p>The current status for setting a Firewall Manager policy administrator's account as an administrator of the third-party firewall tenant.</p> 
+        /// <ul> 
+        /// <li> <p> <code>ONBOARDING</code> - The Firewall Manager policy administrator is being designated as a tenant administrator.</p> </li> 
+        /// <li> <p> <code>ONBOARD_COMPLETE</code> - The Firewall Manager policy administrator is designated as a tenant administrator.</p> </li> 
+        /// <li> <p> <code>OFFBOARDING</code> - The Firewall Manager policy administrator is being removed as a tenant administrator.</p> </li> 
+        /// <li> <p> <code>OFFBOARD_COMPLETE</code> - The Firewall Manager policy administrator has been removed as a tenant administrator.</p> </li> 
+        /// <li> <p> <code>NOT_EXIST</code> - The Firewall Manager policy administrator doesn't exist as a tenant administrator.</p> </li> 
         /// </ul>
-        pub fn set_third_party_firewall_status(
-            mut self,
-            input: std::option::Option<crate::model::ThirdPartyFirewallAssociationStatus>,
-        ) -> Self {
-            self.third_party_firewall_status = input;
-            self
+        pub fn set_third_party_firewall_status(mut self, input: std::option::Option<crate::model::ThirdPartyFirewallAssociationStatus>) -> Self {
+            self.third_party_firewall_status = input; self
         }
         /// Consumes the builder and constructs a [`AssociateThirdPartyFirewallOutput`](crate::output::AssociateThirdPartyFirewallOutput).
         pub fn build(self) -> crate::output::AssociateThirdPartyFirewallOutput {
             crate::output::AssociateThirdPartyFirewallOutput {
-                third_party_firewall_status: self.third_party_firewall_status,
+                third_party_firewall_status: self.third_party_firewall_status
+                ,
             }
         }
     }
+    
+    
 }
 impl AssociateThirdPartyFirewallOutput {
     /// Creates a new builder-style object to manufacture [`AssociateThirdPartyFirewallOutput`](crate::output::AssociateThirdPartyFirewallOutput).
@@ -2392,19 +2322,24 @@ impl AssociateThirdPartyFirewallOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AssociateAdminAccountOutput {}
+pub struct AssociateAdminAccountOutput  {
+}
 /// See [`AssociateAdminAccountOutput`](crate::output::AssociateAdminAccountOutput).
 pub mod associate_admin_account_output {
-
+    
     /// A builder for [`AssociateAdminAccountOutput`](crate::output::AssociateAdminAccountOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`AssociateAdminAccountOutput`](crate::output::AssociateAdminAccountOutput).
         pub fn build(self) -> crate::output::AssociateAdminAccountOutput {
-            crate::output::AssociateAdminAccountOutput {}
+            crate::output::AssociateAdminAccountOutput {
+            }
         }
     }
+    
+    
 }
 impl AssociateAdminAccountOutput {
     /// Creates a new builder-style object to manufacture [`AssociateAdminAccountOutput`](crate::output::AssociateAdminAccountOutput).
@@ -2412,3 +2347,4 @@ impl AssociateAdminAccountOutput {
         crate::output::associate_admin_account_output::Builder::default()
     }
 }
+

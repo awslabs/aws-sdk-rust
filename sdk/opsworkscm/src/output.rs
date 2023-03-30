@@ -2,20 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateServerEngineAttributesOutput {
+pub struct UpdateServerEngineAttributesOutput  {
     /// <p>Contains the response to an <code>UpdateServerEngineAttributes</code> request. </p>
     #[doc(hidden)]
     pub server: std::option::Option<crate::model::Server>,
 }
 impl UpdateServerEngineAttributesOutput {
     /// <p>Contains the response to an <code>UpdateServerEngineAttributes</code> request. </p>
-    pub fn server(&self) -> std::option::Option<&crate::model::Server> {
+    pub fn server(&self) -> std::option::Option<& crate::model::Server> {
         self.server.as_ref()
     }
 }
 /// See [`UpdateServerEngineAttributesOutput`](crate::output::UpdateServerEngineAttributesOutput).
 pub mod update_server_engine_attributes_output {
-
+    
     /// A builder for [`UpdateServerEngineAttributesOutput`](crate::output::UpdateServerEngineAttributesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -29,16 +29,18 @@ pub mod update_server_engine_attributes_output {
         }
         /// <p>Contains the response to an <code>UpdateServerEngineAttributes</code> request. </p>
         pub fn set_server(mut self, input: std::option::Option<crate::model::Server>) -> Self {
-            self.server = input;
-            self
+            self.server = input; self
         }
         /// Consumes the builder and constructs a [`UpdateServerEngineAttributesOutput`](crate::output::UpdateServerEngineAttributesOutput).
         pub fn build(self) -> crate::output::UpdateServerEngineAttributesOutput {
             crate::output::UpdateServerEngineAttributesOutput {
-                server: self.server,
+                server: self.server
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateServerEngineAttributesOutput {
     /// Creates a new builder-style object to manufacture [`UpdateServerEngineAttributesOutput`](crate::output::UpdateServerEngineAttributesOutput).
@@ -50,20 +52,20 @@ impl UpdateServerEngineAttributesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateServerOutput {
+pub struct UpdateServerOutput  {
     /// <p>Contains the response to a <code>UpdateServer</code> request. </p>
     #[doc(hidden)]
     pub server: std::option::Option<crate::model::Server>,
 }
 impl UpdateServerOutput {
     /// <p>Contains the response to a <code>UpdateServer</code> request. </p>
-    pub fn server(&self) -> std::option::Option<&crate::model::Server> {
+    pub fn server(&self) -> std::option::Option<& crate::model::Server> {
         self.server.as_ref()
     }
 }
 /// See [`UpdateServerOutput`](crate::output::UpdateServerOutput).
 pub mod update_server_output {
-
+    
     /// A builder for [`UpdateServerOutput`](crate::output::UpdateServerOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -77,16 +79,18 @@ pub mod update_server_output {
         }
         /// <p>Contains the response to a <code>UpdateServer</code> request. </p>
         pub fn set_server(mut self, input: std::option::Option<crate::model::Server>) -> Self {
-            self.server = input;
-            self
+            self.server = input; self
         }
         /// Consumes the builder and constructs a [`UpdateServerOutput`](crate::output::UpdateServerOutput).
         pub fn build(self) -> crate::output::UpdateServerOutput {
             crate::output::UpdateServerOutput {
-                server: self.server,
+                server: self.server
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateServerOutput {
     /// Creates a new builder-style object to manufacture [`UpdateServerOutput`](crate::output::UpdateServerOutput).
@@ -98,19 +102,24 @@ impl UpdateServerOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UntagResourceOutput {}
+pub struct UntagResourceOutput  {
+}
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput).
 pub mod untag_resource_output {
-
+    
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput).
         pub fn build(self) -> crate::output::UntagResourceOutput {
-            crate::output::UntagResourceOutput {}
+            crate::output::UntagResourceOutput {
+            }
         }
     }
+    
+    
 }
 impl UntagResourceOutput {
     /// Creates a new builder-style object to manufacture [`UntagResourceOutput`](crate::output::UntagResourceOutput).
@@ -122,19 +131,24 @@ impl UntagResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TagResourceOutput {}
+pub struct TagResourceOutput  {
+}
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput).
 pub mod tag_resource_output {
-
+    
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput).
         pub fn build(self) -> crate::output::TagResourceOutput {
-            crate::output::TagResourceOutput {}
+            crate::output::TagResourceOutput {
+            }
         }
     }
+    
+    
 }
 impl TagResourceOutput {
     /// Creates a new builder-style object to manufacture [`TagResourceOutput`](crate::output::TagResourceOutput).
@@ -146,20 +160,20 @@ impl TagResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StartMaintenanceOutput {
+pub struct StartMaintenanceOutput  {
     /// <p>Contains the response to a <code>StartMaintenance</code> request. </p>
     #[doc(hidden)]
     pub server: std::option::Option<crate::model::Server>,
 }
 impl StartMaintenanceOutput {
     /// <p>Contains the response to a <code>StartMaintenance</code> request. </p>
-    pub fn server(&self) -> std::option::Option<&crate::model::Server> {
+    pub fn server(&self) -> std::option::Option<& crate::model::Server> {
         self.server.as_ref()
     }
 }
 /// See [`StartMaintenanceOutput`](crate::output::StartMaintenanceOutput).
 pub mod start_maintenance_output {
-
+    
     /// A builder for [`StartMaintenanceOutput`](crate::output::StartMaintenanceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -173,16 +187,18 @@ pub mod start_maintenance_output {
         }
         /// <p>Contains the response to a <code>StartMaintenance</code> request. </p>
         pub fn set_server(mut self, input: std::option::Option<crate::model::Server>) -> Self {
-            self.server = input;
-            self
+            self.server = input; self
         }
         /// Consumes the builder and constructs a [`StartMaintenanceOutput`](crate::output::StartMaintenanceOutput).
         pub fn build(self) -> crate::output::StartMaintenanceOutput {
             crate::output::StartMaintenanceOutput {
-                server: self.server,
+                server: self.server
+                ,
             }
         }
     }
+    
+    
 }
 impl StartMaintenanceOutput {
     /// Creates a new builder-style object to manufacture [`StartMaintenanceOutput`](crate::output::StartMaintenanceOutput).
@@ -194,20 +210,20 @@ impl StartMaintenanceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RestoreServerOutput {
+pub struct RestoreServerOutput  {
     /// <p>Describes a configuration management server. </p>
     #[doc(hidden)]
     pub server: std::option::Option<crate::model::Server>,
 }
 impl RestoreServerOutput {
     /// <p>Describes a configuration management server. </p>
-    pub fn server(&self) -> std::option::Option<&crate::model::Server> {
+    pub fn server(&self) -> std::option::Option<& crate::model::Server> {
         self.server.as_ref()
     }
 }
 /// See [`RestoreServerOutput`](crate::output::RestoreServerOutput).
 pub mod restore_server_output {
-
+    
     /// A builder for [`RestoreServerOutput`](crate::output::RestoreServerOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -221,16 +237,18 @@ pub mod restore_server_output {
         }
         /// <p>Describes a configuration management server. </p>
         pub fn set_server(mut self, input: std::option::Option<crate::model::Server>) -> Self {
-            self.server = input;
-            self
+            self.server = input; self
         }
         /// Consumes the builder and constructs a [`RestoreServerOutput`](crate::output::RestoreServerOutput).
         pub fn build(self) -> crate::output::RestoreServerOutput {
             crate::output::RestoreServerOutput {
-                server: self.server,
+                server: self.server
+                ,
             }
         }
     }
+    
+    
 }
 impl RestoreServerOutput {
     /// Creates a new builder-style object to manufacture [`RestoreServerOutput`](crate::output::RestoreServerOutput).
@@ -242,7 +260,7 @@ impl RestoreServerOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListTagsForResourceOutput {
+pub struct ListTagsForResourceOutput  {
     /// <p>Tags that have been applied to the resource.</p>
     #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -252,17 +270,17 @@ pub struct ListTagsForResourceOutput {
 }
 impl ListTagsForResourceOutput {
     /// <p>Tags that have been applied to the resource.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+    pub fn tags(&self) -> std::option::Option<& [crate::model::Tag]> {
         self.tags.as_deref()
     }
     /// <p>A token that you can use as the value of <code>NextToken</code> in subsequent calls to the API to show more results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
 pub mod list_tags_for_resource_output {
-
+    
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -277,17 +295,13 @@ pub mod list_tags_for_resource_output {
         /// <p>Tags that have been applied to the resource.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input);
-            self.tags = Some(v);
-            self
+                            v.push(input);
+                            self.tags = Some(v);
+                            self
         }
         /// <p>Tags that have been applied to the resource.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::model::Tag>>) -> Self {
+            self.tags = input; self
         }
         /// <p>A token that you can use as the value of <code>NextToken</code> in subsequent calls to the API to show more results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -296,17 +310,20 @@ pub mod list_tags_for_resource_output {
         }
         /// <p>A token that you can use as the value of <code>NextToken</code> in subsequent calls to the API to show more results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
         pub fn build(self) -> crate::output::ListTagsForResourceOutput {
             crate::output::ListTagsForResourceOutput {
-                tags: self.tags,
-                next_token: self.next_token,
+                tags: self.tags
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListTagsForResourceOutput {
     /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
@@ -318,7 +335,7 @@ impl ListTagsForResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ExportServerEngineAttributeOutput {
+pub struct ExportServerEngineAttributeOutput  {
     /// <p>The requested engine attribute pair with attribute name and value.</p>
     #[doc(hidden)]
     pub engine_attribute: std::option::Option<crate::model::EngineAttribute>,
@@ -328,17 +345,17 @@ pub struct ExportServerEngineAttributeOutput {
 }
 impl ExportServerEngineAttributeOutput {
     /// <p>The requested engine attribute pair with attribute name and value.</p>
-    pub fn engine_attribute(&self) -> std::option::Option<&crate::model::EngineAttribute> {
+    pub fn engine_attribute(&self) -> std::option::Option<& crate::model::EngineAttribute> {
         self.engine_attribute.as_ref()
     }
     /// <p>The server name used in the request.</p>
-    pub fn server_name(&self) -> std::option::Option<&str> {
+    pub fn server_name(&self) -> std::option::Option<& str> {
         self.server_name.as_deref()
     }
 }
 /// See [`ExportServerEngineAttributeOutput`](crate::output::ExportServerEngineAttributeOutput).
 pub mod export_server_engine_attribute_output {
-
+    
     /// A builder for [`ExportServerEngineAttributeOutput`](crate::output::ExportServerEngineAttributeOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -352,12 +369,8 @@ pub mod export_server_engine_attribute_output {
             self
         }
         /// <p>The requested engine attribute pair with attribute name and value.</p>
-        pub fn set_engine_attribute(
-            mut self,
-            input: std::option::Option<crate::model::EngineAttribute>,
-        ) -> Self {
-            self.engine_attribute = input;
-            self
+        pub fn set_engine_attribute(mut self, input: std::option::Option<crate::model::EngineAttribute>) -> Self {
+            self.engine_attribute = input; self
         }
         /// <p>The server name used in the request.</p>
         pub fn server_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -366,17 +379,20 @@ pub mod export_server_engine_attribute_output {
         }
         /// <p>The server name used in the request.</p>
         pub fn set_server_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.server_name = input;
-            self
+            self.server_name = input; self
         }
         /// Consumes the builder and constructs a [`ExportServerEngineAttributeOutput`](crate::output::ExportServerEngineAttributeOutput).
         pub fn build(self) -> crate::output::ExportServerEngineAttributeOutput {
             crate::output::ExportServerEngineAttributeOutput {
-                engine_attribute: self.engine_attribute,
-                server_name: self.server_name,
+                engine_attribute: self.engine_attribute
+                ,
+                server_name: self.server_name
+                ,
             }
         }
     }
+    
+    
 }
 impl ExportServerEngineAttributeOutput {
     /// Creates a new builder-style object to manufacture [`ExportServerEngineAttributeOutput`](crate::output::ExportServerEngineAttributeOutput).
@@ -388,20 +404,20 @@ impl ExportServerEngineAttributeOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DisassociateNodeOutput {
+pub struct DisassociateNodeOutput  {
     /// <p>Contains a token which can be passed to the <code>DescribeNodeAssociationStatus</code> API call to get the status of the disassociation request. </p>
     #[doc(hidden)]
     pub node_association_status_token: std::option::Option<std::string::String>,
 }
 impl DisassociateNodeOutput {
     /// <p>Contains a token which can be passed to the <code>DescribeNodeAssociationStatus</code> API call to get the status of the disassociation request. </p>
-    pub fn node_association_status_token(&self) -> std::option::Option<&str> {
+    pub fn node_association_status_token(&self) -> std::option::Option<& str> {
         self.node_association_status_token.as_deref()
     }
 }
 /// See [`DisassociateNodeOutput`](crate::output::DisassociateNodeOutput).
 pub mod disassociate_node_output {
-
+    
     /// A builder for [`DisassociateNodeOutput`](crate::output::DisassociateNodeOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -409,28 +425,24 @@ pub mod disassociate_node_output {
     }
     impl Builder {
         /// <p>Contains a token which can be passed to the <code>DescribeNodeAssociationStatus</code> API call to get the status of the disassociation request. </p>
-        pub fn node_association_status_token(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn node_association_status_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.node_association_status_token = Some(input.into());
             self
         }
         /// <p>Contains a token which can be passed to the <code>DescribeNodeAssociationStatus</code> API call to get the status of the disassociation request. </p>
-        pub fn set_node_association_status_token(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.node_association_status_token = input;
-            self
+        pub fn set_node_association_status_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.node_association_status_token = input; self
         }
         /// Consumes the builder and constructs a [`DisassociateNodeOutput`](crate::output::DisassociateNodeOutput).
         pub fn build(self) -> crate::output::DisassociateNodeOutput {
             crate::output::DisassociateNodeOutput {
-                node_association_status_token: self.node_association_status_token,
+                node_association_status_token: self.node_association_status_token
+                ,
             }
         }
     }
+    
+    
 }
 impl DisassociateNodeOutput {
     /// Creates a new builder-style object to manufacture [`DisassociateNodeOutput`](crate::output::DisassociateNodeOutput).
@@ -442,13 +454,13 @@ impl DisassociateNodeOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeServersOutput {
-    /// <p>Contains the response to a <code>DescribeServers</code> request.</p>
-    /// <p> <i>For Chef Automate servers:</i> If <code>DescribeServersResponse$Servers$EngineAttributes</code> includes CHEF_MAJOR_UPGRADE_AVAILABLE, you can upgrade the Chef Automate server to Chef Automate 2. To be eligible for upgrade, a server running Chef Automate 1 must have had at least one successful maintenance run after November 1, 2019.</p>
-    /// <p> <i>For Puppet servers:</i> <code>DescribeServersResponse$Servers$EngineAttributes</code> contains the following two responses:</p>
-    /// <ul>
-    /// <li> <p> <code>PUPPET_API_CA_CERT</code>, the PEM-encoded CA certificate that is used by the Puppet API over TCP port number 8140. The CA certificate is also used to sign node certificates.</p> </li>
-    /// <li> <p> <code>PUPPET_API_CRL</code>, a certificate revocation list. The certificate revocation list is for internal maintenance purposes only. For more information about the Puppet certificate revocation list, see <a href="https://puppet.com/docs/puppet/5.5/man/certificate_revocation_list.html">Man Page: puppet certificate_revocation_list</a> in the Puppet documentation.</p> </li>
+pub struct DescribeServersOutput  {
+    /// <p>Contains the response to a <code>DescribeServers</code> request.</p> 
+    /// <p> <i>For Chef Automate servers:</i> If <code>DescribeServersResponse$Servers$EngineAttributes</code> includes CHEF_MAJOR_UPGRADE_AVAILABLE, you can upgrade the Chef Automate server to Chef Automate 2. To be eligible for upgrade, a server running Chef Automate 1 must have had at least one successful maintenance run after November 1, 2019.</p> 
+    /// <p> <i>For Puppet servers:</i> <code>DescribeServersResponse$Servers$EngineAttributes</code> contains the following two responses:</p> 
+    /// <ul> 
+    /// <li> <p> <code>PUPPET_API_CA_CERT</code>, the PEM-encoded CA certificate that is used by the Puppet API over TCP port number 8140. The CA certificate is also used to sign node certificates.</p> </li> 
+    /// <li> <p> <code>PUPPET_API_CRL</code>, a certificate revocation list. The certificate revocation list is for internal maintenance purposes only. For more information about the Puppet certificate revocation list, see <a href="https://puppet.com/docs/puppet/5.5/man/certificate_revocation_list.html">Man Page: puppet certificate_revocation_list</a> in the Puppet documentation.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub servers: std::option::Option<std::vec::Vec<crate::model::Server>>,
@@ -457,24 +469,24 @@ pub struct DescribeServersOutput {
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeServersOutput {
-    /// <p>Contains the response to a <code>DescribeServers</code> request.</p>
-    /// <p> <i>For Chef Automate servers:</i> If <code>DescribeServersResponse$Servers$EngineAttributes</code> includes CHEF_MAJOR_UPGRADE_AVAILABLE, you can upgrade the Chef Automate server to Chef Automate 2. To be eligible for upgrade, a server running Chef Automate 1 must have had at least one successful maintenance run after November 1, 2019.</p>
-    /// <p> <i>For Puppet servers:</i> <code>DescribeServersResponse$Servers$EngineAttributes</code> contains the following two responses:</p>
-    /// <ul>
-    /// <li> <p> <code>PUPPET_API_CA_CERT</code>, the PEM-encoded CA certificate that is used by the Puppet API over TCP port number 8140. The CA certificate is also used to sign node certificates.</p> </li>
-    /// <li> <p> <code>PUPPET_API_CRL</code>, a certificate revocation list. The certificate revocation list is for internal maintenance purposes only. For more information about the Puppet certificate revocation list, see <a href="https://puppet.com/docs/puppet/5.5/man/certificate_revocation_list.html">Man Page: puppet certificate_revocation_list</a> in the Puppet documentation.</p> </li>
+    /// <p>Contains the response to a <code>DescribeServers</code> request.</p> 
+    /// <p> <i>For Chef Automate servers:</i> If <code>DescribeServersResponse$Servers$EngineAttributes</code> includes CHEF_MAJOR_UPGRADE_AVAILABLE, you can upgrade the Chef Automate server to Chef Automate 2. To be eligible for upgrade, a server running Chef Automate 1 must have had at least one successful maintenance run after November 1, 2019.</p> 
+    /// <p> <i>For Puppet servers:</i> <code>DescribeServersResponse$Servers$EngineAttributes</code> contains the following two responses:</p> 
+    /// <ul> 
+    /// <li> <p> <code>PUPPET_API_CA_CERT</code>, the PEM-encoded CA certificate that is used by the Puppet API over TCP port number 8140. The CA certificate is also used to sign node certificates.</p> </li> 
+    /// <li> <p> <code>PUPPET_API_CRL</code>, a certificate revocation list. The certificate revocation list is for internal maintenance purposes only. For more information about the Puppet certificate revocation list, see <a href="https://puppet.com/docs/puppet/5.5/man/certificate_revocation_list.html">Man Page: puppet certificate_revocation_list</a> in the Puppet documentation.</p> </li> 
     /// </ul>
-    pub fn servers(&self) -> std::option::Option<&[crate::model::Server]> {
+    pub fn servers(&self) -> std::option::Option<& [crate::model::Server]> {
         self.servers.as_deref()
     }
     /// <p>This is not currently implemented for <code>DescribeServers</code> requests. </p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`DescribeServersOutput`](crate::output::DescribeServersOutput).
 pub mod describe_servers_output {
-
+    
     /// A builder for [`DescribeServersOutput`](crate::output::DescribeServersOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -486,32 +498,28 @@ pub mod describe_servers_output {
         ///
         /// To override the contents of this collection use [`set_servers`](Self::set_servers).
         ///
-        /// <p>Contains the response to a <code>DescribeServers</code> request.</p>
-        /// <p> <i>For Chef Automate servers:</i> If <code>DescribeServersResponse$Servers$EngineAttributes</code> includes CHEF_MAJOR_UPGRADE_AVAILABLE, you can upgrade the Chef Automate server to Chef Automate 2. To be eligible for upgrade, a server running Chef Automate 1 must have had at least one successful maintenance run after November 1, 2019.</p>
-        /// <p> <i>For Puppet servers:</i> <code>DescribeServersResponse$Servers$EngineAttributes</code> contains the following two responses:</p>
-        /// <ul>
-        /// <li> <p> <code>PUPPET_API_CA_CERT</code>, the PEM-encoded CA certificate that is used by the Puppet API over TCP port number 8140. The CA certificate is also used to sign node certificates.</p> </li>
-        /// <li> <p> <code>PUPPET_API_CRL</code>, a certificate revocation list. The certificate revocation list is for internal maintenance purposes only. For more information about the Puppet certificate revocation list, see <a href="https://puppet.com/docs/puppet/5.5/man/certificate_revocation_list.html">Man Page: puppet certificate_revocation_list</a> in the Puppet documentation.</p> </li>
+        /// <p>Contains the response to a <code>DescribeServers</code> request.</p> 
+        /// <p> <i>For Chef Automate servers:</i> If <code>DescribeServersResponse$Servers$EngineAttributes</code> includes CHEF_MAJOR_UPGRADE_AVAILABLE, you can upgrade the Chef Automate server to Chef Automate 2. To be eligible for upgrade, a server running Chef Automate 1 must have had at least one successful maintenance run after November 1, 2019.</p> 
+        /// <p> <i>For Puppet servers:</i> <code>DescribeServersResponse$Servers$EngineAttributes</code> contains the following two responses:</p> 
+        /// <ul> 
+        /// <li> <p> <code>PUPPET_API_CA_CERT</code>, the PEM-encoded CA certificate that is used by the Puppet API over TCP port number 8140. The CA certificate is also used to sign node certificates.</p> </li> 
+        /// <li> <p> <code>PUPPET_API_CRL</code>, a certificate revocation list. The certificate revocation list is for internal maintenance purposes only. For more information about the Puppet certificate revocation list, see <a href="https://puppet.com/docs/puppet/5.5/man/certificate_revocation_list.html">Man Page: puppet certificate_revocation_list</a> in the Puppet documentation.</p> </li> 
         /// </ul>
         pub fn servers(mut self, input: crate::model::Server) -> Self {
             let mut v = self.servers.unwrap_or_default();
-            v.push(input);
-            self.servers = Some(v);
-            self
+                            v.push(input);
+                            self.servers = Some(v);
+                            self
         }
-        /// <p>Contains the response to a <code>DescribeServers</code> request.</p>
-        /// <p> <i>For Chef Automate servers:</i> If <code>DescribeServersResponse$Servers$EngineAttributes</code> includes CHEF_MAJOR_UPGRADE_AVAILABLE, you can upgrade the Chef Automate server to Chef Automate 2. To be eligible for upgrade, a server running Chef Automate 1 must have had at least one successful maintenance run after November 1, 2019.</p>
-        /// <p> <i>For Puppet servers:</i> <code>DescribeServersResponse$Servers$EngineAttributes</code> contains the following two responses:</p>
-        /// <ul>
-        /// <li> <p> <code>PUPPET_API_CA_CERT</code>, the PEM-encoded CA certificate that is used by the Puppet API over TCP port number 8140. The CA certificate is also used to sign node certificates.</p> </li>
-        /// <li> <p> <code>PUPPET_API_CRL</code>, a certificate revocation list. The certificate revocation list is for internal maintenance purposes only. For more information about the Puppet certificate revocation list, see <a href="https://puppet.com/docs/puppet/5.5/man/certificate_revocation_list.html">Man Page: puppet certificate_revocation_list</a> in the Puppet documentation.</p> </li>
+        /// <p>Contains the response to a <code>DescribeServers</code> request.</p> 
+        /// <p> <i>For Chef Automate servers:</i> If <code>DescribeServersResponse$Servers$EngineAttributes</code> includes CHEF_MAJOR_UPGRADE_AVAILABLE, you can upgrade the Chef Automate server to Chef Automate 2. To be eligible for upgrade, a server running Chef Automate 1 must have had at least one successful maintenance run after November 1, 2019.</p> 
+        /// <p> <i>For Puppet servers:</i> <code>DescribeServersResponse$Servers$EngineAttributes</code> contains the following two responses:</p> 
+        /// <ul> 
+        /// <li> <p> <code>PUPPET_API_CA_CERT</code>, the PEM-encoded CA certificate that is used by the Puppet API over TCP port number 8140. The CA certificate is also used to sign node certificates.</p> </li> 
+        /// <li> <p> <code>PUPPET_API_CRL</code>, a certificate revocation list. The certificate revocation list is for internal maintenance purposes only. For more information about the Puppet certificate revocation list, see <a href="https://puppet.com/docs/puppet/5.5/man/certificate_revocation_list.html">Man Page: puppet certificate_revocation_list</a> in the Puppet documentation.</p> </li> 
         /// </ul>
-        pub fn set_servers(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Server>>,
-        ) -> Self {
-            self.servers = input;
-            self
+        pub fn set_servers(mut self, input: std::option::Option<std::vec::Vec<crate::model::Server>>) -> Self {
+            self.servers = input; self
         }
         /// <p>This is not currently implemented for <code>DescribeServers</code> requests. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -520,17 +528,20 @@ pub mod describe_servers_output {
         }
         /// <p>This is not currently implemented for <code>DescribeServers</code> requests. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`DescribeServersOutput`](crate::output::DescribeServersOutput).
         pub fn build(self) -> crate::output::DescribeServersOutput {
             crate::output::DescribeServersOutput {
-                servers: self.servers,
-                next_token: self.next_token,
+                servers: self.servers
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeServersOutput {
     /// Creates a new builder-style object to manufacture [`DescribeServersOutput`](crate::output::DescribeServersOutput).
@@ -542,13 +553,13 @@ impl DescribeServersOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeNodeAssociationStatusOutput {
-    /// <p>The status of the association or disassociation request. </p>
-    /// <p class="title"> <b>Possible values:</b> </p>
-    /// <ul>
-    /// <li> <p> <code>SUCCESS</code>: The association or disassociation succeeded. </p> </li>
-    /// <li> <p> <code>FAILED</code>: The association or disassociation failed. </p> </li>
-    /// <li> <p> <code>IN_PROGRESS</code>: The association or disassociation is still in progress. </p> </li>
+pub struct DescribeNodeAssociationStatusOutput  {
+    /// <p>The status of the association or disassociation request. </p> 
+    /// <p class="title"> <b>Possible values:</b> </p> 
+    /// <ul> 
+    /// <li> <p> <code>SUCCESS</code>: The association or disassociation succeeded. </p> </li> 
+    /// <li> <p> <code>FAILED</code>: The association or disassociation failed. </p> </li> 
+    /// <li> <p> <code>IN_PROGRESS</code>: The association or disassociation is still in progress. </p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub node_association_status: std::option::Option<crate::model::NodeAssociationStatus>,
@@ -557,62 +568,51 @@ pub struct DescribeNodeAssociationStatusOutput {
     pub engine_attributes: std::option::Option<std::vec::Vec<crate::model::EngineAttribute>>,
 }
 impl DescribeNodeAssociationStatusOutput {
-    /// <p>The status of the association or disassociation request. </p>
-    /// <p class="title"> <b>Possible values:</b> </p>
-    /// <ul>
-    /// <li> <p> <code>SUCCESS</code>: The association or disassociation succeeded. </p> </li>
-    /// <li> <p> <code>FAILED</code>: The association or disassociation failed. </p> </li>
-    /// <li> <p> <code>IN_PROGRESS</code>: The association or disassociation is still in progress. </p> </li>
+    /// <p>The status of the association or disassociation request. </p> 
+    /// <p class="title"> <b>Possible values:</b> </p> 
+    /// <ul> 
+    /// <li> <p> <code>SUCCESS</code>: The association or disassociation succeeded. </p> </li> 
+    /// <li> <p> <code>FAILED</code>: The association or disassociation failed. </p> </li> 
+    /// <li> <p> <code>IN_PROGRESS</code>: The association or disassociation is still in progress. </p> </li> 
     /// </ul>
-    pub fn node_association_status(
-        &self,
-    ) -> std::option::Option<&crate::model::NodeAssociationStatus> {
+    pub fn node_association_status(&self) -> std::option::Option<& crate::model::NodeAssociationStatus> {
         self.node_association_status.as_ref()
     }
     /// <p>Attributes specific to the node association. In Puppet, the attibute PUPPET_NODE_CERT contains the signed certificate (the result of the CSR). </p>
-    pub fn engine_attributes(&self) -> std::option::Option<&[crate::model::EngineAttribute]> {
+    pub fn engine_attributes(&self) -> std::option::Option<& [crate::model::EngineAttribute]> {
         self.engine_attributes.as_deref()
     }
 }
 /// See [`DescribeNodeAssociationStatusOutput`](crate::output::DescribeNodeAssociationStatusOutput).
 pub mod describe_node_association_status_output {
-
+    
     /// A builder for [`DescribeNodeAssociationStatusOutput`](crate::output::DescribeNodeAssociationStatusOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) node_association_status:
-            std::option::Option<crate::model::NodeAssociationStatus>,
-        pub(crate) engine_attributes:
-            std::option::Option<std::vec::Vec<crate::model::EngineAttribute>>,
+        pub(crate) node_association_status: std::option::Option<crate::model::NodeAssociationStatus>,
+        pub(crate) engine_attributes: std::option::Option<std::vec::Vec<crate::model::EngineAttribute>>,
     }
     impl Builder {
-        /// <p>The status of the association or disassociation request. </p>
-        /// <p class="title"> <b>Possible values:</b> </p>
-        /// <ul>
-        /// <li> <p> <code>SUCCESS</code>: The association or disassociation succeeded. </p> </li>
-        /// <li> <p> <code>FAILED</code>: The association or disassociation failed. </p> </li>
-        /// <li> <p> <code>IN_PROGRESS</code>: The association or disassociation is still in progress. </p> </li>
+        /// <p>The status of the association or disassociation request. </p> 
+        /// <p class="title"> <b>Possible values:</b> </p> 
+        /// <ul> 
+        /// <li> <p> <code>SUCCESS</code>: The association or disassociation succeeded. </p> </li> 
+        /// <li> <p> <code>FAILED</code>: The association or disassociation failed. </p> </li> 
+        /// <li> <p> <code>IN_PROGRESS</code>: The association or disassociation is still in progress. </p> </li> 
         /// </ul>
-        pub fn node_association_status(
-            mut self,
-            input: crate::model::NodeAssociationStatus,
-        ) -> Self {
+        pub fn node_association_status(mut self, input: crate::model::NodeAssociationStatus) -> Self {
             self.node_association_status = Some(input);
             self
         }
-        /// <p>The status of the association or disassociation request. </p>
-        /// <p class="title"> <b>Possible values:</b> </p>
-        /// <ul>
-        /// <li> <p> <code>SUCCESS</code>: The association or disassociation succeeded. </p> </li>
-        /// <li> <p> <code>FAILED</code>: The association or disassociation failed. </p> </li>
-        /// <li> <p> <code>IN_PROGRESS</code>: The association or disassociation is still in progress. </p> </li>
+        /// <p>The status of the association or disassociation request. </p> 
+        /// <p class="title"> <b>Possible values:</b> </p> 
+        /// <ul> 
+        /// <li> <p> <code>SUCCESS</code>: The association or disassociation succeeded. </p> </li> 
+        /// <li> <p> <code>FAILED</code>: The association or disassociation failed. </p> </li> 
+        /// <li> <p> <code>IN_PROGRESS</code>: The association or disassociation is still in progress. </p> </li> 
         /// </ul>
-        pub fn set_node_association_status(
-            mut self,
-            input: std::option::Option<crate::model::NodeAssociationStatus>,
-        ) -> Self {
-            self.node_association_status = input;
-            self
+        pub fn set_node_association_status(mut self, input: std::option::Option<crate::model::NodeAssociationStatus>) -> Self {
+            self.node_association_status = input; self
         }
         /// Appends an item to `engine_attributes`.
         ///
@@ -621,26 +621,26 @@ pub mod describe_node_association_status_output {
         /// <p>Attributes specific to the node association. In Puppet, the attibute PUPPET_NODE_CERT contains the signed certificate (the result of the CSR). </p>
         pub fn engine_attributes(mut self, input: crate::model::EngineAttribute) -> Self {
             let mut v = self.engine_attributes.unwrap_or_default();
-            v.push(input);
-            self.engine_attributes = Some(v);
-            self
+                            v.push(input);
+                            self.engine_attributes = Some(v);
+                            self
         }
         /// <p>Attributes specific to the node association. In Puppet, the attibute PUPPET_NODE_CERT contains the signed certificate (the result of the CSR). </p>
-        pub fn set_engine_attributes(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::EngineAttribute>>,
-        ) -> Self {
-            self.engine_attributes = input;
-            self
+        pub fn set_engine_attributes(mut self, input: std::option::Option<std::vec::Vec<crate::model::EngineAttribute>>) -> Self {
+            self.engine_attributes = input; self
         }
         /// Consumes the builder and constructs a [`DescribeNodeAssociationStatusOutput`](crate::output::DescribeNodeAssociationStatusOutput).
         pub fn build(self) -> crate::output::DescribeNodeAssociationStatusOutput {
             crate::output::DescribeNodeAssociationStatusOutput {
-                node_association_status: self.node_association_status,
-                engine_attributes: self.engine_attributes,
+                node_association_status: self.node_association_status
+                ,
+                engine_attributes: self.engine_attributes
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeNodeAssociationStatusOutput {
     /// Creates a new builder-style object to manufacture [`DescribeNodeAssociationStatusOutput`](crate::output::DescribeNodeAssociationStatusOutput).
@@ -652,7 +652,7 @@ impl DescribeNodeAssociationStatusOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeEventsOutput {
+pub struct DescribeEventsOutput  {
     /// <p>Contains the response to a <code>DescribeEvents</code> request. </p>
     #[doc(hidden)]
     pub server_events: std::option::Option<std::vec::Vec<crate::model::ServerEvent>>,
@@ -662,17 +662,17 @@ pub struct DescribeEventsOutput {
 }
 impl DescribeEventsOutput {
     /// <p>Contains the response to a <code>DescribeEvents</code> request. </p>
-    pub fn server_events(&self) -> std::option::Option<&[crate::model::ServerEvent]> {
+    pub fn server_events(&self) -> std::option::Option<& [crate::model::ServerEvent]> {
         self.server_events.as_deref()
     }
     /// <p>NextToken is a string that is returned in some command responses. It indicates that not all entries have been returned, and that you must run at least one more request to get remaining items. To get remaining results, call <code>DescribeEvents</code> again, and assign the token from the previous results as the value of the <code>nextToken</code> parameter. If there are no more results, the response object's <code>nextToken</code> parameter value is <code>null</code>. Setting a <code>nextToken</code> value that was not returned in your previous results causes an <code>InvalidNextTokenException</code> to occur. </p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`DescribeEventsOutput`](crate::output::DescribeEventsOutput).
 pub mod describe_events_output {
-
+    
     /// A builder for [`DescribeEventsOutput`](crate::output::DescribeEventsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -687,17 +687,13 @@ pub mod describe_events_output {
         /// <p>Contains the response to a <code>DescribeEvents</code> request. </p>
         pub fn server_events(mut self, input: crate::model::ServerEvent) -> Self {
             let mut v = self.server_events.unwrap_or_default();
-            v.push(input);
-            self.server_events = Some(v);
-            self
+                            v.push(input);
+                            self.server_events = Some(v);
+                            self
         }
         /// <p>Contains the response to a <code>DescribeEvents</code> request. </p>
-        pub fn set_server_events(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ServerEvent>>,
-        ) -> Self {
-            self.server_events = input;
-            self
+        pub fn set_server_events(mut self, input: std::option::Option<std::vec::Vec<crate::model::ServerEvent>>) -> Self {
+            self.server_events = input; self
         }
         /// <p>NextToken is a string that is returned in some command responses. It indicates that not all entries have been returned, and that you must run at least one more request to get remaining items. To get remaining results, call <code>DescribeEvents</code> again, and assign the token from the previous results as the value of the <code>nextToken</code> parameter. If there are no more results, the response object's <code>nextToken</code> parameter value is <code>null</code>. Setting a <code>nextToken</code> value that was not returned in your previous results causes an <code>InvalidNextTokenException</code> to occur. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -706,17 +702,20 @@ pub mod describe_events_output {
         }
         /// <p>NextToken is a string that is returned in some command responses. It indicates that not all entries have been returned, and that you must run at least one more request to get remaining items. To get remaining results, call <code>DescribeEvents</code> again, and assign the token from the previous results as the value of the <code>nextToken</code> parameter. If there are no more results, the response object's <code>nextToken</code> parameter value is <code>null</code>. Setting a <code>nextToken</code> value that was not returned in your previous results causes an <code>InvalidNextTokenException</code> to occur. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`DescribeEventsOutput`](crate::output::DescribeEventsOutput).
         pub fn build(self) -> crate::output::DescribeEventsOutput {
             crate::output::DescribeEventsOutput {
-                server_events: self.server_events,
-                next_token: self.next_token,
+                server_events: self.server_events
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeEventsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeEventsOutput`](crate::output::DescribeEventsOutput).
@@ -728,7 +727,7 @@ impl DescribeEventsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeBackupsOutput {
+pub struct DescribeBackupsOutput  {
     /// <p>Contains the response to a <code>DescribeBackups</code> request. </p>
     #[doc(hidden)]
     pub backups: std::option::Option<std::vec::Vec<crate::model::Backup>>,
@@ -738,17 +737,17 @@ pub struct DescribeBackupsOutput {
 }
 impl DescribeBackupsOutput {
     /// <p>Contains the response to a <code>DescribeBackups</code> request. </p>
-    pub fn backups(&self) -> std::option::Option<&[crate::model::Backup]> {
+    pub fn backups(&self) -> std::option::Option<& [crate::model::Backup]> {
         self.backups.as_deref()
     }
     /// <p>This is not currently implemented for <code>DescribeBackups</code> requests.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`DescribeBackupsOutput`](crate::output::DescribeBackupsOutput).
 pub mod describe_backups_output {
-
+    
     /// A builder for [`DescribeBackupsOutput`](crate::output::DescribeBackupsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -763,17 +762,13 @@ pub mod describe_backups_output {
         /// <p>Contains the response to a <code>DescribeBackups</code> request. </p>
         pub fn backups(mut self, input: crate::model::Backup) -> Self {
             let mut v = self.backups.unwrap_or_default();
-            v.push(input);
-            self.backups = Some(v);
-            self
+                            v.push(input);
+                            self.backups = Some(v);
+                            self
         }
         /// <p>Contains the response to a <code>DescribeBackups</code> request. </p>
-        pub fn set_backups(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Backup>>,
-        ) -> Self {
-            self.backups = input;
-            self
+        pub fn set_backups(mut self, input: std::option::Option<std::vec::Vec<crate::model::Backup>>) -> Self {
+            self.backups = input; self
         }
         /// <p>This is not currently implemented for <code>DescribeBackups</code> requests.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -782,17 +777,20 @@ pub mod describe_backups_output {
         }
         /// <p>This is not currently implemented for <code>DescribeBackups</code> requests.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`DescribeBackupsOutput`](crate::output::DescribeBackupsOutput).
         pub fn build(self) -> crate::output::DescribeBackupsOutput {
             crate::output::DescribeBackupsOutput {
-                backups: self.backups,
-                next_token: self.next_token,
+                backups: self.backups
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeBackupsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeBackupsOutput`](crate::output::DescribeBackupsOutput).
@@ -804,20 +802,20 @@ impl DescribeBackupsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeAccountAttributesOutput {
+pub struct DescribeAccountAttributesOutput  {
     /// <p> The attributes that are currently set for the account. </p>
     #[doc(hidden)]
     pub attributes: std::option::Option<std::vec::Vec<crate::model::AccountAttribute>>,
 }
 impl DescribeAccountAttributesOutput {
     /// <p> The attributes that are currently set for the account. </p>
-    pub fn attributes(&self) -> std::option::Option<&[crate::model::AccountAttribute]> {
+    pub fn attributes(&self) -> std::option::Option<& [crate::model::AccountAttribute]> {
         self.attributes.as_deref()
     }
 }
 /// See [`DescribeAccountAttributesOutput`](crate::output::DescribeAccountAttributesOutput).
 pub mod describe_account_attributes_output {
-
+    
     /// A builder for [`DescribeAccountAttributesOutput`](crate::output::DescribeAccountAttributesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -831,25 +829,24 @@ pub mod describe_account_attributes_output {
         /// <p> The attributes that are currently set for the account. </p>
         pub fn attributes(mut self, input: crate::model::AccountAttribute) -> Self {
             let mut v = self.attributes.unwrap_or_default();
-            v.push(input);
-            self.attributes = Some(v);
-            self
+                            v.push(input);
+                            self.attributes = Some(v);
+                            self
         }
         /// <p> The attributes that are currently set for the account. </p>
-        pub fn set_attributes(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::AccountAttribute>>,
-        ) -> Self {
-            self.attributes = input;
-            self
+        pub fn set_attributes(mut self, input: std::option::Option<std::vec::Vec<crate::model::AccountAttribute>>) -> Self {
+            self.attributes = input; self
         }
         /// Consumes the builder and constructs a [`DescribeAccountAttributesOutput`](crate::output::DescribeAccountAttributesOutput).
         pub fn build(self) -> crate::output::DescribeAccountAttributesOutput {
             crate::output::DescribeAccountAttributesOutput {
-                attributes: self.attributes,
+                attributes: self.attributes
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeAccountAttributesOutput {
     /// Creates a new builder-style object to manufacture [`DescribeAccountAttributesOutput`](crate::output::DescribeAccountAttributesOutput).
@@ -861,19 +858,24 @@ impl DescribeAccountAttributesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteServerOutput {}
+pub struct DeleteServerOutput  {
+}
 /// See [`DeleteServerOutput`](crate::output::DeleteServerOutput).
 pub mod delete_server_output {
-
+    
     /// A builder for [`DeleteServerOutput`](crate::output::DeleteServerOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteServerOutput`](crate::output::DeleteServerOutput).
         pub fn build(self) -> crate::output::DeleteServerOutput {
-            crate::output::DeleteServerOutput {}
+            crate::output::DeleteServerOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteServerOutput {
     /// Creates a new builder-style object to manufacture [`DeleteServerOutput`](crate::output::DeleteServerOutput).
@@ -885,19 +887,24 @@ impl DeleteServerOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteBackupOutput {}
+pub struct DeleteBackupOutput  {
+}
 /// See [`DeleteBackupOutput`](crate::output::DeleteBackupOutput).
 pub mod delete_backup_output {
-
+    
     /// A builder for [`DeleteBackupOutput`](crate::output::DeleteBackupOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteBackupOutput`](crate::output::DeleteBackupOutput).
         pub fn build(self) -> crate::output::DeleteBackupOutput {
-            crate::output::DeleteBackupOutput {}
+            crate::output::DeleteBackupOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteBackupOutput {
     /// Creates a new builder-style object to manufacture [`DeleteBackupOutput`](crate::output::DeleteBackupOutput).
@@ -909,20 +916,20 @@ impl DeleteBackupOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateServerOutput {
+pub struct CreateServerOutput  {
     /// <p>The server that is created by the request. </p>
     #[doc(hidden)]
     pub server: std::option::Option<crate::model::Server>,
 }
 impl CreateServerOutput {
     /// <p>The server that is created by the request. </p>
-    pub fn server(&self) -> std::option::Option<&crate::model::Server> {
+    pub fn server(&self) -> std::option::Option<& crate::model::Server> {
         self.server.as_ref()
     }
 }
 /// See [`CreateServerOutput`](crate::output::CreateServerOutput).
 pub mod create_server_output {
-
+    
     /// A builder for [`CreateServerOutput`](crate::output::CreateServerOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -936,16 +943,18 @@ pub mod create_server_output {
         }
         /// <p>The server that is created by the request. </p>
         pub fn set_server(mut self, input: std::option::Option<crate::model::Server>) -> Self {
-            self.server = input;
-            self
+            self.server = input; self
         }
         /// Consumes the builder and constructs a [`CreateServerOutput`](crate::output::CreateServerOutput).
         pub fn build(self) -> crate::output::CreateServerOutput {
             crate::output::CreateServerOutput {
-                server: self.server,
+                server: self.server
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateServerOutput {
     /// Creates a new builder-style object to manufacture [`CreateServerOutput`](crate::output::CreateServerOutput).
@@ -957,20 +966,20 @@ impl CreateServerOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateBackupOutput {
+pub struct CreateBackupOutput  {
     /// <p>Backup created by request.</p>
     #[doc(hidden)]
     pub backup: std::option::Option<crate::model::Backup>,
 }
 impl CreateBackupOutput {
     /// <p>Backup created by request.</p>
-    pub fn backup(&self) -> std::option::Option<&crate::model::Backup> {
+    pub fn backup(&self) -> std::option::Option<& crate::model::Backup> {
         self.backup.as_ref()
     }
 }
 /// See [`CreateBackupOutput`](crate::output::CreateBackupOutput).
 pub mod create_backup_output {
-
+    
     /// A builder for [`CreateBackupOutput`](crate::output::CreateBackupOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -984,16 +993,18 @@ pub mod create_backup_output {
         }
         /// <p>Backup created by request.</p>
         pub fn set_backup(mut self, input: std::option::Option<crate::model::Backup>) -> Self {
-            self.backup = input;
-            self
+            self.backup = input; self
         }
         /// Consumes the builder and constructs a [`CreateBackupOutput`](crate::output::CreateBackupOutput).
         pub fn build(self) -> crate::output::CreateBackupOutput {
             crate::output::CreateBackupOutput {
-                backup: self.backup,
+                backup: self.backup
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateBackupOutput {
     /// Creates a new builder-style object to manufacture [`CreateBackupOutput`](crate::output::CreateBackupOutput).
@@ -1005,20 +1016,20 @@ impl CreateBackupOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AssociateNodeOutput {
+pub struct AssociateNodeOutput  {
     /// <p>Contains a token which can be passed to the <code>DescribeNodeAssociationStatus</code> API call to get the status of the association request. </p>
     #[doc(hidden)]
     pub node_association_status_token: std::option::Option<std::string::String>,
 }
 impl AssociateNodeOutput {
     /// <p>Contains a token which can be passed to the <code>DescribeNodeAssociationStatus</code> API call to get the status of the association request. </p>
-    pub fn node_association_status_token(&self) -> std::option::Option<&str> {
+    pub fn node_association_status_token(&self) -> std::option::Option<& str> {
         self.node_association_status_token.as_deref()
     }
 }
 /// See [`AssociateNodeOutput`](crate::output::AssociateNodeOutput).
 pub mod associate_node_output {
-
+    
     /// A builder for [`AssociateNodeOutput`](crate::output::AssociateNodeOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1026,28 +1037,24 @@ pub mod associate_node_output {
     }
     impl Builder {
         /// <p>Contains a token which can be passed to the <code>DescribeNodeAssociationStatus</code> API call to get the status of the association request. </p>
-        pub fn node_association_status_token(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn node_association_status_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.node_association_status_token = Some(input.into());
             self
         }
         /// <p>Contains a token which can be passed to the <code>DescribeNodeAssociationStatus</code> API call to get the status of the association request. </p>
-        pub fn set_node_association_status_token(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.node_association_status_token = input;
-            self
+        pub fn set_node_association_status_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.node_association_status_token = input; self
         }
         /// Consumes the builder and constructs a [`AssociateNodeOutput`](crate::output::AssociateNodeOutput).
         pub fn build(self) -> crate::output::AssociateNodeOutput {
             crate::output::AssociateNodeOutput {
-                node_association_status_token: self.node_association_status_token,
+                node_association_status_token: self.node_association_status_token
+                ,
             }
         }
     }
+    
+    
 }
 impl AssociateNodeOutput {
     /// Creates a new builder-style object to manufacture [`AssociateNodeOutput`](crate::output::AssociateNodeOutput).
@@ -1055,3 +1062,4 @@ impl AssociateNodeOutput {
         crate::output::associate_node_output::Builder::default()
     }
 }
+

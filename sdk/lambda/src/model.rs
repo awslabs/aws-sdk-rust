@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let throttlereason = unimplemented!();
 /// match throttlereason {
@@ -34,22 +34,14 @@
 /// Specifically, when `throttlereason` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ThrottleReason::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ThrottleReason {
     #[allow(missing_docs)] // documentation missing in model
     CallerRateLimitExceeded,
@@ -64,70 +56,45 @@ pub enum ThrottleReason {
     #[allow(missing_docs)] // documentation missing in model
     ReservedFunctionInvocationRateLimitExceeded,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ThrottleReason {
     fn from(s: &str) -> Self {
         match s {
             "CallerRateLimitExceeded" => ThrottleReason::CallerRateLimitExceeded,
-            "ConcurrentInvocationLimitExceeded" => {
-                ThrottleReason::ConcurrentInvocationLimitExceeded
-            }
-            "ConcurrentSnapshotCreateLimitExceeded" => {
-                ThrottleReason::ConcurrentSnapshotCreateLimitExceeded
-            }
-            "FunctionInvocationRateLimitExceeded" => {
-                ThrottleReason::FunctionInvocationRateLimitExceeded
-            }
-            "ReservedFunctionConcurrentInvocationLimitExceeded" => {
-                ThrottleReason::ReservedFunctionConcurrentInvocationLimitExceeded
-            }
-            "ReservedFunctionInvocationRateLimitExceeded" => {
-                ThrottleReason::ReservedFunctionInvocationRateLimitExceeded
-            }
-            other => ThrottleReason::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            "ConcurrentInvocationLimitExceeded" => ThrottleReason::ConcurrentInvocationLimitExceeded,
+            "ConcurrentSnapshotCreateLimitExceeded" => ThrottleReason::ConcurrentSnapshotCreateLimitExceeded,
+            "FunctionInvocationRateLimitExceeded" => ThrottleReason::FunctionInvocationRateLimitExceeded,
+            "ReservedFunctionConcurrentInvocationLimitExceeded" => ThrottleReason::ReservedFunctionConcurrentInvocationLimitExceeded,
+            "ReservedFunctionInvocationRateLimitExceeded" => ThrottleReason::ReservedFunctionInvocationRateLimitExceeded,
+            other => ThrottleReason::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ThrottleReason {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ThrottleReason::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ThrottleReason::from(s))
+                }
+            }
 impl ThrottleReason {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ThrottleReason::CallerRateLimitExceeded => "CallerRateLimitExceeded",
-            ThrottleReason::ConcurrentInvocationLimitExceeded => {
-                "ConcurrentInvocationLimitExceeded"
-            }
-            ThrottleReason::ConcurrentSnapshotCreateLimitExceeded => {
-                "ConcurrentSnapshotCreateLimitExceeded"
-            }
-            ThrottleReason::FunctionInvocationRateLimitExceeded => {
-                "FunctionInvocationRateLimitExceeded"
-            }
-            ThrottleReason::ReservedFunctionConcurrentInvocationLimitExceeded => {
-                "ReservedFunctionConcurrentInvocationLimitExceeded"
-            }
-            ThrottleReason::ReservedFunctionInvocationRateLimitExceeded => {
-                "ReservedFunctionInvocationRateLimitExceeded"
-            }
-            ThrottleReason::Unknown(value) => value.as_str(),
+            ThrottleReason::ConcurrentInvocationLimitExceeded => "ConcurrentInvocationLimitExceeded",
+            ThrottleReason::ConcurrentSnapshotCreateLimitExceeded => "ConcurrentSnapshotCreateLimitExceeded",
+            ThrottleReason::FunctionInvocationRateLimitExceeded => "FunctionInvocationRateLimitExceeded",
+            ThrottleReason::ReservedFunctionConcurrentInvocationLimitExceeded => "ReservedFunctionConcurrentInvocationLimitExceeded",
+            ThrottleReason::ReservedFunctionInvocationRateLimitExceeded => "ReservedFunctionInvocationRateLimitExceeded",
+            ThrottleReason::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "CallerRateLimitExceeded",
-            "ConcurrentInvocationLimitExceeded",
-            "ConcurrentSnapshotCreateLimitExceeded",
-            "FunctionInvocationRateLimitExceeded",
-            "ReservedFunctionConcurrentInvocationLimitExceeded",
-            "ReservedFunctionInvocationRateLimitExceeded",
+            "CallerRateLimitExceeded", "ConcurrentInvocationLimitExceeded", "ConcurrentSnapshotCreateLimitExceeded", "FunctionInvocationRateLimitExceeded", "ReservedFunctionConcurrentInvocationLimitExceeded", "ReservedFunctionInvocationRateLimitExceeded"
         ]
     }
 }
@@ -140,7 +107,7 @@ impl AsRef<str> for ThrottleReason {
 /// <p>The <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS">cross-origin resource sharing (CORS)</a> settings for your Lambda function URL. Use CORS to grant access to your function URL from any origin. You can also use CORS to control access for specific HTTP headers and methods in requests to your function URL.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Cors {
+pub struct Cors  {
     /// <p>Whether to allow cookies or other credentials in requests to your function URL. The default is <code>false</code>.</p>
     #[doc(hidden)]
     pub allow_credentials: std::option::Option<bool>,
@@ -150,7 +117,7 @@ pub struct Cors {
     /// <p>The HTTP methods that are allowed when calling your function URL. For example: <code>GET</code>, <code>POST</code>, <code>DELETE</code>, or the wildcard character (<code>*</code>).</p>
     #[doc(hidden)]
     pub allow_methods: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The origins that can access your function URL. You can list any number of specific origins, separated by a comma. For example: <code>https://www.example.com</code>, <code>http://localhost:60905</code>.</p>
+    /// <p>The origins that can access your function URL. You can list any number of specific origins, separated by a comma. For example: <code>https://www.example.com</code>, <code>http://localhost:60905</code>.</p> 
     /// <p>Alternatively, you can grant access to all origins using the wildcard character (<code>*</code>).</p>
     #[doc(hidden)]
     pub allow_origins: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -167,20 +134,20 @@ impl Cors {
         self.allow_credentials
     }
     /// <p>The HTTP headers that origins can include in requests to your function URL. For example: <code>Date</code>, <code>Keep-Alive</code>, <code>X-Custom-Header</code>.</p>
-    pub fn allow_headers(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn allow_headers(&self) -> std::option::Option<& [std::string::String]> {
         self.allow_headers.as_deref()
     }
     /// <p>The HTTP methods that are allowed when calling your function URL. For example: <code>GET</code>, <code>POST</code>, <code>DELETE</code>, or the wildcard character (<code>*</code>).</p>
-    pub fn allow_methods(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn allow_methods(&self) -> std::option::Option<& [std::string::String]> {
         self.allow_methods.as_deref()
     }
-    /// <p>The origins that can access your function URL. You can list any number of specific origins, separated by a comma. For example: <code>https://www.example.com</code>, <code>http://localhost:60905</code>.</p>
+    /// <p>The origins that can access your function URL. You can list any number of specific origins, separated by a comma. For example: <code>https://www.example.com</code>, <code>http://localhost:60905</code>.</p> 
     /// <p>Alternatively, you can grant access to all origins using the wildcard character (<code>*</code>).</p>
-    pub fn allow_origins(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn allow_origins(&self) -> std::option::Option<& [std::string::String]> {
         self.allow_origins.as_deref()
     }
     /// <p>The HTTP headers in your function response that you want to expose to origins that call your function URL. For example: <code>Date</code>, <code>Keep-Alive</code>, <code>X-Custom-Header</code>.</p>
-    pub fn expose_headers(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn expose_headers(&self) -> std::option::Option<& [std::string::String]> {
         self.expose_headers.as_deref()
     }
     /// <p>The maximum amount of time, in seconds, that web browsers can cache results of a preflight request. By default, this is set to <code>0</code>, which means that the browser doesn't cache results.</p>
@@ -190,7 +157,7 @@ impl Cors {
 }
 /// See [`Cors`](crate::model::Cors).
 pub mod cors {
-
+    
     /// A builder for [`Cors`](crate::model::Cors).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -209,8 +176,7 @@ pub mod cors {
         }
         /// <p>Whether to allow cookies or other credentials in requests to your function URL. The default is <code>false</code>.</p>
         pub fn set_allow_credentials(mut self, input: std::option::Option<bool>) -> Self {
-            self.allow_credentials = input;
-            self
+            self.allow_credentials = input; self
         }
         /// Appends an item to `allow_headers`.
         ///
@@ -219,17 +185,13 @@ pub mod cors {
         /// <p>The HTTP headers that origins can include in requests to your function URL. For example: <code>Date</code>, <code>Keep-Alive</code>, <code>X-Custom-Header</code>.</p>
         pub fn allow_headers(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.allow_headers.unwrap_or_default();
-            v.push(input.into());
-            self.allow_headers = Some(v);
-            self
+                            v.push(input.into());
+                            self.allow_headers = Some(v);
+                            self
         }
         /// <p>The HTTP headers that origins can include in requests to your function URL. For example: <code>Date</code>, <code>Keep-Alive</code>, <code>X-Custom-Header</code>.</p>
-        pub fn set_allow_headers(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.allow_headers = input;
-            self
+        pub fn set_allow_headers(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.allow_headers = input; self
         }
         /// Appends an item to `allow_methods`.
         ///
@@ -238,38 +200,30 @@ pub mod cors {
         /// <p>The HTTP methods that are allowed when calling your function URL. For example: <code>GET</code>, <code>POST</code>, <code>DELETE</code>, or the wildcard character (<code>*</code>).</p>
         pub fn allow_methods(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.allow_methods.unwrap_or_default();
-            v.push(input.into());
-            self.allow_methods = Some(v);
-            self
+                            v.push(input.into());
+                            self.allow_methods = Some(v);
+                            self
         }
         /// <p>The HTTP methods that are allowed when calling your function URL. For example: <code>GET</code>, <code>POST</code>, <code>DELETE</code>, or the wildcard character (<code>*</code>).</p>
-        pub fn set_allow_methods(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.allow_methods = input;
-            self
+        pub fn set_allow_methods(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.allow_methods = input; self
         }
         /// Appends an item to `allow_origins`.
         ///
         /// To override the contents of this collection use [`set_allow_origins`](Self::set_allow_origins).
         ///
-        /// <p>The origins that can access your function URL. You can list any number of specific origins, separated by a comma. For example: <code>https://www.example.com</code>, <code>http://localhost:60905</code>.</p>
+        /// <p>The origins that can access your function URL. You can list any number of specific origins, separated by a comma. For example: <code>https://www.example.com</code>, <code>http://localhost:60905</code>.</p> 
         /// <p>Alternatively, you can grant access to all origins using the wildcard character (<code>*</code>).</p>
         pub fn allow_origins(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.allow_origins.unwrap_or_default();
-            v.push(input.into());
-            self.allow_origins = Some(v);
-            self
+                            v.push(input.into());
+                            self.allow_origins = Some(v);
+                            self
         }
-        /// <p>The origins that can access your function URL. You can list any number of specific origins, separated by a comma. For example: <code>https://www.example.com</code>, <code>http://localhost:60905</code>.</p>
+        /// <p>The origins that can access your function URL. You can list any number of specific origins, separated by a comma. For example: <code>https://www.example.com</code>, <code>http://localhost:60905</code>.</p> 
         /// <p>Alternatively, you can grant access to all origins using the wildcard character (<code>*</code>).</p>
-        pub fn set_allow_origins(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.allow_origins = input;
-            self
+        pub fn set_allow_origins(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.allow_origins = input; self
         }
         /// Appends an item to `expose_headers`.
         ///
@@ -278,17 +232,13 @@ pub mod cors {
         /// <p>The HTTP headers in your function response that you want to expose to origins that call your function URL. For example: <code>Date</code>, <code>Keep-Alive</code>, <code>X-Custom-Header</code>.</p>
         pub fn expose_headers(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.expose_headers.unwrap_or_default();
-            v.push(input.into());
-            self.expose_headers = Some(v);
-            self
+                            v.push(input.into());
+                            self.expose_headers = Some(v);
+                            self
         }
         /// <p>The HTTP headers in your function response that you want to expose to origins that call your function URL. For example: <code>Date</code>, <code>Keep-Alive</code>, <code>X-Custom-Header</code>.</p>
-        pub fn set_expose_headers(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.expose_headers = input;
-            self
+        pub fn set_expose_headers(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.expose_headers = input; self
         }
         /// <p>The maximum amount of time, in seconds, that web browsers can cache results of a preflight request. By default, this is set to <code>0</code>, which means that the browser doesn't cache results.</p>
         pub fn max_age(mut self, input: i32) -> Self {
@@ -297,21 +247,28 @@ pub mod cors {
         }
         /// <p>The maximum amount of time, in seconds, that web browsers can cache results of a preflight request. By default, this is set to <code>0</code>, which means that the browser doesn't cache results.</p>
         pub fn set_max_age(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_age = input;
-            self
+            self.max_age = input; self
         }
         /// Consumes the builder and constructs a [`Cors`](crate::model::Cors).
         pub fn build(self) -> crate::model::Cors {
             crate::model::Cors {
-                allow_credentials: self.allow_credentials,
-                allow_headers: self.allow_headers,
-                allow_methods: self.allow_methods,
-                allow_origins: self.allow_origins,
-                expose_headers: self.expose_headers,
-                max_age: self.max_age,
+                allow_credentials: self.allow_credentials
+                ,
+                allow_headers: self.allow_headers
+                ,
+                allow_methods: self.allow_methods
+                ,
+                allow_origins: self.allow_origins
+                ,
+                expose_headers: self.expose_headers
+                ,
+                max_age: self.max_age
+                ,
             }
         }
     }
+    
+    
 }
 impl Cors {
     /// Creates a new builder-style object to manufacture [`Cors`](crate::model::Cors).
@@ -326,9 +283,9 @@ impl Cors {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let functionurlauthtype = unimplemented!();
 /// match functionurlauthtype {
@@ -350,60 +307,52 @@ impl Cors {
 /// Specifically, when `functionurlauthtype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `FunctionUrlAuthType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum FunctionUrlAuthType {
     #[allow(missing_docs)] // documentation missing in model
     AwsIam,
     #[allow(missing_docs)] // documentation missing in model
     None,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for FunctionUrlAuthType {
     fn from(s: &str) -> Self {
         match s {
             "AWS_IAM" => FunctionUrlAuthType::AwsIam,
             "NONE" => FunctionUrlAuthType::None,
-            other => {
-                FunctionUrlAuthType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => FunctionUrlAuthType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for FunctionUrlAuthType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(FunctionUrlAuthType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(FunctionUrlAuthType::from(s))
+                }
+            }
 impl FunctionUrlAuthType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             FunctionUrlAuthType::AwsIam => "AWS_IAM",
             FunctionUrlAuthType::None => "NONE",
-            FunctionUrlAuthType::Unknown(value) => value.as_str(),
+            FunctionUrlAuthType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["AWS_IAM", "NONE"]
+        &[
+            "AWS_IAM", "NONE"
+        ]
     }
 }
 impl AsRef<str> for FunctionUrlAuthType {
@@ -415,7 +364,7 @@ impl AsRef<str> for FunctionUrlAuthType {
 /// <p>A configuration object that specifies the destination of an event after Lambda processes it.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DestinationConfig {
+pub struct DestinationConfig  {
     /// <p>The destination configuration for successful invocations.</p>
     #[doc(hidden)]
     pub on_success: std::option::Option<crate::model::OnSuccess>,
@@ -425,17 +374,17 @@ pub struct DestinationConfig {
 }
 impl DestinationConfig {
     /// <p>The destination configuration for successful invocations.</p>
-    pub fn on_success(&self) -> std::option::Option<&crate::model::OnSuccess> {
+    pub fn on_success(&self) -> std::option::Option<& crate::model::OnSuccess> {
         self.on_success.as_ref()
     }
     /// <p>The destination configuration for failed invocations.</p>
-    pub fn on_failure(&self) -> std::option::Option<&crate::model::OnFailure> {
+    pub fn on_failure(&self) -> std::option::Option<& crate::model::OnFailure> {
         self.on_failure.as_ref()
     }
 }
 /// See [`DestinationConfig`](crate::model::DestinationConfig).
 pub mod destination_config {
-
+    
     /// A builder for [`DestinationConfig`](crate::model::DestinationConfig).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -449,12 +398,8 @@ pub mod destination_config {
             self
         }
         /// <p>The destination configuration for successful invocations.</p>
-        pub fn set_on_success(
-            mut self,
-            input: std::option::Option<crate::model::OnSuccess>,
-        ) -> Self {
-            self.on_success = input;
-            self
+        pub fn set_on_success(mut self, input: std::option::Option<crate::model::OnSuccess>) -> Self {
+            self.on_success = input; self
         }
         /// <p>The destination configuration for failed invocations.</p>
         pub fn on_failure(mut self, input: crate::model::OnFailure) -> Self {
@@ -462,21 +407,21 @@ pub mod destination_config {
             self
         }
         /// <p>The destination configuration for failed invocations.</p>
-        pub fn set_on_failure(
-            mut self,
-            input: std::option::Option<crate::model::OnFailure>,
-        ) -> Self {
-            self.on_failure = input;
-            self
+        pub fn set_on_failure(mut self, input: std::option::Option<crate::model::OnFailure>) -> Self {
+            self.on_failure = input; self
         }
         /// Consumes the builder and constructs a [`DestinationConfig`](crate::model::DestinationConfig).
         pub fn build(self) -> crate::model::DestinationConfig {
             crate::model::DestinationConfig {
-                on_success: self.on_success,
-                on_failure: self.on_failure,
+                on_success: self.on_success
+                ,
+                on_failure: self.on_failure
+                ,
             }
         }
     }
+    
+    
 }
 impl DestinationConfig {
     /// Creates a new builder-style object to manufacture [`DestinationConfig`](crate::model::DestinationConfig).
@@ -488,20 +433,20 @@ impl DestinationConfig {
 /// <p>A destination for events that failed processing.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct OnFailure {
+pub struct OnFailure  {
     /// <p>The Amazon Resource Name (ARN) of the destination resource.</p>
     #[doc(hidden)]
     pub destination: std::option::Option<std::string::String>,
 }
 impl OnFailure {
     /// <p>The Amazon Resource Name (ARN) of the destination resource.</p>
-    pub fn destination(&self) -> std::option::Option<&str> {
+    pub fn destination(&self) -> std::option::Option<& str> {
         self.destination.as_deref()
     }
 }
 /// See [`OnFailure`](crate::model::OnFailure).
 pub mod on_failure {
-
+    
     /// A builder for [`OnFailure`](crate::model::OnFailure).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -515,16 +460,18 @@ pub mod on_failure {
         }
         /// <p>The Amazon Resource Name (ARN) of the destination resource.</p>
         pub fn set_destination(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.destination = input;
-            self
+            self.destination = input; self
         }
         /// Consumes the builder and constructs a [`OnFailure`](crate::model::OnFailure).
         pub fn build(self) -> crate::model::OnFailure {
             crate::model::OnFailure {
-                destination: self.destination,
+                destination: self.destination
+                ,
             }
         }
     }
+    
+    
 }
 impl OnFailure {
     /// Creates a new builder-style object to manufacture [`OnFailure`](crate::model::OnFailure).
@@ -536,20 +483,20 @@ impl OnFailure {
 /// <p>A destination for events that were processed successfully.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct OnSuccess {
+pub struct OnSuccess  {
     /// <p>The Amazon Resource Name (ARN) of the destination resource.</p>
     #[doc(hidden)]
     pub destination: std::option::Option<std::string::String>,
 }
 impl OnSuccess {
     /// <p>The Amazon Resource Name (ARN) of the destination resource.</p>
-    pub fn destination(&self) -> std::option::Option<&str> {
+    pub fn destination(&self) -> std::option::Option<& str> {
         self.destination.as_deref()
     }
 }
 /// See [`OnSuccess`](crate::model::OnSuccess).
 pub mod on_success {
-
+    
     /// A builder for [`OnSuccess`](crate::model::OnSuccess).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -563,16 +510,18 @@ pub mod on_success {
         }
         /// <p>The Amazon Resource Name (ARN) of the destination resource.</p>
         pub fn set_destination(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.destination = input;
-            self
+            self.destination = input; self
         }
         /// Consumes the builder and constructs a [`OnSuccess`](crate::model::OnSuccess).
         pub fn build(self) -> crate::model::OnSuccess {
             crate::model::OnSuccess {
-                destination: self.destination,
+                destination: self.destination
+                ,
             }
         }
     }
+    
+    
 }
 impl OnSuccess {
     /// Creates a new builder-style object to manufacture [`OnSuccess`](crate::model::OnSuccess).
@@ -584,7 +533,7 @@ impl OnSuccess {
 /// <p>The ARN of the runtime and any errors that occured.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RuntimeVersionConfig {
+pub struct RuntimeVersionConfig  {
     /// <p>The ARN of the runtime version you want the function to use.</p>
     #[doc(hidden)]
     pub runtime_version_arn: std::option::Option<std::string::String>,
@@ -594,17 +543,17 @@ pub struct RuntimeVersionConfig {
 }
 impl RuntimeVersionConfig {
     /// <p>The ARN of the runtime version you want the function to use.</p>
-    pub fn runtime_version_arn(&self) -> std::option::Option<&str> {
+    pub fn runtime_version_arn(&self) -> std::option::Option<& str> {
         self.runtime_version_arn.as_deref()
     }
     /// <p>Error response when Lambda is unable to retrieve the runtime version for a function.</p>
-    pub fn error(&self) -> std::option::Option<&crate::model::RuntimeVersionError> {
+    pub fn error(&self) -> std::option::Option<& crate::model::RuntimeVersionError> {
         self.error.as_ref()
     }
 }
 /// See [`RuntimeVersionConfig`](crate::model::RuntimeVersionConfig).
 pub mod runtime_version_config {
-
+    
     /// A builder for [`RuntimeVersionConfig`](crate::model::RuntimeVersionConfig).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -618,12 +567,8 @@ pub mod runtime_version_config {
             self
         }
         /// <p>The ARN of the runtime version you want the function to use.</p>
-        pub fn set_runtime_version_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.runtime_version_arn = input;
-            self
+        pub fn set_runtime_version_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.runtime_version_arn = input; self
         }
         /// <p>Error response when Lambda is unable to retrieve the runtime version for a function.</p>
         pub fn error(mut self, input: crate::model::RuntimeVersionError) -> Self {
@@ -631,21 +576,21 @@ pub mod runtime_version_config {
             self
         }
         /// <p>Error response when Lambda is unable to retrieve the runtime version for a function.</p>
-        pub fn set_error(
-            mut self,
-            input: std::option::Option<crate::model::RuntimeVersionError>,
-        ) -> Self {
-            self.error = input;
-            self
+        pub fn set_error(mut self, input: std::option::Option<crate::model::RuntimeVersionError>) -> Self {
+            self.error = input; self
         }
         /// Consumes the builder and constructs a [`RuntimeVersionConfig`](crate::model::RuntimeVersionConfig).
         pub fn build(self) -> crate::model::RuntimeVersionConfig {
             crate::model::RuntimeVersionConfig {
-                runtime_version_arn: self.runtime_version_arn,
-                error: self.error,
+                runtime_version_arn: self.runtime_version_arn
+                ,
+                error: self.error
+                ,
             }
         }
     }
+    
+    
 }
 impl RuntimeVersionConfig {
     /// Creates a new builder-style object to manufacture [`RuntimeVersionConfig`](crate::model::RuntimeVersionConfig).
@@ -657,7 +602,7 @@ impl RuntimeVersionConfig {
 /// <p>Any error returned when the runtime version information for the function could not be retrieved.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct RuntimeVersionError {
+pub struct RuntimeVersionError  {
     /// <p>The error code.</p>
     #[doc(hidden)]
     pub error_code: std::option::Option<std::string::String>,
@@ -667,15 +612,15 @@ pub struct RuntimeVersionError {
 }
 impl RuntimeVersionError {
     /// <p>The error code.</p>
-    pub fn error_code(&self) -> std::option::Option<&str> {
+    pub fn error_code(&self) -> std::option::Option<& str> {
         self.error_code.as_deref()
     }
     /// <p>The error message.</p>
-    pub fn message(&self) -> std::option::Option<&str> {
+    pub fn message(&self) -> std::option::Option<& str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Debug for RuntimeVersionError {
+impl  std::fmt::Debug for RuntimeVersionError  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RuntimeVersionError");
         formatter.field("error_code", &self.error_code);
@@ -685,7 +630,7 @@ impl std::fmt::Debug for RuntimeVersionError {
 }
 /// See [`RuntimeVersionError`](crate::model::RuntimeVersionError).
 pub mod runtime_version_error {
-
+    
     /// A builder for [`RuntimeVersionError`](crate::model::RuntimeVersionError).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
@@ -700,8 +645,7 @@ pub mod runtime_version_error {
         }
         /// <p>The error code.</p>
         pub fn set_error_code(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.error_code = input;
-            self
+            self.error_code = input; self
         }
         /// <p>The error message.</p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -710,14 +654,15 @@ pub mod runtime_version_error {
         }
         /// <p>The error message.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`RuntimeVersionError`](crate::model::RuntimeVersionError).
         pub fn build(self) -> crate::model::RuntimeVersionError {
             crate::model::RuntimeVersionError {
-                error_code: self.error_code,
-                message: self.message,
+                error_code: self.error_code
+                ,
+                message: self.message
+                ,
             }
         }
     }
@@ -729,6 +674,8 @@ pub mod runtime_version_error {
             formatter.finish()
         }
     }
+    
+    
 }
 impl RuntimeVersionError {
     /// Creates a new builder-style object to manufacture [`RuntimeVersionError`](crate::model::RuntimeVersionError).
@@ -740,7 +687,7 @@ impl RuntimeVersionError {
 /// <p>The function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/snapstart.html">SnapStart</a> setting.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SnapStartResponse {
+pub struct SnapStartResponse  {
     /// <p>When set to <code>PublishedVersions</code>, Lambda creates a snapshot of the execution environment when you publish a function version.</p>
     #[doc(hidden)]
     pub apply_on: std::option::Option<crate::model::SnapStartApplyOn>,
@@ -750,25 +697,22 @@ pub struct SnapStartResponse {
 }
 impl SnapStartResponse {
     /// <p>When set to <code>PublishedVersions</code>, Lambda creates a snapshot of the execution environment when you publish a function version.</p>
-    pub fn apply_on(&self) -> std::option::Option<&crate::model::SnapStartApplyOn> {
+    pub fn apply_on(&self) -> std::option::Option<& crate::model::SnapStartApplyOn> {
         self.apply_on.as_ref()
     }
     /// <p>When you provide a <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-versions.html#versioning-versions-using">qualified Amazon Resource Name (ARN)</a>, this response element indicates whether SnapStart is activated for the specified function version.</p>
-    pub fn optimization_status(
-        &self,
-    ) -> std::option::Option<&crate::model::SnapStartOptimizationStatus> {
+    pub fn optimization_status(&self) -> std::option::Option<& crate::model::SnapStartOptimizationStatus> {
         self.optimization_status.as_ref()
     }
 }
 /// See [`SnapStartResponse`](crate::model::SnapStartResponse).
 pub mod snap_start_response {
-
+    
     /// A builder for [`SnapStartResponse`](crate::model::SnapStartResponse).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) apply_on: std::option::Option<crate::model::SnapStartApplyOn>,
-        pub(crate) optimization_status:
-            std::option::Option<crate::model::SnapStartOptimizationStatus>,
+        pub(crate) optimization_status: std::option::Option<crate::model::SnapStartOptimizationStatus>,
     }
     impl Builder {
         /// <p>When set to <code>PublishedVersions</code>, Lambda creates a snapshot of the execution environment when you publish a function version.</p>
@@ -777,37 +721,30 @@ pub mod snap_start_response {
             self
         }
         /// <p>When set to <code>PublishedVersions</code>, Lambda creates a snapshot of the execution environment when you publish a function version.</p>
-        pub fn set_apply_on(
-            mut self,
-            input: std::option::Option<crate::model::SnapStartApplyOn>,
-        ) -> Self {
-            self.apply_on = input;
-            self
+        pub fn set_apply_on(mut self, input: std::option::Option<crate::model::SnapStartApplyOn>) -> Self {
+            self.apply_on = input; self
         }
         /// <p>When you provide a <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-versions.html#versioning-versions-using">qualified Amazon Resource Name (ARN)</a>, this response element indicates whether SnapStart is activated for the specified function version.</p>
-        pub fn optimization_status(
-            mut self,
-            input: crate::model::SnapStartOptimizationStatus,
-        ) -> Self {
+        pub fn optimization_status(mut self, input: crate::model::SnapStartOptimizationStatus) -> Self {
             self.optimization_status = Some(input);
             self
         }
         /// <p>When you provide a <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-versions.html#versioning-versions-using">qualified Amazon Resource Name (ARN)</a>, this response element indicates whether SnapStart is activated for the specified function version.</p>
-        pub fn set_optimization_status(
-            mut self,
-            input: std::option::Option<crate::model::SnapStartOptimizationStatus>,
-        ) -> Self {
-            self.optimization_status = input;
-            self
+        pub fn set_optimization_status(mut self, input: std::option::Option<crate::model::SnapStartOptimizationStatus>) -> Self {
+            self.optimization_status = input; self
         }
         /// Consumes the builder and constructs a [`SnapStartResponse`](crate::model::SnapStartResponse).
         pub fn build(self) -> crate::model::SnapStartResponse {
             crate::model::SnapStartResponse {
-                apply_on: self.apply_on,
-                optimization_status: self.optimization_status,
+                apply_on: self.apply_on
+                ,
+                optimization_status: self.optimization_status
+                ,
             }
         }
     }
+    
+    
 }
 impl SnapStartResponse {
     /// Creates a new builder-style object to manufacture [`SnapStartResponse`](crate::model::SnapStartResponse).
@@ -822,9 +759,9 @@ impl SnapStartResponse {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let snapstartoptimizationstatus = unimplemented!();
 /// match snapstartoptimizationstatus {
@@ -846,60 +783,52 @@ impl SnapStartResponse {
 /// Specifically, when `snapstartoptimizationstatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `SnapStartOptimizationStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum SnapStartOptimizationStatus {
     #[allow(missing_docs)] // documentation missing in model
     Off,
     #[allow(missing_docs)] // documentation missing in model
     On,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for SnapStartOptimizationStatus {
     fn from(s: &str) -> Self {
         match s {
             "Off" => SnapStartOptimizationStatus::Off,
             "On" => SnapStartOptimizationStatus::On,
-            other => SnapStartOptimizationStatus::Unknown(crate::types::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => SnapStartOptimizationStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for SnapStartOptimizationStatus {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(SnapStartOptimizationStatus::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(SnapStartOptimizationStatus::from(s))
+                }
+            }
 impl SnapStartOptimizationStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             SnapStartOptimizationStatus::Off => "Off",
             SnapStartOptimizationStatus::On => "On",
-            SnapStartOptimizationStatus::Unknown(value) => value.as_str(),
+            SnapStartOptimizationStatus::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["Off", "On"]
+        &[
+            "Off", "On"
+        ]
     }
 }
 impl AsRef<str> for SnapStartOptimizationStatus {
@@ -914,9 +843,9 @@ impl AsRef<str> for SnapStartOptimizationStatus {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let snapstartapplyon = unimplemented!();
 /// match snapstartapplyon {
@@ -938,58 +867,52 @@ impl AsRef<str> for SnapStartOptimizationStatus {
 /// Specifically, when `snapstartapplyon` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `SnapStartApplyOn::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum SnapStartApplyOn {
     #[allow(missing_docs)] // documentation missing in model
     None,
     #[allow(missing_docs)] // documentation missing in model
     PublishedVersions,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for SnapStartApplyOn {
     fn from(s: &str) -> Self {
         match s {
             "None" => SnapStartApplyOn::None,
             "PublishedVersions" => SnapStartApplyOn::PublishedVersions,
-            other => SnapStartApplyOn::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => SnapStartApplyOn::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for SnapStartApplyOn {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(SnapStartApplyOn::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(SnapStartApplyOn::from(s))
+                }
+            }
 impl SnapStartApplyOn {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             SnapStartApplyOn::None => "None",
             SnapStartApplyOn::PublishedVersions => "PublishedVersions",
-            SnapStartApplyOn::Unknown(value) => value.as_str(),
+            SnapStartApplyOn::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["None", "PublishedVersions"]
+        &[
+            "None", "PublishedVersions"
+        ]
     }
 }
 impl AsRef<str> for SnapStartApplyOn {
@@ -1001,7 +924,7 @@ impl AsRef<str> for SnapStartApplyOn {
 /// <p>The size of the function's <code>/tmp</code> directory in MB. The default value is 512, but it can be any whole number between 512 and 10,240 MB.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct EphemeralStorage {
+pub struct EphemeralStorage  {
     /// <p>The size of the function's <code>/tmp</code> directory.</p>
     #[doc(hidden)]
     pub size: std::option::Option<i32>,
@@ -1014,7 +937,7 @@ impl EphemeralStorage {
 }
 /// See [`EphemeralStorage`](crate::model::EphemeralStorage).
 pub mod ephemeral_storage {
-
+    
     /// A builder for [`EphemeralStorage`](crate::model::EphemeralStorage).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1028,14 +951,18 @@ pub mod ephemeral_storage {
         }
         /// <p>The size of the function's <code>/tmp</code> directory.</p>
         pub fn set_size(mut self, input: std::option::Option<i32>) -> Self {
-            self.size = input;
-            self
+            self.size = input; self
         }
         /// Consumes the builder and constructs a [`EphemeralStorage`](crate::model::EphemeralStorage).
         pub fn build(self) -> crate::model::EphemeralStorage {
-            crate::model::EphemeralStorage { size: self.size }
+            crate::model::EphemeralStorage {
+                size: self.size
+                ,
+            }
         }
     }
+    
+    
 }
 impl EphemeralStorage {
     /// Creates a new builder-style object to manufacture [`EphemeralStorage`](crate::model::EphemeralStorage).
@@ -1050,9 +977,9 @@ impl EphemeralStorage {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let architecture = unimplemented!();
 /// match architecture {
@@ -1074,58 +1001,52 @@ impl EphemeralStorage {
 /// Specifically, when `architecture` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `Architecture::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum Architecture {
     #[allow(missing_docs)] // documentation missing in model
     Arm64,
     #[allow(missing_docs)] // documentation missing in model
     X8664,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for Architecture {
     fn from(s: &str) -> Self {
         match s {
             "arm64" => Architecture::Arm64,
             "x86_64" => Architecture::X8664,
-            other => Architecture::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => Architecture::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for Architecture {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(Architecture::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(Architecture::from(s))
+                }
+            }
 impl Architecture {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             Architecture::Arm64 => "arm64",
             Architecture::X8664 => "x86_64",
-            Architecture::Unknown(value) => value.as_str(),
+            Architecture::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["arm64", "x86_64"]
+        &[
+            "arm64", "x86_64"
+        ]
     }
 }
 impl AsRef<str> for Architecture {
@@ -1137,7 +1058,7 @@ impl AsRef<str> for Architecture {
 /// <p>Response to a <code>GetFunctionConfiguration</code> request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ImageConfigResponse {
+pub struct ImageConfigResponse  {
     /// <p>Configuration values that override the container image Dockerfile.</p>
     #[doc(hidden)]
     pub image_config: std::option::Option<crate::model::ImageConfig>,
@@ -1147,17 +1068,17 @@ pub struct ImageConfigResponse {
 }
 impl ImageConfigResponse {
     /// <p>Configuration values that override the container image Dockerfile.</p>
-    pub fn image_config(&self) -> std::option::Option<&crate::model::ImageConfig> {
+    pub fn image_config(&self) -> std::option::Option<& crate::model::ImageConfig> {
         self.image_config.as_ref()
     }
     /// <p>Error response to <code>GetFunctionConfiguration</code>.</p>
-    pub fn error(&self) -> std::option::Option<&crate::model::ImageConfigError> {
+    pub fn error(&self) -> std::option::Option<& crate::model::ImageConfigError> {
         self.error.as_ref()
     }
 }
 /// See [`ImageConfigResponse`](crate::model::ImageConfigResponse).
 pub mod image_config_response {
-
+    
     /// A builder for [`ImageConfigResponse`](crate::model::ImageConfigResponse).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1171,12 +1092,8 @@ pub mod image_config_response {
             self
         }
         /// <p>Configuration values that override the container image Dockerfile.</p>
-        pub fn set_image_config(
-            mut self,
-            input: std::option::Option<crate::model::ImageConfig>,
-        ) -> Self {
-            self.image_config = input;
-            self
+        pub fn set_image_config(mut self, input: std::option::Option<crate::model::ImageConfig>) -> Self {
+            self.image_config = input; self
         }
         /// <p>Error response to <code>GetFunctionConfiguration</code>.</p>
         pub fn error(mut self, input: crate::model::ImageConfigError) -> Self {
@@ -1184,21 +1101,21 @@ pub mod image_config_response {
             self
         }
         /// <p>Error response to <code>GetFunctionConfiguration</code>.</p>
-        pub fn set_error(
-            mut self,
-            input: std::option::Option<crate::model::ImageConfigError>,
-        ) -> Self {
-            self.error = input;
-            self
+        pub fn set_error(mut self, input: std::option::Option<crate::model::ImageConfigError>) -> Self {
+            self.error = input; self
         }
         /// Consumes the builder and constructs a [`ImageConfigResponse`](crate::model::ImageConfigResponse).
         pub fn build(self) -> crate::model::ImageConfigResponse {
             crate::model::ImageConfigResponse {
-                image_config: self.image_config,
-                error: self.error,
+                image_config: self.image_config
+                ,
+                error: self.error
+                ,
             }
         }
     }
+    
+    
 }
 impl ImageConfigResponse {
     /// Creates a new builder-style object to manufacture [`ImageConfigResponse`](crate::model::ImageConfigResponse).
@@ -1210,7 +1127,7 @@ impl ImageConfigResponse {
 /// <p>Error response to <code>GetFunctionConfiguration</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct ImageConfigError {
+pub struct ImageConfigError  {
     /// <p>Error code.</p>
     #[doc(hidden)]
     pub error_code: std::option::Option<std::string::String>,
@@ -1220,15 +1137,15 @@ pub struct ImageConfigError {
 }
 impl ImageConfigError {
     /// <p>Error code.</p>
-    pub fn error_code(&self) -> std::option::Option<&str> {
+    pub fn error_code(&self) -> std::option::Option<& str> {
         self.error_code.as_deref()
     }
     /// <p>Error message.</p>
-    pub fn message(&self) -> std::option::Option<&str> {
+    pub fn message(&self) -> std::option::Option<& str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Debug for ImageConfigError {
+impl  std::fmt::Debug for ImageConfigError  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ImageConfigError");
         formatter.field("error_code", &self.error_code);
@@ -1238,7 +1155,7 @@ impl std::fmt::Debug for ImageConfigError {
 }
 /// See [`ImageConfigError`](crate::model::ImageConfigError).
 pub mod image_config_error {
-
+    
     /// A builder for [`ImageConfigError`](crate::model::ImageConfigError).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
@@ -1253,8 +1170,7 @@ pub mod image_config_error {
         }
         /// <p>Error code.</p>
         pub fn set_error_code(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.error_code = input;
-            self
+            self.error_code = input; self
         }
         /// <p>Error message.</p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1263,14 +1179,15 @@ pub mod image_config_error {
         }
         /// <p>Error message.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`ImageConfigError`](crate::model::ImageConfigError).
         pub fn build(self) -> crate::model::ImageConfigError {
             crate::model::ImageConfigError {
-                error_code: self.error_code,
-                message: self.message,
+                error_code: self.error_code
+                ,
+                message: self.message
+                ,
             }
         }
     }
@@ -1282,6 +1199,8 @@ pub mod image_config_error {
             formatter.finish()
         }
     }
+    
+    
 }
 impl ImageConfigError {
     /// Creates a new builder-style object to manufacture [`ImageConfigError`](crate::model::ImageConfigError).
@@ -1293,7 +1212,7 @@ impl ImageConfigError {
 /// <p>Configuration values that override the container image Dockerfile settings. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/images-create.html#images-parms">Container image settings</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ImageConfig {
+pub struct ImageConfig  {
     /// <p>Specifies the entry point to their application, which is typically the location of the runtime executable.</p>
     #[doc(hidden)]
     pub entry_point: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1306,21 +1225,21 @@ pub struct ImageConfig {
 }
 impl ImageConfig {
     /// <p>Specifies the entry point to their application, which is typically the location of the runtime executable.</p>
-    pub fn entry_point(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn entry_point(&self) -> std::option::Option<& [std::string::String]> {
         self.entry_point.as_deref()
     }
     /// <p>Specifies parameters that you want to pass in with ENTRYPOINT.</p>
-    pub fn command(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn command(&self) -> std::option::Option<& [std::string::String]> {
         self.command.as_deref()
     }
     /// <p>Specifies the working directory.</p>
-    pub fn working_directory(&self) -> std::option::Option<&str> {
+    pub fn working_directory(&self) -> std::option::Option<& str> {
         self.working_directory.as_deref()
     }
 }
 /// See [`ImageConfig`](crate::model::ImageConfig).
 pub mod image_config {
-
+    
     /// A builder for [`ImageConfig`](crate::model::ImageConfig).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1336,17 +1255,13 @@ pub mod image_config {
         /// <p>Specifies the entry point to their application, which is typically the location of the runtime executable.</p>
         pub fn entry_point(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.entry_point.unwrap_or_default();
-            v.push(input.into());
-            self.entry_point = Some(v);
-            self
+                            v.push(input.into());
+                            self.entry_point = Some(v);
+                            self
         }
         /// <p>Specifies the entry point to their application, which is typically the location of the runtime executable.</p>
-        pub fn set_entry_point(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.entry_point = input;
-            self
+        pub fn set_entry_point(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.entry_point = input; self
         }
         /// Appends an item to `command`.
         ///
@@ -1355,17 +1270,13 @@ pub mod image_config {
         /// <p>Specifies parameters that you want to pass in with ENTRYPOINT.</p>
         pub fn command(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.command.unwrap_or_default();
-            v.push(input.into());
-            self.command = Some(v);
-            self
+                            v.push(input.into());
+                            self.command = Some(v);
+                            self
         }
         /// <p>Specifies parameters that you want to pass in with ENTRYPOINT.</p>
-        pub fn set_command(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.command = input;
-            self
+        pub fn set_command(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.command = input; self
         }
         /// <p>Specifies the working directory.</p>
         pub fn working_directory(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1373,22 +1284,23 @@ pub mod image_config {
             self
         }
         /// <p>Specifies the working directory.</p>
-        pub fn set_working_directory(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.working_directory = input;
-            self
+        pub fn set_working_directory(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.working_directory = input; self
         }
         /// Consumes the builder and constructs a [`ImageConfig`](crate::model::ImageConfig).
         pub fn build(self) -> crate::model::ImageConfig {
             crate::model::ImageConfig {
-                entry_point: self.entry_point,
-                command: self.command,
-                working_directory: self.working_directory,
+                entry_point: self.entry_point
+                ,
+                command: self.command
+                ,
+                working_directory: self.working_directory
+                ,
             }
         }
     }
+    
+    
 }
 impl ImageConfig {
     /// Creates a new builder-style object to manufacture [`ImageConfig`](crate::model::ImageConfig).
@@ -1403,9 +1315,9 @@ impl ImageConfig {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let packagetype = unimplemented!();
 /// match packagetype {
@@ -1427,58 +1339,52 @@ impl ImageConfig {
 /// Specifically, when `packagetype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `PackageType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum PackageType {
     #[allow(missing_docs)] // documentation missing in model
     Image,
     #[allow(missing_docs)] // documentation missing in model
     Zip,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for PackageType {
     fn from(s: &str) -> Self {
         match s {
             "Image" => PackageType::Image,
             "Zip" => PackageType::Zip,
-            other => PackageType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => PackageType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for PackageType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(PackageType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(PackageType::from(s))
+                }
+            }
 impl PackageType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             PackageType::Image => "Image",
             PackageType::Zip => "Zip",
-            PackageType::Unknown(value) => value.as_str(),
+            PackageType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["Image", "Zip"]
+        &[
+            "Image", "Zip"
+        ]
     }
 }
 impl AsRef<str> for PackageType {
@@ -1490,7 +1396,7 @@ impl AsRef<str> for PackageType {
 /// <p>Details about the connection between a Lambda function and an <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-filesystem.html">Amazon EFS file system</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct FileSystemConfig {
+pub struct FileSystemConfig  {
     /// <p>The Amazon Resource Name (ARN) of the Amazon EFS access point that provides access to the file system.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -1500,17 +1406,17 @@ pub struct FileSystemConfig {
 }
 impl FileSystemConfig {
     /// <p>The Amazon Resource Name (ARN) of the Amazon EFS access point that provides access to the file system.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The path where the function can access the file system, starting with <code>/mnt/</code>.</p>
-    pub fn local_mount_path(&self) -> std::option::Option<&str> {
+    pub fn local_mount_path(&self) -> std::option::Option<& str> {
         self.local_mount_path.as_deref()
     }
 }
 /// See [`FileSystemConfig`](crate::model::FileSystemConfig).
 pub mod file_system_config {
-
+    
     /// A builder for [`FileSystemConfig`](crate::model::FileSystemConfig).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1525,8 +1431,7 @@ pub mod file_system_config {
         }
         /// <p>The Amazon Resource Name (ARN) of the Amazon EFS access point that provides access to the file system.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>The path where the function can access the file system, starting with <code>/mnt/</code>.</p>
         pub fn local_mount_path(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1534,21 +1439,21 @@ pub mod file_system_config {
             self
         }
         /// <p>The path where the function can access the file system, starting with <code>/mnt/</code>.</p>
-        pub fn set_local_mount_path(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.local_mount_path = input;
-            self
+        pub fn set_local_mount_path(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.local_mount_path = input; self
         }
         /// Consumes the builder and constructs a [`FileSystemConfig`](crate::model::FileSystemConfig).
         pub fn build(self) -> crate::model::FileSystemConfig {
             crate::model::FileSystemConfig {
-                arn: self.arn,
-                local_mount_path: self.local_mount_path,
+                arn: self.arn
+                ,
+                local_mount_path: self.local_mount_path
+                ,
             }
         }
     }
+    
+    
 }
 impl FileSystemConfig {
     /// Creates a new builder-style object to manufacture [`FileSystemConfig`](crate::model::FileSystemConfig).
@@ -1563,9 +1468,9 @@ impl FileSystemConfig {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let lastupdatestatusreasoncode = unimplemented!();
 /// match lastupdatestatusreasoncode {
@@ -1606,22 +1511,14 @@ impl FileSystemConfig {
 /// Specifically, when `lastupdatestatusreasoncode` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `LastUpdateStatusReasonCode::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum LastUpdateStatusReasonCode {
     #[allow(missing_docs)] // documentation missing in model
     DisabledKmsKey,
@@ -1666,7 +1563,7 @@ pub enum LastUpdateStatusReasonCode {
     #[allow(missing_docs)] // documentation missing in model
     SubnetOutOfIpAddresses,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for LastUpdateStatusReasonCode {
     fn from(s: &str) -> Self {
@@ -1680,9 +1577,7 @@ impl std::convert::From<&str> for LastUpdateStatusReasonCode {
             "FunctionError" => LastUpdateStatusReasonCode::FunctionError,
             "ImageAccessDenied" => LastUpdateStatusReasonCode::ImageAccessDenied,
             "ImageDeleted" => LastUpdateStatusReasonCode::ImageDeleted,
-            "InsufficientRolePermissions" => {
-                LastUpdateStatusReasonCode::InsufficientRolePermissions
-            }
+            "InsufficientRolePermissions" => LastUpdateStatusReasonCode::InsufficientRolePermissions,
             "InternalError" => LastUpdateStatusReasonCode::InternalError,
             "InvalidConfiguration" => LastUpdateStatusReasonCode::InvalidConfiguration,
             "InvalidImage" => LastUpdateStatusReasonCode::InvalidImage,
@@ -1694,19 +1589,17 @@ impl std::convert::From<&str> for LastUpdateStatusReasonCode {
             "KMSKeyAccessDenied" => LastUpdateStatusReasonCode::KmsKeyAccessDenied,
             "KMSKeyNotFound" => LastUpdateStatusReasonCode::KmsKeyNotFound,
             "SubnetOutOfIPAddresses" => LastUpdateStatusReasonCode::SubnetOutOfIpAddresses,
-            other => LastUpdateStatusReasonCode::Unknown(crate::types::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => LastUpdateStatusReasonCode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for LastUpdateStatusReasonCode {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(LastUpdateStatusReasonCode::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(LastUpdateStatusReasonCode::from(s))
+                }
+            }
 impl LastUpdateStatusReasonCode {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -1720,9 +1613,7 @@ impl LastUpdateStatusReasonCode {
             LastUpdateStatusReasonCode::FunctionError => "FunctionError",
             LastUpdateStatusReasonCode::ImageAccessDenied => "ImageAccessDenied",
             LastUpdateStatusReasonCode::ImageDeleted => "ImageDeleted",
-            LastUpdateStatusReasonCode::InsufficientRolePermissions => {
-                "InsufficientRolePermissions"
-            }
+            LastUpdateStatusReasonCode::InsufficientRolePermissions => "InsufficientRolePermissions",
             LastUpdateStatusReasonCode::InternalError => "InternalError",
             LastUpdateStatusReasonCode::InvalidConfiguration => "InvalidConfiguration",
             LastUpdateStatusReasonCode::InvalidImage => "InvalidImage",
@@ -1734,33 +1625,13 @@ impl LastUpdateStatusReasonCode {
             LastUpdateStatusReasonCode::KmsKeyAccessDenied => "KMSKeyAccessDenied",
             LastUpdateStatusReasonCode::KmsKeyNotFound => "KMSKeyNotFound",
             LastUpdateStatusReasonCode::SubnetOutOfIpAddresses => "SubnetOutOfIPAddresses",
-            LastUpdateStatusReasonCode::Unknown(value) => value.as_str(),
+            LastUpdateStatusReasonCode::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "DisabledKMSKey",
-            "EFSIOError",
-            "EFSMountConnectivityError",
-            "EFSMountFailure",
-            "EFSMountTimeout",
-            "EniLimitExceeded",
-            "FunctionError",
-            "ImageAccessDenied",
-            "ImageDeleted",
-            "InsufficientRolePermissions",
-            "InternalError",
-            "InvalidConfiguration",
-            "InvalidImage",
-            "InvalidRuntime",
-            "InvalidSecurityGroup",
-            "InvalidStateKMSKey",
-            "InvalidSubnet",
-            "InvalidZipFileException",
-            "KMSKeyAccessDenied",
-            "KMSKeyNotFound",
-            "SubnetOutOfIPAddresses",
+            "DisabledKMSKey", "EFSIOError", "EFSMountConnectivityError", "EFSMountFailure", "EFSMountTimeout", "EniLimitExceeded", "FunctionError", "ImageAccessDenied", "ImageDeleted", "InsufficientRolePermissions", "InternalError", "InvalidConfiguration", "InvalidImage", "InvalidRuntime", "InvalidSecurityGroup", "InvalidStateKMSKey", "InvalidSubnet", "InvalidZipFileException", "KMSKeyAccessDenied", "KMSKeyNotFound", "SubnetOutOfIPAddresses"
         ]
     }
 }
@@ -1776,9 +1647,9 @@ impl AsRef<str> for LastUpdateStatusReasonCode {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let lastupdatestatus = unimplemented!();
 /// match lastupdatestatus {
@@ -1801,22 +1672,14 @@ impl AsRef<str> for LastUpdateStatusReasonCode {
 /// Specifically, when `lastupdatestatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `LastUpdateStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum LastUpdateStatus {
     #[allow(missing_docs)] // documentation missing in model
     Failed,
@@ -1825,7 +1688,7 @@ pub enum LastUpdateStatus {
     #[allow(missing_docs)] // documentation missing in model
     Successful,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for LastUpdateStatus {
     fn from(s: &str) -> Self {
@@ -1833,17 +1696,17 @@ impl std::convert::From<&str> for LastUpdateStatus {
             "Failed" => LastUpdateStatus::Failed,
             "InProgress" => LastUpdateStatus::InProgress,
             "Successful" => LastUpdateStatus::Successful,
-            other => LastUpdateStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => LastUpdateStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for LastUpdateStatus {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(LastUpdateStatus::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(LastUpdateStatus::from(s))
+                }
+            }
 impl LastUpdateStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -1851,12 +1714,14 @@ impl LastUpdateStatus {
             LastUpdateStatus::Failed => "Failed",
             LastUpdateStatus::InProgress => "InProgress",
             LastUpdateStatus::Successful => "Successful",
-            LastUpdateStatus::Unknown(value) => value.as_str(),
+            LastUpdateStatus::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["Failed", "InProgress", "Successful"]
+        &[
+            "Failed", "InProgress", "Successful"
+        ]
     }
 }
 impl AsRef<str> for LastUpdateStatus {
@@ -1871,9 +1736,9 @@ impl AsRef<str> for LastUpdateStatus {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let statereasoncode = unimplemented!();
 /// match statereasoncode {
@@ -1917,22 +1782,14 @@ impl AsRef<str> for LastUpdateStatus {
 /// Specifically, when `statereasoncode` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `StateReasonCode::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum StateReasonCode {
     #[allow(missing_docs)] // documentation missing in model
     Creating,
@@ -1983,7 +1840,7 @@ pub enum StateReasonCode {
     #[allow(missing_docs)] // documentation missing in model
     SubnetOutOfIpAddresses,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for StateReasonCode {
     fn from(s: &str) -> Self {
@@ -2012,17 +1869,17 @@ impl std::convert::From<&str> for StateReasonCode {
             "KMSKeyNotFound" => StateReasonCode::KmsKeyNotFound,
             "Restoring" => StateReasonCode::Restoring,
             "SubnetOutOfIPAddresses" => StateReasonCode::SubnetOutOfIpAddresses,
-            other => StateReasonCode::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => StateReasonCode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for StateReasonCode {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(StateReasonCode::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(StateReasonCode::from(s))
+                }
+            }
 impl StateReasonCode {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -2051,36 +1908,13 @@ impl StateReasonCode {
             StateReasonCode::KmsKeyNotFound => "KMSKeyNotFound",
             StateReasonCode::Restoring => "Restoring",
             StateReasonCode::SubnetOutOfIpAddresses => "SubnetOutOfIPAddresses",
-            StateReasonCode::Unknown(value) => value.as_str(),
+            StateReasonCode::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "Creating",
-            "DisabledKMSKey",
-            "EFSIOError",
-            "EFSMountConnectivityError",
-            "EFSMountFailure",
-            "EFSMountTimeout",
-            "EniLimitExceeded",
-            "FunctionError",
-            "Idle",
-            "ImageAccessDenied",
-            "ImageDeleted",
-            "InsufficientRolePermissions",
-            "InternalError",
-            "InvalidConfiguration",
-            "InvalidImage",
-            "InvalidRuntime",
-            "InvalidSecurityGroup",
-            "InvalidStateKMSKey",
-            "InvalidSubnet",
-            "InvalidZipFileException",
-            "KMSKeyAccessDenied",
-            "KMSKeyNotFound",
-            "Restoring",
-            "SubnetOutOfIPAddresses",
+            "Creating", "DisabledKMSKey", "EFSIOError", "EFSMountConnectivityError", "EFSMountFailure", "EFSMountTimeout", "EniLimitExceeded", "FunctionError", "Idle", "ImageAccessDenied", "ImageDeleted", "InsufficientRolePermissions", "InternalError", "InvalidConfiguration", "InvalidImage", "InvalidRuntime", "InvalidSecurityGroup", "InvalidStateKMSKey", "InvalidSubnet", "InvalidZipFileException", "KMSKeyAccessDenied", "KMSKeyNotFound", "Restoring", "SubnetOutOfIPAddresses"
         ]
     }
 }
@@ -2096,9 +1930,9 @@ impl AsRef<str> for StateReasonCode {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let state = unimplemented!();
 /// match state {
@@ -2122,22 +1956,14 @@ impl AsRef<str> for StateReasonCode {
 /// Specifically, when `state` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `State::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum State {
     #[allow(missing_docs)] // documentation missing in model
     Active,
@@ -2148,7 +1974,7 @@ pub enum State {
     #[allow(missing_docs)] // documentation missing in model
     Pending,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for State {
     fn from(s: &str) -> Self {
@@ -2157,17 +1983,17 @@ impl std::convert::From<&str> for State {
             "Failed" => State::Failed,
             "Inactive" => State::Inactive,
             "Pending" => State::Pending,
-            other => State::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => State::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for State {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(State::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(State::from(s))
+                }
+            }
 impl State {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -2176,12 +2002,14 @@ impl State {
             State::Failed => "Failed",
             State::Inactive => "Inactive",
             State::Pending => "Pending",
-            State::Unknown(value) => value.as_str(),
+            State::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["Active", "Failed", "Inactive", "Pending"]
+        &[
+            "Active", "Failed", "Inactive", "Pending"
+        ]
     }
 }
 impl AsRef<str> for State {
@@ -2193,7 +2021,7 @@ impl AsRef<str> for State {
 /// <p>An <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">Lambda layer</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Layer {
+pub struct Layer  {
     /// <p>The Amazon Resource Name (ARN) of the function layer.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -2209,7 +2037,7 @@ pub struct Layer {
 }
 impl Layer {
     /// <p>The Amazon Resource Name (ARN) of the function layer.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The size of the layer archive in bytes.</p>
@@ -2217,17 +2045,17 @@ impl Layer {
         self.code_size
     }
     /// <p>The Amazon Resource Name (ARN) for a signing profile version.</p>
-    pub fn signing_profile_version_arn(&self) -> std::option::Option<&str> {
+    pub fn signing_profile_version_arn(&self) -> std::option::Option<& str> {
         self.signing_profile_version_arn.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of a signing job.</p>
-    pub fn signing_job_arn(&self) -> std::option::Option<&str> {
+    pub fn signing_job_arn(&self) -> std::option::Option<& str> {
         self.signing_job_arn.as_deref()
     }
 }
 /// See [`Layer`](crate::model::Layer).
 pub mod layer {
-
+    
     /// A builder for [`Layer`](crate::model::Layer).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2244,8 +2072,7 @@ pub mod layer {
         }
         /// <p>The Amazon Resource Name (ARN) of the function layer.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>The size of the layer archive in bytes.</p>
         pub fn code_size(mut self, input: i64) -> Self {
@@ -2254,24 +2081,16 @@ pub mod layer {
         }
         /// <p>The size of the layer archive in bytes.</p>
         pub fn set_code_size(mut self, input: std::option::Option<i64>) -> Self {
-            self.code_size = input;
-            self
+            self.code_size = input; self
         }
         /// <p>The Amazon Resource Name (ARN) for a signing profile version.</p>
-        pub fn signing_profile_version_arn(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn signing_profile_version_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.signing_profile_version_arn = Some(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) for a signing profile version.</p>
-        pub fn set_signing_profile_version_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.signing_profile_version_arn = input;
-            self
+        pub fn set_signing_profile_version_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.signing_profile_version_arn = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of a signing job.</p>
         pub fn signing_job_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2279,23 +2098,26 @@ pub mod layer {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of a signing job.</p>
-        pub fn set_signing_job_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.signing_job_arn = input;
-            self
+        pub fn set_signing_job_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.signing_job_arn = input; self
         }
         /// Consumes the builder and constructs a [`Layer`](crate::model::Layer).
         pub fn build(self) -> crate::model::Layer {
             crate::model::Layer {
-                arn: self.arn,
-                code_size: self.code_size.unwrap_or_default(),
-                signing_profile_version_arn: self.signing_profile_version_arn,
-                signing_job_arn: self.signing_job_arn,
+                arn: self.arn
+                ,
+                code_size: self.code_size
+                    .unwrap_or_default()
+                ,
+                signing_profile_version_arn: self.signing_profile_version_arn
+                ,
+                signing_job_arn: self.signing_job_arn
+                ,
             }
         }
     }
+    
+    
 }
 impl Layer {
     /// Creates a new builder-style object to manufacture [`Layer`](crate::model::Layer).
@@ -2307,20 +2129,20 @@ impl Layer {
 /// <p>The function's X-Ray tracing configuration.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TracingConfigResponse {
+pub struct TracingConfigResponse  {
     /// <p>The tracing mode.</p>
     #[doc(hidden)]
     pub mode: std::option::Option<crate::model::TracingMode>,
 }
 impl TracingConfigResponse {
     /// <p>The tracing mode.</p>
-    pub fn mode(&self) -> std::option::Option<&crate::model::TracingMode> {
+    pub fn mode(&self) -> std::option::Option<& crate::model::TracingMode> {
         self.mode.as_ref()
     }
 }
 /// See [`TracingConfigResponse`](crate::model::TracingConfigResponse).
 pub mod tracing_config_response {
-
+    
     /// A builder for [`TracingConfigResponse`](crate::model::TracingConfigResponse).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2334,14 +2156,18 @@ pub mod tracing_config_response {
         }
         /// <p>The tracing mode.</p>
         pub fn set_mode(mut self, input: std::option::Option<crate::model::TracingMode>) -> Self {
-            self.mode = input;
-            self
+            self.mode = input; self
         }
         /// Consumes the builder and constructs a [`TracingConfigResponse`](crate::model::TracingConfigResponse).
         pub fn build(self) -> crate::model::TracingConfigResponse {
-            crate::model::TracingConfigResponse { mode: self.mode }
+            crate::model::TracingConfigResponse {
+                mode: self.mode
+                ,
+            }
         }
     }
+    
+    
 }
 impl TracingConfigResponse {
     /// Creates a new builder-style object to manufacture [`TracingConfigResponse`](crate::model::TracingConfigResponse).
@@ -2356,9 +2182,9 @@ impl TracingConfigResponse {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let tracingmode = unimplemented!();
 /// match tracingmode {
@@ -2380,58 +2206,52 @@ impl TracingConfigResponse {
 /// Specifically, when `tracingmode` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `TracingMode::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum TracingMode {
     #[allow(missing_docs)] // documentation missing in model
     Active,
     #[allow(missing_docs)] // documentation missing in model
     PassThrough,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for TracingMode {
     fn from(s: &str) -> Self {
         match s {
             "Active" => TracingMode::Active,
             "PassThrough" => TracingMode::PassThrough,
-            other => TracingMode::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => TracingMode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for TracingMode {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(TracingMode::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(TracingMode::from(s))
+                }
+            }
 impl TracingMode {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             TracingMode::Active => "Active",
             TracingMode::PassThrough => "PassThrough",
-            TracingMode::Unknown(value) => value.as_str(),
+            TracingMode::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["Active", "PassThrough"]
+        &[
+            "Active", "PassThrough"
+        ]
     }
 }
 impl AsRef<str> for TracingMode {
@@ -2443,29 +2263,25 @@ impl AsRef<str> for TracingMode {
 /// <p>The results of an operation to update or read environment variables. If the operation succeeds, the response contains the environment variables. If it fails, the response contains details about the error.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct EnvironmentResponse {
+pub struct EnvironmentResponse  {
     /// <p>Environment variable key-value pairs. Omitted from CloudTrail logs.</p>
     #[doc(hidden)]
-    pub variables:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub variables: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>Error messages for environment variables that couldn't be applied.</p>
     #[doc(hidden)]
     pub error: std::option::Option<crate::model::EnvironmentError>,
 }
 impl EnvironmentResponse {
     /// <p>Environment variable key-value pairs. Omitted from CloudTrail logs.</p>
-    pub fn variables(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn variables(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.variables.as_ref()
     }
     /// <p>Error messages for environment variables that couldn't be applied.</p>
-    pub fn error(&self) -> std::option::Option<&crate::model::EnvironmentError> {
+    pub fn error(&self) -> std::option::Option<& crate::model::EnvironmentError> {
         self.error.as_ref()
     }
 }
-impl std::fmt::Debug for EnvironmentResponse {
+impl  std::fmt::Debug for EnvironmentResponse  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("EnvironmentResponse");
         formatter.field("variables", &"*** Sensitive Data Redacted ***");
@@ -2475,13 +2291,11 @@ impl std::fmt::Debug for EnvironmentResponse {
 }
 /// See [`EnvironmentResponse`](crate::model::EnvironmentResponse).
 pub mod environment_response {
-
+    
     /// A builder for [`EnvironmentResponse`](crate::model::EnvironmentResponse).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
-        pub(crate) variables: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) variables: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
         pub(crate) error: std::option::Option<crate::model::EnvironmentError>,
     }
     impl Builder {
@@ -2490,25 +2304,15 @@ pub mod environment_response {
         /// To override the contents of this collection use [`set_variables`](Self::set_variables).
         ///
         /// <p>Environment variable key-value pairs. Omitted from CloudTrail logs.</p>
-        pub fn variables(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn variables(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.variables.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.variables = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.variables = Some(hash_map);
+                            self
         }
         /// <p>Environment variable key-value pairs. Omitted from CloudTrail logs.</p>
-        pub fn set_variables(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.variables = input;
-            self
+        pub fn set_variables(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.variables = input; self
         }
         /// <p>Error messages for environment variables that couldn't be applied.</p>
         pub fn error(mut self, input: crate::model::EnvironmentError) -> Self {
@@ -2516,18 +2320,16 @@ pub mod environment_response {
             self
         }
         /// <p>Error messages for environment variables that couldn't be applied.</p>
-        pub fn set_error(
-            mut self,
-            input: std::option::Option<crate::model::EnvironmentError>,
-        ) -> Self {
-            self.error = input;
-            self
+        pub fn set_error(mut self, input: std::option::Option<crate::model::EnvironmentError>) -> Self {
+            self.error = input; self
         }
         /// Consumes the builder and constructs a [`EnvironmentResponse`](crate::model::EnvironmentResponse).
         pub fn build(self) -> crate::model::EnvironmentResponse {
             crate::model::EnvironmentResponse {
-                variables: self.variables,
-                error: self.error,
+                variables: self.variables
+                ,
+                error: self.error
+                ,
             }
         }
     }
@@ -2539,6 +2341,8 @@ pub mod environment_response {
             formatter.finish()
         }
     }
+    
+    
 }
 impl EnvironmentResponse {
     /// Creates a new builder-style object to manufacture [`EnvironmentResponse`](crate::model::EnvironmentResponse).
@@ -2550,7 +2354,7 @@ impl EnvironmentResponse {
 /// <p>Error messages for environment variables that couldn't be applied.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct EnvironmentError {
+pub struct EnvironmentError  {
     /// <p>The error code.</p>
     #[doc(hidden)]
     pub error_code: std::option::Option<std::string::String>,
@@ -2560,15 +2364,15 @@ pub struct EnvironmentError {
 }
 impl EnvironmentError {
     /// <p>The error code.</p>
-    pub fn error_code(&self) -> std::option::Option<&str> {
+    pub fn error_code(&self) -> std::option::Option<& str> {
         self.error_code.as_deref()
     }
     /// <p>The error message.</p>
-    pub fn message(&self) -> std::option::Option<&str> {
+    pub fn message(&self) -> std::option::Option<& str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Debug for EnvironmentError {
+impl  std::fmt::Debug for EnvironmentError  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("EnvironmentError");
         formatter.field("error_code", &self.error_code);
@@ -2578,7 +2382,7 @@ impl std::fmt::Debug for EnvironmentError {
 }
 /// See [`EnvironmentError`](crate::model::EnvironmentError).
 pub mod environment_error {
-
+    
     /// A builder for [`EnvironmentError`](crate::model::EnvironmentError).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
@@ -2593,8 +2397,7 @@ pub mod environment_error {
         }
         /// <p>The error code.</p>
         pub fn set_error_code(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.error_code = input;
-            self
+            self.error_code = input; self
         }
         /// <p>The error message.</p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2603,14 +2406,15 @@ pub mod environment_error {
         }
         /// <p>The error message.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`EnvironmentError`](crate::model::EnvironmentError).
         pub fn build(self) -> crate::model::EnvironmentError {
             crate::model::EnvironmentError {
-                error_code: self.error_code,
-                message: self.message,
+                error_code: self.error_code
+                ,
+                message: self.message
+                ,
             }
         }
     }
@@ -2622,6 +2426,8 @@ pub mod environment_error {
             formatter.finish()
         }
     }
+    
+    
 }
 impl EnvironmentError {
     /// Creates a new builder-style object to manufacture [`EnvironmentError`](crate::model::EnvironmentError).
@@ -2633,20 +2439,20 @@ impl EnvironmentError {
 /// <p>The <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-async.html#dlq">dead-letter queue</a> for failed asynchronous invocations.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeadLetterConfig {
+pub struct DeadLetterConfig  {
     /// <p>The Amazon Resource Name (ARN) of an Amazon SQS queue or Amazon SNS topic.</p>
     #[doc(hidden)]
     pub target_arn: std::option::Option<std::string::String>,
 }
 impl DeadLetterConfig {
     /// <p>The Amazon Resource Name (ARN) of an Amazon SQS queue or Amazon SNS topic.</p>
-    pub fn target_arn(&self) -> std::option::Option<&str> {
+    pub fn target_arn(&self) -> std::option::Option<& str> {
         self.target_arn.as_deref()
     }
 }
 /// See [`DeadLetterConfig`](crate::model::DeadLetterConfig).
 pub mod dead_letter_config {
-
+    
     /// A builder for [`DeadLetterConfig`](crate::model::DeadLetterConfig).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2660,16 +2466,18 @@ pub mod dead_letter_config {
         }
         /// <p>The Amazon Resource Name (ARN) of an Amazon SQS queue or Amazon SNS topic.</p>
         pub fn set_target_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.target_arn = input;
-            self
+            self.target_arn = input; self
         }
         /// Consumes the builder and constructs a [`DeadLetterConfig`](crate::model::DeadLetterConfig).
         pub fn build(self) -> crate::model::DeadLetterConfig {
             crate::model::DeadLetterConfig {
-                target_arn: self.target_arn,
+                target_arn: self.target_arn
+                ,
             }
         }
     }
+    
+    
 }
 impl DeadLetterConfig {
     /// Creates a new builder-style object to manufacture [`DeadLetterConfig`](crate::model::DeadLetterConfig).
@@ -2681,7 +2489,7 @@ impl DeadLetterConfig {
 /// <p>The VPC security groups and subnets that are attached to a Lambda function.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct VpcConfigResponse {
+pub struct VpcConfigResponse  {
     /// <p>A list of VPC subnet IDs.</p>
     #[doc(hidden)]
     pub subnet_ids: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2694,21 +2502,21 @@ pub struct VpcConfigResponse {
 }
 impl VpcConfigResponse {
     /// <p>A list of VPC subnet IDs.</p>
-    pub fn subnet_ids(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn subnet_ids(&self) -> std::option::Option<& [std::string::String]> {
         self.subnet_ids.as_deref()
     }
     /// <p>A list of VPC security group IDs.</p>
-    pub fn security_group_ids(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn security_group_ids(&self) -> std::option::Option<& [std::string::String]> {
         self.security_group_ids.as_deref()
     }
     /// <p>The ID of the VPC.</p>
-    pub fn vpc_id(&self) -> std::option::Option<&str> {
+    pub fn vpc_id(&self) -> std::option::Option<& str> {
         self.vpc_id.as_deref()
     }
 }
 /// See [`VpcConfigResponse`](crate::model::VpcConfigResponse).
 pub mod vpc_config_response {
-
+    
     /// A builder for [`VpcConfigResponse`](crate::model::VpcConfigResponse).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2724,17 +2532,13 @@ pub mod vpc_config_response {
         /// <p>A list of VPC subnet IDs.</p>
         pub fn subnet_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.subnet_ids.unwrap_or_default();
-            v.push(input.into());
-            self.subnet_ids = Some(v);
-            self
+                            v.push(input.into());
+                            self.subnet_ids = Some(v);
+                            self
         }
         /// <p>A list of VPC subnet IDs.</p>
-        pub fn set_subnet_ids(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.subnet_ids = input;
-            self
+        pub fn set_subnet_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.subnet_ids = input; self
         }
         /// Appends an item to `security_group_ids`.
         ///
@@ -2743,17 +2547,13 @@ pub mod vpc_config_response {
         /// <p>A list of VPC security group IDs.</p>
         pub fn security_group_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.security_group_ids.unwrap_or_default();
-            v.push(input.into());
-            self.security_group_ids = Some(v);
-            self
+                            v.push(input.into());
+                            self.security_group_ids = Some(v);
+                            self
         }
         /// <p>A list of VPC security group IDs.</p>
-        pub fn set_security_group_ids(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.security_group_ids = input;
-            self
+        pub fn set_security_group_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.security_group_ids = input; self
         }
         /// <p>The ID of the VPC.</p>
         pub fn vpc_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2762,18 +2562,22 @@ pub mod vpc_config_response {
         }
         /// <p>The ID of the VPC.</p>
         pub fn set_vpc_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.vpc_id = input;
-            self
+            self.vpc_id = input; self
         }
         /// Consumes the builder and constructs a [`VpcConfigResponse`](crate::model::VpcConfigResponse).
         pub fn build(self) -> crate::model::VpcConfigResponse {
             crate::model::VpcConfigResponse {
-                subnet_ids: self.subnet_ids,
-                security_group_ids: self.security_group_ids,
-                vpc_id: self.vpc_id,
+                subnet_ids: self.subnet_ids
+                ,
+                security_group_ids: self.security_group_ids
+                ,
+                vpc_id: self.vpc_id
+                ,
             }
         }
     }
+    
+    
 }
 impl VpcConfigResponse {
     /// Creates a new builder-style object to manufacture [`VpcConfigResponse`](crate::model::VpcConfigResponse).
@@ -2788,9 +2592,9 @@ impl VpcConfigResponse {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let runtime = unimplemented!();
 /// match runtime {
@@ -2838,22 +2642,14 @@ impl VpcConfigResponse {
 /// Specifically, when `runtime` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `Runtime::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum Runtime {
     #[allow(missing_docs)] // documentation missing in model
     Dotnet6,
@@ -2912,7 +2708,7 @@ pub enum Runtime {
     #[allow(missing_docs)] // documentation missing in model
     Ruby27,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for Runtime {
     fn from(s: &str) -> Self {
@@ -2945,17 +2741,17 @@ impl std::convert::From<&str> for Runtime {
             "python3.9" => Runtime::Python39,
             "ruby2.5" => Runtime::Ruby25,
             "ruby2.7" => Runtime::Ruby27,
-            other => Runtime::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => Runtime::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for Runtime {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(Runtime::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(Runtime::from(s))
+                }
+            }
 impl Runtime {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -2988,40 +2784,13 @@ impl Runtime {
             Runtime::Python39 => "python3.9",
             Runtime::Ruby25 => "ruby2.5",
             Runtime::Ruby27 => "ruby2.7",
-            Runtime::Unknown(value) => value.as_str(),
+            Runtime::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "dotnet6",
-            "dotnetcore1.0",
-            "dotnetcore2.0",
-            "dotnetcore2.1",
-            "dotnetcore3.1",
-            "go1.x",
-            "java11",
-            "java8",
-            "java8.al2",
-            "nodejs",
-            "nodejs10.x",
-            "nodejs12.x",
-            "nodejs14.x",
-            "nodejs16.x",
-            "nodejs18.x",
-            "nodejs4.3",
-            "nodejs4.3-edge",
-            "nodejs6.10",
-            "nodejs8.10",
-            "provided",
-            "provided.al2",
-            "python2.7",
-            "python3.6",
-            "python3.7",
-            "python3.8",
-            "python3.9",
-            "ruby2.5",
-            "ruby2.7",
+            "dotnet6", "dotnetcore1.0", "dotnetcore2.0", "dotnetcore2.1", "dotnetcore3.1", "go1.x", "java11", "java8", "java8.al2", "nodejs", "nodejs10.x", "nodejs12.x", "nodejs14.x", "nodejs16.x", "nodejs18.x", "nodejs4.3", "nodejs4.3-edge", "nodejs6.10", "nodejs8.10", "provided", "provided.al2", "python2.7", "python3.6", "python3.7", "python3.8", "python3.9", "ruby2.5", "ruby2.7"
         ]
     }
 }
@@ -3031,24 +2800,24 @@ impl AsRef<str> for Runtime {
     }
 }
 
-/// <p>The function's Lambda SnapStart setting. Set <code>ApplyOn</code> to <code>PublishedVersions</code> to create a snapshot of the initialized execution environment when you publish a function version.</p>
+/// <p>The function's Lambda SnapStart setting. Set <code>ApplyOn</code> to <code>PublishedVersions</code> to create a snapshot of the initialized execution environment when you publish a function version.</p> 
 /// <p>SnapStart is supported with the <code>java11</code> runtime. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/snapstart.html">Improving startup performance with Lambda SnapStart</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SnapStart {
+pub struct SnapStart  {
     /// <p>Set to <code>PublishedVersions</code> to create a snapshot of the initialized execution environment when you publish a function version.</p>
     #[doc(hidden)]
     pub apply_on: std::option::Option<crate::model::SnapStartApplyOn>,
 }
 impl SnapStart {
     /// <p>Set to <code>PublishedVersions</code> to create a snapshot of the initialized execution environment when you publish a function version.</p>
-    pub fn apply_on(&self) -> std::option::Option<&crate::model::SnapStartApplyOn> {
+    pub fn apply_on(&self) -> std::option::Option<& crate::model::SnapStartApplyOn> {
         self.apply_on.as_ref()
     }
 }
 /// See [`SnapStart`](crate::model::SnapStart).
 pub mod snap_start {
-
+    
     /// A builder for [`SnapStart`](crate::model::SnapStart).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3061,20 +2830,19 @@ pub mod snap_start {
             self
         }
         /// <p>Set to <code>PublishedVersions</code> to create a snapshot of the initialized execution environment when you publish a function version.</p>
-        pub fn set_apply_on(
-            mut self,
-            input: std::option::Option<crate::model::SnapStartApplyOn>,
-        ) -> Self {
-            self.apply_on = input;
-            self
+        pub fn set_apply_on(mut self, input: std::option::Option<crate::model::SnapStartApplyOn>) -> Self {
+            self.apply_on = input; self
         }
         /// Consumes the builder and constructs a [`SnapStart`](crate::model::SnapStart).
         pub fn build(self) -> crate::model::SnapStart {
             crate::model::SnapStart {
-                apply_on: self.apply_on,
+                apply_on: self.apply_on
+                ,
             }
         }
     }
+    
+    
 }
 impl SnapStart {
     /// Creates a new builder-style object to manufacture [`SnapStart`](crate::model::SnapStart).
@@ -3086,20 +2854,20 @@ impl SnapStart {
 /// <p>The function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/services-xray.html">X-Ray</a> tracing configuration. To sample and record incoming requests, set <code>Mode</code> to <code>Active</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TracingConfig {
+pub struct TracingConfig  {
     /// <p>The tracing mode.</p>
     #[doc(hidden)]
     pub mode: std::option::Option<crate::model::TracingMode>,
 }
 impl TracingConfig {
     /// <p>The tracing mode.</p>
-    pub fn mode(&self) -> std::option::Option<&crate::model::TracingMode> {
+    pub fn mode(&self) -> std::option::Option<& crate::model::TracingMode> {
         self.mode.as_ref()
     }
 }
 /// See [`TracingConfig`](crate::model::TracingConfig).
 pub mod tracing_config {
-
+    
     /// A builder for [`TracingConfig`](crate::model::TracingConfig).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3113,14 +2881,18 @@ pub mod tracing_config {
         }
         /// <p>The tracing mode.</p>
         pub fn set_mode(mut self, input: std::option::Option<crate::model::TracingMode>) -> Self {
-            self.mode = input;
-            self
+            self.mode = input; self
         }
         /// Consumes the builder and constructs a [`TracingConfig`](crate::model::TracingConfig).
         pub fn build(self) -> crate::model::TracingConfig {
-            crate::model::TracingConfig { mode: self.mode }
+            crate::model::TracingConfig {
+                mode: self.mode
+                ,
+            }
         }
     }
+    
+    
 }
 impl TracingConfig {
     /// Creates a new builder-style object to manufacture [`TracingConfig`](crate::model::TracingConfig).
@@ -3132,22 +2904,18 @@ impl TracingConfig {
 /// <p>A function's environment variable settings. You can use environment variables to adjust your function's behavior without updating code. An environment variable is a pair of strings that are stored in a function's version-specific configuration.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct Environment {
+pub struct Environment  {
     /// <p>Environment variable key-value pairs. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars.html">Using Lambda environment variables</a>.</p>
     #[doc(hidden)]
-    pub variables:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub variables: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl Environment {
     /// <p>Environment variable key-value pairs. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars.html">Using Lambda environment variables</a>.</p>
-    pub fn variables(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn variables(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.variables.as_ref()
     }
 }
-impl std::fmt::Debug for Environment {
+impl  std::fmt::Debug for Environment  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Environment");
         formatter.field("variables", &"*** Sensitive Data Redacted ***");
@@ -3156,13 +2924,11 @@ impl std::fmt::Debug for Environment {
 }
 /// See [`Environment`](crate::model::Environment).
 pub mod environment {
-
+    
     /// A builder for [`Environment`](crate::model::Environment).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
-        pub(crate) variables: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) variables: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     }
     impl Builder {
         /// Adds a key-value pair to `variables`.
@@ -3170,30 +2936,21 @@ pub mod environment {
         /// To override the contents of this collection use [`set_variables`](Self::set_variables).
         ///
         /// <p>Environment variable key-value pairs. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars.html">Using Lambda environment variables</a>.</p>
-        pub fn variables(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn variables(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.variables.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.variables = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.variables = Some(hash_map);
+                            self
         }
         /// <p>Environment variable key-value pairs. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars.html">Using Lambda environment variables</a>.</p>
-        pub fn set_variables(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.variables = input;
-            self
+        pub fn set_variables(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.variables = input; self
         }
         /// Consumes the builder and constructs a [`Environment`](crate::model::Environment).
         pub fn build(self) -> crate::model::Environment {
             crate::model::Environment {
-                variables: self.variables,
+                variables: self.variables
+                ,
             }
         }
     }
@@ -3204,6 +2961,8 @@ pub mod environment {
             formatter.finish()
         }
     }
+    
+    
 }
 impl Environment {
     /// Creates a new builder-style object to manufacture [`Environment`](crate::model::Environment).
@@ -3215,7 +2974,7 @@ impl Environment {
 /// <p>The VPC security groups and subnets that are attached to a Lambda function. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-vpc.html">Configuring a Lambda function to access resources in a VPC</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct VpcConfig {
+pub struct VpcConfig  {
     /// <p>A list of VPC subnet IDs.</p>
     #[doc(hidden)]
     pub subnet_ids: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3225,17 +2984,17 @@ pub struct VpcConfig {
 }
 impl VpcConfig {
     /// <p>A list of VPC subnet IDs.</p>
-    pub fn subnet_ids(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn subnet_ids(&self) -> std::option::Option<& [std::string::String]> {
         self.subnet_ids.as_deref()
     }
     /// <p>A list of VPC security group IDs.</p>
-    pub fn security_group_ids(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn security_group_ids(&self) -> std::option::Option<& [std::string::String]> {
         self.security_group_ids.as_deref()
     }
 }
 /// See [`VpcConfig`](crate::model::VpcConfig).
 pub mod vpc_config {
-
+    
     /// A builder for [`VpcConfig`](crate::model::VpcConfig).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3250,17 +3009,13 @@ pub mod vpc_config {
         /// <p>A list of VPC subnet IDs.</p>
         pub fn subnet_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.subnet_ids.unwrap_or_default();
-            v.push(input.into());
-            self.subnet_ids = Some(v);
-            self
+                            v.push(input.into());
+                            self.subnet_ids = Some(v);
+                            self
         }
         /// <p>A list of VPC subnet IDs.</p>
-        pub fn set_subnet_ids(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.subnet_ids = input;
-            self
+        pub fn set_subnet_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.subnet_ids = input; self
         }
         /// Appends an item to `security_group_ids`.
         ///
@@ -3269,26 +3024,26 @@ pub mod vpc_config {
         /// <p>A list of VPC security group IDs.</p>
         pub fn security_group_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.security_group_ids.unwrap_or_default();
-            v.push(input.into());
-            self.security_group_ids = Some(v);
-            self
+                            v.push(input.into());
+                            self.security_group_ids = Some(v);
+                            self
         }
         /// <p>A list of VPC security group IDs.</p>
-        pub fn set_security_group_ids(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.security_group_ids = input;
-            self
+        pub fn set_security_group_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.security_group_ids = input; self
         }
         /// Consumes the builder and constructs a [`VpcConfig`](crate::model::VpcConfig).
         pub fn build(self) -> crate::model::VpcConfig {
             crate::model::VpcConfig {
-                subnet_ids: self.subnet_ids,
-                security_group_ids: self.security_group_ids,
+                subnet_ids: self.subnet_ids
+                ,
+                security_group_ids: self.security_group_ids
+                ,
             }
         }
     }
+    
+    
 }
 impl VpcConfig {
     /// Creates a new builder-style object to manufacture [`VpcConfig`](crate::model::VpcConfig).
@@ -3300,7 +3055,7 @@ impl VpcConfig {
 /// <p>(Amazon SQS only) The scaling configuration for the event source. To remove the configuration, pass an empty value.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ScalingConfig {
+pub struct ScalingConfig  {
     /// <p>Limits the number of concurrent instances that the Amazon SQS event source can invoke.</p>
     #[doc(hidden)]
     pub maximum_concurrency: std::option::Option<i32>,
@@ -3313,7 +3068,7 @@ impl ScalingConfig {
 }
 /// See [`ScalingConfig`](crate::model::ScalingConfig).
 pub mod scaling_config {
-
+    
     /// A builder for [`ScalingConfig`](crate::model::ScalingConfig).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3327,16 +3082,18 @@ pub mod scaling_config {
         }
         /// <p>Limits the number of concurrent instances that the Amazon SQS event source can invoke.</p>
         pub fn set_maximum_concurrency(mut self, input: std::option::Option<i32>) -> Self {
-            self.maximum_concurrency = input;
-            self
+            self.maximum_concurrency = input; self
         }
         /// Consumes the builder and constructs a [`ScalingConfig`](crate::model::ScalingConfig).
         pub fn build(self) -> crate::model::ScalingConfig {
             crate::model::ScalingConfig {
-                maximum_concurrency: self.maximum_concurrency,
+                maximum_concurrency: self.maximum_concurrency
+                ,
             }
         }
     }
+    
+    
 }
 impl ScalingConfig {
     /// Creates a new builder-style object to manufacture [`ScalingConfig`](crate::model::ScalingConfig).
@@ -3348,20 +3105,20 @@ impl ScalingConfig {
 /// <p>Specific configuration settings for a self-managed Apache Kafka event source.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SelfManagedKafkaEventSourceConfig {
+pub struct SelfManagedKafkaEventSourceConfig  {
     /// <p>The identifier for the Kafka consumer group to join. The consumer group ID must be unique among all your Kafka event sources. After creating a Kafka event source mapping with the consumer group ID specified, you cannot update this value. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/with-msk.html#services-msk-consumer-group-id">Customizable consumer group ID</a>.</p>
     #[doc(hidden)]
     pub consumer_group_id: std::option::Option<std::string::String>,
 }
 impl SelfManagedKafkaEventSourceConfig {
     /// <p>The identifier for the Kafka consumer group to join. The consumer group ID must be unique among all your Kafka event sources. After creating a Kafka event source mapping with the consumer group ID specified, you cannot update this value. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/with-msk.html#services-msk-consumer-group-id">Customizable consumer group ID</a>.</p>
-    pub fn consumer_group_id(&self) -> std::option::Option<&str> {
+    pub fn consumer_group_id(&self) -> std::option::Option<& str> {
         self.consumer_group_id.as_deref()
     }
 }
 /// See [`SelfManagedKafkaEventSourceConfig`](crate::model::SelfManagedKafkaEventSourceConfig).
 pub mod self_managed_kafka_event_source_config {
-
+    
     /// A builder for [`SelfManagedKafkaEventSourceConfig`](crate::model::SelfManagedKafkaEventSourceConfig).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3374,20 +3131,19 @@ pub mod self_managed_kafka_event_source_config {
             self
         }
         /// <p>The identifier for the Kafka consumer group to join. The consumer group ID must be unique among all your Kafka event sources. After creating a Kafka event source mapping with the consumer group ID specified, you cannot update this value. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/with-msk.html#services-msk-consumer-group-id">Customizable consumer group ID</a>.</p>
-        pub fn set_consumer_group_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.consumer_group_id = input;
-            self
+        pub fn set_consumer_group_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.consumer_group_id = input; self
         }
         /// Consumes the builder and constructs a [`SelfManagedKafkaEventSourceConfig`](crate::model::SelfManagedKafkaEventSourceConfig).
         pub fn build(self) -> crate::model::SelfManagedKafkaEventSourceConfig {
             crate::model::SelfManagedKafkaEventSourceConfig {
-                consumer_group_id: self.consumer_group_id,
+                consumer_group_id: self.consumer_group_id
+                ,
             }
         }
     }
+    
+    
 }
 impl SelfManagedKafkaEventSourceConfig {
     /// Creates a new builder-style object to manufacture [`SelfManagedKafkaEventSourceConfig`](crate::model::SelfManagedKafkaEventSourceConfig).
@@ -3399,20 +3155,20 @@ impl SelfManagedKafkaEventSourceConfig {
 /// <p>Specific configuration settings for an Amazon Managed Streaming for Apache Kafka (Amazon MSK) event source.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AmazonManagedKafkaEventSourceConfig {
+pub struct AmazonManagedKafkaEventSourceConfig  {
     /// <p>The identifier for the Kafka consumer group to join. The consumer group ID must be unique among all your Kafka event sources. After creating a Kafka event source mapping with the consumer group ID specified, you cannot update this value. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/with-msk.html#services-msk-consumer-group-id">Customizable consumer group ID</a>.</p>
     #[doc(hidden)]
     pub consumer_group_id: std::option::Option<std::string::String>,
 }
 impl AmazonManagedKafkaEventSourceConfig {
     /// <p>The identifier for the Kafka consumer group to join. The consumer group ID must be unique among all your Kafka event sources. After creating a Kafka event source mapping with the consumer group ID specified, you cannot update this value. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/with-msk.html#services-msk-consumer-group-id">Customizable consumer group ID</a>.</p>
-    pub fn consumer_group_id(&self) -> std::option::Option<&str> {
+    pub fn consumer_group_id(&self) -> std::option::Option<& str> {
         self.consumer_group_id.as_deref()
     }
 }
 /// See [`AmazonManagedKafkaEventSourceConfig`](crate::model::AmazonManagedKafkaEventSourceConfig).
 pub mod amazon_managed_kafka_event_source_config {
-
+    
     /// A builder for [`AmazonManagedKafkaEventSourceConfig`](crate::model::AmazonManagedKafkaEventSourceConfig).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3425,20 +3181,19 @@ pub mod amazon_managed_kafka_event_source_config {
             self
         }
         /// <p>The identifier for the Kafka consumer group to join. The consumer group ID must be unique among all your Kafka event sources. After creating a Kafka event source mapping with the consumer group ID specified, you cannot update this value. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/with-msk.html#services-msk-consumer-group-id">Customizable consumer group ID</a>.</p>
-        pub fn set_consumer_group_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.consumer_group_id = input;
-            self
+        pub fn set_consumer_group_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.consumer_group_id = input; self
         }
         /// Consumes the builder and constructs a [`AmazonManagedKafkaEventSourceConfig`](crate::model::AmazonManagedKafkaEventSourceConfig).
         pub fn build(self) -> crate::model::AmazonManagedKafkaEventSourceConfig {
             crate::model::AmazonManagedKafkaEventSourceConfig {
-                consumer_group_id: self.consumer_group_id,
+                consumer_group_id: self.consumer_group_id
+                ,
             }
         }
     }
+    
+    
 }
 impl AmazonManagedKafkaEventSourceConfig {
     /// Creates a new builder-style object to manufacture [`AmazonManagedKafkaEventSourceConfig`](crate::model::AmazonManagedKafkaEventSourceConfig).
@@ -3453,9 +3208,9 @@ impl AmazonManagedKafkaEventSourceConfig {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let functionresponsetype = unimplemented!();
 /// match functionresponsetype {
@@ -3476,56 +3231,48 @@ impl AmazonManagedKafkaEventSourceConfig {
 /// Specifically, when `functionresponsetype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `FunctionResponseType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum FunctionResponseType {
     #[allow(missing_docs)] // documentation missing in model
     ReportBatchItemFailures,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for FunctionResponseType {
     fn from(s: &str) -> Self {
         match s {
             "ReportBatchItemFailures" => FunctionResponseType::ReportBatchItemFailures,
-            other => {
-                FunctionResponseType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => FunctionResponseType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for FunctionResponseType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(FunctionResponseType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(FunctionResponseType::from(s))
+                }
+            }
 impl FunctionResponseType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             FunctionResponseType::ReportBatchItemFailures => "ReportBatchItemFailures",
-            FunctionResponseType::Unknown(value) => value.as_str(),
+            FunctionResponseType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ReportBatchItemFailures"]
+        &[
+            "ReportBatchItemFailures"
+        ]
     }
 }
 impl AsRef<str> for FunctionResponseType {
@@ -3537,35 +3284,24 @@ impl AsRef<str> for FunctionResponseType {
 /// <p>The self-managed Apache Kafka cluster for your event source.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SelfManagedEventSource {
+pub struct SelfManagedEventSource  {
     /// <p>The list of bootstrap servers for your Kafka brokers in the following format: <code>"KAFKA_BOOTSTRAP_SERVERS": ["abc.xyz.com:xxxx","abc2.xyz.com:xxxx"]</code>.</p>
     #[doc(hidden)]
-    pub endpoints: std::option::Option<
-        std::collections::HashMap<crate::model::EndPointType, std::vec::Vec<std::string::String>>,
-    >,
+    pub endpoints: std::option::Option<std::collections::HashMap<crate::model::EndPointType, std::vec::Vec<std::string::String>>>,
 }
 impl SelfManagedEventSource {
     /// <p>The list of bootstrap servers for your Kafka brokers in the following format: <code>"KAFKA_BOOTSTRAP_SERVERS": ["abc.xyz.com:xxxx","abc2.xyz.com:xxxx"]</code>.</p>
-    pub fn endpoints(
-        &self,
-    ) -> std::option::Option<
-        &std::collections::HashMap<crate::model::EndPointType, std::vec::Vec<std::string::String>>,
-    > {
+    pub fn endpoints(&self) -> std::option::Option<& std::collections::HashMap<crate::model::EndPointType, std::vec::Vec<std::string::String>>> {
         self.endpoints.as_ref()
     }
 }
 /// See [`SelfManagedEventSource`](crate::model::SelfManagedEventSource).
 pub mod self_managed_event_source {
-
+    
     /// A builder for [`SelfManagedEventSource`](crate::model::SelfManagedEventSource).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) endpoints: std::option::Option<
-            std::collections::HashMap<
-                crate::model::EndPointType,
-                std::vec::Vec<std::string::String>,
-            >,
-        >,
+        pub(crate) endpoints: std::option::Option<std::collections::HashMap<crate::model::EndPointType, std::vec::Vec<std::string::String>>>,
     }
     impl Builder {
         /// Adds a key-value pair to `endpoints`.
@@ -3573,36 +3309,26 @@ pub mod self_managed_event_source {
         /// To override the contents of this collection use [`set_endpoints`](Self::set_endpoints).
         ///
         /// <p>The list of bootstrap servers for your Kafka brokers in the following format: <code>"KAFKA_BOOTSTRAP_SERVERS": ["abc.xyz.com:xxxx","abc2.xyz.com:xxxx"]</code>.</p>
-        pub fn endpoints(
-            mut self,
-            k: crate::model::EndPointType,
-            v: std::vec::Vec<std::string::String>,
-        ) -> Self {
+        pub fn endpoints(mut self, k: crate::model::EndPointType, v: std::vec::Vec<std::string::String>) -> Self {
             let mut hash_map = self.endpoints.unwrap_or_default();
-            hash_map.insert(k, v);
-            self.endpoints = Some(hash_map);
-            self
+                            hash_map.insert(k, v);
+                            self.endpoints = Some(hash_map);
+                            self
         }
         /// <p>The list of bootstrap servers for your Kafka brokers in the following format: <code>"KAFKA_BOOTSTRAP_SERVERS": ["abc.xyz.com:xxxx","abc2.xyz.com:xxxx"]</code>.</p>
-        pub fn set_endpoints(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<
-                    crate::model::EndPointType,
-                    std::vec::Vec<std::string::String>,
-                >,
-            >,
-        ) -> Self {
-            self.endpoints = input;
-            self
+        pub fn set_endpoints(mut self, input: std::option::Option<std::collections::HashMap<crate::model::EndPointType, std::vec::Vec<std::string::String>>>) -> Self {
+            self.endpoints = input; self
         }
         /// Consumes the builder and constructs a [`SelfManagedEventSource`](crate::model::SelfManagedEventSource).
         pub fn build(self) -> crate::model::SelfManagedEventSource {
             crate::model::SelfManagedEventSource {
-                endpoints: self.endpoints,
+                endpoints: self.endpoints
+                ,
             }
         }
     }
+    
+    
 }
 impl SelfManagedEventSource {
     /// Creates a new builder-style object to manufacture [`SelfManagedEventSource`](crate::model::SelfManagedEventSource).
@@ -3617,9 +3343,9 @@ impl SelfManagedEventSource {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let endpointtype = unimplemented!();
 /// match endpointtype {
@@ -3640,54 +3366,48 @@ impl SelfManagedEventSource {
 /// Specifically, when `endpointtype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `EndPointType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum EndPointType {
     #[allow(missing_docs)] // documentation missing in model
     KafkaBootstrapServers,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for EndPointType {
     fn from(s: &str) -> Self {
         match s {
             "KAFKA_BOOTSTRAP_SERVERS" => EndPointType::KafkaBootstrapServers,
-            other => EndPointType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => EndPointType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for EndPointType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(EndPointType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(EndPointType::from(s))
+                }
+            }
 impl EndPointType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             EndPointType::KafkaBootstrapServers => "KAFKA_BOOTSTRAP_SERVERS",
-            EndPointType::Unknown(value) => value.as_str(),
+            EndPointType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["KAFKA_BOOTSTRAP_SERVERS"]
+        &[
+            "KAFKA_BOOTSTRAP_SERVERS"
+        ]
     }
 }
 impl AsRef<str> for EndPointType {
@@ -3699,18 +3419,18 @@ impl AsRef<str> for EndPointType {
 /// <p>To secure and define access to your event source, you can specify the authentication protocol, VPC components, or virtual host.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SourceAccessConfiguration {
-    /// <p>The type of authentication protocol, VPC components, or virtual host for your event source. For example: <code>"Type":"SASL_SCRAM_512_AUTH"</code>.</p>
-    /// <ul>
-    /// <li> <p> <code>BASIC_AUTH</code> – (Amazon MQ) The Secrets Manager secret that stores your broker credentials.</p> </li>
-    /// <li> <p> <code>BASIC_AUTH</code> – (Self-managed Apache Kafka) The Secrets Manager ARN of your secret key used for SASL/PLAIN authentication of your Apache Kafka brokers.</p> </li>
-    /// <li> <p> <code>VPC_SUBNET</code> – (Self-managed Apache Kafka) The subnets associated with your VPC. Lambda connects to these subnets to fetch data from your self-managed Apache Kafka cluster.</p> </li>
-    /// <li> <p> <code>VPC_SECURITY_GROUP</code> – (Self-managed Apache Kafka) The VPC security group used to manage access to your self-managed Apache Kafka brokers.</p> </li>
-    /// <li> <p> <code>SASL_SCRAM_256_AUTH</code> – (Self-managed Apache Kafka) The Secrets Manager ARN of your secret key used for SASL SCRAM-256 authentication of your self-managed Apache Kafka brokers.</p> </li>
-    /// <li> <p> <code>SASL_SCRAM_512_AUTH</code> – (Amazon MSK, Self-managed Apache Kafka) The Secrets Manager ARN of your secret key used for SASL SCRAM-512 authentication of your self-managed Apache Kafka brokers.</p> </li>
-    /// <li> <p> <code>VIRTUAL_HOST</code> –- (RabbitMQ) The name of the virtual host in your RabbitMQ broker. Lambda uses this RabbitMQ host as the event source. This property cannot be specified in an UpdateEventSourceMapping API call.</p> </li>
-    /// <li> <p> <code>CLIENT_CERTIFICATE_TLS_AUTH</code> – (Amazon MSK, self-managed Apache Kafka) The Secrets Manager ARN of your secret key containing the certificate chain (X.509 PEM), private key (PKCS#8 PEM), and private key password (optional) used for mutual TLS authentication of your MSK/Apache Kafka brokers.</p> </li>
-    /// <li> <p> <code>SERVER_ROOT_CA_CERTIFICATE</code> – (Self-managed Apache Kafka) The Secrets Manager ARN of your secret key containing the root CA certificate (X.509 PEM) used for TLS encryption of your Apache Kafka brokers. </p> </li>
+pub struct SourceAccessConfiguration  {
+    /// <p>The type of authentication protocol, VPC components, or virtual host for your event source. For example: <code>"Type":"SASL_SCRAM_512_AUTH"</code>.</p> 
+    /// <ul> 
+    /// <li> <p> <code>BASIC_AUTH</code> – (Amazon MQ) The Secrets Manager secret that stores your broker credentials.</p> </li> 
+    /// <li> <p> <code>BASIC_AUTH</code> – (Self-managed Apache Kafka) The Secrets Manager ARN of your secret key used for SASL/PLAIN authentication of your Apache Kafka brokers.</p> </li> 
+    /// <li> <p> <code>VPC_SUBNET</code> – (Self-managed Apache Kafka) The subnets associated with your VPC. Lambda connects to these subnets to fetch data from your self-managed Apache Kafka cluster.</p> </li> 
+    /// <li> <p> <code>VPC_SECURITY_GROUP</code> – (Self-managed Apache Kafka) The VPC security group used to manage access to your self-managed Apache Kafka brokers.</p> </li> 
+    /// <li> <p> <code>SASL_SCRAM_256_AUTH</code> – (Self-managed Apache Kafka) The Secrets Manager ARN of your secret key used for SASL SCRAM-256 authentication of your self-managed Apache Kafka brokers.</p> </li> 
+    /// <li> <p> <code>SASL_SCRAM_512_AUTH</code> – (Amazon MSK, Self-managed Apache Kafka) The Secrets Manager ARN of your secret key used for SASL SCRAM-512 authentication of your self-managed Apache Kafka brokers.</p> </li> 
+    /// <li> <p> <code>VIRTUAL_HOST</code> –- (RabbitMQ) The name of the virtual host in your RabbitMQ broker. Lambda uses this RabbitMQ host as the event source. This property cannot be specified in an UpdateEventSourceMapping API call.</p> </li> 
+    /// <li> <p> <code>CLIENT_CERTIFICATE_TLS_AUTH</code> – (Amazon MSK, self-managed Apache Kafka) The Secrets Manager ARN of your secret key containing the certificate chain (X.509 PEM), private key (PKCS#8 PEM), and private key password (optional) used for mutual TLS authentication of your MSK/Apache Kafka brokers.</p> </li> 
+    /// <li> <p> <code>SERVER_ROOT_CA_CERTIFICATE</code> – (Self-managed Apache Kafka) The Secrets Manager ARN of your secret key containing the root CA certificate (X.509 PEM) used for TLS encryption of your Apache Kafka brokers. </p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::SourceAccessType>,
@@ -3719,29 +3439,29 @@ pub struct SourceAccessConfiguration {
     pub uri: std::option::Option<std::string::String>,
 }
 impl SourceAccessConfiguration {
-    /// <p>The type of authentication protocol, VPC components, or virtual host for your event source. For example: <code>"Type":"SASL_SCRAM_512_AUTH"</code>.</p>
-    /// <ul>
-    /// <li> <p> <code>BASIC_AUTH</code> – (Amazon MQ) The Secrets Manager secret that stores your broker credentials.</p> </li>
-    /// <li> <p> <code>BASIC_AUTH</code> – (Self-managed Apache Kafka) The Secrets Manager ARN of your secret key used for SASL/PLAIN authentication of your Apache Kafka brokers.</p> </li>
-    /// <li> <p> <code>VPC_SUBNET</code> – (Self-managed Apache Kafka) The subnets associated with your VPC. Lambda connects to these subnets to fetch data from your self-managed Apache Kafka cluster.</p> </li>
-    /// <li> <p> <code>VPC_SECURITY_GROUP</code> – (Self-managed Apache Kafka) The VPC security group used to manage access to your self-managed Apache Kafka brokers.</p> </li>
-    /// <li> <p> <code>SASL_SCRAM_256_AUTH</code> – (Self-managed Apache Kafka) The Secrets Manager ARN of your secret key used for SASL SCRAM-256 authentication of your self-managed Apache Kafka brokers.</p> </li>
-    /// <li> <p> <code>SASL_SCRAM_512_AUTH</code> – (Amazon MSK, Self-managed Apache Kafka) The Secrets Manager ARN of your secret key used for SASL SCRAM-512 authentication of your self-managed Apache Kafka brokers.</p> </li>
-    /// <li> <p> <code>VIRTUAL_HOST</code> –- (RabbitMQ) The name of the virtual host in your RabbitMQ broker. Lambda uses this RabbitMQ host as the event source. This property cannot be specified in an UpdateEventSourceMapping API call.</p> </li>
-    /// <li> <p> <code>CLIENT_CERTIFICATE_TLS_AUTH</code> – (Amazon MSK, self-managed Apache Kafka) The Secrets Manager ARN of your secret key containing the certificate chain (X.509 PEM), private key (PKCS#8 PEM), and private key password (optional) used for mutual TLS authentication of your MSK/Apache Kafka brokers.</p> </li>
-    /// <li> <p> <code>SERVER_ROOT_CA_CERTIFICATE</code> – (Self-managed Apache Kafka) The Secrets Manager ARN of your secret key containing the root CA certificate (X.509 PEM) used for TLS encryption of your Apache Kafka brokers. </p> </li>
+    /// <p>The type of authentication protocol, VPC components, or virtual host for your event source. For example: <code>"Type":"SASL_SCRAM_512_AUTH"</code>.</p> 
+    /// <ul> 
+    /// <li> <p> <code>BASIC_AUTH</code> – (Amazon MQ) The Secrets Manager secret that stores your broker credentials.</p> </li> 
+    /// <li> <p> <code>BASIC_AUTH</code> – (Self-managed Apache Kafka) The Secrets Manager ARN of your secret key used for SASL/PLAIN authentication of your Apache Kafka brokers.</p> </li> 
+    /// <li> <p> <code>VPC_SUBNET</code> – (Self-managed Apache Kafka) The subnets associated with your VPC. Lambda connects to these subnets to fetch data from your self-managed Apache Kafka cluster.</p> </li> 
+    /// <li> <p> <code>VPC_SECURITY_GROUP</code> – (Self-managed Apache Kafka) The VPC security group used to manage access to your self-managed Apache Kafka brokers.</p> </li> 
+    /// <li> <p> <code>SASL_SCRAM_256_AUTH</code> – (Self-managed Apache Kafka) The Secrets Manager ARN of your secret key used for SASL SCRAM-256 authentication of your self-managed Apache Kafka brokers.</p> </li> 
+    /// <li> <p> <code>SASL_SCRAM_512_AUTH</code> – (Amazon MSK, Self-managed Apache Kafka) The Secrets Manager ARN of your secret key used for SASL SCRAM-512 authentication of your self-managed Apache Kafka brokers.</p> </li> 
+    /// <li> <p> <code>VIRTUAL_HOST</code> –- (RabbitMQ) The name of the virtual host in your RabbitMQ broker. Lambda uses this RabbitMQ host as the event source. This property cannot be specified in an UpdateEventSourceMapping API call.</p> </li> 
+    /// <li> <p> <code>CLIENT_CERTIFICATE_TLS_AUTH</code> – (Amazon MSK, self-managed Apache Kafka) The Secrets Manager ARN of your secret key containing the certificate chain (X.509 PEM), private key (PKCS#8 PEM), and private key password (optional) used for mutual TLS authentication of your MSK/Apache Kafka brokers.</p> </li> 
+    /// <li> <p> <code>SERVER_ROOT_CA_CERTIFICATE</code> – (Self-managed Apache Kafka) The Secrets Manager ARN of your secret key containing the root CA certificate (X.509 PEM) used for TLS encryption of your Apache Kafka brokers. </p> </li> 
     /// </ul>
-    pub fn r#type(&self) -> std::option::Option<&crate::model::SourceAccessType> {
+    pub fn r#type(&self) -> std::option::Option<& crate::model::SourceAccessType> {
         self.r#type.as_ref()
     }
     /// <p>The value for your chosen configuration in <code>Type</code>. For example: <code>"URI": "arn:aws:secretsmanager:us-east-1:01234567890:secret:MyBrokerSecretName"</code>.</p>
-    pub fn uri(&self) -> std::option::Option<&str> {
+    pub fn uri(&self) -> std::option::Option<& str> {
         self.uri.as_deref()
     }
 }
 /// See [`SourceAccessConfiguration`](crate::model::SourceAccessConfiguration).
 pub mod source_access_configuration {
-
+    
     /// A builder for [`SourceAccessConfiguration`](crate::model::SourceAccessConfiguration).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3749,40 +3469,36 @@ pub mod source_access_configuration {
         pub(crate) uri: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The type of authentication protocol, VPC components, or virtual host for your event source. For example: <code>"Type":"SASL_SCRAM_512_AUTH"</code>.</p>
-        /// <ul>
-        /// <li> <p> <code>BASIC_AUTH</code> – (Amazon MQ) The Secrets Manager secret that stores your broker credentials.</p> </li>
-        /// <li> <p> <code>BASIC_AUTH</code> – (Self-managed Apache Kafka) The Secrets Manager ARN of your secret key used for SASL/PLAIN authentication of your Apache Kafka brokers.</p> </li>
-        /// <li> <p> <code>VPC_SUBNET</code> – (Self-managed Apache Kafka) The subnets associated with your VPC. Lambda connects to these subnets to fetch data from your self-managed Apache Kafka cluster.</p> </li>
-        /// <li> <p> <code>VPC_SECURITY_GROUP</code> – (Self-managed Apache Kafka) The VPC security group used to manage access to your self-managed Apache Kafka brokers.</p> </li>
-        /// <li> <p> <code>SASL_SCRAM_256_AUTH</code> – (Self-managed Apache Kafka) The Secrets Manager ARN of your secret key used for SASL SCRAM-256 authentication of your self-managed Apache Kafka brokers.</p> </li>
-        /// <li> <p> <code>SASL_SCRAM_512_AUTH</code> – (Amazon MSK, Self-managed Apache Kafka) The Secrets Manager ARN of your secret key used for SASL SCRAM-512 authentication of your self-managed Apache Kafka brokers.</p> </li>
-        /// <li> <p> <code>VIRTUAL_HOST</code> –- (RabbitMQ) The name of the virtual host in your RabbitMQ broker. Lambda uses this RabbitMQ host as the event source. This property cannot be specified in an UpdateEventSourceMapping API call.</p> </li>
-        /// <li> <p> <code>CLIENT_CERTIFICATE_TLS_AUTH</code> – (Amazon MSK, self-managed Apache Kafka) The Secrets Manager ARN of your secret key containing the certificate chain (X.509 PEM), private key (PKCS#8 PEM), and private key password (optional) used for mutual TLS authentication of your MSK/Apache Kafka brokers.</p> </li>
-        /// <li> <p> <code>SERVER_ROOT_CA_CERTIFICATE</code> – (Self-managed Apache Kafka) The Secrets Manager ARN of your secret key containing the root CA certificate (X.509 PEM) used for TLS encryption of your Apache Kafka brokers. </p> </li>
+        /// <p>The type of authentication protocol, VPC components, or virtual host for your event source. For example: <code>"Type":"SASL_SCRAM_512_AUTH"</code>.</p> 
+        /// <ul> 
+        /// <li> <p> <code>BASIC_AUTH</code> – (Amazon MQ) The Secrets Manager secret that stores your broker credentials.</p> </li> 
+        /// <li> <p> <code>BASIC_AUTH</code> – (Self-managed Apache Kafka) The Secrets Manager ARN of your secret key used for SASL/PLAIN authentication of your Apache Kafka brokers.</p> </li> 
+        /// <li> <p> <code>VPC_SUBNET</code> – (Self-managed Apache Kafka) The subnets associated with your VPC. Lambda connects to these subnets to fetch data from your self-managed Apache Kafka cluster.</p> </li> 
+        /// <li> <p> <code>VPC_SECURITY_GROUP</code> – (Self-managed Apache Kafka) The VPC security group used to manage access to your self-managed Apache Kafka brokers.</p> </li> 
+        /// <li> <p> <code>SASL_SCRAM_256_AUTH</code> – (Self-managed Apache Kafka) The Secrets Manager ARN of your secret key used for SASL SCRAM-256 authentication of your self-managed Apache Kafka brokers.</p> </li> 
+        /// <li> <p> <code>SASL_SCRAM_512_AUTH</code> – (Amazon MSK, Self-managed Apache Kafka) The Secrets Manager ARN of your secret key used for SASL SCRAM-512 authentication of your self-managed Apache Kafka brokers.</p> </li> 
+        /// <li> <p> <code>VIRTUAL_HOST</code> –- (RabbitMQ) The name of the virtual host in your RabbitMQ broker. Lambda uses this RabbitMQ host as the event source. This property cannot be specified in an UpdateEventSourceMapping API call.</p> </li> 
+        /// <li> <p> <code>CLIENT_CERTIFICATE_TLS_AUTH</code> – (Amazon MSK, self-managed Apache Kafka) The Secrets Manager ARN of your secret key containing the certificate chain (X.509 PEM), private key (PKCS#8 PEM), and private key password (optional) used for mutual TLS authentication of your MSK/Apache Kafka brokers.</p> </li> 
+        /// <li> <p> <code>SERVER_ROOT_CA_CERTIFICATE</code> – (Self-managed Apache Kafka) The Secrets Manager ARN of your secret key containing the root CA certificate (X.509 PEM) used for TLS encryption of your Apache Kafka brokers. </p> </li> 
         /// </ul>
         pub fn r#type(mut self, input: crate::model::SourceAccessType) -> Self {
             self.r#type = Some(input);
             self
         }
-        /// <p>The type of authentication protocol, VPC components, or virtual host for your event source. For example: <code>"Type":"SASL_SCRAM_512_AUTH"</code>.</p>
-        /// <ul>
-        /// <li> <p> <code>BASIC_AUTH</code> – (Amazon MQ) The Secrets Manager secret that stores your broker credentials.</p> </li>
-        /// <li> <p> <code>BASIC_AUTH</code> – (Self-managed Apache Kafka) The Secrets Manager ARN of your secret key used for SASL/PLAIN authentication of your Apache Kafka brokers.</p> </li>
-        /// <li> <p> <code>VPC_SUBNET</code> – (Self-managed Apache Kafka) The subnets associated with your VPC. Lambda connects to these subnets to fetch data from your self-managed Apache Kafka cluster.</p> </li>
-        /// <li> <p> <code>VPC_SECURITY_GROUP</code> – (Self-managed Apache Kafka) The VPC security group used to manage access to your self-managed Apache Kafka brokers.</p> </li>
-        /// <li> <p> <code>SASL_SCRAM_256_AUTH</code> – (Self-managed Apache Kafka) The Secrets Manager ARN of your secret key used for SASL SCRAM-256 authentication of your self-managed Apache Kafka brokers.</p> </li>
-        /// <li> <p> <code>SASL_SCRAM_512_AUTH</code> – (Amazon MSK, Self-managed Apache Kafka) The Secrets Manager ARN of your secret key used for SASL SCRAM-512 authentication of your self-managed Apache Kafka brokers.</p> </li>
-        /// <li> <p> <code>VIRTUAL_HOST</code> –- (RabbitMQ) The name of the virtual host in your RabbitMQ broker. Lambda uses this RabbitMQ host as the event source. This property cannot be specified in an UpdateEventSourceMapping API call.</p> </li>
-        /// <li> <p> <code>CLIENT_CERTIFICATE_TLS_AUTH</code> – (Amazon MSK, self-managed Apache Kafka) The Secrets Manager ARN of your secret key containing the certificate chain (X.509 PEM), private key (PKCS#8 PEM), and private key password (optional) used for mutual TLS authentication of your MSK/Apache Kafka brokers.</p> </li>
-        /// <li> <p> <code>SERVER_ROOT_CA_CERTIFICATE</code> – (Self-managed Apache Kafka) The Secrets Manager ARN of your secret key containing the root CA certificate (X.509 PEM) used for TLS encryption of your Apache Kafka brokers. </p> </li>
+        /// <p>The type of authentication protocol, VPC components, or virtual host for your event source. For example: <code>"Type":"SASL_SCRAM_512_AUTH"</code>.</p> 
+        /// <ul> 
+        /// <li> <p> <code>BASIC_AUTH</code> – (Amazon MQ) The Secrets Manager secret that stores your broker credentials.</p> </li> 
+        /// <li> <p> <code>BASIC_AUTH</code> – (Self-managed Apache Kafka) The Secrets Manager ARN of your secret key used for SASL/PLAIN authentication of your Apache Kafka brokers.</p> </li> 
+        /// <li> <p> <code>VPC_SUBNET</code> – (Self-managed Apache Kafka) The subnets associated with your VPC. Lambda connects to these subnets to fetch data from your self-managed Apache Kafka cluster.</p> </li> 
+        /// <li> <p> <code>VPC_SECURITY_GROUP</code> – (Self-managed Apache Kafka) The VPC security group used to manage access to your self-managed Apache Kafka brokers.</p> </li> 
+        /// <li> <p> <code>SASL_SCRAM_256_AUTH</code> – (Self-managed Apache Kafka) The Secrets Manager ARN of your secret key used for SASL SCRAM-256 authentication of your self-managed Apache Kafka brokers.</p> </li> 
+        /// <li> <p> <code>SASL_SCRAM_512_AUTH</code> – (Amazon MSK, Self-managed Apache Kafka) The Secrets Manager ARN of your secret key used for SASL SCRAM-512 authentication of your self-managed Apache Kafka brokers.</p> </li> 
+        /// <li> <p> <code>VIRTUAL_HOST</code> –- (RabbitMQ) The name of the virtual host in your RabbitMQ broker. Lambda uses this RabbitMQ host as the event source. This property cannot be specified in an UpdateEventSourceMapping API call.</p> </li> 
+        /// <li> <p> <code>CLIENT_CERTIFICATE_TLS_AUTH</code> – (Amazon MSK, self-managed Apache Kafka) The Secrets Manager ARN of your secret key containing the certificate chain (X.509 PEM), private key (PKCS#8 PEM), and private key password (optional) used for mutual TLS authentication of your MSK/Apache Kafka brokers.</p> </li> 
+        /// <li> <p> <code>SERVER_ROOT_CA_CERTIFICATE</code> – (Self-managed Apache Kafka) The Secrets Manager ARN of your secret key containing the root CA certificate (X.509 PEM) used for TLS encryption of your Apache Kafka brokers. </p> </li> 
         /// </ul>
-        pub fn set_type(
-            mut self,
-            input: std::option::Option<crate::model::SourceAccessType>,
-        ) -> Self {
-            self.r#type = input;
-            self
+        pub fn set_type(mut self, input: std::option::Option<crate::model::SourceAccessType>) -> Self {
+            self.r#type = input; self
         }
         /// <p>The value for your chosen configuration in <code>Type</code>. For example: <code>"URI": "arn:aws:secretsmanager:us-east-1:01234567890:secret:MyBrokerSecretName"</code>.</p>
         pub fn uri(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3791,17 +3507,20 @@ pub mod source_access_configuration {
         }
         /// <p>The value for your chosen configuration in <code>Type</code>. For example: <code>"URI": "arn:aws:secretsmanager:us-east-1:01234567890:secret:MyBrokerSecretName"</code>.</p>
         pub fn set_uri(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.uri = input;
-            self
+            self.uri = input; self
         }
         /// Consumes the builder and constructs a [`SourceAccessConfiguration`](crate::model::SourceAccessConfiguration).
         pub fn build(self) -> crate::model::SourceAccessConfiguration {
             crate::model::SourceAccessConfiguration {
-                r#type: self.r#type,
-                uri: self.uri,
+                r#type: self.r#type
+                ,
+                uri: self.uri
+                ,
             }
         }
     }
+    
+    
 }
 impl SourceAccessConfiguration {
     /// Creates a new builder-style object to manufacture [`SourceAccessConfiguration`](crate::model::SourceAccessConfiguration).
@@ -3816,9 +3535,9 @@ impl SourceAccessConfiguration {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let sourceaccesstype = unimplemented!();
 /// match sourceaccesstype {
@@ -3846,22 +3565,14 @@ impl SourceAccessConfiguration {
 /// Specifically, when `sourceaccesstype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `SourceAccessType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum SourceAccessType {
     #[allow(missing_docs)] // documentation missing in model
     BasicAuth,
@@ -3880,7 +3591,7 @@ pub enum SourceAccessType {
     #[allow(missing_docs)] // documentation missing in model
     VpcSubnet,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for SourceAccessType {
     fn from(s: &str) -> Self {
@@ -3893,17 +3604,17 @@ impl std::convert::From<&str> for SourceAccessType {
             "VIRTUAL_HOST" => SourceAccessType::VirtualHost,
             "VPC_SECURITY_GROUP" => SourceAccessType::VpcSecurityGroup,
             "VPC_SUBNET" => SourceAccessType::VpcSubnet,
-            other => SourceAccessType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => SourceAccessType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for SourceAccessType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(SourceAccessType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(SourceAccessType::from(s))
+                }
+            }
 impl SourceAccessType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -3916,20 +3627,13 @@ impl SourceAccessType {
             SourceAccessType::VirtualHost => "VIRTUAL_HOST",
             SourceAccessType::VpcSecurityGroup => "VPC_SECURITY_GROUP",
             SourceAccessType::VpcSubnet => "VPC_SUBNET",
-            SourceAccessType::Unknown(value) => value.as_str(),
+            SourceAccessType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "BASIC_AUTH",
-            "CLIENT_CERTIFICATE_TLS_AUTH",
-            "SASL_SCRAM_256_AUTH",
-            "SASL_SCRAM_512_AUTH",
-            "SERVER_ROOT_CA_CERTIFICATE",
-            "VIRTUAL_HOST",
-            "VPC_SECURITY_GROUP",
-            "VPC_SUBNET",
+            "BASIC_AUTH", "CLIENT_CERTIFICATE_TLS_AUTH", "SASL_SCRAM_256_AUTH", "SASL_SCRAM_512_AUTH", "SERVER_ROOT_CA_CERTIFICATE", "VIRTUAL_HOST", "VPC_SECURITY_GROUP", "VPC_SUBNET"
         ]
     }
 }
@@ -3942,20 +3646,20 @@ impl AsRef<str> for SourceAccessType {
 /// <p> An object that contains the filters for an event source. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct FilterCriteria {
+pub struct FilterCriteria  {
     /// <p> A list of filters. </p>
     #[doc(hidden)]
     pub filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
 }
 impl FilterCriteria {
     /// <p> A list of filters. </p>
-    pub fn filters(&self) -> std::option::Option<&[crate::model::Filter]> {
+    pub fn filters(&self) -> std::option::Option<& [crate::model::Filter]> {
         self.filters.as_deref()
     }
 }
 /// See [`FilterCriteria`](crate::model::FilterCriteria).
 pub mod filter_criteria {
-
+    
     /// A builder for [`FilterCriteria`](crate::model::FilterCriteria).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3969,25 +3673,24 @@ pub mod filter_criteria {
         /// <p> A list of filters. </p>
         pub fn filters(mut self, input: crate::model::Filter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input);
-            self.filters = Some(v);
-            self
+                            v.push(input);
+                            self.filters = Some(v);
+                            self
         }
         /// <p> A list of filters. </p>
-        pub fn set_filters(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
-        ) -> Self {
-            self.filters = input;
-            self
+        pub fn set_filters(mut self, input: std::option::Option<std::vec::Vec<crate::model::Filter>>) -> Self {
+            self.filters = input; self
         }
         /// Consumes the builder and constructs a [`FilterCriteria`](crate::model::FilterCriteria).
         pub fn build(self) -> crate::model::FilterCriteria {
             crate::model::FilterCriteria {
-                filters: self.filters,
+                filters: self.filters
+                ,
             }
         }
     }
+    
+    
 }
 impl FilterCriteria {
     /// Creates a new builder-style object to manufacture [`FilterCriteria`](crate::model::FilterCriteria).
@@ -3999,20 +3702,20 @@ impl FilterCriteria {
 /// <p> A structure within a <code>FilterCriteria</code> object that defines an event filtering pattern. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Filter {
+pub struct Filter  {
     /// <p> A filter pattern. For more information on the syntax of a filter pattern, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventfiltering.html#filtering-syntax"> Filter rule syntax</a>. </p>
     #[doc(hidden)]
     pub pattern: std::option::Option<std::string::String>,
 }
 impl Filter {
     /// <p> A filter pattern. For more information on the syntax of a filter pattern, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventfiltering.html#filtering-syntax"> Filter rule syntax</a>. </p>
-    pub fn pattern(&self) -> std::option::Option<&str> {
+    pub fn pattern(&self) -> std::option::Option<& str> {
         self.pattern.as_deref()
     }
 }
 /// See [`Filter`](crate::model::Filter).
 pub mod filter {
-
+    
     /// A builder for [`Filter`](crate::model::Filter).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4026,16 +3729,18 @@ pub mod filter {
         }
         /// <p> A filter pattern. For more information on the syntax of a filter pattern, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventfiltering.html#filtering-syntax"> Filter rule syntax</a>. </p>
         pub fn set_pattern(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.pattern = input;
-            self
+            self.pattern = input; self
         }
         /// Consumes the builder and constructs a [`Filter`](crate::model::Filter).
         pub fn build(self) -> crate::model::Filter {
             crate::model::Filter {
-                pattern: self.pattern,
+                pattern: self.pattern
+                ,
             }
         }
     }
+    
+    
 }
 impl Filter {
     /// Creates a new builder-style object to manufacture [`Filter`](crate::model::Filter).
@@ -4050,9 +3755,9 @@ impl Filter {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let eventsourceposition = unimplemented!();
 /// match eventsourceposition {
@@ -4075,22 +3780,14 @@ impl Filter {
 /// Specifically, when `eventsourceposition` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `EventSourcePosition::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum EventSourcePosition {
     #[allow(missing_docs)] // documentation missing in model
     AtTimestamp,
@@ -4099,7 +3796,7 @@ pub enum EventSourcePosition {
     #[allow(missing_docs)] // documentation missing in model
     TrimHorizon,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for EventSourcePosition {
     fn from(s: &str) -> Self {
@@ -4107,19 +3804,17 @@ impl std::convert::From<&str> for EventSourcePosition {
             "AT_TIMESTAMP" => EventSourcePosition::AtTimestamp,
             "LATEST" => EventSourcePosition::Latest,
             "TRIM_HORIZON" => EventSourcePosition::TrimHorizon,
-            other => {
-                EventSourcePosition::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => EventSourcePosition::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for EventSourcePosition {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(EventSourcePosition::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(EventSourcePosition::from(s))
+                }
+            }
 impl EventSourcePosition {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -4127,12 +3822,14 @@ impl EventSourcePosition {
             EventSourcePosition::AtTimestamp => "AT_TIMESTAMP",
             EventSourcePosition::Latest => "LATEST",
             EventSourcePosition::TrimHorizon => "TRIM_HORIZON",
-            EventSourcePosition::Unknown(value) => value.as_str(),
+            EventSourcePosition::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["AT_TIMESTAMP", "LATEST", "TRIM_HORIZON"]
+        &[
+            "AT_TIMESTAMP", "LATEST", "TRIM_HORIZON"
+        ]
     }
 }
 impl AsRef<str> for EventSourcePosition {
@@ -4144,7 +3841,7 @@ impl AsRef<str> for EventSourcePosition {
 /// <p>Details about a <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-codesigning.html">Code signing configuration</a>. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CodeSigningConfig {
+pub struct CodeSigningConfig  {
     /// <p>Unique identifer for the Code signing configuration.</p>
     #[doc(hidden)]
     pub code_signing_config_id: std::option::Option<std::string::String>,
@@ -4166,33 +3863,33 @@ pub struct CodeSigningConfig {
 }
 impl CodeSigningConfig {
     /// <p>Unique identifer for the Code signing configuration.</p>
-    pub fn code_signing_config_id(&self) -> std::option::Option<&str> {
+    pub fn code_signing_config_id(&self) -> std::option::Option<& str> {
         self.code_signing_config_id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the Code signing configuration.</p>
-    pub fn code_signing_config_arn(&self) -> std::option::Option<&str> {
+    pub fn code_signing_config_arn(&self) -> std::option::Option<& str> {
         self.code_signing_config_arn.as_deref()
     }
     /// <p>Code signing configuration description.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>List of allowed publishers.</p>
-    pub fn allowed_publishers(&self) -> std::option::Option<&crate::model::AllowedPublishers> {
+    pub fn allowed_publishers(&self) -> std::option::Option<& crate::model::AllowedPublishers> {
         self.allowed_publishers.as_ref()
     }
     /// <p>The code signing policy controls the validation failure action for signature mismatch or expiry.</p>
-    pub fn code_signing_policies(&self) -> std::option::Option<&crate::model::CodeSigningPolicies> {
+    pub fn code_signing_policies(&self) -> std::option::Option<& crate::model::CodeSigningPolicies> {
         self.code_signing_policies.as_ref()
     }
     /// <p>The date and time that the Code signing configuration was last modified, in ISO-8601 format (YYYY-MM-DDThh:mm:ss.sTZD). </p>
-    pub fn last_modified(&self) -> std::option::Option<&str> {
+    pub fn last_modified(&self) -> std::option::Option<& str> {
         self.last_modified.as_deref()
     }
 }
 /// See [`CodeSigningConfig`](crate::model::CodeSigningConfig).
 pub mod code_signing_config {
-
+    
     /// A builder for [`CodeSigningConfig`](crate::model::CodeSigningConfig).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4210,12 +3907,8 @@ pub mod code_signing_config {
             self
         }
         /// <p>Unique identifer for the Code signing configuration.</p>
-        pub fn set_code_signing_config_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.code_signing_config_id = input;
-            self
+        pub fn set_code_signing_config_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.code_signing_config_id = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the Code signing configuration.</p>
         pub fn code_signing_config_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4223,12 +3916,8 @@ pub mod code_signing_config {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the Code signing configuration.</p>
-        pub fn set_code_signing_config_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.code_signing_config_arn = input;
-            self
+        pub fn set_code_signing_config_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.code_signing_config_arn = input; self
         }
         /// <p>Code signing configuration description.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4237,8 +3926,7 @@ pub mod code_signing_config {
         }
         /// <p>Code signing configuration description.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>List of allowed publishers.</p>
         pub fn allowed_publishers(mut self, input: crate::model::AllowedPublishers) -> Self {
@@ -4246,12 +3934,8 @@ pub mod code_signing_config {
             self
         }
         /// <p>List of allowed publishers.</p>
-        pub fn set_allowed_publishers(
-            mut self,
-            input: std::option::Option<crate::model::AllowedPublishers>,
-        ) -> Self {
-            self.allowed_publishers = input;
-            self
+        pub fn set_allowed_publishers(mut self, input: std::option::Option<crate::model::AllowedPublishers>) -> Self {
+            self.allowed_publishers = input; self
         }
         /// <p>The code signing policy controls the validation failure action for signature mismatch or expiry.</p>
         pub fn code_signing_policies(mut self, input: crate::model::CodeSigningPolicies) -> Self {
@@ -4259,12 +3943,8 @@ pub mod code_signing_config {
             self
         }
         /// <p>The code signing policy controls the validation failure action for signature mismatch or expiry.</p>
-        pub fn set_code_signing_policies(
-            mut self,
-            input: std::option::Option<crate::model::CodeSigningPolicies>,
-        ) -> Self {
-            self.code_signing_policies = input;
-            self
+        pub fn set_code_signing_policies(mut self, input: std::option::Option<crate::model::CodeSigningPolicies>) -> Self {
+            self.code_signing_policies = input; self
         }
         /// <p>The date and time that the Code signing configuration was last modified, in ISO-8601 format (YYYY-MM-DDThh:mm:ss.sTZD). </p>
         pub fn last_modified(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4272,25 +3952,29 @@ pub mod code_signing_config {
             self
         }
         /// <p>The date and time that the Code signing configuration was last modified, in ISO-8601 format (YYYY-MM-DDThh:mm:ss.sTZD). </p>
-        pub fn set_last_modified(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.last_modified = input;
-            self
+        pub fn set_last_modified(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.last_modified = input; self
         }
         /// Consumes the builder and constructs a [`CodeSigningConfig`](crate::model::CodeSigningConfig).
         pub fn build(self) -> crate::model::CodeSigningConfig {
             crate::model::CodeSigningConfig {
-                code_signing_config_id: self.code_signing_config_id,
-                code_signing_config_arn: self.code_signing_config_arn,
-                description: self.description,
-                allowed_publishers: self.allowed_publishers,
-                code_signing_policies: self.code_signing_policies,
-                last_modified: self.last_modified,
+                code_signing_config_id: self.code_signing_config_id
+                ,
+                code_signing_config_arn: self.code_signing_config_arn
+                ,
+                description: self.description
+                ,
+                allowed_publishers: self.allowed_publishers
+                ,
+                code_signing_policies: self.code_signing_policies
+                ,
+                last_modified: self.last_modified
+                ,
             }
         }
     }
+    
+    
 }
 impl CodeSigningConfig {
     /// Creates a new builder-style object to manufacture [`CodeSigningConfig`](crate::model::CodeSigningConfig).
@@ -4302,56 +3986,49 @@ impl CodeSigningConfig {
 /// <p>Code signing configuration <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-codesigning.html#config-codesigning-policies">policies</a> specify the validation failure action for signature mismatch or expiry.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CodeSigningPolicies {
-    /// <p>Code signing configuration policy for deployment validation failure. If you set the policy to <code>Enforce</code>, Lambda blocks the deployment request if signature validation checks fail. If you set the policy to <code>Warn</code>, Lambda allows the deployment and creates a CloudWatch log. </p>
+pub struct CodeSigningPolicies  {
+    /// <p>Code signing configuration policy for deployment validation failure. If you set the policy to <code>Enforce</code>, Lambda blocks the deployment request if signature validation checks fail. If you set the policy to <code>Warn</code>, Lambda allows the deployment and creates a CloudWatch log. </p> 
     /// <p>Default value: <code>Warn</code> </p>
     #[doc(hidden)]
     pub untrusted_artifact_on_deployment: std::option::Option<crate::model::CodeSigningPolicy>,
 }
 impl CodeSigningPolicies {
-    /// <p>Code signing configuration policy for deployment validation failure. If you set the policy to <code>Enforce</code>, Lambda blocks the deployment request if signature validation checks fail. If you set the policy to <code>Warn</code>, Lambda allows the deployment and creates a CloudWatch log. </p>
+    /// <p>Code signing configuration policy for deployment validation failure. If you set the policy to <code>Enforce</code>, Lambda blocks the deployment request if signature validation checks fail. If you set the policy to <code>Warn</code>, Lambda allows the deployment and creates a CloudWatch log. </p> 
     /// <p>Default value: <code>Warn</code> </p>
-    pub fn untrusted_artifact_on_deployment(
-        &self,
-    ) -> std::option::Option<&crate::model::CodeSigningPolicy> {
+    pub fn untrusted_artifact_on_deployment(&self) -> std::option::Option<& crate::model::CodeSigningPolicy> {
         self.untrusted_artifact_on_deployment.as_ref()
     }
 }
 /// See [`CodeSigningPolicies`](crate::model::CodeSigningPolicies).
 pub mod code_signing_policies {
-
+    
     /// A builder for [`CodeSigningPolicies`](crate::model::CodeSigningPolicies).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) untrusted_artifact_on_deployment:
-            std::option::Option<crate::model::CodeSigningPolicy>,
+        pub(crate) untrusted_artifact_on_deployment: std::option::Option<crate::model::CodeSigningPolicy>,
     }
     impl Builder {
-        /// <p>Code signing configuration policy for deployment validation failure. If you set the policy to <code>Enforce</code>, Lambda blocks the deployment request if signature validation checks fail. If you set the policy to <code>Warn</code>, Lambda allows the deployment and creates a CloudWatch log. </p>
+        /// <p>Code signing configuration policy for deployment validation failure. If you set the policy to <code>Enforce</code>, Lambda blocks the deployment request if signature validation checks fail. If you set the policy to <code>Warn</code>, Lambda allows the deployment and creates a CloudWatch log. </p> 
         /// <p>Default value: <code>Warn</code> </p>
-        pub fn untrusted_artifact_on_deployment(
-            mut self,
-            input: crate::model::CodeSigningPolicy,
-        ) -> Self {
+        pub fn untrusted_artifact_on_deployment(mut self, input: crate::model::CodeSigningPolicy) -> Self {
             self.untrusted_artifact_on_deployment = Some(input);
             self
         }
-        /// <p>Code signing configuration policy for deployment validation failure. If you set the policy to <code>Enforce</code>, Lambda blocks the deployment request if signature validation checks fail. If you set the policy to <code>Warn</code>, Lambda allows the deployment and creates a CloudWatch log. </p>
+        /// <p>Code signing configuration policy for deployment validation failure. If you set the policy to <code>Enforce</code>, Lambda blocks the deployment request if signature validation checks fail. If you set the policy to <code>Warn</code>, Lambda allows the deployment and creates a CloudWatch log. </p> 
         /// <p>Default value: <code>Warn</code> </p>
-        pub fn set_untrusted_artifact_on_deployment(
-            mut self,
-            input: std::option::Option<crate::model::CodeSigningPolicy>,
-        ) -> Self {
-            self.untrusted_artifact_on_deployment = input;
-            self
+        pub fn set_untrusted_artifact_on_deployment(mut self, input: std::option::Option<crate::model::CodeSigningPolicy>) -> Self {
+            self.untrusted_artifact_on_deployment = input; self
         }
         /// Consumes the builder and constructs a [`CodeSigningPolicies`](crate::model::CodeSigningPolicies).
         pub fn build(self) -> crate::model::CodeSigningPolicies {
             crate::model::CodeSigningPolicies {
-                untrusted_artifact_on_deployment: self.untrusted_artifact_on_deployment,
+                untrusted_artifact_on_deployment: self.untrusted_artifact_on_deployment
+                ,
             }
         }
     }
+    
+    
 }
 impl CodeSigningPolicies {
     /// Creates a new builder-style object to manufacture [`CodeSigningPolicies`](crate::model::CodeSigningPolicies).
@@ -4366,9 +4043,9 @@ impl CodeSigningPolicies {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let codesigningpolicy = unimplemented!();
 /// match codesigningpolicy {
@@ -4390,60 +4067,52 @@ impl CodeSigningPolicies {
 /// Specifically, when `codesigningpolicy` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `CodeSigningPolicy::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum CodeSigningPolicy {
     #[allow(missing_docs)] // documentation missing in model
     Enforce,
     #[allow(missing_docs)] // documentation missing in model
     Warn,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for CodeSigningPolicy {
     fn from(s: &str) -> Self {
         match s {
             "Enforce" => CodeSigningPolicy::Enforce,
             "Warn" => CodeSigningPolicy::Warn,
-            other => {
-                CodeSigningPolicy::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => CodeSigningPolicy::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for CodeSigningPolicy {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(CodeSigningPolicy::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(CodeSigningPolicy::from(s))
+                }
+            }
 impl CodeSigningPolicy {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             CodeSigningPolicy::Enforce => "Enforce",
             CodeSigningPolicy::Warn => "Warn",
-            CodeSigningPolicy::Unknown(value) => value.as_str(),
+            CodeSigningPolicy::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["Enforce", "Warn"]
+        &[
+            "Enforce", "Warn"
+        ]
     }
 }
 impl AsRef<str> for CodeSigningPolicy {
@@ -4455,25 +4124,24 @@ impl AsRef<str> for CodeSigningPolicy {
 /// <p>List of signing profiles that can sign a code package. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AllowedPublishers {
+pub struct AllowedPublishers  {
     /// <p>The Amazon Resource Name (ARN) for each of the signing profiles. A signing profile defines a trusted user who can sign a code package. </p>
     #[doc(hidden)]
     pub signing_profile_version_arns: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl AllowedPublishers {
     /// <p>The Amazon Resource Name (ARN) for each of the signing profiles. A signing profile defines a trusted user who can sign a code package. </p>
-    pub fn signing_profile_version_arns(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn signing_profile_version_arns(&self) -> std::option::Option<& [std::string::String]> {
         self.signing_profile_version_arns.as_deref()
     }
 }
 /// See [`AllowedPublishers`](crate::model::AllowedPublishers).
 pub mod allowed_publishers {
-
+    
     /// A builder for [`AllowedPublishers`](crate::model::AllowedPublishers).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) signing_profile_version_arns:
-            std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) signing_profile_version_arns: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
         /// Appends an item to `signing_profile_version_arns`.
@@ -4481,30 +4149,26 @@ pub mod allowed_publishers {
         /// To override the contents of this collection use [`set_signing_profile_version_arns`](Self::set_signing_profile_version_arns).
         ///
         /// <p>The Amazon Resource Name (ARN) for each of the signing profiles. A signing profile defines a trusted user who can sign a code package. </p>
-        pub fn signing_profile_version_arns(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn signing_profile_version_arns(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.signing_profile_version_arns.unwrap_or_default();
-            v.push(input.into());
-            self.signing_profile_version_arns = Some(v);
-            self
+                            v.push(input.into());
+                            self.signing_profile_version_arns = Some(v);
+                            self
         }
         /// <p>The Amazon Resource Name (ARN) for each of the signing profiles. A signing profile defines a trusted user who can sign a code package. </p>
-        pub fn set_signing_profile_version_arns(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.signing_profile_version_arns = input;
-            self
+        pub fn set_signing_profile_version_arns(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.signing_profile_version_arns = input; self
         }
         /// Consumes the builder and constructs a [`AllowedPublishers`](crate::model::AllowedPublishers).
         pub fn build(self) -> crate::model::AllowedPublishers {
             crate::model::AllowedPublishers {
-                signing_profile_version_arns: self.signing_profile_version_arns,
+                signing_profile_version_arns: self.signing_profile_version_arns
+                ,
             }
         }
     }
+    
+    
 }
 impl AllowedPublishers {
     /// Creates a new builder-style object to manufacture [`AllowedPublishers`](crate::model::AllowedPublishers).
@@ -4516,28 +4180,24 @@ impl AllowedPublishers {
 /// <p>The <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-traffic-shifting-using-aliases.html">traffic-shifting</a> configuration of a Lambda function alias.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AliasRoutingConfiguration {
+pub struct AliasRoutingConfiguration  {
     /// <p>The second version, and the percentage of traffic that's routed to it.</p>
     #[doc(hidden)]
-    pub additional_version_weights:
-        std::option::Option<std::collections::HashMap<std::string::String, f64>>,
+    pub additional_version_weights: std::option::Option<std::collections::HashMap<std::string::String, f64>>,
 }
 impl AliasRoutingConfiguration {
     /// <p>The second version, and the percentage of traffic that's routed to it.</p>
-    pub fn additional_version_weights(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, f64>> {
+    pub fn additional_version_weights(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, f64>> {
         self.additional_version_weights.as_ref()
     }
 }
 /// See [`AliasRoutingConfiguration`](crate::model::AliasRoutingConfiguration).
 pub mod alias_routing_configuration {
-
+    
     /// A builder for [`AliasRoutingConfiguration`](crate::model::AliasRoutingConfiguration).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) additional_version_weights:
-            std::option::Option<std::collections::HashMap<std::string::String, f64>>,
+        pub(crate) additional_version_weights: std::option::Option<std::collections::HashMap<std::string::String, f64>>,
     }
     impl Builder {
         /// Adds a key-value pair to `additional_version_weights`.
@@ -4545,31 +4205,26 @@ pub mod alias_routing_configuration {
         /// To override the contents of this collection use [`set_additional_version_weights`](Self::set_additional_version_weights).
         ///
         /// <p>The second version, and the percentage of traffic that's routed to it.</p>
-        pub fn additional_version_weights(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: f64,
-        ) -> Self {
+        pub fn additional_version_weights(mut self, k: impl Into<std::string::String>, v: f64) -> Self {
             let mut hash_map = self.additional_version_weights.unwrap_or_default();
-            hash_map.insert(k.into(), v);
-            self.additional_version_weights = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v);
+                            self.additional_version_weights = Some(hash_map);
+                            self
         }
         /// <p>The second version, and the percentage of traffic that's routed to it.</p>
-        pub fn set_additional_version_weights(
-            mut self,
-            input: std::option::Option<std::collections::HashMap<std::string::String, f64>>,
-        ) -> Self {
-            self.additional_version_weights = input;
-            self
+        pub fn set_additional_version_weights(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, f64>>) -> Self {
+            self.additional_version_weights = input; self
         }
         /// Consumes the builder and constructs a [`AliasRoutingConfiguration`](crate::model::AliasRoutingConfiguration).
         pub fn build(self) -> crate::model::AliasRoutingConfiguration {
             crate::model::AliasRoutingConfiguration {
-                additional_version_weights: self.additional_version_weights,
+                additional_version_weights: self.additional_version_weights
+                ,
             }
         }
     }
+    
+    
 }
 impl AliasRoutingConfiguration {
     /// Creates a new builder-style object to manufacture [`AliasRoutingConfiguration`](crate::model::AliasRoutingConfiguration).
@@ -4584,9 +4239,9 @@ impl AliasRoutingConfiguration {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let updateruntimeon = unimplemented!();
 /// match updateruntimeon {
@@ -4609,22 +4264,14 @@ impl AliasRoutingConfiguration {
 /// Specifically, when `updateruntimeon` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `UpdateRuntimeOn::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum UpdateRuntimeOn {
     #[allow(missing_docs)] // documentation missing in model
     Auto,
@@ -4633,7 +4280,7 @@ pub enum UpdateRuntimeOn {
     #[allow(missing_docs)] // documentation missing in model
     Manual,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for UpdateRuntimeOn {
     fn from(s: &str) -> Self {
@@ -4641,17 +4288,17 @@ impl std::convert::From<&str> for UpdateRuntimeOn {
             "Auto" => UpdateRuntimeOn::Auto,
             "FunctionUpdate" => UpdateRuntimeOn::FunctionUpdate,
             "Manual" => UpdateRuntimeOn::Manual,
-            other => UpdateRuntimeOn::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => UpdateRuntimeOn::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for UpdateRuntimeOn {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(UpdateRuntimeOn::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(UpdateRuntimeOn::from(s))
+                }
+            }
 impl UpdateRuntimeOn {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -4659,12 +4306,14 @@ impl UpdateRuntimeOn {
             UpdateRuntimeOn::Auto => "Auto",
             UpdateRuntimeOn::FunctionUpdate => "FunctionUpdate",
             UpdateRuntimeOn::Manual => "Manual",
-            UpdateRuntimeOn::Unknown(value) => value.as_str(),
+            UpdateRuntimeOn::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["Auto", "FunctionUpdate", "Manual"]
+        &[
+            "Auto", "FunctionUpdate", "Manual"
+        ]
     }
 }
 impl AsRef<str> for UpdateRuntimeOn {
@@ -4679,9 +4328,9 @@ impl AsRef<str> for UpdateRuntimeOn {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let provisionedconcurrencystatusenum = unimplemented!();
 /// match provisionedconcurrencystatusenum {
@@ -4704,22 +4353,14 @@ impl AsRef<str> for UpdateRuntimeOn {
 /// Specifically, when `provisionedconcurrencystatusenum` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ProvisionedConcurrencyStatusEnum::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ProvisionedConcurrencyStatusEnum {
     #[allow(missing_docs)] // documentation missing in model
     Failed,
@@ -4728,7 +4369,7 @@ pub enum ProvisionedConcurrencyStatusEnum {
     #[allow(missing_docs)] // documentation missing in model
     Ready,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ProvisionedConcurrencyStatusEnum {
     fn from(s: &str) -> Self {
@@ -4736,19 +4377,17 @@ impl std::convert::From<&str> for ProvisionedConcurrencyStatusEnum {
             "FAILED" => ProvisionedConcurrencyStatusEnum::Failed,
             "IN_PROGRESS" => ProvisionedConcurrencyStatusEnum::InProgress,
             "READY" => ProvisionedConcurrencyStatusEnum::Ready,
-            other => ProvisionedConcurrencyStatusEnum::Unknown(crate::types::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => ProvisionedConcurrencyStatusEnum::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ProvisionedConcurrencyStatusEnum {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ProvisionedConcurrencyStatusEnum::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ProvisionedConcurrencyStatusEnum::from(s))
+                }
+            }
 impl ProvisionedConcurrencyStatusEnum {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -4756,12 +4395,14 @@ impl ProvisionedConcurrencyStatusEnum {
             ProvisionedConcurrencyStatusEnum::Failed => "FAILED",
             ProvisionedConcurrencyStatusEnum::InProgress => "IN_PROGRESS",
             ProvisionedConcurrencyStatusEnum::Ready => "READY",
-            ProvisionedConcurrencyStatusEnum::Unknown(value) => value.as_str(),
+            ProvisionedConcurrencyStatusEnum::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["FAILED", "IN_PROGRESS", "READY"]
+        &[
+            "FAILED", "IN_PROGRESS", "READY"
+        ]
     }
 }
 impl AsRef<str> for ProvisionedConcurrencyStatusEnum {
@@ -4773,7 +4414,7 @@ impl AsRef<str> for ProvisionedConcurrencyStatusEnum {
 /// <p>Details about a version of an <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">Lambda layer</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct LayerVersionContentOutput {
+pub struct LayerVersionContentOutput  {
     /// <p>A link to the layer archive in Amazon S3 that is valid for 10 minutes.</p>
     #[doc(hidden)]
     pub location: std::option::Option<std::string::String>,
@@ -4792,11 +4433,11 @@ pub struct LayerVersionContentOutput {
 }
 impl LayerVersionContentOutput {
     /// <p>A link to the layer archive in Amazon S3 that is valid for 10 minutes.</p>
-    pub fn location(&self) -> std::option::Option<&str> {
+    pub fn location(&self) -> std::option::Option<& str> {
         self.location.as_deref()
     }
     /// <p>The SHA-256 hash of the layer archive.</p>
-    pub fn code_sha256(&self) -> std::option::Option<&str> {
+    pub fn code_sha256(&self) -> std::option::Option<& str> {
         self.code_sha256.as_deref()
     }
     /// <p>The size of the layer archive in bytes.</p>
@@ -4804,17 +4445,17 @@ impl LayerVersionContentOutput {
         self.code_size
     }
     /// <p>The Amazon Resource Name (ARN) for a signing profile version.</p>
-    pub fn signing_profile_version_arn(&self) -> std::option::Option<&str> {
+    pub fn signing_profile_version_arn(&self) -> std::option::Option<& str> {
         self.signing_profile_version_arn.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of a signing job.</p>
-    pub fn signing_job_arn(&self) -> std::option::Option<&str> {
+    pub fn signing_job_arn(&self) -> std::option::Option<& str> {
         self.signing_job_arn.as_deref()
     }
 }
 /// See [`LayerVersionContentOutput`](crate::model::LayerVersionContentOutput).
 pub mod layer_version_content_output {
-
+    
     /// A builder for [`LayerVersionContentOutput`](crate::model::LayerVersionContentOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4832,8 +4473,7 @@ pub mod layer_version_content_output {
         }
         /// <p>A link to the layer archive in Amazon S3 that is valid for 10 minutes.</p>
         pub fn set_location(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.location = input;
-            self
+            self.location = input; self
         }
         /// <p>The SHA-256 hash of the layer archive.</p>
         pub fn code_sha256(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4842,8 +4482,7 @@ pub mod layer_version_content_output {
         }
         /// <p>The SHA-256 hash of the layer archive.</p>
         pub fn set_code_sha256(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.code_sha256 = input;
-            self
+            self.code_sha256 = input; self
         }
         /// <p>The size of the layer archive in bytes.</p>
         pub fn code_size(mut self, input: i64) -> Self {
@@ -4852,24 +4491,16 @@ pub mod layer_version_content_output {
         }
         /// <p>The size of the layer archive in bytes.</p>
         pub fn set_code_size(mut self, input: std::option::Option<i64>) -> Self {
-            self.code_size = input;
-            self
+            self.code_size = input; self
         }
         /// <p>The Amazon Resource Name (ARN) for a signing profile version.</p>
-        pub fn signing_profile_version_arn(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn signing_profile_version_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.signing_profile_version_arn = Some(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) for a signing profile version.</p>
-        pub fn set_signing_profile_version_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.signing_profile_version_arn = input;
-            self
+        pub fn set_signing_profile_version_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.signing_profile_version_arn = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of a signing job.</p>
         pub fn signing_job_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4877,24 +4508,28 @@ pub mod layer_version_content_output {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of a signing job.</p>
-        pub fn set_signing_job_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.signing_job_arn = input;
-            self
+        pub fn set_signing_job_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.signing_job_arn = input; self
         }
         /// Consumes the builder and constructs a [`LayerVersionContentOutput`](crate::model::LayerVersionContentOutput).
         pub fn build(self) -> crate::model::LayerVersionContentOutput {
             crate::model::LayerVersionContentOutput {
-                location: self.location,
-                code_sha256: self.code_sha256,
-                code_size: self.code_size.unwrap_or_default(),
-                signing_profile_version_arn: self.signing_profile_version_arn,
-                signing_job_arn: self.signing_job_arn,
+                location: self.location
+                ,
+                code_sha256: self.code_sha256
+                ,
+                code_size: self.code_size
+                    .unwrap_or_default()
+                ,
+                signing_profile_version_arn: self.signing_profile_version_arn
+                ,
+                signing_job_arn: self.signing_job_arn
+                ,
             }
         }
     }
+    
+    
 }
 impl LayerVersionContentOutput {
     /// Creates a new builder-style object to manufacture [`LayerVersionContentOutput`](crate::model::LayerVersionContentOutput).
@@ -4906,7 +4541,7 @@ impl LayerVersionContentOutput {
 /// <p>A ZIP archive that contains the contents of an <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">Lambda layer</a>. You can specify either an Amazon S3 location, or upload a layer archive directly.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct LayerVersionContentInput {
+pub struct LayerVersionContentInput  {
     /// <p>The Amazon S3 bucket of the layer archive.</p>
     #[doc(hidden)]
     pub s3_bucket: std::option::Option<std::string::String>,
@@ -4922,23 +4557,23 @@ pub struct LayerVersionContentInput {
 }
 impl LayerVersionContentInput {
     /// <p>The Amazon S3 bucket of the layer archive.</p>
-    pub fn s3_bucket(&self) -> std::option::Option<&str> {
+    pub fn s3_bucket(&self) -> std::option::Option<& str> {
         self.s3_bucket.as_deref()
     }
     /// <p>The Amazon S3 key of the layer archive.</p>
-    pub fn s3_key(&self) -> std::option::Option<&str> {
+    pub fn s3_key(&self) -> std::option::Option<& str> {
         self.s3_key.as_deref()
     }
     /// <p>For versioned objects, the version of the layer archive object to use.</p>
-    pub fn s3_object_version(&self) -> std::option::Option<&str> {
+    pub fn s3_object_version(&self) -> std::option::Option<& str> {
         self.s3_object_version.as_deref()
     }
     /// <p>The base64-encoded contents of the layer archive. Amazon Web Services SDK and Amazon Web Services CLI clients handle the encoding for you.</p>
-    pub fn zip_file(&self) -> std::option::Option<&aws_smithy_types::Blob> {
+    pub fn zip_file(&self) -> std::option::Option<& aws_smithy_types::Blob> {
         self.zip_file.as_ref()
     }
 }
-impl std::fmt::Debug for LayerVersionContentInput {
+impl  std::fmt::Debug for LayerVersionContentInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("LayerVersionContentInput");
         formatter.field("s3_bucket", &self.s3_bucket);
@@ -4950,7 +4585,7 @@ impl std::fmt::Debug for LayerVersionContentInput {
 }
 /// See [`LayerVersionContentInput`](crate::model::LayerVersionContentInput).
 pub mod layer_version_content_input {
-
+    
     /// A builder for [`LayerVersionContentInput`](crate::model::LayerVersionContentInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
@@ -4967,8 +4602,7 @@ pub mod layer_version_content_input {
         }
         /// <p>The Amazon S3 bucket of the layer archive.</p>
         pub fn set_s3_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.s3_bucket = input;
-            self
+            self.s3_bucket = input; self
         }
         /// <p>The Amazon S3 key of the layer archive.</p>
         pub fn s3_key(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4977,8 +4611,7 @@ pub mod layer_version_content_input {
         }
         /// <p>The Amazon S3 key of the layer archive.</p>
         pub fn set_s3_key(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.s3_key = input;
-            self
+            self.s3_key = input; self
         }
         /// <p>For versioned objects, the version of the layer archive object to use.</p>
         pub fn s3_object_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4986,12 +4619,8 @@ pub mod layer_version_content_input {
             self
         }
         /// <p>For versioned objects, the version of the layer archive object to use.</p>
-        pub fn set_s3_object_version(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.s3_object_version = input;
-            self
+        pub fn set_s3_object_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.s3_object_version = input; self
         }
         /// <p>The base64-encoded contents of the layer archive. Amazon Web Services SDK and Amazon Web Services CLI clients handle the encoding for you.</p>
         pub fn zip_file(mut self, input: aws_smithy_types::Blob) -> Self {
@@ -5000,16 +4629,19 @@ pub mod layer_version_content_input {
         }
         /// <p>The base64-encoded contents of the layer archive. Amazon Web Services SDK and Amazon Web Services CLI clients handle the encoding for you.</p>
         pub fn set_zip_file(mut self, input: std::option::Option<aws_smithy_types::Blob>) -> Self {
-            self.zip_file = input;
-            self
+            self.zip_file = input; self
         }
         /// Consumes the builder and constructs a [`LayerVersionContentInput`](crate::model::LayerVersionContentInput).
         pub fn build(self) -> crate::model::LayerVersionContentInput {
             crate::model::LayerVersionContentInput {
-                s3_bucket: self.s3_bucket,
-                s3_key: self.s3_key,
-                s3_object_version: self.s3_object_version,
-                zip_file: self.zip_file,
+                s3_bucket: self.s3_bucket
+                ,
+                s3_key: self.s3_key
+                ,
+                s3_object_version: self.s3_object_version
+                ,
+                zip_file: self.zip_file
+                ,
             }
         }
     }
@@ -5023,6 +4655,8 @@ pub mod layer_version_content_input {
             formatter.finish()
         }
     }
+    
+    
 }
 impl LayerVersionContentInput {
     /// Creates a new builder-style object to manufacture [`LayerVersionContentInput`](crate::model::LayerVersionContentInput).
@@ -5034,7 +4668,7 @@ impl LayerVersionContentInput {
 /// <p>Details about a function's configuration.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct FunctionConfiguration {
+pub struct FunctionConfiguration  {
     /// <p>The name of the function.</p>
     #[doc(hidden)]
     pub function_name: std::option::Option<std::string::String>,
@@ -5112,8 +4746,7 @@ pub struct FunctionConfiguration {
     pub last_update_status_reason: std::option::Option<std::string::String>,
     /// <p>The reason code for the last update that was performed on the function.</p>
     #[doc(hidden)]
-    pub last_update_status_reason_code:
-        std::option::Option<crate::model::LastUpdateStatusReasonCode>,
+    pub last_update_status_reason_code: std::option::Option<crate::model::LastUpdateStatusReasonCode>,
     /// <p>Connection settings for an <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-filesystem.html">Amazon EFS file system</a>.</p>
     #[doc(hidden)]
     pub file_system_configs: std::option::Option<std::vec::Vec<crate::model::FileSystemConfig>>,
@@ -5144,23 +4777,23 @@ pub struct FunctionConfiguration {
 }
 impl FunctionConfiguration {
     /// <p>The name of the function.</p>
-    pub fn function_name(&self) -> std::option::Option<&str> {
+    pub fn function_name(&self) -> std::option::Option<& str> {
         self.function_name.as_deref()
     }
     /// <p>The function's Amazon Resource Name (ARN).</p>
-    pub fn function_arn(&self) -> std::option::Option<&str> {
+    pub fn function_arn(&self) -> std::option::Option<& str> {
         self.function_arn.as_deref()
     }
     /// <p>The runtime environment for the Lambda function.</p>
-    pub fn runtime(&self) -> std::option::Option<&crate::model::Runtime> {
+    pub fn runtime(&self) -> std::option::Option<& crate::model::Runtime> {
         self.runtime.as_ref()
     }
     /// <p>The function's execution role.</p>
-    pub fn role(&self) -> std::option::Option<&str> {
+    pub fn role(&self) -> std::option::Option<& str> {
         self.role.as_deref()
     }
     /// <p>The function that Lambda calls to begin running your function.</p>
-    pub fn handler(&self) -> std::option::Option<&str> {
+    pub fn handler(&self) -> std::option::Option<& str> {
         self.handler.as_deref()
     }
     /// <p>The size of the function's deployment package, in bytes.</p>
@@ -5168,7 +4801,7 @@ impl FunctionConfiguration {
         self.code_size
     }
     /// <p>The function's description.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The amount of time in seconds that Lambda allows a function to run before stopping it.</p>
@@ -5180,117 +4813,113 @@ impl FunctionConfiguration {
         self.memory_size
     }
     /// <p>The date and time that the function was last updated, in <a href="https://www.w3.org/TR/NOTE-datetime">ISO-8601 format</a> (YYYY-MM-DDThh:mm:ss.sTZD).</p>
-    pub fn last_modified(&self) -> std::option::Option<&str> {
+    pub fn last_modified(&self) -> std::option::Option<& str> {
         self.last_modified.as_deref()
     }
     /// <p>The SHA256 hash of the function's deployment package.</p>
-    pub fn code_sha256(&self) -> std::option::Option<&str> {
+    pub fn code_sha256(&self) -> std::option::Option<& str> {
         self.code_sha256.as_deref()
     }
     /// <p>The version of the Lambda function.</p>
-    pub fn version(&self) -> std::option::Option<&str> {
+    pub fn version(&self) -> std::option::Option<& str> {
         self.version.as_deref()
     }
     /// <p>The function's networking configuration.</p>
-    pub fn vpc_config(&self) -> std::option::Option<&crate::model::VpcConfigResponse> {
+    pub fn vpc_config(&self) -> std::option::Option<& crate::model::VpcConfigResponse> {
         self.vpc_config.as_ref()
     }
     /// <p>The function's dead letter queue.</p>
-    pub fn dead_letter_config(&self) -> std::option::Option<&crate::model::DeadLetterConfig> {
+    pub fn dead_letter_config(&self) -> std::option::Option<& crate::model::DeadLetterConfig> {
         self.dead_letter_config.as_ref()
     }
     /// <p>The function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars.html">environment variables</a>. Omitted from CloudTrail logs.</p>
-    pub fn environment(&self) -> std::option::Option<&crate::model::EnvironmentResponse> {
+    pub fn environment(&self) -> std::option::Option<& crate::model::EnvironmentResponse> {
         self.environment.as_ref()
     }
     /// <p>The KMS key that's used to encrypt the function's environment variables. This key is returned only if you've configured a customer managed key.</p>
-    pub fn kms_key_arn(&self) -> std::option::Option<&str> {
+    pub fn kms_key_arn(&self) -> std::option::Option<& str> {
         self.kms_key_arn.as_deref()
     }
     /// <p>The function's X-Ray tracing configuration.</p>
-    pub fn tracing_config(&self) -> std::option::Option<&crate::model::TracingConfigResponse> {
+    pub fn tracing_config(&self) -> std::option::Option<& crate::model::TracingConfigResponse> {
         self.tracing_config.as_ref()
     }
     /// <p>For Lambda@Edge functions, the ARN of the main function.</p>
-    pub fn master_arn(&self) -> std::option::Option<&str> {
+    pub fn master_arn(&self) -> std::option::Option<& str> {
         self.master_arn.as_deref()
     }
     /// <p>The latest updated revision of the function or alias.</p>
-    pub fn revision_id(&self) -> std::option::Option<&str> {
+    pub fn revision_id(&self) -> std::option::Option<& str> {
         self.revision_id.as_deref()
     }
     /// <p>The function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">layers</a>.</p>
-    pub fn layers(&self) -> std::option::Option<&[crate::model::Layer]> {
+    pub fn layers(&self) -> std::option::Option<& [crate::model::Layer]> {
         self.layers.as_deref()
     }
     /// <p>The current state of the function. When the state is <code>Inactive</code>, you can reactivate the function by invoking it.</p>
-    pub fn state(&self) -> std::option::Option<&crate::model::State> {
+    pub fn state(&self) -> std::option::Option<& crate::model::State> {
         self.state.as_ref()
     }
     /// <p>The reason for the function's current state.</p>
-    pub fn state_reason(&self) -> std::option::Option<&str> {
+    pub fn state_reason(&self) -> std::option::Option<& str> {
         self.state_reason.as_deref()
     }
     /// <p>The reason code for the function's current state. When the code is <code>Creating</code>, you can't invoke or modify the function.</p>
-    pub fn state_reason_code(&self) -> std::option::Option<&crate::model::StateReasonCode> {
+    pub fn state_reason_code(&self) -> std::option::Option<& crate::model::StateReasonCode> {
         self.state_reason_code.as_ref()
     }
     /// <p>The status of the last update that was performed on the function. This is first set to <code>Successful</code> after function creation completes.</p>
-    pub fn last_update_status(&self) -> std::option::Option<&crate::model::LastUpdateStatus> {
+    pub fn last_update_status(&self) -> std::option::Option<& crate::model::LastUpdateStatus> {
         self.last_update_status.as_ref()
     }
     /// <p>The reason for the last update that was performed on the function.</p>
-    pub fn last_update_status_reason(&self) -> std::option::Option<&str> {
+    pub fn last_update_status_reason(&self) -> std::option::Option<& str> {
         self.last_update_status_reason.as_deref()
     }
     /// <p>The reason code for the last update that was performed on the function.</p>
-    pub fn last_update_status_reason_code(
-        &self,
-    ) -> std::option::Option<&crate::model::LastUpdateStatusReasonCode> {
+    pub fn last_update_status_reason_code(&self) -> std::option::Option<& crate::model::LastUpdateStatusReasonCode> {
         self.last_update_status_reason_code.as_ref()
     }
     /// <p>Connection settings for an <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-filesystem.html">Amazon EFS file system</a>.</p>
-    pub fn file_system_configs(&self) -> std::option::Option<&[crate::model::FileSystemConfig]> {
+    pub fn file_system_configs(&self) -> std::option::Option<& [crate::model::FileSystemConfig]> {
         self.file_system_configs.as_deref()
     }
     /// <p>The type of deployment package. Set to <code>Image</code> for container image and set <code>Zip</code> for .zip file archive.</p>
-    pub fn package_type(&self) -> std::option::Option<&crate::model::PackageType> {
+    pub fn package_type(&self) -> std::option::Option<& crate::model::PackageType> {
         self.package_type.as_ref()
     }
     /// <p>The function's image configuration values.</p>
-    pub fn image_config_response(&self) -> std::option::Option<&crate::model::ImageConfigResponse> {
+    pub fn image_config_response(&self) -> std::option::Option<& crate::model::ImageConfigResponse> {
         self.image_config_response.as_ref()
     }
     /// <p>The ARN of the signing profile version.</p>
-    pub fn signing_profile_version_arn(&self) -> std::option::Option<&str> {
+    pub fn signing_profile_version_arn(&self) -> std::option::Option<& str> {
         self.signing_profile_version_arn.as_deref()
     }
     /// <p>The ARN of the signing job.</p>
-    pub fn signing_job_arn(&self) -> std::option::Option<&str> {
+    pub fn signing_job_arn(&self) -> std::option::Option<& str> {
         self.signing_job_arn.as_deref()
     }
     /// <p>The instruction set architecture that the function supports. Architecture is a string array with one of the valid values. The default architecture value is <code>x86_64</code>.</p>
-    pub fn architectures(&self) -> std::option::Option<&[crate::model::Architecture]> {
+    pub fn architectures(&self) -> std::option::Option<& [crate::model::Architecture]> {
         self.architectures.as_deref()
     }
     /// <p>The size of the function’s <code>/tmp</code> directory in MB. The default value is 512, but it can be any whole number between 512 and 10,240 MB.</p>
-    pub fn ephemeral_storage(&self) -> std::option::Option<&crate::model::EphemeralStorage> {
+    pub fn ephemeral_storage(&self) -> std::option::Option<& crate::model::EphemeralStorage> {
         self.ephemeral_storage.as_ref()
     }
     /// <p>Set <code>ApplyOn</code> to <code>PublishedVersions</code> to create a snapshot of the initialized execution environment when you publish a function version. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/snapstart.html">Improving startup performance with Lambda SnapStart</a>.</p>
-    pub fn snap_start(&self) -> std::option::Option<&crate::model::SnapStartResponse> {
+    pub fn snap_start(&self) -> std::option::Option<& crate::model::SnapStartResponse> {
         self.snap_start.as_ref()
     }
     /// <p>The ARN of the runtime and any errors that occured.</p>
-    pub fn runtime_version_config(
-        &self,
-    ) -> std::option::Option<&crate::model::RuntimeVersionConfig> {
+    pub fn runtime_version_config(&self) -> std::option::Option<& crate::model::RuntimeVersionConfig> {
         self.runtime_version_config.as_ref()
     }
 }
 /// See [`FunctionConfiguration`](crate::model::FunctionConfiguration).
 pub mod function_configuration {
-
+    
     /// A builder for [`FunctionConfiguration`](crate::model::FunctionConfiguration).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5319,10 +4948,8 @@ pub mod function_configuration {
         pub(crate) state_reason_code: std::option::Option<crate::model::StateReasonCode>,
         pub(crate) last_update_status: std::option::Option<crate::model::LastUpdateStatus>,
         pub(crate) last_update_status_reason: std::option::Option<std::string::String>,
-        pub(crate) last_update_status_reason_code:
-            std::option::Option<crate::model::LastUpdateStatusReasonCode>,
-        pub(crate) file_system_configs:
-            std::option::Option<std::vec::Vec<crate::model::FileSystemConfig>>,
+        pub(crate) last_update_status_reason_code: std::option::Option<crate::model::LastUpdateStatusReasonCode>,
+        pub(crate) file_system_configs: std::option::Option<std::vec::Vec<crate::model::FileSystemConfig>>,
         pub(crate) package_type: std::option::Option<crate::model::PackageType>,
         pub(crate) image_config_response: std::option::Option<crate::model::ImageConfigResponse>,
         pub(crate) signing_profile_version_arn: std::option::Option<std::string::String>,
@@ -5339,12 +4966,8 @@ pub mod function_configuration {
             self
         }
         /// <p>The name of the function.</p>
-        pub fn set_function_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.function_name = input;
-            self
+        pub fn set_function_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.function_name = input; self
         }
         /// <p>The function's Amazon Resource Name (ARN).</p>
         pub fn function_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5353,8 +4976,7 @@ pub mod function_configuration {
         }
         /// <p>The function's Amazon Resource Name (ARN).</p>
         pub fn set_function_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.function_arn = input;
-            self
+            self.function_arn = input; self
         }
         /// <p>The runtime environment for the Lambda function.</p>
         pub fn runtime(mut self, input: crate::model::Runtime) -> Self {
@@ -5363,8 +4985,7 @@ pub mod function_configuration {
         }
         /// <p>The runtime environment for the Lambda function.</p>
         pub fn set_runtime(mut self, input: std::option::Option<crate::model::Runtime>) -> Self {
-            self.runtime = input;
-            self
+            self.runtime = input; self
         }
         /// <p>The function's execution role.</p>
         pub fn role(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5373,8 +4994,7 @@ pub mod function_configuration {
         }
         /// <p>The function's execution role.</p>
         pub fn set_role(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.role = input;
-            self
+            self.role = input; self
         }
         /// <p>The function that Lambda calls to begin running your function.</p>
         pub fn handler(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5383,8 +5003,7 @@ pub mod function_configuration {
         }
         /// <p>The function that Lambda calls to begin running your function.</p>
         pub fn set_handler(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.handler = input;
-            self
+            self.handler = input; self
         }
         /// <p>The size of the function's deployment package, in bytes.</p>
         pub fn code_size(mut self, input: i64) -> Self {
@@ -5393,8 +5012,7 @@ pub mod function_configuration {
         }
         /// <p>The size of the function's deployment package, in bytes.</p>
         pub fn set_code_size(mut self, input: std::option::Option<i64>) -> Self {
-            self.code_size = input;
-            self
+            self.code_size = input; self
         }
         /// <p>The function's description.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5403,8 +5021,7 @@ pub mod function_configuration {
         }
         /// <p>The function's description.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>The amount of time in seconds that Lambda allows a function to run before stopping it.</p>
         pub fn timeout(mut self, input: i32) -> Self {
@@ -5413,8 +5030,7 @@ pub mod function_configuration {
         }
         /// <p>The amount of time in seconds that Lambda allows a function to run before stopping it.</p>
         pub fn set_timeout(mut self, input: std::option::Option<i32>) -> Self {
-            self.timeout = input;
-            self
+            self.timeout = input; self
         }
         /// <p>The amount of memory available to the function at runtime.</p>
         pub fn memory_size(mut self, input: i32) -> Self {
@@ -5423,8 +5039,7 @@ pub mod function_configuration {
         }
         /// <p>The amount of memory available to the function at runtime.</p>
         pub fn set_memory_size(mut self, input: std::option::Option<i32>) -> Self {
-            self.memory_size = input;
-            self
+            self.memory_size = input; self
         }
         /// <p>The date and time that the function was last updated, in <a href="https://www.w3.org/TR/NOTE-datetime">ISO-8601 format</a> (YYYY-MM-DDThh:mm:ss.sTZD).</p>
         pub fn last_modified(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5432,12 +5047,8 @@ pub mod function_configuration {
             self
         }
         /// <p>The date and time that the function was last updated, in <a href="https://www.w3.org/TR/NOTE-datetime">ISO-8601 format</a> (YYYY-MM-DDThh:mm:ss.sTZD).</p>
-        pub fn set_last_modified(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.last_modified = input;
-            self
+        pub fn set_last_modified(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.last_modified = input; self
         }
         /// <p>The SHA256 hash of the function's deployment package.</p>
         pub fn code_sha256(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5446,8 +5057,7 @@ pub mod function_configuration {
         }
         /// <p>The SHA256 hash of the function's deployment package.</p>
         pub fn set_code_sha256(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.code_sha256 = input;
-            self
+            self.code_sha256 = input; self
         }
         /// <p>The version of the Lambda function.</p>
         pub fn version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5456,8 +5066,7 @@ pub mod function_configuration {
         }
         /// <p>The version of the Lambda function.</p>
         pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.version = input;
-            self
+            self.version = input; self
         }
         /// <p>The function's networking configuration.</p>
         pub fn vpc_config(mut self, input: crate::model::VpcConfigResponse) -> Self {
@@ -5465,12 +5074,8 @@ pub mod function_configuration {
             self
         }
         /// <p>The function's networking configuration.</p>
-        pub fn set_vpc_config(
-            mut self,
-            input: std::option::Option<crate::model::VpcConfigResponse>,
-        ) -> Self {
-            self.vpc_config = input;
-            self
+        pub fn set_vpc_config(mut self, input: std::option::Option<crate::model::VpcConfigResponse>) -> Self {
+            self.vpc_config = input; self
         }
         /// <p>The function's dead letter queue.</p>
         pub fn dead_letter_config(mut self, input: crate::model::DeadLetterConfig) -> Self {
@@ -5478,12 +5083,8 @@ pub mod function_configuration {
             self
         }
         /// <p>The function's dead letter queue.</p>
-        pub fn set_dead_letter_config(
-            mut self,
-            input: std::option::Option<crate::model::DeadLetterConfig>,
-        ) -> Self {
-            self.dead_letter_config = input;
-            self
+        pub fn set_dead_letter_config(mut self, input: std::option::Option<crate::model::DeadLetterConfig>) -> Self {
+            self.dead_letter_config = input; self
         }
         /// <p>The function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars.html">environment variables</a>. Omitted from CloudTrail logs.</p>
         pub fn environment(mut self, input: crate::model::EnvironmentResponse) -> Self {
@@ -5491,12 +5092,8 @@ pub mod function_configuration {
             self
         }
         /// <p>The function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars.html">environment variables</a>. Omitted from CloudTrail logs.</p>
-        pub fn set_environment(
-            mut self,
-            input: std::option::Option<crate::model::EnvironmentResponse>,
-        ) -> Self {
-            self.environment = input;
-            self
+        pub fn set_environment(mut self, input: std::option::Option<crate::model::EnvironmentResponse>) -> Self {
+            self.environment = input; self
         }
         /// <p>The KMS key that's used to encrypt the function's environment variables. This key is returned only if you've configured a customer managed key.</p>
         pub fn kms_key_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5505,8 +5102,7 @@ pub mod function_configuration {
         }
         /// <p>The KMS key that's used to encrypt the function's environment variables. This key is returned only if you've configured a customer managed key.</p>
         pub fn set_kms_key_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.kms_key_arn = input;
-            self
+            self.kms_key_arn = input; self
         }
         /// <p>The function's X-Ray tracing configuration.</p>
         pub fn tracing_config(mut self, input: crate::model::TracingConfigResponse) -> Self {
@@ -5514,12 +5110,8 @@ pub mod function_configuration {
             self
         }
         /// <p>The function's X-Ray tracing configuration.</p>
-        pub fn set_tracing_config(
-            mut self,
-            input: std::option::Option<crate::model::TracingConfigResponse>,
-        ) -> Self {
-            self.tracing_config = input;
-            self
+        pub fn set_tracing_config(mut self, input: std::option::Option<crate::model::TracingConfigResponse>) -> Self {
+            self.tracing_config = input; self
         }
         /// <p>For Lambda@Edge functions, the ARN of the main function.</p>
         pub fn master_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5528,8 +5120,7 @@ pub mod function_configuration {
         }
         /// <p>For Lambda@Edge functions, the ARN of the main function.</p>
         pub fn set_master_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.master_arn = input;
-            self
+            self.master_arn = input; self
         }
         /// <p>The latest updated revision of the function or alias.</p>
         pub fn revision_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5538,8 +5129,7 @@ pub mod function_configuration {
         }
         /// <p>The latest updated revision of the function or alias.</p>
         pub fn set_revision_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.revision_id = input;
-            self
+            self.revision_id = input; self
         }
         /// Appends an item to `layers`.
         ///
@@ -5548,17 +5138,13 @@ pub mod function_configuration {
         /// <p>The function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">layers</a>.</p>
         pub fn layers(mut self, input: crate::model::Layer) -> Self {
             let mut v = self.layers.unwrap_or_default();
-            v.push(input);
-            self.layers = Some(v);
-            self
+                            v.push(input);
+                            self.layers = Some(v);
+                            self
         }
         /// <p>The function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">layers</a>.</p>
-        pub fn set_layers(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Layer>>,
-        ) -> Self {
-            self.layers = input;
-            self
+        pub fn set_layers(mut self, input: std::option::Option<std::vec::Vec<crate::model::Layer>>) -> Self {
+            self.layers = input; self
         }
         /// <p>The current state of the function. When the state is <code>Inactive</code>, you can reactivate the function by invoking it.</p>
         pub fn state(mut self, input: crate::model::State) -> Self {
@@ -5567,8 +5153,7 @@ pub mod function_configuration {
         }
         /// <p>The current state of the function. When the state is <code>Inactive</code>, you can reactivate the function by invoking it.</p>
         pub fn set_state(mut self, input: std::option::Option<crate::model::State>) -> Self {
-            self.state = input;
-            self
+            self.state = input; self
         }
         /// <p>The reason for the function's current state.</p>
         pub fn state_reason(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5577,8 +5162,7 @@ pub mod function_configuration {
         }
         /// <p>The reason for the function's current state.</p>
         pub fn set_state_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.state_reason = input;
-            self
+            self.state_reason = input; self
         }
         /// <p>The reason code for the function's current state. When the code is <code>Creating</code>, you can't invoke or modify the function.</p>
         pub fn state_reason_code(mut self, input: crate::model::StateReasonCode) -> Self {
@@ -5586,12 +5170,8 @@ pub mod function_configuration {
             self
         }
         /// <p>The reason code for the function's current state. When the code is <code>Creating</code>, you can't invoke or modify the function.</p>
-        pub fn set_state_reason_code(
-            mut self,
-            input: std::option::Option<crate::model::StateReasonCode>,
-        ) -> Self {
-            self.state_reason_code = input;
-            self
+        pub fn set_state_reason_code(mut self, input: std::option::Option<crate::model::StateReasonCode>) -> Self {
+            self.state_reason_code = input; self
         }
         /// <p>The status of the last update that was performed on the function. This is first set to <code>Successful</code> after function creation completes.</p>
         pub fn last_update_status(mut self, input: crate::model::LastUpdateStatus) -> Self {
@@ -5599,12 +5179,8 @@ pub mod function_configuration {
             self
         }
         /// <p>The status of the last update that was performed on the function. This is first set to <code>Successful</code> after function creation completes.</p>
-        pub fn set_last_update_status(
-            mut self,
-            input: std::option::Option<crate::model::LastUpdateStatus>,
-        ) -> Self {
-            self.last_update_status = input;
-            self
+        pub fn set_last_update_status(mut self, input: std::option::Option<crate::model::LastUpdateStatus>) -> Self {
+            self.last_update_status = input; self
         }
         /// <p>The reason for the last update that was performed on the function.</p>
         pub fn last_update_status_reason(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5612,28 +5188,17 @@ pub mod function_configuration {
             self
         }
         /// <p>The reason for the last update that was performed on the function.</p>
-        pub fn set_last_update_status_reason(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.last_update_status_reason = input;
-            self
+        pub fn set_last_update_status_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.last_update_status_reason = input; self
         }
         /// <p>The reason code for the last update that was performed on the function.</p>
-        pub fn last_update_status_reason_code(
-            mut self,
-            input: crate::model::LastUpdateStatusReasonCode,
-        ) -> Self {
+        pub fn last_update_status_reason_code(mut self, input: crate::model::LastUpdateStatusReasonCode) -> Self {
             self.last_update_status_reason_code = Some(input);
             self
         }
         /// <p>The reason code for the last update that was performed on the function.</p>
-        pub fn set_last_update_status_reason_code(
-            mut self,
-            input: std::option::Option<crate::model::LastUpdateStatusReasonCode>,
-        ) -> Self {
-            self.last_update_status_reason_code = input;
-            self
+        pub fn set_last_update_status_reason_code(mut self, input: std::option::Option<crate::model::LastUpdateStatusReasonCode>) -> Self {
+            self.last_update_status_reason_code = input; self
         }
         /// Appends an item to `file_system_configs`.
         ///
@@ -5642,17 +5207,13 @@ pub mod function_configuration {
         /// <p>Connection settings for an <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-filesystem.html">Amazon EFS file system</a>.</p>
         pub fn file_system_configs(mut self, input: crate::model::FileSystemConfig) -> Self {
             let mut v = self.file_system_configs.unwrap_or_default();
-            v.push(input);
-            self.file_system_configs = Some(v);
-            self
+                            v.push(input);
+                            self.file_system_configs = Some(v);
+                            self
         }
         /// <p>Connection settings for an <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-filesystem.html">Amazon EFS file system</a>.</p>
-        pub fn set_file_system_configs(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::FileSystemConfig>>,
-        ) -> Self {
-            self.file_system_configs = input;
-            self
+        pub fn set_file_system_configs(mut self, input: std::option::Option<std::vec::Vec<crate::model::FileSystemConfig>>) -> Self {
+            self.file_system_configs = input; self
         }
         /// <p>The type of deployment package. Set to <code>Image</code> for container image and set <code>Zip</code> for .zip file archive.</p>
         pub fn package_type(mut self, input: crate::model::PackageType) -> Self {
@@ -5660,12 +5221,8 @@ pub mod function_configuration {
             self
         }
         /// <p>The type of deployment package. Set to <code>Image</code> for container image and set <code>Zip</code> for .zip file archive.</p>
-        pub fn set_package_type(
-            mut self,
-            input: std::option::Option<crate::model::PackageType>,
-        ) -> Self {
-            self.package_type = input;
-            self
+        pub fn set_package_type(mut self, input: std::option::Option<crate::model::PackageType>) -> Self {
+            self.package_type = input; self
         }
         /// <p>The function's image configuration values.</p>
         pub fn image_config_response(mut self, input: crate::model::ImageConfigResponse) -> Self {
@@ -5673,28 +5230,17 @@ pub mod function_configuration {
             self
         }
         /// <p>The function's image configuration values.</p>
-        pub fn set_image_config_response(
-            mut self,
-            input: std::option::Option<crate::model::ImageConfigResponse>,
-        ) -> Self {
-            self.image_config_response = input;
-            self
+        pub fn set_image_config_response(mut self, input: std::option::Option<crate::model::ImageConfigResponse>) -> Self {
+            self.image_config_response = input; self
         }
         /// <p>The ARN of the signing profile version.</p>
-        pub fn signing_profile_version_arn(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn signing_profile_version_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.signing_profile_version_arn = Some(input.into());
             self
         }
         /// <p>The ARN of the signing profile version.</p>
-        pub fn set_signing_profile_version_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.signing_profile_version_arn = input;
-            self
+        pub fn set_signing_profile_version_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.signing_profile_version_arn = input; self
         }
         /// <p>The ARN of the signing job.</p>
         pub fn signing_job_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5702,12 +5248,8 @@ pub mod function_configuration {
             self
         }
         /// <p>The ARN of the signing job.</p>
-        pub fn set_signing_job_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.signing_job_arn = input;
-            self
+        pub fn set_signing_job_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.signing_job_arn = input; self
         }
         /// Appends an item to `architectures`.
         ///
@@ -5716,17 +5258,13 @@ pub mod function_configuration {
         /// <p>The instruction set architecture that the function supports. Architecture is a string array with one of the valid values. The default architecture value is <code>x86_64</code>.</p>
         pub fn architectures(mut self, input: crate::model::Architecture) -> Self {
             let mut v = self.architectures.unwrap_or_default();
-            v.push(input);
-            self.architectures = Some(v);
-            self
+                            v.push(input);
+                            self.architectures = Some(v);
+                            self
         }
         /// <p>The instruction set architecture that the function supports. Architecture is a string array with one of the valid values. The default architecture value is <code>x86_64</code>.</p>
-        pub fn set_architectures(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Architecture>>,
-        ) -> Self {
-            self.architectures = input;
-            self
+        pub fn set_architectures(mut self, input: std::option::Option<std::vec::Vec<crate::model::Architecture>>) -> Self {
+            self.architectures = input; self
         }
         /// <p>The size of the function’s <code>/tmp</code> directory in MB. The default value is 512, but it can be any whole number between 512 and 10,240 MB.</p>
         pub fn ephemeral_storage(mut self, input: crate::model::EphemeralStorage) -> Self {
@@ -5734,12 +5272,8 @@ pub mod function_configuration {
             self
         }
         /// <p>The size of the function’s <code>/tmp</code> directory in MB. The default value is 512, but it can be any whole number between 512 and 10,240 MB.</p>
-        pub fn set_ephemeral_storage(
-            mut self,
-            input: std::option::Option<crate::model::EphemeralStorage>,
-        ) -> Self {
-            self.ephemeral_storage = input;
-            self
+        pub fn set_ephemeral_storage(mut self, input: std::option::Option<crate::model::EphemeralStorage>) -> Self {
+            self.ephemeral_storage = input; self
         }
         /// <p>Set <code>ApplyOn</code> to <code>PublishedVersions</code> to create a snapshot of the initialized execution environment when you publish a function version. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/snapstart.html">Improving startup performance with Lambda SnapStart</a>.</p>
         pub fn snap_start(mut self, input: crate::model::SnapStartResponse) -> Self {
@@ -5747,12 +5281,8 @@ pub mod function_configuration {
             self
         }
         /// <p>Set <code>ApplyOn</code> to <code>PublishedVersions</code> to create a snapshot of the initialized execution environment when you publish a function version. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/snapstart.html">Improving startup performance with Lambda SnapStart</a>.</p>
-        pub fn set_snap_start(
-            mut self,
-            input: std::option::Option<crate::model::SnapStartResponse>,
-        ) -> Self {
-            self.snap_start = input;
-            self
+        pub fn set_snap_start(mut self, input: std::option::Option<crate::model::SnapStartResponse>) -> Self {
+            self.snap_start = input; self
         }
         /// <p>The ARN of the runtime and any errors that occured.</p>
         pub fn runtime_version_config(mut self, input: crate::model::RuntimeVersionConfig) -> Self {
@@ -5760,54 +5290,88 @@ pub mod function_configuration {
             self
         }
         /// <p>The ARN of the runtime and any errors that occured.</p>
-        pub fn set_runtime_version_config(
-            mut self,
-            input: std::option::Option<crate::model::RuntimeVersionConfig>,
-        ) -> Self {
-            self.runtime_version_config = input;
-            self
+        pub fn set_runtime_version_config(mut self, input: std::option::Option<crate::model::RuntimeVersionConfig>) -> Self {
+            self.runtime_version_config = input; self
         }
         /// Consumes the builder and constructs a [`FunctionConfiguration`](crate::model::FunctionConfiguration).
         pub fn build(self) -> crate::model::FunctionConfiguration {
             crate::model::FunctionConfiguration {
-                function_name: self.function_name,
-                function_arn: self.function_arn,
-                runtime: self.runtime,
-                role: self.role,
-                handler: self.handler,
-                code_size: self.code_size.unwrap_or_default(),
-                description: self.description,
-                timeout: self.timeout,
-                memory_size: self.memory_size,
-                last_modified: self.last_modified,
-                code_sha256: self.code_sha256,
-                version: self.version,
-                vpc_config: self.vpc_config,
-                dead_letter_config: self.dead_letter_config,
-                environment: self.environment,
-                kms_key_arn: self.kms_key_arn,
-                tracing_config: self.tracing_config,
-                master_arn: self.master_arn,
-                revision_id: self.revision_id,
-                layers: self.layers,
-                state: self.state,
-                state_reason: self.state_reason,
-                state_reason_code: self.state_reason_code,
-                last_update_status: self.last_update_status,
-                last_update_status_reason: self.last_update_status_reason,
-                last_update_status_reason_code: self.last_update_status_reason_code,
-                file_system_configs: self.file_system_configs,
-                package_type: self.package_type,
-                image_config_response: self.image_config_response,
-                signing_profile_version_arn: self.signing_profile_version_arn,
-                signing_job_arn: self.signing_job_arn,
-                architectures: self.architectures,
-                ephemeral_storage: self.ephemeral_storage,
-                snap_start: self.snap_start,
-                runtime_version_config: self.runtime_version_config,
+                function_name: self.function_name
+                ,
+                function_arn: self.function_arn
+                ,
+                runtime: self.runtime
+                ,
+                role: self.role
+                ,
+                handler: self.handler
+                ,
+                code_size: self.code_size
+                    .unwrap_or_default()
+                ,
+                description: self.description
+                ,
+                timeout: self.timeout
+                ,
+                memory_size: self.memory_size
+                ,
+                last_modified: self.last_modified
+                ,
+                code_sha256: self.code_sha256
+                ,
+                version: self.version
+                ,
+                vpc_config: self.vpc_config
+                ,
+                dead_letter_config: self.dead_letter_config
+                ,
+                environment: self.environment
+                ,
+                kms_key_arn: self.kms_key_arn
+                ,
+                tracing_config: self.tracing_config
+                ,
+                master_arn: self.master_arn
+                ,
+                revision_id: self.revision_id
+                ,
+                layers: self.layers
+                ,
+                state: self.state
+                ,
+                state_reason: self.state_reason
+                ,
+                state_reason_code: self.state_reason_code
+                ,
+                last_update_status: self.last_update_status
+                ,
+                last_update_status_reason: self.last_update_status_reason
+                ,
+                last_update_status_reason_code: self.last_update_status_reason_code
+                ,
+                file_system_configs: self.file_system_configs
+                ,
+                package_type: self.package_type
+                ,
+                image_config_response: self.image_config_response
+                ,
+                signing_profile_version_arn: self.signing_profile_version_arn
+                ,
+                signing_job_arn: self.signing_job_arn
+                ,
+                architectures: self.architectures
+                ,
+                ephemeral_storage: self.ephemeral_storage
+                ,
+                snap_start: self.snap_start
+                ,
+                runtime_version_config: self.runtime_version_config
+                ,
             }
         }
     }
+    
+    
 }
 impl FunctionConfiguration {
     /// Creates a new builder-style object to manufacture [`FunctionConfiguration`](crate::model::FunctionConfiguration).
@@ -5819,7 +5383,7 @@ impl FunctionConfiguration {
 /// <p>Details about the provisioned concurrency configuration for a function alias or version.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ProvisionedConcurrencyConfigListItem {
+pub struct ProvisionedConcurrencyConfigListItem  {
     /// <p>The Amazon Resource Name (ARN) of the alias or version.</p>
     #[doc(hidden)]
     pub function_arn: std::option::Option<std::string::String>,
@@ -5844,7 +5408,7 @@ pub struct ProvisionedConcurrencyConfigListItem {
 }
 impl ProvisionedConcurrencyConfigListItem {
     /// <p>The Amazon Resource Name (ARN) of the alias or version.</p>
-    pub fn function_arn(&self) -> std::option::Option<&str> {
+    pub fn function_arn(&self) -> std::option::Option<& str> {
         self.function_arn.as_deref()
     }
     /// <p>The amount of provisioned concurrency requested.</p>
@@ -5860,21 +5424,21 @@ impl ProvisionedConcurrencyConfigListItem {
         self.allocated_provisioned_concurrent_executions
     }
     /// <p>The status of the allocation process.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::ProvisionedConcurrencyStatusEnum> {
+    pub fn status(&self) -> std::option::Option<& crate::model::ProvisionedConcurrencyStatusEnum> {
         self.status.as_ref()
     }
     /// <p>For failed allocations, the reason that provisioned concurrency could not be allocated.</p>
-    pub fn status_reason(&self) -> std::option::Option<&str> {
+    pub fn status_reason(&self) -> std::option::Option<& str> {
         self.status_reason.as_deref()
     }
     /// <p>The date and time that a user last updated the configuration, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601 format</a>.</p>
-    pub fn last_modified(&self) -> std::option::Option<&str> {
+    pub fn last_modified(&self) -> std::option::Option<& str> {
         self.last_modified.as_deref()
     }
 }
 /// See [`ProvisionedConcurrencyConfigListItem`](crate::model::ProvisionedConcurrencyConfigListItem).
 pub mod provisioned_concurrency_config_list_item {
-
+    
     /// A builder for [`ProvisionedConcurrencyConfigListItem`](crate::model::ProvisionedConcurrencyConfigListItem).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5894,8 +5458,7 @@ pub mod provisioned_concurrency_config_list_item {
         }
         /// <p>The Amazon Resource Name (ARN) of the alias or version.</p>
         pub fn set_function_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.function_arn = input;
-            self
+            self.function_arn = input; self
         }
         /// <p>The amount of provisioned concurrency requested.</p>
         pub fn requested_provisioned_concurrent_executions(mut self, input: i32) -> Self {
@@ -5903,12 +5466,8 @@ pub mod provisioned_concurrency_config_list_item {
             self
         }
         /// <p>The amount of provisioned concurrency requested.</p>
-        pub fn set_requested_provisioned_concurrent_executions(
-            mut self,
-            input: std::option::Option<i32>,
-        ) -> Self {
-            self.requested_provisioned_concurrent_executions = input;
-            self
+        pub fn set_requested_provisioned_concurrent_executions(mut self, input: std::option::Option<i32>) -> Self {
+            self.requested_provisioned_concurrent_executions = input; self
         }
         /// <p>The amount of provisioned concurrency available.</p>
         pub fn available_provisioned_concurrent_executions(mut self, input: i32) -> Self {
@@ -5916,12 +5475,8 @@ pub mod provisioned_concurrency_config_list_item {
             self
         }
         /// <p>The amount of provisioned concurrency available.</p>
-        pub fn set_available_provisioned_concurrent_executions(
-            mut self,
-            input: std::option::Option<i32>,
-        ) -> Self {
-            self.available_provisioned_concurrent_executions = input;
-            self
+        pub fn set_available_provisioned_concurrent_executions(mut self, input: std::option::Option<i32>) -> Self {
+            self.available_provisioned_concurrent_executions = input; self
         }
         /// <p>The amount of provisioned concurrency allocated. When a weighted alias is used during linear and canary deployments, this value fluctuates depending on the amount of concurrency that is provisioned for the function versions.</p>
         pub fn allocated_provisioned_concurrent_executions(mut self, input: i32) -> Self {
@@ -5929,12 +5484,8 @@ pub mod provisioned_concurrency_config_list_item {
             self
         }
         /// <p>The amount of provisioned concurrency allocated. When a weighted alias is used during linear and canary deployments, this value fluctuates depending on the amount of concurrency that is provisioned for the function versions.</p>
-        pub fn set_allocated_provisioned_concurrent_executions(
-            mut self,
-            input: std::option::Option<i32>,
-        ) -> Self {
-            self.allocated_provisioned_concurrent_executions = input;
-            self
+        pub fn set_allocated_provisioned_concurrent_executions(mut self, input: std::option::Option<i32>) -> Self {
+            self.allocated_provisioned_concurrent_executions = input; self
         }
         /// <p>The status of the allocation process.</p>
         pub fn status(mut self, input: crate::model::ProvisionedConcurrencyStatusEnum) -> Self {
@@ -5942,12 +5493,8 @@ pub mod provisioned_concurrency_config_list_item {
             self
         }
         /// <p>The status of the allocation process.</p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::ProvisionedConcurrencyStatusEnum>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::ProvisionedConcurrencyStatusEnum>) -> Self {
+            self.status = input; self
         }
         /// <p>For failed allocations, the reason that provisioned concurrency could not be allocated.</p>
         pub fn status_reason(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5955,12 +5502,8 @@ pub mod provisioned_concurrency_config_list_item {
             self
         }
         /// <p>For failed allocations, the reason that provisioned concurrency could not be allocated.</p>
-        pub fn set_status_reason(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.status_reason = input;
-            self
+        pub fn set_status_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.status_reason = input; self
         }
         /// <p>The date and time that a user last updated the configuration, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601 format</a>.</p>
         pub fn last_modified(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5968,29 +5511,31 @@ pub mod provisioned_concurrency_config_list_item {
             self
         }
         /// <p>The date and time that a user last updated the configuration, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601 format</a>.</p>
-        pub fn set_last_modified(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.last_modified = input;
-            self
+        pub fn set_last_modified(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.last_modified = input; self
         }
         /// Consumes the builder and constructs a [`ProvisionedConcurrencyConfigListItem`](crate::model::ProvisionedConcurrencyConfigListItem).
         pub fn build(self) -> crate::model::ProvisionedConcurrencyConfigListItem {
             crate::model::ProvisionedConcurrencyConfigListItem {
-                function_arn: self.function_arn,
-                requested_provisioned_concurrent_executions: self
-                    .requested_provisioned_concurrent_executions,
-                available_provisioned_concurrent_executions: self
-                    .available_provisioned_concurrent_executions,
-                allocated_provisioned_concurrent_executions: self
-                    .allocated_provisioned_concurrent_executions,
-                status: self.status,
-                status_reason: self.status_reason,
-                last_modified: self.last_modified,
+                function_arn: self.function_arn
+                ,
+                requested_provisioned_concurrent_executions: self.requested_provisioned_concurrent_executions
+                ,
+                available_provisioned_concurrent_executions: self.available_provisioned_concurrent_executions
+                ,
+                allocated_provisioned_concurrent_executions: self.allocated_provisioned_concurrent_executions
+                ,
+                status: self.status
+                ,
+                status_reason: self.status_reason
+                ,
+                last_modified: self.last_modified
+                ,
             }
         }
     }
+    
+    
 }
 impl ProvisionedConcurrencyConfigListItem {
     /// Creates a new builder-style object to manufacture [`ProvisionedConcurrencyConfigListItem`](crate::model::ProvisionedConcurrencyConfigListItem).
@@ -6002,7 +5547,7 @@ impl ProvisionedConcurrencyConfigListItem {
 /// <p>Details about a version of an <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">Lambda layer</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct LayerVersionsListItem {
+pub struct LayerVersionsListItem  {
     /// <p>The ARN of the layer version.</p>
     #[doc(hidden)]
     pub layer_version_arn: std::option::Option<std::string::String>,
@@ -6027,7 +5572,7 @@ pub struct LayerVersionsListItem {
 }
 impl LayerVersionsListItem {
     /// <p>The ARN of the layer version.</p>
-    pub fn layer_version_arn(&self) -> std::option::Option<&str> {
+    pub fn layer_version_arn(&self) -> std::option::Option<& str> {
         self.layer_version_arn.as_deref()
     }
     /// <p>The version number.</p>
@@ -6035,29 +5580,29 @@ impl LayerVersionsListItem {
         self.version
     }
     /// <p>The description of the version.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The date that the version was created, in ISO 8601 format. For example, <code>2018-11-27T15:10:45.123+0000</code>.</p>
-    pub fn created_date(&self) -> std::option::Option<&str> {
+    pub fn created_date(&self) -> std::option::Option<& str> {
         self.created_date.as_deref()
     }
     /// <p>The layer's compatible runtimes.</p>
-    pub fn compatible_runtimes(&self) -> std::option::Option<&[crate::model::Runtime]> {
+    pub fn compatible_runtimes(&self) -> std::option::Option<& [crate::model::Runtime]> {
         self.compatible_runtimes.as_deref()
     }
     /// <p>The layer's open-source license.</p>
-    pub fn license_info(&self) -> std::option::Option<&str> {
+    pub fn license_info(&self) -> std::option::Option<& str> {
         self.license_info.as_deref()
     }
     /// <p>A list of compatible <a href="https://docs.aws.amazon.com/lambda/latest/dg/foundation-arch.html">instruction set architectures</a>.</p>
-    pub fn compatible_architectures(&self) -> std::option::Option<&[crate::model::Architecture]> {
+    pub fn compatible_architectures(&self) -> std::option::Option<& [crate::model::Architecture]> {
         self.compatible_architectures.as_deref()
     }
 }
 /// See [`LayerVersionsListItem`](crate::model::LayerVersionsListItem).
 pub mod layer_versions_list_item {
-
+    
     /// A builder for [`LayerVersionsListItem`](crate::model::LayerVersionsListItem).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -6067,8 +5612,7 @@ pub mod layer_versions_list_item {
         pub(crate) created_date: std::option::Option<std::string::String>,
         pub(crate) compatible_runtimes: std::option::Option<std::vec::Vec<crate::model::Runtime>>,
         pub(crate) license_info: std::option::Option<std::string::String>,
-        pub(crate) compatible_architectures:
-            std::option::Option<std::vec::Vec<crate::model::Architecture>>,
+        pub(crate) compatible_architectures: std::option::Option<std::vec::Vec<crate::model::Architecture>>,
     }
     impl Builder {
         /// <p>The ARN of the layer version.</p>
@@ -6077,12 +5621,8 @@ pub mod layer_versions_list_item {
             self
         }
         /// <p>The ARN of the layer version.</p>
-        pub fn set_layer_version_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.layer_version_arn = input;
-            self
+        pub fn set_layer_version_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.layer_version_arn = input; self
         }
         /// <p>The version number.</p>
         pub fn version(mut self, input: i64) -> Self {
@@ -6091,8 +5631,7 @@ pub mod layer_versions_list_item {
         }
         /// <p>The version number.</p>
         pub fn set_version(mut self, input: std::option::Option<i64>) -> Self {
-            self.version = input;
-            self
+            self.version = input; self
         }
         /// <p>The description of the version.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6101,8 +5640,7 @@ pub mod layer_versions_list_item {
         }
         /// <p>The description of the version.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>The date that the version was created, in ISO 8601 format. For example, <code>2018-11-27T15:10:45.123+0000</code>.</p>
         pub fn created_date(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6111,8 +5649,7 @@ pub mod layer_versions_list_item {
         }
         /// <p>The date that the version was created, in ISO 8601 format. For example, <code>2018-11-27T15:10:45.123+0000</code>.</p>
         pub fn set_created_date(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.created_date = input;
-            self
+            self.created_date = input; self
         }
         /// Appends an item to `compatible_runtimes`.
         ///
@@ -6121,17 +5658,13 @@ pub mod layer_versions_list_item {
         /// <p>The layer's compatible runtimes.</p>
         pub fn compatible_runtimes(mut self, input: crate::model::Runtime) -> Self {
             let mut v = self.compatible_runtimes.unwrap_or_default();
-            v.push(input);
-            self.compatible_runtimes = Some(v);
-            self
+                            v.push(input);
+                            self.compatible_runtimes = Some(v);
+                            self
         }
         /// <p>The layer's compatible runtimes.</p>
-        pub fn set_compatible_runtimes(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Runtime>>,
-        ) -> Self {
-            self.compatible_runtimes = input;
-            self
+        pub fn set_compatible_runtimes(mut self, input: std::option::Option<std::vec::Vec<crate::model::Runtime>>) -> Self {
+            self.compatible_runtimes = input; self
         }
         /// <p>The layer's open-source license.</p>
         pub fn license_info(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6140,8 +5673,7 @@ pub mod layer_versions_list_item {
         }
         /// <p>The layer's open-source license.</p>
         pub fn set_license_info(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.license_info = input;
-            self
+            self.license_info = input; self
         }
         /// Appends an item to `compatible_architectures`.
         ///
@@ -6150,31 +5682,37 @@ pub mod layer_versions_list_item {
         /// <p>A list of compatible <a href="https://docs.aws.amazon.com/lambda/latest/dg/foundation-arch.html">instruction set architectures</a>.</p>
         pub fn compatible_architectures(mut self, input: crate::model::Architecture) -> Self {
             let mut v = self.compatible_architectures.unwrap_or_default();
-            v.push(input);
-            self.compatible_architectures = Some(v);
-            self
+                            v.push(input);
+                            self.compatible_architectures = Some(v);
+                            self
         }
         /// <p>A list of compatible <a href="https://docs.aws.amazon.com/lambda/latest/dg/foundation-arch.html">instruction set architectures</a>.</p>
-        pub fn set_compatible_architectures(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Architecture>>,
-        ) -> Self {
-            self.compatible_architectures = input;
-            self
+        pub fn set_compatible_architectures(mut self, input: std::option::Option<std::vec::Vec<crate::model::Architecture>>) -> Self {
+            self.compatible_architectures = input; self
         }
         /// Consumes the builder and constructs a [`LayerVersionsListItem`](crate::model::LayerVersionsListItem).
         pub fn build(self) -> crate::model::LayerVersionsListItem {
             crate::model::LayerVersionsListItem {
-                layer_version_arn: self.layer_version_arn,
-                version: self.version.unwrap_or_default(),
-                description: self.description,
-                created_date: self.created_date,
-                compatible_runtimes: self.compatible_runtimes,
-                license_info: self.license_info,
-                compatible_architectures: self.compatible_architectures,
+                layer_version_arn: self.layer_version_arn
+                ,
+                version: self.version
+                    .unwrap_or_default()
+                ,
+                description: self.description
+                ,
+                created_date: self.created_date
+                ,
+                compatible_runtimes: self.compatible_runtimes
+                ,
+                license_info: self.license_info
+                ,
+                compatible_architectures: self.compatible_architectures
+                ,
             }
         }
     }
+    
+    
 }
 impl LayerVersionsListItem {
     /// Creates a new builder-style object to manufacture [`LayerVersionsListItem`](crate::model::LayerVersionsListItem).
@@ -6186,7 +5724,7 @@ impl LayerVersionsListItem {
 /// <p>Details about an <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">Lambda layer</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct LayersListItem {
+pub struct LayersListItem  {
     /// <p>The name of the layer.</p>
     #[doc(hidden)]
     pub layer_name: std::option::Option<std::string::String>,
@@ -6199,30 +5737,27 @@ pub struct LayersListItem {
 }
 impl LayersListItem {
     /// <p>The name of the layer.</p>
-    pub fn layer_name(&self) -> std::option::Option<&str> {
+    pub fn layer_name(&self) -> std::option::Option<& str> {
         self.layer_name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the function layer.</p>
-    pub fn layer_arn(&self) -> std::option::Option<&str> {
+    pub fn layer_arn(&self) -> std::option::Option<& str> {
         self.layer_arn.as_deref()
     }
     /// <p>The newest version of the layer.</p>
-    pub fn latest_matching_version(
-        &self,
-    ) -> std::option::Option<&crate::model::LayerVersionsListItem> {
+    pub fn latest_matching_version(&self) -> std::option::Option<& crate::model::LayerVersionsListItem> {
         self.latest_matching_version.as_ref()
     }
 }
 /// See [`LayersListItem`](crate::model::LayersListItem).
 pub mod layers_list_item {
-
+    
     /// A builder for [`LayersListItem`](crate::model::LayersListItem).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) layer_name: std::option::Option<std::string::String>,
         pub(crate) layer_arn: std::option::Option<std::string::String>,
-        pub(crate) latest_matching_version:
-            std::option::Option<crate::model::LayerVersionsListItem>,
+        pub(crate) latest_matching_version: std::option::Option<crate::model::LayerVersionsListItem>,
     }
     impl Builder {
         /// <p>The name of the layer.</p>
@@ -6232,8 +5767,7 @@ pub mod layers_list_item {
         }
         /// <p>The name of the layer.</p>
         pub fn set_layer_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.layer_name = input;
-            self
+            self.layer_name = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the function layer.</p>
         pub fn layer_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6242,34 +5776,31 @@ pub mod layers_list_item {
         }
         /// <p>The Amazon Resource Name (ARN) of the function layer.</p>
         pub fn set_layer_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.layer_arn = input;
-            self
+            self.layer_arn = input; self
         }
         /// <p>The newest version of the layer.</p>
-        pub fn latest_matching_version(
-            mut self,
-            input: crate::model::LayerVersionsListItem,
-        ) -> Self {
+        pub fn latest_matching_version(mut self, input: crate::model::LayerVersionsListItem) -> Self {
             self.latest_matching_version = Some(input);
             self
         }
         /// <p>The newest version of the layer.</p>
-        pub fn set_latest_matching_version(
-            mut self,
-            input: std::option::Option<crate::model::LayerVersionsListItem>,
-        ) -> Self {
-            self.latest_matching_version = input;
-            self
+        pub fn set_latest_matching_version(mut self, input: std::option::Option<crate::model::LayerVersionsListItem>) -> Self {
+            self.latest_matching_version = input; self
         }
         /// Consumes the builder and constructs a [`LayersListItem`](crate::model::LayersListItem).
         pub fn build(self) -> crate::model::LayersListItem {
             crate::model::LayersListItem {
-                layer_name: self.layer_name,
-                layer_arn: self.layer_arn,
-                latest_matching_version: self.latest_matching_version,
+                layer_name: self.layer_name
+                ,
+                layer_arn: self.layer_arn
+                ,
+                latest_matching_version: self.latest_matching_version
+                ,
             }
         }
     }
+    
+    
 }
 impl LayersListItem {
     /// Creates a new builder-style object to manufacture [`LayersListItem`](crate::model::LayersListItem).
@@ -6281,7 +5812,7 @@ impl LayersListItem {
 /// <p>Details about a Lambda function URL.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct FunctionUrlConfig {
+pub struct FunctionUrlConfig  {
     /// <p>The HTTP URL endpoint for your function.</p>
     #[doc(hidden)]
     pub function_url: std::option::Option<std::string::String>,
@@ -6303,33 +5834,33 @@ pub struct FunctionUrlConfig {
 }
 impl FunctionUrlConfig {
     /// <p>The HTTP URL endpoint for your function.</p>
-    pub fn function_url(&self) -> std::option::Option<&str> {
+    pub fn function_url(&self) -> std::option::Option<& str> {
         self.function_url.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of your function.</p>
-    pub fn function_arn(&self) -> std::option::Option<&str> {
+    pub fn function_arn(&self) -> std::option::Option<& str> {
         self.function_arn.as_deref()
     }
     /// <p>When the function URL was created, in <a href="https://www.w3.org/TR/NOTE-datetime">ISO-8601 format</a> (YYYY-MM-DDThh:mm:ss.sTZD).</p>
-    pub fn creation_time(&self) -> std::option::Option<&str> {
+    pub fn creation_time(&self) -> std::option::Option<& str> {
         self.creation_time.as_deref()
     }
     /// <p>When the function URL configuration was last updated, in <a href="https://www.w3.org/TR/NOTE-datetime">ISO-8601 format</a> (YYYY-MM-DDThh:mm:ss.sTZD).</p>
-    pub fn last_modified_time(&self) -> std::option::Option<&str> {
+    pub fn last_modified_time(&self) -> std::option::Option<& str> {
         self.last_modified_time.as_deref()
     }
     /// <p>The <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS">cross-origin resource sharing (CORS)</a> settings for your function URL.</p>
-    pub fn cors(&self) -> std::option::Option<&crate::model::Cors> {
+    pub fn cors(&self) -> std::option::Option<& crate::model::Cors> {
         self.cors.as_ref()
     }
     /// <p>The type of authentication that your function URL uses. Set to <code>AWS_IAM</code> if you want to restrict access to authenticated IAM users only. Set to <code>NONE</code> if you want to bypass IAM authentication to create a public endpoint. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/urls-auth.html">Security and auth model for Lambda function URLs</a>.</p>
-    pub fn auth_type(&self) -> std::option::Option<&crate::model::FunctionUrlAuthType> {
+    pub fn auth_type(&self) -> std::option::Option<& crate::model::FunctionUrlAuthType> {
         self.auth_type.as_ref()
     }
 }
 /// See [`FunctionUrlConfig`](crate::model::FunctionUrlConfig).
 pub mod function_url_config {
-
+    
     /// A builder for [`FunctionUrlConfig`](crate::model::FunctionUrlConfig).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -6348,8 +5879,7 @@ pub mod function_url_config {
         }
         /// <p>The HTTP URL endpoint for your function.</p>
         pub fn set_function_url(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.function_url = input;
-            self
+            self.function_url = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of your function.</p>
         pub fn function_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6358,8 +5888,7 @@ pub mod function_url_config {
         }
         /// <p>The Amazon Resource Name (ARN) of your function.</p>
         pub fn set_function_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.function_arn = input;
-            self
+            self.function_arn = input; self
         }
         /// <p>When the function URL was created, in <a href="https://www.w3.org/TR/NOTE-datetime">ISO-8601 format</a> (YYYY-MM-DDThh:mm:ss.sTZD).</p>
         pub fn creation_time(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6367,12 +5896,8 @@ pub mod function_url_config {
             self
         }
         /// <p>When the function URL was created, in <a href="https://www.w3.org/TR/NOTE-datetime">ISO-8601 format</a> (YYYY-MM-DDThh:mm:ss.sTZD).</p>
-        pub fn set_creation_time(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.creation_time = input;
-            self
+        pub fn set_creation_time(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.creation_time = input; self
         }
         /// <p>When the function URL configuration was last updated, in <a href="https://www.w3.org/TR/NOTE-datetime">ISO-8601 format</a> (YYYY-MM-DDThh:mm:ss.sTZD).</p>
         pub fn last_modified_time(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6380,12 +5905,8 @@ pub mod function_url_config {
             self
         }
         /// <p>When the function URL configuration was last updated, in <a href="https://www.w3.org/TR/NOTE-datetime">ISO-8601 format</a> (YYYY-MM-DDThh:mm:ss.sTZD).</p>
-        pub fn set_last_modified_time(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.last_modified_time = input;
-            self
+        pub fn set_last_modified_time(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.last_modified_time = input; self
         }
         /// <p>The <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS">cross-origin resource sharing (CORS)</a> settings for your function URL.</p>
         pub fn cors(mut self, input: crate::model::Cors) -> Self {
@@ -6394,8 +5915,7 @@ pub mod function_url_config {
         }
         /// <p>The <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS">cross-origin resource sharing (CORS)</a> settings for your function URL.</p>
         pub fn set_cors(mut self, input: std::option::Option<crate::model::Cors>) -> Self {
-            self.cors = input;
-            self
+            self.cors = input; self
         }
         /// <p>The type of authentication that your function URL uses. Set to <code>AWS_IAM</code> if you want to restrict access to authenticated IAM users only. Set to <code>NONE</code> if you want to bypass IAM authentication to create a public endpoint. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/urls-auth.html">Security and auth model for Lambda function URLs</a>.</p>
         pub fn auth_type(mut self, input: crate::model::FunctionUrlAuthType) -> Self {
@@ -6403,25 +5923,29 @@ pub mod function_url_config {
             self
         }
         /// <p>The type of authentication that your function URL uses. Set to <code>AWS_IAM</code> if you want to restrict access to authenticated IAM users only. Set to <code>NONE</code> if you want to bypass IAM authentication to create a public endpoint. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/urls-auth.html">Security and auth model for Lambda function URLs</a>.</p>
-        pub fn set_auth_type(
-            mut self,
-            input: std::option::Option<crate::model::FunctionUrlAuthType>,
-        ) -> Self {
-            self.auth_type = input;
-            self
+        pub fn set_auth_type(mut self, input: std::option::Option<crate::model::FunctionUrlAuthType>) -> Self {
+            self.auth_type = input; self
         }
         /// Consumes the builder and constructs a [`FunctionUrlConfig`](crate::model::FunctionUrlConfig).
         pub fn build(self) -> crate::model::FunctionUrlConfig {
             crate::model::FunctionUrlConfig {
-                function_url: self.function_url,
-                function_arn: self.function_arn,
-                creation_time: self.creation_time,
-                last_modified_time: self.last_modified_time,
-                cors: self.cors,
-                auth_type: self.auth_type,
+                function_url: self.function_url
+                ,
+                function_arn: self.function_arn
+                ,
+                creation_time: self.creation_time
+                ,
+                last_modified_time: self.last_modified_time
+                ,
+                cors: self.cors
+                ,
+                auth_type: self.auth_type
+                ,
             }
         }
     }
+    
+    
 }
 impl FunctionUrlConfig {
     /// Creates a new builder-style object to manufacture [`FunctionUrlConfig`](crate::model::FunctionUrlConfig).
@@ -6436,9 +5960,9 @@ impl FunctionUrlConfig {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let functionversion = unimplemented!();
 /// match functionversion {
@@ -6459,54 +5983,48 @@ impl FunctionUrlConfig {
 /// Specifically, when `functionversion` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `FunctionVersion::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum FunctionVersion {
     #[allow(missing_docs)] // documentation missing in model
     All,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for FunctionVersion {
     fn from(s: &str) -> Self {
         match s {
             "ALL" => FunctionVersion::All,
-            other => FunctionVersion::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => FunctionVersion::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for FunctionVersion {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(FunctionVersion::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(FunctionVersion::from(s))
+                }
+            }
 impl FunctionVersion {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             FunctionVersion::All => "ALL",
-            FunctionVersion::Unknown(value) => value.as_str(),
+            FunctionVersion::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ALL"]
+        &[
+            "ALL"
+        ]
     }
 }
 impl AsRef<str> for FunctionVersion {
@@ -6518,7 +6036,7 @@ impl AsRef<str> for FunctionVersion {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct FunctionEventInvokeConfig {
+pub struct FunctionEventInvokeConfig  {
     /// <p>The date and time that the configuration was last updated.</p>
     #[doc(hidden)]
     pub last_modified: std::option::Option<aws_smithy_types::DateTime>,
@@ -6531,24 +6049,24 @@ pub struct FunctionEventInvokeConfig {
     /// <p>The maximum age of a request that Lambda sends to a function for processing.</p>
     #[doc(hidden)]
     pub maximum_event_age_in_seconds: std::option::Option<i32>,
-    /// <p>A destination for events after they have been sent to a function for processing.</p>
-    /// <p class="title"> <b>Destinations</b> </p>
-    /// <ul>
-    /// <li> <p> <b>Function</b> - The Amazon Resource Name (ARN) of a Lambda function.</p> </li>
-    /// <li> <p> <b>Queue</b> - The ARN of an SQS queue.</p> </li>
-    /// <li> <p> <b>Topic</b> - The ARN of an SNS topic.</p> </li>
-    /// <li> <p> <b>Event Bus</b> - The ARN of an Amazon EventBridge event bus.</p> </li>
+    /// <p>A destination for events after they have been sent to a function for processing.</p> 
+    /// <p class="title"> <b>Destinations</b> </p> 
+    /// <ul> 
+    /// <li> <p> <b>Function</b> - The Amazon Resource Name (ARN) of a Lambda function.</p> </li> 
+    /// <li> <p> <b>Queue</b> - The ARN of an SQS queue.</p> </li> 
+    /// <li> <p> <b>Topic</b> - The ARN of an SNS topic.</p> </li> 
+    /// <li> <p> <b>Event Bus</b> - The ARN of an Amazon EventBridge event bus.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub destination_config: std::option::Option<crate::model::DestinationConfig>,
 }
 impl FunctionEventInvokeConfig {
     /// <p>The date and time that the configuration was last updated.</p>
-    pub fn last_modified(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_modified(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_modified.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the function.</p>
-    pub fn function_arn(&self) -> std::option::Option<&str> {
+    pub fn function_arn(&self) -> std::option::Option<& str> {
         self.function_arn.as_deref()
     }
     /// <p>The maximum number of times to retry when the function returns an error.</p>
@@ -6559,21 +6077,21 @@ impl FunctionEventInvokeConfig {
     pub fn maximum_event_age_in_seconds(&self) -> std::option::Option<i32> {
         self.maximum_event_age_in_seconds
     }
-    /// <p>A destination for events after they have been sent to a function for processing.</p>
-    /// <p class="title"> <b>Destinations</b> </p>
-    /// <ul>
-    /// <li> <p> <b>Function</b> - The Amazon Resource Name (ARN) of a Lambda function.</p> </li>
-    /// <li> <p> <b>Queue</b> - The ARN of an SQS queue.</p> </li>
-    /// <li> <p> <b>Topic</b> - The ARN of an SNS topic.</p> </li>
-    /// <li> <p> <b>Event Bus</b> - The ARN of an Amazon EventBridge event bus.</p> </li>
+    /// <p>A destination for events after they have been sent to a function for processing.</p> 
+    /// <p class="title"> <b>Destinations</b> </p> 
+    /// <ul> 
+    /// <li> <p> <b>Function</b> - The Amazon Resource Name (ARN) of a Lambda function.</p> </li> 
+    /// <li> <p> <b>Queue</b> - The ARN of an SQS queue.</p> </li> 
+    /// <li> <p> <b>Topic</b> - The ARN of an SNS topic.</p> </li> 
+    /// <li> <p> <b>Event Bus</b> - The ARN of an Amazon EventBridge event bus.</p> </li> 
     /// </ul>
-    pub fn destination_config(&self) -> std::option::Option<&crate::model::DestinationConfig> {
+    pub fn destination_config(&self) -> std::option::Option<& crate::model::DestinationConfig> {
         self.destination_config.as_ref()
     }
 }
 /// See [`FunctionEventInvokeConfig`](crate::model::FunctionEventInvokeConfig).
 pub mod function_event_invoke_config {
-
+    
     /// A builder for [`FunctionEventInvokeConfig`](crate::model::FunctionEventInvokeConfig).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -6590,12 +6108,8 @@ pub mod function_event_invoke_config {
             self
         }
         /// <p>The date and time that the configuration was last updated.</p>
-        pub fn set_last_modified(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_modified = input;
-            self
+        pub fn set_last_modified(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_modified = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the function.</p>
         pub fn function_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6604,8 +6118,7 @@ pub mod function_event_invoke_config {
         }
         /// <p>The Amazon Resource Name (ARN) of the function.</p>
         pub fn set_function_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.function_arn = input;
-            self
+            self.function_arn = input; self
         }
         /// <p>The maximum number of times to retry when the function returns an error.</p>
         pub fn maximum_retry_attempts(mut self, input: i32) -> Self {
@@ -6614,8 +6127,7 @@ pub mod function_event_invoke_config {
         }
         /// <p>The maximum number of times to retry when the function returns an error.</p>
         pub fn set_maximum_retry_attempts(mut self, input: std::option::Option<i32>) -> Self {
-            self.maximum_retry_attempts = input;
-            self
+            self.maximum_retry_attempts = input; self
         }
         /// <p>The maximum age of a request that Lambda sends to a function for processing.</p>
         pub fn maximum_event_age_in_seconds(mut self, input: i32) -> Self {
@@ -6624,47 +6136,49 @@ pub mod function_event_invoke_config {
         }
         /// <p>The maximum age of a request that Lambda sends to a function for processing.</p>
         pub fn set_maximum_event_age_in_seconds(mut self, input: std::option::Option<i32>) -> Self {
-            self.maximum_event_age_in_seconds = input;
-            self
+            self.maximum_event_age_in_seconds = input; self
         }
-        /// <p>A destination for events after they have been sent to a function for processing.</p>
-        /// <p class="title"> <b>Destinations</b> </p>
-        /// <ul>
-        /// <li> <p> <b>Function</b> - The Amazon Resource Name (ARN) of a Lambda function.</p> </li>
-        /// <li> <p> <b>Queue</b> - The ARN of an SQS queue.</p> </li>
-        /// <li> <p> <b>Topic</b> - The ARN of an SNS topic.</p> </li>
-        /// <li> <p> <b>Event Bus</b> - The ARN of an Amazon EventBridge event bus.</p> </li>
+        /// <p>A destination for events after they have been sent to a function for processing.</p> 
+        /// <p class="title"> <b>Destinations</b> </p> 
+        /// <ul> 
+        /// <li> <p> <b>Function</b> - The Amazon Resource Name (ARN) of a Lambda function.</p> </li> 
+        /// <li> <p> <b>Queue</b> - The ARN of an SQS queue.</p> </li> 
+        /// <li> <p> <b>Topic</b> - The ARN of an SNS topic.</p> </li> 
+        /// <li> <p> <b>Event Bus</b> - The ARN of an Amazon EventBridge event bus.</p> </li> 
         /// </ul>
         pub fn destination_config(mut self, input: crate::model::DestinationConfig) -> Self {
             self.destination_config = Some(input);
             self
         }
-        /// <p>A destination for events after they have been sent to a function for processing.</p>
-        /// <p class="title"> <b>Destinations</b> </p>
-        /// <ul>
-        /// <li> <p> <b>Function</b> - The Amazon Resource Name (ARN) of a Lambda function.</p> </li>
-        /// <li> <p> <b>Queue</b> - The ARN of an SQS queue.</p> </li>
-        /// <li> <p> <b>Topic</b> - The ARN of an SNS topic.</p> </li>
-        /// <li> <p> <b>Event Bus</b> - The ARN of an Amazon EventBridge event bus.</p> </li>
+        /// <p>A destination for events after they have been sent to a function for processing.</p> 
+        /// <p class="title"> <b>Destinations</b> </p> 
+        /// <ul> 
+        /// <li> <p> <b>Function</b> - The Amazon Resource Name (ARN) of a Lambda function.</p> </li> 
+        /// <li> <p> <b>Queue</b> - The ARN of an SQS queue.</p> </li> 
+        /// <li> <p> <b>Topic</b> - The ARN of an SNS topic.</p> </li> 
+        /// <li> <p> <b>Event Bus</b> - The ARN of an Amazon EventBridge event bus.</p> </li> 
         /// </ul>
-        pub fn set_destination_config(
-            mut self,
-            input: std::option::Option<crate::model::DestinationConfig>,
-        ) -> Self {
-            self.destination_config = input;
-            self
+        pub fn set_destination_config(mut self, input: std::option::Option<crate::model::DestinationConfig>) -> Self {
+            self.destination_config = input; self
         }
         /// Consumes the builder and constructs a [`FunctionEventInvokeConfig`](crate::model::FunctionEventInvokeConfig).
         pub fn build(self) -> crate::model::FunctionEventInvokeConfig {
             crate::model::FunctionEventInvokeConfig {
-                last_modified: self.last_modified,
-                function_arn: self.function_arn,
-                maximum_retry_attempts: self.maximum_retry_attempts,
-                maximum_event_age_in_seconds: self.maximum_event_age_in_seconds,
-                destination_config: self.destination_config,
+                last_modified: self.last_modified
+                ,
+                function_arn: self.function_arn
+                ,
+                maximum_retry_attempts: self.maximum_retry_attempts
+                ,
+                maximum_event_age_in_seconds: self.maximum_event_age_in_seconds
+                ,
+                destination_config: self.destination_config
+                ,
             }
         }
     }
+    
+    
 }
 impl FunctionEventInvokeConfig {
     /// Creates a new builder-style object to manufacture [`FunctionEventInvokeConfig`](crate::model::FunctionEventInvokeConfig).
@@ -6676,7 +6190,7 @@ impl FunctionEventInvokeConfig {
 /// <p>A mapping between an Amazon Web Services resource and a Lambda function. For details, see <code>CreateEventSourceMapping</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct EventSourceMappingConfiguration {
+pub struct EventSourceMappingConfiguration  {
     /// <p>The identifier of the event source mapping.</p>
     #[doc(hidden)]
     pub uuid: std::option::Option<std::string::String>,
@@ -6686,13 +6200,13 @@ pub struct EventSourceMappingConfiguration {
     /// <p>With <code>StartingPosition</code> set to <code>AT_TIMESTAMP</code>, the time from which to start reading.</p>
     #[doc(hidden)]
     pub starting_position_timestamp: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The maximum number of records in each batch that Lambda pulls from your stream or queue and sends to your function. Lambda passes all of the records in the batch to the function in a single call, up to the payload limit for synchronous invocation (6 MB).</p>
-    /// <p>Default value: Varies by service. For Amazon SQS, the default is 10. For all other services, the default is 100.</p>
+    /// <p>The maximum number of records in each batch that Lambda pulls from your stream or queue and sends to your function. Lambda passes all of the records in the batch to the function in a single call, up to the payload limit for synchronous invocation (6 MB).</p> 
+    /// <p>Default value: Varies by service. For Amazon SQS, the default is 10. For all other services, the default is 100.</p> 
     /// <p>Related setting: When you set <code>BatchSize</code> to a value greater than 10, you must set <code>MaximumBatchingWindowInSeconds</code> to at least 1.</p>
     #[doc(hidden)]
     pub batch_size: std::option::Option<i32>,
-    /// <p>The maximum amount of time, in seconds, that Lambda spends gathering records before invoking the function. You can configure <code>MaximumBatchingWindowInSeconds</code> to any value from 0 seconds to 300 seconds in increments of seconds.</p>
-    /// <p>For streams and Amazon SQS event sources, the default batching window is 0 seconds. For Amazon MSK, Self-managed Apache Kafka, and Amazon MQ event sources, the default batching window is 500 ms. Note that because you can only change <code>MaximumBatchingWindowInSeconds</code> in increments of seconds, you cannot revert back to the 500 ms default batching window after you have changed it. To restore the default batching window, you must create a new event source mapping.</p>
+    /// <p>The maximum amount of time, in seconds, that Lambda spends gathering records before invoking the function. You can configure <code>MaximumBatchingWindowInSeconds</code> to any value from 0 seconds to 300 seconds in increments of seconds.</p> 
+    /// <p>For streams and Amazon SQS event sources, the default batching window is 0 seconds. For Amazon MSK, Self-managed Apache Kafka, and Amazon MQ event sources, the default batching window is 500 ms. Note that because you can only change <code>MaximumBatchingWindowInSeconds</code> in increments of seconds, you cannot revert back to the 500 ms default batching window after you have changed it. To restore the default batching window, you must create a new event source mapping.</p> 
     /// <p>Related setting: For streams and Amazon SQS event sources, when you set <code>BatchSize</code> to a value greater than 10, you must set <code>MaximumBatchingWindowInSeconds</code> to at least 1.</p>
     #[doc(hidden)]
     pub maximum_batching_window_in_seconds: std::option::Option<i32>,
@@ -6731,8 +6245,7 @@ pub struct EventSourceMappingConfiguration {
     pub queues: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>An array of the authentication protocol, VPC components, or virtual host to secure and define your event source.</p>
     #[doc(hidden)]
-    pub source_access_configurations:
-        std::option::Option<std::vec::Vec<crate::model::SourceAccessConfiguration>>,
+    pub source_access_configurations: std::option::Option<std::vec::Vec<crate::model::SourceAccessConfiguration>>,
     /// <p>The self-managed Apache Kafka cluster for your event source.</p>
     #[doc(hidden)]
     pub self_managed_event_source: std::option::Option<crate::model::SelfManagedEventSource>,
@@ -6750,41 +6263,38 @@ pub struct EventSourceMappingConfiguration {
     pub tumbling_window_in_seconds: std::option::Option<i32>,
     /// <p>(Streams and Amazon SQS) A list of current response type enums applied to the event source mapping.</p>
     #[doc(hidden)]
-    pub function_response_types:
-        std::option::Option<std::vec::Vec<crate::model::FunctionResponseType>>,
+    pub function_response_types: std::option::Option<std::vec::Vec<crate::model::FunctionResponseType>>,
     /// <p>Specific configuration settings for an Amazon Managed Streaming for Apache Kafka (Amazon MSK) event source.</p>
     #[doc(hidden)]
-    pub amazon_managed_kafka_event_source_config:
-        std::option::Option<crate::model::AmazonManagedKafkaEventSourceConfig>,
+    pub amazon_managed_kafka_event_source_config: std::option::Option<crate::model::AmazonManagedKafkaEventSourceConfig>,
     /// <p>Specific configuration settings for a self-managed Apache Kafka event source.</p>
     #[doc(hidden)]
-    pub self_managed_kafka_event_source_config:
-        std::option::Option<crate::model::SelfManagedKafkaEventSourceConfig>,
+    pub self_managed_kafka_event_source_config: std::option::Option<crate::model::SelfManagedKafkaEventSourceConfig>,
     /// <p>(Amazon SQS only) The scaling configuration for the event source. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/with-sqs.html#events-sqs-max-concurrency">Configuring maximum concurrency for Amazon SQS event sources</a>.</p>
     #[doc(hidden)]
     pub scaling_config: std::option::Option<crate::model::ScalingConfig>,
 }
 impl EventSourceMappingConfiguration {
     /// <p>The identifier of the event source mapping.</p>
-    pub fn uuid(&self) -> std::option::Option<&str> {
+    pub fn uuid(&self) -> std::option::Option<& str> {
         self.uuid.as_deref()
     }
     /// <p>The position in a stream from which to start reading. Required for Amazon Kinesis, Amazon DynamoDB, and Amazon MSK stream sources. <code>AT_TIMESTAMP</code> is supported only for Amazon Kinesis streams.</p>
-    pub fn starting_position(&self) -> std::option::Option<&crate::model::EventSourcePosition> {
+    pub fn starting_position(&self) -> std::option::Option<& crate::model::EventSourcePosition> {
         self.starting_position.as_ref()
     }
     /// <p>With <code>StartingPosition</code> set to <code>AT_TIMESTAMP</code>, the time from which to start reading.</p>
-    pub fn starting_position_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn starting_position_timestamp(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.starting_position_timestamp.as_ref()
     }
-    /// <p>The maximum number of records in each batch that Lambda pulls from your stream or queue and sends to your function. Lambda passes all of the records in the batch to the function in a single call, up to the payload limit for synchronous invocation (6 MB).</p>
-    /// <p>Default value: Varies by service. For Amazon SQS, the default is 10. For all other services, the default is 100.</p>
+    /// <p>The maximum number of records in each batch that Lambda pulls from your stream or queue and sends to your function. Lambda passes all of the records in the batch to the function in a single call, up to the payload limit for synchronous invocation (6 MB).</p> 
+    /// <p>Default value: Varies by service. For Amazon SQS, the default is 10. For all other services, the default is 100.</p> 
     /// <p>Related setting: When you set <code>BatchSize</code> to a value greater than 10, you must set <code>MaximumBatchingWindowInSeconds</code> to at least 1.</p>
     pub fn batch_size(&self) -> std::option::Option<i32> {
         self.batch_size
     }
-    /// <p>The maximum amount of time, in seconds, that Lambda spends gathering records before invoking the function. You can configure <code>MaximumBatchingWindowInSeconds</code> to any value from 0 seconds to 300 seconds in increments of seconds.</p>
-    /// <p>For streams and Amazon SQS event sources, the default batching window is 0 seconds. For Amazon MSK, Self-managed Apache Kafka, and Amazon MQ event sources, the default batching window is 500 ms. Note that because you can only change <code>MaximumBatchingWindowInSeconds</code> in increments of seconds, you cannot revert back to the 500 ms default batching window after you have changed it. To restore the default batching window, you must create a new event source mapping.</p>
+    /// <p>The maximum amount of time, in seconds, that Lambda spends gathering records before invoking the function. You can configure <code>MaximumBatchingWindowInSeconds</code> to any value from 0 seconds to 300 seconds in increments of seconds.</p> 
+    /// <p>For streams and Amazon SQS event sources, the default batching window is 0 seconds. For Amazon MSK, Self-managed Apache Kafka, and Amazon MQ event sources, the default batching window is 500 ms. Note that because you can only change <code>MaximumBatchingWindowInSeconds</code> in increments of seconds, you cannot revert back to the 500 ms default batching window after you have changed it. To restore the default batching window, you must create a new event source mapping.</p> 
     /// <p>Related setting: For streams and Amazon SQS event sources, when you set <code>BatchSize</code> to a value greater than 10, you must set <code>MaximumBatchingWindowInSeconds</code> to at least 1.</p>
     pub fn maximum_batching_window_in_seconds(&self) -> std::option::Option<i32> {
         self.maximum_batching_window_in_seconds
@@ -6794,55 +6304,51 @@ impl EventSourceMappingConfiguration {
         self.parallelization_factor
     }
     /// <p>The Amazon Resource Name (ARN) of the event source.</p>
-    pub fn event_source_arn(&self) -> std::option::Option<&str> {
+    pub fn event_source_arn(&self) -> std::option::Option<& str> {
         self.event_source_arn.as_deref()
     }
     /// <p>An object that defines the filter criteria that determine whether Lambda should process an event. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventfiltering.html">Lambda event filtering</a>.</p>
-    pub fn filter_criteria(&self) -> std::option::Option<&crate::model::FilterCriteria> {
+    pub fn filter_criteria(&self) -> std::option::Option<& crate::model::FilterCriteria> {
         self.filter_criteria.as_ref()
     }
     /// <p>The ARN of the Lambda function.</p>
-    pub fn function_arn(&self) -> std::option::Option<&str> {
+    pub fn function_arn(&self) -> std::option::Option<& str> {
         self.function_arn.as_deref()
     }
     /// <p>The date that the event source mapping was last updated or that its state changed.</p>
-    pub fn last_modified(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_modified(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_modified.as_ref()
     }
     /// <p>The result of the last Lambda invocation of your function.</p>
-    pub fn last_processing_result(&self) -> std::option::Option<&str> {
+    pub fn last_processing_result(&self) -> std::option::Option<& str> {
         self.last_processing_result.as_deref()
     }
     /// <p>The state of the event source mapping. It can be one of the following: <code>Creating</code>, <code>Enabling</code>, <code>Enabled</code>, <code>Disabling</code>, <code>Disabled</code>, <code>Updating</code>, or <code>Deleting</code>.</p>
-    pub fn state(&self) -> std::option::Option<&str> {
+    pub fn state(&self) -> std::option::Option<& str> {
         self.state.as_deref()
     }
     /// <p>Indicates whether a user or Lambda made the last change to the event source mapping.</p>
-    pub fn state_transition_reason(&self) -> std::option::Option<&str> {
+    pub fn state_transition_reason(&self) -> std::option::Option<& str> {
         self.state_transition_reason.as_deref()
     }
     /// <p>(Streams only) An Amazon SQS queue or Amazon SNS topic destination for discarded records.</p>
-    pub fn destination_config(&self) -> std::option::Option<&crate::model::DestinationConfig> {
+    pub fn destination_config(&self) -> std::option::Option<& crate::model::DestinationConfig> {
         self.destination_config.as_ref()
     }
     /// <p>The name of the Kafka topic.</p>
-    pub fn topics(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn topics(&self) -> std::option::Option<& [std::string::String]> {
         self.topics.as_deref()
     }
     /// <p> (Amazon MQ) The name of the Amazon MQ broker destination queue to consume.</p>
-    pub fn queues(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn queues(&self) -> std::option::Option<& [std::string::String]> {
         self.queues.as_deref()
     }
     /// <p>An array of the authentication protocol, VPC components, or virtual host to secure and define your event source.</p>
-    pub fn source_access_configurations(
-        &self,
-    ) -> std::option::Option<&[crate::model::SourceAccessConfiguration]> {
+    pub fn source_access_configurations(&self) -> std::option::Option<& [crate::model::SourceAccessConfiguration]> {
         self.source_access_configurations.as_deref()
     }
     /// <p>The self-managed Apache Kafka cluster for your event source.</p>
-    pub fn self_managed_event_source(
-        &self,
-    ) -> std::option::Option<&crate::model::SelfManagedEventSource> {
+    pub fn self_managed_event_source(&self) -> std::option::Option<& crate::model::SelfManagedEventSource> {
         self.self_managed_event_source.as_ref()
     }
     /// <p>(Streams only) Discard records older than the specified age. The default value is -1, which sets the maximum age to infinite. When the value is set to infinite, Lambda never discards old records. </p>
@@ -6862,31 +6368,25 @@ impl EventSourceMappingConfiguration {
         self.tumbling_window_in_seconds
     }
     /// <p>(Streams and Amazon SQS) A list of current response type enums applied to the event source mapping.</p>
-    pub fn function_response_types(
-        &self,
-    ) -> std::option::Option<&[crate::model::FunctionResponseType]> {
+    pub fn function_response_types(&self) -> std::option::Option<& [crate::model::FunctionResponseType]> {
         self.function_response_types.as_deref()
     }
     /// <p>Specific configuration settings for an Amazon Managed Streaming for Apache Kafka (Amazon MSK) event source.</p>
-    pub fn amazon_managed_kafka_event_source_config(
-        &self,
-    ) -> std::option::Option<&crate::model::AmazonManagedKafkaEventSourceConfig> {
+    pub fn amazon_managed_kafka_event_source_config(&self) -> std::option::Option<& crate::model::AmazonManagedKafkaEventSourceConfig> {
         self.amazon_managed_kafka_event_source_config.as_ref()
     }
     /// <p>Specific configuration settings for a self-managed Apache Kafka event source.</p>
-    pub fn self_managed_kafka_event_source_config(
-        &self,
-    ) -> std::option::Option<&crate::model::SelfManagedKafkaEventSourceConfig> {
+    pub fn self_managed_kafka_event_source_config(&self) -> std::option::Option<& crate::model::SelfManagedKafkaEventSourceConfig> {
         self.self_managed_kafka_event_source_config.as_ref()
     }
     /// <p>(Amazon SQS only) The scaling configuration for the event source. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/with-sqs.html#events-sqs-max-concurrency">Configuring maximum concurrency for Amazon SQS event sources</a>.</p>
-    pub fn scaling_config(&self) -> std::option::Option<&crate::model::ScalingConfig> {
+    pub fn scaling_config(&self) -> std::option::Option<& crate::model::ScalingConfig> {
         self.scaling_config.as_ref()
     }
 }
 /// See [`EventSourceMappingConfiguration`](crate::model::EventSourceMappingConfiguration).
 pub mod event_source_mapping_configuration {
-
+    
     /// A builder for [`EventSourceMappingConfiguration`](crate::model::EventSourceMappingConfiguration).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -6906,20 +6406,15 @@ pub mod event_source_mapping_configuration {
         pub(crate) destination_config: std::option::Option<crate::model::DestinationConfig>,
         pub(crate) topics: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) queues: std::option::Option<std::vec::Vec<std::string::String>>,
-        pub(crate) source_access_configurations:
-            std::option::Option<std::vec::Vec<crate::model::SourceAccessConfiguration>>,
-        pub(crate) self_managed_event_source:
-            std::option::Option<crate::model::SelfManagedEventSource>,
+        pub(crate) source_access_configurations: std::option::Option<std::vec::Vec<crate::model::SourceAccessConfiguration>>,
+        pub(crate) self_managed_event_source: std::option::Option<crate::model::SelfManagedEventSource>,
         pub(crate) maximum_record_age_in_seconds: std::option::Option<i32>,
         pub(crate) bisect_batch_on_function_error: std::option::Option<bool>,
         pub(crate) maximum_retry_attempts: std::option::Option<i32>,
         pub(crate) tumbling_window_in_seconds: std::option::Option<i32>,
-        pub(crate) function_response_types:
-            std::option::Option<std::vec::Vec<crate::model::FunctionResponseType>>,
-        pub(crate) amazon_managed_kafka_event_source_config:
-            std::option::Option<crate::model::AmazonManagedKafkaEventSourceConfig>,
-        pub(crate) self_managed_kafka_event_source_config:
-            std::option::Option<crate::model::SelfManagedKafkaEventSourceConfig>,
+        pub(crate) function_response_types: std::option::Option<std::vec::Vec<crate::model::FunctionResponseType>>,
+        pub(crate) amazon_managed_kafka_event_source_config: std::option::Option<crate::model::AmazonManagedKafkaEventSourceConfig>,
+        pub(crate) self_managed_kafka_event_source_config: std::option::Option<crate::model::SelfManagedKafkaEventSourceConfig>,
         pub(crate) scaling_config: std::option::Option<crate::model::ScalingConfig>,
     }
     impl Builder {
@@ -6930,8 +6425,7 @@ pub mod event_source_mapping_configuration {
         }
         /// <p>The identifier of the event source mapping.</p>
         pub fn set_uuid(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.uuid = input;
-            self
+            self.uuid = input; self
         }
         /// <p>The position in a stream from which to start reading. Required for Amazon Kinesis, Amazon DynamoDB, and Amazon MSK stream sources. <code>AT_TIMESTAMP</code> is supported only for Amazon Kinesis streams.</p>
         pub fn starting_position(mut self, input: crate::model::EventSourcePosition) -> Self {
@@ -6939,12 +6433,8 @@ pub mod event_source_mapping_configuration {
             self
         }
         /// <p>The position in a stream from which to start reading. Required for Amazon Kinesis, Amazon DynamoDB, and Amazon MSK stream sources. <code>AT_TIMESTAMP</code> is supported only for Amazon Kinesis streams.</p>
-        pub fn set_starting_position(
-            mut self,
-            input: std::option::Option<crate::model::EventSourcePosition>,
-        ) -> Self {
-            self.starting_position = input;
-            self
+        pub fn set_starting_position(mut self, input: std::option::Option<crate::model::EventSourcePosition>) -> Self {
+            self.starting_position = input; self
         }
         /// <p>With <code>StartingPosition</code> set to <code>AT_TIMESTAMP</code>, the time from which to start reading.</p>
         pub fn starting_position_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -6952,43 +6442,34 @@ pub mod event_source_mapping_configuration {
             self
         }
         /// <p>With <code>StartingPosition</code> set to <code>AT_TIMESTAMP</code>, the time from which to start reading.</p>
-        pub fn set_starting_position_timestamp(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.starting_position_timestamp = input;
-            self
+        pub fn set_starting_position_timestamp(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.starting_position_timestamp = input; self
         }
-        /// <p>The maximum number of records in each batch that Lambda pulls from your stream or queue and sends to your function. Lambda passes all of the records in the batch to the function in a single call, up to the payload limit for synchronous invocation (6 MB).</p>
-        /// <p>Default value: Varies by service. For Amazon SQS, the default is 10. For all other services, the default is 100.</p>
+        /// <p>The maximum number of records in each batch that Lambda pulls from your stream or queue and sends to your function. Lambda passes all of the records in the batch to the function in a single call, up to the payload limit for synchronous invocation (6 MB).</p> 
+        /// <p>Default value: Varies by service. For Amazon SQS, the default is 10. For all other services, the default is 100.</p> 
         /// <p>Related setting: When you set <code>BatchSize</code> to a value greater than 10, you must set <code>MaximumBatchingWindowInSeconds</code> to at least 1.</p>
         pub fn batch_size(mut self, input: i32) -> Self {
             self.batch_size = Some(input);
             self
         }
-        /// <p>The maximum number of records in each batch that Lambda pulls from your stream or queue and sends to your function. Lambda passes all of the records in the batch to the function in a single call, up to the payload limit for synchronous invocation (6 MB).</p>
-        /// <p>Default value: Varies by service. For Amazon SQS, the default is 10. For all other services, the default is 100.</p>
+        /// <p>The maximum number of records in each batch that Lambda pulls from your stream or queue and sends to your function. Lambda passes all of the records in the batch to the function in a single call, up to the payload limit for synchronous invocation (6 MB).</p> 
+        /// <p>Default value: Varies by service. For Amazon SQS, the default is 10. For all other services, the default is 100.</p> 
         /// <p>Related setting: When you set <code>BatchSize</code> to a value greater than 10, you must set <code>MaximumBatchingWindowInSeconds</code> to at least 1.</p>
         pub fn set_batch_size(mut self, input: std::option::Option<i32>) -> Self {
-            self.batch_size = input;
-            self
+            self.batch_size = input; self
         }
-        /// <p>The maximum amount of time, in seconds, that Lambda spends gathering records before invoking the function. You can configure <code>MaximumBatchingWindowInSeconds</code> to any value from 0 seconds to 300 seconds in increments of seconds.</p>
-        /// <p>For streams and Amazon SQS event sources, the default batching window is 0 seconds. For Amazon MSK, Self-managed Apache Kafka, and Amazon MQ event sources, the default batching window is 500 ms. Note that because you can only change <code>MaximumBatchingWindowInSeconds</code> in increments of seconds, you cannot revert back to the 500 ms default batching window after you have changed it. To restore the default batching window, you must create a new event source mapping.</p>
+        /// <p>The maximum amount of time, in seconds, that Lambda spends gathering records before invoking the function. You can configure <code>MaximumBatchingWindowInSeconds</code> to any value from 0 seconds to 300 seconds in increments of seconds.</p> 
+        /// <p>For streams and Amazon SQS event sources, the default batching window is 0 seconds. For Amazon MSK, Self-managed Apache Kafka, and Amazon MQ event sources, the default batching window is 500 ms. Note that because you can only change <code>MaximumBatchingWindowInSeconds</code> in increments of seconds, you cannot revert back to the 500 ms default batching window after you have changed it. To restore the default batching window, you must create a new event source mapping.</p> 
         /// <p>Related setting: For streams and Amazon SQS event sources, when you set <code>BatchSize</code> to a value greater than 10, you must set <code>MaximumBatchingWindowInSeconds</code> to at least 1.</p>
         pub fn maximum_batching_window_in_seconds(mut self, input: i32) -> Self {
             self.maximum_batching_window_in_seconds = Some(input);
             self
         }
-        /// <p>The maximum amount of time, in seconds, that Lambda spends gathering records before invoking the function. You can configure <code>MaximumBatchingWindowInSeconds</code> to any value from 0 seconds to 300 seconds in increments of seconds.</p>
-        /// <p>For streams and Amazon SQS event sources, the default batching window is 0 seconds. For Amazon MSK, Self-managed Apache Kafka, and Amazon MQ event sources, the default batching window is 500 ms. Note that because you can only change <code>MaximumBatchingWindowInSeconds</code> in increments of seconds, you cannot revert back to the 500 ms default batching window after you have changed it. To restore the default batching window, you must create a new event source mapping.</p>
+        /// <p>The maximum amount of time, in seconds, that Lambda spends gathering records before invoking the function. You can configure <code>MaximumBatchingWindowInSeconds</code> to any value from 0 seconds to 300 seconds in increments of seconds.</p> 
+        /// <p>For streams and Amazon SQS event sources, the default batching window is 0 seconds. For Amazon MSK, Self-managed Apache Kafka, and Amazon MQ event sources, the default batching window is 500 ms. Note that because you can only change <code>MaximumBatchingWindowInSeconds</code> in increments of seconds, you cannot revert back to the 500 ms default batching window after you have changed it. To restore the default batching window, you must create a new event source mapping.</p> 
         /// <p>Related setting: For streams and Amazon SQS event sources, when you set <code>BatchSize</code> to a value greater than 10, you must set <code>MaximumBatchingWindowInSeconds</code> to at least 1.</p>
-        pub fn set_maximum_batching_window_in_seconds(
-            mut self,
-            input: std::option::Option<i32>,
-        ) -> Self {
-            self.maximum_batching_window_in_seconds = input;
-            self
+        pub fn set_maximum_batching_window_in_seconds(mut self, input: std::option::Option<i32>) -> Self {
+            self.maximum_batching_window_in_seconds = input; self
         }
         /// <p>(Streams only) The number of batches to process concurrently from each shard. The default value is 1.</p>
         pub fn parallelization_factor(mut self, input: i32) -> Self {
@@ -6997,8 +6478,7 @@ pub mod event_source_mapping_configuration {
         }
         /// <p>(Streams only) The number of batches to process concurrently from each shard. The default value is 1.</p>
         pub fn set_parallelization_factor(mut self, input: std::option::Option<i32>) -> Self {
-            self.parallelization_factor = input;
-            self
+            self.parallelization_factor = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the event source.</p>
         pub fn event_source_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7006,12 +6486,8 @@ pub mod event_source_mapping_configuration {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the event source.</p>
-        pub fn set_event_source_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.event_source_arn = input;
-            self
+        pub fn set_event_source_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.event_source_arn = input; self
         }
         /// <p>An object that defines the filter criteria that determine whether Lambda should process an event. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventfiltering.html">Lambda event filtering</a>.</p>
         pub fn filter_criteria(mut self, input: crate::model::FilterCriteria) -> Self {
@@ -7019,12 +6495,8 @@ pub mod event_source_mapping_configuration {
             self
         }
         /// <p>An object that defines the filter criteria that determine whether Lambda should process an event. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventfiltering.html">Lambda event filtering</a>.</p>
-        pub fn set_filter_criteria(
-            mut self,
-            input: std::option::Option<crate::model::FilterCriteria>,
-        ) -> Self {
-            self.filter_criteria = input;
-            self
+        pub fn set_filter_criteria(mut self, input: std::option::Option<crate::model::FilterCriteria>) -> Self {
+            self.filter_criteria = input; self
         }
         /// <p>The ARN of the Lambda function.</p>
         pub fn function_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7033,8 +6505,7 @@ pub mod event_source_mapping_configuration {
         }
         /// <p>The ARN of the Lambda function.</p>
         pub fn set_function_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.function_arn = input;
-            self
+            self.function_arn = input; self
         }
         /// <p>The date that the event source mapping was last updated or that its state changed.</p>
         pub fn last_modified(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -7042,12 +6513,8 @@ pub mod event_source_mapping_configuration {
             self
         }
         /// <p>The date that the event source mapping was last updated or that its state changed.</p>
-        pub fn set_last_modified(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_modified = input;
-            self
+        pub fn set_last_modified(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_modified = input; self
         }
         /// <p>The result of the last Lambda invocation of your function.</p>
         pub fn last_processing_result(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7055,12 +6522,8 @@ pub mod event_source_mapping_configuration {
             self
         }
         /// <p>The result of the last Lambda invocation of your function.</p>
-        pub fn set_last_processing_result(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.last_processing_result = input;
-            self
+        pub fn set_last_processing_result(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.last_processing_result = input; self
         }
         /// <p>The state of the event source mapping. It can be one of the following: <code>Creating</code>, <code>Enabling</code>, <code>Enabled</code>, <code>Disabling</code>, <code>Disabled</code>, <code>Updating</code>, or <code>Deleting</code>.</p>
         pub fn state(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7069,8 +6532,7 @@ pub mod event_source_mapping_configuration {
         }
         /// <p>The state of the event source mapping. It can be one of the following: <code>Creating</code>, <code>Enabling</code>, <code>Enabled</code>, <code>Disabling</code>, <code>Disabled</code>, <code>Updating</code>, or <code>Deleting</code>.</p>
         pub fn set_state(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.state = input;
-            self
+            self.state = input; self
         }
         /// <p>Indicates whether a user or Lambda made the last change to the event source mapping.</p>
         pub fn state_transition_reason(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7078,12 +6540,8 @@ pub mod event_source_mapping_configuration {
             self
         }
         /// <p>Indicates whether a user or Lambda made the last change to the event source mapping.</p>
-        pub fn set_state_transition_reason(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.state_transition_reason = input;
-            self
+        pub fn set_state_transition_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.state_transition_reason = input; self
         }
         /// <p>(Streams only) An Amazon SQS queue or Amazon SNS topic destination for discarded records.</p>
         pub fn destination_config(mut self, input: crate::model::DestinationConfig) -> Self {
@@ -7091,12 +6549,8 @@ pub mod event_source_mapping_configuration {
             self
         }
         /// <p>(Streams only) An Amazon SQS queue or Amazon SNS topic destination for discarded records.</p>
-        pub fn set_destination_config(
-            mut self,
-            input: std::option::Option<crate::model::DestinationConfig>,
-        ) -> Self {
-            self.destination_config = input;
-            self
+        pub fn set_destination_config(mut self, input: std::option::Option<crate::model::DestinationConfig>) -> Self {
+            self.destination_config = input; self
         }
         /// Appends an item to `topics`.
         ///
@@ -7105,17 +6559,13 @@ pub mod event_source_mapping_configuration {
         /// <p>The name of the Kafka topic.</p>
         pub fn topics(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.topics.unwrap_or_default();
-            v.push(input.into());
-            self.topics = Some(v);
-            self
+                            v.push(input.into());
+                            self.topics = Some(v);
+                            self
         }
         /// <p>The name of the Kafka topic.</p>
-        pub fn set_topics(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.topics = input;
-            self
+        pub fn set_topics(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.topics = input; self
         }
         /// Appends an item to `queues`.
         ///
@@ -7124,55 +6574,37 @@ pub mod event_source_mapping_configuration {
         /// <p> (Amazon MQ) The name of the Amazon MQ broker destination queue to consume.</p>
         pub fn queues(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.queues.unwrap_or_default();
-            v.push(input.into());
-            self.queues = Some(v);
-            self
+                            v.push(input.into());
+                            self.queues = Some(v);
+                            self
         }
         /// <p> (Amazon MQ) The name of the Amazon MQ broker destination queue to consume.</p>
-        pub fn set_queues(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.queues = input;
-            self
+        pub fn set_queues(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.queues = input; self
         }
         /// Appends an item to `source_access_configurations`.
         ///
         /// To override the contents of this collection use [`set_source_access_configurations`](Self::set_source_access_configurations).
         ///
         /// <p>An array of the authentication protocol, VPC components, or virtual host to secure and define your event source.</p>
-        pub fn source_access_configurations(
-            mut self,
-            input: crate::model::SourceAccessConfiguration,
-        ) -> Self {
+        pub fn source_access_configurations(mut self, input: crate::model::SourceAccessConfiguration) -> Self {
             let mut v = self.source_access_configurations.unwrap_or_default();
-            v.push(input);
-            self.source_access_configurations = Some(v);
-            self
+                            v.push(input);
+                            self.source_access_configurations = Some(v);
+                            self
         }
         /// <p>An array of the authentication protocol, VPC components, or virtual host to secure and define your event source.</p>
-        pub fn set_source_access_configurations(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::SourceAccessConfiguration>>,
-        ) -> Self {
-            self.source_access_configurations = input;
-            self
+        pub fn set_source_access_configurations(mut self, input: std::option::Option<std::vec::Vec<crate::model::SourceAccessConfiguration>>) -> Self {
+            self.source_access_configurations = input; self
         }
         /// <p>The self-managed Apache Kafka cluster for your event source.</p>
-        pub fn self_managed_event_source(
-            mut self,
-            input: crate::model::SelfManagedEventSource,
-        ) -> Self {
+        pub fn self_managed_event_source(mut self, input: crate::model::SelfManagedEventSource) -> Self {
             self.self_managed_event_source = Some(input);
             self
         }
         /// <p>The self-managed Apache Kafka cluster for your event source.</p>
-        pub fn set_self_managed_event_source(
-            mut self,
-            input: std::option::Option<crate::model::SelfManagedEventSource>,
-        ) -> Self {
-            self.self_managed_event_source = input;
-            self
+        pub fn set_self_managed_event_source(mut self, input: std::option::Option<crate::model::SelfManagedEventSource>) -> Self {
+            self.self_managed_event_source = input; self
         }
         /// <p>(Streams only) Discard records older than the specified age. The default value is -1, which sets the maximum age to infinite. When the value is set to infinite, Lambda never discards old records. </p>
         pub fn maximum_record_age_in_seconds(mut self, input: i32) -> Self {
@@ -7180,12 +6612,8 @@ pub mod event_source_mapping_configuration {
             self
         }
         /// <p>(Streams only) Discard records older than the specified age. The default value is -1, which sets the maximum age to infinite. When the value is set to infinite, Lambda never discards old records. </p>
-        pub fn set_maximum_record_age_in_seconds(
-            mut self,
-            input: std::option::Option<i32>,
-        ) -> Self {
-            self.maximum_record_age_in_seconds = input;
-            self
+        pub fn set_maximum_record_age_in_seconds(mut self, input: std::option::Option<i32>) -> Self {
+            self.maximum_record_age_in_seconds = input; self
         }
         /// <p>(Streams only) If the function returns an error, split the batch in two and retry. The default value is false.</p>
         pub fn bisect_batch_on_function_error(mut self, input: bool) -> Self {
@@ -7193,12 +6621,8 @@ pub mod event_source_mapping_configuration {
             self
         }
         /// <p>(Streams only) If the function returns an error, split the batch in two and retry. The default value is false.</p>
-        pub fn set_bisect_batch_on_function_error(
-            mut self,
-            input: std::option::Option<bool>,
-        ) -> Self {
-            self.bisect_batch_on_function_error = input;
-            self
+        pub fn set_bisect_batch_on_function_error(mut self, input: std::option::Option<bool>) -> Self {
+            self.bisect_batch_on_function_error = input; self
         }
         /// <p>(Streams only) Discard records after the specified number of retries. The default value is -1, which sets the maximum number of retries to infinite. When MaximumRetryAttempts is infinite, Lambda retries failed records until the record expires in the event source.</p>
         pub fn maximum_retry_attempts(mut self, input: i32) -> Self {
@@ -7207,8 +6631,7 @@ pub mod event_source_mapping_configuration {
         }
         /// <p>(Streams only) Discard records after the specified number of retries. The default value is -1, which sets the maximum number of retries to infinite. When MaximumRetryAttempts is infinite, Lambda retries failed records until the record expires in the event source.</p>
         pub fn set_maximum_retry_attempts(mut self, input: std::option::Option<i32>) -> Self {
-            self.maximum_retry_attempts = input;
-            self
+            self.maximum_retry_attempts = input; self
         }
         /// <p>(Streams only) The duration in seconds of a processing window. The range is 1–900 seconds.</p>
         pub fn tumbling_window_in_seconds(mut self, input: i32) -> Self {
@@ -7217,62 +6640,40 @@ pub mod event_source_mapping_configuration {
         }
         /// <p>(Streams only) The duration in seconds of a processing window. The range is 1–900 seconds.</p>
         pub fn set_tumbling_window_in_seconds(mut self, input: std::option::Option<i32>) -> Self {
-            self.tumbling_window_in_seconds = input;
-            self
+            self.tumbling_window_in_seconds = input; self
         }
         /// Appends an item to `function_response_types`.
         ///
         /// To override the contents of this collection use [`set_function_response_types`](Self::set_function_response_types).
         ///
         /// <p>(Streams and Amazon SQS) A list of current response type enums applied to the event source mapping.</p>
-        pub fn function_response_types(
-            mut self,
-            input: crate::model::FunctionResponseType,
-        ) -> Self {
+        pub fn function_response_types(mut self, input: crate::model::FunctionResponseType) -> Self {
             let mut v = self.function_response_types.unwrap_or_default();
-            v.push(input);
-            self.function_response_types = Some(v);
-            self
+                            v.push(input);
+                            self.function_response_types = Some(v);
+                            self
         }
         /// <p>(Streams and Amazon SQS) A list of current response type enums applied to the event source mapping.</p>
-        pub fn set_function_response_types(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::FunctionResponseType>>,
-        ) -> Self {
-            self.function_response_types = input;
-            self
+        pub fn set_function_response_types(mut self, input: std::option::Option<std::vec::Vec<crate::model::FunctionResponseType>>) -> Self {
+            self.function_response_types = input; self
         }
         /// <p>Specific configuration settings for an Amazon Managed Streaming for Apache Kafka (Amazon MSK) event source.</p>
-        pub fn amazon_managed_kafka_event_source_config(
-            mut self,
-            input: crate::model::AmazonManagedKafkaEventSourceConfig,
-        ) -> Self {
+        pub fn amazon_managed_kafka_event_source_config(mut self, input: crate::model::AmazonManagedKafkaEventSourceConfig) -> Self {
             self.amazon_managed_kafka_event_source_config = Some(input);
             self
         }
         /// <p>Specific configuration settings for an Amazon Managed Streaming for Apache Kafka (Amazon MSK) event source.</p>
-        pub fn set_amazon_managed_kafka_event_source_config(
-            mut self,
-            input: std::option::Option<crate::model::AmazonManagedKafkaEventSourceConfig>,
-        ) -> Self {
-            self.amazon_managed_kafka_event_source_config = input;
-            self
+        pub fn set_amazon_managed_kafka_event_source_config(mut self, input: std::option::Option<crate::model::AmazonManagedKafkaEventSourceConfig>) -> Self {
+            self.amazon_managed_kafka_event_source_config = input; self
         }
         /// <p>Specific configuration settings for a self-managed Apache Kafka event source.</p>
-        pub fn self_managed_kafka_event_source_config(
-            mut self,
-            input: crate::model::SelfManagedKafkaEventSourceConfig,
-        ) -> Self {
+        pub fn self_managed_kafka_event_source_config(mut self, input: crate::model::SelfManagedKafkaEventSourceConfig) -> Self {
             self.self_managed_kafka_event_source_config = Some(input);
             self
         }
         /// <p>Specific configuration settings for a self-managed Apache Kafka event source.</p>
-        pub fn set_self_managed_kafka_event_source_config(
-            mut self,
-            input: std::option::Option<crate::model::SelfManagedKafkaEventSourceConfig>,
-        ) -> Self {
-            self.self_managed_kafka_event_source_config = input;
-            self
+        pub fn set_self_managed_kafka_event_source_config(mut self, input: std::option::Option<crate::model::SelfManagedKafkaEventSourceConfig>) -> Self {
+            self.self_managed_kafka_event_source_config = input; self
         }
         /// <p>(Amazon SQS only) The scaling configuration for the event source. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/with-sqs.html#events-sqs-max-concurrency">Configuring maximum concurrency for Amazon SQS event sources</a>.</p>
         pub fn scaling_config(mut self, input: crate::model::ScalingConfig) -> Self {
@@ -7280,46 +6681,69 @@ pub mod event_source_mapping_configuration {
             self
         }
         /// <p>(Amazon SQS only) The scaling configuration for the event source. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/with-sqs.html#events-sqs-max-concurrency">Configuring maximum concurrency for Amazon SQS event sources</a>.</p>
-        pub fn set_scaling_config(
-            mut self,
-            input: std::option::Option<crate::model::ScalingConfig>,
-        ) -> Self {
-            self.scaling_config = input;
-            self
+        pub fn set_scaling_config(mut self, input: std::option::Option<crate::model::ScalingConfig>) -> Self {
+            self.scaling_config = input; self
         }
         /// Consumes the builder and constructs a [`EventSourceMappingConfiguration`](crate::model::EventSourceMappingConfiguration).
         pub fn build(self) -> crate::model::EventSourceMappingConfiguration {
             crate::model::EventSourceMappingConfiguration {
-                uuid: self.uuid,
-                starting_position: self.starting_position,
-                starting_position_timestamp: self.starting_position_timestamp,
-                batch_size: self.batch_size,
-                maximum_batching_window_in_seconds: self.maximum_batching_window_in_seconds,
-                parallelization_factor: self.parallelization_factor,
-                event_source_arn: self.event_source_arn,
-                filter_criteria: self.filter_criteria,
-                function_arn: self.function_arn,
-                last_modified: self.last_modified,
-                last_processing_result: self.last_processing_result,
-                state: self.state,
-                state_transition_reason: self.state_transition_reason,
-                destination_config: self.destination_config,
-                topics: self.topics,
-                queues: self.queues,
-                source_access_configurations: self.source_access_configurations,
-                self_managed_event_source: self.self_managed_event_source,
-                maximum_record_age_in_seconds: self.maximum_record_age_in_seconds,
-                bisect_batch_on_function_error: self.bisect_batch_on_function_error,
-                maximum_retry_attempts: self.maximum_retry_attempts,
-                tumbling_window_in_seconds: self.tumbling_window_in_seconds,
-                function_response_types: self.function_response_types,
-                amazon_managed_kafka_event_source_config: self
-                    .amazon_managed_kafka_event_source_config,
-                self_managed_kafka_event_source_config: self.self_managed_kafka_event_source_config,
-                scaling_config: self.scaling_config,
+                uuid: self.uuid
+                ,
+                starting_position: self.starting_position
+                ,
+                starting_position_timestamp: self.starting_position_timestamp
+                ,
+                batch_size: self.batch_size
+                ,
+                maximum_batching_window_in_seconds: self.maximum_batching_window_in_seconds
+                ,
+                parallelization_factor: self.parallelization_factor
+                ,
+                event_source_arn: self.event_source_arn
+                ,
+                filter_criteria: self.filter_criteria
+                ,
+                function_arn: self.function_arn
+                ,
+                last_modified: self.last_modified
+                ,
+                last_processing_result: self.last_processing_result
+                ,
+                state: self.state
+                ,
+                state_transition_reason: self.state_transition_reason
+                ,
+                destination_config: self.destination_config
+                ,
+                topics: self.topics
+                ,
+                queues: self.queues
+                ,
+                source_access_configurations: self.source_access_configurations
+                ,
+                self_managed_event_source: self.self_managed_event_source
+                ,
+                maximum_record_age_in_seconds: self.maximum_record_age_in_seconds
+                ,
+                bisect_batch_on_function_error: self.bisect_batch_on_function_error
+                ,
+                maximum_retry_attempts: self.maximum_retry_attempts
+                ,
+                tumbling_window_in_seconds: self.tumbling_window_in_seconds
+                ,
+                function_response_types: self.function_response_types
+                ,
+                amazon_managed_kafka_event_source_config: self.amazon_managed_kafka_event_source_config
+                ,
+                self_managed_kafka_event_source_config: self.self_managed_kafka_event_source_config
+                ,
+                scaling_config: self.scaling_config
+                ,
             }
         }
     }
+    
+    
 }
 impl EventSourceMappingConfiguration {
     /// Creates a new builder-style object to manufacture [`EventSourceMappingConfiguration`](crate::model::EventSourceMappingConfiguration).
@@ -7331,7 +6755,7 @@ impl EventSourceMappingConfiguration {
 /// <p>Provides configuration information about a Lambda function <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-aliases.html">alias</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AliasConfiguration {
+pub struct AliasConfiguration  {
     /// <p>The Amazon Resource Name (ARN) of the alias.</p>
     #[doc(hidden)]
     pub alias_arn: std::option::Option<std::string::String>,
@@ -7353,33 +6777,33 @@ pub struct AliasConfiguration {
 }
 impl AliasConfiguration {
     /// <p>The Amazon Resource Name (ARN) of the alias.</p>
-    pub fn alias_arn(&self) -> std::option::Option<&str> {
+    pub fn alias_arn(&self) -> std::option::Option<& str> {
         self.alias_arn.as_deref()
     }
     /// <p>The name of the alias.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The function version that the alias invokes.</p>
-    pub fn function_version(&self) -> std::option::Option<&str> {
+    pub fn function_version(&self) -> std::option::Option<& str> {
         self.function_version.as_deref()
     }
     /// <p>A description of the alias.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-traffic-shifting-using-aliases.html">routing configuration</a> of the alias.</p>
-    pub fn routing_config(&self) -> std::option::Option<&crate::model::AliasRoutingConfiguration> {
+    pub fn routing_config(&self) -> std::option::Option<& crate::model::AliasRoutingConfiguration> {
         self.routing_config.as_ref()
     }
     /// <p>A unique identifier that changes when you update the alias.</p>
-    pub fn revision_id(&self) -> std::option::Option<&str> {
+    pub fn revision_id(&self) -> std::option::Option<& str> {
         self.revision_id.as_deref()
     }
 }
 /// See [`AliasConfiguration`](crate::model::AliasConfiguration).
 pub mod alias_configuration {
-
+    
     /// A builder for [`AliasConfiguration`](crate::model::AliasConfiguration).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -7398,8 +6822,7 @@ pub mod alias_configuration {
         }
         /// <p>The Amazon Resource Name (ARN) of the alias.</p>
         pub fn set_alias_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.alias_arn = input;
-            self
+            self.alias_arn = input; self
         }
         /// <p>The name of the alias.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7408,8 +6831,7 @@ pub mod alias_configuration {
         }
         /// <p>The name of the alias.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The function version that the alias invokes.</p>
         pub fn function_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7417,12 +6839,8 @@ pub mod alias_configuration {
             self
         }
         /// <p>The function version that the alias invokes.</p>
-        pub fn set_function_version(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.function_version = input;
-            self
+        pub fn set_function_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.function_version = input; self
         }
         /// <p>A description of the alias.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7431,8 +6849,7 @@ pub mod alias_configuration {
         }
         /// <p>A description of the alias.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>The <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-traffic-shifting-using-aliases.html">routing configuration</a> of the alias.</p>
         pub fn routing_config(mut self, input: crate::model::AliasRoutingConfiguration) -> Self {
@@ -7440,12 +6857,8 @@ pub mod alias_configuration {
             self
         }
         /// <p>The <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-traffic-shifting-using-aliases.html">routing configuration</a> of the alias.</p>
-        pub fn set_routing_config(
-            mut self,
-            input: std::option::Option<crate::model::AliasRoutingConfiguration>,
-        ) -> Self {
-            self.routing_config = input;
-            self
+        pub fn set_routing_config(mut self, input: std::option::Option<crate::model::AliasRoutingConfiguration>) -> Self {
+            self.routing_config = input; self
         }
         /// <p>A unique identifier that changes when you update the alias.</p>
         pub fn revision_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7454,21 +6867,28 @@ pub mod alias_configuration {
         }
         /// <p>A unique identifier that changes when you update the alias.</p>
         pub fn set_revision_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.revision_id = input;
-            self
+            self.revision_id = input; self
         }
         /// Consumes the builder and constructs a [`AliasConfiguration`](crate::model::AliasConfiguration).
         pub fn build(self) -> crate::model::AliasConfiguration {
             crate::model::AliasConfiguration {
-                alias_arn: self.alias_arn,
-                name: self.name,
-                function_version: self.function_version,
-                description: self.description,
-                routing_config: self.routing_config,
-                revision_id: self.revision_id,
+                alias_arn: self.alias_arn
+                ,
+                name: self.name
+                ,
+                function_version: self.function_version
+                ,
+                description: self.description
+                ,
+                routing_config: self.routing_config
+                ,
+                revision_id: self.revision_id
+                ,
             }
         }
     }
+    
+    
 }
 impl AliasConfiguration {
     /// Creates a new builder-style object to manufacture [`AliasConfiguration`](crate::model::AliasConfiguration).
@@ -7483,9 +6903,9 @@ impl AliasConfiguration {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let logtype = unimplemented!();
 /// match logtype {
@@ -7507,58 +6927,52 @@ impl AliasConfiguration {
 /// Specifically, when `logtype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `LogType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum LogType {
     #[allow(missing_docs)] // documentation missing in model
     None,
     #[allow(missing_docs)] // documentation missing in model
     Tail,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for LogType {
     fn from(s: &str) -> Self {
         match s {
             "None" => LogType::None,
             "Tail" => LogType::Tail,
-            other => LogType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => LogType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for LogType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(LogType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(LogType::from(s))
+                }
+            }
 impl LogType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             LogType::None => "None",
             LogType::Tail => "Tail",
-            LogType::Unknown(value) => value.as_str(),
+            LogType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["None", "Tail"]
+        &[
+            "None", "Tail"
+        ]
     }
 }
 impl AsRef<str> for LogType {
@@ -7573,9 +6987,9 @@ impl AsRef<str> for LogType {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let invocationtype = unimplemented!();
 /// match invocationtype {
@@ -7598,22 +7012,14 @@ impl AsRef<str> for LogType {
 /// Specifically, when `invocationtype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `InvocationType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum InvocationType {
     #[allow(missing_docs)] // documentation missing in model
     DryRun,
@@ -7622,7 +7028,7 @@ pub enum InvocationType {
     #[allow(missing_docs)] // documentation missing in model
     RequestResponse,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for InvocationType {
     fn from(s: &str) -> Self {
@@ -7630,17 +7036,17 @@ impl std::convert::From<&str> for InvocationType {
             "DryRun" => InvocationType::DryRun,
             "Event" => InvocationType::Event,
             "RequestResponse" => InvocationType::RequestResponse,
-            other => InvocationType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => InvocationType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for InvocationType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(InvocationType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(InvocationType::from(s))
+                }
+            }
 impl InvocationType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -7648,12 +7054,14 @@ impl InvocationType {
             InvocationType::DryRun => "DryRun",
             InvocationType::Event => "Event",
             InvocationType::RequestResponse => "RequestResponse",
-            InvocationType::Unknown(value) => value.as_str(),
+            InvocationType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["DryRun", "Event", "RequestResponse"]
+        &[
+            "DryRun", "Event", "RequestResponse"
+        ]
     }
 }
 impl AsRef<str> for InvocationType {
@@ -7665,7 +7073,7 @@ impl AsRef<str> for InvocationType {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Concurrency {
+pub struct Concurrency  {
     /// <p>The number of concurrent executions that are reserved for this function. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-concurrency.html">Managing Lambda reserved concurrency</a>.</p>
     #[doc(hidden)]
     pub reserved_concurrent_executions: std::option::Option<i32>,
@@ -7678,7 +7086,7 @@ impl Concurrency {
 }
 /// See [`Concurrency`](crate::model::Concurrency).
 pub mod concurrency {
-
+    
     /// A builder for [`Concurrency`](crate::model::Concurrency).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -7691,20 +7099,19 @@ pub mod concurrency {
             self
         }
         /// <p>The number of concurrent executions that are reserved for this function. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-concurrency.html">Managing Lambda reserved concurrency</a>.</p>
-        pub fn set_reserved_concurrent_executions(
-            mut self,
-            input: std::option::Option<i32>,
-        ) -> Self {
-            self.reserved_concurrent_executions = input;
-            self
+        pub fn set_reserved_concurrent_executions(mut self, input: std::option::Option<i32>) -> Self {
+            self.reserved_concurrent_executions = input; self
         }
         /// Consumes the builder and constructs a [`Concurrency`](crate::model::Concurrency).
         pub fn build(self) -> crate::model::Concurrency {
             crate::model::Concurrency {
-                reserved_concurrent_executions: self.reserved_concurrent_executions,
+                reserved_concurrent_executions: self.reserved_concurrent_executions
+                ,
             }
         }
     }
+    
+    
 }
 impl Concurrency {
     /// Creates a new builder-style object to manufacture [`Concurrency`](crate::model::Concurrency).
@@ -7716,7 +7123,7 @@ impl Concurrency {
 /// <p>Details about a function's deployment package.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct FunctionCodeLocation {
+pub struct FunctionCodeLocation  {
     /// <p>The service that's hosting the file.</p>
     #[doc(hidden)]
     pub repository_type: std::option::Option<std::string::String>,
@@ -7732,25 +7139,25 @@ pub struct FunctionCodeLocation {
 }
 impl FunctionCodeLocation {
     /// <p>The service that's hosting the file.</p>
-    pub fn repository_type(&self) -> std::option::Option<&str> {
+    pub fn repository_type(&self) -> std::option::Option<& str> {
         self.repository_type.as_deref()
     }
     /// <p>A presigned URL that you can use to download the deployment package.</p>
-    pub fn location(&self) -> std::option::Option<&str> {
+    pub fn location(&self) -> std::option::Option<& str> {
         self.location.as_deref()
     }
     /// <p>URI of a container image in the Amazon ECR registry.</p>
-    pub fn image_uri(&self) -> std::option::Option<&str> {
+    pub fn image_uri(&self) -> std::option::Option<& str> {
         self.image_uri.as_deref()
     }
     /// <p>The resolved URI for the image.</p>
-    pub fn resolved_image_uri(&self) -> std::option::Option<&str> {
+    pub fn resolved_image_uri(&self) -> std::option::Option<& str> {
         self.resolved_image_uri.as_deref()
     }
 }
 /// See [`FunctionCodeLocation`](crate::model::FunctionCodeLocation).
 pub mod function_code_location {
-
+    
     /// A builder for [`FunctionCodeLocation`](crate::model::FunctionCodeLocation).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -7766,12 +7173,8 @@ pub mod function_code_location {
             self
         }
         /// <p>The service that's hosting the file.</p>
-        pub fn set_repository_type(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.repository_type = input;
-            self
+        pub fn set_repository_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.repository_type = input; self
         }
         /// <p>A presigned URL that you can use to download the deployment package.</p>
         pub fn location(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7780,8 +7183,7 @@ pub mod function_code_location {
         }
         /// <p>A presigned URL that you can use to download the deployment package.</p>
         pub fn set_location(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.location = input;
-            self
+            self.location = input; self
         }
         /// <p>URI of a container image in the Amazon ECR registry.</p>
         pub fn image_uri(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7790,8 +7192,7 @@ pub mod function_code_location {
         }
         /// <p>URI of a container image in the Amazon ECR registry.</p>
         pub fn set_image_uri(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.image_uri = input;
-            self
+            self.image_uri = input; self
         }
         /// <p>The resolved URI for the image.</p>
         pub fn resolved_image_uri(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7799,23 +7200,25 @@ pub mod function_code_location {
             self
         }
         /// <p>The resolved URI for the image.</p>
-        pub fn set_resolved_image_uri(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.resolved_image_uri = input;
-            self
+        pub fn set_resolved_image_uri(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.resolved_image_uri = input; self
         }
         /// Consumes the builder and constructs a [`FunctionCodeLocation`](crate::model::FunctionCodeLocation).
         pub fn build(self) -> crate::model::FunctionCodeLocation {
             crate::model::FunctionCodeLocation {
-                repository_type: self.repository_type,
-                location: self.location,
-                image_uri: self.image_uri,
-                resolved_image_uri: self.resolved_image_uri,
+                repository_type: self.repository_type
+                ,
+                location: self.location
+                ,
+                image_uri: self.image_uri
+                ,
+                resolved_image_uri: self.resolved_image_uri
+                ,
             }
         }
     }
+    
+    
 }
 impl FunctionCodeLocation {
     /// Creates a new builder-style object to manufacture [`FunctionCodeLocation`](crate::model::FunctionCodeLocation).
@@ -7827,7 +7230,7 @@ impl FunctionCodeLocation {
 /// <p>The number of functions and amount of storage in use.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AccountUsage {
+pub struct AccountUsage  {
     /// <p>The amount of storage space, in bytes, that's being used by deployment packages and layer archives.</p>
     #[doc(hidden)]
     pub total_code_size: i64,
@@ -7847,7 +7250,7 @@ impl AccountUsage {
 }
 /// See [`AccountUsage`](crate::model::AccountUsage).
 pub mod account_usage {
-
+    
     /// A builder for [`AccountUsage`](crate::model::AccountUsage).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -7862,8 +7265,7 @@ pub mod account_usage {
         }
         /// <p>The amount of storage space, in bytes, that's being used by deployment packages and layer archives.</p>
         pub fn set_total_code_size(mut self, input: std::option::Option<i64>) -> Self {
-            self.total_code_size = input;
-            self
+            self.total_code_size = input; self
         }
         /// <p>The number of Lambda functions.</p>
         pub fn function_count(mut self, input: i64) -> Self {
@@ -7872,17 +7274,22 @@ pub mod account_usage {
         }
         /// <p>The number of Lambda functions.</p>
         pub fn set_function_count(mut self, input: std::option::Option<i64>) -> Self {
-            self.function_count = input;
-            self
+            self.function_count = input; self
         }
         /// Consumes the builder and constructs a [`AccountUsage`](crate::model::AccountUsage).
         pub fn build(self) -> crate::model::AccountUsage {
             crate::model::AccountUsage {
-                total_code_size: self.total_code_size.unwrap_or_default(),
-                function_count: self.function_count.unwrap_or_default(),
+                total_code_size: self.total_code_size
+                    .unwrap_or_default()
+                ,
+                function_count: self.function_count
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl AccountUsage {
     /// Creates a new builder-style object to manufacture [`AccountUsage`](crate::model::AccountUsage).
@@ -7894,7 +7301,7 @@ impl AccountUsage {
 /// <p>Limits that are related to concurrency and storage. All file and storage sizes are in bytes.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AccountLimit {
+pub struct AccountLimit  {
     /// <p>The amount of storage space that you can use for all deployment packages and layer archives.</p>
     #[doc(hidden)]
     pub total_code_size: i64,
@@ -7935,7 +7342,7 @@ impl AccountLimit {
 }
 /// See [`AccountLimit`](crate::model::AccountLimit).
 pub mod account_limit {
-
+    
     /// A builder for [`AccountLimit`](crate::model::AccountLimit).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -7953,8 +7360,7 @@ pub mod account_limit {
         }
         /// <p>The amount of storage space that you can use for all deployment packages and layer archives.</p>
         pub fn set_total_code_size(mut self, input: std::option::Option<i64>) -> Self {
-            self.total_code_size = input;
-            self
+            self.total_code_size = input; self
         }
         /// <p>The maximum size of a function's deployment package and layers when they're extracted.</p>
         pub fn code_size_unzipped(mut self, input: i64) -> Self {
@@ -7963,8 +7369,7 @@ pub mod account_limit {
         }
         /// <p>The maximum size of a function's deployment package and layers when they're extracted.</p>
         pub fn set_code_size_unzipped(mut self, input: std::option::Option<i64>) -> Self {
-            self.code_size_unzipped = input;
-            self
+            self.code_size_unzipped = input; self
         }
         /// <p>The maximum size of a deployment package when it's uploaded directly to Lambda. Use Amazon S3 for larger files.</p>
         pub fn code_size_zipped(mut self, input: i64) -> Self {
@@ -7973,8 +7378,7 @@ pub mod account_limit {
         }
         /// <p>The maximum size of a deployment package when it's uploaded directly to Lambda. Use Amazon S3 for larger files.</p>
         pub fn set_code_size_zipped(mut self, input: std::option::Option<i64>) -> Self {
-            self.code_size_zipped = input;
-            self
+            self.code_size_zipped = input; self
         }
         /// <p>The maximum number of simultaneous function executions.</p>
         pub fn concurrent_executions(mut self, input: i32) -> Self {
@@ -7983,8 +7387,7 @@ pub mod account_limit {
         }
         /// <p>The maximum number of simultaneous function executions.</p>
         pub fn set_concurrent_executions(mut self, input: std::option::Option<i32>) -> Self {
-            self.concurrent_executions = input;
-            self
+            self.concurrent_executions = input; self
         }
         /// <p>The maximum number of simultaneous function executions, minus the capacity that's reserved for individual functions with <code>PutFunctionConcurrency</code>.</p>
         pub fn unreserved_concurrent_executions(mut self, input: i32) -> Self {
@@ -7992,24 +7395,31 @@ pub mod account_limit {
             self
         }
         /// <p>The maximum number of simultaneous function executions, minus the capacity that's reserved for individual functions with <code>PutFunctionConcurrency</code>.</p>
-        pub fn set_unreserved_concurrent_executions(
-            mut self,
-            input: std::option::Option<i32>,
-        ) -> Self {
-            self.unreserved_concurrent_executions = input;
-            self
+        pub fn set_unreserved_concurrent_executions(mut self, input: std::option::Option<i32>) -> Self {
+            self.unreserved_concurrent_executions = input; self
         }
         /// Consumes the builder and constructs a [`AccountLimit`](crate::model::AccountLimit).
         pub fn build(self) -> crate::model::AccountLimit {
             crate::model::AccountLimit {
-                total_code_size: self.total_code_size.unwrap_or_default(),
-                code_size_unzipped: self.code_size_unzipped.unwrap_or_default(),
-                code_size_zipped: self.code_size_zipped.unwrap_or_default(),
-                concurrent_executions: self.concurrent_executions.unwrap_or_default(),
-                unreserved_concurrent_executions: self.unreserved_concurrent_executions,
+                total_code_size: self.total_code_size
+                    .unwrap_or_default()
+                ,
+                code_size_unzipped: self.code_size_unzipped
+                    .unwrap_or_default()
+                ,
+                code_size_zipped: self.code_size_zipped
+                    .unwrap_or_default()
+                ,
+                concurrent_executions: self.concurrent_executions
+                    .unwrap_or_default()
+                ,
+                unreserved_concurrent_executions: self.unreserved_concurrent_executions
+                ,
             }
         }
     }
+    
+    
 }
 impl AccountLimit {
     /// Creates a new builder-style object to manufacture [`AccountLimit`](crate::model::AccountLimit).
@@ -8021,7 +7431,7 @@ impl AccountLimit {
 /// <p>The code for the Lambda function. You can either specify an object in Amazon S3, upload a .zip file archive deployment package directly, or specify the URI of a container image.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct FunctionCode {
+pub struct FunctionCode  {
     /// <p>The base64-encoded contents of the deployment package. Amazon Web Services SDK and CLI clients handle the encoding for you.</p>
     #[doc(hidden)]
     pub zip_file: std::option::Option<aws_smithy_types::Blob>,
@@ -8040,27 +7450,27 @@ pub struct FunctionCode {
 }
 impl FunctionCode {
     /// <p>The base64-encoded contents of the deployment package. Amazon Web Services SDK and CLI clients handle the encoding for you.</p>
-    pub fn zip_file(&self) -> std::option::Option<&aws_smithy_types::Blob> {
+    pub fn zip_file(&self) -> std::option::Option<& aws_smithy_types::Blob> {
         self.zip_file.as_ref()
     }
     /// <p>An Amazon S3 bucket in the same Amazon Web Services Region as your function. The bucket can be in a different Amazon Web Services account.</p>
-    pub fn s3_bucket(&self) -> std::option::Option<&str> {
+    pub fn s3_bucket(&self) -> std::option::Option<& str> {
         self.s3_bucket.as_deref()
     }
     /// <p>The Amazon S3 key of the deployment package.</p>
-    pub fn s3_key(&self) -> std::option::Option<&str> {
+    pub fn s3_key(&self) -> std::option::Option<& str> {
         self.s3_key.as_deref()
     }
     /// <p>For versioned objects, the version of the deployment package object to use.</p>
-    pub fn s3_object_version(&self) -> std::option::Option<&str> {
+    pub fn s3_object_version(&self) -> std::option::Option<& str> {
         self.s3_object_version.as_deref()
     }
     /// <p>URI of a <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-images.html">container image</a> in the Amazon ECR registry.</p>
-    pub fn image_uri(&self) -> std::option::Option<&str> {
+    pub fn image_uri(&self) -> std::option::Option<& str> {
         self.image_uri.as_deref()
     }
 }
-impl std::fmt::Debug for FunctionCode {
+impl  std::fmt::Debug for FunctionCode  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("FunctionCode");
         formatter.field("zip_file", &"*** Sensitive Data Redacted ***");
@@ -8073,7 +7483,7 @@ impl std::fmt::Debug for FunctionCode {
 }
 /// See [`FunctionCode`](crate::model::FunctionCode).
 pub mod function_code {
-
+    
     /// A builder for [`FunctionCode`](crate::model::FunctionCode).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
@@ -8091,8 +7501,7 @@ pub mod function_code {
         }
         /// <p>The base64-encoded contents of the deployment package. Amazon Web Services SDK and CLI clients handle the encoding for you.</p>
         pub fn set_zip_file(mut self, input: std::option::Option<aws_smithy_types::Blob>) -> Self {
-            self.zip_file = input;
-            self
+            self.zip_file = input; self
         }
         /// <p>An Amazon S3 bucket in the same Amazon Web Services Region as your function. The bucket can be in a different Amazon Web Services account.</p>
         pub fn s3_bucket(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8101,8 +7510,7 @@ pub mod function_code {
         }
         /// <p>An Amazon S3 bucket in the same Amazon Web Services Region as your function. The bucket can be in a different Amazon Web Services account.</p>
         pub fn set_s3_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.s3_bucket = input;
-            self
+            self.s3_bucket = input; self
         }
         /// <p>The Amazon S3 key of the deployment package.</p>
         pub fn s3_key(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8111,8 +7519,7 @@ pub mod function_code {
         }
         /// <p>The Amazon S3 key of the deployment package.</p>
         pub fn set_s3_key(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.s3_key = input;
-            self
+            self.s3_key = input; self
         }
         /// <p>For versioned objects, the version of the deployment package object to use.</p>
         pub fn s3_object_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8120,12 +7527,8 @@ pub mod function_code {
             self
         }
         /// <p>For versioned objects, the version of the deployment package object to use.</p>
-        pub fn set_s3_object_version(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.s3_object_version = input;
-            self
+        pub fn set_s3_object_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.s3_object_version = input; self
         }
         /// <p>URI of a <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-images.html">container image</a> in the Amazon ECR registry.</p>
         pub fn image_uri(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8134,17 +7537,21 @@ pub mod function_code {
         }
         /// <p>URI of a <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-images.html">container image</a> in the Amazon ECR registry.</p>
         pub fn set_image_uri(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.image_uri = input;
-            self
+            self.image_uri = input; self
         }
         /// Consumes the builder and constructs a [`FunctionCode`](crate::model::FunctionCode).
         pub fn build(self) -> crate::model::FunctionCode {
             crate::model::FunctionCode {
-                zip_file: self.zip_file,
-                s3_bucket: self.s3_bucket,
-                s3_key: self.s3_key,
-                s3_object_version: self.s3_object_version,
-                image_uri: self.image_uri,
+                zip_file: self.zip_file
+                ,
+                s3_bucket: self.s3_bucket
+                ,
+                s3_key: self.s3_key
+                ,
+                s3_object_version: self.s3_object_version
+                ,
+                image_uri: self.image_uri
+                ,
             }
         }
     }
@@ -8159,6 +7566,8 @@ pub mod function_code {
             formatter.finish()
         }
     }
+    
+    
 }
 impl FunctionCode {
     /// Creates a new builder-style object to manufacture [`FunctionCode`](crate::model::FunctionCode).
@@ -8166,3 +7575,4 @@ impl FunctionCode {
         crate::model::function_code::Builder::default()
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>An object that defines the log patterns that belongs to a <code>LogPatternSet</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct LogPattern {
+pub struct LogPattern  {
     /// <p>The name of the log pattern. A log pattern name can contain as many as 30 characters, and it cannot be empty. The characters can be Unicode letters, digits, or one of the following symbols: period, dash, underscore.</p>
     #[doc(hidden)]
     pub pattern_set_name: std::option::Option<std::string::String>,
@@ -19,15 +19,15 @@ pub struct LogPattern {
 }
 impl LogPattern {
     /// <p>The name of the log pattern. A log pattern name can contain as many as 30 characters, and it cannot be empty. The characters can be Unicode letters, digits, or one of the following symbols: period, dash, underscore.</p>
-    pub fn pattern_set_name(&self) -> std::option::Option<&str> {
+    pub fn pattern_set_name(&self) -> std::option::Option<& str> {
         self.pattern_set_name.as_deref()
     }
     /// <p>The name of the log pattern. A log pattern name can contain as many as 50 characters, and it cannot be empty. The characters can be Unicode letters, digits, or one of the following symbols: period, dash, underscore.</p>
-    pub fn pattern_name(&self) -> std::option::Option<&str> {
+    pub fn pattern_name(&self) -> std::option::Option<& str> {
         self.pattern_name.as_deref()
     }
     /// <p>A regular expression that defines the log pattern. A log pattern can contain as many as 50 characters, and it cannot be empty. The pattern must be DFA compatible. Patterns that utilize forward lookahead or backreference constructions are not supported.</p>
-    pub fn pattern(&self) -> std::option::Option<&str> {
+    pub fn pattern(&self) -> std::option::Option<& str> {
         self.pattern.as_deref()
     }
     /// <p>Rank of the log pattern. Must be a value between <code>1</code> and <code>1,000,000</code>. The patterns are sorted by rank, so we recommend that you set your highest priority patterns with the lowest rank. A pattern of rank <code>1</code> will be the first to get matched to a log line. A pattern of rank <code>1,000,000</code> will be last to get matched. When you configure custom log patterns from the console, a <code>Low</code> severity pattern translates to a <code>750,000</code> rank. A <code>Medium</code> severity pattern translates to a <code>500,000</code> rank. And a <code>High</code> severity pattern translates to a <code>250,000</code> rank. Rank values less than <code>1</code> or greater than <code>1,000,000</code> are reserved for AWS-provided patterns. </p>
@@ -37,7 +37,7 @@ impl LogPattern {
 }
 /// See [`LogPattern`](crate::model::LogPattern).
 pub mod log_pattern {
-
+    
     /// A builder for [`LogPattern`](crate::model::LogPattern).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -53,12 +53,8 @@ pub mod log_pattern {
             self
         }
         /// <p>The name of the log pattern. A log pattern name can contain as many as 30 characters, and it cannot be empty. The characters can be Unicode letters, digits, or one of the following symbols: period, dash, underscore.</p>
-        pub fn set_pattern_set_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.pattern_set_name = input;
-            self
+        pub fn set_pattern_set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.pattern_set_name = input; self
         }
         /// <p>The name of the log pattern. A log pattern name can contain as many as 50 characters, and it cannot be empty. The characters can be Unicode letters, digits, or one of the following symbols: period, dash, underscore.</p>
         pub fn pattern_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -67,8 +63,7 @@ pub mod log_pattern {
         }
         /// <p>The name of the log pattern. A log pattern name can contain as many as 50 characters, and it cannot be empty. The characters can be Unicode letters, digits, or one of the following symbols: period, dash, underscore.</p>
         pub fn set_pattern_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.pattern_name = input;
-            self
+            self.pattern_name = input; self
         }
         /// <p>A regular expression that defines the log pattern. A log pattern can contain as many as 50 characters, and it cannot be empty. The pattern must be DFA compatible. Patterns that utilize forward lookahead or backreference constructions are not supported.</p>
         pub fn pattern(mut self, input: impl Into<std::string::String>) -> Self {
@@ -77,8 +72,7 @@ pub mod log_pattern {
         }
         /// <p>A regular expression that defines the log pattern. A log pattern can contain as many as 50 characters, and it cannot be empty. The pattern must be DFA compatible. Patterns that utilize forward lookahead or backreference constructions are not supported.</p>
         pub fn set_pattern(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.pattern = input;
-            self
+            self.pattern = input; self
         }
         /// <p>Rank of the log pattern. Must be a value between <code>1</code> and <code>1,000,000</code>. The patterns are sorted by rank, so we recommend that you set your highest priority patterns with the lowest rank. A pattern of rank <code>1</code> will be the first to get matched to a log line. A pattern of rank <code>1,000,000</code> will be last to get matched. When you configure custom log patterns from the console, a <code>Low</code> severity pattern translates to a <code>750,000</code> rank. A <code>Medium</code> severity pattern translates to a <code>500,000</code> rank. And a <code>High</code> severity pattern translates to a <code>250,000</code> rank. Rank values less than <code>1</code> or greater than <code>1,000,000</code> are reserved for AWS-provided patterns. </p>
         pub fn rank(mut self, input: i32) -> Self {
@@ -87,19 +81,25 @@ pub mod log_pattern {
         }
         /// <p>Rank of the log pattern. Must be a value between <code>1</code> and <code>1,000,000</code>. The patterns are sorted by rank, so we recommend that you set your highest priority patterns with the lowest rank. A pattern of rank <code>1</code> will be the first to get matched to a log line. A pattern of rank <code>1,000,000</code> will be last to get matched. When you configure custom log patterns from the console, a <code>Low</code> severity pattern translates to a <code>750,000</code> rank. A <code>Medium</code> severity pattern translates to a <code>500,000</code> rank. And a <code>High</code> severity pattern translates to a <code>250,000</code> rank. Rank values less than <code>1</code> or greater than <code>1,000,000</code> are reserved for AWS-provided patterns. </p>
         pub fn set_rank(mut self, input: std::option::Option<i32>) -> Self {
-            self.rank = input;
-            self
+            self.rank = input; self
         }
         /// Consumes the builder and constructs a [`LogPattern`](crate::model::LogPattern).
         pub fn build(self) -> crate::model::LogPattern {
             crate::model::LogPattern {
-                pattern_set_name: self.pattern_set_name,
-                pattern_name: self.pattern_name,
-                pattern: self.pattern,
-                rank: self.rank.unwrap_or_default(),
+                pattern_set_name: self.pattern_set_name
+                ,
+                pattern_name: self.pattern_name
+                ,
+                pattern: self.pattern
+                ,
+                rank: self.rank
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl LogPattern {
     /// Creates a new builder-style object to manufacture [`LogPattern`](crate::model::LogPattern).
@@ -114,9 +114,9 @@ impl LogPattern {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let tier = unimplemented!();
 /// match tier {
@@ -154,22 +154,14 @@ impl LogPattern {
 /// Specifically, when `tier` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `Tier::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum Tier {
     #[allow(missing_docs)] // documentation missing in model
     ActiveDirectory,
@@ -208,7 +200,7 @@ pub enum Tier {
     #[allow(missing_docs)] // documentation missing in model
     SqlServerFailoverClusterInstance,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for Tier {
     fn from(s: &str) -> Self {
@@ -231,17 +223,17 @@ impl std::convert::From<&str> for Tier {
             "SQL_SERVER" => Tier::SqlServer,
             "SQL_SERVER_ALWAYSON_AVAILABILITY_GROUP" => Tier::SqlServerAlwaysonAvailabilityGroup,
             "SQL_SERVER_FAILOVER_CLUSTER_INSTANCE" => Tier::SqlServerFailoverClusterInstance,
-            other => Tier::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => Tier::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for Tier {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(Tier::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(Tier::from(s))
+                }
+            }
 impl Tier {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -264,30 +256,13 @@ impl Tier {
             Tier::SqlServer => "SQL_SERVER",
             Tier::SqlServerAlwaysonAvailabilityGroup => "SQL_SERVER_ALWAYSON_AVAILABILITY_GROUP",
             Tier::SqlServerFailoverClusterInstance => "SQL_SERVER_FAILOVER_CLUSTER_INSTANCE",
-            Tier::Unknown(value) => value.as_str(),
+            Tier::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "ACTIVE_DIRECTORY",
-            "CUSTOM",
-            "DEFAULT",
-            "DOT_NET_CORE",
-            "DOT_NET_WEB",
-            "DOT_NET_WEB_TIER",
-            "DOT_NET_WORKER",
-            "JAVA_JMX",
-            "MYSQL",
-            "ORACLE",
-            "POSTGRESQL",
-            "SAP_HANA_HIGH_AVAILABILITY",
-            "SAP_HANA_MULTI_NODE",
-            "SAP_HANA_SINGLE_NODE",
-            "SHAREPOINT",
-            "SQL_SERVER",
-            "SQL_SERVER_ALWAYSON_AVAILABILITY_GROUP",
-            "SQL_SERVER_FAILOVER_CLUSTER_INSTANCE",
+            "ACTIVE_DIRECTORY", "CUSTOM", "DEFAULT", "DOT_NET_CORE", "DOT_NET_WEB", "DOT_NET_WEB_TIER", "DOT_NET_WORKER", "JAVA_JMX", "MYSQL", "ORACLE", "POSTGRESQL", "SAP_HANA_HIGH_AVAILABILITY", "SAP_HANA_MULTI_NODE", "SAP_HANA_SINGLE_NODE", "SHAREPOINT", "SQL_SERVER", "SQL_SERVER_ALWAYSON_AVAILABILITY_GROUP", "SQL_SERVER_FAILOVER_CLUSTER_INSTANCE"
         ]
     }
 }
@@ -300,7 +275,7 @@ impl AsRef<str> for Tier {
 /// <p>Describes the status of the application.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ApplicationInfo {
+pub struct ApplicationInfo  {
     /// <p>The name of the resource group used for the application.</p>
     #[doc(hidden)]
     pub resource_group_name: std::option::Option<std::string::String>,
@@ -316,10 +291,10 @@ pub struct ApplicationInfo {
     /// <p> Indicates whether Application Insights can listen to CloudWatch events for the application resources, such as <code>instance terminated</code>, <code>failed deployment</code>, and others. </p>
     #[doc(hidden)]
     pub cwe_monitor_enabled: std::option::Option<bool>,
-    /// <p>The issues on the user side that block Application Insights from successfully monitoring an application. Example remarks include:</p>
-    /// <ul>
-    /// <li> <p>“Configuring application, detected 1 Errors, 3 Warnings”</p> </li>
-    /// <li> <p>“Configuring application, detected 1 Unconfigured Components”</p> </li>
+    /// <p>The issues on the user side that block Application Insights from successfully monitoring an application. Example remarks include:</p> 
+    /// <ul> 
+    /// <li> <p>“Configuring application, detected 1 Errors, 3 Warnings”</p> </li> 
+    /// <li> <p>“Configuring application, detected 1 Unconfigured Components”</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub remarks: std::option::Option<std::string::String>,
@@ -332,15 +307,15 @@ pub struct ApplicationInfo {
 }
 impl ApplicationInfo {
     /// <p>The name of the resource group used for the application.</p>
-    pub fn resource_group_name(&self) -> std::option::Option<&str> {
+    pub fn resource_group_name(&self) -> std::option::Option<& str> {
         self.resource_group_name.as_deref()
     }
     /// <p>The lifecycle of the application. </p>
-    pub fn life_cycle(&self) -> std::option::Option<&str> {
+    pub fn life_cycle(&self) -> std::option::Option<& str> {
         self.life_cycle.as_deref()
     }
     /// <p> The SNS topic provided to Application Insights that is associated to the created opsItems to receive SNS notifications for opsItem updates. </p>
-    pub fn ops_item_sns_topic_arn(&self) -> std::option::Option<&str> {
+    pub fn ops_item_sns_topic_arn(&self) -> std::option::Option<& str> {
         self.ops_item_sns_topic_arn.as_deref()
     }
     /// <p> Indicates whether Application Insights will create opsItems for any problem detected by Application Insights for an application. </p>
@@ -351,12 +326,12 @@ impl ApplicationInfo {
     pub fn cwe_monitor_enabled(&self) -> std::option::Option<bool> {
         self.cwe_monitor_enabled
     }
-    /// <p>The issues on the user side that block Application Insights from successfully monitoring an application. Example remarks include:</p>
-    /// <ul>
-    /// <li> <p>“Configuring application, detected 1 Errors, 3 Warnings”</p> </li>
-    /// <li> <p>“Configuring application, detected 1 Unconfigured Components”</p> </li>
+    /// <p>The issues on the user side that block Application Insights from successfully monitoring an application. Example remarks include:</p> 
+    /// <ul> 
+    /// <li> <p>“Configuring application, detected 1 Errors, 3 Warnings”</p> </li> 
+    /// <li> <p>“Configuring application, detected 1 Unconfigured Components”</p> </li> 
     /// </ul>
-    pub fn remarks(&self) -> std::option::Option<&str> {
+    pub fn remarks(&self) -> std::option::Option<& str> {
         self.remarks.as_deref()
     }
     /// <p> Indicates whether auto-configuration is turned on for this application. </p>
@@ -364,13 +339,13 @@ impl ApplicationInfo {
         self.auto_config_enabled
     }
     /// <p> The method used by Application Insights to onboard your resources. </p>
-    pub fn discovery_type(&self) -> std::option::Option<&crate::model::DiscoveryType> {
+    pub fn discovery_type(&self) -> std::option::Option<& crate::model::DiscoveryType> {
         self.discovery_type.as_ref()
     }
 }
 /// See [`ApplicationInfo`](crate::model::ApplicationInfo).
 pub mod application_info {
-
+    
     /// A builder for [`ApplicationInfo`](crate::model::ApplicationInfo).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -390,12 +365,8 @@ pub mod application_info {
             self
         }
         /// <p>The name of the resource group used for the application.</p>
-        pub fn set_resource_group_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.resource_group_name = input;
-            self
+        pub fn set_resource_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.resource_group_name = input; self
         }
         /// <p>The lifecycle of the application. </p>
         pub fn life_cycle(mut self, input: impl Into<std::string::String>) -> Self {
@@ -404,8 +375,7 @@ pub mod application_info {
         }
         /// <p>The lifecycle of the application. </p>
         pub fn set_life_cycle(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.life_cycle = input;
-            self
+            self.life_cycle = input; self
         }
         /// <p> The SNS topic provided to Application Insights that is associated to the created opsItems to receive SNS notifications for opsItem updates. </p>
         pub fn ops_item_sns_topic_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -413,12 +383,8 @@ pub mod application_info {
             self
         }
         /// <p> The SNS topic provided to Application Insights that is associated to the created opsItems to receive SNS notifications for opsItem updates. </p>
-        pub fn set_ops_item_sns_topic_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.ops_item_sns_topic_arn = input;
-            self
+        pub fn set_ops_item_sns_topic_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.ops_item_sns_topic_arn = input; self
         }
         /// <p> Indicates whether Application Insights will create opsItems for any problem detected by Application Insights for an application. </p>
         pub fn ops_center_enabled(mut self, input: bool) -> Self {
@@ -427,8 +393,7 @@ pub mod application_info {
         }
         /// <p> Indicates whether Application Insights will create opsItems for any problem detected by Application Insights for an application. </p>
         pub fn set_ops_center_enabled(mut self, input: std::option::Option<bool>) -> Self {
-            self.ops_center_enabled = input;
-            self
+            self.ops_center_enabled = input; self
         }
         /// <p> Indicates whether Application Insights can listen to CloudWatch events for the application resources, such as <code>instance terminated</code>, <code>failed deployment</code>, and others. </p>
         pub fn cwe_monitor_enabled(mut self, input: bool) -> Self {
@@ -437,26 +402,24 @@ pub mod application_info {
         }
         /// <p> Indicates whether Application Insights can listen to CloudWatch events for the application resources, such as <code>instance terminated</code>, <code>failed deployment</code>, and others. </p>
         pub fn set_cwe_monitor_enabled(mut self, input: std::option::Option<bool>) -> Self {
-            self.cwe_monitor_enabled = input;
-            self
+            self.cwe_monitor_enabled = input; self
         }
-        /// <p>The issues on the user side that block Application Insights from successfully monitoring an application. Example remarks include:</p>
-        /// <ul>
-        /// <li> <p>“Configuring application, detected 1 Errors, 3 Warnings”</p> </li>
-        /// <li> <p>“Configuring application, detected 1 Unconfigured Components”</p> </li>
+        /// <p>The issues on the user side that block Application Insights from successfully monitoring an application. Example remarks include:</p> 
+        /// <ul> 
+        /// <li> <p>“Configuring application, detected 1 Errors, 3 Warnings”</p> </li> 
+        /// <li> <p>“Configuring application, detected 1 Unconfigured Components”</p> </li> 
         /// </ul>
         pub fn remarks(mut self, input: impl Into<std::string::String>) -> Self {
             self.remarks = Some(input.into());
             self
         }
-        /// <p>The issues on the user side that block Application Insights from successfully monitoring an application. Example remarks include:</p>
-        /// <ul>
-        /// <li> <p>“Configuring application, detected 1 Errors, 3 Warnings”</p> </li>
-        /// <li> <p>“Configuring application, detected 1 Unconfigured Components”</p> </li>
+        /// <p>The issues on the user side that block Application Insights from successfully monitoring an application. Example remarks include:</p> 
+        /// <ul> 
+        /// <li> <p>“Configuring application, detected 1 Errors, 3 Warnings”</p> </li> 
+        /// <li> <p>“Configuring application, detected 1 Unconfigured Components”</p> </li> 
         /// </ul>
         pub fn set_remarks(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.remarks = input;
-            self
+            self.remarks = input; self
         }
         /// <p> Indicates whether auto-configuration is turned on for this application. </p>
         pub fn auto_config_enabled(mut self, input: bool) -> Self {
@@ -465,8 +428,7 @@ pub mod application_info {
         }
         /// <p> Indicates whether auto-configuration is turned on for this application. </p>
         pub fn set_auto_config_enabled(mut self, input: std::option::Option<bool>) -> Self {
-            self.auto_config_enabled = input;
-            self
+            self.auto_config_enabled = input; self
         }
         /// <p> The method used by Application Insights to onboard your resources. </p>
         pub fn discovery_type(mut self, input: crate::model::DiscoveryType) -> Self {
@@ -474,27 +436,33 @@ pub mod application_info {
             self
         }
         /// <p> The method used by Application Insights to onboard your resources. </p>
-        pub fn set_discovery_type(
-            mut self,
-            input: std::option::Option<crate::model::DiscoveryType>,
-        ) -> Self {
-            self.discovery_type = input;
-            self
+        pub fn set_discovery_type(mut self, input: std::option::Option<crate::model::DiscoveryType>) -> Self {
+            self.discovery_type = input; self
         }
         /// Consumes the builder and constructs a [`ApplicationInfo`](crate::model::ApplicationInfo).
         pub fn build(self) -> crate::model::ApplicationInfo {
             crate::model::ApplicationInfo {
-                resource_group_name: self.resource_group_name,
-                life_cycle: self.life_cycle,
-                ops_item_sns_topic_arn: self.ops_item_sns_topic_arn,
-                ops_center_enabled: self.ops_center_enabled,
-                cwe_monitor_enabled: self.cwe_monitor_enabled,
-                remarks: self.remarks,
-                auto_config_enabled: self.auto_config_enabled,
-                discovery_type: self.discovery_type,
+                resource_group_name: self.resource_group_name
+                ,
+                life_cycle: self.life_cycle
+                ,
+                ops_item_sns_topic_arn: self.ops_item_sns_topic_arn
+                ,
+                ops_center_enabled: self.ops_center_enabled
+                ,
+                cwe_monitor_enabled: self.cwe_monitor_enabled
+                ,
+                remarks: self.remarks
+                ,
+                auto_config_enabled: self.auto_config_enabled
+                ,
+                discovery_type: self.discovery_type
+                ,
             }
         }
     }
+    
+    
 }
 impl ApplicationInfo {
     /// Creates a new builder-style object to manufacture [`ApplicationInfo`](crate::model::ApplicationInfo).
@@ -509,9 +477,9 @@ impl ApplicationInfo {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let discoverytype = unimplemented!();
 /// match discoverytype {
@@ -533,58 +501,52 @@ impl ApplicationInfo {
 /// Specifically, when `discoverytype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `DiscoveryType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum DiscoveryType {
     #[allow(missing_docs)] // documentation missing in model
     AccountBased,
     #[allow(missing_docs)] // documentation missing in model
     ResourceGroupBased,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for DiscoveryType {
     fn from(s: &str) -> Self {
         match s {
             "ACCOUNT_BASED" => DiscoveryType::AccountBased,
             "RESOURCE_GROUP_BASED" => DiscoveryType::ResourceGroupBased,
-            other => DiscoveryType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => DiscoveryType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for DiscoveryType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(DiscoveryType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(DiscoveryType::from(s))
+                }
+            }
 impl DiscoveryType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             DiscoveryType::AccountBased => "ACCOUNT_BASED",
             DiscoveryType::ResourceGroupBased => "RESOURCE_GROUP_BASED",
-            DiscoveryType::Unknown(value) => value.as_str(),
+            DiscoveryType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ACCOUNT_BASED", "RESOURCE_GROUP_BASED"]
+        &[
+            "ACCOUNT_BASED", "RESOURCE_GROUP_BASED"
+        ]
     }
 }
 impl AsRef<str> for DiscoveryType {
@@ -593,16 +555,16 @@ impl AsRef<str> for DiscoveryType {
     }
 }
 
-/// <p>An object that defines the tags associated with an application. A <i>tag</i> is a label that you optionally define and associate with an application. Tags can help you categorize and manage resources in different ways, such as by purpose, owner, environment, or other criteria.</p>
-/// <p>Each tag consists of a required <i>tag key</i> and an associated <i>tag value</i>, both of which you define. A tag key is a general label that acts as a category for a more specific tag value. A tag value acts as a descriptor within a tag key. A tag key can contain as many as 128 characters. A tag value can contain as many as 256 characters. The characters can be Unicode letters, digits, white space, or one of the following symbols: _ . : / = + -. The following additional restrictions apply to tags:</p>
-/// <ul>
-/// <li> <p>Tag keys and values are case sensitive.</p> </li>
-/// <li> <p>For each associated resource, each tag key must be unique and it can have only one value.</p> </li>
-/// <li> <p>The <code>aws:</code> prefix is reserved for use by AWS; you can’t use it in any tag keys or values that you define. In addition, you can't edit or remove tag keys or values that use this prefix. </p> </li>
+/// <p>An object that defines the tags associated with an application. A <i>tag</i> is a label that you optionally define and associate with an application. Tags can help you categorize and manage resources in different ways, such as by purpose, owner, environment, or other criteria.</p> 
+/// <p>Each tag consists of a required <i>tag key</i> and an associated <i>tag value</i>, both of which you define. A tag key is a general label that acts as a category for a more specific tag value. A tag value acts as a descriptor within a tag key. A tag key can contain as many as 128 characters. A tag value can contain as many as 256 characters. The characters can be Unicode letters, digits, white space, or one of the following symbols: _ . : / = + -. The following additional restrictions apply to tags:</p> 
+/// <ul> 
+/// <li> <p>Tag keys and values are case sensitive.</p> </li> 
+/// <li> <p>For each associated resource, each tag key must be unique and it can have only one value.</p> </li> 
+/// <li> <p>The <code>aws:</code> prefix is reserved for use by AWS; you can’t use it in any tag keys or values that you define. In addition, you can't edit or remove tag keys or values that use this prefix. </p> </li> 
 /// </ul>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Tag {
+pub struct Tag  {
     /// <p>One part of a key-value pair that defines a tag. The maximum length of a tag key is 128 characters. The minimum length is 1 character.</p>
     #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
@@ -612,17 +574,17 @@ pub struct Tag {
 }
 impl Tag {
     /// <p>One part of a key-value pair that defines a tag. The maximum length of a tag key is 128 characters. The minimum length is 1 character.</p>
-    pub fn key(&self) -> std::option::Option<&str> {
+    pub fn key(&self) -> std::option::Option<& str> {
         self.key.as_deref()
     }
     /// <p>The optional part of a key-value pair that defines a tag. The maximum length of a tag value is 256 characters. The minimum length is 0 characters. If you don't want an application to have a specific tag value, don't specify a value for this parameter.</p>
-    pub fn value(&self) -> std::option::Option<&str> {
+    pub fn value(&self) -> std::option::Option<& str> {
         self.value.as_deref()
     }
 }
 /// See [`Tag`](crate::model::Tag).
 pub mod tag {
-
+    
     /// A builder for [`Tag`](crate::model::Tag).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -637,8 +599,7 @@ pub mod tag {
         }
         /// <p>One part of a key-value pair that defines a tag. The maximum length of a tag key is 128 characters. The minimum length is 1 character.</p>
         pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.key = input;
-            self
+            self.key = input; self
         }
         /// <p>The optional part of a key-value pair that defines a tag. The maximum length of a tag value is 256 characters. The minimum length is 0 characters. If you don't want an application to have a specific tag value, don't specify a value for this parameter.</p>
         pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
@@ -647,17 +608,20 @@ pub mod tag {
         }
         /// <p>The optional part of a key-value pair that defines a tag. The maximum length of a tag value is 256 characters. The minimum length is 0 characters. If you don't want an application to have a specific tag value, don't specify a value for this parameter.</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.value = input;
-            self
+            self.value = input; self
         }
         /// Consumes the builder and constructs a [`Tag`](crate::model::Tag).
         pub fn build(self) -> crate::model::Tag {
             crate::model::Tag {
-                key: self.key,
-                value: self.value,
+                key: self.key
+                ,
+                value: self.value
+                ,
             }
         }
     }
+    
+    
 }
 impl Tag {
     /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
@@ -669,7 +633,7 @@ impl Tag {
 /// <p>Describes a problem that is detected by correlating observations.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Problem {
+pub struct Problem  {
     /// <p>The ID of the problem.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -699,9 +663,7 @@ pub struct Problem {
     pub resource_group_name: std::option::Option<std::string::String>,
     /// <p>Feedback provided by the user about the problem.</p>
     #[doc(hidden)]
-    pub feedback: std::option::Option<
-        std::collections::HashMap<crate::model::FeedbackKey, crate::model::FeedbackValue>,
-    >,
+    pub feedback: std::option::Option<std::collections::HashMap<crate::model::FeedbackKey, crate::model::FeedbackValue>>,
     /// <p> The number of times that the same problem reoccurred after the first time it was resolved. </p>
     #[doc(hidden)]
     pub recurring_count: std::option::Option<i64>,
@@ -711,47 +673,43 @@ pub struct Problem {
 }
 impl Problem {
     /// <p>The ID of the problem.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The name of the problem.</p>
-    pub fn title(&self) -> std::option::Option<&str> {
+    pub fn title(&self) -> std::option::Option<& str> {
         self.title.as_deref()
     }
     /// <p>A detailed analysis of the problem using machine learning.</p>
-    pub fn insights(&self) -> std::option::Option<&str> {
+    pub fn insights(&self) -> std::option::Option<& str> {
         self.insights.as_deref()
     }
     /// <p>The status of the problem.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::Status> {
+    pub fn status(&self) -> std::option::Option<& crate::model::Status> {
         self.status.as_ref()
     }
     /// <p>The resource affected by the problem.</p>
-    pub fn affected_resource(&self) -> std::option::Option<&str> {
+    pub fn affected_resource(&self) -> std::option::Option<& str> {
         self.affected_resource.as_deref()
     }
     /// <p>The time when the problem started, in epoch seconds.</p>
-    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn start_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p>The time when the problem ended, in epoch seconds.</p>
-    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn end_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
     /// <p>A measure of the level of impact of the problem.</p>
-    pub fn severity_level(&self) -> std::option::Option<&crate::model::SeverityLevel> {
+    pub fn severity_level(&self) -> std::option::Option<& crate::model::SeverityLevel> {
         self.severity_level.as_ref()
     }
     /// <p>The name of the resource group affected by the problem.</p>
-    pub fn resource_group_name(&self) -> std::option::Option<&str> {
+    pub fn resource_group_name(&self) -> std::option::Option<& str> {
         self.resource_group_name.as_deref()
     }
     /// <p>Feedback provided by the user about the problem.</p>
-    pub fn feedback(
-        &self,
-    ) -> std::option::Option<
-        &std::collections::HashMap<crate::model::FeedbackKey, crate::model::FeedbackValue>,
-    > {
+    pub fn feedback(&self) -> std::option::Option<& std::collections::HashMap<crate::model::FeedbackKey, crate::model::FeedbackValue>> {
         self.feedback.as_ref()
     }
     /// <p> The number of times that the same problem reoccurred after the first time it was resolved. </p>
@@ -759,13 +717,13 @@ impl Problem {
         self.recurring_count
     }
     /// <p> The last time that the problem reoccurred after its last resolution. </p>
-    pub fn last_recurrence_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_recurrence_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_recurrence_time.as_ref()
     }
 }
 /// See [`Problem`](crate::model::Problem).
 pub mod problem {
-
+    
     /// A builder for [`Problem`](crate::model::Problem).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -778,9 +736,7 @@ pub mod problem {
         pub(crate) end_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) severity_level: std::option::Option<crate::model::SeverityLevel>,
         pub(crate) resource_group_name: std::option::Option<std::string::String>,
-        pub(crate) feedback: std::option::Option<
-            std::collections::HashMap<crate::model::FeedbackKey, crate::model::FeedbackValue>,
-        >,
+        pub(crate) feedback: std::option::Option<std::collections::HashMap<crate::model::FeedbackKey, crate::model::FeedbackValue>>,
         pub(crate) recurring_count: std::option::Option<i64>,
         pub(crate) last_recurrence_time: std::option::Option<aws_smithy_types::DateTime>,
     }
@@ -792,8 +748,7 @@ pub mod problem {
         }
         /// <p>The ID of the problem.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// <p>The name of the problem.</p>
         pub fn title(mut self, input: impl Into<std::string::String>) -> Self {
@@ -802,8 +757,7 @@ pub mod problem {
         }
         /// <p>The name of the problem.</p>
         pub fn set_title(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.title = input;
-            self
+            self.title = input; self
         }
         /// <p>A detailed analysis of the problem using machine learning.</p>
         pub fn insights(mut self, input: impl Into<std::string::String>) -> Self {
@@ -812,8 +766,7 @@ pub mod problem {
         }
         /// <p>A detailed analysis of the problem using machine learning.</p>
         pub fn set_insights(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.insights = input;
-            self
+            self.insights = input; self
         }
         /// <p>The status of the problem.</p>
         pub fn status(mut self, input: crate::model::Status) -> Self {
@@ -822,8 +775,7 @@ pub mod problem {
         }
         /// <p>The status of the problem.</p>
         pub fn set_status(mut self, input: std::option::Option<crate::model::Status>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// <p>The resource affected by the problem.</p>
         pub fn affected_resource(mut self, input: impl Into<std::string::String>) -> Self {
@@ -831,12 +783,8 @@ pub mod problem {
             self
         }
         /// <p>The resource affected by the problem.</p>
-        pub fn set_affected_resource(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.affected_resource = input;
-            self
+        pub fn set_affected_resource(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.affected_resource = input; self
         }
         /// <p>The time when the problem started, in epoch seconds.</p>
         pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -844,12 +792,8 @@ pub mod problem {
             self
         }
         /// <p>The time when the problem started, in epoch seconds.</p>
-        pub fn set_start_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.start_time = input;
-            self
+        pub fn set_start_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.start_time = input; self
         }
         /// <p>The time when the problem ended, in epoch seconds.</p>
         pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -857,12 +801,8 @@ pub mod problem {
             self
         }
         /// <p>The time when the problem ended, in epoch seconds.</p>
-        pub fn set_end_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.end_time = input;
-            self
+        pub fn set_end_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.end_time = input; self
         }
         /// <p>A measure of the level of impact of the problem.</p>
         pub fn severity_level(mut self, input: crate::model::SeverityLevel) -> Self {
@@ -870,12 +810,8 @@ pub mod problem {
             self
         }
         /// <p>A measure of the level of impact of the problem.</p>
-        pub fn set_severity_level(
-            mut self,
-            input: std::option::Option<crate::model::SeverityLevel>,
-        ) -> Self {
-            self.severity_level = input;
-            self
+        pub fn set_severity_level(mut self, input: std::option::Option<crate::model::SeverityLevel>) -> Self {
+            self.severity_level = input; self
         }
         /// <p>The name of the resource group affected by the problem.</p>
         pub fn resource_group_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -883,37 +819,23 @@ pub mod problem {
             self
         }
         /// <p>The name of the resource group affected by the problem.</p>
-        pub fn set_resource_group_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.resource_group_name = input;
-            self
+        pub fn set_resource_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.resource_group_name = input; self
         }
         /// Adds a key-value pair to `feedback`.
         ///
         /// To override the contents of this collection use [`set_feedback`](Self::set_feedback).
         ///
         /// <p>Feedback provided by the user about the problem.</p>
-        pub fn feedback(
-            mut self,
-            k: crate::model::FeedbackKey,
-            v: crate::model::FeedbackValue,
-        ) -> Self {
+        pub fn feedback(mut self, k: crate::model::FeedbackKey, v: crate::model::FeedbackValue) -> Self {
             let mut hash_map = self.feedback.unwrap_or_default();
-            hash_map.insert(k, v);
-            self.feedback = Some(hash_map);
-            self
+                            hash_map.insert(k, v);
+                            self.feedback = Some(hash_map);
+                            self
         }
         /// <p>Feedback provided by the user about the problem.</p>
-        pub fn set_feedback(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<crate::model::FeedbackKey, crate::model::FeedbackValue>,
-            >,
-        ) -> Self {
-            self.feedback = input;
-            self
+        pub fn set_feedback(mut self, input: std::option::Option<std::collections::HashMap<crate::model::FeedbackKey, crate::model::FeedbackValue>>) -> Self {
+            self.feedback = input; self
         }
         /// <p> The number of times that the same problem reoccurred after the first time it was resolved. </p>
         pub fn recurring_count(mut self, input: i64) -> Self {
@@ -922,8 +844,7 @@ pub mod problem {
         }
         /// <p> The number of times that the same problem reoccurred after the first time it was resolved. </p>
         pub fn set_recurring_count(mut self, input: std::option::Option<i64>) -> Self {
-            self.recurring_count = input;
-            self
+            self.recurring_count = input; self
         }
         /// <p> The last time that the problem reoccurred after its last resolution. </p>
         pub fn last_recurrence_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -931,31 +852,41 @@ pub mod problem {
             self
         }
         /// <p> The last time that the problem reoccurred after its last resolution. </p>
-        pub fn set_last_recurrence_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_recurrence_time = input;
-            self
+        pub fn set_last_recurrence_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_recurrence_time = input; self
         }
         /// Consumes the builder and constructs a [`Problem`](crate::model::Problem).
         pub fn build(self) -> crate::model::Problem {
             crate::model::Problem {
-                id: self.id,
-                title: self.title,
-                insights: self.insights,
-                status: self.status,
-                affected_resource: self.affected_resource,
-                start_time: self.start_time,
-                end_time: self.end_time,
-                severity_level: self.severity_level,
-                resource_group_name: self.resource_group_name,
-                feedback: self.feedback,
-                recurring_count: self.recurring_count,
-                last_recurrence_time: self.last_recurrence_time,
+                id: self.id
+                ,
+                title: self.title
+                ,
+                insights: self.insights
+                ,
+                status: self.status
+                ,
+                affected_resource: self.affected_resource
+                ,
+                start_time: self.start_time
+                ,
+                end_time: self.end_time
+                ,
+                severity_level: self.severity_level
+                ,
+                resource_group_name: self.resource_group_name
+                ,
+                feedback: self.feedback
+                ,
+                recurring_count: self.recurring_count
+                ,
+                last_recurrence_time: self.last_recurrence_time
+                ,
             }
         }
     }
+    
+    
 }
 impl Problem {
     /// Creates a new builder-style object to manufacture [`Problem`](crate::model::Problem).
@@ -970,9 +901,9 @@ impl Problem {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let feedbackvalue = unimplemented!();
 /// match feedbackvalue {
@@ -995,22 +926,14 @@ impl Problem {
 /// Specifically, when `feedbackvalue` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `FeedbackValue::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum FeedbackValue {
     #[allow(missing_docs)] // documentation missing in model
     NotSpecified,
@@ -1019,7 +942,7 @@ pub enum FeedbackValue {
     #[allow(missing_docs)] // documentation missing in model
     Useful,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for FeedbackValue {
     fn from(s: &str) -> Self {
@@ -1027,17 +950,17 @@ impl std::convert::From<&str> for FeedbackValue {
             "NOT_SPECIFIED" => FeedbackValue::NotSpecified,
             "NOT_USEFUL" => FeedbackValue::NotUseful,
             "USEFUL" => FeedbackValue::Useful,
-            other => FeedbackValue::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => FeedbackValue::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for FeedbackValue {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(FeedbackValue::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(FeedbackValue::from(s))
+                }
+            }
 impl FeedbackValue {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -1045,12 +968,14 @@ impl FeedbackValue {
             FeedbackValue::NotSpecified => "NOT_SPECIFIED",
             FeedbackValue::NotUseful => "NOT_USEFUL",
             FeedbackValue::Useful => "USEFUL",
-            FeedbackValue::Unknown(value) => value.as_str(),
+            FeedbackValue::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["NOT_SPECIFIED", "NOT_USEFUL", "USEFUL"]
+        &[
+            "NOT_SPECIFIED", "NOT_USEFUL", "USEFUL"
+        ]
     }
 }
 impl AsRef<str> for FeedbackValue {
@@ -1065,9 +990,9 @@ impl AsRef<str> for FeedbackValue {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let feedbackkey = unimplemented!();
 /// match feedbackkey {
@@ -1088,54 +1013,48 @@ impl AsRef<str> for FeedbackValue {
 /// Specifically, when `feedbackkey` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `FeedbackKey::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum FeedbackKey {
     #[allow(missing_docs)] // documentation missing in model
     InsightsFeedback,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for FeedbackKey {
     fn from(s: &str) -> Self {
         match s {
             "INSIGHTS_FEEDBACK" => FeedbackKey::InsightsFeedback,
-            other => FeedbackKey::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => FeedbackKey::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for FeedbackKey {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(FeedbackKey::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(FeedbackKey::from(s))
+                }
+            }
 impl FeedbackKey {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             FeedbackKey::InsightsFeedback => "INSIGHTS_FEEDBACK",
-            FeedbackKey::Unknown(value) => value.as_str(),
+            FeedbackKey::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["INSIGHTS_FEEDBACK"]
+        &[
+            "INSIGHTS_FEEDBACK"
+        ]
     }
 }
 impl AsRef<str> for FeedbackKey {
@@ -1150,9 +1069,9 @@ impl AsRef<str> for FeedbackKey {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let severitylevel = unimplemented!();
 /// match severitylevel {
@@ -1176,22 +1095,14 @@ impl AsRef<str> for FeedbackKey {
 /// Specifically, when `severitylevel` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `SeverityLevel::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum SeverityLevel {
     #[allow(missing_docs)] // documentation missing in model
     High,
@@ -1202,7 +1113,7 @@ pub enum SeverityLevel {
     #[allow(missing_docs)] // documentation missing in model
     Medium,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for SeverityLevel {
     fn from(s: &str) -> Self {
@@ -1211,17 +1122,17 @@ impl std::convert::From<&str> for SeverityLevel {
             "Informative" => SeverityLevel::Informative,
             "Low" => SeverityLevel::Low,
             "Medium" => SeverityLevel::Medium,
-            other => SeverityLevel::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => SeverityLevel::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for SeverityLevel {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(SeverityLevel::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(SeverityLevel::from(s))
+                }
+            }
 impl SeverityLevel {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -1230,12 +1141,14 @@ impl SeverityLevel {
             SeverityLevel::Informative => "Informative",
             SeverityLevel::Low => "Low",
             SeverityLevel::Medium => "Medium",
-            SeverityLevel::Unknown(value) => value.as_str(),
+            SeverityLevel::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["High", "Informative", "Low", "Medium"]
+        &[
+            "High", "Informative", "Low", "Medium"
+        ]
     }
 }
 impl AsRef<str> for SeverityLevel {
@@ -1250,9 +1163,9 @@ impl AsRef<str> for SeverityLevel {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let status = unimplemented!();
 /// match status {
@@ -1276,22 +1189,14 @@ impl AsRef<str> for SeverityLevel {
 /// Specifically, when `status` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `Status::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum Status {
     #[allow(missing_docs)] // documentation missing in model
     Ignore,
@@ -1302,7 +1207,7 @@ pub enum Status {
     #[allow(missing_docs)] // documentation missing in model
     Resolved,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for Status {
     fn from(s: &str) -> Self {
@@ -1311,17 +1216,17 @@ impl std::convert::From<&str> for Status {
             "PENDING" => Status::Pending,
             "RECURRING" => Status::Recurring,
             "RESOLVED" => Status::Resolved,
-            other => Status::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => Status::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for Status {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(Status::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(Status::from(s))
+                }
+            }
 impl Status {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -1330,12 +1235,14 @@ impl Status {
             Status::Pending => "PENDING",
             Status::Recurring => "RECURRING",
             Status::Resolved => "RESOLVED",
-            Status::Unknown(value) => value.as_str(),
+            Status::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["IGNORE", "PENDING", "RECURRING", "RESOLVED"]
+        &[
+            "IGNORE", "PENDING", "RECURRING", "RESOLVED"
+        ]
     }
 }
 impl AsRef<str> for Status {
@@ -1347,7 +1254,7 @@ impl AsRef<str> for Status {
 /// <p> The event information. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ConfigurationEvent {
+pub struct ConfigurationEvent  {
     /// <p> The resource monitored by Application Insights. </p>
     #[doc(hidden)]
     pub monitored_resource_arn: std::option::Option<std::string::String>,
@@ -1369,42 +1276,39 @@ pub struct ConfigurationEvent {
 }
 impl ConfigurationEvent {
     /// <p> The resource monitored by Application Insights. </p>
-    pub fn monitored_resource_arn(&self) -> std::option::Option<&str> {
+    pub fn monitored_resource_arn(&self) -> std::option::Option<& str> {
         self.monitored_resource_arn.as_deref()
     }
     /// <p> The status of the configuration update event. Possible values include INFO, WARN, and ERROR. </p>
-    pub fn event_status(&self) -> std::option::Option<&crate::model::ConfigurationEventStatus> {
+    pub fn event_status(&self) -> std::option::Option<& crate::model::ConfigurationEventStatus> {
         self.event_status.as_ref()
     }
     /// <p> The resource type that Application Insights attempted to configure, for example, CLOUDWATCH_ALARM. </p>
-    pub fn event_resource_type(
-        &self,
-    ) -> std::option::Option<&crate::model::ConfigurationEventResourceType> {
+    pub fn event_resource_type(&self) -> std::option::Option<& crate::model::ConfigurationEventResourceType> {
         self.event_resource_type.as_ref()
     }
     /// <p> The timestamp of the event. </p>
-    pub fn event_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn event_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.event_time.as_ref()
     }
     /// <p> The details of the event in plain text. </p>
-    pub fn event_detail(&self) -> std::option::Option<&str> {
+    pub fn event_detail(&self) -> std::option::Option<& str> {
         self.event_detail.as_deref()
     }
     /// <p> The name of the resource Application Insights attempted to configure. </p>
-    pub fn event_resource_name(&self) -> std::option::Option<&str> {
+    pub fn event_resource_name(&self) -> std::option::Option<& str> {
         self.event_resource_name.as_deref()
     }
 }
 /// See [`ConfigurationEvent`](crate::model::ConfigurationEvent).
 pub mod configuration_event {
-
+    
     /// A builder for [`ConfigurationEvent`](crate::model::ConfigurationEvent).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) monitored_resource_arn: std::option::Option<std::string::String>,
         pub(crate) event_status: std::option::Option<crate::model::ConfigurationEventStatus>,
-        pub(crate) event_resource_type:
-            std::option::Option<crate::model::ConfigurationEventResourceType>,
+        pub(crate) event_resource_type: std::option::Option<crate::model::ConfigurationEventResourceType>,
         pub(crate) event_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) event_detail: std::option::Option<std::string::String>,
         pub(crate) event_resource_name: std::option::Option<std::string::String>,
@@ -1416,12 +1320,8 @@ pub mod configuration_event {
             self
         }
         /// <p> The resource monitored by Application Insights. </p>
-        pub fn set_monitored_resource_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.monitored_resource_arn = input;
-            self
+        pub fn set_monitored_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.monitored_resource_arn = input; self
         }
         /// <p> The status of the configuration update event. Possible values include INFO, WARN, and ERROR. </p>
         pub fn event_status(mut self, input: crate::model::ConfigurationEventStatus) -> Self {
@@ -1429,28 +1329,17 @@ pub mod configuration_event {
             self
         }
         /// <p> The status of the configuration update event. Possible values include INFO, WARN, and ERROR. </p>
-        pub fn set_event_status(
-            mut self,
-            input: std::option::Option<crate::model::ConfigurationEventStatus>,
-        ) -> Self {
-            self.event_status = input;
-            self
+        pub fn set_event_status(mut self, input: std::option::Option<crate::model::ConfigurationEventStatus>) -> Self {
+            self.event_status = input; self
         }
         /// <p> The resource type that Application Insights attempted to configure, for example, CLOUDWATCH_ALARM. </p>
-        pub fn event_resource_type(
-            mut self,
-            input: crate::model::ConfigurationEventResourceType,
-        ) -> Self {
+        pub fn event_resource_type(mut self, input: crate::model::ConfigurationEventResourceType) -> Self {
             self.event_resource_type = Some(input);
             self
         }
         /// <p> The resource type that Application Insights attempted to configure, for example, CLOUDWATCH_ALARM. </p>
-        pub fn set_event_resource_type(
-            mut self,
-            input: std::option::Option<crate::model::ConfigurationEventResourceType>,
-        ) -> Self {
-            self.event_resource_type = input;
-            self
+        pub fn set_event_resource_type(mut self, input: std::option::Option<crate::model::ConfigurationEventResourceType>) -> Self {
+            self.event_resource_type = input; self
         }
         /// <p> The timestamp of the event. </p>
         pub fn event_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -1458,12 +1347,8 @@ pub mod configuration_event {
             self
         }
         /// <p> The timestamp of the event. </p>
-        pub fn set_event_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.event_time = input;
-            self
+        pub fn set_event_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.event_time = input; self
         }
         /// <p> The details of the event in plain text. </p>
         pub fn event_detail(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1472,8 +1357,7 @@ pub mod configuration_event {
         }
         /// <p> The details of the event in plain text. </p>
         pub fn set_event_detail(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.event_detail = input;
-            self
+            self.event_detail = input; self
         }
         /// <p> The name of the resource Application Insights attempted to configure. </p>
         pub fn event_resource_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1481,25 +1365,29 @@ pub mod configuration_event {
             self
         }
         /// <p> The name of the resource Application Insights attempted to configure. </p>
-        pub fn set_event_resource_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.event_resource_name = input;
-            self
+        pub fn set_event_resource_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.event_resource_name = input; self
         }
         /// Consumes the builder and constructs a [`ConfigurationEvent`](crate::model::ConfigurationEvent).
         pub fn build(self) -> crate::model::ConfigurationEvent {
             crate::model::ConfigurationEvent {
-                monitored_resource_arn: self.monitored_resource_arn,
-                event_status: self.event_status,
-                event_resource_type: self.event_resource_type,
-                event_time: self.event_time,
-                event_detail: self.event_detail,
-                event_resource_name: self.event_resource_name,
+                monitored_resource_arn: self.monitored_resource_arn
+                ,
+                event_status: self.event_status
+                ,
+                event_resource_type: self.event_resource_type
+                ,
+                event_time: self.event_time
+                ,
+                event_detail: self.event_detail
+                ,
+                event_resource_name: self.event_resource_name
+                ,
             }
         }
     }
+    
+    
 }
 impl ConfigurationEvent {
     /// Creates a new builder-style object to manufacture [`ConfigurationEvent`](crate::model::ConfigurationEvent).
@@ -1514,9 +1402,9 @@ impl ConfigurationEvent {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let configurationeventresourcetype = unimplemented!();
 /// match configurationeventresourcetype {
@@ -1540,22 +1428,14 @@ impl ConfigurationEvent {
 /// Specifically, when `configurationeventresourcetype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ConfigurationEventResourceType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ConfigurationEventResourceType {
     #[allow(missing_docs)] // documentation missing in model
     Cloudformation,
@@ -1566,7 +1446,7 @@ pub enum ConfigurationEventResourceType {
     #[allow(missing_docs)] // documentation missing in model
     SsmAssociation,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ConfigurationEventResourceType {
     fn from(s: &str) -> Self {
@@ -1575,19 +1455,17 @@ impl std::convert::From<&str> for ConfigurationEventResourceType {
             "CLOUDWATCH_ALARM" => ConfigurationEventResourceType::CloudwatchAlarm,
             "CLOUDWATCH_LOG" => ConfigurationEventResourceType::CloudwatchLog,
             "SSM_ASSOCIATION" => ConfigurationEventResourceType::SsmAssociation,
-            other => ConfigurationEventResourceType::Unknown(crate::types::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => ConfigurationEventResourceType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ConfigurationEventResourceType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ConfigurationEventResourceType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ConfigurationEventResourceType::from(s))
+                }
+            }
 impl ConfigurationEventResourceType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -1596,16 +1474,13 @@ impl ConfigurationEventResourceType {
             ConfigurationEventResourceType::CloudwatchAlarm => "CLOUDWATCH_ALARM",
             ConfigurationEventResourceType::CloudwatchLog => "CLOUDWATCH_LOG",
             ConfigurationEventResourceType::SsmAssociation => "SSM_ASSOCIATION",
-            ConfigurationEventResourceType::Unknown(value) => value.as_str(),
+            ConfigurationEventResourceType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "CLOUDFORMATION",
-            "CLOUDWATCH_ALARM",
-            "CLOUDWATCH_LOG",
-            "SSM_ASSOCIATION",
+            "CLOUDFORMATION", "CLOUDWATCH_ALARM", "CLOUDWATCH_LOG", "SSM_ASSOCIATION"
         ]
     }
 }
@@ -1621,9 +1496,9 @@ impl AsRef<str> for ConfigurationEventResourceType {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let configurationeventstatus = unimplemented!();
 /// match configurationeventstatus {
@@ -1646,22 +1521,14 @@ impl AsRef<str> for ConfigurationEventResourceType {
 /// Specifically, when `configurationeventstatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ConfigurationEventStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ConfigurationEventStatus {
     #[allow(missing_docs)] // documentation missing in model
     Error,
@@ -1670,7 +1537,7 @@ pub enum ConfigurationEventStatus {
     #[allow(missing_docs)] // documentation missing in model
     Warn,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ConfigurationEventStatus {
     fn from(s: &str) -> Self {
@@ -1678,19 +1545,17 @@ impl std::convert::From<&str> for ConfigurationEventStatus {
             "ERROR" => ConfigurationEventStatus::Error,
             "INFO" => ConfigurationEventStatus::Info,
             "WARN" => ConfigurationEventStatus::Warn,
-            other => ConfigurationEventStatus::Unknown(crate::types::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => ConfigurationEventStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ConfigurationEventStatus {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ConfigurationEventStatus::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ConfigurationEventStatus::from(s))
+                }
+            }
 impl ConfigurationEventStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -1698,12 +1563,14 @@ impl ConfigurationEventStatus {
             ConfigurationEventStatus::Error => "ERROR",
             ConfigurationEventStatus::Info => "INFO",
             ConfigurationEventStatus::Warn => "WARN",
-            ConfigurationEventStatus::Unknown(value) => value.as_str(),
+            ConfigurationEventStatus::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ERROR", "INFO", "WARN"]
+        &[
+            "ERROR", "INFO", "WARN"
+        ]
     }
 }
 impl AsRef<str> for ConfigurationEventStatus {
@@ -1715,7 +1582,7 @@ impl AsRef<str> for ConfigurationEventStatus {
 /// <p>Describes a standalone resource or similarly grouped resources that the application is made up of.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ApplicationComponent {
+pub struct ApplicationComponent  {
     /// <p>The name of the component.</p>
     #[doc(hidden)]
     pub component_name: std::option::Option<std::string::String>,
@@ -1736,32 +1603,27 @@ pub struct ApplicationComponent {
     pub monitor: std::option::Option<bool>,
     /// <p> Workloads detected in the application component. </p>
     #[doc(hidden)]
-    pub detected_workload: std::option::Option<
-        std::collections::HashMap<
-            crate::model::Tier,
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
-    >,
+    pub detected_workload: std::option::Option<std::collections::HashMap<crate::model::Tier, std::collections::HashMap<std::string::String, std::string::String>>>,
 }
 impl ApplicationComponent {
     /// <p>The name of the component.</p>
-    pub fn component_name(&self) -> std::option::Option<&str> {
+    pub fn component_name(&self) -> std::option::Option<& str> {
         self.component_name.as_deref()
     }
     /// <p> If logging is supported for the resource type, indicates whether the component has configured logs to be monitored. </p>
-    pub fn component_remarks(&self) -> std::option::Option<&str> {
+    pub fn component_remarks(&self) -> std::option::Option<& str> {
         self.component_remarks.as_deref()
     }
     /// <p>The resource type. Supported resource types include EC2 instances, Auto Scaling group, Classic ELB, Application ELB, and SQS Queue.</p>
-    pub fn resource_type(&self) -> std::option::Option<&str> {
+    pub fn resource_type(&self) -> std::option::Option<& str> {
         self.resource_type.as_deref()
     }
     /// <p> The operating system of the component. </p>
-    pub fn os_type(&self) -> std::option::Option<&crate::model::OsType> {
+    pub fn os_type(&self) -> std::option::Option<& crate::model::OsType> {
         self.os_type.as_ref()
     }
     /// <p>The stack tier of the application component.</p>
-    pub fn tier(&self) -> std::option::Option<&crate::model::Tier> {
+    pub fn tier(&self) -> std::option::Option<& crate::model::Tier> {
         self.tier.as_ref()
     }
     /// <p>Indicates whether the application component is monitored. </p>
@@ -1769,20 +1631,13 @@ impl ApplicationComponent {
         self.monitor
     }
     /// <p> Workloads detected in the application component. </p>
-    pub fn detected_workload(
-        &self,
-    ) -> std::option::Option<
-        &std::collections::HashMap<
-            crate::model::Tier,
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
-    > {
+    pub fn detected_workload(&self) -> std::option::Option<& std::collections::HashMap<crate::model::Tier, std::collections::HashMap<std::string::String, std::string::String>>> {
         self.detected_workload.as_ref()
     }
 }
 /// See [`ApplicationComponent`](crate::model::ApplicationComponent).
 pub mod application_component {
-
+    
     /// A builder for [`ApplicationComponent`](crate::model::ApplicationComponent).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1792,12 +1647,7 @@ pub mod application_component {
         pub(crate) os_type: std::option::Option<crate::model::OsType>,
         pub(crate) tier: std::option::Option<crate::model::Tier>,
         pub(crate) monitor: std::option::Option<bool>,
-        pub(crate) detected_workload: std::option::Option<
-            std::collections::HashMap<
-                crate::model::Tier,
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        >,
+        pub(crate) detected_workload: std::option::Option<std::collections::HashMap<crate::model::Tier, std::collections::HashMap<std::string::String, std::string::String>>>,
     }
     impl Builder {
         /// <p>The name of the component.</p>
@@ -1806,12 +1656,8 @@ pub mod application_component {
             self
         }
         /// <p>The name of the component.</p>
-        pub fn set_component_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.component_name = input;
-            self
+        pub fn set_component_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.component_name = input; self
         }
         /// <p> If logging is supported for the resource type, indicates whether the component has configured logs to be monitored. </p>
         pub fn component_remarks(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1819,12 +1665,8 @@ pub mod application_component {
             self
         }
         /// <p> If logging is supported for the resource type, indicates whether the component has configured logs to be monitored. </p>
-        pub fn set_component_remarks(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.component_remarks = input;
-            self
+        pub fn set_component_remarks(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.component_remarks = input; self
         }
         /// <p>The resource type. Supported resource types include EC2 instances, Auto Scaling group, Classic ELB, Application ELB, and SQS Queue.</p>
         pub fn resource_type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1832,12 +1674,8 @@ pub mod application_component {
             self
         }
         /// <p>The resource type. Supported resource types include EC2 instances, Auto Scaling group, Classic ELB, Application ELB, and SQS Queue.</p>
-        pub fn set_resource_type(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.resource_type = input;
-            self
+        pub fn set_resource_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.resource_type = input; self
         }
         /// <p> The operating system of the component. </p>
         pub fn os_type(mut self, input: crate::model::OsType) -> Self {
@@ -1846,8 +1684,7 @@ pub mod application_component {
         }
         /// <p> The operating system of the component. </p>
         pub fn set_os_type(mut self, input: std::option::Option<crate::model::OsType>) -> Self {
-            self.os_type = input;
-            self
+            self.os_type = input; self
         }
         /// <p>The stack tier of the application component.</p>
         pub fn tier(mut self, input: crate::model::Tier) -> Self {
@@ -1856,8 +1693,7 @@ pub mod application_component {
         }
         /// <p>The stack tier of the application component.</p>
         pub fn set_tier(mut self, input: std::option::Option<crate::model::Tier>) -> Self {
-            self.tier = input;
-            self
+            self.tier = input; self
         }
         /// <p>Indicates whether the application component is monitored. </p>
         pub fn monitor(mut self, input: bool) -> Self {
@@ -1866,50 +1702,45 @@ pub mod application_component {
         }
         /// <p>Indicates whether the application component is monitored. </p>
         pub fn set_monitor(mut self, input: std::option::Option<bool>) -> Self {
-            self.monitor = input;
-            self
+            self.monitor = input; self
         }
         /// Adds a key-value pair to `detected_workload`.
         ///
         /// To override the contents of this collection use [`set_detected_workload`](Self::set_detected_workload).
         ///
         /// <p> Workloads detected in the application component. </p>
-        pub fn detected_workload(
-            mut self,
-            k: crate::model::Tier,
-            v: std::collections::HashMap<std::string::String, std::string::String>,
-        ) -> Self {
+        pub fn detected_workload(mut self, k: crate::model::Tier, v: std::collections::HashMap<std::string::String, std::string::String>) -> Self {
             let mut hash_map = self.detected_workload.unwrap_or_default();
-            hash_map.insert(k, v);
-            self.detected_workload = Some(hash_map);
-            self
+                            hash_map.insert(k, v);
+                            self.detected_workload = Some(hash_map);
+                            self
         }
         /// <p> Workloads detected in the application component. </p>
-        pub fn set_detected_workload(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<
-                    crate::model::Tier,
-                    std::collections::HashMap<std::string::String, std::string::String>,
-                >,
-            >,
-        ) -> Self {
-            self.detected_workload = input;
-            self
+        pub fn set_detected_workload(mut self, input: std::option::Option<std::collections::HashMap<crate::model::Tier, std::collections::HashMap<std::string::String, std::string::String>>>) -> Self {
+            self.detected_workload = input; self
         }
         /// Consumes the builder and constructs a [`ApplicationComponent`](crate::model::ApplicationComponent).
         pub fn build(self) -> crate::model::ApplicationComponent {
             crate::model::ApplicationComponent {
-                component_name: self.component_name,
-                component_remarks: self.component_remarks,
-                resource_type: self.resource_type,
-                os_type: self.os_type,
-                tier: self.tier,
-                monitor: self.monitor,
-                detected_workload: self.detected_workload,
+                component_name: self.component_name
+                ,
+                component_remarks: self.component_remarks
+                ,
+                resource_type: self.resource_type
+                ,
+                os_type: self.os_type
+                ,
+                tier: self.tier
+                ,
+                monitor: self.monitor
+                ,
+                detected_workload: self.detected_workload
+                ,
             }
         }
     }
+    
+    
 }
 impl ApplicationComponent {
     /// Creates a new builder-style object to manufacture [`ApplicationComponent`](crate::model::ApplicationComponent).
@@ -1924,9 +1755,9 @@ impl ApplicationComponent {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let ostype = unimplemented!();
 /// match ostype {
@@ -1948,58 +1779,52 @@ impl ApplicationComponent {
 /// Specifically, when `ostype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `OsType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum OsType {
     #[allow(missing_docs)] // documentation missing in model
     Linux,
     #[allow(missing_docs)] // documentation missing in model
     Windows,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for OsType {
     fn from(s: &str) -> Self {
         match s {
             "LINUX" => OsType::Linux,
             "WINDOWS" => OsType::Windows,
-            other => OsType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => OsType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for OsType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(OsType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(OsType::from(s))
+                }
+            }
 impl OsType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             OsType::Linux => "LINUX",
             OsType::Windows => "WINDOWS",
-            OsType::Unknown(value) => value.as_str(),
+            OsType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["LINUX", "WINDOWS"]
+        &[
+            "LINUX", "WINDOWS"
+        ]
     }
 }
 impl AsRef<str> for OsType {
@@ -2011,20 +1836,20 @@ impl AsRef<str> for OsType {
 /// <p>Describes observations related to the problem.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RelatedObservations {
+pub struct RelatedObservations  {
     /// <p>The list of observations related to the problem.</p>
     #[doc(hidden)]
     pub observation_list: std::option::Option<std::vec::Vec<crate::model::Observation>>,
 }
 impl RelatedObservations {
     /// <p>The list of observations related to the problem.</p>
-    pub fn observation_list(&self) -> std::option::Option<&[crate::model::Observation]> {
+    pub fn observation_list(&self) -> std::option::Option<& [crate::model::Observation]> {
         self.observation_list.as_deref()
     }
 }
 /// See [`RelatedObservations`](crate::model::RelatedObservations).
 pub mod related_observations {
-
+    
     /// A builder for [`RelatedObservations`](crate::model::RelatedObservations).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2038,25 +1863,24 @@ pub mod related_observations {
         /// <p>The list of observations related to the problem.</p>
         pub fn observation_list(mut self, input: crate::model::Observation) -> Self {
             let mut v = self.observation_list.unwrap_or_default();
-            v.push(input);
-            self.observation_list = Some(v);
-            self
+                            v.push(input);
+                            self.observation_list = Some(v);
+                            self
         }
         /// <p>The list of observations related to the problem.</p>
-        pub fn set_observation_list(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Observation>>,
-        ) -> Self {
-            self.observation_list = input;
-            self
+        pub fn set_observation_list(mut self, input: std::option::Option<std::vec::Vec<crate::model::Observation>>) -> Self {
+            self.observation_list = input; self
         }
         /// Consumes the builder and constructs a [`RelatedObservations`](crate::model::RelatedObservations).
         pub fn build(self) -> crate::model::RelatedObservations {
             crate::model::RelatedObservations {
-                observation_list: self.observation_list,
+                observation_list: self.observation_list
+                ,
             }
         }
     }
+    
+    
 }
 impl RelatedObservations {
     /// Creates a new builder-style object to manufacture [`RelatedObservations`](crate::model::RelatedObservations).
@@ -2068,7 +1892,7 @@ impl RelatedObservations {
 /// <p>Describes an anomaly or error with the application.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Observation {
+pub struct Observation  {
     /// <p>The ID of the observation type.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -2207,51 +2031,51 @@ pub struct Observation {
 }
 impl Observation {
     /// <p>The ID of the observation type.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The time when the observation was first detected, in epoch seconds.</p>
-    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn start_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p>The time when the observation ended, in epoch seconds.</p>
-    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn end_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
     /// <p>The source type of the observation.</p>
-    pub fn source_type(&self) -> std::option::Option<&str> {
+    pub fn source_type(&self) -> std::option::Option<& str> {
         self.source_type.as_deref()
     }
     /// <p>The source resource ARN of the observation.</p>
-    pub fn source_arn(&self) -> std::option::Option<&str> {
+    pub fn source_arn(&self) -> std::option::Option<& str> {
         self.source_arn.as_deref()
     }
     /// <p>The log group name.</p>
-    pub fn log_group(&self) -> std::option::Option<&str> {
+    pub fn log_group(&self) -> std::option::Option<& str> {
         self.log_group.as_deref()
     }
     /// <p>The timestamp in the CloudWatch Logs that specifies when the matched line occurred.</p>
-    pub fn line_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn line_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.line_time.as_ref()
     }
     /// <p>The log text of the observation.</p>
-    pub fn log_text(&self) -> std::option::Option<&str> {
+    pub fn log_text(&self) -> std::option::Option<& str> {
         self.log_text.as_deref()
     }
     /// <p>The log filter of the observation.</p>
-    pub fn log_filter(&self) -> std::option::Option<&crate::model::LogFilter> {
+    pub fn log_filter(&self) -> std::option::Option<& crate::model::LogFilter> {
         self.log_filter.as_ref()
     }
     /// <p>The namespace of the observation metric.</p>
-    pub fn metric_namespace(&self) -> std::option::Option<&str> {
+    pub fn metric_namespace(&self) -> std::option::Option<& str> {
         self.metric_namespace.as_deref()
     }
     /// <p>The name of the observation metric.</p>
-    pub fn metric_name(&self) -> std::option::Option<&str> {
+    pub fn metric_name(&self) -> std::option::Option<& str> {
         self.metric_name.as_deref()
     }
     /// <p>The unit of the source observation metric.</p>
-    pub fn unit(&self) -> std::option::Option<&str> {
+    pub fn unit(&self) -> std::option::Option<& str> {
         self.unit.as_deref()
     }
     /// <p>The value of the source observation metric.</p>
@@ -2259,105 +2083,103 @@ impl Observation {
         self.value
     }
     /// <p> The ID of the CloudWatch Event-based observation related to the detected problem. </p>
-    pub fn cloud_watch_event_id(&self) -> std::option::Option<&str> {
+    pub fn cloud_watch_event_id(&self) -> std::option::Option<& str> {
         self.cloud_watch_event_id.as_deref()
     }
     /// <p> The source of the CloudWatch Event. </p>
-    pub fn cloud_watch_event_source(
-        &self,
-    ) -> std::option::Option<&crate::model::CloudWatchEventSource> {
+    pub fn cloud_watch_event_source(&self) -> std::option::Option<& crate::model::CloudWatchEventSource> {
         self.cloud_watch_event_source.as_ref()
     }
     /// <p> The detail type of the CloudWatch Event-based observation, for example, <code>EC2 Instance State-change Notification</code>. </p>
-    pub fn cloud_watch_event_detail_type(&self) -> std::option::Option<&str> {
+    pub fn cloud_watch_event_detail_type(&self) -> std::option::Option<& str> {
         self.cloud_watch_event_detail_type.as_deref()
     }
     /// <p> The Amazon Resource Name (ARN) of the AWS Health Event-based observation.</p>
-    pub fn health_event_arn(&self) -> std::option::Option<&str> {
+    pub fn health_event_arn(&self) -> std::option::Option<& str> {
         self.health_event_arn.as_deref()
     }
     /// <p> The service to which the AWS Health Event belongs, such as EC2. </p>
-    pub fn health_service(&self) -> std::option::Option<&str> {
+    pub fn health_service(&self) -> std::option::Option<& str> {
         self.health_service.as_deref()
     }
     /// <p> The type of the AWS Health event, for example, <code>AWS_EC2_POWER_CONNECTIVITY_ISSUE</code>. </p>
-    pub fn health_event_type_code(&self) -> std::option::Option<&str> {
+    pub fn health_event_type_code(&self) -> std::option::Option<& str> {
         self.health_event_type_code.as_deref()
     }
     /// <p> The category of the AWS Health event, such as <code>issue</code>. </p>
-    pub fn health_event_type_category(&self) -> std::option::Option<&str> {
+    pub fn health_event_type_category(&self) -> std::option::Option<& str> {
         self.health_event_type_category.as_deref()
     }
     /// <p> The description of the AWS Health event provided by the service, such as Amazon EC2. </p>
-    pub fn health_event_description(&self) -> std::option::Option<&str> {
+    pub fn health_event_description(&self) -> std::option::Option<& str> {
         self.health_event_description.as_deref()
     }
     /// <p> The deployment ID of the CodeDeploy-based observation related to the detected problem. </p>
-    pub fn code_deploy_deployment_id(&self) -> std::option::Option<&str> {
+    pub fn code_deploy_deployment_id(&self) -> std::option::Option<& str> {
         self.code_deploy_deployment_id.as_deref()
     }
     /// <p> The deployment group to which the CodeDeploy deployment belongs. </p>
-    pub fn code_deploy_deployment_group(&self) -> std::option::Option<&str> {
+    pub fn code_deploy_deployment_group(&self) -> std::option::Option<& str> {
         self.code_deploy_deployment_group.as_deref()
     }
     /// <p> The status of the CodeDeploy deployment, for example <code>SUCCESS</code> or <code> FAILURE</code>. </p>
-    pub fn code_deploy_state(&self) -> std::option::Option<&str> {
+    pub fn code_deploy_state(&self) -> std::option::Option<& str> {
         self.code_deploy_state.as_deref()
     }
     /// <p> The CodeDeploy application to which the deployment belongs. </p>
-    pub fn code_deploy_application(&self) -> std::option::Option<&str> {
+    pub fn code_deploy_application(&self) -> std::option::Option<& str> {
         self.code_deploy_application.as_deref()
     }
     /// <p> The instance group to which the CodeDeploy instance belongs. </p>
-    pub fn code_deploy_instance_group_id(&self) -> std::option::Option<&str> {
+    pub fn code_deploy_instance_group_id(&self) -> std::option::Option<& str> {
         self.code_deploy_instance_group_id.as_deref()
     }
     /// <p> The state of the instance, such as <code>STOPPING</code> or <code>TERMINATING</code>. </p>
-    pub fn ec2_state(&self) -> std::option::Option<&str> {
+    pub fn ec2_state(&self) -> std::option::Option<& str> {
         self.ec2_state.as_deref()
     }
     /// <p> The category of an RDS event. </p>
-    pub fn rds_event_categories(&self) -> std::option::Option<&str> {
+    pub fn rds_event_categories(&self) -> std::option::Option<& str> {
         self.rds_event_categories.as_deref()
     }
     /// <p> The message of an RDS event. </p>
-    pub fn rds_event_message(&self) -> std::option::Option<&str> {
+    pub fn rds_event_message(&self) -> std::option::Option<& str> {
         self.rds_event_message.as_deref()
     }
     /// <p> The name of the S3 CloudWatch Event-based observation. </p>
-    pub fn s3_event_name(&self) -> std::option::Option<&str> {
+    pub fn s3_event_name(&self) -> std::option::Option<& str> {
         self.s3_event_name.as_deref()
     }
     /// <p> The Amazon Resource Name (ARN) of the step function execution-based observation. </p>
-    pub fn states_execution_arn(&self) -> std::option::Option<&str> {
+    pub fn states_execution_arn(&self) -> std::option::Option<& str> {
         self.states_execution_arn.as_deref()
     }
     /// <p> The Amazon Resource Name (ARN) of the step function-based observation. </p>
-    pub fn states_arn(&self) -> std::option::Option<&str> {
+    pub fn states_arn(&self) -> std::option::Option<& str> {
         self.states_arn.as_deref()
     }
     /// <p> The status of the step function-related observation. </p>
-    pub fn states_status(&self) -> std::option::Option<&str> {
+    pub fn states_status(&self) -> std::option::Option<& str> {
         self.states_status.as_deref()
     }
     /// <p> The input to the step function-based observation. </p>
-    pub fn states_input(&self) -> std::option::Option<&str> {
+    pub fn states_input(&self) -> std::option::Option<& str> {
         self.states_input.as_deref()
     }
     /// <p> The type of EBS CloudWatch event, such as <code>createVolume</code>, <code>deleteVolume</code> or <code>attachVolume</code>. </p>
-    pub fn ebs_event(&self) -> std::option::Option<&str> {
+    pub fn ebs_event(&self) -> std::option::Option<& str> {
         self.ebs_event.as_deref()
     }
     /// <p> The result of an EBS CloudWatch event, such as <code>failed</code> or <code>succeeded</code>. </p>
-    pub fn ebs_result(&self) -> std::option::Option<&str> {
+    pub fn ebs_result(&self) -> std::option::Option<& str> {
         self.ebs_result.as_deref()
     }
     /// <p> The cause of an EBS CloudWatch event. </p>
-    pub fn ebs_cause(&self) -> std::option::Option<&str> {
+    pub fn ebs_cause(&self) -> std::option::Option<& str> {
         self.ebs_cause.as_deref()
     }
     /// <p> The request ID of an EBS CloudWatch event. </p>
-    pub fn ebs_request_id(&self) -> std::option::Option<&str> {
+    pub fn ebs_request_id(&self) -> std::option::Option<& str> {
         self.ebs_request_id.as_deref()
     }
     /// <p> The X-Ray request fault percentage for this node. </p>
@@ -2381,17 +2203,17 @@ impl Observation {
         self.x_ray_request_average_latency
     }
     /// <p> The name of the X-Ray node. </p>
-    pub fn x_ray_node_name(&self) -> std::option::Option<&str> {
+    pub fn x_ray_node_name(&self) -> std::option::Option<& str> {
         self.x_ray_node_name.as_deref()
     }
     /// <p> The type of the X-Ray node. </p>
-    pub fn x_ray_node_type(&self) -> std::option::Option<&str> {
+    pub fn x_ray_node_type(&self) -> std::option::Option<& str> {
         self.x_ray_node_type.as_deref()
     }
 }
 /// See [`Observation`](crate::model::Observation).
 pub mod observation {
-
+    
     /// A builder for [`Observation`](crate::model::Observation).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2409,8 +2231,7 @@ pub mod observation {
         pub(crate) unit: std::option::Option<std::string::String>,
         pub(crate) value: std::option::Option<f64>,
         pub(crate) cloud_watch_event_id: std::option::Option<std::string::String>,
-        pub(crate) cloud_watch_event_source:
-            std::option::Option<crate::model::CloudWatchEventSource>,
+        pub(crate) cloud_watch_event_source: std::option::Option<crate::model::CloudWatchEventSource>,
         pub(crate) cloud_watch_event_detail_type: std::option::Option<std::string::String>,
         pub(crate) health_event_arn: std::option::Option<std::string::String>,
         pub(crate) health_service: std::option::Option<std::string::String>,
@@ -2450,8 +2271,7 @@ pub mod observation {
         }
         /// <p>The ID of the observation type.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// <p>The time when the observation was first detected, in epoch seconds.</p>
         pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -2459,12 +2279,8 @@ pub mod observation {
             self
         }
         /// <p>The time when the observation was first detected, in epoch seconds.</p>
-        pub fn set_start_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.start_time = input;
-            self
+        pub fn set_start_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.start_time = input; self
         }
         /// <p>The time when the observation ended, in epoch seconds.</p>
         pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -2472,12 +2288,8 @@ pub mod observation {
             self
         }
         /// <p>The time when the observation ended, in epoch seconds.</p>
-        pub fn set_end_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.end_time = input;
-            self
+        pub fn set_end_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.end_time = input; self
         }
         /// <p>The source type of the observation.</p>
         pub fn source_type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2486,8 +2298,7 @@ pub mod observation {
         }
         /// <p>The source type of the observation.</p>
         pub fn set_source_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.source_type = input;
-            self
+            self.source_type = input; self
         }
         /// <p>The source resource ARN of the observation.</p>
         pub fn source_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2496,8 +2307,7 @@ pub mod observation {
         }
         /// <p>The source resource ARN of the observation.</p>
         pub fn set_source_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.source_arn = input;
-            self
+            self.source_arn = input; self
         }
         /// <p>The log group name.</p>
         pub fn log_group(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2506,8 +2316,7 @@ pub mod observation {
         }
         /// <p>The log group name.</p>
         pub fn set_log_group(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.log_group = input;
-            self
+            self.log_group = input; self
         }
         /// <p>The timestamp in the CloudWatch Logs that specifies when the matched line occurred.</p>
         pub fn line_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -2515,12 +2324,8 @@ pub mod observation {
             self
         }
         /// <p>The timestamp in the CloudWatch Logs that specifies when the matched line occurred.</p>
-        pub fn set_line_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.line_time = input;
-            self
+        pub fn set_line_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.line_time = input; self
         }
         /// <p>The log text of the observation.</p>
         pub fn log_text(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2529,8 +2334,7 @@ pub mod observation {
         }
         /// <p>The log text of the observation.</p>
         pub fn set_log_text(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.log_text = input;
-            self
+            self.log_text = input; self
         }
         /// <p>The log filter of the observation.</p>
         pub fn log_filter(mut self, input: crate::model::LogFilter) -> Self {
@@ -2538,12 +2342,8 @@ pub mod observation {
             self
         }
         /// <p>The log filter of the observation.</p>
-        pub fn set_log_filter(
-            mut self,
-            input: std::option::Option<crate::model::LogFilter>,
-        ) -> Self {
-            self.log_filter = input;
-            self
+        pub fn set_log_filter(mut self, input: std::option::Option<crate::model::LogFilter>) -> Self {
+            self.log_filter = input; self
         }
         /// <p>The namespace of the observation metric.</p>
         pub fn metric_namespace(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2551,12 +2351,8 @@ pub mod observation {
             self
         }
         /// <p>The namespace of the observation metric.</p>
-        pub fn set_metric_namespace(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.metric_namespace = input;
-            self
+        pub fn set_metric_namespace(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.metric_namespace = input; self
         }
         /// <p>The name of the observation metric.</p>
         pub fn metric_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2565,8 +2361,7 @@ pub mod observation {
         }
         /// <p>The name of the observation metric.</p>
         pub fn set_metric_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.metric_name = input;
-            self
+            self.metric_name = input; self
         }
         /// <p>The unit of the source observation metric.</p>
         pub fn unit(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2575,8 +2370,7 @@ pub mod observation {
         }
         /// <p>The unit of the source observation metric.</p>
         pub fn set_unit(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.unit = input;
-            self
+            self.unit = input; self
         }
         /// <p>The value of the source observation metric.</p>
         pub fn value(mut self, input: f64) -> Self {
@@ -2585,8 +2379,7 @@ pub mod observation {
         }
         /// <p>The value of the source observation metric.</p>
         pub fn set_value(mut self, input: std::option::Option<f64>) -> Self {
-            self.value = input;
-            self
+            self.value = input; self
         }
         /// <p> The ID of the CloudWatch Event-based observation related to the detected problem. </p>
         pub fn cloud_watch_event_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2594,44 +2387,26 @@ pub mod observation {
             self
         }
         /// <p> The ID of the CloudWatch Event-based observation related to the detected problem. </p>
-        pub fn set_cloud_watch_event_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.cloud_watch_event_id = input;
-            self
+        pub fn set_cloud_watch_event_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.cloud_watch_event_id = input; self
         }
         /// <p> The source of the CloudWatch Event. </p>
-        pub fn cloud_watch_event_source(
-            mut self,
-            input: crate::model::CloudWatchEventSource,
-        ) -> Self {
+        pub fn cloud_watch_event_source(mut self, input: crate::model::CloudWatchEventSource) -> Self {
             self.cloud_watch_event_source = Some(input);
             self
         }
         /// <p> The source of the CloudWatch Event. </p>
-        pub fn set_cloud_watch_event_source(
-            mut self,
-            input: std::option::Option<crate::model::CloudWatchEventSource>,
-        ) -> Self {
-            self.cloud_watch_event_source = input;
-            self
+        pub fn set_cloud_watch_event_source(mut self, input: std::option::Option<crate::model::CloudWatchEventSource>) -> Self {
+            self.cloud_watch_event_source = input; self
         }
         /// <p> The detail type of the CloudWatch Event-based observation, for example, <code>EC2 Instance State-change Notification</code>. </p>
-        pub fn cloud_watch_event_detail_type(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn cloud_watch_event_detail_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.cloud_watch_event_detail_type = Some(input.into());
             self
         }
         /// <p> The detail type of the CloudWatch Event-based observation, for example, <code>EC2 Instance State-change Notification</code>. </p>
-        pub fn set_cloud_watch_event_detail_type(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.cloud_watch_event_detail_type = input;
-            self
+        pub fn set_cloud_watch_event_detail_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.cloud_watch_event_detail_type = input; self
         }
         /// <p> The Amazon Resource Name (ARN) of the AWS Health Event-based observation.</p>
         pub fn health_event_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2639,12 +2414,8 @@ pub mod observation {
             self
         }
         /// <p> The Amazon Resource Name (ARN) of the AWS Health Event-based observation.</p>
-        pub fn set_health_event_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.health_event_arn = input;
-            self
+        pub fn set_health_event_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.health_event_arn = input; self
         }
         /// <p> The service to which the AWS Health Event belongs, such as EC2. </p>
         pub fn health_service(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2652,12 +2423,8 @@ pub mod observation {
             self
         }
         /// <p> The service to which the AWS Health Event belongs, such as EC2. </p>
-        pub fn set_health_service(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.health_service = input;
-            self
+        pub fn set_health_service(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.health_service = input; self
         }
         /// <p> The type of the AWS Health event, for example, <code>AWS_EC2_POWER_CONNECTIVITY_ISSUE</code>. </p>
         pub fn health_event_type_code(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2665,12 +2432,8 @@ pub mod observation {
             self
         }
         /// <p> The type of the AWS Health event, for example, <code>AWS_EC2_POWER_CONNECTIVITY_ISSUE</code>. </p>
-        pub fn set_health_event_type_code(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.health_event_type_code = input;
-            self
+        pub fn set_health_event_type_code(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.health_event_type_code = input; self
         }
         /// <p> The category of the AWS Health event, such as <code>issue</code>. </p>
         pub fn health_event_type_category(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2678,12 +2441,8 @@ pub mod observation {
             self
         }
         /// <p> The category of the AWS Health event, such as <code>issue</code>. </p>
-        pub fn set_health_event_type_category(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.health_event_type_category = input;
-            self
+        pub fn set_health_event_type_category(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.health_event_type_category = input; self
         }
         /// <p> The description of the AWS Health event provided by the service, such as Amazon EC2. </p>
         pub fn health_event_description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2691,12 +2450,8 @@ pub mod observation {
             self
         }
         /// <p> The description of the AWS Health event provided by the service, such as Amazon EC2. </p>
-        pub fn set_health_event_description(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.health_event_description = input;
-            self
+        pub fn set_health_event_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.health_event_description = input; self
         }
         /// <p> The deployment ID of the CodeDeploy-based observation related to the detected problem. </p>
         pub fn code_deploy_deployment_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2704,28 +2459,17 @@ pub mod observation {
             self
         }
         /// <p> The deployment ID of the CodeDeploy-based observation related to the detected problem. </p>
-        pub fn set_code_deploy_deployment_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.code_deploy_deployment_id = input;
-            self
+        pub fn set_code_deploy_deployment_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.code_deploy_deployment_id = input; self
         }
         /// <p> The deployment group to which the CodeDeploy deployment belongs. </p>
-        pub fn code_deploy_deployment_group(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn code_deploy_deployment_group(mut self, input: impl Into<std::string::String>) -> Self {
             self.code_deploy_deployment_group = Some(input.into());
             self
         }
         /// <p> The deployment group to which the CodeDeploy deployment belongs. </p>
-        pub fn set_code_deploy_deployment_group(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.code_deploy_deployment_group = input;
-            self
+        pub fn set_code_deploy_deployment_group(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.code_deploy_deployment_group = input; self
         }
         /// <p> The status of the CodeDeploy deployment, for example <code>SUCCESS</code> or <code> FAILURE</code>. </p>
         pub fn code_deploy_state(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2733,12 +2477,8 @@ pub mod observation {
             self
         }
         /// <p> The status of the CodeDeploy deployment, for example <code>SUCCESS</code> or <code> FAILURE</code>. </p>
-        pub fn set_code_deploy_state(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.code_deploy_state = input;
-            self
+        pub fn set_code_deploy_state(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.code_deploy_state = input; self
         }
         /// <p> The CodeDeploy application to which the deployment belongs. </p>
         pub fn code_deploy_application(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2746,28 +2486,17 @@ pub mod observation {
             self
         }
         /// <p> The CodeDeploy application to which the deployment belongs. </p>
-        pub fn set_code_deploy_application(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.code_deploy_application = input;
-            self
+        pub fn set_code_deploy_application(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.code_deploy_application = input; self
         }
         /// <p> The instance group to which the CodeDeploy instance belongs. </p>
-        pub fn code_deploy_instance_group_id(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn code_deploy_instance_group_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.code_deploy_instance_group_id = Some(input.into());
             self
         }
         /// <p> The instance group to which the CodeDeploy instance belongs. </p>
-        pub fn set_code_deploy_instance_group_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.code_deploy_instance_group_id = input;
-            self
+        pub fn set_code_deploy_instance_group_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.code_deploy_instance_group_id = input; self
         }
         /// <p> The state of the instance, such as <code>STOPPING</code> or <code>TERMINATING</code>. </p>
         pub fn ec2_state(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2776,8 +2505,7 @@ pub mod observation {
         }
         /// <p> The state of the instance, such as <code>STOPPING</code> or <code>TERMINATING</code>. </p>
         pub fn set_ec2_state(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.ec2_state = input;
-            self
+            self.ec2_state = input; self
         }
         /// <p> The category of an RDS event. </p>
         pub fn rds_event_categories(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2785,12 +2513,8 @@ pub mod observation {
             self
         }
         /// <p> The category of an RDS event. </p>
-        pub fn set_rds_event_categories(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.rds_event_categories = input;
-            self
+        pub fn set_rds_event_categories(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.rds_event_categories = input; self
         }
         /// <p> The message of an RDS event. </p>
         pub fn rds_event_message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2798,12 +2522,8 @@ pub mod observation {
             self
         }
         /// <p> The message of an RDS event. </p>
-        pub fn set_rds_event_message(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.rds_event_message = input;
-            self
+        pub fn set_rds_event_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.rds_event_message = input; self
         }
         /// <p> The name of the S3 CloudWatch Event-based observation. </p>
         pub fn s3_event_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2811,12 +2531,8 @@ pub mod observation {
             self
         }
         /// <p> The name of the S3 CloudWatch Event-based observation. </p>
-        pub fn set_s3_event_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.s3_event_name = input;
-            self
+        pub fn set_s3_event_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.s3_event_name = input; self
         }
         /// <p> The Amazon Resource Name (ARN) of the step function execution-based observation. </p>
         pub fn states_execution_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2824,12 +2540,8 @@ pub mod observation {
             self
         }
         /// <p> The Amazon Resource Name (ARN) of the step function execution-based observation. </p>
-        pub fn set_states_execution_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.states_execution_arn = input;
-            self
+        pub fn set_states_execution_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.states_execution_arn = input; self
         }
         /// <p> The Amazon Resource Name (ARN) of the step function-based observation. </p>
         pub fn states_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2838,8 +2550,7 @@ pub mod observation {
         }
         /// <p> The Amazon Resource Name (ARN) of the step function-based observation. </p>
         pub fn set_states_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.states_arn = input;
-            self
+            self.states_arn = input; self
         }
         /// <p> The status of the step function-related observation. </p>
         pub fn states_status(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2847,12 +2558,8 @@ pub mod observation {
             self
         }
         /// <p> The status of the step function-related observation. </p>
-        pub fn set_states_status(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.states_status = input;
-            self
+        pub fn set_states_status(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.states_status = input; self
         }
         /// <p> The input to the step function-based observation. </p>
         pub fn states_input(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2861,8 +2568,7 @@ pub mod observation {
         }
         /// <p> The input to the step function-based observation. </p>
         pub fn set_states_input(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.states_input = input;
-            self
+            self.states_input = input; self
         }
         /// <p> The type of EBS CloudWatch event, such as <code>createVolume</code>, <code>deleteVolume</code> or <code>attachVolume</code>. </p>
         pub fn ebs_event(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2871,8 +2577,7 @@ pub mod observation {
         }
         /// <p> The type of EBS CloudWatch event, such as <code>createVolume</code>, <code>deleteVolume</code> or <code>attachVolume</code>. </p>
         pub fn set_ebs_event(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.ebs_event = input;
-            self
+            self.ebs_event = input; self
         }
         /// <p> The result of an EBS CloudWatch event, such as <code>failed</code> or <code>succeeded</code>. </p>
         pub fn ebs_result(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2881,8 +2586,7 @@ pub mod observation {
         }
         /// <p> The result of an EBS CloudWatch event, such as <code>failed</code> or <code>succeeded</code>. </p>
         pub fn set_ebs_result(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.ebs_result = input;
-            self
+            self.ebs_result = input; self
         }
         /// <p> The cause of an EBS CloudWatch event. </p>
         pub fn ebs_cause(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2891,8 +2595,7 @@ pub mod observation {
         }
         /// <p> The cause of an EBS CloudWatch event. </p>
         pub fn set_ebs_cause(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.ebs_cause = input;
-            self
+            self.ebs_cause = input; self
         }
         /// <p> The request ID of an EBS CloudWatch event. </p>
         pub fn ebs_request_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2900,12 +2603,8 @@ pub mod observation {
             self
         }
         /// <p> The request ID of an EBS CloudWatch event. </p>
-        pub fn set_ebs_request_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.ebs_request_id = input;
-            self
+        pub fn set_ebs_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.ebs_request_id = input; self
         }
         /// <p> The X-Ray request fault percentage for this node. </p>
         pub fn x_ray_fault_percent(mut self, input: i32) -> Self {
@@ -2914,8 +2613,7 @@ pub mod observation {
         }
         /// <p> The X-Ray request fault percentage for this node. </p>
         pub fn set_x_ray_fault_percent(mut self, input: std::option::Option<i32>) -> Self {
-            self.x_ray_fault_percent = input;
-            self
+            self.x_ray_fault_percent = input; self
         }
         /// <p> The X-Ray request throttle percentage for this node. </p>
         pub fn x_ray_throttle_percent(mut self, input: i32) -> Self {
@@ -2924,8 +2622,7 @@ pub mod observation {
         }
         /// <p> The X-Ray request throttle percentage for this node. </p>
         pub fn set_x_ray_throttle_percent(mut self, input: std::option::Option<i32>) -> Self {
-            self.x_ray_throttle_percent = input;
-            self
+            self.x_ray_throttle_percent = input; self
         }
         /// <p> The X-Ray request error percentage for this node. </p>
         pub fn x_ray_error_percent(mut self, input: i32) -> Self {
@@ -2934,8 +2631,7 @@ pub mod observation {
         }
         /// <p> The X-Ray request error percentage for this node. </p>
         pub fn set_x_ray_error_percent(mut self, input: std::option::Option<i32>) -> Self {
-            self.x_ray_error_percent = input;
-            self
+            self.x_ray_error_percent = input; self
         }
         /// <p> The X-Ray request count for this node. </p>
         pub fn x_ray_request_count(mut self, input: i32) -> Self {
@@ -2944,8 +2640,7 @@ pub mod observation {
         }
         /// <p> The X-Ray request count for this node. </p>
         pub fn set_x_ray_request_count(mut self, input: std::option::Option<i32>) -> Self {
-            self.x_ray_request_count = input;
-            self
+            self.x_ray_request_count = input; self
         }
         /// <p> The X-Ray node request average latency for this node. </p>
         pub fn x_ray_request_average_latency(mut self, input: i64) -> Self {
@@ -2953,12 +2648,8 @@ pub mod observation {
             self
         }
         /// <p> The X-Ray node request average latency for this node. </p>
-        pub fn set_x_ray_request_average_latency(
-            mut self,
-            input: std::option::Option<i64>,
-        ) -> Self {
-            self.x_ray_request_average_latency = input;
-            self
+        pub fn set_x_ray_request_average_latency(mut self, input: std::option::Option<i64>) -> Self {
+            self.x_ray_request_average_latency = input; self
         }
         /// <p> The name of the X-Ray node. </p>
         pub fn x_ray_node_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2966,12 +2657,8 @@ pub mod observation {
             self
         }
         /// <p> The name of the X-Ray node. </p>
-        pub fn set_x_ray_node_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.x_ray_node_name = input;
-            self
+        pub fn set_x_ray_node_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.x_ray_node_name = input; self
         }
         /// <p> The type of the X-Ray node. </p>
         pub fn x_ray_node_type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2979,64 +2666,107 @@ pub mod observation {
             self
         }
         /// <p> The type of the X-Ray node. </p>
-        pub fn set_x_ray_node_type(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.x_ray_node_type = input;
-            self
+        pub fn set_x_ray_node_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.x_ray_node_type = input; self
         }
         /// Consumes the builder and constructs a [`Observation`](crate::model::Observation).
         pub fn build(self) -> crate::model::Observation {
             crate::model::Observation {
-                id: self.id,
-                start_time: self.start_time,
-                end_time: self.end_time,
-                source_type: self.source_type,
-                source_arn: self.source_arn,
-                log_group: self.log_group,
-                line_time: self.line_time,
-                log_text: self.log_text,
-                log_filter: self.log_filter,
-                metric_namespace: self.metric_namespace,
-                metric_name: self.metric_name,
-                unit: self.unit,
-                value: self.value,
-                cloud_watch_event_id: self.cloud_watch_event_id,
-                cloud_watch_event_source: self.cloud_watch_event_source,
-                cloud_watch_event_detail_type: self.cloud_watch_event_detail_type,
-                health_event_arn: self.health_event_arn,
-                health_service: self.health_service,
-                health_event_type_code: self.health_event_type_code,
-                health_event_type_category: self.health_event_type_category,
-                health_event_description: self.health_event_description,
-                code_deploy_deployment_id: self.code_deploy_deployment_id,
-                code_deploy_deployment_group: self.code_deploy_deployment_group,
-                code_deploy_state: self.code_deploy_state,
-                code_deploy_application: self.code_deploy_application,
-                code_deploy_instance_group_id: self.code_deploy_instance_group_id,
-                ec2_state: self.ec2_state,
-                rds_event_categories: self.rds_event_categories,
-                rds_event_message: self.rds_event_message,
-                s3_event_name: self.s3_event_name,
-                states_execution_arn: self.states_execution_arn,
-                states_arn: self.states_arn,
-                states_status: self.states_status,
-                states_input: self.states_input,
-                ebs_event: self.ebs_event,
-                ebs_result: self.ebs_result,
-                ebs_cause: self.ebs_cause,
-                ebs_request_id: self.ebs_request_id,
-                x_ray_fault_percent: self.x_ray_fault_percent,
-                x_ray_throttle_percent: self.x_ray_throttle_percent,
-                x_ray_error_percent: self.x_ray_error_percent,
-                x_ray_request_count: self.x_ray_request_count,
-                x_ray_request_average_latency: self.x_ray_request_average_latency,
-                x_ray_node_name: self.x_ray_node_name,
-                x_ray_node_type: self.x_ray_node_type,
+                id: self.id
+                ,
+                start_time: self.start_time
+                ,
+                end_time: self.end_time
+                ,
+                source_type: self.source_type
+                ,
+                source_arn: self.source_arn
+                ,
+                log_group: self.log_group
+                ,
+                line_time: self.line_time
+                ,
+                log_text: self.log_text
+                ,
+                log_filter: self.log_filter
+                ,
+                metric_namespace: self.metric_namespace
+                ,
+                metric_name: self.metric_name
+                ,
+                unit: self.unit
+                ,
+                value: self.value
+                ,
+                cloud_watch_event_id: self.cloud_watch_event_id
+                ,
+                cloud_watch_event_source: self.cloud_watch_event_source
+                ,
+                cloud_watch_event_detail_type: self.cloud_watch_event_detail_type
+                ,
+                health_event_arn: self.health_event_arn
+                ,
+                health_service: self.health_service
+                ,
+                health_event_type_code: self.health_event_type_code
+                ,
+                health_event_type_category: self.health_event_type_category
+                ,
+                health_event_description: self.health_event_description
+                ,
+                code_deploy_deployment_id: self.code_deploy_deployment_id
+                ,
+                code_deploy_deployment_group: self.code_deploy_deployment_group
+                ,
+                code_deploy_state: self.code_deploy_state
+                ,
+                code_deploy_application: self.code_deploy_application
+                ,
+                code_deploy_instance_group_id: self.code_deploy_instance_group_id
+                ,
+                ec2_state: self.ec2_state
+                ,
+                rds_event_categories: self.rds_event_categories
+                ,
+                rds_event_message: self.rds_event_message
+                ,
+                s3_event_name: self.s3_event_name
+                ,
+                states_execution_arn: self.states_execution_arn
+                ,
+                states_arn: self.states_arn
+                ,
+                states_status: self.states_status
+                ,
+                states_input: self.states_input
+                ,
+                ebs_event: self.ebs_event
+                ,
+                ebs_result: self.ebs_result
+                ,
+                ebs_cause: self.ebs_cause
+                ,
+                ebs_request_id: self.ebs_request_id
+                ,
+                x_ray_fault_percent: self.x_ray_fault_percent
+                ,
+                x_ray_throttle_percent: self.x_ray_throttle_percent
+                ,
+                x_ray_error_percent: self.x_ray_error_percent
+                ,
+                x_ray_request_count: self.x_ray_request_count
+                ,
+                x_ray_request_average_latency: self.x_ray_request_average_latency
+                ,
+                x_ray_node_name: self.x_ray_node_name
+                ,
+                x_ray_node_type: self.x_ray_node_type
+                ,
             }
         }
     }
+    
+    
 }
 impl Observation {
     /// Creates a new builder-style object to manufacture [`Observation`](crate::model::Observation).
@@ -3051,9 +2781,9 @@ impl Observation {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let cloudwatcheventsource = unimplemented!();
 /// match cloudwatcheventsource {
@@ -3077,22 +2807,14 @@ impl Observation {
 /// Specifically, when `cloudwatcheventsource` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `CloudWatchEventSource::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum CloudWatchEventSource {
     #[allow(missing_docs)] // documentation missing in model
     CodeDeploy,
@@ -3103,7 +2825,7 @@ pub enum CloudWatchEventSource {
     #[allow(missing_docs)] // documentation missing in model
     Rds,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for CloudWatchEventSource {
     fn from(s: &str) -> Self {
@@ -3112,19 +2834,17 @@ impl std::convert::From<&str> for CloudWatchEventSource {
             "EC2" => CloudWatchEventSource::Ec2,
             "HEALTH" => CloudWatchEventSource::Health,
             "RDS" => CloudWatchEventSource::Rds,
-            other => {
-                CloudWatchEventSource::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => CloudWatchEventSource::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for CloudWatchEventSource {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(CloudWatchEventSource::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(CloudWatchEventSource::from(s))
+                }
+            }
 impl CloudWatchEventSource {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -3133,12 +2853,14 @@ impl CloudWatchEventSource {
             CloudWatchEventSource::Ec2 => "EC2",
             CloudWatchEventSource::Health => "HEALTH",
             CloudWatchEventSource::Rds => "RDS",
-            CloudWatchEventSource::Unknown(value) => value.as_str(),
+            CloudWatchEventSource::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["CODE_DEPLOY", "EC2", "HEALTH", "RDS"]
+        &[
+            "CODE_DEPLOY", "EC2", "HEALTH", "RDS"
+        ]
     }
 }
 impl AsRef<str> for CloudWatchEventSource {
@@ -3153,9 +2875,9 @@ impl AsRef<str> for CloudWatchEventSource {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let logfilter = unimplemented!();
 /// match logfilter {
@@ -3178,22 +2900,14 @@ impl AsRef<str> for CloudWatchEventSource {
 /// Specifically, when `logfilter` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `LogFilter::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum LogFilter {
     #[allow(missing_docs)] // documentation missing in model
     Error,
@@ -3202,7 +2916,7 @@ pub enum LogFilter {
     #[allow(missing_docs)] // documentation missing in model
     Warn,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for LogFilter {
     fn from(s: &str) -> Self {
@@ -3210,17 +2924,17 @@ impl std::convert::From<&str> for LogFilter {
             "ERROR" => LogFilter::Error,
             "INFO" => LogFilter::Info,
             "WARN" => LogFilter::Warn,
-            other => LogFilter::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => LogFilter::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for LogFilter {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(LogFilter::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(LogFilter::from(s))
+                }
+            }
 impl LogFilter {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -3228,12 +2942,14 @@ impl LogFilter {
             LogFilter::Error => "ERROR",
             LogFilter::Info => "INFO",
             LogFilter::Warn => "WARN",
-            LogFilter::Unknown(value) => value.as_str(),
+            LogFilter::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ERROR", "INFO", "WARN"]
+        &[
+            "ERROR", "INFO", "WARN"
+        ]
     }
 }
 impl AsRef<str> for LogFilter {
@@ -3248,9 +2964,9 @@ impl AsRef<str> for LogFilter {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let groupingtype = unimplemented!();
 /// match groupingtype {
@@ -3271,54 +2987,48 @@ impl AsRef<str> for LogFilter {
 /// Specifically, when `groupingtype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `GroupingType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum GroupingType {
     #[allow(missing_docs)] // documentation missing in model
     AccountBased,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for GroupingType {
     fn from(s: &str) -> Self {
         match s {
             "ACCOUNT_BASED" => GroupingType::AccountBased,
-            other => GroupingType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => GroupingType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for GroupingType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(GroupingType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(GroupingType::from(s))
+                }
+            }
 impl GroupingType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             GroupingType::AccountBased => "ACCOUNT_BASED",
-            GroupingType::Unknown(value) => value.as_str(),
+            GroupingType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ACCOUNT_BASED"]
+        &[
+            "ACCOUNT_BASED"
+        ]
     }
 }
 impl AsRef<str> for GroupingType {
@@ -3326,3 +3036,4 @@ impl AsRef<str> for GroupingType {
         self.as_str()
     }
 }
+

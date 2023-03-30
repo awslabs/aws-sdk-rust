@@ -2,20 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateAttributeGroupOutput {
+pub struct UpdateAttributeGroupOutput  {
     /// <p>The updated information of the attribute group.</p>
     #[doc(hidden)]
     pub attribute_group: std::option::Option<crate::model::AttributeGroup>,
 }
 impl UpdateAttributeGroupOutput {
     /// <p>The updated information of the attribute group.</p>
-    pub fn attribute_group(&self) -> std::option::Option<&crate::model::AttributeGroup> {
+    pub fn attribute_group(&self) -> std::option::Option<& crate::model::AttributeGroup> {
         self.attribute_group.as_ref()
     }
 }
 /// See [`UpdateAttributeGroupOutput`](crate::output::UpdateAttributeGroupOutput).
 pub mod update_attribute_group_output {
-
+    
     /// A builder for [`UpdateAttributeGroupOutput`](crate::output::UpdateAttributeGroupOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -28,20 +28,19 @@ pub mod update_attribute_group_output {
             self
         }
         /// <p>The updated information of the attribute group.</p>
-        pub fn set_attribute_group(
-            mut self,
-            input: std::option::Option<crate::model::AttributeGroup>,
-        ) -> Self {
-            self.attribute_group = input;
-            self
+        pub fn set_attribute_group(mut self, input: std::option::Option<crate::model::AttributeGroup>) -> Self {
+            self.attribute_group = input; self
         }
         /// Consumes the builder and constructs a [`UpdateAttributeGroupOutput`](crate::output::UpdateAttributeGroupOutput).
         pub fn build(self) -> crate::output::UpdateAttributeGroupOutput {
             crate::output::UpdateAttributeGroupOutput {
-                attribute_group: self.attribute_group,
+                attribute_group: self.attribute_group
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateAttributeGroupOutput {
     /// Creates a new builder-style object to manufacture [`UpdateAttributeGroupOutput`](crate::output::UpdateAttributeGroupOutput).
@@ -53,20 +52,20 @@ impl UpdateAttributeGroupOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateApplicationOutput {
+pub struct UpdateApplicationOutput  {
     /// <p>The updated information of the application.</p>
     #[doc(hidden)]
     pub application: std::option::Option<crate::model::Application>,
 }
 impl UpdateApplicationOutput {
     /// <p>The updated information of the application.</p>
-    pub fn application(&self) -> std::option::Option<&crate::model::Application> {
+    pub fn application(&self) -> std::option::Option<& crate::model::Application> {
         self.application.as_ref()
     }
 }
 /// See [`UpdateApplicationOutput`](crate::output::UpdateApplicationOutput).
 pub mod update_application_output {
-
+    
     /// A builder for [`UpdateApplicationOutput`](crate::output::UpdateApplicationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -79,20 +78,19 @@ pub mod update_application_output {
             self
         }
         /// <p>The updated information of the application.</p>
-        pub fn set_application(
-            mut self,
-            input: std::option::Option<crate::model::Application>,
-        ) -> Self {
-            self.application = input;
-            self
+        pub fn set_application(mut self, input: std::option::Option<crate::model::Application>) -> Self {
+            self.application = input; self
         }
         /// Consumes the builder and constructs a [`UpdateApplicationOutput`](crate::output::UpdateApplicationOutput).
         pub fn build(self) -> crate::output::UpdateApplicationOutput {
             crate::output::UpdateApplicationOutput {
-                application: self.application,
+                application: self.application
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateApplicationOutput {
     /// Creates a new builder-style object to manufacture [`UpdateApplicationOutput`](crate::output::UpdateApplicationOutput).
@@ -104,19 +102,24 @@ impl UpdateApplicationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UntagResourceOutput {}
+pub struct UntagResourceOutput  {
+}
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput).
 pub mod untag_resource_output {
-
+    
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput).
         pub fn build(self) -> crate::output::UntagResourceOutput {
-            crate::output::UntagResourceOutput {}
+            crate::output::UntagResourceOutput {
+            }
         }
     }
+    
+    
 }
 impl UntagResourceOutput {
     /// Creates a new builder-style object to manufacture [`UntagResourceOutput`](crate::output::UntagResourceOutput).
@@ -128,19 +131,24 @@ impl UntagResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TagResourceOutput {}
+pub struct TagResourceOutput  {
+}
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput).
 pub mod tag_resource_output {
-
+    
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput).
         pub fn build(self) -> crate::output::TagResourceOutput {
-            crate::output::TagResourceOutput {}
+            crate::output::TagResourceOutput {
+            }
         }
     }
+    
+    
 }
 impl TagResourceOutput {
     /// Creates a new builder-style object to manufacture [`TagResourceOutput`](crate::output::TagResourceOutput).
@@ -152,7 +160,7 @@ impl TagResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SyncResourceOutput {
+pub struct SyncResourceOutput  {
     /// <p>The Amazon resource name (ARN) that specifies the application.</p>
     #[doc(hidden)]
     pub application_arn: std::option::Option<std::string::String>,
@@ -165,21 +173,21 @@ pub struct SyncResourceOutput {
 }
 impl SyncResourceOutput {
     /// <p>The Amazon resource name (ARN) that specifies the application.</p>
-    pub fn application_arn(&self) -> std::option::Option<&str> {
+    pub fn application_arn(&self) -> std::option::Option<& str> {
         self.application_arn.as_deref()
     }
     /// <p>The Amazon resource name (ARN) that specifies the resource.</p>
-    pub fn resource_arn(&self) -> std::option::Option<&str> {
+    pub fn resource_arn(&self) -> std::option::Option<& str> {
         self.resource_arn.as_deref()
     }
     /// <p>The results of the output if an application is associated with an ARN value, which could be <code>syncStarted</code> or None.</p>
-    pub fn action_taken(&self) -> std::option::Option<&crate::model::SyncAction> {
+    pub fn action_taken(&self) -> std::option::Option<& crate::model::SyncAction> {
         self.action_taken.as_ref()
     }
 }
 /// See [`SyncResourceOutput`](crate::output::SyncResourceOutput).
 pub mod sync_resource_output {
-
+    
     /// A builder for [`SyncResourceOutput`](crate::output::SyncResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -194,12 +202,8 @@ pub mod sync_resource_output {
             self
         }
         /// <p>The Amazon resource name (ARN) that specifies the application.</p>
-        pub fn set_application_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.application_arn = input;
-            self
+        pub fn set_application_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.application_arn = input; self
         }
         /// <p>The Amazon resource name (ARN) that specifies the resource.</p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -208,8 +212,7 @@ pub mod sync_resource_output {
         }
         /// <p>The Amazon resource name (ARN) that specifies the resource.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.resource_arn = input;
-            self
+            self.resource_arn = input; self
         }
         /// <p>The results of the output if an application is associated with an ARN value, which could be <code>syncStarted</code> or None.</p>
         pub fn action_taken(mut self, input: crate::model::SyncAction) -> Self {
@@ -217,22 +220,23 @@ pub mod sync_resource_output {
             self
         }
         /// <p>The results of the output if an application is associated with an ARN value, which could be <code>syncStarted</code> or None.</p>
-        pub fn set_action_taken(
-            mut self,
-            input: std::option::Option<crate::model::SyncAction>,
-        ) -> Self {
-            self.action_taken = input;
-            self
+        pub fn set_action_taken(mut self, input: std::option::Option<crate::model::SyncAction>) -> Self {
+            self.action_taken = input; self
         }
         /// Consumes the builder and constructs a [`SyncResourceOutput`](crate::output::SyncResourceOutput).
         pub fn build(self) -> crate::output::SyncResourceOutput {
             crate::output::SyncResourceOutput {
-                application_arn: self.application_arn,
-                resource_arn: self.resource_arn,
-                action_taken: self.action_taken,
+                application_arn: self.application_arn
+                ,
+                resource_arn: self.resource_arn
+                ,
+                action_taken: self.action_taken
+                ,
             }
         }
     }
+    
+    
 }
 impl SyncResourceOutput {
     /// Creates a new builder-style object to manufacture [`SyncResourceOutput`](crate::output::SyncResourceOutput).
@@ -244,19 +248,24 @@ impl SyncResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutConfigurationOutput {}
+pub struct PutConfigurationOutput  {
+}
 /// See [`PutConfigurationOutput`](crate::output::PutConfigurationOutput).
 pub mod put_configuration_output {
-
+    
     /// A builder for [`PutConfigurationOutput`](crate::output::PutConfigurationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`PutConfigurationOutput`](crate::output::PutConfigurationOutput).
         pub fn build(self) -> crate::output::PutConfigurationOutput {
-            crate::output::PutConfigurationOutput {}
+            crate::output::PutConfigurationOutput {
+            }
         }
     }
+    
+    
 }
 impl PutConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`PutConfigurationOutput`](crate::output::PutConfigurationOutput).
@@ -268,30 +277,24 @@ impl PutConfigurationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListTagsForResourceOutput {
+pub struct ListTagsForResourceOutput  {
     /// <p>The tags on the resource.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl ListTagsForResourceOutput {
     /// <p>The tags on the resource.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
 }
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
 pub mod list_tags_for_resource_output {
-
+    
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     }
     impl Builder {
         /// Adds a key-value pair to `tags`.
@@ -299,31 +302,26 @@ pub mod list_tags_for_resource_output {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags on the resource.</p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// <p>The tags on the resource.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
         pub fn build(self) -> crate::output::ListTagsForResourceOutput {
-            crate::output::ListTagsForResourceOutput { tags: self.tags }
+            crate::output::ListTagsForResourceOutput {
+                tags: self.tags
+                ,
+            }
         }
     }
+    
+    
 }
 impl ListTagsForResourceOutput {
     /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
@@ -335,35 +333,31 @@ impl ListTagsForResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListAttributeGroupsForApplicationOutput {
+pub struct ListAttributeGroupsForApplicationOutput  {
     /// <p> The details related to a specific attribute group. </p>
     #[doc(hidden)]
-    pub attribute_groups_details:
-        std::option::Option<std::vec::Vec<crate::model::AttributeGroupDetails>>,
+    pub attribute_groups_details: std::option::Option<std::vec::Vec<crate::model::AttributeGroupDetails>>,
     /// <p>The token to use to get the next page of results after a previous API call.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListAttributeGroupsForApplicationOutput {
     /// <p> The details related to a specific attribute group. </p>
-    pub fn attribute_groups_details(
-        &self,
-    ) -> std::option::Option<&[crate::model::AttributeGroupDetails]> {
+    pub fn attribute_groups_details(&self) -> std::option::Option<& [crate::model::AttributeGroupDetails]> {
         self.attribute_groups_details.as_deref()
     }
     /// <p>The token to use to get the next page of results after a previous API call.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListAttributeGroupsForApplicationOutput`](crate::output::ListAttributeGroupsForApplicationOutput).
 pub mod list_attribute_groups_for_application_output {
-
+    
     /// A builder for [`ListAttributeGroupsForApplicationOutput`](crate::output::ListAttributeGroupsForApplicationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) attribute_groups_details:
-            std::option::Option<std::vec::Vec<crate::model::AttributeGroupDetails>>,
+        pub(crate) attribute_groups_details: std::option::Option<std::vec::Vec<crate::model::AttributeGroupDetails>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -372,22 +366,15 @@ pub mod list_attribute_groups_for_application_output {
         /// To override the contents of this collection use [`set_attribute_groups_details`](Self::set_attribute_groups_details).
         ///
         /// <p> The details related to a specific attribute group. </p>
-        pub fn attribute_groups_details(
-            mut self,
-            input: crate::model::AttributeGroupDetails,
-        ) -> Self {
+        pub fn attribute_groups_details(mut self, input: crate::model::AttributeGroupDetails) -> Self {
             let mut v = self.attribute_groups_details.unwrap_or_default();
-            v.push(input);
-            self.attribute_groups_details = Some(v);
-            self
+                            v.push(input);
+                            self.attribute_groups_details = Some(v);
+                            self
         }
         /// <p> The details related to a specific attribute group. </p>
-        pub fn set_attribute_groups_details(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::AttributeGroupDetails>>,
-        ) -> Self {
-            self.attribute_groups_details = input;
-            self
+        pub fn set_attribute_groups_details(mut self, input: std::option::Option<std::vec::Vec<crate::model::AttributeGroupDetails>>) -> Self {
+            self.attribute_groups_details = input; self
         }
         /// <p>The token to use to get the next page of results after a previous API call.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -396,17 +383,20 @@ pub mod list_attribute_groups_for_application_output {
         }
         /// <p>The token to use to get the next page of results after a previous API call.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListAttributeGroupsForApplicationOutput`](crate::output::ListAttributeGroupsForApplicationOutput).
         pub fn build(self) -> crate::output::ListAttributeGroupsForApplicationOutput {
             crate::output::ListAttributeGroupsForApplicationOutput {
-                attribute_groups_details: self.attribute_groups_details,
-                next_token: self.next_token,
+                attribute_groups_details: self.attribute_groups_details
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListAttributeGroupsForApplicationOutput {
     /// Creates a new builder-style object to manufacture [`ListAttributeGroupsForApplicationOutput`](crate::output::ListAttributeGroupsForApplicationOutput).
@@ -418,7 +408,7 @@ impl ListAttributeGroupsForApplicationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListAttributeGroupsOutput {
+pub struct ListAttributeGroupsOutput  {
     /// <p>This list of attribute groups.</p>
     #[doc(hidden)]
     pub attribute_groups: std::option::Option<std::vec::Vec<crate::model::AttributeGroupSummary>>,
@@ -428,22 +418,21 @@ pub struct ListAttributeGroupsOutput {
 }
 impl ListAttributeGroupsOutput {
     /// <p>This list of attribute groups.</p>
-    pub fn attribute_groups(&self) -> std::option::Option<&[crate::model::AttributeGroupSummary]> {
+    pub fn attribute_groups(&self) -> std::option::Option<& [crate::model::AttributeGroupSummary]> {
         self.attribute_groups.as_deref()
     }
     /// <p>The token to use to get the next page of results after a previous API call. </p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListAttributeGroupsOutput`](crate::output::ListAttributeGroupsOutput).
 pub mod list_attribute_groups_output {
-
+    
     /// A builder for [`ListAttributeGroupsOutput`](crate::output::ListAttributeGroupsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) attribute_groups:
-            std::option::Option<std::vec::Vec<crate::model::AttributeGroupSummary>>,
+        pub(crate) attribute_groups: std::option::Option<std::vec::Vec<crate::model::AttributeGroupSummary>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -454,17 +443,13 @@ pub mod list_attribute_groups_output {
         /// <p>This list of attribute groups.</p>
         pub fn attribute_groups(mut self, input: crate::model::AttributeGroupSummary) -> Self {
             let mut v = self.attribute_groups.unwrap_or_default();
-            v.push(input);
-            self.attribute_groups = Some(v);
-            self
+                            v.push(input);
+                            self.attribute_groups = Some(v);
+                            self
         }
         /// <p>This list of attribute groups.</p>
-        pub fn set_attribute_groups(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::AttributeGroupSummary>>,
-        ) -> Self {
-            self.attribute_groups = input;
-            self
+        pub fn set_attribute_groups(mut self, input: std::option::Option<std::vec::Vec<crate::model::AttributeGroupSummary>>) -> Self {
+            self.attribute_groups = input; self
         }
         /// <p>The token to use to get the next page of results after a previous API call. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -473,17 +458,20 @@ pub mod list_attribute_groups_output {
         }
         /// <p>The token to use to get the next page of results after a previous API call. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListAttributeGroupsOutput`](crate::output::ListAttributeGroupsOutput).
         pub fn build(self) -> crate::output::ListAttributeGroupsOutput {
             crate::output::ListAttributeGroupsOutput {
-                attribute_groups: self.attribute_groups,
-                next_token: self.next_token,
+                attribute_groups: self.attribute_groups
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListAttributeGroupsOutput {
     /// Creates a new builder-style object to manufacture [`ListAttributeGroupsOutput`](crate::output::ListAttributeGroupsOutput).
@@ -495,7 +483,7 @@ impl ListAttributeGroupsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListAssociatedResourcesOutput {
+pub struct ListAssociatedResourcesOutput  {
     /// <p>Information about the resources.</p>
     #[doc(hidden)]
     pub resources: std::option::Option<std::vec::Vec<crate::model::ResourceInfo>>,
@@ -505,17 +493,17 @@ pub struct ListAssociatedResourcesOutput {
 }
 impl ListAssociatedResourcesOutput {
     /// <p>Information about the resources.</p>
-    pub fn resources(&self) -> std::option::Option<&[crate::model::ResourceInfo]> {
+    pub fn resources(&self) -> std::option::Option<& [crate::model::ResourceInfo]> {
         self.resources.as_deref()
     }
     /// <p>The token to use to get the next page of results after a previous API call. </p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListAssociatedResourcesOutput`](crate::output::ListAssociatedResourcesOutput).
 pub mod list_associated_resources_output {
-
+    
     /// A builder for [`ListAssociatedResourcesOutput`](crate::output::ListAssociatedResourcesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -530,17 +518,13 @@ pub mod list_associated_resources_output {
         /// <p>Information about the resources.</p>
         pub fn resources(mut self, input: crate::model::ResourceInfo) -> Self {
             let mut v = self.resources.unwrap_or_default();
-            v.push(input);
-            self.resources = Some(v);
-            self
+                            v.push(input);
+                            self.resources = Some(v);
+                            self
         }
         /// <p>Information about the resources.</p>
-        pub fn set_resources(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ResourceInfo>>,
-        ) -> Self {
-            self.resources = input;
-            self
+        pub fn set_resources(mut self, input: std::option::Option<std::vec::Vec<crate::model::ResourceInfo>>) -> Self {
+            self.resources = input; self
         }
         /// <p>The token to use to get the next page of results after a previous API call. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -549,17 +533,20 @@ pub mod list_associated_resources_output {
         }
         /// <p>The token to use to get the next page of results after a previous API call. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListAssociatedResourcesOutput`](crate::output::ListAssociatedResourcesOutput).
         pub fn build(self) -> crate::output::ListAssociatedResourcesOutput {
             crate::output::ListAssociatedResourcesOutput {
-                resources: self.resources,
-                next_token: self.next_token,
+                resources: self.resources
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListAssociatedResourcesOutput {
     /// Creates a new builder-style object to manufacture [`ListAssociatedResourcesOutput`](crate::output::ListAssociatedResourcesOutput).
@@ -571,7 +558,7 @@ impl ListAssociatedResourcesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListAssociatedAttributeGroupsOutput {
+pub struct ListAssociatedAttributeGroupsOutput  {
     /// <p>A list of attribute group IDs.</p>
     #[doc(hidden)]
     pub attribute_groups: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -581,17 +568,17 @@ pub struct ListAssociatedAttributeGroupsOutput {
 }
 impl ListAssociatedAttributeGroupsOutput {
     /// <p>A list of attribute group IDs.</p>
-    pub fn attribute_groups(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn attribute_groups(&self) -> std::option::Option<& [std::string::String]> {
         self.attribute_groups.as_deref()
     }
     /// <p>The token to use to get the next page of results after a previous API call. </p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListAssociatedAttributeGroupsOutput`](crate::output::ListAssociatedAttributeGroupsOutput).
 pub mod list_associated_attribute_groups_output {
-
+    
     /// A builder for [`ListAssociatedAttributeGroupsOutput`](crate::output::ListAssociatedAttributeGroupsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -606,17 +593,13 @@ pub mod list_associated_attribute_groups_output {
         /// <p>A list of attribute group IDs.</p>
         pub fn attribute_groups(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.attribute_groups.unwrap_or_default();
-            v.push(input.into());
-            self.attribute_groups = Some(v);
-            self
+                            v.push(input.into());
+                            self.attribute_groups = Some(v);
+                            self
         }
         /// <p>A list of attribute group IDs.</p>
-        pub fn set_attribute_groups(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.attribute_groups = input;
-            self
+        pub fn set_attribute_groups(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.attribute_groups = input; self
         }
         /// <p>The token to use to get the next page of results after a previous API call. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -625,17 +608,20 @@ pub mod list_associated_attribute_groups_output {
         }
         /// <p>The token to use to get the next page of results after a previous API call. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListAssociatedAttributeGroupsOutput`](crate::output::ListAssociatedAttributeGroupsOutput).
         pub fn build(self) -> crate::output::ListAssociatedAttributeGroupsOutput {
             crate::output::ListAssociatedAttributeGroupsOutput {
-                attribute_groups: self.attribute_groups,
-                next_token: self.next_token,
+                attribute_groups: self.attribute_groups
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListAssociatedAttributeGroupsOutput {
     /// Creates a new builder-style object to manufacture [`ListAssociatedAttributeGroupsOutput`](crate::output::ListAssociatedAttributeGroupsOutput).
@@ -647,7 +633,7 @@ impl ListAssociatedAttributeGroupsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListApplicationsOutput {
+pub struct ListApplicationsOutput  {
     /// <p>This list of applications.</p>
     #[doc(hidden)]
     pub applications: std::option::Option<std::vec::Vec<crate::model::ApplicationSummary>>,
@@ -657,22 +643,21 @@ pub struct ListApplicationsOutput {
 }
 impl ListApplicationsOutput {
     /// <p>This list of applications.</p>
-    pub fn applications(&self) -> std::option::Option<&[crate::model::ApplicationSummary]> {
+    pub fn applications(&self) -> std::option::Option<& [crate::model::ApplicationSummary]> {
         self.applications.as_deref()
     }
     /// <p>The token to use to get the next page of results after a previous API call. </p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListApplicationsOutput`](crate::output::ListApplicationsOutput).
 pub mod list_applications_output {
-
+    
     /// A builder for [`ListApplicationsOutput`](crate::output::ListApplicationsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) applications:
-            std::option::Option<std::vec::Vec<crate::model::ApplicationSummary>>,
+        pub(crate) applications: std::option::Option<std::vec::Vec<crate::model::ApplicationSummary>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -683,17 +668,13 @@ pub mod list_applications_output {
         /// <p>This list of applications.</p>
         pub fn applications(mut self, input: crate::model::ApplicationSummary) -> Self {
             let mut v = self.applications.unwrap_or_default();
-            v.push(input);
-            self.applications = Some(v);
-            self
+                            v.push(input);
+                            self.applications = Some(v);
+                            self
         }
         /// <p>This list of applications.</p>
-        pub fn set_applications(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ApplicationSummary>>,
-        ) -> Self {
-            self.applications = input;
-            self
+        pub fn set_applications(mut self, input: std::option::Option<std::vec::Vec<crate::model::ApplicationSummary>>) -> Self {
+            self.applications = input; self
         }
         /// <p>The token to use to get the next page of results after a previous API call. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -702,17 +683,20 @@ pub mod list_applications_output {
         }
         /// <p>The token to use to get the next page of results after a previous API call. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListApplicationsOutput`](crate::output::ListApplicationsOutput).
         pub fn build(self) -> crate::output::ListApplicationsOutput {
             crate::output::ListApplicationsOutput {
-                applications: self.applications,
-                next_token: self.next_token,
+                applications: self.applications
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListApplicationsOutput {
     /// Creates a new builder-style object to manufacture [`ListApplicationsOutput`](crate::output::ListApplicationsOutput).
@@ -724,20 +708,20 @@ impl ListApplicationsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetConfigurationOutput {
+pub struct GetConfigurationOutput  {
     /// <p> Retrieves <code>TagKey</code> configuration from an account. </p>
     #[doc(hidden)]
     pub configuration: std::option::Option<crate::model::AppRegistryConfiguration>,
 }
 impl GetConfigurationOutput {
     /// <p> Retrieves <code>TagKey</code> configuration from an account. </p>
-    pub fn configuration(&self) -> std::option::Option<&crate::model::AppRegistryConfiguration> {
+    pub fn configuration(&self) -> std::option::Option<& crate::model::AppRegistryConfiguration> {
         self.configuration.as_ref()
     }
 }
 /// See [`GetConfigurationOutput`](crate::output::GetConfigurationOutput).
 pub mod get_configuration_output {
-
+    
     /// A builder for [`GetConfigurationOutput`](crate::output::GetConfigurationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -750,20 +734,19 @@ pub mod get_configuration_output {
             self
         }
         /// <p> Retrieves <code>TagKey</code> configuration from an account. </p>
-        pub fn set_configuration(
-            mut self,
-            input: std::option::Option<crate::model::AppRegistryConfiguration>,
-        ) -> Self {
-            self.configuration = input;
-            self
+        pub fn set_configuration(mut self, input: std::option::Option<crate::model::AppRegistryConfiguration>) -> Self {
+            self.configuration = input; self
         }
         /// Consumes the builder and constructs a [`GetConfigurationOutput`](crate::output::GetConfigurationOutput).
         pub fn build(self) -> crate::output::GetConfigurationOutput {
             crate::output::GetConfigurationOutput {
-                configuration: self.configuration,
+                configuration: self.configuration
+                ,
             }
         }
     }
+    
+    
 }
 impl GetConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`GetConfigurationOutput`](crate::output::GetConfigurationOutput).
@@ -775,7 +758,7 @@ impl GetConfigurationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetAttributeGroupOutput {
+pub struct GetAttributeGroupOutput  {
     /// <p>The identifier of the attribute group.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -799,49 +782,45 @@ pub struct GetAttributeGroupOutput {
     pub last_update_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Key-value pairs associated with the attribute group.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl GetAttributeGroupOutput {
     /// <p>The identifier of the attribute group.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The Amazon resource name (ARN) that specifies the attribute group across services.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The name of the attribute group.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The description of the attribute group that the user provides.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>A JSON string in the form of nested key-value pairs that represent the attributes in the group and describes an application and its components.</p>
-    pub fn attributes(&self) -> std::option::Option<&str> {
+    pub fn attributes(&self) -> std::option::Option<& str> {
         self.attributes.as_deref()
     }
     /// <p>The ISO-8601 formatted timestamp of the moment the attribute group was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The ISO-8601 formatted timestamp of the moment the attribute group was last updated. This time is the same as the creationTime for a newly created attribute group.</p>
-    pub fn last_update_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_update_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_update_time.as_ref()
     }
     /// <p>Key-value pairs associated with the attribute group.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
 }
 /// See [`GetAttributeGroupOutput`](crate::output::GetAttributeGroupOutput).
 pub mod get_attribute_group_output {
-
+    
     /// A builder for [`GetAttributeGroupOutput`](crate::output::GetAttributeGroupOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -852,9 +831,7 @@ pub mod get_attribute_group_output {
         pub(crate) attributes: std::option::Option<std::string::String>,
         pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) last_update_time: std::option::Option<aws_smithy_types::DateTime>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     }
     impl Builder {
         /// <p>The identifier of the attribute group.</p>
@@ -864,8 +841,7 @@ pub mod get_attribute_group_output {
         }
         /// <p>The identifier of the attribute group.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// <p>The Amazon resource name (ARN) that specifies the attribute group across services.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -874,8 +850,7 @@ pub mod get_attribute_group_output {
         }
         /// <p>The Amazon resource name (ARN) that specifies the attribute group across services.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>The name of the attribute group.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -884,8 +859,7 @@ pub mod get_attribute_group_output {
         }
         /// <p>The name of the attribute group.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The description of the attribute group that the user provides.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -894,8 +868,7 @@ pub mod get_attribute_group_output {
         }
         /// <p>The description of the attribute group that the user provides.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>A JSON string in the form of nested key-value pairs that represent the attributes in the group and describes an application and its components.</p>
         pub fn attributes(mut self, input: impl Into<std::string::String>) -> Self {
@@ -904,8 +877,7 @@ pub mod get_attribute_group_output {
         }
         /// <p>A JSON string in the form of nested key-value pairs that represent the attributes in the group and describes an application and its components.</p>
         pub fn set_attributes(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.attributes = input;
-            self
+            self.attributes = input; self
         }
         /// <p>The ISO-8601 formatted timestamp of the moment the attribute group was created.</p>
         pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -913,12 +885,8 @@ pub mod get_attribute_group_output {
             self
         }
         /// <p>The ISO-8601 formatted timestamp of the moment the attribute group was created.</p>
-        pub fn set_creation_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.creation_time = input;
-            self
+        pub fn set_creation_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.creation_time = input; self
         }
         /// <p>The ISO-8601 formatted timestamp of the moment the attribute group was last updated. This time is the same as the creationTime for a newly created attribute group.</p>
         pub fn last_update_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -926,52 +894,48 @@ pub mod get_attribute_group_output {
             self
         }
         /// <p>The ISO-8601 formatted timestamp of the moment the attribute group was last updated. This time is the same as the creationTime for a newly created attribute group.</p>
-        pub fn set_last_update_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_update_time = input;
-            self
+        pub fn set_last_update_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_update_time = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>Key-value pairs associated with the attribute group.</p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// <p>Key-value pairs associated with the attribute group.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`GetAttributeGroupOutput`](crate::output::GetAttributeGroupOutput).
         pub fn build(self) -> crate::output::GetAttributeGroupOutput {
             crate::output::GetAttributeGroupOutput {
-                id: self.id,
-                arn: self.arn,
-                name: self.name,
-                description: self.description,
-                attributes: self.attributes,
-                creation_time: self.creation_time,
-                last_update_time: self.last_update_time,
-                tags: self.tags,
+                id: self.id
+                ,
+                arn: self.arn
+                ,
+                name: self.name
+                ,
+                description: self.description
+                ,
+                attributes: self.attributes
+                ,
+                creation_time: self.creation_time
+                ,
+                last_update_time: self.last_update_time
+                ,
+                tags: self.tags
+                ,
             }
         }
     }
+    
+    
 }
 impl GetAttributeGroupOutput {
     /// Creates a new builder-style object to manufacture [`GetAttributeGroupOutput`](crate::output::GetAttributeGroupOutput).
@@ -983,20 +947,20 @@ impl GetAttributeGroupOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetAssociatedResourceOutput {
+pub struct GetAssociatedResourceOutput  {
     /// <p>The resource associated with the application.</p>
     #[doc(hidden)]
     pub resource: std::option::Option<crate::model::Resource>,
 }
 impl GetAssociatedResourceOutput {
     /// <p>The resource associated with the application.</p>
-    pub fn resource(&self) -> std::option::Option<&crate::model::Resource> {
+    pub fn resource(&self) -> std::option::Option<& crate::model::Resource> {
         self.resource.as_ref()
     }
 }
 /// See [`GetAssociatedResourceOutput`](crate::output::GetAssociatedResourceOutput).
 pub mod get_associated_resource_output {
-
+    
     /// A builder for [`GetAssociatedResourceOutput`](crate::output::GetAssociatedResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1010,16 +974,18 @@ pub mod get_associated_resource_output {
         }
         /// <p>The resource associated with the application.</p>
         pub fn set_resource(mut self, input: std::option::Option<crate::model::Resource>) -> Self {
-            self.resource = input;
-            self
+            self.resource = input; self
         }
         /// Consumes the builder and constructs a [`GetAssociatedResourceOutput`](crate::output::GetAssociatedResourceOutput).
         pub fn build(self) -> crate::output::GetAssociatedResourceOutput {
             crate::output::GetAssociatedResourceOutput {
-                resource: self.resource,
+                resource: self.resource
+                ,
             }
         }
     }
+    
+    
 }
 impl GetAssociatedResourceOutput {
     /// Creates a new builder-style object to manufacture [`GetAssociatedResourceOutput`](crate::output::GetAssociatedResourceOutput).
@@ -1031,7 +997,7 @@ impl GetAssociatedResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetApplicationOutput {
+pub struct GetApplicationOutput  {
     /// <p>The identifier of the application.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -1055,35 +1021,34 @@ pub struct GetApplicationOutput {
     pub associated_resource_count: i32,
     /// <p>Key-value pairs associated with the application.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p> The information about the integration of the application with other services, such as Resource Groups. </p>
     #[doc(hidden)]
     pub integrations: std::option::Option<crate::model::Integrations>,
 }
 impl GetApplicationOutput {
     /// <p>The identifier of the application.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The Amazon resource name (ARN) that specifies the application across services.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The name of the application. The name must be unique in the region in which you are creating the application.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The description of the application.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The ISO-8601 formatted timestamp of the moment when the application was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The ISO-8601 formatted timestamp of the moment when the application was last updated.</p>
-    pub fn last_update_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_update_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_update_time.as_ref()
     }
     /// <p>The number of top-level resources that were registered as part of this application.</p>
@@ -1091,20 +1056,17 @@ impl GetApplicationOutput {
         self.associated_resource_count
     }
     /// <p>Key-value pairs associated with the application.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
     /// <p> The information about the integration of the application with other services, such as Resource Groups. </p>
-    pub fn integrations(&self) -> std::option::Option<&crate::model::Integrations> {
+    pub fn integrations(&self) -> std::option::Option<& crate::model::Integrations> {
         self.integrations.as_ref()
     }
 }
 /// See [`GetApplicationOutput`](crate::output::GetApplicationOutput).
 pub mod get_application_output {
-
+    
     /// A builder for [`GetApplicationOutput`](crate::output::GetApplicationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1115,9 +1077,7 @@ pub mod get_application_output {
         pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) last_update_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) associated_resource_count: std::option::Option<i32>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
         pub(crate) integrations: std::option::Option<crate::model::Integrations>,
     }
     impl Builder {
@@ -1128,8 +1088,7 @@ pub mod get_application_output {
         }
         /// <p>The identifier of the application.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// <p>The Amazon resource name (ARN) that specifies the application across services.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1138,8 +1097,7 @@ pub mod get_application_output {
         }
         /// <p>The Amazon resource name (ARN) that specifies the application across services.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>The name of the application. The name must be unique in the region in which you are creating the application.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1148,8 +1106,7 @@ pub mod get_application_output {
         }
         /// <p>The name of the application. The name must be unique in the region in which you are creating the application.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The description of the application.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1158,8 +1115,7 @@ pub mod get_application_output {
         }
         /// <p>The description of the application.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>The ISO-8601 formatted timestamp of the moment when the application was created.</p>
         pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -1167,12 +1123,8 @@ pub mod get_application_output {
             self
         }
         /// <p>The ISO-8601 formatted timestamp of the moment when the application was created.</p>
-        pub fn set_creation_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.creation_time = input;
-            self
+        pub fn set_creation_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.creation_time = input; self
         }
         /// <p>The ISO-8601 formatted timestamp of the moment when the application was last updated.</p>
         pub fn last_update_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -1180,12 +1132,8 @@ pub mod get_application_output {
             self
         }
         /// <p>The ISO-8601 formatted timestamp of the moment when the application was last updated.</p>
-        pub fn set_last_update_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_update_time = input;
-            self
+        pub fn set_last_update_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_update_time = input; self
         }
         /// <p>The number of top-level resources that were registered as part of this application.</p>
         pub fn associated_resource_count(mut self, input: i32) -> Self {
@@ -1194,33 +1142,22 @@ pub mod get_application_output {
         }
         /// <p>The number of top-level resources that were registered as part of this application.</p>
         pub fn set_associated_resource_count(mut self, input: std::option::Option<i32>) -> Self {
-            self.associated_resource_count = input;
-            self
+            self.associated_resource_count = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>Key-value pairs associated with the application.</p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// <p>Key-value pairs associated with the application.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// <p> The information about the integration of the application with other services, such as Resource Groups. </p>
         pub fn integrations(mut self, input: crate::model::Integrations) -> Self {
@@ -1228,28 +1165,36 @@ pub mod get_application_output {
             self
         }
         /// <p> The information about the integration of the application with other services, such as Resource Groups. </p>
-        pub fn set_integrations(
-            mut self,
-            input: std::option::Option<crate::model::Integrations>,
-        ) -> Self {
-            self.integrations = input;
-            self
+        pub fn set_integrations(mut self, input: std::option::Option<crate::model::Integrations>) -> Self {
+            self.integrations = input; self
         }
         /// Consumes the builder and constructs a [`GetApplicationOutput`](crate::output::GetApplicationOutput).
         pub fn build(self) -> crate::output::GetApplicationOutput {
             crate::output::GetApplicationOutput {
-                id: self.id,
-                arn: self.arn,
-                name: self.name,
-                description: self.description,
-                creation_time: self.creation_time,
-                last_update_time: self.last_update_time,
-                associated_resource_count: self.associated_resource_count.unwrap_or_default(),
-                tags: self.tags,
-                integrations: self.integrations,
+                id: self.id
+                ,
+                arn: self.arn
+                ,
+                name: self.name
+                ,
+                description: self.description
+                ,
+                creation_time: self.creation_time
+                ,
+                last_update_time: self.last_update_time
+                ,
+                associated_resource_count: self.associated_resource_count
+                    .unwrap_or_default()
+                ,
+                tags: self.tags
+                ,
+                integrations: self.integrations
+                ,
             }
         }
     }
+    
+    
 }
 impl GetApplicationOutput {
     /// Creates a new builder-style object to manufacture [`GetApplicationOutput`](crate::output::GetApplicationOutput).
@@ -1261,7 +1206,7 @@ impl GetApplicationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DisassociateResourceOutput {
+pub struct DisassociateResourceOutput  {
     /// <p>The Amazon resource name (ARN) that specifies the application.</p>
     #[doc(hidden)]
     pub application_arn: std::option::Option<std::string::String>,
@@ -1271,17 +1216,17 @@ pub struct DisassociateResourceOutput {
 }
 impl DisassociateResourceOutput {
     /// <p>The Amazon resource name (ARN) that specifies the application.</p>
-    pub fn application_arn(&self) -> std::option::Option<&str> {
+    pub fn application_arn(&self) -> std::option::Option<& str> {
         self.application_arn.as_deref()
     }
     /// <p>The Amazon resource name (ARN) that specifies the resource.</p>
-    pub fn resource_arn(&self) -> std::option::Option<&str> {
+    pub fn resource_arn(&self) -> std::option::Option<& str> {
         self.resource_arn.as_deref()
     }
 }
 /// See [`DisassociateResourceOutput`](crate::output::DisassociateResourceOutput).
 pub mod disassociate_resource_output {
-
+    
     /// A builder for [`DisassociateResourceOutput`](crate::output::DisassociateResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1295,12 +1240,8 @@ pub mod disassociate_resource_output {
             self
         }
         /// <p>The Amazon resource name (ARN) that specifies the application.</p>
-        pub fn set_application_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.application_arn = input;
-            self
+        pub fn set_application_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.application_arn = input; self
         }
         /// <p>The Amazon resource name (ARN) that specifies the resource.</p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1309,17 +1250,20 @@ pub mod disassociate_resource_output {
         }
         /// <p>The Amazon resource name (ARN) that specifies the resource.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.resource_arn = input;
-            self
+            self.resource_arn = input; self
         }
         /// Consumes the builder and constructs a [`DisassociateResourceOutput`](crate::output::DisassociateResourceOutput).
         pub fn build(self) -> crate::output::DisassociateResourceOutput {
             crate::output::DisassociateResourceOutput {
-                application_arn: self.application_arn,
-                resource_arn: self.resource_arn,
+                application_arn: self.application_arn
+                ,
+                resource_arn: self.resource_arn
+                ,
             }
         }
     }
+    
+    
 }
 impl DisassociateResourceOutput {
     /// Creates a new builder-style object to manufacture [`DisassociateResourceOutput`](crate::output::DisassociateResourceOutput).
@@ -1331,7 +1275,7 @@ impl DisassociateResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DisassociateAttributeGroupOutput {
+pub struct DisassociateAttributeGroupOutput  {
     /// <p>The Amazon resource name (ARN) that specifies the application.</p>
     #[doc(hidden)]
     pub application_arn: std::option::Option<std::string::String>,
@@ -1341,17 +1285,17 @@ pub struct DisassociateAttributeGroupOutput {
 }
 impl DisassociateAttributeGroupOutput {
     /// <p>The Amazon resource name (ARN) that specifies the application.</p>
-    pub fn application_arn(&self) -> std::option::Option<&str> {
+    pub fn application_arn(&self) -> std::option::Option<& str> {
         self.application_arn.as_deref()
     }
     /// <p>The Amazon resource name (ARN) that specifies the attribute group.</p>
-    pub fn attribute_group_arn(&self) -> std::option::Option<&str> {
+    pub fn attribute_group_arn(&self) -> std::option::Option<& str> {
         self.attribute_group_arn.as_deref()
     }
 }
 /// See [`DisassociateAttributeGroupOutput`](crate::output::DisassociateAttributeGroupOutput).
 pub mod disassociate_attribute_group_output {
-
+    
     /// A builder for [`DisassociateAttributeGroupOutput`](crate::output::DisassociateAttributeGroupOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1365,12 +1309,8 @@ pub mod disassociate_attribute_group_output {
             self
         }
         /// <p>The Amazon resource name (ARN) that specifies the application.</p>
-        pub fn set_application_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.application_arn = input;
-            self
+        pub fn set_application_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.application_arn = input; self
         }
         /// <p>The Amazon resource name (ARN) that specifies the attribute group.</p>
         pub fn attribute_group_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1378,21 +1318,21 @@ pub mod disassociate_attribute_group_output {
             self
         }
         /// <p>The Amazon resource name (ARN) that specifies the attribute group.</p>
-        pub fn set_attribute_group_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.attribute_group_arn = input;
-            self
+        pub fn set_attribute_group_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.attribute_group_arn = input; self
         }
         /// Consumes the builder and constructs a [`DisassociateAttributeGroupOutput`](crate::output::DisassociateAttributeGroupOutput).
         pub fn build(self) -> crate::output::DisassociateAttributeGroupOutput {
             crate::output::DisassociateAttributeGroupOutput {
-                application_arn: self.application_arn,
-                attribute_group_arn: self.attribute_group_arn,
+                application_arn: self.application_arn
+                ,
+                attribute_group_arn: self.attribute_group_arn
+                ,
             }
         }
     }
+    
+    
 }
 impl DisassociateAttributeGroupOutput {
     /// Creates a new builder-style object to manufacture [`DisassociateAttributeGroupOutput`](crate::output::DisassociateAttributeGroupOutput).
@@ -1404,20 +1344,20 @@ impl DisassociateAttributeGroupOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteAttributeGroupOutput {
+pub struct DeleteAttributeGroupOutput  {
     /// <p>Information about the deleted attribute group.</p>
     #[doc(hidden)]
     pub attribute_group: std::option::Option<crate::model::AttributeGroupSummary>,
 }
 impl DeleteAttributeGroupOutput {
     /// <p>Information about the deleted attribute group.</p>
-    pub fn attribute_group(&self) -> std::option::Option<&crate::model::AttributeGroupSummary> {
+    pub fn attribute_group(&self) -> std::option::Option<& crate::model::AttributeGroupSummary> {
         self.attribute_group.as_ref()
     }
 }
 /// See [`DeleteAttributeGroupOutput`](crate::output::DeleteAttributeGroupOutput).
 pub mod delete_attribute_group_output {
-
+    
     /// A builder for [`DeleteAttributeGroupOutput`](crate::output::DeleteAttributeGroupOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1430,20 +1370,19 @@ pub mod delete_attribute_group_output {
             self
         }
         /// <p>Information about the deleted attribute group.</p>
-        pub fn set_attribute_group(
-            mut self,
-            input: std::option::Option<crate::model::AttributeGroupSummary>,
-        ) -> Self {
-            self.attribute_group = input;
-            self
+        pub fn set_attribute_group(mut self, input: std::option::Option<crate::model::AttributeGroupSummary>) -> Self {
+            self.attribute_group = input; self
         }
         /// Consumes the builder and constructs a [`DeleteAttributeGroupOutput`](crate::output::DeleteAttributeGroupOutput).
         pub fn build(self) -> crate::output::DeleteAttributeGroupOutput {
             crate::output::DeleteAttributeGroupOutput {
-                attribute_group: self.attribute_group,
+                attribute_group: self.attribute_group
+                ,
             }
         }
     }
+    
+    
 }
 impl DeleteAttributeGroupOutput {
     /// Creates a new builder-style object to manufacture [`DeleteAttributeGroupOutput`](crate::output::DeleteAttributeGroupOutput).
@@ -1455,20 +1394,20 @@ impl DeleteAttributeGroupOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteApplicationOutput {
+pub struct DeleteApplicationOutput  {
     /// <p>Information about the deleted application.</p>
     #[doc(hidden)]
     pub application: std::option::Option<crate::model::ApplicationSummary>,
 }
 impl DeleteApplicationOutput {
     /// <p>Information about the deleted application.</p>
-    pub fn application(&self) -> std::option::Option<&crate::model::ApplicationSummary> {
+    pub fn application(&self) -> std::option::Option<& crate::model::ApplicationSummary> {
         self.application.as_ref()
     }
 }
 /// See [`DeleteApplicationOutput`](crate::output::DeleteApplicationOutput).
 pub mod delete_application_output {
-
+    
     /// A builder for [`DeleteApplicationOutput`](crate::output::DeleteApplicationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1481,20 +1420,19 @@ pub mod delete_application_output {
             self
         }
         /// <p>Information about the deleted application.</p>
-        pub fn set_application(
-            mut self,
-            input: std::option::Option<crate::model::ApplicationSummary>,
-        ) -> Self {
-            self.application = input;
-            self
+        pub fn set_application(mut self, input: std::option::Option<crate::model::ApplicationSummary>) -> Self {
+            self.application = input; self
         }
         /// Consumes the builder and constructs a [`DeleteApplicationOutput`](crate::output::DeleteApplicationOutput).
         pub fn build(self) -> crate::output::DeleteApplicationOutput {
             crate::output::DeleteApplicationOutput {
-                application: self.application,
+                application: self.application
+                ,
             }
         }
     }
+    
+    
 }
 impl DeleteApplicationOutput {
     /// Creates a new builder-style object to manufacture [`DeleteApplicationOutput`](crate::output::DeleteApplicationOutput).
@@ -1506,20 +1444,20 @@ impl DeleteApplicationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateAttributeGroupOutput {
+pub struct CreateAttributeGroupOutput  {
     /// <p>Information about the attribute group.</p>
     #[doc(hidden)]
     pub attribute_group: std::option::Option<crate::model::AttributeGroup>,
 }
 impl CreateAttributeGroupOutput {
     /// <p>Information about the attribute group.</p>
-    pub fn attribute_group(&self) -> std::option::Option<&crate::model::AttributeGroup> {
+    pub fn attribute_group(&self) -> std::option::Option<& crate::model::AttributeGroup> {
         self.attribute_group.as_ref()
     }
 }
 /// See [`CreateAttributeGroupOutput`](crate::output::CreateAttributeGroupOutput).
 pub mod create_attribute_group_output {
-
+    
     /// A builder for [`CreateAttributeGroupOutput`](crate::output::CreateAttributeGroupOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1532,20 +1470,19 @@ pub mod create_attribute_group_output {
             self
         }
         /// <p>Information about the attribute group.</p>
-        pub fn set_attribute_group(
-            mut self,
-            input: std::option::Option<crate::model::AttributeGroup>,
-        ) -> Self {
-            self.attribute_group = input;
-            self
+        pub fn set_attribute_group(mut self, input: std::option::Option<crate::model::AttributeGroup>) -> Self {
+            self.attribute_group = input; self
         }
         /// Consumes the builder and constructs a [`CreateAttributeGroupOutput`](crate::output::CreateAttributeGroupOutput).
         pub fn build(self) -> crate::output::CreateAttributeGroupOutput {
             crate::output::CreateAttributeGroupOutput {
-                attribute_group: self.attribute_group,
+                attribute_group: self.attribute_group
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateAttributeGroupOutput {
     /// Creates a new builder-style object to manufacture [`CreateAttributeGroupOutput`](crate::output::CreateAttributeGroupOutput).
@@ -1557,20 +1494,20 @@ impl CreateAttributeGroupOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateApplicationOutput {
+pub struct CreateApplicationOutput  {
     /// <p>Information about the application.</p>
     #[doc(hidden)]
     pub application: std::option::Option<crate::model::Application>,
 }
 impl CreateApplicationOutput {
     /// <p>Information about the application.</p>
-    pub fn application(&self) -> std::option::Option<&crate::model::Application> {
+    pub fn application(&self) -> std::option::Option<& crate::model::Application> {
         self.application.as_ref()
     }
 }
 /// See [`CreateApplicationOutput`](crate::output::CreateApplicationOutput).
 pub mod create_application_output {
-
+    
     /// A builder for [`CreateApplicationOutput`](crate::output::CreateApplicationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1583,20 +1520,19 @@ pub mod create_application_output {
             self
         }
         /// <p>Information about the application.</p>
-        pub fn set_application(
-            mut self,
-            input: std::option::Option<crate::model::Application>,
-        ) -> Self {
-            self.application = input;
-            self
+        pub fn set_application(mut self, input: std::option::Option<crate::model::Application>) -> Self {
+            self.application = input; self
         }
         /// Consumes the builder and constructs a [`CreateApplicationOutput`](crate::output::CreateApplicationOutput).
         pub fn build(self) -> crate::output::CreateApplicationOutput {
             crate::output::CreateApplicationOutput {
-                application: self.application,
+                application: self.application
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateApplicationOutput {
     /// Creates a new builder-style object to manufacture [`CreateApplicationOutput`](crate::output::CreateApplicationOutput).
@@ -1608,7 +1544,7 @@ impl CreateApplicationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AssociateResourceOutput {
+pub struct AssociateResourceOutput  {
     /// <p>The Amazon resource name (ARN) of the application that was augmented with attributes.</p>
     #[doc(hidden)]
     pub application_arn: std::option::Option<std::string::String>,
@@ -1618,17 +1554,17 @@ pub struct AssociateResourceOutput {
 }
 impl AssociateResourceOutput {
     /// <p>The Amazon resource name (ARN) of the application that was augmented with attributes.</p>
-    pub fn application_arn(&self) -> std::option::Option<&str> {
+    pub fn application_arn(&self) -> std::option::Option<& str> {
         self.application_arn.as_deref()
     }
     /// <p>The Amazon resource name (ARN) that specifies the resource.</p>
-    pub fn resource_arn(&self) -> std::option::Option<&str> {
+    pub fn resource_arn(&self) -> std::option::Option<& str> {
         self.resource_arn.as_deref()
     }
 }
 /// See [`AssociateResourceOutput`](crate::output::AssociateResourceOutput).
 pub mod associate_resource_output {
-
+    
     /// A builder for [`AssociateResourceOutput`](crate::output::AssociateResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1642,12 +1578,8 @@ pub mod associate_resource_output {
             self
         }
         /// <p>The Amazon resource name (ARN) of the application that was augmented with attributes.</p>
-        pub fn set_application_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.application_arn = input;
-            self
+        pub fn set_application_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.application_arn = input; self
         }
         /// <p>The Amazon resource name (ARN) that specifies the resource.</p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1656,17 +1588,20 @@ pub mod associate_resource_output {
         }
         /// <p>The Amazon resource name (ARN) that specifies the resource.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.resource_arn = input;
-            self
+            self.resource_arn = input; self
         }
         /// Consumes the builder and constructs a [`AssociateResourceOutput`](crate::output::AssociateResourceOutput).
         pub fn build(self) -> crate::output::AssociateResourceOutput {
             crate::output::AssociateResourceOutput {
-                application_arn: self.application_arn,
-                resource_arn: self.resource_arn,
+                application_arn: self.application_arn
+                ,
+                resource_arn: self.resource_arn
+                ,
             }
         }
     }
+    
+    
 }
 impl AssociateResourceOutput {
     /// Creates a new builder-style object to manufacture [`AssociateResourceOutput`](crate::output::AssociateResourceOutput).
@@ -1678,7 +1613,7 @@ impl AssociateResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AssociateAttributeGroupOutput {
+pub struct AssociateAttributeGroupOutput  {
     /// <p>The Amazon resource name (ARN) of the application that was augmented with attributes.</p>
     #[doc(hidden)]
     pub application_arn: std::option::Option<std::string::String>,
@@ -1688,17 +1623,17 @@ pub struct AssociateAttributeGroupOutput {
 }
 impl AssociateAttributeGroupOutput {
     /// <p>The Amazon resource name (ARN) of the application that was augmented with attributes.</p>
-    pub fn application_arn(&self) -> std::option::Option<&str> {
+    pub fn application_arn(&self) -> std::option::Option<& str> {
         self.application_arn.as_deref()
     }
     /// <p>The Amazon resource name (ARN) of the attribute group that contains the application's new attributes.</p>
-    pub fn attribute_group_arn(&self) -> std::option::Option<&str> {
+    pub fn attribute_group_arn(&self) -> std::option::Option<& str> {
         self.attribute_group_arn.as_deref()
     }
 }
 /// See [`AssociateAttributeGroupOutput`](crate::output::AssociateAttributeGroupOutput).
 pub mod associate_attribute_group_output {
-
+    
     /// A builder for [`AssociateAttributeGroupOutput`](crate::output::AssociateAttributeGroupOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1712,12 +1647,8 @@ pub mod associate_attribute_group_output {
             self
         }
         /// <p>The Amazon resource name (ARN) of the application that was augmented with attributes.</p>
-        pub fn set_application_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.application_arn = input;
-            self
+        pub fn set_application_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.application_arn = input; self
         }
         /// <p>The Amazon resource name (ARN) of the attribute group that contains the application's new attributes.</p>
         pub fn attribute_group_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1725,21 +1656,21 @@ pub mod associate_attribute_group_output {
             self
         }
         /// <p>The Amazon resource name (ARN) of the attribute group that contains the application's new attributes.</p>
-        pub fn set_attribute_group_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.attribute_group_arn = input;
-            self
+        pub fn set_attribute_group_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.attribute_group_arn = input; self
         }
         /// Consumes the builder and constructs a [`AssociateAttributeGroupOutput`](crate::output::AssociateAttributeGroupOutput).
         pub fn build(self) -> crate::output::AssociateAttributeGroupOutput {
             crate::output::AssociateAttributeGroupOutput {
-                application_arn: self.application_arn,
-                attribute_group_arn: self.attribute_group_arn,
+                application_arn: self.application_arn
+                ,
+                attribute_group_arn: self.attribute_group_arn
+                ,
             }
         }
     }
+    
+    
 }
 impl AssociateAttributeGroupOutput {
     /// Creates a new builder-style object to manufacture [`AssociateAttributeGroupOutput`](crate::output::AssociateAttributeGroupOutput).
@@ -1747,3 +1678,4 @@ impl AssociateAttributeGroupOutput {
         crate::output::associate_attribute_group_output::Builder::default()
     }
 }
+

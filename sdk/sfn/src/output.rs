@@ -2,20 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateStateMachineOutput {
+pub struct UpdateStateMachineOutput  {
     /// <p>The date and time the state machine was updated.</p>
     #[doc(hidden)]
     pub update_date: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl UpdateStateMachineOutput {
     /// <p>The date and time the state machine was updated.</p>
-    pub fn update_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn update_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.update_date.as_ref()
     }
 }
 /// See [`UpdateStateMachineOutput`](crate::output::UpdateStateMachineOutput).
 pub mod update_state_machine_output {
-
+    
     /// A builder for [`UpdateStateMachineOutput`](crate::output::UpdateStateMachineOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -28,20 +28,19 @@ pub mod update_state_machine_output {
             self
         }
         /// <p>The date and time the state machine was updated.</p>
-        pub fn set_update_date(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.update_date = input;
-            self
+        pub fn set_update_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.update_date = input; self
         }
         /// Consumes the builder and constructs a [`UpdateStateMachineOutput`](crate::output::UpdateStateMachineOutput).
         pub fn build(self) -> crate::output::UpdateStateMachineOutput {
             crate::output::UpdateStateMachineOutput {
-                update_date: self.update_date,
+                update_date: self.update_date
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateStateMachineOutput {
     /// Creates a new builder-style object to manufacture [`UpdateStateMachineOutput`](crate::output::UpdateStateMachineOutput).
@@ -53,19 +52,24 @@ impl UpdateStateMachineOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateMapRunOutput {}
+pub struct UpdateMapRunOutput  {
+}
 /// See [`UpdateMapRunOutput`](crate::output::UpdateMapRunOutput).
 pub mod update_map_run_output {
-
+    
     /// A builder for [`UpdateMapRunOutput`](crate::output::UpdateMapRunOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`UpdateMapRunOutput`](crate::output::UpdateMapRunOutput).
         pub fn build(self) -> crate::output::UpdateMapRunOutput {
-            crate::output::UpdateMapRunOutput {}
+            crate::output::UpdateMapRunOutput {
+            }
         }
     }
+    
+    
 }
 impl UpdateMapRunOutput {
     /// Creates a new builder-style object to manufacture [`UpdateMapRunOutput`](crate::output::UpdateMapRunOutput).
@@ -77,19 +81,24 @@ impl UpdateMapRunOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UntagResourceOutput {}
+pub struct UntagResourceOutput  {
+}
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput).
 pub mod untag_resource_output {
-
+    
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput).
         pub fn build(self) -> crate::output::UntagResourceOutput {
-            crate::output::UntagResourceOutput {}
+            crate::output::UntagResourceOutput {
+            }
         }
     }
+    
+    
 }
 impl UntagResourceOutput {
     /// Creates a new builder-style object to manufacture [`UntagResourceOutput`](crate::output::UntagResourceOutput).
@@ -101,19 +110,24 @@ impl UntagResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TagResourceOutput {}
+pub struct TagResourceOutput  {
+}
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput).
 pub mod tag_resource_output {
-
+    
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput).
         pub fn build(self) -> crate::output::TagResourceOutput {
-            crate::output::TagResourceOutput {}
+            crate::output::TagResourceOutput {
+            }
         }
     }
+    
+    
 }
 impl TagResourceOutput {
     /// Creates a new builder-style object to manufacture [`TagResourceOutput`](crate::output::TagResourceOutput).
@@ -125,20 +139,20 @@ impl TagResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StopExecutionOutput {
+pub struct StopExecutionOutput  {
     /// <p>The date the execution is stopped.</p>
     #[doc(hidden)]
     pub stop_date: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl StopExecutionOutput {
     /// <p>The date the execution is stopped.</p>
-    pub fn stop_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn stop_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.stop_date.as_ref()
     }
 }
 /// See [`StopExecutionOutput`](crate::output::StopExecutionOutput).
 pub mod stop_execution_output {
-
+    
     /// A builder for [`StopExecutionOutput`](crate::output::StopExecutionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -151,20 +165,19 @@ pub mod stop_execution_output {
             self
         }
         /// <p>The date the execution is stopped.</p>
-        pub fn set_stop_date(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.stop_date = input;
-            self
+        pub fn set_stop_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.stop_date = input; self
         }
         /// Consumes the builder and constructs a [`StopExecutionOutput`](crate::output::StopExecutionOutput).
         pub fn build(self) -> crate::output::StopExecutionOutput {
             crate::output::StopExecutionOutput {
-                stop_date: self.stop_date,
+                stop_date: self.stop_date
+                ,
             }
         }
     }
+    
+    
 }
 impl StopExecutionOutput {
     /// Creates a new builder-style object to manufacture [`StopExecutionOutput`](crate::output::StopExecutionOutput).
@@ -176,7 +189,7 @@ impl StopExecutionOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct StartSyncExecutionOutput {
+pub struct StartSyncExecutionOutput  {
     /// <p>The Amazon Resource Name (ARN) that identifies the execution.</p>
     #[doc(hidden)]
     pub execution_arn: std::option::Option<std::string::String>,
@@ -207,8 +220,8 @@ pub struct StartSyncExecutionOutput {
     /// <p>Provides details about execution input or output.</p>
     #[doc(hidden)]
     pub input_details: std::option::Option<crate::model::CloudWatchEventsExecutionDataDetails>,
-    /// <p>The JSON output data of the execution. Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p> <note>
-    /// <p>This field is set only if the execution succeeds. If the execution fails, this field is null.</p>
+    /// <p>The JSON output data of the execution. Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p> <note> 
+    /// <p>This field is set only if the execution succeeds. If the execution fails, this field is null.</p> 
     /// </note>
     #[doc(hidden)]
     pub output: std::option::Option<std::string::String>,
@@ -224,69 +237,65 @@ pub struct StartSyncExecutionOutput {
 }
 impl StartSyncExecutionOutput {
     /// <p>The Amazon Resource Name (ARN) that identifies the execution.</p>
-    pub fn execution_arn(&self) -> std::option::Option<&str> {
+    pub fn execution_arn(&self) -> std::option::Option<& str> {
         self.execution_arn.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) that identifies the state machine.</p>
-    pub fn state_machine_arn(&self) -> std::option::Option<&str> {
+    pub fn state_machine_arn(&self) -> std::option::Option<& str> {
         self.state_machine_arn.as_deref()
     }
     /// <p>The name of the execution.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The date the execution is started.</p>
-    pub fn start_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn start_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.start_date.as_ref()
     }
     /// <p>If the execution has already ended, the date the execution stopped.</p>
-    pub fn stop_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn stop_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.stop_date.as_ref()
     }
     /// <p>The current status of the execution.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::SyncExecutionStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::SyncExecutionStatus> {
         self.status.as_ref()
     }
     /// <p>The error code of the failure.</p>
-    pub fn error(&self) -> std::option::Option<&str> {
+    pub fn error(&self) -> std::option::Option<& str> {
         self.error.as_deref()
     }
     /// <p>A more detailed explanation of the cause of the failure.</p>
-    pub fn cause(&self) -> std::option::Option<&str> {
+    pub fn cause(&self) -> std::option::Option<& str> {
         self.cause.as_deref()
     }
     /// <p>The string that contains the JSON input data of the execution. Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p>
-    pub fn input(&self) -> std::option::Option<&str> {
+    pub fn input(&self) -> std::option::Option<& str> {
         self.input.as_deref()
     }
     /// <p>Provides details about execution input or output.</p>
-    pub fn input_details(
-        &self,
-    ) -> std::option::Option<&crate::model::CloudWatchEventsExecutionDataDetails> {
+    pub fn input_details(&self) -> std::option::Option<& crate::model::CloudWatchEventsExecutionDataDetails> {
         self.input_details.as_ref()
     }
-    /// <p>The JSON output data of the execution. Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p> <note>
-    /// <p>This field is set only if the execution succeeds. If the execution fails, this field is null.</p>
+    /// <p>The JSON output data of the execution. Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p> <note> 
+    /// <p>This field is set only if the execution succeeds. If the execution fails, this field is null.</p> 
     /// </note>
-    pub fn output(&self) -> std::option::Option<&str> {
+    pub fn output(&self) -> std::option::Option<& str> {
         self.output.as_deref()
     }
     /// <p>Provides details about execution input or output.</p>
-    pub fn output_details(
-        &self,
-    ) -> std::option::Option<&crate::model::CloudWatchEventsExecutionDataDetails> {
+    pub fn output_details(&self) -> std::option::Option<& crate::model::CloudWatchEventsExecutionDataDetails> {
         self.output_details.as_ref()
     }
     /// <p>The X-Ray trace header that was passed to the execution.</p>
-    pub fn trace_header(&self) -> std::option::Option<&str> {
+    pub fn trace_header(&self) -> std::option::Option<& str> {
         self.trace_header.as_deref()
     }
     /// <p>An object that describes workflow billing details, including billed duration and memory use.</p>
-    pub fn billing_details(&self) -> std::option::Option<&crate::model::BillingDetails> {
+    pub fn billing_details(&self) -> std::option::Option<& crate::model::BillingDetails> {
         self.billing_details.as_ref()
     }
 }
-impl std::fmt::Debug for StartSyncExecutionOutput {
+impl  std::fmt::Debug for StartSyncExecutionOutput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StartSyncExecutionOutput");
         formatter.field("execution_arn", &self.execution_arn);
@@ -308,7 +317,7 @@ impl std::fmt::Debug for StartSyncExecutionOutput {
 }
 /// See [`StartSyncExecutionOutput`](crate::output::StartSyncExecutionOutput).
 pub mod start_sync_execution_output {
-
+    
     /// A builder for [`StartSyncExecutionOutput`](crate::output::StartSyncExecutionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
@@ -321,11 +330,9 @@ pub mod start_sync_execution_output {
         pub(crate) error: std::option::Option<std::string::String>,
         pub(crate) cause: std::option::Option<std::string::String>,
         pub(crate) input: std::option::Option<std::string::String>,
-        pub(crate) input_details:
-            std::option::Option<crate::model::CloudWatchEventsExecutionDataDetails>,
+        pub(crate) input_details: std::option::Option<crate::model::CloudWatchEventsExecutionDataDetails>,
         pub(crate) output: std::option::Option<std::string::String>,
-        pub(crate) output_details:
-            std::option::Option<crate::model::CloudWatchEventsExecutionDataDetails>,
+        pub(crate) output_details: std::option::Option<crate::model::CloudWatchEventsExecutionDataDetails>,
         pub(crate) trace_header: std::option::Option<std::string::String>,
         pub(crate) billing_details: std::option::Option<crate::model::BillingDetails>,
     }
@@ -336,12 +343,8 @@ pub mod start_sync_execution_output {
             self
         }
         /// <p>The Amazon Resource Name (ARN) that identifies the execution.</p>
-        pub fn set_execution_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.execution_arn = input;
-            self
+        pub fn set_execution_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.execution_arn = input; self
         }
         /// <p>The Amazon Resource Name (ARN) that identifies the state machine.</p>
         pub fn state_machine_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -349,12 +352,8 @@ pub mod start_sync_execution_output {
             self
         }
         /// <p>The Amazon Resource Name (ARN) that identifies the state machine.</p>
-        pub fn set_state_machine_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.state_machine_arn = input;
-            self
+        pub fn set_state_machine_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.state_machine_arn = input; self
         }
         /// <p>The name of the execution.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -363,8 +362,7 @@ pub mod start_sync_execution_output {
         }
         /// <p>The name of the execution.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The date the execution is started.</p>
         pub fn start_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -372,12 +370,8 @@ pub mod start_sync_execution_output {
             self
         }
         /// <p>The date the execution is started.</p>
-        pub fn set_start_date(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.start_date = input;
-            self
+        pub fn set_start_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.start_date = input; self
         }
         /// <p>If the execution has already ended, the date the execution stopped.</p>
         pub fn stop_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -385,12 +379,8 @@ pub mod start_sync_execution_output {
             self
         }
         /// <p>If the execution has already ended, the date the execution stopped.</p>
-        pub fn set_stop_date(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.stop_date = input;
-            self
+        pub fn set_stop_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.stop_date = input; self
         }
         /// <p>The current status of the execution.</p>
         pub fn status(mut self, input: crate::model::SyncExecutionStatus) -> Self {
@@ -398,12 +388,8 @@ pub mod start_sync_execution_output {
             self
         }
         /// <p>The current status of the execution.</p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::SyncExecutionStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::SyncExecutionStatus>) -> Self {
+            self.status = input; self
         }
         /// <p>The error code of the failure.</p>
         pub fn error(mut self, input: impl Into<std::string::String>) -> Self {
@@ -412,8 +398,7 @@ pub mod start_sync_execution_output {
         }
         /// <p>The error code of the failure.</p>
         pub fn set_error(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.error = input;
-            self
+            self.error = input; self
         }
         /// <p>A more detailed explanation of the cause of the failure.</p>
         pub fn cause(mut self, input: impl Into<std::string::String>) -> Self {
@@ -422,8 +407,7 @@ pub mod start_sync_execution_output {
         }
         /// <p>A more detailed explanation of the cause of the failure.</p>
         pub fn set_cause(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.cause = input;
-            self
+            self.cause = input; self
         }
         /// <p>The string that contains the JSON input data of the execution. Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p>
         pub fn input(mut self, input: impl Into<std::string::String>) -> Self {
@@ -432,54 +416,38 @@ pub mod start_sync_execution_output {
         }
         /// <p>The string that contains the JSON input data of the execution. Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p>
         pub fn set_input(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.input = input;
-            self
+            self.input = input; self
         }
         /// <p>Provides details about execution input or output.</p>
-        pub fn input_details(
-            mut self,
-            input: crate::model::CloudWatchEventsExecutionDataDetails,
-        ) -> Self {
+        pub fn input_details(mut self, input: crate::model::CloudWatchEventsExecutionDataDetails) -> Self {
             self.input_details = Some(input);
             self
         }
         /// <p>Provides details about execution input or output.</p>
-        pub fn set_input_details(
-            mut self,
-            input: std::option::Option<crate::model::CloudWatchEventsExecutionDataDetails>,
-        ) -> Self {
-            self.input_details = input;
-            self
+        pub fn set_input_details(mut self, input: std::option::Option<crate::model::CloudWatchEventsExecutionDataDetails>) -> Self {
+            self.input_details = input; self
         }
-        /// <p>The JSON output data of the execution. Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p> <note>
-        /// <p>This field is set only if the execution succeeds. If the execution fails, this field is null.</p>
+        /// <p>The JSON output data of the execution. Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p> <note> 
+        /// <p>This field is set only if the execution succeeds. If the execution fails, this field is null.</p> 
         /// </note>
         pub fn output(mut self, input: impl Into<std::string::String>) -> Self {
             self.output = Some(input.into());
             self
         }
-        /// <p>The JSON output data of the execution. Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p> <note>
-        /// <p>This field is set only if the execution succeeds. If the execution fails, this field is null.</p>
+        /// <p>The JSON output data of the execution. Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p> <note> 
+        /// <p>This field is set only if the execution succeeds. If the execution fails, this field is null.</p> 
         /// </note>
         pub fn set_output(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.output = input;
-            self
+            self.output = input; self
         }
         /// <p>Provides details about execution input or output.</p>
-        pub fn output_details(
-            mut self,
-            input: crate::model::CloudWatchEventsExecutionDataDetails,
-        ) -> Self {
+        pub fn output_details(mut self, input: crate::model::CloudWatchEventsExecutionDataDetails) -> Self {
             self.output_details = Some(input);
             self
         }
         /// <p>Provides details about execution input or output.</p>
-        pub fn set_output_details(
-            mut self,
-            input: std::option::Option<crate::model::CloudWatchEventsExecutionDataDetails>,
-        ) -> Self {
-            self.output_details = input;
-            self
+        pub fn set_output_details(mut self, input: std::option::Option<crate::model::CloudWatchEventsExecutionDataDetails>) -> Self {
+            self.output_details = input; self
         }
         /// <p>The X-Ray trace header that was passed to the execution.</p>
         pub fn trace_header(mut self, input: impl Into<std::string::String>) -> Self {
@@ -488,8 +456,7 @@ pub mod start_sync_execution_output {
         }
         /// <p>The X-Ray trace header that was passed to the execution.</p>
         pub fn set_trace_header(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.trace_header = input;
-            self
+            self.trace_header = input; self
         }
         /// <p>An object that describes workflow billing details, including billed duration and memory use.</p>
         pub fn billing_details(mut self, input: crate::model::BillingDetails) -> Self {
@@ -497,30 +464,40 @@ pub mod start_sync_execution_output {
             self
         }
         /// <p>An object that describes workflow billing details, including billed duration and memory use.</p>
-        pub fn set_billing_details(
-            mut self,
-            input: std::option::Option<crate::model::BillingDetails>,
-        ) -> Self {
-            self.billing_details = input;
-            self
+        pub fn set_billing_details(mut self, input: std::option::Option<crate::model::BillingDetails>) -> Self {
+            self.billing_details = input; self
         }
         /// Consumes the builder and constructs a [`StartSyncExecutionOutput`](crate::output::StartSyncExecutionOutput).
         pub fn build(self) -> crate::output::StartSyncExecutionOutput {
             crate::output::StartSyncExecutionOutput {
-                execution_arn: self.execution_arn,
-                state_machine_arn: self.state_machine_arn,
-                name: self.name,
-                start_date: self.start_date,
-                stop_date: self.stop_date,
-                status: self.status,
-                error: self.error,
-                cause: self.cause,
-                input: self.input,
-                input_details: self.input_details,
-                output: self.output,
-                output_details: self.output_details,
-                trace_header: self.trace_header,
-                billing_details: self.billing_details,
+                execution_arn: self.execution_arn
+                ,
+                state_machine_arn: self.state_machine_arn
+                ,
+                name: self.name
+                ,
+                start_date: self.start_date
+                ,
+                stop_date: self.stop_date
+                ,
+                status: self.status
+                ,
+                error: self.error
+                ,
+                cause: self.cause
+                ,
+                input: self.input
+                ,
+                input_details: self.input_details
+                ,
+                output: self.output
+                ,
+                output_details: self.output_details
+                ,
+                trace_header: self.trace_header
+                ,
+                billing_details: self.billing_details
+                ,
             }
         }
     }
@@ -544,6 +521,8 @@ pub mod start_sync_execution_output {
             formatter.finish()
         }
     }
+    
+    
 }
 impl StartSyncExecutionOutput {
     /// Creates a new builder-style object to manufacture [`StartSyncExecutionOutput`](crate::output::StartSyncExecutionOutput).
@@ -555,7 +534,7 @@ impl StartSyncExecutionOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StartExecutionOutput {
+pub struct StartExecutionOutput  {
     /// <p>The Amazon Resource Name (ARN) that identifies the execution.</p>
     #[doc(hidden)]
     pub execution_arn: std::option::Option<std::string::String>,
@@ -565,17 +544,17 @@ pub struct StartExecutionOutput {
 }
 impl StartExecutionOutput {
     /// <p>The Amazon Resource Name (ARN) that identifies the execution.</p>
-    pub fn execution_arn(&self) -> std::option::Option<&str> {
+    pub fn execution_arn(&self) -> std::option::Option<& str> {
         self.execution_arn.as_deref()
     }
     /// <p>The date the execution is started.</p>
-    pub fn start_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn start_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.start_date.as_ref()
     }
 }
 /// See [`StartExecutionOutput`](crate::output::StartExecutionOutput).
 pub mod start_execution_output {
-
+    
     /// A builder for [`StartExecutionOutput`](crate::output::StartExecutionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -589,12 +568,8 @@ pub mod start_execution_output {
             self
         }
         /// <p>The Amazon Resource Name (ARN) that identifies the execution.</p>
-        pub fn set_execution_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.execution_arn = input;
-            self
+        pub fn set_execution_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.execution_arn = input; self
         }
         /// <p>The date the execution is started.</p>
         pub fn start_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -602,21 +577,21 @@ pub mod start_execution_output {
             self
         }
         /// <p>The date the execution is started.</p>
-        pub fn set_start_date(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.start_date = input;
-            self
+        pub fn set_start_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.start_date = input; self
         }
         /// Consumes the builder and constructs a [`StartExecutionOutput`](crate::output::StartExecutionOutput).
         pub fn build(self) -> crate::output::StartExecutionOutput {
             crate::output::StartExecutionOutput {
-                execution_arn: self.execution_arn,
-                start_date: self.start_date,
+                execution_arn: self.execution_arn
+                ,
+                start_date: self.start_date
+                ,
             }
         }
     }
+    
+    
 }
 impl StartExecutionOutput {
     /// Creates a new builder-style object to manufacture [`StartExecutionOutput`](crate::output::StartExecutionOutput).
@@ -628,19 +603,24 @@ impl StartExecutionOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SendTaskSuccessOutput {}
+pub struct SendTaskSuccessOutput  {
+}
 /// See [`SendTaskSuccessOutput`](crate::output::SendTaskSuccessOutput).
 pub mod send_task_success_output {
-
+    
     /// A builder for [`SendTaskSuccessOutput`](crate::output::SendTaskSuccessOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`SendTaskSuccessOutput`](crate::output::SendTaskSuccessOutput).
         pub fn build(self) -> crate::output::SendTaskSuccessOutput {
-            crate::output::SendTaskSuccessOutput {}
+            crate::output::SendTaskSuccessOutput {
+            }
         }
     }
+    
+    
 }
 impl SendTaskSuccessOutput {
     /// Creates a new builder-style object to manufacture [`SendTaskSuccessOutput`](crate::output::SendTaskSuccessOutput).
@@ -652,19 +632,24 @@ impl SendTaskSuccessOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SendTaskHeartbeatOutput {}
+pub struct SendTaskHeartbeatOutput  {
+}
 /// See [`SendTaskHeartbeatOutput`](crate::output::SendTaskHeartbeatOutput).
 pub mod send_task_heartbeat_output {
-
+    
     /// A builder for [`SendTaskHeartbeatOutput`](crate::output::SendTaskHeartbeatOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`SendTaskHeartbeatOutput`](crate::output::SendTaskHeartbeatOutput).
         pub fn build(self) -> crate::output::SendTaskHeartbeatOutput {
-            crate::output::SendTaskHeartbeatOutput {}
+            crate::output::SendTaskHeartbeatOutput {
+            }
         }
     }
+    
+    
 }
 impl SendTaskHeartbeatOutput {
     /// Creates a new builder-style object to manufacture [`SendTaskHeartbeatOutput`](crate::output::SendTaskHeartbeatOutput).
@@ -676,19 +661,24 @@ impl SendTaskHeartbeatOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SendTaskFailureOutput {}
+pub struct SendTaskFailureOutput  {
+}
 /// See [`SendTaskFailureOutput`](crate::output::SendTaskFailureOutput).
 pub mod send_task_failure_output {
-
+    
     /// A builder for [`SendTaskFailureOutput`](crate::output::SendTaskFailureOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`SendTaskFailureOutput`](crate::output::SendTaskFailureOutput).
         pub fn build(self) -> crate::output::SendTaskFailureOutput {
-            crate::output::SendTaskFailureOutput {}
+            crate::output::SendTaskFailureOutput {
+            }
         }
     }
+    
+    
 }
 impl SendTaskFailureOutput {
     /// Creates a new builder-style object to manufacture [`SendTaskFailureOutput`](crate::output::SendTaskFailureOutput).
@@ -700,20 +690,20 @@ impl SendTaskFailureOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListTagsForResourceOutput {
+pub struct ListTagsForResourceOutput  {
     /// <p>An array of tags associated with the resource.</p>
     #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl ListTagsForResourceOutput {
     /// <p>An array of tags associated with the resource.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+    pub fn tags(&self) -> std::option::Option<& [crate::model::Tag]> {
         self.tags.as_deref()
     }
 }
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
 pub mod list_tags_for_resource_output {
-
+    
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -727,23 +717,24 @@ pub mod list_tags_for_resource_output {
         /// <p>An array of tags associated with the resource.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input);
-            self.tags = Some(v);
-            self
+                            v.push(input);
+                            self.tags = Some(v);
+                            self
         }
         /// <p>An array of tags associated with the resource.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::model::Tag>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
         pub fn build(self) -> crate::output::ListTagsForResourceOutput {
-            crate::output::ListTagsForResourceOutput { tags: self.tags }
+            crate::output::ListTagsForResourceOutput {
+                tags: self.tags
+                ,
+            }
         }
     }
+    
+    
 }
 impl ListTagsForResourceOutput {
     /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
@@ -755,7 +746,7 @@ impl ListTagsForResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListStateMachinesOutput {
+pub struct ListStateMachinesOutput  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub state_machines: std::option::Option<std::vec::Vec<crate::model::StateMachineListItem>>,
@@ -765,22 +756,21 @@ pub struct ListStateMachinesOutput {
 }
 impl ListStateMachinesOutput {
     #[allow(missing_docs)] // documentation missing in model
-    pub fn state_machines(&self) -> std::option::Option<&[crate::model::StateMachineListItem]> {
+    pub fn state_machines(&self) -> std::option::Option<& [crate::model::StateMachineListItem]> {
         self.state_machines.as_deref()
     }
     /// <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an <i>HTTP 400 InvalidToken</i> error.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListStateMachinesOutput`](crate::output::ListStateMachinesOutput).
 pub mod list_state_machines_output {
-
+    
     /// A builder for [`ListStateMachinesOutput`](crate::output::ListStateMachinesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) state_machines:
-            std::option::Option<std::vec::Vec<crate::model::StateMachineListItem>>,
+        pub(crate) state_machines: std::option::Option<std::vec::Vec<crate::model::StateMachineListItem>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -790,17 +780,13 @@ pub mod list_state_machines_output {
         ///
         pub fn state_machines(mut self, input: crate::model::StateMachineListItem) -> Self {
             let mut v = self.state_machines.unwrap_or_default();
-            v.push(input);
-            self.state_machines = Some(v);
-            self
+                            v.push(input);
+                            self.state_machines = Some(v);
+                            self
         }
         #[allow(missing_docs)] // documentation missing in model
-        pub fn set_state_machines(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::StateMachineListItem>>,
-        ) -> Self {
-            self.state_machines = input;
-            self
+        pub fn set_state_machines(mut self, input: std::option::Option<std::vec::Vec<crate::model::StateMachineListItem>>) -> Self {
+            self.state_machines = input; self
         }
         /// <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an <i>HTTP 400 InvalidToken</i> error.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -809,17 +795,20 @@ pub mod list_state_machines_output {
         }
         /// <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an <i>HTTP 400 InvalidToken</i> error.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListStateMachinesOutput`](crate::output::ListStateMachinesOutput).
         pub fn build(self) -> crate::output::ListStateMachinesOutput {
             crate::output::ListStateMachinesOutput {
-                state_machines: self.state_machines,
-                next_token: self.next_token,
+                state_machines: self.state_machines
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListStateMachinesOutput {
     /// Creates a new builder-style object to manufacture [`ListStateMachinesOutput`](crate::output::ListStateMachinesOutput).
@@ -831,7 +820,7 @@ impl ListStateMachinesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListMapRunsOutput {
+pub struct ListMapRunsOutput  {
     /// <p>An array that lists information related to a Map Run, such as the Amazon Resource Name (ARN) of the Map Run and the ARN of the state machine that started the Map Run.</p>
     #[doc(hidden)]
     pub map_runs: std::option::Option<std::vec::Vec<crate::model::MapRunListItem>>,
@@ -841,17 +830,17 @@ pub struct ListMapRunsOutput {
 }
 impl ListMapRunsOutput {
     /// <p>An array that lists information related to a Map Run, such as the Amazon Resource Name (ARN) of the Map Run and the ARN of the state machine that started the Map Run.</p>
-    pub fn map_runs(&self) -> std::option::Option<&[crate::model::MapRunListItem]> {
+    pub fn map_runs(&self) -> std::option::Option<& [crate::model::MapRunListItem]> {
         self.map_runs.as_deref()
     }
     /// <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an <i>HTTP 400 InvalidToken</i> error.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListMapRunsOutput`](crate::output::ListMapRunsOutput).
 pub mod list_map_runs_output {
-
+    
     /// A builder for [`ListMapRunsOutput`](crate::output::ListMapRunsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -866,17 +855,13 @@ pub mod list_map_runs_output {
         /// <p>An array that lists information related to a Map Run, such as the Amazon Resource Name (ARN) of the Map Run and the ARN of the state machine that started the Map Run.</p>
         pub fn map_runs(mut self, input: crate::model::MapRunListItem) -> Self {
             let mut v = self.map_runs.unwrap_or_default();
-            v.push(input);
-            self.map_runs = Some(v);
-            self
+                            v.push(input);
+                            self.map_runs = Some(v);
+                            self
         }
         /// <p>An array that lists information related to a Map Run, such as the Amazon Resource Name (ARN) of the Map Run and the ARN of the state machine that started the Map Run.</p>
-        pub fn set_map_runs(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::MapRunListItem>>,
-        ) -> Self {
-            self.map_runs = input;
-            self
+        pub fn set_map_runs(mut self, input: std::option::Option<std::vec::Vec<crate::model::MapRunListItem>>) -> Self {
+            self.map_runs = input; self
         }
         /// <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an <i>HTTP 400 InvalidToken</i> error.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -885,17 +870,20 @@ pub mod list_map_runs_output {
         }
         /// <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an <i>HTTP 400 InvalidToken</i> error.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListMapRunsOutput`](crate::output::ListMapRunsOutput).
         pub fn build(self) -> crate::output::ListMapRunsOutput {
             crate::output::ListMapRunsOutput {
-                map_runs: self.map_runs,
-                next_token: self.next_token,
+                map_runs: self.map_runs
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListMapRunsOutput {
     /// Creates a new builder-style object to manufacture [`ListMapRunsOutput`](crate::output::ListMapRunsOutput).
@@ -907,7 +895,7 @@ impl ListMapRunsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListExecutionsOutput {
+pub struct ListExecutionsOutput  {
     /// <p>The list of matching executions.</p>
     #[doc(hidden)]
     pub executions: std::option::Option<std::vec::Vec<crate::model::ExecutionListItem>>,
@@ -917,17 +905,17 @@ pub struct ListExecutionsOutput {
 }
 impl ListExecutionsOutput {
     /// <p>The list of matching executions.</p>
-    pub fn executions(&self) -> std::option::Option<&[crate::model::ExecutionListItem]> {
+    pub fn executions(&self) -> std::option::Option<& [crate::model::ExecutionListItem]> {
         self.executions.as_deref()
     }
     /// <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an <i>HTTP 400 InvalidToken</i> error.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListExecutionsOutput`](crate::output::ListExecutionsOutput).
 pub mod list_executions_output {
-
+    
     /// A builder for [`ListExecutionsOutput`](crate::output::ListExecutionsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -942,17 +930,13 @@ pub mod list_executions_output {
         /// <p>The list of matching executions.</p>
         pub fn executions(mut self, input: crate::model::ExecutionListItem) -> Self {
             let mut v = self.executions.unwrap_or_default();
-            v.push(input);
-            self.executions = Some(v);
-            self
+                            v.push(input);
+                            self.executions = Some(v);
+                            self
         }
         /// <p>The list of matching executions.</p>
-        pub fn set_executions(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ExecutionListItem>>,
-        ) -> Self {
-            self.executions = input;
-            self
+        pub fn set_executions(mut self, input: std::option::Option<std::vec::Vec<crate::model::ExecutionListItem>>) -> Self {
+            self.executions = input; self
         }
         /// <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an <i>HTTP 400 InvalidToken</i> error.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -961,17 +945,20 @@ pub mod list_executions_output {
         }
         /// <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an <i>HTTP 400 InvalidToken</i> error.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListExecutionsOutput`](crate::output::ListExecutionsOutput).
         pub fn build(self) -> crate::output::ListExecutionsOutput {
             crate::output::ListExecutionsOutput {
-                executions: self.executions,
-                next_token: self.next_token,
+                executions: self.executions
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListExecutionsOutput {
     /// Creates a new builder-style object to manufacture [`ListExecutionsOutput`](crate::output::ListExecutionsOutput).
@@ -983,7 +970,7 @@ impl ListExecutionsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListActivitiesOutput {
+pub struct ListActivitiesOutput  {
     /// <p>The list of activities.</p>
     #[doc(hidden)]
     pub activities: std::option::Option<std::vec::Vec<crate::model::ActivityListItem>>,
@@ -993,17 +980,17 @@ pub struct ListActivitiesOutput {
 }
 impl ListActivitiesOutput {
     /// <p>The list of activities.</p>
-    pub fn activities(&self) -> std::option::Option<&[crate::model::ActivityListItem]> {
+    pub fn activities(&self) -> std::option::Option<& [crate::model::ActivityListItem]> {
         self.activities.as_deref()
     }
     /// <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an <i>HTTP 400 InvalidToken</i> error.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListActivitiesOutput`](crate::output::ListActivitiesOutput).
 pub mod list_activities_output {
-
+    
     /// A builder for [`ListActivitiesOutput`](crate::output::ListActivitiesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1018,17 +1005,13 @@ pub mod list_activities_output {
         /// <p>The list of activities.</p>
         pub fn activities(mut self, input: crate::model::ActivityListItem) -> Self {
             let mut v = self.activities.unwrap_or_default();
-            v.push(input);
-            self.activities = Some(v);
-            self
+                            v.push(input);
+                            self.activities = Some(v);
+                            self
         }
         /// <p>The list of activities.</p>
-        pub fn set_activities(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ActivityListItem>>,
-        ) -> Self {
-            self.activities = input;
-            self
+        pub fn set_activities(mut self, input: std::option::Option<std::vec::Vec<crate::model::ActivityListItem>>) -> Self {
+            self.activities = input; self
         }
         /// <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an <i>HTTP 400 InvalidToken</i> error.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1037,17 +1020,20 @@ pub mod list_activities_output {
         }
         /// <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an <i>HTTP 400 InvalidToken</i> error.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListActivitiesOutput`](crate::output::ListActivitiesOutput).
         pub fn build(self) -> crate::output::ListActivitiesOutput {
             crate::output::ListActivitiesOutput {
-                activities: self.activities,
-                next_token: self.next_token,
+                activities: self.activities
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListActivitiesOutput {
     /// Creates a new builder-style object to manufacture [`ListActivitiesOutput`](crate::output::ListActivitiesOutput).
@@ -1059,7 +1045,7 @@ impl ListActivitiesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetExecutionHistoryOutput {
+pub struct GetExecutionHistoryOutput  {
     /// <p>The list of events that occurred in the execution.</p>
     #[doc(hidden)]
     pub events: std::option::Option<std::vec::Vec<crate::model::HistoryEvent>>,
@@ -1069,17 +1055,17 @@ pub struct GetExecutionHistoryOutput {
 }
 impl GetExecutionHistoryOutput {
     /// <p>The list of events that occurred in the execution.</p>
-    pub fn events(&self) -> std::option::Option<&[crate::model::HistoryEvent]> {
+    pub fn events(&self) -> std::option::Option<& [crate::model::HistoryEvent]> {
         self.events.as_deref()
     }
     /// <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an <i>HTTP 400 InvalidToken</i> error.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`GetExecutionHistoryOutput`](crate::output::GetExecutionHistoryOutput).
 pub mod get_execution_history_output {
-
+    
     /// A builder for [`GetExecutionHistoryOutput`](crate::output::GetExecutionHistoryOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1094,17 +1080,13 @@ pub mod get_execution_history_output {
         /// <p>The list of events that occurred in the execution.</p>
         pub fn events(mut self, input: crate::model::HistoryEvent) -> Self {
             let mut v = self.events.unwrap_or_default();
-            v.push(input);
-            self.events = Some(v);
-            self
+                            v.push(input);
+                            self.events = Some(v);
+                            self
         }
         /// <p>The list of events that occurred in the execution.</p>
-        pub fn set_events(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::HistoryEvent>>,
-        ) -> Self {
-            self.events = input;
-            self
+        pub fn set_events(mut self, input: std::option::Option<std::vec::Vec<crate::model::HistoryEvent>>) -> Self {
+            self.events = input; self
         }
         /// <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an <i>HTTP 400 InvalidToken</i> error.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1113,17 +1095,20 @@ pub mod get_execution_history_output {
         }
         /// <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an <i>HTTP 400 InvalidToken</i> error.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`GetExecutionHistoryOutput`](crate::output::GetExecutionHistoryOutput).
         pub fn build(self) -> crate::output::GetExecutionHistoryOutput {
             crate::output::GetExecutionHistoryOutput {
-                events: self.events,
-                next_token: self.next_token,
+                events: self.events
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl GetExecutionHistoryOutput {
     /// Creates a new builder-style object to manufacture [`GetExecutionHistoryOutput`](crate::output::GetExecutionHistoryOutput).
@@ -1135,7 +1120,7 @@ impl GetExecutionHistoryOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct GetActivityTaskOutput {
+pub struct GetActivityTaskOutput  {
     /// <p>A token that identifies the scheduled task. This token must be copied and included in subsequent calls to <code>SendTaskHeartbeat</code>, <code>SendTaskSuccess</code> or <code>SendTaskFailure</code> in order to report the progress or completion of the task.</p>
     #[doc(hidden)]
     pub task_token: std::option::Option<std::string::String>,
@@ -1145,15 +1130,15 @@ pub struct GetActivityTaskOutput {
 }
 impl GetActivityTaskOutput {
     /// <p>A token that identifies the scheduled task. This token must be copied and included in subsequent calls to <code>SendTaskHeartbeat</code>, <code>SendTaskSuccess</code> or <code>SendTaskFailure</code> in order to report the progress or completion of the task.</p>
-    pub fn task_token(&self) -> std::option::Option<&str> {
+    pub fn task_token(&self) -> std::option::Option<& str> {
         self.task_token.as_deref()
     }
     /// <p>The string that contains the JSON input data for the task. Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p>
-    pub fn input(&self) -> std::option::Option<&str> {
+    pub fn input(&self) -> std::option::Option<& str> {
         self.input.as_deref()
     }
 }
-impl std::fmt::Debug for GetActivityTaskOutput {
+impl  std::fmt::Debug for GetActivityTaskOutput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetActivityTaskOutput");
         formatter.field("task_token", &self.task_token);
@@ -1163,7 +1148,7 @@ impl std::fmt::Debug for GetActivityTaskOutput {
 }
 /// See [`GetActivityTaskOutput`](crate::output::GetActivityTaskOutput).
 pub mod get_activity_task_output {
-
+    
     /// A builder for [`GetActivityTaskOutput`](crate::output::GetActivityTaskOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
@@ -1178,8 +1163,7 @@ pub mod get_activity_task_output {
         }
         /// <p>A token that identifies the scheduled task. This token must be copied and included in subsequent calls to <code>SendTaskHeartbeat</code>, <code>SendTaskSuccess</code> or <code>SendTaskFailure</code> in order to report the progress or completion of the task.</p>
         pub fn set_task_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.task_token = input;
-            self
+            self.task_token = input; self
         }
         /// <p>The string that contains the JSON input data for the task. Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p>
         pub fn input(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1188,14 +1172,15 @@ pub mod get_activity_task_output {
         }
         /// <p>The string that contains the JSON input data for the task. Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p>
         pub fn set_input(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.input = input;
-            self
+            self.input = input; self
         }
         /// Consumes the builder and constructs a [`GetActivityTaskOutput`](crate::output::GetActivityTaskOutput).
         pub fn build(self) -> crate::output::GetActivityTaskOutput {
             crate::output::GetActivityTaskOutput {
-                task_token: self.task_token,
-                input: self.input,
+                task_token: self.task_token
+                ,
+                input: self.input
+                ,
             }
         }
     }
@@ -1207,6 +1192,8 @@ pub mod get_activity_task_output {
             formatter.finish()
         }
     }
+    
+    
 }
 impl GetActivityTaskOutput {
     /// Creates a new builder-style object to manufacture [`GetActivityTaskOutput`](crate::output::GetActivityTaskOutput).
@@ -1218,7 +1205,7 @@ impl GetActivityTaskOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct DescribeStateMachineForExecutionOutput {
+pub struct DescribeStateMachineForExecutionOutput  {
     /// <p>The Amazon Resource Name (ARN) of the state machine associated with the execution.</p>
     #[doc(hidden)]
     pub state_machine_arn: std::option::Option<std::string::String>,
@@ -1249,47 +1236,43 @@ pub struct DescribeStateMachineForExecutionOutput {
 }
 impl DescribeStateMachineForExecutionOutput {
     /// <p>The Amazon Resource Name (ARN) of the state machine associated with the execution.</p>
-    pub fn state_machine_arn(&self) -> std::option::Option<&str> {
+    pub fn state_machine_arn(&self) -> std::option::Option<& str> {
         self.state_machine_arn.as_deref()
     }
     /// <p>The name of the state machine associated with the execution.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The Amazon States Language definition of the state machine. See <a href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-amazon-states-language.html">Amazon States Language</a>.</p>
-    pub fn definition(&self) -> std::option::Option<&str> {
+    pub fn definition(&self) -> std::option::Option<& str> {
         self.definition.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role of the State Machine for the execution. </p>
-    pub fn role_arn(&self) -> std::option::Option<&str> {
+    pub fn role_arn(&self) -> std::option::Option<& str> {
         self.role_arn.as_deref()
     }
     /// <p>The date and time the state machine associated with an execution was updated. For a newly created state machine, this is the creation date.</p>
-    pub fn update_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn update_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.update_date.as_ref()
     }
     /// <p>The <code>LoggingConfiguration</code> data type is used to set CloudWatch Logs options.</p>
-    pub fn logging_configuration(
-        &self,
-    ) -> std::option::Option<&crate::model::LoggingConfiguration> {
+    pub fn logging_configuration(&self) -> std::option::Option<& crate::model::LoggingConfiguration> {
         self.logging_configuration.as_ref()
     }
     /// <p>Selects whether X-Ray tracing is enabled.</p>
-    pub fn tracing_configuration(
-        &self,
-    ) -> std::option::Option<&crate::model::TracingConfiguration> {
+    pub fn tracing_configuration(&self) -> std::option::Option<& crate::model::TracingConfiguration> {
         self.tracing_configuration.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the Map Run that started the child workflow execution. This field is returned only if the <code>executionArn</code> is a child workflow execution that was started by a Distributed Map state.</p>
-    pub fn map_run_arn(&self) -> std::option::Option<&str> {
+    pub fn map_run_arn(&self) -> std::option::Option<& str> {
         self.map_run_arn.as_deref()
     }
     /// <p>A user-defined or an auto-generated string that identifies a <code>Map</code> state. This ﬁeld is returned only if the <code>executionArn</code> is a child workflow execution that was started by a Distributed Map state.</p>
-    pub fn label(&self) -> std::option::Option<&str> {
+    pub fn label(&self) -> std::option::Option<& str> {
         self.label.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeStateMachineForExecutionOutput {
+impl  std::fmt::Debug for DescribeStateMachineForExecutionOutput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeStateMachineForExecutionOutput");
         formatter.field("state_machine_arn", &self.state_machine_arn);
@@ -1306,7 +1289,7 @@ impl std::fmt::Debug for DescribeStateMachineForExecutionOutput {
 }
 /// See [`DescribeStateMachineForExecutionOutput`](crate::output::DescribeStateMachineForExecutionOutput).
 pub mod describe_state_machine_for_execution_output {
-
+    
     /// A builder for [`DescribeStateMachineForExecutionOutput`](crate::output::DescribeStateMachineForExecutionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
@@ -1327,12 +1310,8 @@ pub mod describe_state_machine_for_execution_output {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the state machine associated with the execution.</p>
-        pub fn set_state_machine_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.state_machine_arn = input;
-            self
+        pub fn set_state_machine_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.state_machine_arn = input; self
         }
         /// <p>The name of the state machine associated with the execution.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1341,8 +1320,7 @@ pub mod describe_state_machine_for_execution_output {
         }
         /// <p>The name of the state machine associated with the execution.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The Amazon States Language definition of the state machine. See <a href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-amazon-states-language.html">Amazon States Language</a>.</p>
         pub fn definition(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1351,8 +1329,7 @@ pub mod describe_state_machine_for_execution_output {
         }
         /// <p>The Amazon States Language definition of the state machine. See <a href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-amazon-states-language.html">Amazon States Language</a>.</p>
         pub fn set_definition(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.definition = input;
-            self
+            self.definition = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the IAM role of the State Machine for the execution. </p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1361,8 +1338,7 @@ pub mod describe_state_machine_for_execution_output {
         }
         /// <p>The Amazon Resource Name (ARN) of the IAM role of the State Machine for the execution. </p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.role_arn = input;
-            self
+            self.role_arn = input; self
         }
         /// <p>The date and time the state machine associated with an execution was updated. For a newly created state machine, this is the creation date.</p>
         pub fn update_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -1370,12 +1346,8 @@ pub mod describe_state_machine_for_execution_output {
             self
         }
         /// <p>The date and time the state machine associated with an execution was updated. For a newly created state machine, this is the creation date.</p>
-        pub fn set_update_date(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.update_date = input;
-            self
+        pub fn set_update_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.update_date = input; self
         }
         /// <p>The <code>LoggingConfiguration</code> data type is used to set CloudWatch Logs options.</p>
         pub fn logging_configuration(mut self, input: crate::model::LoggingConfiguration) -> Self {
@@ -1383,12 +1355,8 @@ pub mod describe_state_machine_for_execution_output {
             self
         }
         /// <p>The <code>LoggingConfiguration</code> data type is used to set CloudWatch Logs options.</p>
-        pub fn set_logging_configuration(
-            mut self,
-            input: std::option::Option<crate::model::LoggingConfiguration>,
-        ) -> Self {
-            self.logging_configuration = input;
-            self
+        pub fn set_logging_configuration(mut self, input: std::option::Option<crate::model::LoggingConfiguration>) -> Self {
+            self.logging_configuration = input; self
         }
         /// <p>Selects whether X-Ray tracing is enabled.</p>
         pub fn tracing_configuration(mut self, input: crate::model::TracingConfiguration) -> Self {
@@ -1396,12 +1364,8 @@ pub mod describe_state_machine_for_execution_output {
             self
         }
         /// <p>Selects whether X-Ray tracing is enabled.</p>
-        pub fn set_tracing_configuration(
-            mut self,
-            input: std::option::Option<crate::model::TracingConfiguration>,
-        ) -> Self {
-            self.tracing_configuration = input;
-            self
+        pub fn set_tracing_configuration(mut self, input: std::option::Option<crate::model::TracingConfiguration>) -> Self {
+            self.tracing_configuration = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the Map Run that started the child workflow execution. This field is returned only if the <code>executionArn</code> is a child workflow execution that was started by a Distributed Map state.</p>
         pub fn map_run_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1410,8 +1374,7 @@ pub mod describe_state_machine_for_execution_output {
         }
         /// <p>The Amazon Resource Name (ARN) of the Map Run that started the child workflow execution. This field is returned only if the <code>executionArn</code> is a child workflow execution that was started by a Distributed Map state.</p>
         pub fn set_map_run_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.map_run_arn = input;
-            self
+            self.map_run_arn = input; self
         }
         /// <p>A user-defined or an auto-generated string that identifies a <code>Map</code> state. This ﬁeld is returned only if the <code>executionArn</code> is a child workflow execution that was started by a Distributed Map state.</p>
         pub fn label(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1420,21 +1383,29 @@ pub mod describe_state_machine_for_execution_output {
         }
         /// <p>A user-defined or an auto-generated string that identifies a <code>Map</code> state. This ﬁeld is returned only if the <code>executionArn</code> is a child workflow execution that was started by a Distributed Map state.</p>
         pub fn set_label(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.label = input;
-            self
+            self.label = input; self
         }
         /// Consumes the builder and constructs a [`DescribeStateMachineForExecutionOutput`](crate::output::DescribeStateMachineForExecutionOutput).
         pub fn build(self) -> crate::output::DescribeStateMachineForExecutionOutput {
             crate::output::DescribeStateMachineForExecutionOutput {
-                state_machine_arn: self.state_machine_arn,
-                name: self.name,
-                definition: self.definition,
-                role_arn: self.role_arn,
-                update_date: self.update_date,
-                logging_configuration: self.logging_configuration,
-                tracing_configuration: self.tracing_configuration,
-                map_run_arn: self.map_run_arn,
-                label: self.label,
+                state_machine_arn: self.state_machine_arn
+                ,
+                name: self.name
+                ,
+                definition: self.definition
+                ,
+                role_arn: self.role_arn
+                ,
+                update_date: self.update_date
+                ,
+                logging_configuration: self.logging_configuration
+                ,
+                tracing_configuration: self.tracing_configuration
+                ,
+                map_run_arn: self.map_run_arn
+                ,
+                label: self.label
+                ,
             }
         }
     }
@@ -1453,6 +1424,8 @@ pub mod describe_state_machine_for_execution_output {
             formatter.finish()
         }
     }
+    
+    
 }
 impl DescribeStateMachineForExecutionOutput {
     /// Creates a new builder-style object to manufacture [`DescribeStateMachineForExecutionOutput`](crate::output::DescribeStateMachineForExecutionOutput).
@@ -1464,19 +1437,19 @@ impl DescribeStateMachineForExecutionOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct DescribeStateMachineOutput {
+pub struct DescribeStateMachineOutput  {
     /// <p>The Amazon Resource Name (ARN) that identifies the state machine.</p>
     #[doc(hidden)]
     pub state_machine_arn: std::option::Option<std::string::String>,
-    /// <p>The name of the state machine.</p>
-    /// <p>A name must <i>not</i> contain:</p>
-    /// <ul>
-    /// <li> <p>white space</p> </li>
-    /// <li> <p>brackets <code>&lt; &gt; { } [ ]</code> </p> </li>
-    /// <li> <p>wildcard characters <code>? *</code> </p> </li>
-    /// <li> <p>special characters <code>" # % \ ^ | ~ ` $ &amp; , ; : /</code> </p> </li>
-    /// <li> <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p> </li>
-    /// </ul>
+    /// <p>The name of the state machine.</p> 
+    /// <p>A name must <i>not</i> contain:</p> 
+    /// <ul> 
+    /// <li> <p>white space</p> </li> 
+    /// <li> <p>brackets <code>&lt; &gt; { } [ ]</code> </p> </li> 
+    /// <li> <p>wildcard characters <code>? *</code> </p> </li> 
+    /// <li> <p>special characters <code>" # % \ ^ | ~ ` $ &amp; , ; : /</code> </p> </li> 
+    /// <li> <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p> </li> 
+    /// </ul> 
     /// <p>To enable logging with CloudWatch Logs, the name should only contain 0-9, A-Z, a-z, - and _.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -1507,60 +1480,56 @@ pub struct DescribeStateMachineOutput {
 }
 impl DescribeStateMachineOutput {
     /// <p>The Amazon Resource Name (ARN) that identifies the state machine.</p>
-    pub fn state_machine_arn(&self) -> std::option::Option<&str> {
+    pub fn state_machine_arn(&self) -> std::option::Option<& str> {
         self.state_machine_arn.as_deref()
     }
-    /// <p>The name of the state machine.</p>
-    /// <p>A name must <i>not</i> contain:</p>
-    /// <ul>
-    /// <li> <p>white space</p> </li>
-    /// <li> <p>brackets <code>&lt; &gt; { } [ ]</code> </p> </li>
-    /// <li> <p>wildcard characters <code>? *</code> </p> </li>
-    /// <li> <p>special characters <code>" # % \ ^ | ~ ` $ &amp; , ; : /</code> </p> </li>
-    /// <li> <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p> </li>
-    /// </ul>
+    /// <p>The name of the state machine.</p> 
+    /// <p>A name must <i>not</i> contain:</p> 
+    /// <ul> 
+    /// <li> <p>white space</p> </li> 
+    /// <li> <p>brackets <code>&lt; &gt; { } [ ]</code> </p> </li> 
+    /// <li> <p>wildcard characters <code>? *</code> </p> </li> 
+    /// <li> <p>special characters <code>" # % \ ^ | ~ ` $ &amp; , ; : /</code> </p> </li> 
+    /// <li> <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p> </li> 
+    /// </ul> 
     /// <p>To enable logging with CloudWatch Logs, the name should only contain 0-9, A-Z, a-z, - and _.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The current status of the state machine.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::StateMachineStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::StateMachineStatus> {
         self.status.as_ref()
     }
     /// <p>The Amazon States Language definition of the state machine. See <a href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-amazon-states-language.html">Amazon States Language</a>.</p>
-    pub fn definition(&self) -> std::option::Option<&str> {
+    pub fn definition(&self) -> std::option::Option<& str> {
         self.definition.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role used when creating this state machine. (The IAM role maintains security by granting Step Functions access to Amazon Web Services resources.)</p>
-    pub fn role_arn(&self) -> std::option::Option<&str> {
+    pub fn role_arn(&self) -> std::option::Option<& str> {
         self.role_arn.as_deref()
     }
     /// <p>The <code>type</code> of the state machine (<code>STANDARD</code> or <code>EXPRESS</code>).</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::model::StateMachineType> {
+    pub fn r#type(&self) -> std::option::Option<& crate::model::StateMachineType> {
         self.r#type.as_ref()
     }
     /// <p>The date the state machine is created.</p>
-    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_date.as_ref()
     }
     /// <p>The <code>LoggingConfiguration</code> data type is used to set CloudWatch Logs options.</p>
-    pub fn logging_configuration(
-        &self,
-    ) -> std::option::Option<&crate::model::LoggingConfiguration> {
+    pub fn logging_configuration(&self) -> std::option::Option<& crate::model::LoggingConfiguration> {
         self.logging_configuration.as_ref()
     }
     /// <p>Selects whether X-Ray tracing is enabled.</p>
-    pub fn tracing_configuration(
-        &self,
-    ) -> std::option::Option<&crate::model::TracingConfiguration> {
+    pub fn tracing_configuration(&self) -> std::option::Option<& crate::model::TracingConfiguration> {
         self.tracing_configuration.as_ref()
     }
     /// <p>A user-defined or an auto-generated string that identifies a <code>Map</code> state. This parameter is present only if the <code>stateMachineArn</code> specified in input is a qualified state machine ARN.</p>
-    pub fn label(&self) -> std::option::Option<&str> {
+    pub fn label(&self) -> std::option::Option<& str> {
         self.label.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeStateMachineOutput {
+impl  std::fmt::Debug for DescribeStateMachineOutput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeStateMachineOutput");
         formatter.field("state_machine_arn", &self.state_machine_arn);
@@ -1578,7 +1547,7 @@ impl std::fmt::Debug for DescribeStateMachineOutput {
 }
 /// See [`DescribeStateMachineOutput`](crate::output::DescribeStateMachineOutput).
 pub mod describe_state_machine_output {
-
+    
     /// A builder for [`DescribeStateMachineOutput`](crate::output::DescribeStateMachineOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
@@ -1600,40 +1569,35 @@ pub mod describe_state_machine_output {
             self
         }
         /// <p>The Amazon Resource Name (ARN) that identifies the state machine.</p>
-        pub fn set_state_machine_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.state_machine_arn = input;
-            self
+        pub fn set_state_machine_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.state_machine_arn = input; self
         }
-        /// <p>The name of the state machine.</p>
-        /// <p>A name must <i>not</i> contain:</p>
-        /// <ul>
-        /// <li> <p>white space</p> </li>
-        /// <li> <p>brackets <code>&lt; &gt; { } [ ]</code> </p> </li>
-        /// <li> <p>wildcard characters <code>? *</code> </p> </li>
-        /// <li> <p>special characters <code>" # % \ ^ | ~ ` $ &amp; , ; : /</code> </p> </li>
-        /// <li> <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p> </li>
-        /// </ul>
+        /// <p>The name of the state machine.</p> 
+        /// <p>A name must <i>not</i> contain:</p> 
+        /// <ul> 
+        /// <li> <p>white space</p> </li> 
+        /// <li> <p>brackets <code>&lt; &gt; { } [ ]</code> </p> </li> 
+        /// <li> <p>wildcard characters <code>? *</code> </p> </li> 
+        /// <li> <p>special characters <code>" # % \ ^ | ~ ` $ &amp; , ; : /</code> </p> </li> 
+        /// <li> <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p> </li> 
+        /// </ul> 
         /// <p>To enable logging with CloudWatch Logs, the name should only contain 0-9, A-Z, a-z, - and _.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
         }
-        /// <p>The name of the state machine.</p>
-        /// <p>A name must <i>not</i> contain:</p>
-        /// <ul>
-        /// <li> <p>white space</p> </li>
-        /// <li> <p>brackets <code>&lt; &gt; { } [ ]</code> </p> </li>
-        /// <li> <p>wildcard characters <code>? *</code> </p> </li>
-        /// <li> <p>special characters <code>" # % \ ^ | ~ ` $ &amp; , ; : /</code> </p> </li>
-        /// <li> <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p> </li>
-        /// </ul>
+        /// <p>The name of the state machine.</p> 
+        /// <p>A name must <i>not</i> contain:</p> 
+        /// <ul> 
+        /// <li> <p>white space</p> </li> 
+        /// <li> <p>brackets <code>&lt; &gt; { } [ ]</code> </p> </li> 
+        /// <li> <p>wildcard characters <code>? *</code> </p> </li> 
+        /// <li> <p>special characters <code>" # % \ ^ | ~ ` $ &amp; , ; : /</code> </p> </li> 
+        /// <li> <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p> </li> 
+        /// </ul> 
         /// <p>To enable logging with CloudWatch Logs, the name should only contain 0-9, A-Z, a-z, - and _.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The current status of the state machine.</p>
         pub fn status(mut self, input: crate::model::StateMachineStatus) -> Self {
@@ -1641,12 +1605,8 @@ pub mod describe_state_machine_output {
             self
         }
         /// <p>The current status of the state machine.</p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::StateMachineStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::StateMachineStatus>) -> Self {
+            self.status = input; self
         }
         /// <p>The Amazon States Language definition of the state machine. See <a href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-amazon-states-language.html">Amazon States Language</a>.</p>
         pub fn definition(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1655,8 +1615,7 @@ pub mod describe_state_machine_output {
         }
         /// <p>The Amazon States Language definition of the state machine. See <a href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-amazon-states-language.html">Amazon States Language</a>.</p>
         pub fn set_definition(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.definition = input;
-            self
+            self.definition = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the IAM role used when creating this state machine. (The IAM role maintains security by granting Step Functions access to Amazon Web Services resources.)</p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1665,8 +1624,7 @@ pub mod describe_state_machine_output {
         }
         /// <p>The Amazon Resource Name (ARN) of the IAM role used when creating this state machine. (The IAM role maintains security by granting Step Functions access to Amazon Web Services resources.)</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.role_arn = input;
-            self
+            self.role_arn = input; self
         }
         /// <p>The <code>type</code> of the state machine (<code>STANDARD</code> or <code>EXPRESS</code>).</p>
         pub fn r#type(mut self, input: crate::model::StateMachineType) -> Self {
@@ -1674,12 +1632,8 @@ pub mod describe_state_machine_output {
             self
         }
         /// <p>The <code>type</code> of the state machine (<code>STANDARD</code> or <code>EXPRESS</code>).</p>
-        pub fn set_type(
-            mut self,
-            input: std::option::Option<crate::model::StateMachineType>,
-        ) -> Self {
-            self.r#type = input;
-            self
+        pub fn set_type(mut self, input: std::option::Option<crate::model::StateMachineType>) -> Self {
+            self.r#type = input; self
         }
         /// <p>The date the state machine is created.</p>
         pub fn creation_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -1687,12 +1641,8 @@ pub mod describe_state_machine_output {
             self
         }
         /// <p>The date the state machine is created.</p>
-        pub fn set_creation_date(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.creation_date = input;
-            self
+        pub fn set_creation_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.creation_date = input; self
         }
         /// <p>The <code>LoggingConfiguration</code> data type is used to set CloudWatch Logs options.</p>
         pub fn logging_configuration(mut self, input: crate::model::LoggingConfiguration) -> Self {
@@ -1700,12 +1650,8 @@ pub mod describe_state_machine_output {
             self
         }
         /// <p>The <code>LoggingConfiguration</code> data type is used to set CloudWatch Logs options.</p>
-        pub fn set_logging_configuration(
-            mut self,
-            input: std::option::Option<crate::model::LoggingConfiguration>,
-        ) -> Self {
-            self.logging_configuration = input;
-            self
+        pub fn set_logging_configuration(mut self, input: std::option::Option<crate::model::LoggingConfiguration>) -> Self {
+            self.logging_configuration = input; self
         }
         /// <p>Selects whether X-Ray tracing is enabled.</p>
         pub fn tracing_configuration(mut self, input: crate::model::TracingConfiguration) -> Self {
@@ -1713,12 +1659,8 @@ pub mod describe_state_machine_output {
             self
         }
         /// <p>Selects whether X-Ray tracing is enabled.</p>
-        pub fn set_tracing_configuration(
-            mut self,
-            input: std::option::Option<crate::model::TracingConfiguration>,
-        ) -> Self {
-            self.tracing_configuration = input;
-            self
+        pub fn set_tracing_configuration(mut self, input: std::option::Option<crate::model::TracingConfiguration>) -> Self {
+            self.tracing_configuration = input; self
         }
         /// <p>A user-defined or an auto-generated string that identifies a <code>Map</code> state. This parameter is present only if the <code>stateMachineArn</code> specified in input is a qualified state machine ARN.</p>
         pub fn label(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1727,22 +1669,31 @@ pub mod describe_state_machine_output {
         }
         /// <p>A user-defined or an auto-generated string that identifies a <code>Map</code> state. This parameter is present only if the <code>stateMachineArn</code> specified in input is a qualified state machine ARN.</p>
         pub fn set_label(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.label = input;
-            self
+            self.label = input; self
         }
         /// Consumes the builder and constructs a [`DescribeStateMachineOutput`](crate::output::DescribeStateMachineOutput).
         pub fn build(self) -> crate::output::DescribeStateMachineOutput {
             crate::output::DescribeStateMachineOutput {
-                state_machine_arn: self.state_machine_arn,
-                name: self.name,
-                status: self.status,
-                definition: self.definition,
-                role_arn: self.role_arn,
-                r#type: self.r#type,
-                creation_date: self.creation_date,
-                logging_configuration: self.logging_configuration,
-                tracing_configuration: self.tracing_configuration,
-                label: self.label,
+                state_machine_arn: self.state_machine_arn
+                ,
+                name: self.name
+                ,
+                status: self.status
+                ,
+                definition: self.definition
+                ,
+                role_arn: self.role_arn
+                ,
+                r#type: self.r#type
+                ,
+                creation_date: self.creation_date
+                ,
+                logging_configuration: self.logging_configuration
+                ,
+                tracing_configuration: self.tracing_configuration
+                ,
+                label: self.label
+                ,
             }
         }
     }
@@ -1762,6 +1713,8 @@ pub mod describe_state_machine_output {
             formatter.finish()
         }
     }
+    
+    
 }
 impl DescribeStateMachineOutput {
     /// Creates a new builder-style object to manufacture [`DescribeStateMachineOutput`](crate::output::DescribeStateMachineOutput).
@@ -1773,7 +1726,7 @@ impl DescribeStateMachineOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeMapRunOutput {
+pub struct DescribeMapRunOutput  {
     /// <p>The Amazon Resource Name (ARN) that identifies a Map Run.</p>
     #[doc(hidden)]
     pub map_run_arn: std::option::Option<std::string::String>,
@@ -1807,23 +1760,23 @@ pub struct DescribeMapRunOutput {
 }
 impl DescribeMapRunOutput {
     /// <p>The Amazon Resource Name (ARN) that identifies a Map Run.</p>
-    pub fn map_run_arn(&self) -> std::option::Option<&str> {
+    pub fn map_run_arn(&self) -> std::option::Option<& str> {
         self.map_run_arn.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) that identifies the execution in which the Map Run was started.</p>
-    pub fn execution_arn(&self) -> std::option::Option<&str> {
+    pub fn execution_arn(&self) -> std::option::Option<& str> {
         self.execution_arn.as_deref()
     }
     /// <p>The current status of the Map Run.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::MapRunStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::MapRunStatus> {
         self.status.as_ref()
     }
     /// <p>The date when the Map Run was started.</p>
-    pub fn start_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn start_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.start_date.as_ref()
     }
     /// <p>The date when the Map Run was stopped.</p>
-    pub fn stop_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn stop_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.stop_date.as_ref()
     }
     /// <p>The maximum number of child workflow executions configured to run in parallel for the Map Run at the same time.</p>
@@ -1839,17 +1792,17 @@ impl DescribeMapRunOutput {
         self.tolerated_failure_count
     }
     /// <p>A JSON object that contains information about the total number of items, and the item count for each processing status, such as <code>pending</code> and <code>failed</code>.</p>
-    pub fn item_counts(&self) -> std::option::Option<&crate::model::MapRunItemCounts> {
+    pub fn item_counts(&self) -> std::option::Option<& crate::model::MapRunItemCounts> {
         self.item_counts.as_ref()
     }
     /// <p>A JSON object that contains information about the total number of child workflow executions for the Map Run, and the count of child workflow executions for each status, such as <code>failed</code> and <code>succeeded</code>.</p>
-    pub fn execution_counts(&self) -> std::option::Option<&crate::model::MapRunExecutionCounts> {
+    pub fn execution_counts(&self) -> std::option::Option<& crate::model::MapRunExecutionCounts> {
         self.execution_counts.as_ref()
     }
 }
 /// See [`DescribeMapRunOutput`](crate::output::DescribeMapRunOutput).
 pub mod describe_map_run_output {
-
+    
     /// A builder for [`DescribeMapRunOutput`](crate::output::DescribeMapRunOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1872,8 +1825,7 @@ pub mod describe_map_run_output {
         }
         /// <p>The Amazon Resource Name (ARN) that identifies a Map Run.</p>
         pub fn set_map_run_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.map_run_arn = input;
-            self
+            self.map_run_arn = input; self
         }
         /// <p>The Amazon Resource Name (ARN) that identifies the execution in which the Map Run was started.</p>
         pub fn execution_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1881,12 +1833,8 @@ pub mod describe_map_run_output {
             self
         }
         /// <p>The Amazon Resource Name (ARN) that identifies the execution in which the Map Run was started.</p>
-        pub fn set_execution_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.execution_arn = input;
-            self
+        pub fn set_execution_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.execution_arn = input; self
         }
         /// <p>The current status of the Map Run.</p>
         pub fn status(mut self, input: crate::model::MapRunStatus) -> Self {
@@ -1894,12 +1842,8 @@ pub mod describe_map_run_output {
             self
         }
         /// <p>The current status of the Map Run.</p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::MapRunStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::MapRunStatus>) -> Self {
+            self.status = input; self
         }
         /// <p>The date when the Map Run was started.</p>
         pub fn start_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -1907,12 +1851,8 @@ pub mod describe_map_run_output {
             self
         }
         /// <p>The date when the Map Run was started.</p>
-        pub fn set_start_date(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.start_date = input;
-            self
+        pub fn set_start_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.start_date = input; self
         }
         /// <p>The date when the Map Run was stopped.</p>
         pub fn stop_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -1920,12 +1860,8 @@ pub mod describe_map_run_output {
             self
         }
         /// <p>The date when the Map Run was stopped.</p>
-        pub fn set_stop_date(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.stop_date = input;
-            self
+        pub fn set_stop_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.stop_date = input; self
         }
         /// <p>The maximum number of child workflow executions configured to run in parallel for the Map Run at the same time.</p>
         pub fn max_concurrency(mut self, input: i32) -> Self {
@@ -1934,8 +1870,7 @@ pub mod describe_map_run_output {
         }
         /// <p>The maximum number of child workflow executions configured to run in parallel for the Map Run at the same time.</p>
         pub fn set_max_concurrency(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_concurrency = input;
-            self
+            self.max_concurrency = input; self
         }
         /// <p>The maximum percentage of failed child workflow executions before the Map Run fails.</p>
         pub fn tolerated_failure_percentage(mut self, input: f32) -> Self {
@@ -1944,8 +1879,7 @@ pub mod describe_map_run_output {
         }
         /// <p>The maximum percentage of failed child workflow executions before the Map Run fails.</p>
         pub fn set_tolerated_failure_percentage(mut self, input: std::option::Option<f32>) -> Self {
-            self.tolerated_failure_percentage = input;
-            self
+            self.tolerated_failure_percentage = input; self
         }
         /// <p>The maximum number of failed child workflow executions before the Map Run fails.</p>
         pub fn tolerated_failure_count(mut self, input: i64) -> Self {
@@ -1954,8 +1888,7 @@ pub mod describe_map_run_output {
         }
         /// <p>The maximum number of failed child workflow executions before the Map Run fails.</p>
         pub fn set_tolerated_failure_count(mut self, input: std::option::Option<i64>) -> Self {
-            self.tolerated_failure_count = input;
-            self
+            self.tolerated_failure_count = input; self
         }
         /// <p>A JSON object that contains information about the total number of items, and the item count for each processing status, such as <code>pending</code> and <code>failed</code>.</p>
         pub fn item_counts(mut self, input: crate::model::MapRunItemCounts) -> Self {
@@ -1963,12 +1896,8 @@ pub mod describe_map_run_output {
             self
         }
         /// <p>A JSON object that contains information about the total number of items, and the item count for each processing status, such as <code>pending</code> and <code>failed</code>.</p>
-        pub fn set_item_counts(
-            mut self,
-            input: std::option::Option<crate::model::MapRunItemCounts>,
-        ) -> Self {
-            self.item_counts = input;
-            self
+        pub fn set_item_counts(mut self, input: std::option::Option<crate::model::MapRunItemCounts>) -> Self {
+            self.item_counts = input; self
         }
         /// <p>A JSON object that contains information about the total number of child workflow executions for the Map Run, and the count of child workflow executions for each status, such as <code>failed</code> and <code>succeeded</code>.</p>
         pub fn execution_counts(mut self, input: crate::model::MapRunExecutionCounts) -> Self {
@@ -1976,29 +1905,40 @@ pub mod describe_map_run_output {
             self
         }
         /// <p>A JSON object that contains information about the total number of child workflow executions for the Map Run, and the count of child workflow executions for each status, such as <code>failed</code> and <code>succeeded</code>.</p>
-        pub fn set_execution_counts(
-            mut self,
-            input: std::option::Option<crate::model::MapRunExecutionCounts>,
-        ) -> Self {
-            self.execution_counts = input;
-            self
+        pub fn set_execution_counts(mut self, input: std::option::Option<crate::model::MapRunExecutionCounts>) -> Self {
+            self.execution_counts = input; self
         }
         /// Consumes the builder and constructs a [`DescribeMapRunOutput`](crate::output::DescribeMapRunOutput).
         pub fn build(self) -> crate::output::DescribeMapRunOutput {
             crate::output::DescribeMapRunOutput {
-                map_run_arn: self.map_run_arn,
-                execution_arn: self.execution_arn,
-                status: self.status,
-                start_date: self.start_date,
-                stop_date: self.stop_date,
-                max_concurrency: self.max_concurrency.unwrap_or_default(),
-                tolerated_failure_percentage: self.tolerated_failure_percentage.unwrap_or_default(),
-                tolerated_failure_count: self.tolerated_failure_count.unwrap_or_default(),
-                item_counts: self.item_counts,
-                execution_counts: self.execution_counts,
+                map_run_arn: self.map_run_arn
+                ,
+                execution_arn: self.execution_arn
+                ,
+                status: self.status
+                ,
+                start_date: self.start_date
+                ,
+                stop_date: self.stop_date
+                ,
+                max_concurrency: self.max_concurrency
+                    .unwrap_or_default()
+                ,
+                tolerated_failure_percentage: self.tolerated_failure_percentage
+                    .unwrap_or_default()
+                ,
+                tolerated_failure_count: self.tolerated_failure_count
+                    .unwrap_or_default()
+                ,
+                item_counts: self.item_counts
+                ,
+                execution_counts: self.execution_counts
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeMapRunOutput {
     /// Creates a new builder-style object to manufacture [`DescribeMapRunOutput`](crate::output::DescribeMapRunOutput).
@@ -2010,22 +1950,22 @@ impl DescribeMapRunOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct DescribeExecutionOutput {
+pub struct DescribeExecutionOutput  {
     /// <p>The Amazon Resource Name (ARN) that identifies the execution.</p>
     #[doc(hidden)]
     pub execution_arn: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the executed stated machine.</p>
     #[doc(hidden)]
     pub state_machine_arn: std::option::Option<std::string::String>,
-    /// <p>The name of the execution.</p>
-    /// <p>A name must <i>not</i> contain:</p>
-    /// <ul>
-    /// <li> <p>white space</p> </li>
-    /// <li> <p>brackets <code>&lt; &gt; { } [ ]</code> </p> </li>
-    /// <li> <p>wildcard characters <code>? *</code> </p> </li>
-    /// <li> <p>special characters <code>" # % \ ^ | ~ ` $ &amp; , ; : /</code> </p> </li>
-    /// <li> <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p> </li>
-    /// </ul>
+    /// <p>The name of the execution.</p> 
+    /// <p>A name must <i>not</i> contain:</p> 
+    /// <ul> 
+    /// <li> <p>white space</p> </li> 
+    /// <li> <p>brackets <code>&lt; &gt; { } [ ]</code> </p> </li> 
+    /// <li> <p>wildcard characters <code>? *</code> </p> </li> 
+    /// <li> <p>special characters <code>" # % \ ^ | ~ ` $ &amp; , ; : /</code> </p> </li> 
+    /// <li> <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p> </li> 
+    /// </ul> 
     /// <p>To enable logging with CloudWatch Logs, the name should only contain 0-9, A-Z, a-z, - and _.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -2044,8 +1984,8 @@ pub struct DescribeExecutionOutput {
     /// <p>Provides details about execution input or output.</p>
     #[doc(hidden)]
     pub input_details: std::option::Option<crate::model::CloudWatchEventsExecutionDataDetails>,
-    /// <p>The JSON output data of the execution. Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p> <note>
-    /// <p>This field is set only if the execution succeeds. If the execution fails, this field is null.</p>
+    /// <p>The JSON output data of the execution. Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p> <note> 
+    /// <p>This field is set only if the execution succeeds. If the execution fails, this field is null.</p> 
     /// </note>
     #[doc(hidden)]
     pub output: std::option::Option<std::string::String>,
@@ -2067,78 +2007,74 @@ pub struct DescribeExecutionOutput {
 }
 impl DescribeExecutionOutput {
     /// <p>The Amazon Resource Name (ARN) that identifies the execution.</p>
-    pub fn execution_arn(&self) -> std::option::Option<&str> {
+    pub fn execution_arn(&self) -> std::option::Option<& str> {
         self.execution_arn.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the executed stated machine.</p>
-    pub fn state_machine_arn(&self) -> std::option::Option<&str> {
+    pub fn state_machine_arn(&self) -> std::option::Option<& str> {
         self.state_machine_arn.as_deref()
     }
-    /// <p>The name of the execution.</p>
-    /// <p>A name must <i>not</i> contain:</p>
-    /// <ul>
-    /// <li> <p>white space</p> </li>
-    /// <li> <p>brackets <code>&lt; &gt; { } [ ]</code> </p> </li>
-    /// <li> <p>wildcard characters <code>? *</code> </p> </li>
-    /// <li> <p>special characters <code>" # % \ ^ | ~ ` $ &amp; , ; : /</code> </p> </li>
-    /// <li> <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p> </li>
-    /// </ul>
+    /// <p>The name of the execution.</p> 
+    /// <p>A name must <i>not</i> contain:</p> 
+    /// <ul> 
+    /// <li> <p>white space</p> </li> 
+    /// <li> <p>brackets <code>&lt; &gt; { } [ ]</code> </p> </li> 
+    /// <li> <p>wildcard characters <code>? *</code> </p> </li> 
+    /// <li> <p>special characters <code>" # % \ ^ | ~ ` $ &amp; , ; : /</code> </p> </li> 
+    /// <li> <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p> </li> 
+    /// </ul> 
     /// <p>To enable logging with CloudWatch Logs, the name should only contain 0-9, A-Z, a-z, - and _.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The current status of the execution.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::ExecutionStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::ExecutionStatus> {
         self.status.as_ref()
     }
     /// <p>The date the execution is started.</p>
-    pub fn start_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn start_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.start_date.as_ref()
     }
     /// <p>If the execution has already ended, the date the execution stopped.</p>
-    pub fn stop_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn stop_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.stop_date.as_ref()
     }
     /// <p>The string that contains the JSON input data of the execution. Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p>
-    pub fn input(&self) -> std::option::Option<&str> {
+    pub fn input(&self) -> std::option::Option<& str> {
         self.input.as_deref()
     }
     /// <p>Provides details about execution input or output.</p>
-    pub fn input_details(
-        &self,
-    ) -> std::option::Option<&crate::model::CloudWatchEventsExecutionDataDetails> {
+    pub fn input_details(&self) -> std::option::Option<& crate::model::CloudWatchEventsExecutionDataDetails> {
         self.input_details.as_ref()
     }
-    /// <p>The JSON output data of the execution. Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p> <note>
-    /// <p>This field is set only if the execution succeeds. If the execution fails, this field is null.</p>
+    /// <p>The JSON output data of the execution. Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p> <note> 
+    /// <p>This field is set only if the execution succeeds. If the execution fails, this field is null.</p> 
     /// </note>
-    pub fn output(&self) -> std::option::Option<&str> {
+    pub fn output(&self) -> std::option::Option<& str> {
         self.output.as_deref()
     }
     /// <p>Provides details about execution input or output.</p>
-    pub fn output_details(
-        &self,
-    ) -> std::option::Option<&crate::model::CloudWatchEventsExecutionDataDetails> {
+    pub fn output_details(&self) -> std::option::Option<& crate::model::CloudWatchEventsExecutionDataDetails> {
         self.output_details.as_ref()
     }
     /// <p>The X-Ray trace header that was passed to the execution.</p>
-    pub fn trace_header(&self) -> std::option::Option<&str> {
+    pub fn trace_header(&self) -> std::option::Option<& str> {
         self.trace_header.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) that identifies a Map Run, which dispatched this execution.</p>
-    pub fn map_run_arn(&self) -> std::option::Option<&str> {
+    pub fn map_run_arn(&self) -> std::option::Option<& str> {
         self.map_run_arn.as_deref()
     }
     /// <p>The error string if the state machine execution failed.</p>
-    pub fn error(&self) -> std::option::Option<&str> {
+    pub fn error(&self) -> std::option::Option<& str> {
         self.error.as_deref()
     }
     /// <p>The cause string if the state machine execution failed.</p>
-    pub fn cause(&self) -> std::option::Option<&str> {
+    pub fn cause(&self) -> std::option::Option<& str> {
         self.cause.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeExecutionOutput {
+impl  std::fmt::Debug for DescribeExecutionOutput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeExecutionOutput");
         formatter.field("execution_arn", &self.execution_arn);
@@ -2160,7 +2096,7 @@ impl std::fmt::Debug for DescribeExecutionOutput {
 }
 /// See [`DescribeExecutionOutput`](crate::output::DescribeExecutionOutput).
 pub mod describe_execution_output {
-
+    
     /// A builder for [`DescribeExecutionOutput`](crate::output::DescribeExecutionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
@@ -2171,11 +2107,9 @@ pub mod describe_execution_output {
         pub(crate) start_date: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) stop_date: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) input: std::option::Option<std::string::String>,
-        pub(crate) input_details:
-            std::option::Option<crate::model::CloudWatchEventsExecutionDataDetails>,
+        pub(crate) input_details: std::option::Option<crate::model::CloudWatchEventsExecutionDataDetails>,
         pub(crate) output: std::option::Option<std::string::String>,
-        pub(crate) output_details:
-            std::option::Option<crate::model::CloudWatchEventsExecutionDataDetails>,
+        pub(crate) output_details: std::option::Option<crate::model::CloudWatchEventsExecutionDataDetails>,
         pub(crate) trace_header: std::option::Option<std::string::String>,
         pub(crate) map_run_arn: std::option::Option<std::string::String>,
         pub(crate) error: std::option::Option<std::string::String>,
@@ -2188,12 +2122,8 @@ pub mod describe_execution_output {
             self
         }
         /// <p>The Amazon Resource Name (ARN) that identifies the execution.</p>
-        pub fn set_execution_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.execution_arn = input;
-            self
+        pub fn set_execution_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.execution_arn = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the executed stated machine.</p>
         pub fn state_machine_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2201,40 +2131,35 @@ pub mod describe_execution_output {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the executed stated machine.</p>
-        pub fn set_state_machine_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.state_machine_arn = input;
-            self
+        pub fn set_state_machine_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.state_machine_arn = input; self
         }
-        /// <p>The name of the execution.</p>
-        /// <p>A name must <i>not</i> contain:</p>
-        /// <ul>
-        /// <li> <p>white space</p> </li>
-        /// <li> <p>brackets <code>&lt; &gt; { } [ ]</code> </p> </li>
-        /// <li> <p>wildcard characters <code>? *</code> </p> </li>
-        /// <li> <p>special characters <code>" # % \ ^ | ~ ` $ &amp; , ; : /</code> </p> </li>
-        /// <li> <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p> </li>
-        /// </ul>
+        /// <p>The name of the execution.</p> 
+        /// <p>A name must <i>not</i> contain:</p> 
+        /// <ul> 
+        /// <li> <p>white space</p> </li> 
+        /// <li> <p>brackets <code>&lt; &gt; { } [ ]</code> </p> </li> 
+        /// <li> <p>wildcard characters <code>? *</code> </p> </li> 
+        /// <li> <p>special characters <code>" # % \ ^ | ~ ` $ &amp; , ; : /</code> </p> </li> 
+        /// <li> <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p> </li> 
+        /// </ul> 
         /// <p>To enable logging with CloudWatch Logs, the name should only contain 0-9, A-Z, a-z, - and _.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
         }
-        /// <p>The name of the execution.</p>
-        /// <p>A name must <i>not</i> contain:</p>
-        /// <ul>
-        /// <li> <p>white space</p> </li>
-        /// <li> <p>brackets <code>&lt; &gt; { } [ ]</code> </p> </li>
-        /// <li> <p>wildcard characters <code>? *</code> </p> </li>
-        /// <li> <p>special characters <code>" # % \ ^ | ~ ` $ &amp; , ; : /</code> </p> </li>
-        /// <li> <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p> </li>
-        /// </ul>
+        /// <p>The name of the execution.</p> 
+        /// <p>A name must <i>not</i> contain:</p> 
+        /// <ul> 
+        /// <li> <p>white space</p> </li> 
+        /// <li> <p>brackets <code>&lt; &gt; { } [ ]</code> </p> </li> 
+        /// <li> <p>wildcard characters <code>? *</code> </p> </li> 
+        /// <li> <p>special characters <code>" # % \ ^ | ~ ` $ &amp; , ; : /</code> </p> </li> 
+        /// <li> <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p> </li> 
+        /// </ul> 
         /// <p>To enable logging with CloudWatch Logs, the name should only contain 0-9, A-Z, a-z, - and _.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The current status of the execution.</p>
         pub fn status(mut self, input: crate::model::ExecutionStatus) -> Self {
@@ -2242,12 +2167,8 @@ pub mod describe_execution_output {
             self
         }
         /// <p>The current status of the execution.</p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::ExecutionStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::ExecutionStatus>) -> Self {
+            self.status = input; self
         }
         /// <p>The date the execution is started.</p>
         pub fn start_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -2255,12 +2176,8 @@ pub mod describe_execution_output {
             self
         }
         /// <p>The date the execution is started.</p>
-        pub fn set_start_date(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.start_date = input;
-            self
+        pub fn set_start_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.start_date = input; self
         }
         /// <p>If the execution has already ended, the date the execution stopped.</p>
         pub fn stop_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -2268,12 +2185,8 @@ pub mod describe_execution_output {
             self
         }
         /// <p>If the execution has already ended, the date the execution stopped.</p>
-        pub fn set_stop_date(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.stop_date = input;
-            self
+        pub fn set_stop_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.stop_date = input; self
         }
         /// <p>The string that contains the JSON input data of the execution. Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p>
         pub fn input(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2282,54 +2195,38 @@ pub mod describe_execution_output {
         }
         /// <p>The string that contains the JSON input data of the execution. Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p>
         pub fn set_input(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.input = input;
-            self
+            self.input = input; self
         }
         /// <p>Provides details about execution input or output.</p>
-        pub fn input_details(
-            mut self,
-            input: crate::model::CloudWatchEventsExecutionDataDetails,
-        ) -> Self {
+        pub fn input_details(mut self, input: crate::model::CloudWatchEventsExecutionDataDetails) -> Self {
             self.input_details = Some(input);
             self
         }
         /// <p>Provides details about execution input or output.</p>
-        pub fn set_input_details(
-            mut self,
-            input: std::option::Option<crate::model::CloudWatchEventsExecutionDataDetails>,
-        ) -> Self {
-            self.input_details = input;
-            self
+        pub fn set_input_details(mut self, input: std::option::Option<crate::model::CloudWatchEventsExecutionDataDetails>) -> Self {
+            self.input_details = input; self
         }
-        /// <p>The JSON output data of the execution. Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p> <note>
-        /// <p>This field is set only if the execution succeeds. If the execution fails, this field is null.</p>
+        /// <p>The JSON output data of the execution. Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p> <note> 
+        /// <p>This field is set only if the execution succeeds. If the execution fails, this field is null.</p> 
         /// </note>
         pub fn output(mut self, input: impl Into<std::string::String>) -> Self {
             self.output = Some(input.into());
             self
         }
-        /// <p>The JSON output data of the execution. Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p> <note>
-        /// <p>This field is set only if the execution succeeds. If the execution fails, this field is null.</p>
+        /// <p>The JSON output data of the execution. Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p> <note> 
+        /// <p>This field is set only if the execution succeeds. If the execution fails, this field is null.</p> 
         /// </note>
         pub fn set_output(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.output = input;
-            self
+            self.output = input; self
         }
         /// <p>Provides details about execution input or output.</p>
-        pub fn output_details(
-            mut self,
-            input: crate::model::CloudWatchEventsExecutionDataDetails,
-        ) -> Self {
+        pub fn output_details(mut self, input: crate::model::CloudWatchEventsExecutionDataDetails) -> Self {
             self.output_details = Some(input);
             self
         }
         /// <p>Provides details about execution input or output.</p>
-        pub fn set_output_details(
-            mut self,
-            input: std::option::Option<crate::model::CloudWatchEventsExecutionDataDetails>,
-        ) -> Self {
-            self.output_details = input;
-            self
+        pub fn set_output_details(mut self, input: std::option::Option<crate::model::CloudWatchEventsExecutionDataDetails>) -> Self {
+            self.output_details = input; self
         }
         /// <p>The X-Ray trace header that was passed to the execution.</p>
         pub fn trace_header(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2338,8 +2235,7 @@ pub mod describe_execution_output {
         }
         /// <p>The X-Ray trace header that was passed to the execution.</p>
         pub fn set_trace_header(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.trace_header = input;
-            self
+            self.trace_header = input; self
         }
         /// <p>The Amazon Resource Name (ARN) that identifies a Map Run, which dispatched this execution.</p>
         pub fn map_run_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2348,8 +2244,7 @@ pub mod describe_execution_output {
         }
         /// <p>The Amazon Resource Name (ARN) that identifies a Map Run, which dispatched this execution.</p>
         pub fn set_map_run_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.map_run_arn = input;
-            self
+            self.map_run_arn = input; self
         }
         /// <p>The error string if the state machine execution failed.</p>
         pub fn error(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2358,8 +2253,7 @@ pub mod describe_execution_output {
         }
         /// <p>The error string if the state machine execution failed.</p>
         pub fn set_error(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.error = input;
-            self
+            self.error = input; self
         }
         /// <p>The cause string if the state machine execution failed.</p>
         pub fn cause(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2368,26 +2262,39 @@ pub mod describe_execution_output {
         }
         /// <p>The cause string if the state machine execution failed.</p>
         pub fn set_cause(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.cause = input;
-            self
+            self.cause = input; self
         }
         /// Consumes the builder and constructs a [`DescribeExecutionOutput`](crate::output::DescribeExecutionOutput).
         pub fn build(self) -> crate::output::DescribeExecutionOutput {
             crate::output::DescribeExecutionOutput {
-                execution_arn: self.execution_arn,
-                state_machine_arn: self.state_machine_arn,
-                name: self.name,
-                status: self.status,
-                start_date: self.start_date,
-                stop_date: self.stop_date,
-                input: self.input,
-                input_details: self.input_details,
-                output: self.output,
-                output_details: self.output_details,
-                trace_header: self.trace_header,
-                map_run_arn: self.map_run_arn,
-                error: self.error,
-                cause: self.cause,
+                execution_arn: self.execution_arn
+                ,
+                state_machine_arn: self.state_machine_arn
+                ,
+                name: self.name
+                ,
+                status: self.status
+                ,
+                start_date: self.start_date
+                ,
+                stop_date: self.stop_date
+                ,
+                input: self.input
+                ,
+                input_details: self.input_details
+                ,
+                output: self.output
+                ,
+                output_details: self.output_details
+                ,
+                trace_header: self.trace_header
+                ,
+                map_run_arn: self.map_run_arn
+                ,
+                error: self.error
+                ,
+                cause: self.cause
+                ,
             }
         }
     }
@@ -2411,6 +2318,8 @@ pub mod describe_execution_output {
             formatter.finish()
         }
     }
+    
+    
 }
 impl DescribeExecutionOutput {
     /// Creates a new builder-style object to manufacture [`DescribeExecutionOutput`](crate::output::DescribeExecutionOutput).
@@ -2422,19 +2331,19 @@ impl DescribeExecutionOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeActivityOutput {
+pub struct DescribeActivityOutput  {
     /// <p>The Amazon Resource Name (ARN) that identifies the activity.</p>
     #[doc(hidden)]
     pub activity_arn: std::option::Option<std::string::String>,
-    /// <p>The name of the activity.</p>
-    /// <p>A name must <i>not</i> contain:</p>
-    /// <ul>
-    /// <li> <p>white space</p> </li>
-    /// <li> <p>brackets <code>&lt; &gt; { } [ ]</code> </p> </li>
-    /// <li> <p>wildcard characters <code>? *</code> </p> </li>
-    /// <li> <p>special characters <code>" # % \ ^ | ~ ` $ &amp; , ; : /</code> </p> </li>
-    /// <li> <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p> </li>
-    /// </ul>
+    /// <p>The name of the activity.</p> 
+    /// <p>A name must <i>not</i> contain:</p> 
+    /// <ul> 
+    /// <li> <p>white space</p> </li> 
+    /// <li> <p>brackets <code>&lt; &gt; { } [ ]</code> </p> </li> 
+    /// <li> <p>wildcard characters <code>? *</code> </p> </li> 
+    /// <li> <p>special characters <code>" # % \ ^ | ~ ` $ &amp; , ; : /</code> </p> </li> 
+    /// <li> <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p> </li> 
+    /// </ul> 
     /// <p>To enable logging with CloudWatch Logs, the name should only contain 0-9, A-Z, a-z, - and _.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -2444,30 +2353,30 @@ pub struct DescribeActivityOutput {
 }
 impl DescribeActivityOutput {
     /// <p>The Amazon Resource Name (ARN) that identifies the activity.</p>
-    pub fn activity_arn(&self) -> std::option::Option<&str> {
+    pub fn activity_arn(&self) -> std::option::Option<& str> {
         self.activity_arn.as_deref()
     }
-    /// <p>The name of the activity.</p>
-    /// <p>A name must <i>not</i> contain:</p>
-    /// <ul>
-    /// <li> <p>white space</p> </li>
-    /// <li> <p>brackets <code>&lt; &gt; { } [ ]</code> </p> </li>
-    /// <li> <p>wildcard characters <code>? *</code> </p> </li>
-    /// <li> <p>special characters <code>" # % \ ^ | ~ ` $ &amp; , ; : /</code> </p> </li>
-    /// <li> <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p> </li>
-    /// </ul>
+    /// <p>The name of the activity.</p> 
+    /// <p>A name must <i>not</i> contain:</p> 
+    /// <ul> 
+    /// <li> <p>white space</p> </li> 
+    /// <li> <p>brackets <code>&lt; &gt; { } [ ]</code> </p> </li> 
+    /// <li> <p>wildcard characters <code>? *</code> </p> </li> 
+    /// <li> <p>special characters <code>" # % \ ^ | ~ ` $ &amp; , ; : /</code> </p> </li> 
+    /// <li> <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p> </li> 
+    /// </ul> 
     /// <p>To enable logging with CloudWatch Logs, the name should only contain 0-9, A-Z, a-z, - and _.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The date the activity is created.</p>
-    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_date.as_ref()
     }
 }
 /// See [`DescribeActivityOutput`](crate::output::DescribeActivityOutput).
 pub mod describe_activity_output {
-
+    
     /// A builder for [`DescribeActivityOutput`](crate::output::DescribeActivityOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2483,36 +2392,34 @@ pub mod describe_activity_output {
         }
         /// <p>The Amazon Resource Name (ARN) that identifies the activity.</p>
         pub fn set_activity_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.activity_arn = input;
-            self
+            self.activity_arn = input; self
         }
-        /// <p>The name of the activity.</p>
-        /// <p>A name must <i>not</i> contain:</p>
-        /// <ul>
-        /// <li> <p>white space</p> </li>
-        /// <li> <p>brackets <code>&lt; &gt; { } [ ]</code> </p> </li>
-        /// <li> <p>wildcard characters <code>? *</code> </p> </li>
-        /// <li> <p>special characters <code>" # % \ ^ | ~ ` $ &amp; , ; : /</code> </p> </li>
-        /// <li> <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p> </li>
-        /// </ul>
+        /// <p>The name of the activity.</p> 
+        /// <p>A name must <i>not</i> contain:</p> 
+        /// <ul> 
+        /// <li> <p>white space</p> </li> 
+        /// <li> <p>brackets <code>&lt; &gt; { } [ ]</code> </p> </li> 
+        /// <li> <p>wildcard characters <code>? *</code> </p> </li> 
+        /// <li> <p>special characters <code>" # % \ ^ | ~ ` $ &amp; , ; : /</code> </p> </li> 
+        /// <li> <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p> </li> 
+        /// </ul> 
         /// <p>To enable logging with CloudWatch Logs, the name should only contain 0-9, A-Z, a-z, - and _.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
         }
-        /// <p>The name of the activity.</p>
-        /// <p>A name must <i>not</i> contain:</p>
-        /// <ul>
-        /// <li> <p>white space</p> </li>
-        /// <li> <p>brackets <code>&lt; &gt; { } [ ]</code> </p> </li>
-        /// <li> <p>wildcard characters <code>? *</code> </p> </li>
-        /// <li> <p>special characters <code>" # % \ ^ | ~ ` $ &amp; , ; : /</code> </p> </li>
-        /// <li> <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p> </li>
-        /// </ul>
+        /// <p>The name of the activity.</p> 
+        /// <p>A name must <i>not</i> contain:</p> 
+        /// <ul> 
+        /// <li> <p>white space</p> </li> 
+        /// <li> <p>brackets <code>&lt; &gt; { } [ ]</code> </p> </li> 
+        /// <li> <p>wildcard characters <code>? *</code> </p> </li> 
+        /// <li> <p>special characters <code>" # % \ ^ | ~ ` $ &amp; , ; : /</code> </p> </li> 
+        /// <li> <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p> </li> 
+        /// </ul> 
         /// <p>To enable logging with CloudWatch Logs, the name should only contain 0-9, A-Z, a-z, - and _.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The date the activity is created.</p>
         pub fn creation_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -2520,22 +2427,23 @@ pub mod describe_activity_output {
             self
         }
         /// <p>The date the activity is created.</p>
-        pub fn set_creation_date(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.creation_date = input;
-            self
+        pub fn set_creation_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.creation_date = input; self
         }
         /// Consumes the builder and constructs a [`DescribeActivityOutput`](crate::output::DescribeActivityOutput).
         pub fn build(self) -> crate::output::DescribeActivityOutput {
             crate::output::DescribeActivityOutput {
-                activity_arn: self.activity_arn,
-                name: self.name,
-                creation_date: self.creation_date,
+                activity_arn: self.activity_arn
+                ,
+                name: self.name
+                ,
+                creation_date: self.creation_date
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeActivityOutput {
     /// Creates a new builder-style object to manufacture [`DescribeActivityOutput`](crate::output::DescribeActivityOutput).
@@ -2547,19 +2455,24 @@ impl DescribeActivityOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteStateMachineOutput {}
+pub struct DeleteStateMachineOutput  {
+}
 /// See [`DeleteStateMachineOutput`](crate::output::DeleteStateMachineOutput).
 pub mod delete_state_machine_output {
-
+    
     /// A builder for [`DeleteStateMachineOutput`](crate::output::DeleteStateMachineOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteStateMachineOutput`](crate::output::DeleteStateMachineOutput).
         pub fn build(self) -> crate::output::DeleteStateMachineOutput {
-            crate::output::DeleteStateMachineOutput {}
+            crate::output::DeleteStateMachineOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteStateMachineOutput {
     /// Creates a new builder-style object to manufacture [`DeleteStateMachineOutput`](crate::output::DeleteStateMachineOutput).
@@ -2571,19 +2484,24 @@ impl DeleteStateMachineOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteActivityOutput {}
+pub struct DeleteActivityOutput  {
+}
 /// See [`DeleteActivityOutput`](crate::output::DeleteActivityOutput).
 pub mod delete_activity_output {
-
+    
     /// A builder for [`DeleteActivityOutput`](crate::output::DeleteActivityOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteActivityOutput`](crate::output::DeleteActivityOutput).
         pub fn build(self) -> crate::output::DeleteActivityOutput {
-            crate::output::DeleteActivityOutput {}
+            crate::output::DeleteActivityOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteActivityOutput {
     /// Creates a new builder-style object to manufacture [`DeleteActivityOutput`](crate::output::DeleteActivityOutput).
@@ -2595,7 +2513,7 @@ impl DeleteActivityOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateStateMachineOutput {
+pub struct CreateStateMachineOutput  {
     /// <p>The Amazon Resource Name (ARN) that identifies the created state machine.</p>
     #[doc(hidden)]
     pub state_machine_arn: std::option::Option<std::string::String>,
@@ -2605,17 +2523,17 @@ pub struct CreateStateMachineOutput {
 }
 impl CreateStateMachineOutput {
     /// <p>The Amazon Resource Name (ARN) that identifies the created state machine.</p>
-    pub fn state_machine_arn(&self) -> std::option::Option<&str> {
+    pub fn state_machine_arn(&self) -> std::option::Option<& str> {
         self.state_machine_arn.as_deref()
     }
     /// <p>The date the state machine is created.</p>
-    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_date.as_ref()
     }
 }
 /// See [`CreateStateMachineOutput`](crate::output::CreateStateMachineOutput).
 pub mod create_state_machine_output {
-
+    
     /// A builder for [`CreateStateMachineOutput`](crate::output::CreateStateMachineOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2629,12 +2547,8 @@ pub mod create_state_machine_output {
             self
         }
         /// <p>The Amazon Resource Name (ARN) that identifies the created state machine.</p>
-        pub fn set_state_machine_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.state_machine_arn = input;
-            self
+        pub fn set_state_machine_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.state_machine_arn = input; self
         }
         /// <p>The date the state machine is created.</p>
         pub fn creation_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -2642,21 +2556,21 @@ pub mod create_state_machine_output {
             self
         }
         /// <p>The date the state machine is created.</p>
-        pub fn set_creation_date(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.creation_date = input;
-            self
+        pub fn set_creation_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.creation_date = input; self
         }
         /// Consumes the builder and constructs a [`CreateStateMachineOutput`](crate::output::CreateStateMachineOutput).
         pub fn build(self) -> crate::output::CreateStateMachineOutput {
             crate::output::CreateStateMachineOutput {
-                state_machine_arn: self.state_machine_arn,
-                creation_date: self.creation_date,
+                state_machine_arn: self.state_machine_arn
+                ,
+                creation_date: self.creation_date
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateStateMachineOutput {
     /// Creates a new builder-style object to manufacture [`CreateStateMachineOutput`](crate::output::CreateStateMachineOutput).
@@ -2668,7 +2582,7 @@ impl CreateStateMachineOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateActivityOutput {
+pub struct CreateActivityOutput  {
     /// <p>The Amazon Resource Name (ARN) that identifies the created activity.</p>
     #[doc(hidden)]
     pub activity_arn: std::option::Option<std::string::String>,
@@ -2678,17 +2592,17 @@ pub struct CreateActivityOutput {
 }
 impl CreateActivityOutput {
     /// <p>The Amazon Resource Name (ARN) that identifies the created activity.</p>
-    pub fn activity_arn(&self) -> std::option::Option<&str> {
+    pub fn activity_arn(&self) -> std::option::Option<& str> {
         self.activity_arn.as_deref()
     }
     /// <p>The date the activity is created.</p>
-    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_date.as_ref()
     }
 }
 /// See [`CreateActivityOutput`](crate::output::CreateActivityOutput).
 pub mod create_activity_output {
-
+    
     /// A builder for [`CreateActivityOutput`](crate::output::CreateActivityOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2703,8 +2617,7 @@ pub mod create_activity_output {
         }
         /// <p>The Amazon Resource Name (ARN) that identifies the created activity.</p>
         pub fn set_activity_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.activity_arn = input;
-            self
+            self.activity_arn = input; self
         }
         /// <p>The date the activity is created.</p>
         pub fn creation_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -2712,21 +2625,21 @@ pub mod create_activity_output {
             self
         }
         /// <p>The date the activity is created.</p>
-        pub fn set_creation_date(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.creation_date = input;
-            self
+        pub fn set_creation_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.creation_date = input; self
         }
         /// Consumes the builder and constructs a [`CreateActivityOutput`](crate::output::CreateActivityOutput).
         pub fn build(self) -> crate::output::CreateActivityOutput {
             crate::output::CreateActivityOutput {
-                activity_arn: self.activity_arn,
-                creation_date: self.creation_date,
+                activity_arn: self.activity_arn
+                ,
+                creation_date: self.creation_date
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateActivityOutput {
     /// Creates a new builder-style object to manufacture [`CreateActivityOutput`](crate::output::CreateActivityOutput).
@@ -2734,3 +2647,4 @@ impl CreateActivityOutput {
         crate::output::create_activity_output::Builder::default()
     }
 }
+
