@@ -19,6 +19,7 @@ March 30th, 2023
 - ⚠ ([smithy-rs#76](https://github.com/awslabs/smithy-rs/issues/76), [smithy-rs#2129](https://github.com/awslabs/smithy-rs/issues/2129), [smithy-rs#2075](https://github.com/awslabs/smithy-rs/issues/2075)) The `*Error` and `*ErrorKind` types have been combined to make error matching simpler.
     <details>
     <summary>Example with S3</summary>
+
     **Before:**
     ```rust
     let result = client
