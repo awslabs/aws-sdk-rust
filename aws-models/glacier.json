@@ -89,7 +89,8 @@
                 }
             },
             "traits": {
-                "smithy.api#documentation": "<p>Provides options to abort a multipart upload identified by the upload ID.</p>\n\n         <p>For information about the underlying REST API, see <a href=\"https://docs.aws.amazon.com/amazonglacier/latest/dev/api-multipart-abort-upload.html\">Abort Multipart\n            Upload</a>. For conceptual information, see <a href=\"https://docs.aws.amazon.com/amazonglacier/latest/dev/working-with-archives.html\">Working with Archives in\n            Amazon S3 Glacier</a>.</p>"
+                "smithy.api#documentation": "<p>Provides options to abort a multipart upload identified by the upload ID.</p>\n\n         <p>For information about the underlying REST API, see <a href=\"https://docs.aws.amazon.com/amazonglacier/latest/dev/api-multipart-abort-upload.html\">Abort Multipart\n            Upload</a>. For conceptual information, see <a href=\"https://docs.aws.amazon.com/amazonglacier/latest/dev/working-with-archives.html\">Working with Archives in\n            Amazon S3 Glacier</a>.</p>",
+                "smithy.api#input": {}
             }
         },
         "com.amazonaws.glacier#AbortVaultLock": {
@@ -144,7 +145,8 @@
                 }
             },
             "traits": {
-                "smithy.api#documentation": "<p>The input values for <code>AbortVaultLock</code>.</p>"
+                "smithy.api#documentation": "<p>The input values for <code>AbortVaultLock</code>.</p>",
+                "smithy.api#input": {}
             }
         },
         "com.amazonaws.glacier#AccessControlPolicyList": {
@@ -154,22 +156,26 @@
             }
         },
         "com.amazonaws.glacier#ActionCode": {
-            "type": "string",
-            "traits": {
-                "smithy.api#enum": [
-                    {
-                        "value": "ArchiveRetrieval",
-                        "name": "ArchiveRetrieval"
-                    },
-                    {
-                        "value": "InventoryRetrieval",
-                        "name": "InventoryRetrieval"
-                    },
-                    {
-                        "value": "Select",
-                        "name": "Select"
+            "type": "enum",
+            "members": {
+                "ArchiveRetrieval": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "ArchiveRetrieval"
                     }
-                ]
+                },
+                "InventoryRetrieval": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "InventoryRetrieval"
+                    }
+                },
+                "Select": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "Select"
+                    }
+                }
             }
         },
         "com.amazonaws.glacier#AddTagsToVault": {
@@ -233,7 +239,8 @@
                 }
             },
             "traits": {
-                "smithy.api#documentation": "<p>The input values for <code>AddTagsToVault</code>.</p>"
+                "smithy.api#documentation": "<p>The input values for <code>AddTagsToVault</code>.</p>",
+                "smithy.api#input": {}
             }
         },
         "com.amazonaws.glacier#ArchiveCreationOutput": {
@@ -348,38 +355,50 @@
             }
         },
         "com.amazonaws.glacier#CannedACL": {
-            "type": "string",
-            "traits": {
-                "smithy.api#enum": [
-                    {
-                        "value": "private",
-                        "name": "Private"
-                    },
-                    {
-                        "value": "public-read",
-                        "name": "PublicRead"
-                    },
-                    {
-                        "value": "public-read-write",
-                        "name": "PublicReadWrite"
-                    },
-                    {
-                        "value": "aws-exec-read",
-                        "name": "AwsExecRead"
-                    },
-                    {
-                        "value": "authenticated-read",
-                        "name": "AuthenticatedRead"
-                    },
-                    {
-                        "value": "bucket-owner-read",
-                        "name": "BucketOwnerRead"
-                    },
-                    {
-                        "value": "bucket-owner-full-control",
-                        "name": "BucketOwnerFullControl"
+            "type": "enum",
+            "members": {
+                "Private": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "private"
                     }
-                ]
+                },
+                "PublicRead": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "public-read"
+                    }
+                },
+                "PublicReadWrite": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "public-read-write"
+                    }
+                },
+                "AwsExecRead": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "aws-exec-read"
+                    }
+                },
+                "AuthenticatedRead": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "authenticated-read"
+                    }
+                },
+                "BucketOwnerRead": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "bucket-owner-read"
+                    }
+                },
+                "BucketOwnerFullControl": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "bucket-owner-full-control"
+                    }
+                }
             }
         },
         "com.amazonaws.glacier#CompleteMultipartUpload": {
@@ -456,7 +475,8 @@
                 }
             },
             "traits": {
-                "smithy.api#documentation": "<p>Provides options to complete a multipart upload operation. This informs Amazon\n         Glacier that all the archive parts have been uploaded and Amazon S3 Glacier (Glacier) can now assemble\n         the archive from the uploaded parts. After assembling and saving the archive to the vault,\n         Glacier returns the URI path of the newly created archive resource.</p>"
+                "smithy.api#documentation": "<p>Provides options to complete a multipart upload operation. This informs Amazon\n         Glacier that all the archive parts have been uploaded and Amazon S3 Glacier (Glacier) can now assemble\n         the archive from the uploaded parts. After assembling and saving the archive to the vault,\n         Glacier returns the URI path of the newly created archive resource.</p>",
+                "smithy.api#input": {}
             }
         },
         "com.amazonaws.glacier#CompleteVaultLock": {
@@ -519,7 +539,8 @@
                 }
             },
             "traits": {
-                "smithy.api#documentation": "<p>The input values for <code>CompleteVaultLock</code>.</p>"
+                "smithy.api#documentation": "<p>The input values for <code>CompleteVaultLock</code>.</p>",
+                "smithy.api#input": {}
             }
         },
         "com.amazonaws.glacier#CreateVault": {
@@ -574,7 +595,8 @@
                 }
             },
             "traits": {
-                "smithy.api#documentation": "<p>Provides options to create a vault.</p>"
+                "smithy.api#documentation": "<p>Provides options to create a vault.</p>",
+                "smithy.api#input": {}
             }
         },
         "com.amazonaws.glacier#CreateVaultOutput": {
@@ -589,7 +611,8 @@
                 }
             },
             "traits": {
-                "smithy.api#documentation": "<p>Contains the Amazon S3 Glacier response to your request.</p>"
+                "smithy.api#documentation": "<p>Contains the Amazon S3 Glacier response to your request.</p>",
+                "smithy.api#output": {}
             }
         },
         "com.amazonaws.glacier#DataRetrievalPolicy": {
@@ -695,7 +718,8 @@
                 }
             },
             "traits": {
-                "smithy.api#documentation": "<p>Provides options for deleting an archive from an Amazon S3 Glacier vault.</p>"
+                "smithy.api#documentation": "<p>Provides options for deleting an archive from an Amazon S3 Glacier vault.</p>",
+                "smithy.api#input": {}
             }
         },
         "com.amazonaws.glacier#DeleteVault": {
@@ -781,7 +805,8 @@
                 }
             },
             "traits": {
-                "smithy.api#documentation": "<p>DeleteVaultAccessPolicy input.</p>"
+                "smithy.api#documentation": "<p>DeleteVaultAccessPolicy input.</p>",
+                "smithy.api#input": {}
             }
         },
         "com.amazonaws.glacier#DeleteVaultInput": {
@@ -805,7 +830,8 @@
                 }
             },
             "traits": {
-                "smithy.api#documentation": "<p>Provides options for deleting a vault from Amazon S3 Glacier.</p>"
+                "smithy.api#documentation": "<p>Provides options for deleting a vault from Amazon S3 Glacier.</p>",
+                "smithy.api#input": {}
             }
         },
         "com.amazonaws.glacier#DeleteVaultNotifications": {
@@ -860,7 +886,8 @@
                 }
             },
             "traits": {
-                "smithy.api#documentation": "<p>Provides options for deleting a vault notification configuration from an Amazon\n         Glacier vault.</p>"
+                "smithy.api#documentation": "<p>Provides options for deleting a vault notification configuration from an Amazon\n         Glacier vault.</p>",
+                "smithy.api#input": {}
             }
         },
         "com.amazonaws.glacier#DescribeJob": {
@@ -923,7 +950,8 @@
                 }
             },
             "traits": {
-                "smithy.api#documentation": "<p>Provides options for retrieving a job description.</p>"
+                "smithy.api#documentation": "<p>Provides options for retrieving a job description.</p>",
+                "smithy.api#input": {}
             }
         },
         "com.amazonaws.glacier#DescribeVault": {
@@ -1014,7 +1042,8 @@
                 }
             },
             "traits": {
-                "smithy.api#documentation": "<p>Provides options for retrieving metadata for a specific vault in Amazon\n         Glacier.</p>"
+                "smithy.api#documentation": "<p>Provides options for retrieving metadata for a specific vault in Amazon\n         Glacier.</p>",
+                "smithy.api#input": {}
             }
         },
         "com.amazonaws.glacier#DescribeVaultOutput": {
@@ -1090,48 +1119,54 @@
             }
         },
         "com.amazonaws.glacier#EncryptionType": {
-            "type": "string",
-            "traits": {
-                "smithy.api#enum": [
-                    {
-                        "value": "aws:kms",
-                        "name": "KMS"
-                    },
-                    {
-                        "value": "AES256",
-                        "name": "S3"
+            "type": "enum",
+            "members": {
+                "KMS": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "aws:kms"
                     }
-                ]
+                },
+                "S3": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "AES256"
+                    }
+                }
             }
         },
         "com.amazonaws.glacier#ExpressionType": {
-            "type": "string",
-            "traits": {
-                "smithy.api#enum": [
-                    {
-                        "value": "SQL",
-                        "name": "SQL"
+            "type": "enum",
+            "members": {
+                "SQL": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "SQL"
                     }
-                ]
+                }
             }
         },
         "com.amazonaws.glacier#FileHeaderInfo": {
-            "type": "string",
-            "traits": {
-                "smithy.api#enum": [
-                    {
-                        "value": "USE",
-                        "name": "Use"
-                    },
-                    {
-                        "value": "IGNORE",
-                        "name": "Ignore"
-                    },
-                    {
-                        "value": "NONE",
-                        "name": "None"
+            "type": "enum",
+            "members": {
+                "Use": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "USE"
                     }
-                ]
+                },
+                "Ignore": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "IGNORE"
+                    }
+                },
+                "None": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "NONE"
+                    }
+                }
             }
         },
         "com.amazonaws.glacier#GetDataRetrievalPolicy": {
@@ -1175,7 +1210,8 @@
                 }
             },
             "traits": {
-                "smithy.api#documentation": "<p>Input for GetDataRetrievalPolicy.</p>"
+                "smithy.api#documentation": "<p>Input for GetDataRetrievalPolicy.</p>",
+                "smithy.api#input": {}
             }
         },
         "com.amazonaws.glacier#GetDataRetrievalPolicyOutput": {
@@ -1189,7 +1225,8 @@
                 }
             },
             "traits": {
-                "smithy.api#documentation": "<p>Contains the Amazon S3 Glacier response to the <code>GetDataRetrievalPolicy</code>\n         request.</p>"
+                "smithy.api#documentation": "<p>Contains the Amazon S3 Glacier response to the <code>GetDataRetrievalPolicy</code>\n         request.</p>",
+                "smithy.api#output": {}
             }
         },
         "com.amazonaws.glacier#GetJobOutput": {
@@ -1259,7 +1296,8 @@
                 }
             },
             "traits": {
-                "smithy.api#documentation": "<p>Provides options for downloading output of an Amazon S3 Glacier job.</p>"
+                "smithy.api#documentation": "<p>Provides options for downloading output of an Amazon S3 Glacier job.</p>",
+                "smithy.api#input": {}
             }
         },
         "com.amazonaws.glacier#GetJobOutputOutput": {
@@ -1318,7 +1356,8 @@
                 }
             },
             "traits": {
-                "smithy.api#documentation": "<p>Contains the Amazon S3 Glacier response to your request.</p>"
+                "smithy.api#documentation": "<p>Contains the Amazon S3 Glacier response to your request.</p>",
+                "smithy.api#output": {}
             }
         },
         "com.amazonaws.glacier#GetVaultAccessPolicy": {
@@ -1373,7 +1412,8 @@
                 }
             },
             "traits": {
-                "smithy.api#documentation": "<p>Input for GetVaultAccessPolicy.</p>"
+                "smithy.api#documentation": "<p>Input for GetVaultAccessPolicy.</p>",
+                "smithy.api#input": {}
             }
         },
         "com.amazonaws.glacier#GetVaultAccessPolicyOutput": {
@@ -1388,7 +1428,8 @@
                 }
             },
             "traits": {
-                "smithy.api#documentation": "<p>Output for GetVaultAccessPolicy.</p>"
+                "smithy.api#documentation": "<p>Output for GetVaultAccessPolicy.</p>",
+                "smithy.api#output": {}
             }
         },
         "com.amazonaws.glacier#GetVaultLock": {
@@ -1443,7 +1484,8 @@
                 }
             },
             "traits": {
-                "smithy.api#documentation": "<p>The input values for <code>GetVaultLock</code>.</p>"
+                "smithy.api#documentation": "<p>The input values for <code>GetVaultLock</code>.</p>",
+                "smithy.api#input": {}
             }
         },
         "com.amazonaws.glacier#GetVaultLockOutput": {
@@ -1475,7 +1517,8 @@
                 }
             },
             "traits": {
-                "smithy.api#documentation": "<p>Contains the Amazon S3 Glacier response to your request.</p>"
+                "smithy.api#documentation": "<p>Contains the Amazon S3 Glacier response to your request.</p>",
+                "smithy.api#output": {}
             }
         },
         "com.amazonaws.glacier#GetVaultNotifications": {
@@ -1530,7 +1573,8 @@
                 }
             },
             "traits": {
-                "smithy.api#documentation": "<p>Provides options for retrieving the notification configuration set on an Amazon\n         Glacier vault.</p>"
+                "smithy.api#documentation": "<p>Provides options for retrieving the notification configuration set on an Amazon\n         Glacier vault.</p>",
+                "smithy.api#input": {}
             }
         },
         "com.amazonaws.glacier#GetVaultNotificationsOutput": {
@@ -1545,7 +1589,8 @@
                 }
             },
             "traits": {
-                "smithy.api#documentation": "<p>Contains the Amazon S3 Glacier response to your request.</p>"
+                "smithy.api#documentation": "<p>Contains the Amazon S3 Glacier response to your request.</p>",
+                "smithy.api#output": {}
             }
         },
         "com.amazonaws.glacier#Glacier": {
@@ -1674,7 +1719,7 @@
                     "parameters": {
                         "Region": {
                             "builtIn": "AWS::Region",
-                            "required": true,
+                            "required": false,
                             "documentation": "The AWS region used to dispatch the request.",
                             "type": "String"
                         },
@@ -1703,15 +1748,67 @@
                         {
                             "conditions": [
                                 {
-                                    "fn": "aws.partition",
+                                    "fn": "isSet",
                                     "argv": [
                                         {
-                                            "ref": "Region"
+                                            "ref": "Endpoint"
                                         }
-                                    ],
-                                    "assign": "PartitionResult"
+                                    ]
                                 }
                             ],
+                            "type": "tree",
+                            "rules": [
+                                {
+                                    "conditions": [
+                                        {
+                                            "fn": "booleanEquals",
+                                            "argv": [
+                                                {
+                                                    "ref": "UseFIPS"
+                                                },
+                                                true
+                                            ]
+                                        }
+                                    ],
+                                    "error": "Invalid Configuration: FIPS and custom endpoint are not supported",
+                                    "type": "error"
+                                },
+                                {
+                                    "conditions": [],
+                                    "type": "tree",
+                                    "rules": [
+                                        {
+                                            "conditions": [
+                                                {
+                                                    "fn": "booleanEquals",
+                                                    "argv": [
+                                                        {
+                                                            "ref": "UseDualStack"
+                                                        },
+                                                        true
+                                                    ]
+                                                }
+                                            ],
+                                            "error": "Invalid Configuration: Dualstack and custom endpoint are not supported",
+                                            "type": "error"
+                                        },
+                                        {
+                                            "conditions": [],
+                                            "endpoint": {
+                                                "url": {
+                                                    "ref": "Endpoint"
+                                                },
+                                                "properties": {},
+                                                "headers": {}
+                                            },
+                                            "type": "endpoint"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "conditions": [],
                             "type": "tree",
                             "rules": [
                                 {
@@ -1720,7 +1817,7 @@
                                             "fn": "isSet",
                                             "argv": [
                                                 {
-                                                    "ref": "Endpoint"
+                                                    "ref": "Region"
                                                 }
                                             ]
                                         }
@@ -1730,22 +1827,182 @@
                                         {
                                             "conditions": [
                                                 {
-                                                    "fn": "booleanEquals",
+                                                    "fn": "aws.partition",
                                                     "argv": [
                                                         {
-                                                            "ref": "UseFIPS"
-                                                        },
-                                                        true
-                                                    ]
+                                                            "ref": "Region"
+                                                        }
+                                                    ],
+                                                    "assign": "PartitionResult"
                                                 }
                                             ],
-                                            "error": "Invalid Configuration: FIPS and custom endpoint are not supported",
-                                            "type": "error"
-                                        },
-                                        {
-                                            "conditions": [],
                                             "type": "tree",
                                             "rules": [
+                                                {
+                                                    "conditions": [
+                                                        {
+                                                            "fn": "booleanEquals",
+                                                            "argv": [
+                                                                {
+                                                                    "ref": "UseFIPS"
+                                                                },
+                                                                true
+                                                            ]
+                                                        },
+                                                        {
+                                                            "fn": "booleanEquals",
+                                                            "argv": [
+                                                                {
+                                                                    "ref": "UseDualStack"
+                                                                },
+                                                                true
+                                                            ]
+                                                        }
+                                                    ],
+                                                    "type": "tree",
+                                                    "rules": [
+                                                        {
+                                                            "conditions": [
+                                                                {
+                                                                    "fn": "booleanEquals",
+                                                                    "argv": [
+                                                                        true,
+                                                                        {
+                                                                            "fn": "getAttr",
+                                                                            "argv": [
+                                                                                {
+                                                                                    "ref": "PartitionResult"
+                                                                                },
+                                                                                "supportsFIPS"
+                                                                            ]
+                                                                        }
+                                                                    ]
+                                                                },
+                                                                {
+                                                                    "fn": "booleanEquals",
+                                                                    "argv": [
+                                                                        true,
+                                                                        {
+                                                                            "fn": "getAttr",
+                                                                            "argv": [
+                                                                                {
+                                                                                    "ref": "PartitionResult"
+                                                                                },
+                                                                                "supportsDualStack"
+                                                                            ]
+                                                                        }
+                                                                    ]
+                                                                }
+                                                            ],
+                                                            "type": "tree",
+                                                            "rules": [
+                                                                {
+                                                                    "conditions": [],
+                                                                    "type": "tree",
+                                                                    "rules": [
+                                                                        {
+                                                                            "conditions": [],
+                                                                            "endpoint": {
+                                                                                "url": "https://glacier-fips.{Region}.{PartitionResult#dualStackDnsSuffix}",
+                                                                                "properties": {},
+                                                                                "headers": {}
+                                                                            },
+                                                                            "type": "endpoint"
+                                                                        }
+                                                                    ]
+                                                                }
+                                                            ]
+                                                        },
+                                                        {
+                                                            "conditions": [],
+                                                            "error": "FIPS and DualStack are enabled, but this partition does not support one or both",
+                                                            "type": "error"
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "conditions": [
+                                                        {
+                                                            "fn": "booleanEquals",
+                                                            "argv": [
+                                                                {
+                                                                    "ref": "UseFIPS"
+                                                                },
+                                                                true
+                                                            ]
+                                                        }
+                                                    ],
+                                                    "type": "tree",
+                                                    "rules": [
+                                                        {
+                                                            "conditions": [
+                                                                {
+                                                                    "fn": "booleanEquals",
+                                                                    "argv": [
+                                                                        true,
+                                                                        {
+                                                                            "fn": "getAttr",
+                                                                            "argv": [
+                                                                                {
+                                                                                    "ref": "PartitionResult"
+                                                                                },
+                                                                                "supportsFIPS"
+                                                                            ]
+                                                                        }
+                                                                    ]
+                                                                }
+                                                            ],
+                                                            "type": "tree",
+                                                            "rules": [
+                                                                {
+                                                                    "conditions": [],
+                                                                    "type": "tree",
+                                                                    "rules": [
+                                                                        {
+                                                                            "conditions": [
+                                                                                {
+                                                                                    "fn": "stringEquals",
+                                                                                    "argv": [
+                                                                                        "aws-us-gov",
+                                                                                        {
+                                                                                            "fn": "getAttr",
+                                                                                            "argv": [
+                                                                                                {
+                                                                                                    "ref": "PartitionResult"
+                                                                                                },
+                                                                                                "name"
+                                                                                            ]
+                                                                                        }
+                                                                                    ]
+                                                                                }
+                                                                            ],
+                                                                            "endpoint": {
+                                                                                "url": "https://glacier.{Region}.amazonaws.com",
+                                                                                "properties": {},
+                                                                                "headers": {}
+                                                                            },
+                                                                            "type": "endpoint"
+                                                                        },
+                                                                        {
+                                                                            "conditions": [],
+                                                                            "endpoint": {
+                                                                                "url": "https://glacier-fips.{Region}.{PartitionResult#dnsSuffix}",
+                                                                                "properties": {},
+                                                                                "headers": {}
+                                                                            },
+                                                                            "type": "endpoint"
+                                                                        }
+                                                                    ]
+                                                                }
+                                                            ]
+                                                        },
+                                                        {
+                                                            "conditions": [],
+                                                            "error": "FIPS is enabled but this partition does not support FIPS",
+                                                            "type": "error"
+                                                        }
+                                                    ]
+                                                },
                                                 {
                                                     "conditions": [
                                                         {
@@ -1758,223 +2015,52 @@
                                                             ]
                                                         }
                                                     ],
-                                                    "error": "Invalid Configuration: Dualstack and custom endpoint are not supported",
-                                                    "type": "error"
-                                                },
-                                                {
-                                                    "conditions": [],
-                                                    "endpoint": {
-                                                        "url": {
-                                                            "ref": "Endpoint"
-                                                        },
-                                                        "properties": {},
-                                                        "headers": {}
-                                                    },
-                                                    "type": "endpoint"
-                                                }
-                                            ]
-                                        }
-                                    ]
-                                },
-                                {
-                                    "conditions": [
-                                        {
-                                            "fn": "booleanEquals",
-                                            "argv": [
-                                                {
-                                                    "ref": "UseFIPS"
-                                                },
-                                                true
-                                            ]
-                                        },
-                                        {
-                                            "fn": "booleanEquals",
-                                            "argv": [
-                                                {
-                                                    "ref": "UseDualStack"
-                                                },
-                                                true
-                                            ]
-                                        }
-                                    ],
-                                    "type": "tree",
-                                    "rules": [
-                                        {
-                                            "conditions": [
-                                                {
-                                                    "fn": "booleanEquals",
-                                                    "argv": [
-                                                        true,
-                                                        {
-                                                            "fn": "getAttr",
-                                                            "argv": [
-                                                                {
-                                                                    "ref": "PartitionResult"
-                                                                },
-                                                                "supportsFIPS"
-                                                            ]
-                                                        }
-                                                    ]
-                                                },
-                                                {
-                                                    "fn": "booleanEquals",
-                                                    "argv": [
-                                                        true,
-                                                        {
-                                                            "fn": "getAttr",
-                                                            "argv": [
-                                                                {
-                                                                    "ref": "PartitionResult"
-                                                                },
-                                                                "supportsDualStack"
-                                                            ]
-                                                        }
-                                                    ]
-                                                }
-                                            ],
-                                            "type": "tree",
-                                            "rules": [
-                                                {
-                                                    "conditions": [],
-                                                    "type": "tree",
-                                                    "rules": [
-                                                        {
-                                                            "conditions": [],
-                                                            "endpoint": {
-                                                                "url": "https://glacier-fips.{Region}.{PartitionResult#dualStackDnsSuffix}",
-                                                                "properties": {},
-                                                                "headers": {}
-                                                            },
-                                                            "type": "endpoint"
-                                                        }
-                                                    ]
-                                                }
-                                            ]
-                                        },
-                                        {
-                                            "conditions": [],
-                                            "error": "FIPS and DualStack are enabled, but this partition does not support one or both",
-                                            "type": "error"
-                                        }
-                                    ]
-                                },
-                                {
-                                    "conditions": [
-                                        {
-                                            "fn": "booleanEquals",
-                                            "argv": [
-                                                {
-                                                    "ref": "UseFIPS"
-                                                },
-                                                true
-                                            ]
-                                        }
-                                    ],
-                                    "type": "tree",
-                                    "rules": [
-                                        {
-                                            "conditions": [
-                                                {
-                                                    "fn": "booleanEquals",
-                                                    "argv": [
-                                                        true,
-                                                        {
-                                                            "fn": "getAttr",
-                                                            "argv": [
-                                                                {
-                                                                    "ref": "PartitionResult"
-                                                                },
-                                                                "supportsFIPS"
-                                                            ]
-                                                        }
-                                                    ]
-                                                }
-                                            ],
-                                            "type": "tree",
-                                            "rules": [
-                                                {
-                                                    "conditions": [],
                                                     "type": "tree",
                                                     "rules": [
                                                         {
                                                             "conditions": [
                                                                 {
-                                                                    "fn": "stringEquals",
+                                                                    "fn": "booleanEquals",
                                                                     "argv": [
-                                                                        "aws-us-gov",
+                                                                        true,
                                                                         {
                                                                             "fn": "getAttr",
                                                                             "argv": [
                                                                                 {
                                                                                     "ref": "PartitionResult"
                                                                                 },
-                                                                                "name"
+                                                                                "supportsDualStack"
                                                                             ]
                                                                         }
                                                                     ]
                                                                 }
                                                             ],
-                                                            "endpoint": {
-                                                                "url": "https://glacier.{Region}.amazonaws.com",
-                                                                "properties": {},
-                                                                "headers": {}
-                                                            },
-                                                            "type": "endpoint"
+                                                            "type": "tree",
+                                                            "rules": [
+                                                                {
+                                                                    "conditions": [],
+                                                                    "type": "tree",
+                                                                    "rules": [
+                                                                        {
+                                                                            "conditions": [],
+                                                                            "endpoint": {
+                                                                                "url": "https://glacier.{Region}.{PartitionResult#dualStackDnsSuffix}",
+                                                                                "properties": {},
+                                                                                "headers": {}
+                                                                            },
+                                                                            "type": "endpoint"
+                                                                        }
+                                                                    ]
+                                                                }
+                                                            ]
                                                         },
                                                         {
                                                             "conditions": [],
-                                                            "endpoint": {
-                                                                "url": "https://glacier-fips.{Region}.{PartitionResult#dnsSuffix}",
-                                                                "properties": {},
-                                                                "headers": {}
-                                                            },
-                                                            "type": "endpoint"
+                                                            "error": "DualStack is enabled but this partition does not support DualStack",
+                                                            "type": "error"
                                                         }
                                                     ]
-                                                }
-                                            ]
-                                        },
-                                        {
-                                            "conditions": [],
-                                            "error": "FIPS is enabled but this partition does not support FIPS",
-                                            "type": "error"
-                                        }
-                                    ]
-                                },
-                                {
-                                    "conditions": [
-                                        {
-                                            "fn": "booleanEquals",
-                                            "argv": [
-                                                {
-                                                    "ref": "UseDualStack"
                                                 },
-                                                true
-                                            ]
-                                        }
-                                    ],
-                                    "type": "tree",
-                                    "rules": [
-                                        {
-                                            "conditions": [
-                                                {
-                                                    "fn": "booleanEquals",
-                                                    "argv": [
-                                                        true,
-                                                        {
-                                                            "fn": "getAttr",
-                                                            "argv": [
-                                                                {
-                                                                    "ref": "PartitionResult"
-                                                                },
-                                                                "supportsDualStack"
-                                                            ]
-                                                        }
-                                                    ]
-                                                }
-                                            ],
-                                            "type": "tree",
-                                            "rules": [
                                                 {
                                                     "conditions": [],
                                                     "type": "tree",
@@ -1982,7 +2068,7 @@
                                                         {
                                                             "conditions": [],
                                                             "endpoint": {
-                                                                "url": "https://glacier.{Region}.{PartitionResult#dualStackDnsSuffix}",
+                                                                "url": "https://glacier.{Region}.{PartitionResult#dnsSuffix}",
                                                                 "properties": {},
                                                                 "headers": {}
                                                             },
@@ -1991,66 +2077,13 @@
                                                     ]
                                                 }
                                             ]
-                                        },
-                                        {
-                                            "conditions": [],
-                                            "error": "DualStack is enabled but this partition does not support DualStack",
-                                            "type": "error"
                                         }
                                     ]
                                 },
                                 {
                                     "conditions": [],
-                                    "type": "tree",
-                                    "rules": [
-                                        {
-                                            "conditions": [
-                                                {
-                                                    "fn": "stringEquals",
-                                                    "argv": [
-                                                        {
-                                                            "ref": "Region"
-                                                        },
-                                                        "us-gov-east-1"
-                                                    ]
-                                                }
-                                            ],
-                                            "endpoint": {
-                                                "url": "https://glacier.us-gov-east-1.amazonaws.com",
-                                                "properties": {},
-                                                "headers": {}
-                                            },
-                                            "type": "endpoint"
-                                        },
-                                        {
-                                            "conditions": [
-                                                {
-                                                    "fn": "stringEquals",
-                                                    "argv": [
-                                                        {
-                                                            "ref": "Region"
-                                                        },
-                                                        "us-gov-west-1"
-                                                    ]
-                                                }
-                                            ],
-                                            "endpoint": {
-                                                "url": "https://glacier.us-gov-west-1.amazonaws.com",
-                                                "properties": {},
-                                                "headers": {}
-                                            },
-                                            "type": "endpoint"
-                                        },
-                                        {
-                                            "conditions": [],
-                                            "endpoint": {
-                                                "url": "https://glacier.{Region}.{PartitionResult#dnsSuffix}",
-                                                "properties": {},
-                                                "headers": {}
-                                            },
-                                            "type": "endpoint"
-                                        }
-                                    ]
+                                    "error": "Invalid Configuration: Missing Region",
+                                    "type": "error"
                                 }
                             ]
                         }
@@ -2059,16 +2092,16 @@
                 "smithy.rules#endpointTests": {
                     "testCases": [
                         {
-                            "documentation": "For region sa-east-1 with FIPS disabled and DualStack disabled",
+                            "documentation": "For region af-south-1 with FIPS disabled and DualStack disabled",
                             "expect": {
                                 "endpoint": {
-                                    "url": "https://glacier.sa-east-1.amazonaws.com"
+                                    "url": "https://glacier.af-south-1.amazonaws.com"
                                 }
                             },
                             "params": {
+                                "Region": "af-south-1",
                                 "UseFIPS": false,
-                                "UseDualStack": false,
-                                "Region": "sa-east-1"
+                                "UseDualStack": false
                             }
                         },
                         {
@@ -2079,178 +2112,9 @@
                                 }
                             },
                             "params": {
+                                "Region": "ap-east-1",
                                 "UseFIPS": false,
-                                "UseDualStack": false,
-                                "Region": "ap-east-1"
-                            }
-                        },
-                        {
-                            "documentation": "For region eu-south-1 with FIPS disabled and DualStack disabled",
-                            "expect": {
-                                "endpoint": {
-                                    "url": "https://glacier.eu-south-1.amazonaws.com"
-                                }
-                            },
-                            "params": {
-                                "UseFIPS": false,
-                                "UseDualStack": false,
-                                "Region": "eu-south-1"
-                            }
-                        },
-                        {
-                            "documentation": "For region eu-central-1 with FIPS disabled and DualStack disabled",
-                            "expect": {
-                                "endpoint": {
-                                    "url": "https://glacier.eu-central-1.amazonaws.com"
-                                }
-                            },
-                            "params": {
-                                "UseFIPS": false,
-                                "UseDualStack": false,
-                                "Region": "eu-central-1"
-                            }
-                        },
-                        {
-                            "documentation": "For region ap-southeast-1 with FIPS disabled and DualStack disabled",
-                            "expect": {
-                                "endpoint": {
-                                    "url": "https://glacier.ap-southeast-1.amazonaws.com"
-                                }
-                            },
-                            "params": {
-                                "UseFIPS": false,
-                                "UseDualStack": false,
-                                "Region": "ap-southeast-1"
-                            }
-                        },
-                        {
-                            "documentation": "For region ap-southeast-2 with FIPS disabled and DualStack disabled",
-                            "expect": {
-                                "endpoint": {
-                                    "url": "https://glacier.ap-southeast-2.amazonaws.com"
-                                }
-                            },
-                            "params": {
-                                "UseFIPS": false,
-                                "UseDualStack": false,
-                                "Region": "ap-southeast-2"
-                            }
-                        },
-                        {
-                            "documentation": "For region ap-southeast-3 with FIPS disabled and DualStack disabled",
-                            "expect": {
-                                "endpoint": {
-                                    "url": "https://glacier.ap-southeast-3.amazonaws.com"
-                                }
-                            },
-                            "params": {
-                                "UseFIPS": false,
-                                "UseDualStack": false,
-                                "Region": "ap-southeast-3"
-                            }
-                        },
-                        {
-                            "documentation": "For region ca-central-1 with FIPS disabled and DualStack disabled",
-                            "expect": {
-                                "endpoint": {
-                                    "url": "https://glacier.ca-central-1.amazonaws.com"
-                                }
-                            },
-                            "params": {
-                                "UseFIPS": false,
-                                "UseDualStack": false,
-                                "Region": "ca-central-1"
-                            }
-                        },
-                        {
-                            "documentation": "For region ca-central-1 with FIPS enabled and DualStack disabled",
-                            "expect": {
-                                "endpoint": {
-                                    "url": "https://glacier-fips.ca-central-1.amazonaws.com"
-                                }
-                            },
-                            "params": {
-                                "UseFIPS": true,
-                                "UseDualStack": false,
-                                "Region": "ca-central-1"
-                            }
-                        },
-                        {
-                            "documentation": "For region us-west-1 with FIPS disabled and DualStack disabled",
-                            "expect": {
-                                "endpoint": {
-                                    "url": "https://glacier.us-west-1.amazonaws.com"
-                                }
-                            },
-                            "params": {
-                                "UseFIPS": false,
-                                "UseDualStack": false,
-                                "Region": "us-west-1"
-                            }
-                        },
-                        {
-                            "documentation": "For region us-west-1 with FIPS enabled and DualStack disabled",
-                            "expect": {
-                                "endpoint": {
-                                    "url": "https://glacier-fips.us-west-1.amazonaws.com"
-                                }
-                            },
-                            "params": {
-                                "UseFIPS": true,
-                                "UseDualStack": false,
-                                "Region": "us-west-1"
-                            }
-                        },
-                        {
-                            "documentation": "For region us-west-2 with FIPS disabled and DualStack disabled",
-                            "expect": {
-                                "endpoint": {
-                                    "url": "https://glacier.us-west-2.amazonaws.com"
-                                }
-                            },
-                            "params": {
-                                "UseFIPS": false,
-                                "UseDualStack": false,
-                                "Region": "us-west-2"
-                            }
-                        },
-                        {
-                            "documentation": "For region us-west-2 with FIPS enabled and DualStack disabled",
-                            "expect": {
-                                "endpoint": {
-                                    "url": "https://glacier-fips.us-west-2.amazonaws.com"
-                                }
-                            },
-                            "params": {
-                                "UseFIPS": true,
-                                "UseDualStack": false,
-                                "Region": "us-west-2"
-                            }
-                        },
-                        {
-                            "documentation": "For region af-south-1 with FIPS disabled and DualStack disabled",
-                            "expect": {
-                                "endpoint": {
-                                    "url": "https://glacier.af-south-1.amazonaws.com"
-                                }
-                            },
-                            "params": {
-                                "UseFIPS": false,
-                                "UseDualStack": false,
-                                "Region": "af-south-1"
-                            }
-                        },
-                        {
-                            "documentation": "For region ap-south-1 with FIPS disabled and DualStack disabled",
-                            "expect": {
-                                "endpoint": {
-                                    "url": "https://glacier.ap-south-1.amazonaws.com"
-                                }
-                            },
-                            "params": {
-                                "UseFIPS": false,
-                                "UseDualStack": false,
-                                "Region": "ap-south-1"
+                                "UseDualStack": false
                             }
                         },
                         {
@@ -2261,9 +2125,9 @@
                                 }
                             },
                             "params": {
+                                "Region": "ap-northeast-1",
                                 "UseFIPS": false,
-                                "UseDualStack": false,
-                                "Region": "ap-northeast-1"
+                                "UseDualStack": false
                             }
                         },
                         {
@@ -2274,9 +2138,9 @@
                                 }
                             },
                             "params": {
+                                "Region": "ap-northeast-2",
                                 "UseFIPS": false,
-                                "UseDualStack": false,
-                                "Region": "ap-northeast-2"
+                                "UseDualStack": false
                             }
                         },
                         {
@@ -2287,87 +2151,100 @@
                                 }
                             },
                             "params": {
+                                "Region": "ap-northeast-3",
                                 "UseFIPS": false,
-                                "UseDualStack": false,
-                                "Region": "ap-northeast-3"
+                                "UseDualStack": false
                             }
                         },
                         {
-                            "documentation": "For region us-east-1 with FIPS disabled and DualStack disabled",
+                            "documentation": "For region ap-south-1 with FIPS disabled and DualStack disabled",
                             "expect": {
                                 "endpoint": {
-                                    "url": "https://glacier.us-east-1.amazonaws.com"
+                                    "url": "https://glacier.ap-south-1.amazonaws.com"
                                 }
                             },
                             "params": {
+                                "Region": "ap-south-1",
                                 "UseFIPS": false,
-                                "UseDualStack": false,
-                                "Region": "us-east-1"
+                                "UseDualStack": false
                             }
                         },
                         {
-                            "documentation": "For region us-east-1 with FIPS enabled and DualStack disabled",
+                            "documentation": "For region ap-southeast-1 with FIPS disabled and DualStack disabled",
                             "expect": {
                                 "endpoint": {
-                                    "url": "https://glacier-fips.us-east-1.amazonaws.com"
+                                    "url": "https://glacier.ap-southeast-1.amazonaws.com"
                                 }
                             },
                             "params": {
+                                "Region": "ap-southeast-1",
+                                "UseFIPS": false,
+                                "UseDualStack": false
+                            }
+                        },
+                        {
+                            "documentation": "For region ap-southeast-2 with FIPS disabled and DualStack disabled",
+                            "expect": {
+                                "endpoint": {
+                                    "url": "https://glacier.ap-southeast-2.amazonaws.com"
+                                }
+                            },
+                            "params": {
+                                "Region": "ap-southeast-2",
+                                "UseFIPS": false,
+                                "UseDualStack": false
+                            }
+                        },
+                        {
+                            "documentation": "For region ap-southeast-3 with FIPS disabled and DualStack disabled",
+                            "expect": {
+                                "endpoint": {
+                                    "url": "https://glacier.ap-southeast-3.amazonaws.com"
+                                }
+                            },
+                            "params": {
+                                "Region": "ap-southeast-3",
+                                "UseFIPS": false,
+                                "UseDualStack": false
+                            }
+                        },
+                        {
+                            "documentation": "For region ca-central-1 with FIPS disabled and DualStack disabled",
+                            "expect": {
+                                "endpoint": {
+                                    "url": "https://glacier.ca-central-1.amazonaws.com"
+                                }
+                            },
+                            "params": {
+                                "Region": "ca-central-1",
+                                "UseFIPS": false,
+                                "UseDualStack": false
+                            }
+                        },
+                        {
+                            "documentation": "For region ca-central-1 with FIPS enabled and DualStack disabled",
+                            "expect": {
+                                "endpoint": {
+                                    "url": "https://glacier-fips.ca-central-1.amazonaws.com"
+                                }
+                            },
+                            "params": {
+                                "Region": "ca-central-1",
                                 "UseFIPS": true,
-                                "UseDualStack": false,
-                                "Region": "us-east-1"
+                                "UseDualStack": false
                             }
                         },
                         {
-                            "documentation": "For region eu-west-1 with FIPS disabled and DualStack disabled",
+                            "documentation": "For region eu-central-1 with FIPS disabled and DualStack disabled",
                             "expect": {
                                 "endpoint": {
-                                    "url": "https://glacier.eu-west-1.amazonaws.com"
+                                    "url": "https://glacier.eu-central-1.amazonaws.com"
                                 }
                             },
                             "params": {
+                                "Region": "eu-central-1",
                                 "UseFIPS": false,
-                                "UseDualStack": false,
-                                "Region": "eu-west-1"
-                            }
-                        },
-                        {
-                            "documentation": "For region eu-west-2 with FIPS disabled and DualStack disabled",
-                            "expect": {
-                                "endpoint": {
-                                    "url": "https://glacier.eu-west-2.amazonaws.com"
-                                }
-                            },
-                            "params": {
-                                "UseFIPS": false,
-                                "UseDualStack": false,
-                                "Region": "eu-west-2"
-                            }
-                        },
-                        {
-                            "documentation": "For region eu-west-3 with FIPS disabled and DualStack disabled",
-                            "expect": {
-                                "endpoint": {
-                                    "url": "https://glacier.eu-west-3.amazonaws.com"
-                                }
-                            },
-                            "params": {
-                                "UseFIPS": false,
-                                "UseDualStack": false,
-                                "Region": "eu-west-3"
-                            }
-                        },
-                        {
-                            "documentation": "For region me-south-1 with FIPS disabled and DualStack disabled",
-                            "expect": {
-                                "endpoint": {
-                                    "url": "https://glacier.me-south-1.amazonaws.com"
-                                }
-                            },
-                            "params": {
-                                "UseFIPS": false,
-                                "UseDualStack": false,
-                                "Region": "me-south-1"
+                                "UseDualStack": false
                             }
                         },
                         {
@@ -2378,9 +2255,113 @@
                                 }
                             },
                             "params": {
+                                "Region": "eu-north-1",
                                 "UseFIPS": false,
-                                "UseDualStack": false,
-                                "Region": "eu-north-1"
+                                "UseDualStack": false
+                            }
+                        },
+                        {
+                            "documentation": "For region eu-south-1 with FIPS disabled and DualStack disabled",
+                            "expect": {
+                                "endpoint": {
+                                    "url": "https://glacier.eu-south-1.amazonaws.com"
+                                }
+                            },
+                            "params": {
+                                "Region": "eu-south-1",
+                                "UseFIPS": false,
+                                "UseDualStack": false
+                            }
+                        },
+                        {
+                            "documentation": "For region eu-west-1 with FIPS disabled and DualStack disabled",
+                            "expect": {
+                                "endpoint": {
+                                    "url": "https://glacier.eu-west-1.amazonaws.com"
+                                }
+                            },
+                            "params": {
+                                "Region": "eu-west-1",
+                                "UseFIPS": false,
+                                "UseDualStack": false
+                            }
+                        },
+                        {
+                            "documentation": "For region eu-west-2 with FIPS disabled and DualStack disabled",
+                            "expect": {
+                                "endpoint": {
+                                    "url": "https://glacier.eu-west-2.amazonaws.com"
+                                }
+                            },
+                            "params": {
+                                "Region": "eu-west-2",
+                                "UseFIPS": false,
+                                "UseDualStack": false
+                            }
+                        },
+                        {
+                            "documentation": "For region eu-west-3 with FIPS disabled and DualStack disabled",
+                            "expect": {
+                                "endpoint": {
+                                    "url": "https://glacier.eu-west-3.amazonaws.com"
+                                }
+                            },
+                            "params": {
+                                "Region": "eu-west-3",
+                                "UseFIPS": false,
+                                "UseDualStack": false
+                            }
+                        },
+                        {
+                            "documentation": "For region me-south-1 with FIPS disabled and DualStack disabled",
+                            "expect": {
+                                "endpoint": {
+                                    "url": "https://glacier.me-south-1.amazonaws.com"
+                                }
+                            },
+                            "params": {
+                                "Region": "me-south-1",
+                                "UseFIPS": false,
+                                "UseDualStack": false
+                            }
+                        },
+                        {
+                            "documentation": "For region sa-east-1 with FIPS disabled and DualStack disabled",
+                            "expect": {
+                                "endpoint": {
+                                    "url": "https://glacier.sa-east-1.amazonaws.com"
+                                }
+                            },
+                            "params": {
+                                "Region": "sa-east-1",
+                                "UseFIPS": false,
+                                "UseDualStack": false
+                            }
+                        },
+                        {
+                            "documentation": "For region us-east-1 with FIPS disabled and DualStack disabled",
+                            "expect": {
+                                "endpoint": {
+                                    "url": "https://glacier.us-east-1.amazonaws.com"
+                                }
+                            },
+                            "params": {
+                                "Region": "us-east-1",
+                                "UseFIPS": false,
+                                "UseDualStack": false
+                            }
+                        },
+                        {
+                            "documentation": "For region us-east-1 with FIPS enabled and DualStack disabled",
+                            "expect": {
+                                "endpoint": {
+                                    "url": "https://glacier-fips.us-east-1.amazonaws.com"
+                                }
+                            },
+                            "params": {
+                                "Region": "us-east-1",
+                                "UseFIPS": true,
+                                "UseDualStack": false
                             }
                         },
                         {
@@ -2391,9 +2372,9 @@
                                 }
                             },
                             "params": {
+                                "Region": "us-east-2",
                                 "UseFIPS": false,
-                                "UseDualStack": false,
-                                "Region": "us-east-2"
+                                "UseDualStack": false
                             }
                         },
                         {
@@ -2404,9 +2385,61 @@
                                 }
                             },
                             "params": {
+                                "Region": "us-east-2",
                                 "UseFIPS": true,
-                                "UseDualStack": false,
-                                "Region": "us-east-2"
+                                "UseDualStack": false
+                            }
+                        },
+                        {
+                            "documentation": "For region us-west-1 with FIPS disabled and DualStack disabled",
+                            "expect": {
+                                "endpoint": {
+                                    "url": "https://glacier.us-west-1.amazonaws.com"
+                                }
+                            },
+                            "params": {
+                                "Region": "us-west-1",
+                                "UseFIPS": false,
+                                "UseDualStack": false
+                            }
+                        },
+                        {
+                            "documentation": "For region us-west-1 with FIPS enabled and DualStack disabled",
+                            "expect": {
+                                "endpoint": {
+                                    "url": "https://glacier-fips.us-west-1.amazonaws.com"
+                                }
+                            },
+                            "params": {
+                                "Region": "us-west-1",
+                                "UseFIPS": true,
+                                "UseDualStack": false
+                            }
+                        },
+                        {
+                            "documentation": "For region us-west-2 with FIPS disabled and DualStack disabled",
+                            "expect": {
+                                "endpoint": {
+                                    "url": "https://glacier.us-west-2.amazonaws.com"
+                                }
+                            },
+                            "params": {
+                                "Region": "us-west-2",
+                                "UseFIPS": false,
+                                "UseDualStack": false
+                            }
+                        },
+                        {
+                            "documentation": "For region us-west-2 with FIPS enabled and DualStack disabled",
+                            "expect": {
+                                "endpoint": {
+                                    "url": "https://glacier-fips.us-west-2.amazonaws.com"
+                                }
+                            },
+                            "params": {
+                                "Region": "us-west-2",
+                                "UseFIPS": true,
+                                "UseDualStack": false
                             }
                         },
                         {
@@ -2417,9 +2450,9 @@
                                 }
                             },
                             "params": {
+                                "Region": "us-east-1",
                                 "UseFIPS": true,
-                                "UseDualStack": true,
-                                "Region": "us-east-1"
+                                "UseDualStack": true
                             }
                         },
                         {
@@ -2430,126 +2463,9 @@
                                 }
                             },
                             "params": {
+                                "Region": "us-east-1",
                                 "UseFIPS": false,
-                                "UseDualStack": true,
-                                "Region": "us-east-1"
-                            }
-                        },
-                        {
-                            "documentation": "For region us-gov-west-1 with FIPS disabled and DualStack disabled",
-                            "expect": {
-                                "endpoint": {
-                                    "url": "https://glacier.us-gov-west-1.amazonaws.com"
-                                }
-                            },
-                            "params": {
-                                "UseFIPS": false,
-                                "UseDualStack": false,
-                                "Region": "us-gov-west-1"
-                            }
-                        },
-                        {
-                            "documentation": "For region us-gov-west-1 with FIPS enabled and DualStack disabled",
-                            "expect": {
-                                "endpoint": {
-                                    "url": "https://glacier.us-gov-west-1.amazonaws.com"
-                                }
-                            },
-                            "params": {
-                                "UseFIPS": true,
-                                "UseDualStack": false,
-                                "Region": "us-gov-west-1"
-                            }
-                        },
-                        {
-                            "documentation": "For region us-gov-east-1 with FIPS disabled and DualStack disabled",
-                            "expect": {
-                                "endpoint": {
-                                    "url": "https://glacier.us-gov-east-1.amazonaws.com"
-                                }
-                            },
-                            "params": {
-                                "UseFIPS": false,
-                                "UseDualStack": false,
-                                "Region": "us-gov-east-1"
-                            }
-                        },
-                        {
-                            "documentation": "For region us-gov-east-1 with FIPS enabled and DualStack disabled",
-                            "expect": {
-                                "endpoint": {
-                                    "url": "https://glacier.us-gov-east-1.amazonaws.com"
-                                }
-                            },
-                            "params": {
-                                "UseFIPS": true,
-                                "UseDualStack": false,
-                                "Region": "us-gov-east-1"
-                            }
-                        },
-                        {
-                            "documentation": "For region us-gov-east-1 with FIPS enabled and DualStack enabled",
-                            "expect": {
-                                "endpoint": {
-                                    "url": "https://glacier-fips.us-gov-east-1.api.aws"
-                                }
-                            },
-                            "params": {
-                                "UseFIPS": true,
-                                "UseDualStack": true,
-                                "Region": "us-gov-east-1"
-                            }
-                        },
-                        {
-                            "documentation": "For region us-gov-east-1 with FIPS disabled and DualStack enabled",
-                            "expect": {
-                                "endpoint": {
-                                    "url": "https://glacier.us-gov-east-1.api.aws"
-                                }
-                            },
-                            "params": {
-                                "UseFIPS": false,
-                                "UseDualStack": true,
-                                "Region": "us-gov-east-1"
-                            }
-                        },
-                        {
-                            "documentation": "For region us-isob-east-1 with FIPS disabled and DualStack disabled",
-                            "expect": {
-                                "endpoint": {
-                                    "url": "https://glacier.us-isob-east-1.sc2s.sgov.gov"
-                                }
-                            },
-                            "params": {
-                                "UseFIPS": false,
-                                "UseDualStack": false,
-                                "Region": "us-isob-east-1"
-                            }
-                        },
-                        {
-                            "documentation": "For region us-isob-east-1 with FIPS enabled and DualStack disabled",
-                            "expect": {
-                                "endpoint": {
-                                    "url": "https://glacier-fips.us-isob-east-1.sc2s.sgov.gov"
-                                }
-                            },
-                            "params": {
-                                "UseFIPS": true,
-                                "UseDualStack": false,
-                                "Region": "us-isob-east-1"
-                            }
-                        },
-                        {
-                            "documentation": "For region cn-northwest-1 with FIPS disabled and DualStack disabled",
-                            "expect": {
-                                "endpoint": {
-                                    "url": "https://glacier.cn-northwest-1.amazonaws.com.cn"
-                                }
-                            },
-                            "params": {
-                                "UseFIPS": false,
-                                "UseDualStack": false,
-                                "Region": "cn-northwest-1"
+                                "UseDualStack": true
                             }
                         },
                         {
@@ -2560,9 +2476,22 @@
                                 }
                             },
                             "params": {
+                                "Region": "cn-north-1",
                                 "UseFIPS": false,
-                                "UseDualStack": false,
-                                "Region": "cn-north-1"
+                                "UseDualStack": false
+                            }
+                        },
+                        {
+                            "documentation": "For region cn-northwest-1 with FIPS disabled and DualStack disabled",
+                            "expect": {
+                                "endpoint": {
+                                    "url": "https://glacier.cn-northwest-1.amazonaws.com.cn"
+                                }
+                            },
+                            "params": {
+                                "Region": "cn-northwest-1",
+                                "UseFIPS": false,
+                                "UseDualStack": false
                             }
                         },
                         {
@@ -2573,9 +2502,9 @@
                                 }
                             },
                             "params": {
+                                "Region": "cn-north-1",
                                 "UseFIPS": true,
-                                "UseDualStack": true,
-                                "Region": "cn-north-1"
+                                "UseDualStack": true
                             }
                         },
                         {
@@ -2586,9 +2515,9 @@
                                 }
                             },
                             "params": {
+                                "Region": "cn-north-1",
                                 "UseFIPS": true,
-                                "UseDualStack": false,
-                                "Region": "cn-north-1"
+                                "UseDualStack": false
                             }
                         },
                         {
@@ -2599,22 +2528,87 @@
                                 }
                             },
                             "params": {
+                                "Region": "cn-north-1",
                                 "UseFIPS": false,
-                                "UseDualStack": true,
-                                "Region": "cn-north-1"
+                                "UseDualStack": true
                             }
                         },
                         {
-                            "documentation": "For region us-iso-west-1 with FIPS disabled and DualStack disabled",
+                            "documentation": "For region us-gov-east-1 with FIPS disabled and DualStack disabled",
                             "expect": {
                                 "endpoint": {
-                                    "url": "https://glacier.us-iso-west-1.c2s.ic.gov"
+                                    "url": "https://glacier.us-gov-east-1.amazonaws.com"
                                 }
                             },
                             "params": {
+                                "Region": "us-gov-east-1",
                                 "UseFIPS": false,
-                                "UseDualStack": false,
-                                "Region": "us-iso-west-1"
+                                "UseDualStack": false
+                            }
+                        },
+                        {
+                            "documentation": "For region us-gov-east-1 with FIPS enabled and DualStack disabled",
+                            "expect": {
+                                "endpoint": {
+                                    "url": "https://glacier.us-gov-east-1.amazonaws.com"
+                                }
+                            },
+                            "params": {
+                                "Region": "us-gov-east-1",
+                                "UseFIPS": true,
+                                "UseDualStack": false
+                            }
+                        },
+                        {
+                            "documentation": "For region us-gov-west-1 with FIPS disabled and DualStack disabled",
+                            "expect": {
+                                "endpoint": {
+                                    "url": "https://glacier.us-gov-west-1.amazonaws.com"
+                                }
+                            },
+                            "params": {
+                                "Region": "us-gov-west-1",
+                                "UseFIPS": false,
+                                "UseDualStack": false
+                            }
+                        },
+                        {
+                            "documentation": "For region us-gov-west-1 with FIPS enabled and DualStack disabled",
+                            "expect": {
+                                "endpoint": {
+                                    "url": "https://glacier.us-gov-west-1.amazonaws.com"
+                                }
+                            },
+                            "params": {
+                                "Region": "us-gov-west-1",
+                                "UseFIPS": true,
+                                "UseDualStack": false
+                            }
+                        },
+                        {
+                            "documentation": "For region us-gov-east-1 with FIPS enabled and DualStack enabled",
+                            "expect": {
+                                "endpoint": {
+                                    "url": "https://glacier-fips.us-gov-east-1.api.aws"
+                                }
+                            },
+                            "params": {
+                                "Region": "us-gov-east-1",
+                                "UseFIPS": true,
+                                "UseDualStack": true
+                            }
+                        },
+                        {
+                            "documentation": "For region us-gov-east-1 with FIPS disabled and DualStack enabled",
+                            "expect": {
+                                "endpoint": {
+                                    "url": "https://glacier.us-gov-east-1.api.aws"
+                                }
+                            },
+                            "params": {
+                                "Region": "us-gov-east-1",
+                                "UseFIPS": false,
+                                "UseDualStack": true
                             }
                         },
                         {
@@ -2625,9 +2619,33 @@
                                 }
                             },
                             "params": {
+                                "Region": "us-iso-east-1",
                                 "UseFIPS": false,
-                                "UseDualStack": false,
-                                "Region": "us-iso-east-1"
+                                "UseDualStack": false
+                            }
+                        },
+                        {
+                            "documentation": "For region us-iso-west-1 with FIPS disabled and DualStack disabled",
+                            "expect": {
+                                "endpoint": {
+                                    "url": "https://glacier.us-iso-west-1.c2s.ic.gov"
+                                }
+                            },
+                            "params": {
+                                "Region": "us-iso-west-1",
+                                "UseFIPS": false,
+                                "UseDualStack": false
+                            }
+                        },
+                        {
+                            "documentation": "For region us-iso-east-1 with FIPS enabled and DualStack enabled",
+                            "expect": {
+                                "error": "FIPS and DualStack are enabled, but this partition does not support one or both"
+                            },
+                            "params": {
+                                "Region": "us-iso-east-1",
+                                "UseFIPS": true,
+                                "UseDualStack": true
                             }
                         },
                         {
@@ -2638,13 +2656,86 @@
                                 }
                             },
                             "params": {
+                                "Region": "us-iso-east-1",
                                 "UseFIPS": true,
-                                "UseDualStack": false,
-                                "Region": "us-iso-east-1"
+                                "UseDualStack": false
                             }
                         },
                         {
-                            "documentation": "For custom endpoint with fips disabled and dualstack disabled",
+                            "documentation": "For region us-iso-east-1 with FIPS disabled and DualStack enabled",
+                            "expect": {
+                                "error": "DualStack is enabled but this partition does not support DualStack"
+                            },
+                            "params": {
+                                "Region": "us-iso-east-1",
+                                "UseFIPS": false,
+                                "UseDualStack": true
+                            }
+                        },
+                        {
+                            "documentation": "For region us-isob-east-1 with FIPS disabled and DualStack disabled",
+                            "expect": {
+                                "endpoint": {
+                                    "url": "https://glacier.us-isob-east-1.sc2s.sgov.gov"
+                                }
+                            },
+                            "params": {
+                                "Region": "us-isob-east-1",
+                                "UseFIPS": false,
+                                "UseDualStack": false
+                            }
+                        },
+                        {
+                            "documentation": "For region us-isob-east-1 with FIPS enabled and DualStack enabled",
+                            "expect": {
+                                "error": "FIPS and DualStack are enabled, but this partition does not support one or both"
+                            },
+                            "params": {
+                                "Region": "us-isob-east-1",
+                                "UseFIPS": true,
+                                "UseDualStack": true
+                            }
+                        },
+                        {
+                            "documentation": "For region us-isob-east-1 with FIPS enabled and DualStack disabled",
+                            "expect": {
+                                "endpoint": {
+                                    "url": "https://glacier-fips.us-isob-east-1.sc2s.sgov.gov"
+                                }
+                            },
+                            "params": {
+                                "Region": "us-isob-east-1",
+                                "UseFIPS": true,
+                                "UseDualStack": false
+                            }
+                        },
+                        {
+                            "documentation": "For region us-isob-east-1 with FIPS disabled and DualStack enabled",
+                            "expect": {
+                                "error": "DualStack is enabled but this partition does not support DualStack"
+                            },
+                            "params": {
+                                "Region": "us-isob-east-1",
+                                "UseFIPS": false,
+                                "UseDualStack": true
+                            }
+                        },
+                        {
+                            "documentation": "For custom endpoint with region set and fips disabled and dualstack disabled",
+                            "expect": {
+                                "endpoint": {
+                                    "url": "https://example.com"
+                                }
+                            },
+                            "params": {
+                                "Region": "us-east-1",
+                                "UseFIPS": false,
+                                "UseDualStack": false,
+                                "Endpoint": "https://example.com"
+                            }
+                        },
+                        {
+                            "documentation": "For custom endpoint with region not set and fips disabled and dualstack disabled",
                             "expect": {
                                 "endpoint": {
                                     "url": "https://example.com"
@@ -2653,7 +2744,6 @@
                             "params": {
                                 "UseFIPS": false,
                                 "UseDualStack": false,
-                                "Region": "us-east-1",
                                 "Endpoint": "https://example.com"
                             }
                         },
@@ -2663,9 +2753,9 @@
                                 "error": "Invalid Configuration: FIPS and custom endpoint are not supported"
                             },
                             "params": {
+                                "Region": "us-east-1",
                                 "UseFIPS": true,
                                 "UseDualStack": false,
-                                "Region": "us-east-1",
                                 "Endpoint": "https://example.com"
                             }
                         },
@@ -2675,10 +2765,16 @@
                                 "error": "Invalid Configuration: Dualstack and custom endpoint are not supported"
                             },
                             "params": {
+                                "Region": "us-east-1",
                                 "UseFIPS": false,
                                 "UseDualStack": true,
-                                "Region": "us-east-1",
                                 "Endpoint": "https://example.com"
+                            }
+                        },
+                        {
+                            "documentation": "Missing region",
+                            "expect": {
+                                "error": "Invalid Configuration: Missing Region"
                             }
                         }
                     ],
@@ -2945,7 +3041,8 @@
                 }
             },
             "traits": {
-                "smithy.api#documentation": "<p>Provides options for initiating an Amazon S3 Glacier job.</p>"
+                "smithy.api#documentation": "<p>Provides options for initiating an Amazon S3 Glacier job.</p>",
+                "smithy.api#input": {}
             }
         },
         "com.amazonaws.glacier#InitiateJobOutput": {
@@ -2974,7 +3071,8 @@
                 }
             },
             "traits": {
-                "smithy.api#documentation": "<p>Contains the Amazon S3 Glacier response to your request.</p>"
+                "smithy.api#documentation": "<p>Contains the Amazon S3 Glacier response to your request.</p>",
+                "smithy.api#output": {}
             }
         },
         "com.amazonaws.glacier#InitiateMultipartUpload": {
@@ -3043,7 +3141,8 @@
                 }
             },
             "traits": {
-                "smithy.api#documentation": "<p>Provides options for initiating a multipart upload to an Amazon S3 Glacier\n         vault.</p>"
+                "smithy.api#documentation": "<p>Provides options for initiating a multipart upload to an Amazon S3 Glacier\n         vault.</p>",
+                "smithy.api#input": {}
             }
         },
         "com.amazonaws.glacier#InitiateMultipartUploadOutput": {
@@ -3065,7 +3164,8 @@
                 }
             },
             "traits": {
-                "smithy.api#documentation": "<p>The Amazon S3 Glacier response to your request.</p>"
+                "smithy.api#documentation": "<p>The Amazon S3 Glacier response to your request.</p>",
+                "smithy.api#output": {}
             }
         },
         "com.amazonaws.glacier#InitiateVaultLock": {
@@ -3127,7 +3227,8 @@
                 }
             },
             "traits": {
-                "smithy.api#documentation": "<p>The input values for <code>InitiateVaultLock</code>.</p>"
+                "smithy.api#documentation": "<p>The input values for <code>InitiateVaultLock</code>.</p>",
+                "smithy.api#input": {}
             }
         },
         "com.amazonaws.glacier#InitiateVaultLockOutput": {
@@ -3142,7 +3243,8 @@
                 }
             },
             "traits": {
-                "smithy.api#documentation": "<p>Contains the Amazon S3 Glacier response to your request.</p>"
+                "smithy.api#documentation": "<p>Contains the Amazon S3 Glacier response to your request.</p>",
+                "smithy.api#output": {}
             }
         },
         "com.amazonaws.glacier#InputSerialization": {
@@ -3464,7 +3566,8 @@
                 }
             },
             "traits": {
-                "smithy.api#documentation": "<p>Provides options for retrieving a job list for an Amazon S3 Glacier vault.</p>"
+                "smithy.api#documentation": "<p>Provides options for retrieving a job list for an Amazon S3 Glacier vault.</p>",
+                "smithy.api#input": {}
             }
         },
         "com.amazonaws.glacier#ListJobsOutput": {
@@ -3484,7 +3587,8 @@
                 }
             },
             "traits": {
-                "smithy.api#documentation": "<p>Contains the Amazon S3 Glacier response to your request.</p>"
+                "smithy.api#documentation": "<p>Contains the Amazon S3 Glacier response to your request.</p>",
+                "smithy.api#output": {}
             }
         },
         "com.amazonaws.glacier#ListMultipartUploads": {
@@ -3559,7 +3663,8 @@
                 }
             },
             "traits": {
-                "smithy.api#documentation": "<p>Provides options for retrieving list of in-progress multipart uploads for an Amazon\n         Glacier vault.</p>"
+                "smithy.api#documentation": "<p>Provides options for retrieving list of in-progress multipart uploads for an Amazon\n         Glacier vault.</p>",
+                "smithy.api#input": {}
             }
         },
         "com.amazonaws.glacier#ListMultipartUploadsOutput": {
@@ -3579,7 +3684,8 @@
                 }
             },
             "traits": {
-                "smithy.api#documentation": "<p>Contains the Amazon S3 Glacier response to your request.</p>"
+                "smithy.api#documentation": "<p>Contains the Amazon S3 Glacier response to your request.</p>",
+                "smithy.api#output": {}
             }
         },
         "com.amazonaws.glacier#ListParts": {
@@ -3662,7 +3768,8 @@
                 }
             },
             "traits": {
-                "smithy.api#documentation": "<p>Provides options for retrieving a list of parts of an archive that have been uploaded\n         in a specific multipart upload.</p>"
+                "smithy.api#documentation": "<p>Provides options for retrieving a list of parts of an archive that have been uploaded\n         in a specific multipart upload.</p>",
+                "smithy.api#input": {}
             }
         },
         "com.amazonaws.glacier#ListPartsOutput": {
@@ -3713,7 +3820,8 @@
                 }
             },
             "traits": {
-                "smithy.api#documentation": "<p>Contains the Amazon S3 Glacier response to your request.</p>"
+                "smithy.api#documentation": "<p>Contains the Amazon S3 Glacier response to your request.</p>",
+                "smithy.api#output": {}
             }
         },
         "com.amazonaws.glacier#ListProvisionedCapacity": {
@@ -3755,6 +3863,9 @@
                         "smithy.api#required": {}
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#input": {}
             }
         },
         "com.amazonaws.glacier#ListProvisionedCapacityOutput": {
@@ -3766,6 +3877,9 @@
                         "smithy.api#documentation": "<p>The response body contains the following JSON fields.</p>"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#output": {}
             }
         },
         "com.amazonaws.glacier#ListTagsForVault": {
@@ -3820,7 +3934,8 @@
                 }
             },
             "traits": {
-                "smithy.api#documentation": "<p>The input value for <code>ListTagsForVaultInput</code>.</p>"
+                "smithy.api#documentation": "<p>The input value for <code>ListTagsForVaultInput</code>.</p>",
+                "smithy.api#input": {}
             }
         },
         "com.amazonaws.glacier#ListTagsForVaultOutput": {
@@ -3834,7 +3949,8 @@
                 }
             },
             "traits": {
-                "smithy.api#documentation": "<p>Contains the Amazon S3 Glacier response to your request.</p>"
+                "smithy.api#documentation": "<p>Contains the Amazon S3 Glacier response to your request.</p>",
+                "smithy.api#output": {}
             }
         },
         "com.amazonaws.glacier#ListVaults": {
@@ -3901,7 +4017,8 @@
                 }
             },
             "traits": {
-                "smithy.api#documentation": "<p>Provides options to retrieve the vault list owned by the calling user's account. The\n         list provides metadata information for each vault.</p>"
+                "smithy.api#documentation": "<p>Provides options to retrieve the vault list owned by the calling user's account. The\n         list provides metadata information for each vault.</p>",
+                "smithy.api#input": {}
             }
         },
         "com.amazonaws.glacier#ListVaultsOutput": {
@@ -3921,7 +4038,8 @@
                 }
             },
             "traits": {
-                "smithy.api#documentation": "<p>Contains the Amazon S3 Glacier response to your request.</p>"
+                "smithy.api#documentation": "<p>Contains the Amazon S3 Glacier response to your request.</p>",
+                "smithy.api#output": {}
             }
         },
         "com.amazonaws.glacier#MissingParameterValueException": {
@@ -4016,30 +4134,38 @@
             }
         },
         "com.amazonaws.glacier#Permission": {
-            "type": "string",
-            "traits": {
-                "smithy.api#enum": [
-                    {
-                        "value": "FULL_CONTROL",
-                        "name": "FULL_CONTROL"
-                    },
-                    {
-                        "value": "WRITE",
-                        "name": "WRITE"
-                    },
-                    {
-                        "value": "WRITE_ACP",
-                        "name": "WRITE_ACP"
-                    },
-                    {
-                        "value": "READ",
-                        "name": "READ"
-                    },
-                    {
-                        "value": "READ_ACP",
-                        "name": "READ_ACP"
+            "type": "enum",
+            "members": {
+                "FULL_CONTROL": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "FULL_CONTROL"
                     }
-                ]
+                },
+                "WRITE": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "WRITE"
+                    }
+                },
+                "WRITE_ACP": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "WRITE_ACP"
+                    }
+                },
+                "READ": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "READ"
+                    }
+                },
+                "READ_ACP": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "READ_ACP"
+                    }
+                }
             }
         },
         "com.amazonaws.glacier#PolicyEnforcedException": {
@@ -4144,6 +4270,9 @@
                         "smithy.api#required": {}
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#input": {}
             }
         },
         "com.amazonaws.glacier#PurchaseProvisionedCapacityOutput": {
@@ -4156,21 +4285,26 @@
                         "smithy.api#httpHeader": "x-amz-capacity-id"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#output": {}
             }
         },
         "com.amazonaws.glacier#QuoteFields": {
-            "type": "string",
-            "traits": {
-                "smithy.api#enum": [
-                    {
-                        "value": "ALWAYS",
-                        "name": "Always"
-                    },
-                    {
-                        "value": "ASNEEDED",
-                        "name": "AsNeeded"
+            "type": "enum",
+            "members": {
+                "Always": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "ALWAYS"
                     }
-                ]
+                },
+                "AsNeeded": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "ASNEEDED"
+                    }
+                }
             }
         },
         "com.amazonaws.glacier#RemoveTagsFromVault": {
@@ -4231,7 +4365,8 @@
                 }
             },
             "traits": {
-                "smithy.api#documentation": "<p>The input value for <code>RemoveTagsFromVaultInput</code>.</p>"
+                "smithy.api#documentation": "<p>The input value for <code>RemoveTagsFromVaultInput</code>.</p>",
+                "smithy.api#input": {}
             }
         },
         "com.amazonaws.glacier#RequestTimeoutException": {
@@ -4453,7 +4588,8 @@
                 }
             },
             "traits": {
-                "smithy.api#documentation": "<p>SetDataRetrievalPolicy input.</p>"
+                "smithy.api#documentation": "<p>SetDataRetrievalPolicy input.</p>",
+                "smithy.api#input": {}
             }
         },
         "com.amazonaws.glacier#SetVaultAccessPolicy": {
@@ -4515,7 +4651,8 @@
                 }
             },
             "traits": {
-                "smithy.api#documentation": "<p>SetVaultAccessPolicy input.</p>"
+                "smithy.api#documentation": "<p>SetVaultAccessPolicy input.</p>",
+                "smithy.api#input": {}
             }
         },
         "com.amazonaws.glacier#SetVaultNotifications": {
@@ -4577,48 +4714,57 @@
                 }
             },
             "traits": {
-                "smithy.api#documentation": "<p>Provides options to configure notifications that will be sent when specific events\n         happen to a vault.</p>"
+                "smithy.api#documentation": "<p>Provides options to configure notifications that will be sent when specific events\n         happen to a vault.</p>",
+                "smithy.api#input": {}
             }
         },
         "com.amazonaws.glacier#Size": {
             "type": "long"
         },
         "com.amazonaws.glacier#StatusCode": {
-            "type": "string",
-            "traits": {
-                "smithy.api#enum": [
-                    {
-                        "value": "InProgress",
-                        "name": "InProgress"
-                    },
-                    {
-                        "value": "Succeeded",
-                        "name": "Succeeded"
-                    },
-                    {
-                        "value": "Failed",
-                        "name": "Failed"
+            "type": "enum",
+            "members": {
+                "InProgress": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "InProgress"
                     }
-                ]
+                },
+                "Succeeded": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "Succeeded"
+                    }
+                },
+                "Failed": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "Failed"
+                    }
+                }
             }
         },
         "com.amazonaws.glacier#StorageClass": {
-            "type": "string",
-            "traits": {
-                "smithy.api#enum": [
-                    {
-                        "value": "STANDARD",
-                        "name": "Standard"
-                    },
-                    {
-                        "value": "REDUCED_REDUNDANCY",
-                        "name": "ReducedRedundancy"
-                    },
-                    {
-                        "value": "STANDARD_IA",
-                        "name": "StandardInfrequentAccess"
+            "type": "enum",
+            "members": {
+                "Standard": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "STANDARD"
                     }
-                ]
+                },
+                "ReducedRedundancy": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "REDUCED_REDUNDANCY"
+                    }
+                },
+                "StandardInfrequentAccess": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "STANDARD_IA"
+                    }
+                }
             }
         },
         "com.amazonaws.glacier#Stream": {
@@ -4649,22 +4795,26 @@
             "type": "string"
         },
         "com.amazonaws.glacier#Type": {
-            "type": "string",
-            "traits": {
-                "smithy.api#enum": [
-                    {
-                        "value": "AmazonCustomerByEmail",
-                        "name": "AmazonCustomerByEmail"
-                    },
-                    {
-                        "value": "CanonicalUser",
-                        "name": "CanonicalUser"
-                    },
-                    {
-                        "value": "Group",
-                        "name": "Group"
+            "type": "enum",
+            "members": {
+                "AmazonCustomerByEmail": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "AmazonCustomerByEmail"
                     }
-                ]
+                },
+                "CanonicalUser": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "CanonicalUser"
+                    }
+                },
+                "Group": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "Group"
+                    }
+                }
             }
         },
         "com.amazonaws.glacier#UploadArchive": {
@@ -4744,7 +4894,8 @@
                 }
             },
             "traits": {
-                "smithy.api#documentation": "<p>Provides options to add an archive to a vault.</p>"
+                "smithy.api#documentation": "<p>Provides options to add an archive to a vault.</p>",
+                "smithy.api#input": {}
             }
         },
         "com.amazonaws.glacier#UploadListElement": {
@@ -4871,7 +5022,8 @@
                 }
             },
             "traits": {
-                "smithy.api#documentation": "<p>Provides options to upload a part of an archive in a multipart upload\n         operation.</p>"
+                "smithy.api#documentation": "<p>Provides options to upload a part of an archive in a multipart upload\n         operation.</p>",
+                "smithy.api#input": {}
             }
         },
         "com.amazonaws.glacier#UploadMultipartPartOutput": {
@@ -4886,7 +5038,8 @@
                 }
             },
             "traits": {
-                "smithy.api#documentation": "<p>Contains the Amazon S3 Glacier response to your request.</p>"
+                "smithy.api#documentation": "<p>Contains the Amazon S3 Glacier response to your request.</p>",
+                "smithy.api#output": {}
             }
         },
         "com.amazonaws.glacier#UploadsList": {

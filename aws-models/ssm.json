@@ -251,6 +251,9 @@
                         "smithy.api#required": {}
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#input": {}
             }
         },
         "com.amazonaws.ssm#AddTagsToResourceResult": {
@@ -294,7 +297,7 @@
                     "target": "com.amazonaws.ssm#Boolean",
                     "traits": {
                         "smithy.api#default": false,
-                        "smithy.api#documentation": "<p>If you specify <code>true</code> for this value, your automation or command continue to run\n   even if we can't gather information about the state of your CloudWatch alarm. The default\n   value is <code>false</code>.</p>"
+                        "smithy.api#documentation": "<p>When this value is <i>true</i>, your automation or command continues to run in\n   cases where we can’t retrieve alarm status information from CloudWatch. In cases\n   where we successfully retrieve an alarm status of OK or INSUFFICIENT_DATA, the automation or\n   command continues to run, regardless of this value. Default is <i>false</i>.</p>"
                     }
                 },
                 "Alarms": {
@@ -831,7 +834,7 @@
                     "parameters": {
                         "Region": {
                             "builtIn": "AWS::Region",
-                            "required": true,
+                            "required": false,
                             "documentation": "The AWS region used to dispatch the request.",
                             "type": "String"
                         },
@@ -860,15 +863,67 @@
                         {
                             "conditions": [
                                 {
-                                    "fn": "aws.partition",
+                                    "fn": "isSet",
                                     "argv": [
                                         {
-                                            "ref": "Region"
+                                            "ref": "Endpoint"
                                         }
-                                    ],
-                                    "assign": "PartitionResult"
+                                    ]
                                 }
                             ],
+                            "type": "tree",
+                            "rules": [
+                                {
+                                    "conditions": [
+                                        {
+                                            "fn": "booleanEquals",
+                                            "argv": [
+                                                {
+                                                    "ref": "UseFIPS"
+                                                },
+                                                true
+                                            ]
+                                        }
+                                    ],
+                                    "error": "Invalid Configuration: FIPS and custom endpoint are not supported",
+                                    "type": "error"
+                                },
+                                {
+                                    "conditions": [],
+                                    "type": "tree",
+                                    "rules": [
+                                        {
+                                            "conditions": [
+                                                {
+                                                    "fn": "booleanEquals",
+                                                    "argv": [
+                                                        {
+                                                            "ref": "UseDualStack"
+                                                        },
+                                                        true
+                                                    ]
+                                                }
+                                            ],
+                                            "error": "Invalid Configuration: Dualstack and custom endpoint are not supported",
+                                            "type": "error"
+                                        },
+                                        {
+                                            "conditions": [],
+                                            "endpoint": {
+                                                "url": {
+                                                    "ref": "Endpoint"
+                                                },
+                                                "properties": {},
+                                                "headers": {}
+                                            },
+                                            "type": "endpoint"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "conditions": [],
                             "type": "tree",
                             "rules": [
                                 {
@@ -877,7 +932,7 @@
                                             "fn": "isSet",
                                             "argv": [
                                                 {
-                                                    "ref": "Endpoint"
+                                                    "ref": "Region"
                                                 }
                                             ]
                                         }
@@ -887,22 +942,182 @@
                                         {
                                             "conditions": [
                                                 {
-                                                    "fn": "booleanEquals",
+                                                    "fn": "aws.partition",
                                                     "argv": [
                                                         {
-                                                            "ref": "UseFIPS"
-                                                        },
-                                                        true
-                                                    ]
+                                                            "ref": "Region"
+                                                        }
+                                                    ],
+                                                    "assign": "PartitionResult"
                                                 }
                                             ],
-                                            "error": "Invalid Configuration: FIPS and custom endpoint are not supported",
-                                            "type": "error"
-                                        },
-                                        {
-                                            "conditions": [],
                                             "type": "tree",
                                             "rules": [
+                                                {
+                                                    "conditions": [
+                                                        {
+                                                            "fn": "booleanEquals",
+                                                            "argv": [
+                                                                {
+                                                                    "ref": "UseFIPS"
+                                                                },
+                                                                true
+                                                            ]
+                                                        },
+                                                        {
+                                                            "fn": "booleanEquals",
+                                                            "argv": [
+                                                                {
+                                                                    "ref": "UseDualStack"
+                                                                },
+                                                                true
+                                                            ]
+                                                        }
+                                                    ],
+                                                    "type": "tree",
+                                                    "rules": [
+                                                        {
+                                                            "conditions": [
+                                                                {
+                                                                    "fn": "booleanEquals",
+                                                                    "argv": [
+                                                                        true,
+                                                                        {
+                                                                            "fn": "getAttr",
+                                                                            "argv": [
+                                                                                {
+                                                                                    "ref": "PartitionResult"
+                                                                                },
+                                                                                "supportsFIPS"
+                                                                            ]
+                                                                        }
+                                                                    ]
+                                                                },
+                                                                {
+                                                                    "fn": "booleanEquals",
+                                                                    "argv": [
+                                                                        true,
+                                                                        {
+                                                                            "fn": "getAttr",
+                                                                            "argv": [
+                                                                                {
+                                                                                    "ref": "PartitionResult"
+                                                                                },
+                                                                                "supportsDualStack"
+                                                                            ]
+                                                                        }
+                                                                    ]
+                                                                }
+                                                            ],
+                                                            "type": "tree",
+                                                            "rules": [
+                                                                {
+                                                                    "conditions": [],
+                                                                    "type": "tree",
+                                                                    "rules": [
+                                                                        {
+                                                                            "conditions": [],
+                                                                            "endpoint": {
+                                                                                "url": "https://ssm-fips.{Region}.{PartitionResult#dualStackDnsSuffix}",
+                                                                                "properties": {},
+                                                                                "headers": {}
+                                                                            },
+                                                                            "type": "endpoint"
+                                                                        }
+                                                                    ]
+                                                                }
+                                                            ]
+                                                        },
+                                                        {
+                                                            "conditions": [],
+                                                            "error": "FIPS and DualStack are enabled, but this partition does not support one or both",
+                                                            "type": "error"
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "conditions": [
+                                                        {
+                                                            "fn": "booleanEquals",
+                                                            "argv": [
+                                                                {
+                                                                    "ref": "UseFIPS"
+                                                                },
+                                                                true
+                                                            ]
+                                                        }
+                                                    ],
+                                                    "type": "tree",
+                                                    "rules": [
+                                                        {
+                                                            "conditions": [
+                                                                {
+                                                                    "fn": "booleanEquals",
+                                                                    "argv": [
+                                                                        true,
+                                                                        {
+                                                                            "fn": "getAttr",
+                                                                            "argv": [
+                                                                                {
+                                                                                    "ref": "PartitionResult"
+                                                                                },
+                                                                                "supportsFIPS"
+                                                                            ]
+                                                                        }
+                                                                    ]
+                                                                }
+                                                            ],
+                                                            "type": "tree",
+                                                            "rules": [
+                                                                {
+                                                                    "conditions": [],
+                                                                    "type": "tree",
+                                                                    "rules": [
+                                                                        {
+                                                                            "conditions": [
+                                                                                {
+                                                                                    "fn": "stringEquals",
+                                                                                    "argv": [
+                                                                                        "aws-us-gov",
+                                                                                        {
+                                                                                            "fn": "getAttr",
+                                                                                            "argv": [
+                                                                                                {
+                                                                                                    "ref": "PartitionResult"
+                                                                                                },
+                                                                                                "name"
+                                                                                            ]
+                                                                                        }
+                                                                                    ]
+                                                                                }
+                                                                            ],
+                                                                            "endpoint": {
+                                                                                "url": "https://ssm.{Region}.amazonaws.com",
+                                                                                "properties": {},
+                                                                                "headers": {}
+                                                                            },
+                                                                            "type": "endpoint"
+                                                                        },
+                                                                        {
+                                                                            "conditions": [],
+                                                                            "endpoint": {
+                                                                                "url": "https://ssm-fips.{Region}.{PartitionResult#dnsSuffix}",
+                                                                                "properties": {},
+                                                                                "headers": {}
+                                                                            },
+                                                                            "type": "endpoint"
+                                                                        }
+                                                                    ]
+                                                                }
+                                                            ]
+                                                        },
+                                                        {
+                                                            "conditions": [],
+                                                            "error": "FIPS is enabled but this partition does not support FIPS",
+                                                            "type": "error"
+                                                        }
+                                                    ]
+                                                },
                                                 {
                                                     "conditions": [
                                                         {
@@ -915,223 +1130,52 @@
                                                             ]
                                                         }
                                                     ],
-                                                    "error": "Invalid Configuration: Dualstack and custom endpoint are not supported",
-                                                    "type": "error"
-                                                },
-                                                {
-                                                    "conditions": [],
-                                                    "endpoint": {
-                                                        "url": {
-                                                            "ref": "Endpoint"
-                                                        },
-                                                        "properties": {},
-                                                        "headers": {}
-                                                    },
-                                                    "type": "endpoint"
-                                                }
-                                            ]
-                                        }
-                                    ]
-                                },
-                                {
-                                    "conditions": [
-                                        {
-                                            "fn": "booleanEquals",
-                                            "argv": [
-                                                {
-                                                    "ref": "UseFIPS"
-                                                },
-                                                true
-                                            ]
-                                        },
-                                        {
-                                            "fn": "booleanEquals",
-                                            "argv": [
-                                                {
-                                                    "ref": "UseDualStack"
-                                                },
-                                                true
-                                            ]
-                                        }
-                                    ],
-                                    "type": "tree",
-                                    "rules": [
-                                        {
-                                            "conditions": [
-                                                {
-                                                    "fn": "booleanEquals",
-                                                    "argv": [
-                                                        true,
-                                                        {
-                                                            "fn": "getAttr",
-                                                            "argv": [
-                                                                {
-                                                                    "ref": "PartitionResult"
-                                                                },
-                                                                "supportsFIPS"
-                                                            ]
-                                                        }
-                                                    ]
-                                                },
-                                                {
-                                                    "fn": "booleanEquals",
-                                                    "argv": [
-                                                        true,
-                                                        {
-                                                            "fn": "getAttr",
-                                                            "argv": [
-                                                                {
-                                                                    "ref": "PartitionResult"
-                                                                },
-                                                                "supportsDualStack"
-                                                            ]
-                                                        }
-                                                    ]
-                                                }
-                                            ],
-                                            "type": "tree",
-                                            "rules": [
-                                                {
-                                                    "conditions": [],
-                                                    "type": "tree",
-                                                    "rules": [
-                                                        {
-                                                            "conditions": [],
-                                                            "endpoint": {
-                                                                "url": "https://ssm-fips.{Region}.{PartitionResult#dualStackDnsSuffix}",
-                                                                "properties": {},
-                                                                "headers": {}
-                                                            },
-                                                            "type": "endpoint"
-                                                        }
-                                                    ]
-                                                }
-                                            ]
-                                        },
-                                        {
-                                            "conditions": [],
-                                            "error": "FIPS and DualStack are enabled, but this partition does not support one or both",
-                                            "type": "error"
-                                        }
-                                    ]
-                                },
-                                {
-                                    "conditions": [
-                                        {
-                                            "fn": "booleanEquals",
-                                            "argv": [
-                                                {
-                                                    "ref": "UseFIPS"
-                                                },
-                                                true
-                                            ]
-                                        }
-                                    ],
-                                    "type": "tree",
-                                    "rules": [
-                                        {
-                                            "conditions": [
-                                                {
-                                                    "fn": "booleanEquals",
-                                                    "argv": [
-                                                        true,
-                                                        {
-                                                            "fn": "getAttr",
-                                                            "argv": [
-                                                                {
-                                                                    "ref": "PartitionResult"
-                                                                },
-                                                                "supportsFIPS"
-                                                            ]
-                                                        }
-                                                    ]
-                                                }
-                                            ],
-                                            "type": "tree",
-                                            "rules": [
-                                                {
-                                                    "conditions": [],
                                                     "type": "tree",
                                                     "rules": [
                                                         {
                                                             "conditions": [
                                                                 {
-                                                                    "fn": "stringEquals",
+                                                                    "fn": "booleanEquals",
                                                                     "argv": [
-                                                                        "aws-us-gov",
+                                                                        true,
                                                                         {
                                                                             "fn": "getAttr",
                                                                             "argv": [
                                                                                 {
                                                                                     "ref": "PartitionResult"
                                                                                 },
-                                                                                "name"
+                                                                                "supportsDualStack"
                                                                             ]
                                                                         }
                                                                     ]
                                                                 }
                                                             ],
-                                                            "endpoint": {
-                                                                "url": "https://ssm.{Region}.amazonaws.com",
-                                                                "properties": {},
-                                                                "headers": {}
-                                                            },
-                                                            "type": "endpoint"
+                                                            "type": "tree",
+                                                            "rules": [
+                                                                {
+                                                                    "conditions": [],
+                                                                    "type": "tree",
+                                                                    "rules": [
+                                                                        {
+                                                                            "conditions": [],
+                                                                            "endpoint": {
+                                                                                "url": "https://ssm.{Region}.{PartitionResult#dualStackDnsSuffix}",
+                                                                                "properties": {},
+                                                                                "headers": {}
+                                                                            },
+                                                                            "type": "endpoint"
+                                                                        }
+                                                                    ]
+                                                                }
+                                                            ]
                                                         },
                                                         {
                                                             "conditions": [],
-                                                            "endpoint": {
-                                                                "url": "https://ssm-fips.{Region}.{PartitionResult#dnsSuffix}",
-                                                                "properties": {},
-                                                                "headers": {}
-                                                            },
-                                                            "type": "endpoint"
+                                                            "error": "DualStack is enabled but this partition does not support DualStack",
+                                                            "type": "error"
                                                         }
                                                     ]
-                                                }
-                                            ]
-                                        },
-                                        {
-                                            "conditions": [],
-                                            "error": "FIPS is enabled but this partition does not support FIPS",
-                                            "type": "error"
-                                        }
-                                    ]
-                                },
-                                {
-                                    "conditions": [
-                                        {
-                                            "fn": "booleanEquals",
-                                            "argv": [
-                                                {
-                                                    "ref": "UseDualStack"
                                                 },
-                                                true
-                                            ]
-                                        }
-                                    ],
-                                    "type": "tree",
-                                    "rules": [
-                                        {
-                                            "conditions": [
-                                                {
-                                                    "fn": "booleanEquals",
-                                                    "argv": [
-                                                        true,
-                                                        {
-                                                            "fn": "getAttr",
-                                                            "argv": [
-                                                                {
-                                                                    "ref": "PartitionResult"
-                                                                },
-                                                                "supportsDualStack"
-                                                            ]
-                                                        }
-                                                    ]
-                                                }
-                                            ],
-                                            "type": "tree",
-                                            "rules": [
                                                 {
                                                     "conditions": [],
                                                     "type": "tree",
@@ -1139,7 +1183,7 @@
                                                         {
                                                             "conditions": [],
                                                             "endpoint": {
-                                                                "url": "https://ssm.{Region}.{PartitionResult#dualStackDnsSuffix}",
+                                                                "url": "https://ssm.{Region}.{PartitionResult#dnsSuffix}",
                                                                 "properties": {},
                                                                 "headers": {}
                                                             },
@@ -1148,28 +1192,13 @@
                                                     ]
                                                 }
                                             ]
-                                        },
-                                        {
-                                            "conditions": [],
-                                            "error": "DualStack is enabled but this partition does not support DualStack",
-                                            "type": "error"
                                         }
                                     ]
                                 },
                                 {
                                     "conditions": [],
-                                    "type": "tree",
-                                    "rules": [
-                                        {
-                                            "conditions": [],
-                                            "endpoint": {
-                                                "url": "https://ssm.{Region}.{PartitionResult#dnsSuffix}",
-                                                "properties": {},
-                                                "headers": {}
-                                            },
-                                            "type": "endpoint"
-                                        }
-                                    ]
+                                    "error": "Invalid Configuration: Missing Region",
+                                    "type": "error"
                                 }
                             ]
                         }
@@ -1178,16 +1207,16 @@
                 "smithy.rules#endpointTests": {
                     "testCases": [
                         {
-                            "documentation": "For region sa-east-1 with FIPS disabled and DualStack disabled",
+                            "documentation": "For region af-south-1 with FIPS disabled and DualStack disabled",
                             "expect": {
                                 "endpoint": {
-                                    "url": "https://ssm.sa-east-1.amazonaws.com"
+                                    "url": "https://ssm.af-south-1.amazonaws.com"
                                 }
                             },
                             "params": {
+                                "Region": "af-south-1",
                                 "UseFIPS": false,
-                                "UseDualStack": false,
-                                "Region": "sa-east-1"
+                                "UseDualStack": false
                             }
                         },
                         {
@@ -1198,178 +1227,9 @@
                                 }
                             },
                             "params": {
+                                "Region": "ap-east-1",
                                 "UseFIPS": false,
-                                "UseDualStack": false,
-                                "Region": "ap-east-1"
-                            }
-                        },
-                        {
-                            "documentation": "For region eu-south-1 with FIPS disabled and DualStack disabled",
-                            "expect": {
-                                "endpoint": {
-                                    "url": "https://ssm.eu-south-1.amazonaws.com"
-                                }
-                            },
-                            "params": {
-                                "UseFIPS": false,
-                                "UseDualStack": false,
-                                "Region": "eu-south-1"
-                            }
-                        },
-                        {
-                            "documentation": "For region eu-central-1 with FIPS disabled and DualStack disabled",
-                            "expect": {
-                                "endpoint": {
-                                    "url": "https://ssm.eu-central-1.amazonaws.com"
-                                }
-                            },
-                            "params": {
-                                "UseFIPS": false,
-                                "UseDualStack": false,
-                                "Region": "eu-central-1"
-                            }
-                        },
-                        {
-                            "documentation": "For region ap-southeast-1 with FIPS disabled and DualStack disabled",
-                            "expect": {
-                                "endpoint": {
-                                    "url": "https://ssm.ap-southeast-1.amazonaws.com"
-                                }
-                            },
-                            "params": {
-                                "UseFIPS": false,
-                                "UseDualStack": false,
-                                "Region": "ap-southeast-1"
-                            }
-                        },
-                        {
-                            "documentation": "For region ap-southeast-2 with FIPS disabled and DualStack disabled",
-                            "expect": {
-                                "endpoint": {
-                                    "url": "https://ssm.ap-southeast-2.amazonaws.com"
-                                }
-                            },
-                            "params": {
-                                "UseFIPS": false,
-                                "UseDualStack": false,
-                                "Region": "ap-southeast-2"
-                            }
-                        },
-                        {
-                            "documentation": "For region ap-southeast-3 with FIPS disabled and DualStack disabled",
-                            "expect": {
-                                "endpoint": {
-                                    "url": "https://ssm.ap-southeast-3.amazonaws.com"
-                                }
-                            },
-                            "params": {
-                                "UseFIPS": false,
-                                "UseDualStack": false,
-                                "Region": "ap-southeast-3"
-                            }
-                        },
-                        {
-                            "documentation": "For region ca-central-1 with FIPS disabled and DualStack disabled",
-                            "expect": {
-                                "endpoint": {
-                                    "url": "https://ssm.ca-central-1.amazonaws.com"
-                                }
-                            },
-                            "params": {
-                                "UseFIPS": false,
-                                "UseDualStack": false,
-                                "Region": "ca-central-1"
-                            }
-                        },
-                        {
-                            "documentation": "For region ca-central-1 with FIPS enabled and DualStack disabled",
-                            "expect": {
-                                "endpoint": {
-                                    "url": "https://ssm-fips.ca-central-1.amazonaws.com"
-                                }
-                            },
-                            "params": {
-                                "UseFIPS": true,
-                                "UseDualStack": false,
-                                "Region": "ca-central-1"
-                            }
-                        },
-                        {
-                            "documentation": "For region us-west-1 with FIPS disabled and DualStack disabled",
-                            "expect": {
-                                "endpoint": {
-                                    "url": "https://ssm.us-west-1.amazonaws.com"
-                                }
-                            },
-                            "params": {
-                                "UseFIPS": false,
-                                "UseDualStack": false,
-                                "Region": "us-west-1"
-                            }
-                        },
-                        {
-                            "documentation": "For region us-west-1 with FIPS enabled and DualStack disabled",
-                            "expect": {
-                                "endpoint": {
-                                    "url": "https://ssm-fips.us-west-1.amazonaws.com"
-                                }
-                            },
-                            "params": {
-                                "UseFIPS": true,
-                                "UseDualStack": false,
-                                "Region": "us-west-1"
-                            }
-                        },
-                        {
-                            "documentation": "For region us-west-2 with FIPS disabled and DualStack disabled",
-                            "expect": {
-                                "endpoint": {
-                                    "url": "https://ssm.us-west-2.amazonaws.com"
-                                }
-                            },
-                            "params": {
-                                "UseFIPS": false,
-                                "UseDualStack": false,
-                                "Region": "us-west-2"
-                            }
-                        },
-                        {
-                            "documentation": "For region us-west-2 with FIPS enabled and DualStack disabled",
-                            "expect": {
-                                "endpoint": {
-                                    "url": "https://ssm-fips.us-west-2.amazonaws.com"
-                                }
-                            },
-                            "params": {
-                                "UseFIPS": true,
-                                "UseDualStack": false,
-                                "Region": "us-west-2"
-                            }
-                        },
-                        {
-                            "documentation": "For region af-south-1 with FIPS disabled and DualStack disabled",
-                            "expect": {
-                                "endpoint": {
-                                    "url": "https://ssm.af-south-1.amazonaws.com"
-                                }
-                            },
-                            "params": {
-                                "UseFIPS": false,
-                                "UseDualStack": false,
-                                "Region": "af-south-1"
-                            }
-                        },
-                        {
-                            "documentation": "For region ap-south-1 with FIPS disabled and DualStack disabled",
-                            "expect": {
-                                "endpoint": {
-                                    "url": "https://ssm.ap-south-1.amazonaws.com"
-                                }
-                            },
-                            "params": {
-                                "UseFIPS": false,
-                                "UseDualStack": false,
-                                "Region": "ap-south-1"
+                                "UseDualStack": false
                             }
                         },
                         {
@@ -1380,9 +1240,9 @@
                                 }
                             },
                             "params": {
+                                "Region": "ap-northeast-1",
                                 "UseFIPS": false,
-                                "UseDualStack": false,
-                                "Region": "ap-northeast-1"
+                                "UseDualStack": false
                             }
                         },
                         {
@@ -1393,9 +1253,9 @@
                                 }
                             },
                             "params": {
+                                "Region": "ap-northeast-2",
                                 "UseFIPS": false,
-                                "UseDualStack": false,
-                                "Region": "ap-northeast-2"
+                                "UseDualStack": false
                             }
                         },
                         {
@@ -1406,87 +1266,100 @@
                                 }
                             },
                             "params": {
+                                "Region": "ap-northeast-3",
                                 "UseFIPS": false,
-                                "UseDualStack": false,
-                                "Region": "ap-northeast-3"
+                                "UseDualStack": false
                             }
                         },
                         {
-                            "documentation": "For region us-east-1 with FIPS disabled and DualStack disabled",
+                            "documentation": "For region ap-south-1 with FIPS disabled and DualStack disabled",
                             "expect": {
                                 "endpoint": {
-                                    "url": "https://ssm.us-east-1.amazonaws.com"
+                                    "url": "https://ssm.ap-south-1.amazonaws.com"
                                 }
                             },
                             "params": {
+                                "Region": "ap-south-1",
                                 "UseFIPS": false,
-                                "UseDualStack": false,
-                                "Region": "us-east-1"
+                                "UseDualStack": false
                             }
                         },
                         {
-                            "documentation": "For region us-east-1 with FIPS enabled and DualStack disabled",
+                            "documentation": "For region ap-southeast-1 with FIPS disabled and DualStack disabled",
                             "expect": {
                                 "endpoint": {
-                                    "url": "https://ssm-fips.us-east-1.amazonaws.com"
+                                    "url": "https://ssm.ap-southeast-1.amazonaws.com"
                                 }
                             },
                             "params": {
+                                "Region": "ap-southeast-1",
+                                "UseFIPS": false,
+                                "UseDualStack": false
+                            }
+                        },
+                        {
+                            "documentation": "For region ap-southeast-2 with FIPS disabled and DualStack disabled",
+                            "expect": {
+                                "endpoint": {
+                                    "url": "https://ssm.ap-southeast-2.amazonaws.com"
+                                }
+                            },
+                            "params": {
+                                "Region": "ap-southeast-2",
+                                "UseFIPS": false,
+                                "UseDualStack": false
+                            }
+                        },
+                        {
+                            "documentation": "For region ap-southeast-3 with FIPS disabled and DualStack disabled",
+                            "expect": {
+                                "endpoint": {
+                                    "url": "https://ssm.ap-southeast-3.amazonaws.com"
+                                }
+                            },
+                            "params": {
+                                "Region": "ap-southeast-3",
+                                "UseFIPS": false,
+                                "UseDualStack": false
+                            }
+                        },
+                        {
+                            "documentation": "For region ca-central-1 with FIPS disabled and DualStack disabled",
+                            "expect": {
+                                "endpoint": {
+                                    "url": "https://ssm.ca-central-1.amazonaws.com"
+                                }
+                            },
+                            "params": {
+                                "Region": "ca-central-1",
+                                "UseFIPS": false,
+                                "UseDualStack": false
+                            }
+                        },
+                        {
+                            "documentation": "For region ca-central-1 with FIPS enabled and DualStack disabled",
+                            "expect": {
+                                "endpoint": {
+                                    "url": "https://ssm-fips.ca-central-1.amazonaws.com"
+                                }
+                            },
+                            "params": {
+                                "Region": "ca-central-1",
                                 "UseFIPS": true,
-                                "UseDualStack": false,
-                                "Region": "us-east-1"
+                                "UseDualStack": false
                             }
                         },
                         {
-                            "documentation": "For region eu-west-1 with FIPS disabled and DualStack disabled",
+                            "documentation": "For region eu-central-1 with FIPS disabled and DualStack disabled",
                             "expect": {
                                 "endpoint": {
-                                    "url": "https://ssm.eu-west-1.amazonaws.com"
+                                    "url": "https://ssm.eu-central-1.amazonaws.com"
                                 }
                             },
                             "params": {
+                                "Region": "eu-central-1",
                                 "UseFIPS": false,
-                                "UseDualStack": false,
-                                "Region": "eu-west-1"
-                            }
-                        },
-                        {
-                            "documentation": "For region eu-west-2 with FIPS disabled and DualStack disabled",
-                            "expect": {
-                                "endpoint": {
-                                    "url": "https://ssm.eu-west-2.amazonaws.com"
-                                }
-                            },
-                            "params": {
-                                "UseFIPS": false,
-                                "UseDualStack": false,
-                                "Region": "eu-west-2"
-                            }
-                        },
-                        {
-                            "documentation": "For region eu-west-3 with FIPS disabled and DualStack disabled",
-                            "expect": {
-                                "endpoint": {
-                                    "url": "https://ssm.eu-west-3.amazonaws.com"
-                                }
-                            },
-                            "params": {
-                                "UseFIPS": false,
-                                "UseDualStack": false,
-                                "Region": "eu-west-3"
-                            }
-                        },
-                        {
-                            "documentation": "For region me-south-1 with FIPS disabled and DualStack disabled",
-                            "expect": {
-                                "endpoint": {
-                                    "url": "https://ssm.me-south-1.amazonaws.com"
-                                }
-                            },
-                            "params": {
-                                "UseFIPS": false,
-                                "UseDualStack": false,
-                                "Region": "me-south-1"
+                                "UseDualStack": false
                             }
                         },
                         {
@@ -1497,9 +1370,113 @@
                                 }
                             },
                             "params": {
+                                "Region": "eu-north-1",
                                 "UseFIPS": false,
-                                "UseDualStack": false,
-                                "Region": "eu-north-1"
+                                "UseDualStack": false
+                            }
+                        },
+                        {
+                            "documentation": "For region eu-south-1 with FIPS disabled and DualStack disabled",
+                            "expect": {
+                                "endpoint": {
+                                    "url": "https://ssm.eu-south-1.amazonaws.com"
+                                }
+                            },
+                            "params": {
+                                "Region": "eu-south-1",
+                                "UseFIPS": false,
+                                "UseDualStack": false
+                            }
+                        },
+                        {
+                            "documentation": "For region eu-west-1 with FIPS disabled and DualStack disabled",
+                            "expect": {
+                                "endpoint": {
+                                    "url": "https://ssm.eu-west-1.amazonaws.com"
+                                }
+                            },
+                            "params": {
+                                "Region": "eu-west-1",
+                                "UseFIPS": false,
+                                "UseDualStack": false
+                            }
+                        },
+                        {
+                            "documentation": "For region eu-west-2 with FIPS disabled and DualStack disabled",
+                            "expect": {
+                                "endpoint": {
+                                    "url": "https://ssm.eu-west-2.amazonaws.com"
+                                }
+                            },
+                            "params": {
+                                "Region": "eu-west-2",
+                                "UseFIPS": false,
+                                "UseDualStack": false
+                            }
+                        },
+                        {
+                            "documentation": "For region eu-west-3 with FIPS disabled and DualStack disabled",
+                            "expect": {
+                                "endpoint": {
+                                    "url": "https://ssm.eu-west-3.amazonaws.com"
+                                }
+                            },
+                            "params": {
+                                "Region": "eu-west-3",
+                                "UseFIPS": false,
+                                "UseDualStack": false
+                            }
+                        },
+                        {
+                            "documentation": "For region me-south-1 with FIPS disabled and DualStack disabled",
+                            "expect": {
+                                "endpoint": {
+                                    "url": "https://ssm.me-south-1.amazonaws.com"
+                                }
+                            },
+                            "params": {
+                                "Region": "me-south-1",
+                                "UseFIPS": false,
+                                "UseDualStack": false
+                            }
+                        },
+                        {
+                            "documentation": "For region sa-east-1 with FIPS disabled and DualStack disabled",
+                            "expect": {
+                                "endpoint": {
+                                    "url": "https://ssm.sa-east-1.amazonaws.com"
+                                }
+                            },
+                            "params": {
+                                "Region": "sa-east-1",
+                                "UseFIPS": false,
+                                "UseDualStack": false
+                            }
+                        },
+                        {
+                            "documentation": "For region us-east-1 with FIPS disabled and DualStack disabled",
+                            "expect": {
+                                "endpoint": {
+                                    "url": "https://ssm.us-east-1.amazonaws.com"
+                                }
+                            },
+                            "params": {
+                                "Region": "us-east-1",
+                                "UseFIPS": false,
+                                "UseDualStack": false
+                            }
+                        },
+                        {
+                            "documentation": "For region us-east-1 with FIPS enabled and DualStack disabled",
+                            "expect": {
+                                "endpoint": {
+                                    "url": "https://ssm-fips.us-east-1.amazonaws.com"
+                                }
+                            },
+                            "params": {
+                                "Region": "us-east-1",
+                                "UseFIPS": true,
+                                "UseDualStack": false
                             }
                         },
                         {
@@ -1510,9 +1487,9 @@
                                 }
                             },
                             "params": {
+                                "Region": "us-east-2",
                                 "UseFIPS": false,
-                                "UseDualStack": false,
-                                "Region": "us-east-2"
+                                "UseDualStack": false
                             }
                         },
                         {
@@ -1523,9 +1500,61 @@
                                 }
                             },
                             "params": {
+                                "Region": "us-east-2",
                                 "UseFIPS": true,
-                                "UseDualStack": false,
-                                "Region": "us-east-2"
+                                "UseDualStack": false
+                            }
+                        },
+                        {
+                            "documentation": "For region us-west-1 with FIPS disabled and DualStack disabled",
+                            "expect": {
+                                "endpoint": {
+                                    "url": "https://ssm.us-west-1.amazonaws.com"
+                                }
+                            },
+                            "params": {
+                                "Region": "us-west-1",
+                                "UseFIPS": false,
+                                "UseDualStack": false
+                            }
+                        },
+                        {
+                            "documentation": "For region us-west-1 with FIPS enabled and DualStack disabled",
+                            "expect": {
+                                "endpoint": {
+                                    "url": "https://ssm-fips.us-west-1.amazonaws.com"
+                                }
+                            },
+                            "params": {
+                                "Region": "us-west-1",
+                                "UseFIPS": true,
+                                "UseDualStack": false
+                            }
+                        },
+                        {
+                            "documentation": "For region us-west-2 with FIPS disabled and DualStack disabled",
+                            "expect": {
+                                "endpoint": {
+                                    "url": "https://ssm.us-west-2.amazonaws.com"
+                                }
+                            },
+                            "params": {
+                                "Region": "us-west-2",
+                                "UseFIPS": false,
+                                "UseDualStack": false
+                            }
+                        },
+                        {
+                            "documentation": "For region us-west-2 with FIPS enabled and DualStack disabled",
+                            "expect": {
+                                "endpoint": {
+                                    "url": "https://ssm-fips.us-west-2.amazonaws.com"
+                                }
+                            },
+                            "params": {
+                                "Region": "us-west-2",
+                                "UseFIPS": true,
+                                "UseDualStack": false
                             }
                         },
                         {
@@ -1536,9 +1565,9 @@
                                 }
                             },
                             "params": {
+                                "Region": "us-east-1",
                                 "UseFIPS": true,
-                                "UseDualStack": true,
-                                "Region": "us-east-1"
+                                "UseDualStack": true
                             }
                         },
                         {
@@ -1549,126 +1578,9 @@
                                 }
                             },
                             "params": {
+                                "Region": "us-east-1",
                                 "UseFIPS": false,
-                                "UseDualStack": true,
-                                "Region": "us-east-1"
-                            }
-                        },
-                        {
-                            "documentation": "For region us-gov-west-1 with FIPS disabled and DualStack disabled",
-                            "expect": {
-                                "endpoint": {
-                                    "url": "https://ssm.us-gov-west-1.amazonaws.com"
-                                }
-                            },
-                            "params": {
-                                "UseFIPS": false,
-                                "UseDualStack": false,
-                                "Region": "us-gov-west-1"
-                            }
-                        },
-                        {
-                            "documentation": "For region us-gov-west-1 with FIPS enabled and DualStack disabled",
-                            "expect": {
-                                "endpoint": {
-                                    "url": "https://ssm.us-gov-west-1.amazonaws.com"
-                                }
-                            },
-                            "params": {
-                                "UseFIPS": true,
-                                "UseDualStack": false,
-                                "Region": "us-gov-west-1"
-                            }
-                        },
-                        {
-                            "documentation": "For region us-gov-east-1 with FIPS disabled and DualStack disabled",
-                            "expect": {
-                                "endpoint": {
-                                    "url": "https://ssm.us-gov-east-1.amazonaws.com"
-                                }
-                            },
-                            "params": {
-                                "UseFIPS": false,
-                                "UseDualStack": false,
-                                "Region": "us-gov-east-1"
-                            }
-                        },
-                        {
-                            "documentation": "For region us-gov-east-1 with FIPS enabled and DualStack disabled",
-                            "expect": {
-                                "endpoint": {
-                                    "url": "https://ssm.us-gov-east-1.amazonaws.com"
-                                }
-                            },
-                            "params": {
-                                "UseFIPS": true,
-                                "UseDualStack": false,
-                                "Region": "us-gov-east-1"
-                            }
-                        },
-                        {
-                            "documentation": "For region us-gov-east-1 with FIPS enabled and DualStack enabled",
-                            "expect": {
-                                "endpoint": {
-                                    "url": "https://ssm-fips.us-gov-east-1.api.aws"
-                                }
-                            },
-                            "params": {
-                                "UseFIPS": true,
-                                "UseDualStack": true,
-                                "Region": "us-gov-east-1"
-                            }
-                        },
-                        {
-                            "documentation": "For region us-gov-east-1 with FIPS disabled and DualStack enabled",
-                            "expect": {
-                                "endpoint": {
-                                    "url": "https://ssm.us-gov-east-1.api.aws"
-                                }
-                            },
-                            "params": {
-                                "UseFIPS": false,
-                                "UseDualStack": true,
-                                "Region": "us-gov-east-1"
-                            }
-                        },
-                        {
-                            "documentation": "For region us-isob-east-1 with FIPS disabled and DualStack disabled",
-                            "expect": {
-                                "endpoint": {
-                                    "url": "https://ssm.us-isob-east-1.sc2s.sgov.gov"
-                                }
-                            },
-                            "params": {
-                                "UseFIPS": false,
-                                "UseDualStack": false,
-                                "Region": "us-isob-east-1"
-                            }
-                        },
-                        {
-                            "documentation": "For region us-isob-east-1 with FIPS enabled and DualStack disabled",
-                            "expect": {
-                                "endpoint": {
-                                    "url": "https://ssm-fips.us-isob-east-1.sc2s.sgov.gov"
-                                }
-                            },
-                            "params": {
-                                "UseFIPS": true,
-                                "UseDualStack": false,
-                                "Region": "us-isob-east-1"
-                            }
-                        },
-                        {
-                            "documentation": "For region cn-northwest-1 with FIPS disabled and DualStack disabled",
-                            "expect": {
-                                "endpoint": {
-                                    "url": "https://ssm.cn-northwest-1.amazonaws.com.cn"
-                                }
-                            },
-                            "params": {
-                                "UseFIPS": false,
-                                "UseDualStack": false,
-                                "Region": "cn-northwest-1"
+                                "UseDualStack": true
                             }
                         },
                         {
@@ -1679,9 +1591,22 @@
                                 }
                             },
                             "params": {
+                                "Region": "cn-north-1",
                                 "UseFIPS": false,
-                                "UseDualStack": false,
-                                "Region": "cn-north-1"
+                                "UseDualStack": false
+                            }
+                        },
+                        {
+                            "documentation": "For region cn-northwest-1 with FIPS disabled and DualStack disabled",
+                            "expect": {
+                                "endpoint": {
+                                    "url": "https://ssm.cn-northwest-1.amazonaws.com.cn"
+                                }
+                            },
+                            "params": {
+                                "Region": "cn-northwest-1",
+                                "UseFIPS": false,
+                                "UseDualStack": false
                             }
                         },
                         {
@@ -1692,9 +1617,9 @@
                                 }
                             },
                             "params": {
+                                "Region": "cn-north-1",
                                 "UseFIPS": true,
-                                "UseDualStack": true,
-                                "Region": "cn-north-1"
+                                "UseDualStack": true
                             }
                         },
                         {
@@ -1705,9 +1630,9 @@
                                 }
                             },
                             "params": {
+                                "Region": "cn-north-1",
                                 "UseFIPS": true,
-                                "UseDualStack": false,
-                                "Region": "cn-north-1"
+                                "UseDualStack": false
                             }
                         },
                         {
@@ -1718,9 +1643,87 @@
                                 }
                             },
                             "params": {
+                                "Region": "cn-north-1",
                                 "UseFIPS": false,
-                                "UseDualStack": true,
-                                "Region": "cn-north-1"
+                                "UseDualStack": true
+                            }
+                        },
+                        {
+                            "documentation": "For region us-gov-east-1 with FIPS disabled and DualStack disabled",
+                            "expect": {
+                                "endpoint": {
+                                    "url": "https://ssm.us-gov-east-1.amazonaws.com"
+                                }
+                            },
+                            "params": {
+                                "Region": "us-gov-east-1",
+                                "UseFIPS": false,
+                                "UseDualStack": false
+                            }
+                        },
+                        {
+                            "documentation": "For region us-gov-east-1 with FIPS enabled and DualStack disabled",
+                            "expect": {
+                                "endpoint": {
+                                    "url": "https://ssm.us-gov-east-1.amazonaws.com"
+                                }
+                            },
+                            "params": {
+                                "Region": "us-gov-east-1",
+                                "UseFIPS": true,
+                                "UseDualStack": false
+                            }
+                        },
+                        {
+                            "documentation": "For region us-gov-west-1 with FIPS disabled and DualStack disabled",
+                            "expect": {
+                                "endpoint": {
+                                    "url": "https://ssm.us-gov-west-1.amazonaws.com"
+                                }
+                            },
+                            "params": {
+                                "Region": "us-gov-west-1",
+                                "UseFIPS": false,
+                                "UseDualStack": false
+                            }
+                        },
+                        {
+                            "documentation": "For region us-gov-west-1 with FIPS enabled and DualStack disabled",
+                            "expect": {
+                                "endpoint": {
+                                    "url": "https://ssm.us-gov-west-1.amazonaws.com"
+                                }
+                            },
+                            "params": {
+                                "Region": "us-gov-west-1",
+                                "UseFIPS": true,
+                                "UseDualStack": false
+                            }
+                        },
+                        {
+                            "documentation": "For region us-gov-east-1 with FIPS enabled and DualStack enabled",
+                            "expect": {
+                                "endpoint": {
+                                    "url": "https://ssm-fips.us-gov-east-1.api.aws"
+                                }
+                            },
+                            "params": {
+                                "Region": "us-gov-east-1",
+                                "UseFIPS": true,
+                                "UseDualStack": true
+                            }
+                        },
+                        {
+                            "documentation": "For region us-gov-east-1 with FIPS disabled and DualStack enabled",
+                            "expect": {
+                                "endpoint": {
+                                    "url": "https://ssm.us-gov-east-1.api.aws"
+                                }
+                            },
+                            "params": {
+                                "Region": "us-gov-east-1",
+                                "UseFIPS": false,
+                                "UseDualStack": true
                             }
                         },
                         {
@@ -1731,9 +1734,20 @@
                                 }
                             },
                             "params": {
+                                "Region": "us-iso-east-1",
                                 "UseFIPS": false,
-                                "UseDualStack": false,
-                                "Region": "us-iso-east-1"
+                                "UseDualStack": false
+                            }
+                        },
+                        {
+                            "documentation": "For region us-iso-east-1 with FIPS enabled and DualStack enabled",
+                            "expect": {
+                                "error": "FIPS and DualStack are enabled, but this partition does not support one or both"
+                            },
+                            "params": {
+                                "Region": "us-iso-east-1",
+                                "UseFIPS": true,
+                                "UseDualStack": true
                             }
                         },
                         {
@@ -1744,13 +1758,86 @@
                                 }
                             },
                             "params": {
+                                "Region": "us-iso-east-1",
                                 "UseFIPS": true,
-                                "UseDualStack": false,
-                                "Region": "us-iso-east-1"
+                                "UseDualStack": false
                             }
                         },
                         {
-                            "documentation": "For custom endpoint with fips disabled and dualstack disabled",
+                            "documentation": "For region us-iso-east-1 with FIPS disabled and DualStack enabled",
+                            "expect": {
+                                "error": "DualStack is enabled but this partition does not support DualStack"
+                            },
+                            "params": {
+                                "Region": "us-iso-east-1",
+                                "UseFIPS": false,
+                                "UseDualStack": true
+                            }
+                        },
+                        {
+                            "documentation": "For region us-isob-east-1 with FIPS disabled and DualStack disabled",
+                            "expect": {
+                                "endpoint": {
+                                    "url": "https://ssm.us-isob-east-1.sc2s.sgov.gov"
+                                }
+                            },
+                            "params": {
+                                "Region": "us-isob-east-1",
+                                "UseFIPS": false,
+                                "UseDualStack": false
+                            }
+                        },
+                        {
+                            "documentation": "For region us-isob-east-1 with FIPS enabled and DualStack enabled",
+                            "expect": {
+                                "error": "FIPS and DualStack are enabled, but this partition does not support one or both"
+                            },
+                            "params": {
+                                "Region": "us-isob-east-1",
+                                "UseFIPS": true,
+                                "UseDualStack": true
+                            }
+                        },
+                        {
+                            "documentation": "For region us-isob-east-1 with FIPS enabled and DualStack disabled",
+                            "expect": {
+                                "endpoint": {
+                                    "url": "https://ssm-fips.us-isob-east-1.sc2s.sgov.gov"
+                                }
+                            },
+                            "params": {
+                                "Region": "us-isob-east-1",
+                                "UseFIPS": true,
+                                "UseDualStack": false
+                            }
+                        },
+                        {
+                            "documentation": "For region us-isob-east-1 with FIPS disabled and DualStack enabled",
+                            "expect": {
+                                "error": "DualStack is enabled but this partition does not support DualStack"
+                            },
+                            "params": {
+                                "Region": "us-isob-east-1",
+                                "UseFIPS": false,
+                                "UseDualStack": true
+                            }
+                        },
+                        {
+                            "documentation": "For custom endpoint with region set and fips disabled and dualstack disabled",
+                            "expect": {
+                                "endpoint": {
+                                    "url": "https://example.com"
+                                }
+                            },
+                            "params": {
+                                "Region": "us-east-1",
+                                "UseFIPS": false,
+                                "UseDualStack": false,
+                                "Endpoint": "https://example.com"
+                            }
+                        },
+                        {
+                            "documentation": "For custom endpoint with region not set and fips disabled and dualstack disabled",
                             "expect": {
                                 "endpoint": {
                                     "url": "https://example.com"
@@ -1759,7 +1846,6 @@
                             "params": {
                                 "UseFIPS": false,
                                 "UseDualStack": false,
-                                "Region": "us-east-1",
                                 "Endpoint": "https://example.com"
                             }
                         },
@@ -1769,9 +1855,9 @@
                                 "error": "Invalid Configuration: FIPS and custom endpoint are not supported"
                             },
                             "params": {
+                                "Region": "us-east-1",
                                 "UseFIPS": true,
                                 "UseDualStack": false,
-                                "Region": "us-east-1",
                                 "Endpoint": "https://example.com"
                             }
                         },
@@ -1781,10 +1867,16 @@
                                 "error": "Invalid Configuration: Dualstack and custom endpoint are not supported"
                             },
                             "params": {
+                                "Region": "us-east-1",
                                 "UseFIPS": false,
                                 "UseDualStack": true,
-                                "Region": "us-east-1",
                                 "Endpoint": "https://example.com"
+                            }
+                        },
+                        {
+                            "documentation": "Missing region",
+                            "expect": {
+                                "error": "Invalid Configuration: Missing Region"
                             }
                         }
                     ],
@@ -1868,6 +1960,9 @@
                         "smithy.api#required": {}
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#input": {}
             }
         },
         "com.amazonaws.ssm#AssociateOpsItemRelatedItemResponse": {
@@ -1879,6 +1974,9 @@
                         "smithy.api#documentation": "<p>The association ID.</p>"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#output": {}
             }
         },
         "com.amazonaws.ssm#AssociatedInstances": {
@@ -4189,7 +4287,8 @@
                 }
             },
             "traits": {
-                "smithy.api#documentation": "<p></p>"
+                "smithy.api#documentation": "<p></p>",
+                "smithy.api#input": {}
             }
         },
         "com.amazonaws.ssm#CancelCommandResult": {
@@ -4229,6 +4328,9 @@
                         "smithy.api#required": {}
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#input": {}
             }
         },
         "com.amazonaws.ssm#CancelMaintenanceWindowExecutionResult": {
@@ -5577,6 +5679,9 @@
                         "smithy.api#documentation": "<p>Reserved for internal use.</p>"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#input": {}
             }
         },
         "com.amazonaws.ssm#CreateActivationResult": {
@@ -5709,6 +5814,9 @@
                         "smithy.api#required": {}
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#input": {}
             }
         },
         "com.amazonaws.ssm#CreateAssociationBatchRequestEntries": {
@@ -5870,7 +5978,7 @@
                 "Name": {
                     "target": "com.amazonaws.ssm#DocumentARN",
                     "traits": {
-                        "smithy.api#documentation": "<p>The name of the SSM Command document or Automation runbook that contains the configuration\n   information for the managed node.</p>\n         <p>You can specify Amazon Web Services-predefined documents, documents you created, or a document that is\n   shared with you from another account.</p>\n         <p>For Systems Manager documents (SSM documents) that are shared with you from other Amazon Web Services accounts, you\n   must specify the complete SSM document ARN, in the following format:</p>\n         <p>\n            <code>arn:<i>partition</i>:ssm:<i>region</i>:<i>account-id</i>:document/<i>document-name</i>\n            </code>\n         </p>\n         <p>For example:</p>\n         <p>\n            <code>arn:aws:ssm:us-east-2:12345678912:document/My-Shared-Document</code>\n         </p>\n         <p>For Amazon Web Services-predefined documents and SSM documents you created in your account, you only need\n   to specify the document name. For example, <code>AWS-ApplyPatchBaseline</code> or\n    <code>My-Document</code>.</p>",
+                        "smithy.api#documentation": "<p>The name of the SSM Command document or Automation runbook that contains the configuration\n   information for the managed node.</p>\n         <p>You can specify Amazon Web Services-predefined documents, documents you created, or a document that is\n   shared with you from another Amazon Web Services account.</p>\n         <p>For Systems Manager documents (SSM documents) that are shared with you from other Amazon Web Services accounts, you\n   must specify the complete SSM document ARN, in the following format:</p>\n         <p>\n            <code>arn:<i>partition</i>:ssm:<i>region</i>:<i>account-id</i>:document/<i>document-name</i>\n            </code>\n         </p>\n         <p>For example:</p>\n         <p>\n            <code>arn:aws:ssm:us-east-2:12345678912:document/My-Shared-Document</code>\n         </p>\n         <p>For Amazon Web Services-predefined documents and SSM documents you created in your account, you only need\n   to specify the document name. For example, <code>AWS-ApplyPatchBaseline</code> or\n    <code>My-Document</code>.</p>",
                         "smithy.api#required": {}
                     }
                 },
@@ -5987,6 +6095,9 @@
                 "AlarmConfiguration": {
                     "target": "com.amazonaws.ssm#AlarmConfiguration"
                 }
+            },
+            "traits": {
+                "smithy.api#input": {}
             }
         },
         "com.amazonaws.ssm#CreateAssociationResult": {
@@ -6038,7 +6149,7 @@
                 "Content": {
                     "target": "com.amazonaws.ssm#DocumentContent",
                     "traits": {
-                        "smithy.api#documentation": "<p>The content for the new SSM document in JSON or YAML format. We recommend storing the\n   contents for your new document in an external JSON or YAML file and referencing the file in a\n   command.</p>\n         <p>For examples, see the following topics in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>\n         <ul>\n            <li>\n               <p>\n                  <a href=\"https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-api.html\">Create an SSM document (Amazon Web Services API)</a>\n               </p>\n            </li>\n            <li>\n               <p>\n                  <a href=\"https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-cli.html\">Create an SSM document (Amazon Web Services CLI)</a>\n               </p>\n            </li>\n            <li>\n               <p>\n                  <a href=\"https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-api.html\">Create an SSM document (API)</a>\n               </p>\n            </li>\n         </ul>",
+                        "smithy.api#documentation": "<p>The content for the new SSM document in JSON or YAML format. The content of the document\n   must not exceed 64KB. This quota also includes the content specified for input parameters at\n   runtime. We recommend storing the contents for your new document in an external JSON or YAML file\n   and referencing the file in a command.</p>\n         <p>For examples, see the following topics in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>\n         <ul>\n            <li>\n               <p>\n                  <a href=\"https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-api.html\">Create an SSM document (Amazon Web Services API)</a>\n               </p>\n            </li>\n            <li>\n               <p>\n                  <a href=\"https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-cli.html\">Create an SSM document (Amazon Web Services CLI)</a>\n               </p>\n            </li>\n            <li>\n               <p>\n                  <a href=\"https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-api.html\">Create an SSM document (API)</a>\n               </p>\n            </li>\n         </ul>",
                         "smithy.api#required": {}
                     }
                 },
@@ -6097,6 +6208,9 @@
                         "smithy.api#documentation": "<p>Optional metadata that you assign to a resource. Tags enable you to categorize a resource in\n   different ways, such as by purpose, owner, or environment. For example, you might want to tag an\n   SSM document to identify the types of targets or the environment where it will run. In this case,\n   you could specify the following key-value pairs:</p>\n         <ul>\n            <li>\n               <p>\n                  <code>Key=OS,Value=Windows</code>\n               </p>\n            </li>\n            <li>\n               <p>\n                  <code>Key=Environment,Value=Production</code>\n               </p>\n            </li>\n         </ul>\n         <note>\n            <p>To add tags to an existing SSM document, use the <a>AddTagsToResource</a>\n    operation.</p>\n         </note>"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#input": {}
             }
         },
         "com.amazonaws.ssm#CreateDocumentResult": {
@@ -6218,6 +6332,9 @@
                         "smithy.api#documentation": "<p>Optional metadata that you assign to a resource. Tags enable you to categorize a resource in\n   different ways, such as by purpose, owner, or environment. For example, you might want to tag a\n   maintenance window to identify the type of tasks it will run, the types of targets, and the\n   environment it will run in. In this case, you could specify the following key-value pairs:</p>\n         <ul>\n            <li>\n               <p>\n                  <code>Key=TaskType,Value=AgentUpdate</code>\n               </p>\n            </li>\n            <li>\n               <p>\n                  <code>Key=OS,Value=Windows</code>\n               </p>\n            </li>\n            <li>\n               <p>\n                  <code>Key=Environment,Value=Production</code>\n               </p>\n            </li>\n         </ul>\n         <note>\n            <p>To add tags to an existing maintenance window, use the <a>AddTagsToResource</a>\n    operation.</p>\n         </note>"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#input": {}
             }
         },
         "com.amazonaws.ssm#CreateMaintenanceWindowResult": {
@@ -6362,6 +6479,9 @@
                         "smithy.api#documentation": "<p>The target Amazon Web Services account where you want to create an OpsItem. To make this call, your account\n   must be configured to work with OpsItems across accounts. For more information, see <a href=\"https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-OpsCenter-multiple-accounts.html\">Setting\n    up OpsCenter to work with OpsItems across accounts</a> in the\n    <i>Amazon Web Services Systems Manager User Guide</i>.</p>"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#input": {}
             }
         },
         "com.amazonaws.ssm#CreateOpsItemResponse": {
@@ -6379,6 +6499,9 @@
                         "smithy.api#documentation": "<p>The OpsItem Amazon Resource Name (ARN).</p>"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#output": {}
             }
         },
         "com.amazonaws.ssm#CreateOpsMetadata": {
@@ -6432,6 +6555,9 @@
                         "smithy.api#documentation": "<p>Optional metadata that you assign to a resource. You can specify a maximum of five tags for\n   an OpsMetadata object. Tags enable you to categorize a resource in different ways, such as by\n   purpose, owner, or environment. For example, you might want to tag an OpsMetadata object to\n   identify an environment or target Amazon Web Services Region. In this case, you could specify the following\n   key-value pairs:</p>\n         <ul>\n            <li>\n               <p>\n                  <code>Key=Environment,Value=Production</code>\n               </p>\n            </li>\n            <li>\n               <p>\n                  <code>Key=Region,Value=us-east-2</code>\n               </p>\n            </li>\n         </ul>"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#input": {}
             }
         },
         "com.amazonaws.ssm#CreateOpsMetadataResult": {
@@ -6552,6 +6678,9 @@
                         "smithy.api#documentation": "<p>Optional metadata that you assign to a resource. Tags enable you to categorize a resource in\n   different ways, such as by purpose, owner, or environment. For example, you might want to tag a\n   patch baseline to identify the severity level of patches it specifies and the operating system\n   family it applies to. In this case, you could specify the following key-value pairs:</p>\n         <ul>\n            <li>\n               <p>\n                  <code>Key=PatchSeverity,Value=Critical</code>\n               </p>\n            </li>\n            <li>\n               <p>\n                  <code>Key=OS,Value=Windows</code>\n               </p>\n            </li>\n         </ul>\n         <note>\n            <p>To add tags to an existing patch baseline, use the <a>AddTagsToResource</a>\n    operation.</p>\n         </note>"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#input": {}
             }
         },
         "com.amazonaws.ssm#CreatePatchBaselineResult": {
@@ -6619,6 +6748,9 @@
                         "smithy.api#documentation": "<p>Specify information about the data sources to synchronize. This parameter is required if the\n    <code>SyncType</code> value is SyncFromSource.</p>"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#input": {}
             }
         },
         "com.amazonaws.ssm#CreateResourceDataSyncResult": {
@@ -6699,6 +6831,9 @@
                         "smithy.api#required": {}
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#input": {}
             }
         },
         "com.amazonaws.ssm#DeleteActivationResult": {
@@ -6755,6 +6890,9 @@
                         "smithy.api#documentation": "<p>The association ID that you want to delete.</p>"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#input": {}
             }
         },
         "com.amazonaws.ssm#DeleteAssociationResult": {
@@ -6816,6 +6954,9 @@
                         "smithy.api#documentation": "<p>Some SSM document types require that you specify a <code>Force</code> flag before you can\n   delete the document. For example, you must specify a <code>Force</code> flag to delete a document\n   of type <code>ApplicationConfigurationSchema</code>. You can restrict access to the\n    <code>Force</code> flag in an Identity and Access Management (IAM) policy.</p>"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#input": {}
             }
         },
         "com.amazonaws.ssm#DeleteDocumentResult": {
@@ -6881,6 +7022,9 @@
                         "smithy.api#idempotencyToken": {}
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#input": {}
             }
         },
         "com.amazonaws.ssm#DeleteInventoryResult": {
@@ -6933,6 +7077,9 @@
                         "smithy.api#required": {}
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#input": {}
             }
         },
         "com.amazonaws.ssm#DeleteMaintenanceWindowResult": {
@@ -6979,6 +7126,9 @@
                         "smithy.api#required": {}
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#input": {}
             }
         },
         "com.amazonaws.ssm#DeleteOpsMetadataResult": {
@@ -7015,6 +7165,9 @@
                         "smithy.api#required": {}
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#input": {}
             }
         },
         "com.amazonaws.ssm#DeleteParameterResult": {
@@ -7048,6 +7201,9 @@
                         "smithy.api#required": {}
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#input": {}
             }
         },
         "com.amazonaws.ssm#DeleteParametersResult": {
@@ -7097,6 +7253,9 @@
                         "smithy.api#required": {}
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#input": {}
             }
         },
         "com.amazonaws.ssm#DeletePatchBaselineResult": {
@@ -7149,6 +7308,9 @@
                         "smithy.api#documentation": "<p>Specify the type of resource data sync to delete.</p>"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#input": {}
             }
         },
         "com.amazonaws.ssm#DeleteResourceDataSyncResult": {
@@ -7202,11 +7364,17 @@
                         "smithy.api#required": {}
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#input": {}
             }
         },
         "com.amazonaws.ssm#DeleteResourcePolicyResponse": {
             "type": "structure",
-            "members": {}
+            "members": {},
+            "traits": {
+                "smithy.api#output": {}
+            }
         },
         "com.amazonaws.ssm#DeliveryTimedOutCount": {
             "type": "integer",
@@ -7244,6 +7412,9 @@
                         "smithy.api#required": {}
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#input": {}
             }
         },
         "com.amazonaws.ssm#DeregisterManagedInstanceResult": {
@@ -7287,6 +7458,9 @@
                         "smithy.api#required": {}
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#input": {}
             }
         },
         "com.amazonaws.ssm#DeregisterPatchBaselineForPatchGroupResult": {
@@ -7353,6 +7527,9 @@
                         "smithy.api#documentation": "<p>The system checks if the target is being referenced by a task. If the target is being\n   referenced, the system returns an error and doesn't deregister the target from the maintenance\n   window.</p>"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#input": {}
             }
         },
         "com.amazonaws.ssm#DeregisterTargetFromMaintenanceWindowResult": {
@@ -7409,6 +7586,9 @@
                         "smithy.api#required": {}
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#input": {}
             }
         },
         "com.amazonaws.ssm#DeregisterTaskFromMaintenanceWindowResult": {
@@ -7528,6 +7708,9 @@
                         "smithy.api#documentation": "<p>A token to start the list. Use this token to get the next set of results. </p>"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#input": {}
             }
         },
         "com.amazonaws.ssm#DescribeActivationsResult": {
@@ -7644,6 +7827,9 @@
                         "smithy.api#documentation": "<p>A token to start the list. Use this token to get the next set of results. </p>"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#input": {}
             }
         },
         "com.amazonaws.ssm#DescribeAssociationExecutionTargetsResult": {
@@ -7721,6 +7907,9 @@
                         "smithy.api#documentation": "<p>A token to start the list. Use this token to get the next set of results. </p>"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#input": {}
             }
         },
         "com.amazonaws.ssm#DescribeAssociationExecutionsResult": {
@@ -7767,6 +7956,9 @@
                         "smithy.api#documentation": "<p>Specify the association version to retrieve. To view the latest version, either specify\n    <code>$LATEST</code> for this parameter, or omit this parameter. To view a list of all\n   associations for a managed node, use <a>ListAssociations</a>. To get a list of\n   versions for a specific association, use <a>ListAssociationVersions</a>. </p>"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#input": {}
             }
         },
         "com.amazonaws.ssm#DescribeAssociationResult": {
@@ -7834,6 +8026,9 @@
                         "smithy.api#documentation": "<p>The token for the next set of items to return. (You received this token from a previous\n   call.)</p>"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#input": {}
             }
         },
         "com.amazonaws.ssm#DescribeAutomationExecutionsResult": {
@@ -7924,6 +8119,9 @@
                         "smithy.api#documentation": "<p>Indicates whether to list step executions in reverse order by start time. The default value\n   is 'false'.</p>"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#input": {}
             }
         },
         "com.amazonaws.ssm#DescribeAutomationStepExecutionsResult": {
@@ -7988,6 +8186,9 @@
                         "smithy.api#documentation": "<p>The token for the next set of items to return. (You received this token from a previous\n   call.)</p>"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#input": {}
             }
         },
         "com.amazonaws.ssm#DescribeAvailablePatchesResult": {
@@ -8089,6 +8290,9 @@
                         "smithy.api#documentation": "<p>The token for the next set of items to return. (You received this token from a previous\n   call.)</p>"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#input": {}
             }
         },
         "com.amazonaws.ssm#DescribeDocumentPermissionResponse": {
@@ -8112,6 +8316,9 @@
                         "smithy.api#documentation": "<p>The token for the next set of items to return. Use this token to get the next set of\n   results.</p>"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#output": {}
             }
         },
         "com.amazonaws.ssm#DescribeDocumentRequest": {
@@ -8136,6 +8343,9 @@
                         "smithy.api#documentation": "<p>An optional field specifying the version of the artifact associated with the document. For\n   example, \"Release 12, Update 6\". This value is unique across all versions of a document, and\n   can't be changed.</p>"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#input": {}
             }
         },
         "com.amazonaws.ssm#DescribeDocumentResult": {
@@ -8201,6 +8411,9 @@
                         "smithy.api#documentation": "<p>The token for the next set of items to return. (You received this token from a previous\n   call.)</p>"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#input": {}
             }
         },
         "com.amazonaws.ssm#DescribeEffectiveInstanceAssociationsResult": {
@@ -8275,6 +8488,9 @@
                         "smithy.api#documentation": "<p>The token for the next set of items to return. (You received this token from a previous\n   call.)</p>"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#input": {}
             }
         },
         "com.amazonaws.ssm#DescribeEffectivePatchesForPatchBaselineResult": {
@@ -8346,6 +8562,9 @@
                         "smithy.api#documentation": "<p>The token for the next set of items to return. (You received this token from a previous\n   call.)</p>"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#input": {}
             }
         },
         "com.amazonaws.ssm#DescribeInstanceAssociationsStatusResult": {
@@ -8428,6 +8647,9 @@
                         "smithy.api#documentation": "<p>The token for the next set of items to return. (You received this token from a previous\n   call.)</p>"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#input": {}
             }
         },
         "com.amazonaws.ssm#DescribeInstanceInformationResult": {
@@ -8531,6 +8753,9 @@
                         "smithy.api#documentation": "<p>The maximum number of patches to return (per page).</p>"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#input": {}
             }
         },
         "com.amazonaws.ssm#DescribeInstancePatchStatesForPatchGroupResult": {
@@ -8573,6 +8798,9 @@
                         "smithy.api#documentation": "<p>The maximum number of managed nodes to return (per page).</p>"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#input": {}
             }
         },
         "com.amazonaws.ssm#DescribeInstancePatchStatesResult": {
@@ -8653,6 +8881,9 @@
                         "smithy.api#documentation": "<p>The maximum number of patches to return (per page).</p>"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#input": {}
             }
         },
         "com.amazonaws.ssm#DescribeInstancePatchesResult": {
@@ -8723,6 +8954,9 @@
                         "smithy.api#documentation": "<p>The maximum number of items to return for this call. The call also returns a token that you\n   can specify in a subsequent call to get the next set of results.</p>"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#input": {}
             }
         },
         "com.amazonaws.ssm#DescribeInventoryDeletionsResult": {
@@ -8804,6 +9038,9 @@
                         "smithy.api#documentation": "<p>The token for the next set of items to return. (You received this token from a previous\n   call.)</p>"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#input": {}
             }
         },
         "com.amazonaws.ssm#DescribeMaintenanceWindowExecutionTaskInvocationsResult": {
@@ -8878,6 +9115,9 @@
                         "smithy.api#documentation": "<p>The token for the next set of items to return. (You received this token from a previous\n   call.)</p>"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#input": {}
             }
         },
         "com.amazonaws.ssm#DescribeMaintenanceWindowExecutionTasksResult": {
@@ -8949,6 +9189,9 @@
                         "smithy.api#documentation": "<p>The token for the next set of items to return. (You received this token from a previous\n   call.)</p>"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#input": {}
             }
         },
         "com.amazonaws.ssm#DescribeMaintenanceWindowExecutionsResult": {
@@ -9034,6 +9277,9 @@
                         "smithy.api#documentation": "<p>The token for the next set of items to return. (You received this token from a previous\n   call.)</p>"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#input": {}
             }
         },
         "com.amazonaws.ssm#DescribeMaintenanceWindowScheduleResult": {
@@ -9108,6 +9354,9 @@
                         "smithy.api#documentation": "<p>The token for the next set of items to return. (You received this token from a previous\n   call.)</p>"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#input": {}
             }
         },
         "com.amazonaws.ssm#DescribeMaintenanceWindowTargetsResult": {
@@ -9182,6 +9431,9 @@
                         "smithy.api#documentation": "<p>The token for the next set of items to return. (You received this token from a previous\n   call.)</p>"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#input": {}
             }
         },
         "com.amazonaws.ssm#DescribeMaintenanceWindowTasksResult": {
@@ -9277,6 +9529,9 @@
                         "smithy.api#documentation": "<p>The token for the next set of items to return. (You received this token from a previous\n   call.)</p>"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#input": {}
             }
         },
         "com.amazonaws.ssm#DescribeMaintenanceWindowsForTargetResult": {
@@ -9318,6 +9573,9 @@
                         "smithy.api#documentation": "<p>The token for the next set of items to return. (You received this token from a previous\n   call.)</p>"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#input": {}
             }
         },
         "com.amazonaws.ssm#DescribeMaintenanceWindowsResult": {
@@ -9381,6 +9639,9 @@
                         "smithy.api#documentation": "<p>A token to start the list. Use this token to get the next set of results.</p>"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#input": {}
             }
         },
         "com.amazonaws.ssm#DescribeOpsItemsResponse": {
@@ -9398,6 +9659,9 @@
                         "smithy.api#documentation": "<p>A list of OpsItems.</p>"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#output": {}
             }
         },
         "com.amazonaws.ssm#DescribeParameters": {
@@ -9462,6 +9726,9 @@
                         "smithy.api#documentation": "<p>The token for the next set of items to return. (You received this token from a previous\n   call.)</p>"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#input": {}
             }
         },
         "com.amazonaws.ssm#DescribeParametersResult": {
@@ -9526,6 +9793,9 @@
                         "smithy.api#documentation": "<p>The token for the next set of items to return. (You received this token from a previous\n   call.)</p>"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#input": {}
             }
         },
         "com.amazonaws.ssm#DescribePatchBaselinesResult": {
@@ -9575,6 +9845,9 @@
                         "smithy.api#required": {}
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#input": {}
             }
         },
         "com.amazonaws.ssm#DescribePatchGroupStateResult": {
@@ -9711,6 +9984,9 @@
                         "smithy.api#documentation": "<p>The token for the next set of items to return. (You received this token from a previous\n   call.)</p>"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#input": {}
             }
         },
         "com.amazonaws.ssm#DescribePatchGroupsResult": {
@@ -9789,6 +10065,9 @@
                         "smithy.api#documentation": "<p>The token for the next set of items to return. (You received this token from a previous\n   call.)</p>"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#input": {}
             }
         },
         "com.amazonaws.ssm#DescribePatchPropertiesResult": {
@@ -9866,6 +10145,9 @@
                         "smithy.api#documentation": "<p>One or more filters to limit the type of sessions returned by the request.</p>"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#input": {}
             }
         },
         "com.amazonaws.ssm#DescribeSessionsResponse": {
@@ -9883,6 +10165,9 @@
                         "smithy.api#documentation": "<p>The token for the next set of items to return. (You received this token from a previous\n   call.)</p>"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#output": {}
             }
         },
         "com.amazonaws.ssm#DescriptionInDocument": {
@@ -9931,11 +10216,17 @@
                         "smithy.api#required": {}
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#input": {}
             }
         },
         "com.amazonaws.ssm#DisassociateOpsItemRelatedItemResponse": {
             "type": "structure",
-            "members": {}
+            "members": {},
+            "traits": {
+                "smithy.api#output": {}
+            }
         },
         "com.amazonaws.ssm#DocumentARN": {
             "type": "string",
@@ -10038,7 +10329,7 @@
                 "Owner": {
                     "target": "com.amazonaws.ssm#DocumentOwner",
                     "traits": {
-                        "smithy.api#documentation": "<p>The Amazon Web Services user account that created the document.</p>"
+                        "smithy.api#documentation": "<p>The Amazon Web Services user that created the document.</p>"
                     }
                 },
                 "CreatedDate": {
@@ -10340,7 +10631,7 @@
                 "Owner": {
                     "target": "com.amazonaws.ssm#DocumentOwner",
                     "traits": {
-                        "smithy.api#documentation": "<p>The Amazon Web Services user account that created the document.</p>"
+                        "smithy.api#documentation": "<p>The Amazon Web Services user that created the document.</p>"
                     }
                 },
                 "VersionName": {
@@ -10558,7 +10849,7 @@
                 }
             },
             "traits": {
-                "smithy.api#documentation": "<p>Parameters specified in a System Manager document that run on the server when the command is\n   run. </p>"
+                "smithy.api#documentation": "<p>Parameters specified in a Systems Manager document that run on the server when the command is run.\n  </p>"
             }
         },
         "com.amazonaws.ssm#DocumentParameterDefaultValue": {
@@ -10608,7 +10899,7 @@
                     "code": "DocumentPermissionLimit",
                     "httpResponseCode": 400
                 },
-                "smithy.api#documentation": "<p>The document can't be shared with more Amazon Web Services user accounts. You can specify a maximum of\n   20 accounts per API operation to share a private document.</p>\n         <p>By default, you can share a private document with a maximum of 1,000 accounts and publicly\n   share up to five documents.</p>\n         <p>If you need to increase the quota for privately or publicly shared Systems Manager documents, contact\n   Amazon Web Services Support.</p>",
+                "smithy.api#documentation": "<p>The document can't be shared with more Amazon Web Services accounts. You can specify a maximum of 20\n   accounts per API operation to share a private document.</p>\n         <p>By default, you can share a private document with a maximum of 1,000 accounts and publicly\n   share up to five documents.</p>\n         <p>If you need to increase the quota for privately or publicly shared Systems Manager documents, contact\n   Amazon Web Services Support.</p>",
                 "smithy.api#error": "client"
             }
         },
@@ -10658,7 +10949,7 @@
                 "VersionName": {
                     "target": "com.amazonaws.ssm#DocumentVersionName",
                     "traits": {
-                        "smithy.api#documentation": "<p>An optional field specifying the version of the artifact associated with the document. For example, \"Release 12, Update 6\". This value is unique across all versions of a document, and can't be changed.</p>"
+                        "smithy.api#documentation": "<p>An optional field specifying the version of the artifact associated with the document. For\n   example, \"Release 12, Update 6\". This value is unique across all versions of a document, and\n   can't be changed.</p>"
                     }
                 }
             },
@@ -11368,6 +11659,9 @@
                         "smithy.api#required": {}
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#input": {}
             }
         },
         "com.amazonaws.ssm#GetAutomationExecutionResult": {
@@ -11423,6 +11717,9 @@
                         "smithy.api#documentation": "<p>(Optional) The specific time for which you want to get calendar state information, in <a href=\"https://en.wikipedia.org/wiki/ISO_8601\">ISO 8601</a> format. If you don't specify a\n   value or <code>AtTime</code>, the current time is used.</p>"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#input": {}
             }
         },
         "com.amazonaws.ssm#GetCalendarStateResponse": {
@@ -11446,6 +11743,9 @@
                         "smithy.api#documentation": "<p>The time, as an <a href=\"https://en.wikipedia.org/wiki/ISO_8601\">ISO 8601</a> string,\n   that the calendar state will change. If the current calendar state is <code>OPEN</code>,\n    <code>NextTransitionTime</code> indicates when the calendar state changes to\n   <code>CLOSED</code>, and vice-versa.</p>"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#output": {}
             }
         },
         "com.amazonaws.ssm#GetCommandInvocation": {
@@ -11593,6 +11893,9 @@
                         "smithy.api#documentation": "<p>The name of the step for which you want detailed results. If the document contains only one\n   step, you can omit the name and details for that step. If the document contains more than one\n   step, you must specify the name of the step for which you want to view details. Be sure to\n   specify the name of the step, not the name of a plugin like\n   <code>aws:RunShellScript</code>.</p>\n         <p>To find the <code>PluginName</code>, check the document content and find the name of the\n   step you want details for. Alternatively, use <a>ListCommandInvocations</a> with the\n    <code>CommandId</code> and <code>Details</code> parameters. The <code>PluginName</code> is the\n    <code>Name</code> attribute of the <code>CommandPlugin</code> object in the\n    <code>CommandPlugins</code> list.</p>"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#input": {}
             }
         },
         "com.amazonaws.ssm#GetCommandInvocationResult": {
@@ -11730,6 +12033,9 @@
                         "smithy.api#required": {}
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#input": {}
             }
         },
         "com.amazonaws.ssm#GetConnectionStatusResponse": {
@@ -11747,6 +12053,9 @@
                         "smithy.api#documentation": "<p>The status of the connection to the managed node. For example, 'Connected' or 'Not\n   Connected'.</p>"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#output": {}
             }
         },
         "com.amazonaws.ssm#GetDefaultPatchBaseline": {
@@ -11775,6 +12084,9 @@
                         "smithy.api#documentation": "<p>Returns the default patch baseline for the specified operating system.</p>"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#input": {}
             }
         },
         "com.amazonaws.ssm#GetDefaultPatchBaselineResult": {
@@ -11840,6 +12152,9 @@
                         "smithy.api#documentation": "<p>Defines the basic information about a patch baseline override.</p>"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#input": {}
             }
         },
         "com.amazonaws.ssm#GetDeployablePatchSnapshotForInstanceResult": {
@@ -11922,6 +12237,9 @@
                         "smithy.api#documentation": "<p>Returns the document in the specified format. The document format can be either JSON or\n   YAML. JSON is the default format.</p>"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#input": {}
             }
         },
         "com.amazonaws.ssm#GetDocumentResult": {
@@ -12082,6 +12400,9 @@
                         "smithy.api#documentation": "<p>The maximum number of items to return for this call. The call also returns a token that you\n   can specify in a subsequent call to get the next set of results.</p>"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#input": {}
             }
         },
         "com.amazonaws.ssm#GetInventoryResult": {
@@ -12176,6 +12497,9 @@
                         "smithy.api#documentation": "<p>Returns the sub-type schema for a specified inventory type.</p>"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#input": {}
             }
         },
         "com.amazonaws.ssm#GetInventorySchemaResult": {
@@ -12245,6 +12569,9 @@
                         "smithy.api#required": {}
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#input": {}
             }
         },
         "com.amazonaws.ssm#GetMaintenanceWindowExecutionResult": {
@@ -12352,6 +12679,9 @@
                         "smithy.api#required": {}
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#input": {}
             }
         },
         "com.amazonaws.ssm#GetMaintenanceWindowExecutionTaskInvocationResult": {
@@ -12448,6 +12778,9 @@
                         "smithy.api#required": {}
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#input": {}
             }
         },
         "com.amazonaws.ssm#GetMaintenanceWindowExecutionTaskResult": {
@@ -12556,6 +12889,9 @@
                         "smithy.api#required": {}
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#input": {}
             }
         },
         "com.amazonaws.ssm#GetMaintenanceWindowResult": {
@@ -12695,6 +13031,9 @@
                         "smithy.api#required": {}
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#input": {}
             }
         },
         "com.amazonaws.ssm#GetMaintenanceWindowTaskResult": {
@@ -12838,6 +13177,9 @@
                         "smithy.api#documentation": "<p>The OpsItem Amazon Resource Name (ARN).</p>"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#input": {}
             }
         },
         "com.amazonaws.ssm#GetOpsItemResponse": {
@@ -12849,6 +13191,9 @@
                         "smithy.api#documentation": "<p>The OpsItem.</p>"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#output": {}
             }
         },
         "com.amazonaws.ssm#GetOpsMetadata": {
@@ -12907,6 +13252,9 @@
                         "smithy.api#documentation": "<p>A token to start the list. Use this token to get the next set of results.</p>"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#input": {}
             }
         },
         "com.amazonaws.ssm#GetOpsMetadataResult": {
@@ -13010,6 +13358,9 @@
                         "smithy.api#documentation": "<p>The maximum number of items to return for this call. The call also returns a token that you\n   can specify in a subsequent call to get the next set of results.</p>"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#input": {}
             }
         },
         "com.amazonaws.ssm#GetOpsSummaryResult": {
@@ -13116,6 +13467,9 @@
                         "smithy.api#documentation": "<p>The token for the next set of items to return. (You received this token from a previous\n   call.)</p>"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#input": {}
             }
         },
         "com.amazonaws.ssm#GetParameterHistoryResult": {
@@ -13152,6 +13506,9 @@
                         "smithy.api#documentation": "<p>Return decrypted values for secure string parameters. This flag is ignored for\n    <code>String</code> and <code>StringList</code> parameter types.</p>"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#input": {}
             }
         },
         "com.amazonaws.ssm#GetParameterResult": {
@@ -13275,6 +13632,9 @@
                         "smithy.api#documentation": "<p>A token to start the list. Use this token to get the next set of results. </p>"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#input": {}
             }
         },
         "com.amazonaws.ssm#GetParametersByPathResult": {
@@ -13311,6 +13671,9 @@
                         "smithy.api#documentation": "<p>Return decrypted secure string value. Return decrypted values for secure string parameters.\n   This flag is ignored for <code>String</code> and <code>StringList</code> parameter types.</p>"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#input": {}
             }
         },
         "com.amazonaws.ssm#GetParametersResult": {
@@ -13386,6 +13749,9 @@
                         "smithy.api#documentation": "<p>Returns the operating system rule specified for patch groups using the patch\n   baseline.</p>"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#input": {}
             }
         },
         "com.amazonaws.ssm#GetPatchBaselineForPatchGroupResult": {
@@ -13421,6 +13787,9 @@
                         "smithy.api#required": {}
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#input": {}
             }
         },
         "com.amazonaws.ssm#GetPatchBaselineResult": {
@@ -13567,6 +13936,9 @@
                         "smithy.api#documentation": "<p>The maximum number of items to return for this call. The call also returns a token that you\n   can specify in a subsequent call to get the next set of results.</p>"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#input": {}
             }
         },
         "com.amazonaws.ssm#GetResourcePoliciesResponse": {
@@ -13584,6 +13956,9 @@
                         "smithy.api#documentation": "<p>An array of the <code>Policy</code> object.</p>"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#output": {}
             }
         },
         "com.amazonaws.ssm#GetResourcePoliciesResponseEntries": {
@@ -13644,13 +14019,14 @@
                 "SettingId": {
                     "target": "com.amazonaws.ssm#ServiceSettingId",
                     "traits": {
-                        "smithy.api#documentation": "<p>The ID of the service setting to get. The setting ID can be one of the following.</p>\n         <ul>\n            <li>\n               <p>\n                  <code>/ssm/automation/customer-script-log-destination</code>\n               </p>\n            </li>\n            <li>\n               <p>\n                  <code>/ssm/automation/customer-script-log-group-name</code>\n               </p>\n            </li>\n            <li>\n               <p>\n                  <code>/ssm/documents/console/public-sharing-permission</code>\n               </p>\n            </li>\n            <li>\n               <p>\n                  <code>/ssm/managed-instance/activation-tier</code>\n               </p>\n            </li>\n            <li>\n               <p>\n                  <code>/ssm/opsinsights/opscenter</code>\n               </p>\n            </li>\n            <li>\n               <p>\n                  <code>/ssm/parameter-store/default-parameter-tier</code>\n               </p>\n            </li>\n            <li>\n               <p>\n                  <code>/ssm/parameter-store/high-throughput-enabled</code>\n               </p>\n            </li>\n         </ul>",
+                        "smithy.api#documentation": "<p>The ID of the service setting to get. The setting ID can be one of the following.</p>\n         <ul>\n            <li>\n               <p>\n                  <code>/ssm/managed-instance/default-ec2-instance-management-role</code>\n               </p>\n            </li>\n            <li>\n               <p>\n                  <code>/ssm/automation/customer-script-log-destination</code>\n               </p>\n            </li>\n            <li>\n               <p>\n                  <code>/ssm/automation/customer-script-log-group-name</code>\n               </p>\n            </li>\n            <li>\n               <p>\n                  <code>/ssm/documents/console/public-sharing-permission</code>\n               </p>\n            </li>\n            <li>\n               <p>\n                  <code>/ssm/managed-instance/activation-tier</code>\n               </p>\n            </li>\n            <li>\n               <p>\n                  <code>/ssm/opsinsights/opscenter</code>\n               </p>\n            </li>\n            <li>\n               <p>\n                  <code>/ssm/parameter-store/default-parameter-tier</code>\n               </p>\n            </li>\n            <li>\n               <p>\n                  <code>/ssm/parameter-store/high-throughput-enabled</code>\n               </p>\n            </li>\n         </ul>",
                         "smithy.api#required": {}
                     }
                 }
             },
             "traits": {
-                "smithy.api#documentation": "<p>The request body of the GetServiceSetting API operation.</p>"
+                "smithy.api#documentation": "<p>The request body of the GetServiceSetting API operation.</p>",
+                "smithy.api#input": {}
             }
         },
         "com.amazonaws.ssm#GetServiceSettingResult": {
@@ -16190,6 +16566,9 @@
                         "smithy.api#required": {}
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#input": {}
             }
         },
         "com.amazonaws.ssm#LabelParameterVersionResult": {
@@ -16294,6 +16673,9 @@
                         "smithy.api#documentation": "<p>A token to start the list. Use this token to get the next set of results. </p>"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#input": {}
             }
         },
         "com.amazonaws.ssm#ListAssociationVersionsResult": {
@@ -16361,6 +16743,9 @@
                         "smithy.api#documentation": "<p>The token for the next set of items to return. (You received this token from a previous\n   call.)</p>"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#input": {}
             }
         },
         "com.amazonaws.ssm#ListAssociationsResult": {
@@ -16456,6 +16841,9 @@
                         "smithy.api#documentation": "<p>(Optional) If set this returns the response of the command executions and any command\n   output. The default value is <code>false</code>. </p>"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#input": {}
             }
         },
         "com.amazonaws.ssm#ListCommandInvocationsResult": {
@@ -16544,6 +16932,9 @@
                         "smithy.api#documentation": "<p>(Optional) One or more filters. Use a filter to return a more specific list of results.\n  </p>"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#input": {}
             }
         },
         "com.amazonaws.ssm#ListCommandsResult": {
@@ -16632,6 +17023,9 @@
                         "smithy.api#documentation": "<p>The maximum number of items to return for this call. The call also returns a token that you\n   can specify in a subsequent call to get the next set of results.</p>"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#input": {}
             }
         },
         "com.amazonaws.ssm#ListComplianceItemsResult": {
@@ -16702,6 +17096,9 @@
                         "smithy.api#documentation": "<p>The maximum number of items to return for this call. Currently, you can specify null or 50.\n   The call also returns a token that you can specify in a subsequent call to get the next set of\n   results.</p>"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#input": {}
             }
         },
         "com.amazonaws.ssm#ListComplianceSummariesResult": {
@@ -16783,6 +17180,9 @@
                         "smithy.api#documentation": "<p>The maximum number of items to return for this call. The call also returns a token that you\n   can specify in a subsequent call to get the next set of results.</p>"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#input": {}
             }
         },
         "com.amazonaws.ssm#ListDocumentMetadataHistoryResponse": {
@@ -16818,6 +17218,9 @@
                         "smithy.api#documentation": "<p>The maximum number of items to return for this call. The call also returns a token that you\n   can specify in a subsequent call to get the next set of results.</p>"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#output": {}
             }
         },
         "com.amazonaws.ssm#ListDocumentVersions": {
@@ -16872,6 +17275,9 @@
                         "smithy.api#documentation": "<p>The token for the next set of items to return. (You received this token from a previous\n   call.)</p>"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#input": {}
             }
         },
         "com.amazonaws.ssm#ListDocumentVersionsResult": {
@@ -16948,6 +17354,9 @@
                         "smithy.api#documentation": "<p>The token for the next set of items to return. (You received this token from a previous\n   call.)</p>"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#input": {}
             }
         },
         "com.amazonaws.ssm#ListDocumentsResult": {
@@ -17032,6 +17441,9 @@
                         "smithy.api#documentation": "<p>The maximum number of items to return for this call. The call also returns a token that you\n   can specify in a subsequent call to get the next set of results.</p>"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#input": {}
             }
         },
         "com.amazonaws.ssm#ListInventoryEntriesResult": {
@@ -17128,6 +17540,9 @@
                         "smithy.api#documentation": "<p>A token to start the list. Use this token to get the next set of results. </p>"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#input": {}
             }
         },
         "com.amazonaws.ssm#ListOpsItemEventsResponse": {
@@ -17145,6 +17560,9 @@
                         "smithy.api#documentation": "<p>A list of event information for the specified OpsItems.</p>"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#output": {}
             }
         },
         "com.amazonaws.ssm#ListOpsItemRelatedItems": {
@@ -17200,6 +17618,9 @@
                         "smithy.api#documentation": "<p>The token for the next set of items to return. (You received this token from a previous\n   call.)</p>"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#input": {}
             }
         },
         "com.amazonaws.ssm#ListOpsItemRelatedItemsResponse": {
@@ -17217,6 +17638,9 @@
                         "smithy.api#documentation": "<p>A list of related-item resources for the specified OpsItem.</p>"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#output": {}
             }
         },
         "com.amazonaws.ssm#ListOpsMetadata": {
@@ -17277,6 +17701,9 @@
                         "smithy.api#documentation": "<p>A token to start the list. Use this token to get the next set of results.</p>"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#input": {}
             }
         },
         "com.amazonaws.ssm#ListOpsMetadataResult": {
@@ -17347,6 +17774,9 @@
                         "smithy.api#documentation": "<p>The maximum number of items to return for this call. The call also returns a token that you\n   can specify in a subsequent call to get the next set of results.</p>"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#input": {}
             }
         },
         "com.amazonaws.ssm#ListResourceComplianceSummariesResult": {
@@ -17417,6 +17847,9 @@
                         "smithy.api#documentation": "<p>The maximum number of items to return for this call. The call also returns a token that you\n   can specify in a subsequent call to get the next set of results.</p>"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#input": {}
             }
         },
         "com.amazonaws.ssm#ListResourceDataSyncResult": {
@@ -17476,6 +17909,9 @@
                         "smithy.api#required": {}
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#input": {}
             }
         },
         "com.amazonaws.ssm#ListTagsForResourceResult": {
@@ -18832,7 +19268,7 @@
                 }
             ],
             "traits": {
-                "smithy.api#documentation": "<p>Shares a Amazon Web Services Systems Manager document (SSM document)publicly or privately. If you share a document\n   privately, you must specify the Amazon Web Services user account IDs for those people who can use the\n   document. If you share a document publicly, you must specify <i>All</i> as the\n   account ID.</p>"
+                "smithy.api#documentation": "<p>Shares a Amazon Web Services Systems Manager document (SSM document)publicly or privately. If you share a document\n   privately, you must specify the Amazon Web Services user IDs for those people who can use the document. If\n   you share a document publicly, you must specify <i>All</i> as the account\n   ID.</p>"
             }
         },
         "com.amazonaws.ssm#ModifyDocumentPermissionRequest": {
@@ -18855,13 +19291,13 @@
                 "AccountIdsToAdd": {
                     "target": "com.amazonaws.ssm#AccountIdList",
                     "traits": {
-                        "smithy.api#documentation": "<p>The Amazon Web Services user accounts that should have access to the document. The account IDs can\n   either be a group of account IDs or <i>All</i>.</p>"
+                        "smithy.api#documentation": "<p>The Amazon Web Services users that should have access to the document. The account IDs can either be a\n   group of account IDs or <i>All</i>.</p>"
                     }
                 },
                 "AccountIdsToRemove": {
                     "target": "com.amazonaws.ssm#AccountIdList",
                     "traits": {
-                        "smithy.api#documentation": "<p>The Amazon Web Services user accounts that should no longer have access to the document. The Amazon Web Services\n   user account can either be a group of account IDs or <i>All</i>. This action has a\n   higher priority than <i>AccountIdsToAdd</i>. If you specify an account ID to add\n   and the same ID to remove, the system removes access to the document.</p>"
+                        "smithy.api#documentation": "<p>The Amazon Web Services users that should no longer have access to the document. The Amazon Web Services user\n   can either be a group of account IDs or <i>All</i>. This action has a higher\n   priority than <i>AccountIdsToAdd</i>. If you specify an ID to add and the same ID\n   to remove, the system removes access to the document.</p>"
                     }
                 },
                 "SharedDocumentVersion": {
@@ -18870,11 +19306,17 @@
                         "smithy.api#documentation": "<p>(Optional) The version of the document to share. If it isn't specified, the system choose\n   the <code>Default</code> version to share.</p>"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#input": {}
             }
         },
         "com.amazonaws.ssm#ModifyDocumentPermissionResponse": {
             "type": "structure",
-            "members": {}
+            "members": {},
+            "traits": {
+                "smithy.api#output": {}
+            }
         },
         "com.amazonaws.ssm#NextToken": {
             "type": "string"
@@ -19081,6 +19523,18 @@
                     "target": "smithy.api#Unit",
                     "traits": {
                         "smithy.api#enumValue": "ROCKY_LINUX"
+                    }
+                },
+                "AlmaLinux": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "ALMA_LINUX"
+                    }
+                },
+                "AmazonLinux2023": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "AMAZON_LINUX_2023"
                     }
                 }
             }
@@ -23044,6 +23498,9 @@
                         "smithy.api#documentation": "<p>The mode for uploading compliance items. You can specify <code>COMPLETE</code> or\n    <code>PARTIAL</code>. In <code>COMPLETE</code> mode, the system overwrites all existing\n   compliance information for the resource. You must provide a full list of compliance items each\n   time you send the request.</p>\n         <p>In <code>PARTIAL</code> mode, the system overwrites compliance information for a specific\n   association. The association must be configured with <code>SyncCompliance</code> set to\n    <code>MANUAL</code>. By default, all requests use <code>COMPLETE</code> mode.</p>\n         <note>\n            <p>This attribute is only valid for association compliance.</p>\n         </note>"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#input": {}
             }
         },
         "com.amazonaws.ssm#PutComplianceItemsResult": {
@@ -23120,6 +23577,9 @@
                         "smithy.api#required": {}
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#input": {}
             }
         },
         "com.amazonaws.ssm#PutInventoryResult": {
@@ -23224,7 +23684,7 @@
                 "KeyId": {
                     "target": "com.amazonaws.ssm#ParameterKeyId",
                     "traits": {
-                        "smithy.api#documentation": "<p>The Key Management Service (KMS) ID that you want to use to encrypt a\n   parameter. Either the default KMS key automatically assigned to your Amazon Web Services account\n   or a custom key. Required for parameters that use the <code>SecureString</code>\n   data type.</p>\n         <p>If you don't specify a key ID, the system uses the default key associated with your\n   Amazon Web Services account.</p>\n         <ul>\n            <li>\n               <p>To use your default KMS key, choose the <code>SecureString</code> data type, and do <i>not</i> specify the <code>Key ID</code> when you create the parameter. The system automatically populates\n      <code>Key ID</code> with your default KMS key.</p>\n            </li>\n            <li>\n               <p>To use a custom KMS key, choose the <code>SecureString</code>\n     data type with the <code>Key ID</code> parameter.</p>\n            </li>\n         </ul>"
+                        "smithy.api#documentation": "<p>The Key Management Service (KMS) ID that you want to use to encrypt a\n   parameter. Use a custom key for better security. Required for parameters that use the <code>SecureString</code> data type.</p>\n         <p>If you don't specify a key ID, the system uses the default key associated with your\n   Amazon Web Services account which is not as secure as using a custom key.</p>\n         <ul>\n            <li>\n               <p>To use a custom KMS key, choose the <code>SecureString</code>\n     data type with the <code>Key ID</code> parameter.</p>\n            </li>\n         </ul>"
                     }
                 },
                 "Overwrite": {
@@ -23261,9 +23721,12 @@
                 "DataType": {
                     "target": "com.amazonaws.ssm#ParameterDataType",
                     "traits": {
-                        "smithy.api#documentation": "<p>The data type for a <code>String</code> parameter. Supported data types include plain text\n   and Amazon Machine Image (AMI) IDs.</p>\n         <p>\n            <b>The following data type values are supported.</b>\n         </p>\n         <ul>\n            <li>\n               <p>\n                  <code>text</code>\n               </p>\n            </li>\n            <li>\n               <p>\n                  <code>aws:ec2:image</code>\n               </p>\n            </li>\n            <li>\n               <p>\n                  <code>aws:ssm:integration</code>\n               </p>\n            </li>\n         </ul>\n         <p>When you create a <code>String</code> parameter and specify <code>aws:ec2:image</code>,\n   Amazon Web Services Systems Manager validates the parameter value is in the required format, such as\n    <code>ami-12345abcdeEXAMPLE</code>, and that the specified AMI is available in your\n   Amazon Web Services account. For more information, see <a href=\"https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-ec2-aliases.html\">Native parameter support\n    for Amazon Machine Image (AMI) IDs</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>"
+                        "smithy.api#documentation": "<p>The data type for a <code>String</code> parameter. Supported data types include plain text\n   and Amazon Machine Image (AMI) IDs.</p>\n         <p>\n            <b>The following data type values are supported.</b>\n         </p>\n         <ul>\n            <li>\n               <p>\n                  <code>text</code>\n               </p>\n            </li>\n            <li>\n               <p>\n                  <code>aws:ec2:image</code>\n               </p>\n            </li>\n            <li>\n               <p>\n                  <code>aws:ssm:integration</code>\n               </p>\n            </li>\n         </ul>\n         <p>When you create a <code>String</code> parameter and specify <code>aws:ec2:image</code>,\n   Amazon Web Services Systems Manager validates the parameter value is in the required format, such as\n    <code>ami-12345abcdeEXAMPLE</code>, and that the specified AMI is available in your\n   Amazon Web Services account.</p>\n         <note>\n            <p>If the action is successful, the service sends back an HTTP 200 response which indicates a\n    successful <code>PutParameter</code> call for all cases except for data type\n     <code>aws:ec2:image</code>. If you call <code>PutParameter</code> with\n     <code>aws:ec2:image</code> data type, a successful HTTP 200 response does not guarantee that\n    your parameter was successfully created or updated. The <code>aws:ec2:image</code> value is\n    validated asynchronously, and the <code>PutParameter</code> call returns before the validation\n    is complete. If you submit an invalid AMI value, the PutParameter operation will return success,\n    but the asynchronous validation will fail and the parameter will not be created or updated. To\n    monitor whether your <code>aws:ec2:image</code> parameters are created successfully,  see <a href=\"https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-cwe.html\">Setting\n     up notifications or trigger actions based on Parameter Store events</a>.  For more\n    information about  AMI format validation , see <a href=\"https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-ec2-aliases.html\">Native parameter\n     support for Amazon Machine Image (AMI) IDs</a>. </p>\n         </note>"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#input": {}
             }
         },
         "com.amazonaws.ssm#PutParameterResult": {
@@ -23339,6 +23802,9 @@
                         "smithy.api#documentation": "<p>ID of the current policy version. The hash helps to prevent a situation where multiple users\n   attempt to overwrite a policy. You must provide this hash when updating or deleting a\n   policy.</p>"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#input": {}
             }
         },
         "com.amazonaws.ssm#PutResourcePolicyResponse": {
@@ -23356,6 +23822,9 @@
                         "smithy.api#documentation": "<p>ID of the current policy version.</p>"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#output": {}
             }
         },
         "com.amazonaws.ssm#RebootOption": {
@@ -23423,6 +23892,9 @@
                         "smithy.api#required": {}
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#input": {}
             }
         },
         "com.amazonaws.ssm#RegisterDefaultPatchBaselineResult": {
@@ -23482,6 +23954,9 @@
                         "smithy.api#required": {}
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#input": {}
             }
         },
         "com.amazonaws.ssm#RegisterPatchBaselineForPatchGroupResult": {
@@ -23576,6 +24051,9 @@
                         "smithy.api#idempotencyToken": {}
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#input": {}
             }
         },
         "com.amazonaws.ssm#RegisterTargetWithMaintenanceWindowResult": {
@@ -23722,6 +24200,9 @@
                         "smithy.api#documentation": "<p>The CloudWatch alarm you want to apply to your maintenance window task.</p>"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#input": {}
             }
         },
         "com.amazonaws.ssm#RegisterTaskWithMaintenanceWindowResult": {
@@ -23880,6 +24361,9 @@
                         "smithy.api#required": {}
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#input": {}
             }
         },
         "com.amazonaws.ssm#RemoveTagsFromResourceResult": {
@@ -23925,13 +24409,14 @@
                 "SettingId": {
                     "target": "com.amazonaws.ssm#ServiceSettingId",
                     "traits": {
-                        "smithy.api#documentation": "<p>The Amazon Resource Name (ARN) of the service setting to reset. The setting ID can be one of\n   the following.</p>\n         <ul>\n            <li>\n               <p>\n                  <code>/ssm/automation/customer-script-log-destination</code>\n               </p>\n            </li>\n            <li>\n               <p>\n                  <code>/ssm/automation/customer-script-log-group-name</code>\n               </p>\n            </li>\n            <li>\n               <p>\n                  <code>/ssm/documents/console/public-sharing-permission</code>\n               </p>\n            </li>\n            <li>\n               <p>\n                  <code>/ssm/managed-instance/activation-tier</code>\n               </p>\n            </li>\n            <li>\n               <p>\n                  <code>/ssm/opsinsights/opscenter</code>\n               </p>\n            </li>\n            <li>\n               <p>\n                  <code>/ssm/parameter-store/default-parameter-tier</code>\n               </p>\n            </li>\n            <li>\n               <p>\n                  <code>/ssm/parameter-store/high-throughput-enabled</code>\n               </p>\n            </li>\n         </ul>",
+                        "smithy.api#documentation": "<p>The Amazon Resource Name (ARN) of the service setting to reset. The setting ID can be one of\n   the following.</p>\n         <ul>\n            <li>\n               <p>\n                  <code>/ssm/managed-instance/default-ec2-instance-management-role</code>\n               </p>\n            </li>\n            <li>\n               <p>\n                  <code>/ssm/automation/customer-script-log-destination</code>\n               </p>\n            </li>\n            <li>\n               <p>\n                  <code>/ssm/automation/customer-script-log-group-name</code>\n               </p>\n            </li>\n            <li>\n               <p>\n                  <code>/ssm/documents/console/public-sharing-permission</code>\n               </p>\n            </li>\n            <li>\n               <p>\n                  <code>/ssm/managed-instance/activation-tier</code>\n               </p>\n            </li>\n            <li>\n               <p>\n                  <code>/ssm/opsinsights/opscenter</code>\n               </p>\n            </li>\n            <li>\n               <p>\n                  <code>/ssm/parameter-store/default-parameter-tier</code>\n               </p>\n            </li>\n            <li>\n               <p>\n                  <code>/ssm/parameter-store/high-throughput-enabled</code>\n               </p>\n            </li>\n         </ul>",
                         "smithy.api#required": {}
                     }
                 }
             },
             "traits": {
-                "smithy.api#documentation": "<p>The request body of the ResetServiceSetting API operation.</p>"
+                "smithy.api#documentation": "<p>The request body of the ResetServiceSetting API operation.</p>",
+                "smithy.api#input": {}
             }
         },
         "com.amazonaws.ssm#ResetServiceSettingResult": {
@@ -24811,6 +25296,9 @@
                         "smithy.api#required": {}
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#input": {}
             }
         },
         "com.amazonaws.ssm#ResumeSessionResponse": {
@@ -24834,6 +25322,9 @@
                         "smithy.api#documentation": "<p>A URL back to SSM Agent on the managed node that the Session Manager client uses to send commands and\n   receive output from the managed node. Format: <code>wss://ssmmessages.<b>region</b>.amazonaws.com/v1/data-channel/<b>session-id</b>?stream=(input|output)</code>.</p>\n         <p>\n            <b>region</b> represents the Region identifier for an\n\t\t\t\t\t\tAmazon Web Services Region supported by Amazon Web Services Systems Manager, such as <code>us-east-2</code> for the US East (Ohio) Region.\n\t\t\t\t\t\tFor a list of supported <b>region</b> values, see the <b>Region</b> column in <a href=\"https://docs.aws.amazon.com/general/latest/gr/ssm.html#ssm_region\">Systems Manager service endpoints</a> in the\n        <i>Amazon Web Services General Reference</i>.</p>\n         <p>\n            <b>session-id</b> represents the ID of a Session Manager session, such as\n    <code>1a2b3c4dEXAMPLE</code>.</p>"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#output": {}
             }
         },
         "com.amazonaws.ssm#ReviewInformation": {
@@ -25157,6 +25648,9 @@
                         "smithy.api#documentation": "<p>The data sent with the signal. The data schema depends on the type of signal used in the\n   request.</p>\n         <p>For <code>Approve</code> and <code>Reject</code> signal types, the payload is an optional\n   comment that you can send with the signal type. For example:</p>\n         <p>\n            <code>Comment=\"Looks good\"</code>\n         </p>\n         <p>For <code>StartStep</code> and <code>Resume</code> signal types, you must send the name of\n   the Automation step to start or resume as the payload. For example:</p>\n         <p>\n            <code>StepName=\"step1\"</code>\n         </p>\n         <p>For the <code>StopStep</code> signal type, you must send the step execution ID as the\n   payload. For example:</p>\n         <p>\n            <code>StepExecutionId=\"97fff367-fc5a-4299-aed8-0123456789ab\"</code>\n         </p>"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#input": {}
             }
         },
         "com.amazonaws.ssm#SendAutomationSignalResult": {
@@ -25323,6 +25817,9 @@
                         "smithy.api#documentation": "<p>The CloudWatch alarm you want to apply to your command.</p>"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#input": {}
             }
         },
         "com.amazonaws.ssm#SendCommandResult": {
@@ -25459,7 +25956,7 @@
                 "Owner": {
                     "target": "com.amazonaws.ssm#SessionOwner",
                     "traits": {
-                        "smithy.api#documentation": "<p>The ID of the Amazon Web Services user account that started the session.</p>"
+                        "smithy.api#documentation": "<p>The ID of the Amazon Web Services user that started the session.</p>"
                     }
                 },
                 "Reason": {
@@ -25513,7 +26010,7 @@
                 "value": {
                     "target": "com.amazonaws.ssm#SessionFilterValue",
                     "traits": {
-                        "smithy.api#documentation": "<p>The filter value. Valid values for each filter key are as follows:</p>\n         <ul>\n            <li>\n               <p>InvokedAfter: Specify a timestamp to limit your results. For example, specify\n     2018-08-29T00:00:00Z to see sessions that started August 29, 2018, and later.</p>\n            </li>\n            <li>\n               <p>InvokedBefore: Specify a timestamp to limit your results. For example, specify\n     2018-08-29T00:00:00Z to see sessions that started before August 29, 2018.</p>\n            </li>\n            <li>\n               <p>Target: Specify a managed node to which session connections have been made.</p>\n            </li>\n            <li>\n               <p>Owner: Specify an Amazon Web Services user account to see a list of sessions started by that\n     user.</p>\n            </li>\n            <li>\n               <p>Status: Specify a valid session status to see a list of all sessions with that status.\n     Status values you can specify include:</p>\n               <ul>\n                  <li>\n                     <p>Connected</p>\n                  </li>\n                  <li>\n                     <p>Connecting</p>\n                  </li>\n                  <li>\n                     <p>Disconnected</p>\n                  </li>\n                  <li>\n                     <p>Terminated</p>\n                  </li>\n                  <li>\n                     <p>Terminating</p>\n                  </li>\n                  <li>\n                     <p>Failed</p>\n                  </li>\n               </ul>\n            </li>\n            <li>\n               <p>SessionId: Specify a session ID to return details about the session.</p>\n            </li>\n         </ul>",
+                        "smithy.api#documentation": "<p>The filter value. Valid values for each filter key are as follows:</p>\n         <ul>\n            <li>\n               <p>InvokedAfter: Specify a timestamp to limit your results. For example, specify\n     2018-08-29T00:00:00Z to see sessions that started August 29, 2018, and later.</p>\n            </li>\n            <li>\n               <p>InvokedBefore: Specify a timestamp to limit your results. For example, specify\n     2018-08-29T00:00:00Z to see sessions that started before August 29, 2018.</p>\n            </li>\n            <li>\n               <p>Target: Specify a managed node to which session connections have been made.</p>\n            </li>\n            <li>\n               <p>Owner: Specify an Amazon Web Services user to see a list of sessions started by that user.</p>\n            </li>\n            <li>\n               <p>Status: Specify a valid session status to see a list of all sessions with that status.\n     Status values you can specify include:</p>\n               <ul>\n                  <li>\n                     <p>Connected</p>\n                  </li>\n                  <li>\n                     <p>Connecting</p>\n                  </li>\n                  <li>\n                     <p>Disconnected</p>\n                  </li>\n                  <li>\n                     <p>Terminated</p>\n                  </li>\n                  <li>\n                     <p>Terminating</p>\n                  </li>\n                  <li>\n                     <p>Failed</p>\n                  </li>\n               </ul>\n            </li>\n            <li>\n               <p>SessionId: Specify a session ID to return details about the session.</p>\n            </li>\n         </ul>",
                         "smithy.api#required": {}
                     }
                 }
@@ -25819,7 +26316,7 @@
         "com.amazonaws.ssm#SharedDocumentVersion": {
             "type": "string",
             "traits": {
-                "smithy.api#documentation": "<p>The document version shared with other accounts. You can share <code>Latest</code>,\n    <code>Default</code> or <code>All versions</code>.</p>",
+                "smithy.api#documentation": "<p>The document version shared with other Amazon Web Services accounts. You can share <code>Latest</code>,\n    <code>Default</code> or <code>All versions</code>.</p>",
                 "smithy.api#length": {
                     "min": 0,
                     "max": 8
@@ -25956,6 +26453,9 @@
                         "smithy.api#required": {}
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#input": {}
             }
         },
         "com.amazonaws.ssm#StartAssociationsOnceResult": {
@@ -26079,6 +26579,9 @@
                         "smithy.api#documentation": "<p>The CloudWatch alarm you want to apply to your automation.</p>"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#input": {}
             }
         },
         "com.amazonaws.ssm#StartAutomationExecutionResult": {
@@ -26199,6 +26702,9 @@
                         "smithy.api#documentation": "<p>User-provided details about the change. If no details are provided, content specified in the\n    <b>Template information</b> section of the associated change template\n   is added.</p>"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#input": {}
             }
         },
         "com.amazonaws.ssm#StartChangeRequestExecutionResult": {
@@ -26263,6 +26769,9 @@
                         "smithy.api#documentation": "<p>The values you want to specify for the parameters defined in the Session\n   document.</p>"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#input": {}
             }
         },
         "com.amazonaws.ssm#StartSessionResponse": {
@@ -26286,6 +26795,9 @@
                         "smithy.api#documentation": "<p>A URL back to SSM Agent on the managed node that the Session Manager client uses to send commands and\n   receive output from the node. Format: <code>wss://ssmmessages.<b>region</b>.amazonaws.com/v1/data-channel/<b>session-id</b>?stream=(input|output)</code>\n         </p>\n         <p>\n            <b>region</b> represents the Region identifier for an\n\t\t\t\t\t\tAmazon Web Services Region supported by Amazon Web Services Systems Manager, such as <code>us-east-2</code> for the US East (Ohio) Region.\n\t\t\t\t\t\tFor a list of supported <b>region</b> values, see the <b>Region</b> column in <a href=\"https://docs.aws.amazon.com/general/latest/gr/ssm.html#ssm_region\">Systems Manager service endpoints</a> in the\n        <i>Amazon Web Services General Reference</i>.</p>\n         <p>\n            <b>session-id</b> represents the ID of a Session Manager session, such as\n    <code>1a2b3c4dEXAMPLE</code>.</p>"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#output": {}
             }
         },
         "com.amazonaws.ssm#StatusAdditionalInfo": {
@@ -26621,6 +27133,9 @@
                         "smithy.api#documentation": "<p>The stop request type. Valid types include the following: Cancel and Complete. The default\n   type is Cancel.</p>"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#input": {}
             }
         },
         "com.amazonaws.ssm#StopAutomationExecutionResult": {
@@ -26980,6 +27495,9 @@
                         "smithy.api#required": {}
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#input": {}
             }
         },
         "com.amazonaws.ssm#TerminateSessionResponse": {
@@ -26991,6 +27509,9 @@
                         "smithy.api#documentation": "<p>The ID of the session that has been terminated.</p>"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#output": {}
             }
         },
         "com.amazonaws.ssm#TimeoutSeconds": {
@@ -27119,6 +27640,9 @@
                         "smithy.api#required": {}
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#input": {}
             }
         },
         "com.amazonaws.ssm#UnlabelParameterVersionResult": {
@@ -27303,7 +27827,7 @@
                 }
             ],
             "traits": {
-                "smithy.api#documentation": "<p>Updates an association. You can update the association name and version, the document\n   version, schedule, parameters, and Amazon Simple Storage Service (Amazon S3) output. When you\n   call <code>UpdateAssociation</code>, the system removes all optional parameters from the request\n   and overwrites the association with null values for those parameters. This is by design. You must\n   specify all optional parameters in the call, even if you are not changing the parameters. This\n   includes the <code>Name</code> parameter. Before calling this API action, we recommend that you\n   call the <a>DescribeAssociation</a> API operation and make a note of all optional\n   parameters required for your <code>UpdateAssociation</code> call.</p>\n         <p>In order to call this API operation, your Identity and Access Management (IAM) user\n   account, group, or role must be configured with permission to call the <a>DescribeAssociation</a> API operation. If you don't have permission to call\n    <code>DescribeAssociation</code>, then you receive the following error: <code>An error occurred\n    (AccessDeniedException) when calling the UpdateAssociation operation: User: <user_arn>\n    isn't authorized to perform: ssm:DescribeAssociation on resource:\n   <resource_arn></code>\n         </p>\n         <important>\n            <p>When you update an association, the association immediately runs against the specified\n    targets. You can add the <code>ApplyOnlyAtCronInterval</code> parameter to run the association\n    during the next schedule run.</p>\n         </important>"
+                "smithy.api#documentation": "<p>Updates an association. You can update the association name and version, the document\n   version, schedule, parameters, and Amazon Simple Storage Service (Amazon S3) output. When you\n   call <code>UpdateAssociation</code>, the system removes all optional parameters from the request\n   and overwrites the association with null values for those parameters. This is by design. You must\n   specify all optional parameters in the call, even if you are not changing the parameters. This\n   includes the <code>Name</code> parameter. Before calling this API action, we recommend that you\n   call the <a>DescribeAssociation</a> API operation and make a note of all optional\n   parameters required for your <code>UpdateAssociation</code> call.</p>\n         <p>In order to call this API operation, a user, group, or role must be granted permission to\n   call the <a>DescribeAssociation</a> API operation. If you don't have permission to\n   call <code>DescribeAssociation</code>, then you receive the following error: <code>An error\n    occurred (AccessDeniedException) when calling the UpdateAssociation operation: User:\n    <user_arn> isn't authorized to perform: ssm:DescribeAssociation on resource:\n    <resource_arn></code>\n         </p>\n         <important>\n            <p>When you update an association, the association immediately runs against the specified\n    targets. You can add the <code>ApplyOnlyAtCronInterval</code> parameter to run the association\n    during the next schedule run.</p>\n         </important>"
             }
         },
         "com.amazonaws.ssm#UpdateAssociationRequest": {
@@ -27429,6 +27953,9 @@
                 "AlarmConfiguration": {
                     "target": "com.amazonaws.ssm#AlarmConfiguration"
                 }
+            },
+            "traits": {
+                "smithy.api#input": {}
             }
         },
         "com.amazonaws.ssm#UpdateAssociationResult": {
@@ -27498,6 +28025,9 @@
                         "smithy.api#required": {}
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#input": {}
             }
         },
         "com.amazonaws.ssm#UpdateAssociationStatusResult": {
@@ -27598,6 +28128,9 @@
                         "smithy.api#required": {}
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#input": {}
             }
         },
         "com.amazonaws.ssm#UpdateDocumentDefaultVersionResult": {
@@ -27660,11 +28193,17 @@
                         "smithy.api#required": {}
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#input": {}
             }
         },
         "com.amazonaws.ssm#UpdateDocumentMetadataResponse": {
             "type": "structure",
-            "members": {}
+            "members": {},
+            "traits": {
+                "smithy.api#output": {}
+            }
         },
         "com.amazonaws.ssm#UpdateDocumentRequest": {
             "type": "structure",
@@ -27719,6 +28258,9 @@
                         "smithy.api#documentation": "<p>Specify a new target type for the document.</p>"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#input": {}
             }
         },
         "com.amazonaws.ssm#UpdateDocumentResult": {
@@ -27840,6 +28382,9 @@
                         "smithy.api#documentation": "<p>If <code>True</code>, then all fields that are required by the <a>CreateMaintenanceWindow</a> operation are also required for this API request. Optional\n   fields that aren't specified are set to null. </p>"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#input": {}
             }
         },
         "com.amazonaws.ssm#UpdateMaintenanceWindowResult": {
@@ -27992,6 +28537,9 @@
                         "smithy.api#documentation": "<p>If <code>True</code>, then all fields that are required by the <a>RegisterTargetWithMaintenanceWindow</a> operation are also required for this API\n   request. Optional fields that aren't specified are set to null.</p>"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#input": {}
             }
         },
         "com.amazonaws.ssm#UpdateMaintenanceWindowTargetResult": {
@@ -28158,6 +28706,9 @@
                         "smithy.api#documentation": "<p>The CloudWatch alarm you want to apply to your maintenance window task.</p>"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#input": {}
             }
         },
         "com.amazonaws.ssm#UpdateMaintenanceWindowTaskResult": {
@@ -28293,6 +28844,9 @@
                         "smithy.api#required": {}
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#input": {}
             }
         },
         "com.amazonaws.ssm#UpdateManagedInstanceRoleResult": {
@@ -28431,11 +28985,17 @@
                         "smithy.api#documentation": "<p>The OpsItem Amazon Resource Name (ARN).</p>"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#input": {}
             }
         },
         "com.amazonaws.ssm#UpdateOpsItemResponse": {
             "type": "structure",
-            "members": {}
+            "members": {},
+            "traits": {
+                "smithy.api#output": {}
+            }
         },
         "com.amazonaws.ssm#UpdateOpsMetadata": {
             "type": "operation",
@@ -28488,6 +29048,9 @@
                         "smithy.api#documentation": "<p>The metadata keys to delete from the OpsMetadata object. </p>"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#input": {}
             }
         },
         "com.amazonaws.ssm#UpdateOpsMetadataResult": {
@@ -28599,6 +29162,9 @@
                         "smithy.api#documentation": "<p>If True, then all fields that are required by the <a>CreatePatchBaseline</a>\n   operation are also required for this API request. Optional fields that aren't specified are set\n   to null.</p>"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#input": {}
             }
         },
         "com.amazonaws.ssm#UpdatePatchBaselineResult": {
@@ -28741,6 +29307,9 @@
                         "smithy.api#required": {}
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#input": {}
             }
         },
         "com.amazonaws.ssm#UpdateResourceDataSyncResult": {
@@ -28776,20 +29345,21 @@
                 "SettingId": {
                     "target": "com.amazonaws.ssm#ServiceSettingId",
                     "traits": {
-                        "smithy.api#documentation": "<p>The Amazon Resource Name (ARN) of the service setting to reset. For example,\n    <code>arn:aws:ssm:us-east-1:111122223333:servicesetting/ssm/parameter-store/high-throughput-enabled</code>.\n   The setting ID can be one of the following.</p>\n         <ul>\n            <li>\n               <p>\n                  <code>/ssm/automation/customer-script-log-destination</code>\n               </p>\n            </li>\n            <li>\n               <p>\n                  <code>/ssm/automation/customer-script-log-group-name</code>\n               </p>\n            </li>\n            <li>\n               <p>\n                  <code>/ssm/documents/console/public-sharing-permission</code>\n               </p>\n            </li>\n            <li>\n               <p>\n                  <code>/ssm/managed-instance/activation-tier</code>\n               </p>\n            </li>\n            <li>\n               <p>\n                  <code>/ssm/opsinsights/opscenter</code>\n               </p>\n            </li>\n            <li>\n               <p>\n                  <code>/ssm/parameter-store/default-parameter-tier</code>\n               </p>\n            </li>\n            <li>\n               <p>\n                  <code>/ssm/parameter-store/high-throughput-enabled</code>\n               </p>\n            </li>\n         </ul>",
+                        "smithy.api#documentation": "<p>The Amazon Resource Name (ARN) of the service setting to update. For example,\n    <code>arn:aws:ssm:us-east-1:111122223333:servicesetting/ssm/parameter-store/high-throughput-enabled</code>.\n   The setting ID can be one of the following.</p>\n         <ul>\n            <li>\n               <p>\n                  <code>/ssm/managed-instance/default-ec2-instance-management-role</code>\n               </p>\n            </li>\n            <li>\n               <p>\n                  <code>/ssm/automation/customer-script-log-destination</code>\n               </p>\n            </li>\n            <li>\n               <p>\n                  <code>/ssm/automation/customer-script-log-group-name</code>\n               </p>\n            </li>\n            <li>\n               <p>\n                  <code>/ssm/documents/console/public-sharing-permission</code>\n               </p>\n            </li>\n            <li>\n               <p>\n                  <code>/ssm/managed-instance/activation-tier</code>\n               </p>\n            </li>\n            <li>\n               <p>\n                  <code>/ssm/opsinsights/opscenter</code>\n               </p>\n            </li>\n            <li>\n               <p>\n                  <code>/ssm/parameter-store/default-parameter-tier</code>\n               </p>\n            </li>\n            <li>\n               <p>\n                  <code>/ssm/parameter-store/high-throughput-enabled</code>\n               </p>\n            </li>\n         </ul>\n         <note>\n            <p>Permissions to update the <code>/ssm/managed-instance/default-ec2-instance-management-role</code> setting should only be provided to administrators. Implement least privilege access when allowing individuals to configure or modify the Default Host Management Configuration.</p>\n         </note>",
                         "smithy.api#required": {}
                     }
                 },
                 "SettingValue": {
                     "target": "com.amazonaws.ssm#ServiceSettingValue",
                     "traits": {
-                        "smithy.api#documentation": "<p>The new value to specify for the service setting. The following list specifies the available\n   values for each setting.</p>\n         <ul>\n            <li>\n               <p>\n                  <code>/ssm/automation/customer-script-log-destination</code>: <code>CloudWatch</code>\n               </p>\n            </li>\n            <li>\n               <p>\n                  <code>/ssm/automation/customer-script-log-group-name</code>: the name of an Amazon CloudWatch Logs log group</p>\n            </li>\n            <li>\n               <p>\n                  <code>/ssm/documents/console/public-sharing-permission</code>: <code>Enable</code> or\n      <code>Disable</code>\n               </p>\n            </li>\n            <li>\n               <p>\n                  <code>/ssm/managed-instance/activation-tier</code>: <code>standard</code> or\n      <code>advanced</code>\n               </p>\n            </li>\n            <li>\n               <p>\n                  <code>/ssm/opsinsights/opscenter</code>: <code>Enabled</code> or <code>Disabled</code>\n               </p>\n            </li>\n            <li>\n               <p>\n                  <code>/ssm/parameter-store/default-parameter-tier</code>: <code>Standard</code>,\n      <code>Advanced</code>, <code>Intelligent-Tiering</code>\n               </p>\n            </li>\n            <li>\n               <p>\n                  <code>/ssm/parameter-store/high-throughput-enabled</code>: <code>true</code> or\n      <code>false</code>\n               </p>\n            </li>\n         </ul>",
+                        "smithy.api#documentation": "<p>The new value to specify for the service setting. The following list specifies the available\n   values for each setting.</p>\n         <ul>\n            <li>\n               <p>\n                  <code>/ssm/managed-instance/default-ec2-instance-management-role: The name of an IAM role</code>\n               </p>\n            </li>\n            <li>\n               <p>\n                  <code>/ssm/automation/customer-script-log-destination</code>: <code>CloudWatch</code>\n               </p>\n            </li>\n            <li>\n               <p>\n                  <code>/ssm/automation/customer-script-log-group-name</code>: The name of an Amazon CloudWatch Logs log group</p>\n            </li>\n            <li>\n               <p>\n                  <code>/ssm/documents/console/public-sharing-permission</code>: <code>Enable</code> or\n      <code>Disable</code>\n               </p>\n            </li>\n            <li>\n               <p>\n                  <code>/ssm/managed-instance/activation-tier</code>: <code>standard</code> or\n      <code>advanced</code>\n               </p>\n            </li>\n            <li>\n               <p>\n                  <code>/ssm/opsinsights/opscenter</code>: <code>Enabled</code> or <code>Disabled</code>\n               </p>\n            </li>\n            <li>\n               <p>\n                  <code>/ssm/parameter-store/default-parameter-tier</code>: <code>Standard</code>,\n      <code>Advanced</code>, <code>Intelligent-Tiering</code>\n               </p>\n            </li>\n            <li>\n               <p>\n                  <code>/ssm/parameter-store/high-throughput-enabled</code>: <code>true</code> or\n      <code>false</code>\n               </p>\n            </li>\n         </ul>",
                         "smithy.api#required": {}
                     }
                 }
             },
             "traits": {
-                "smithy.api#documentation": "<p>The request body of the UpdateServiceSetting API operation.</p>"
+                "smithy.api#documentation": "<p>The request body of the UpdateServiceSetting API operation.</p>",
+                "smithy.api#input": {}
             }
         },
         "com.amazonaws.ssm#UpdateServiceSettingResult": {
