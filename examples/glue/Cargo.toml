@@ -16,7 +16,6 @@ publish = false
 tracing = "0.1.37"
 async_once = "0.2.6"
 lazy_static = "1.4.0"
-clap_lex = "=0.3.0"
 thiserror = "1.0.37"
 secrecy = "0.8.0"
 futures = "0.3.25"
@@ -39,7 +38,7 @@ version = "0.3.15"
 features = ["env-filter"]
 
 [dependencies.clap]
-version = "~4.0.18"
+version = "4.2.1"
 features = ["derive"]
 
 [dependencies.uuid]

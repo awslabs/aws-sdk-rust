@@ -44,9 +44,9 @@ version = "0.1.0"
 version = "0.3.21"
 features = ["alloc"]
 
-[dependencies.structopt]
-version = "0.3"
-default-features = false
+[dependencies.clap]
+version = "4.2.1"
+features = ["derive"]
 
 [dependencies.tokio]
 version = "1.20.1"
