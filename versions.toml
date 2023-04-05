@@ -2162,6 +2162,10 @@ source_hash = '5138ac0c34ea1b3f821a9a28f25106bebd4e3f6b257fb128c08924c95a6413b6'
 category = 'AwsRuntime'
 version = '0.55.0'
 source_hash = '745f403b01564e37578e3e64a17fe348c9b4f45546201949e7aaf02c032aa2e2'
+
+[release]
+tag = 'release-2023-04-05'
+
 [release.crates]
 aws-sdk-accessanalyzer = '0.25.1'
 aws-sdk-account = '0.25.1'
